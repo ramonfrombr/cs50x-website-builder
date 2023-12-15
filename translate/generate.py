@@ -64,12 +64,12 @@ def generate_file(
     current_directory = os.getcwd()
 
     if folder=="psets":
-        new_file = open(f'templates/{language}/psets/{f}.{extension}', 'w')
+        new_file = open(f'app/templates/{language}/psets/{f}.{extension}', 'w')
         new_file.writelines(translated_content)
 
     if folder=="manual":
         
-        file_destination = f"{current_directory}/app/content/{language}/{folder}"
+        file_destination = f"{current_directory}/app/tools/content/{language}/{folder}"
 
         # Creates folder if not exists
         if not (os.path.exists(file_destination)):
@@ -82,7 +82,7 @@ def generate_file(
 
     elif folder=="labs_code" or folder=="psets_code":
 
-        file_destination = f"{current_directory}/{course}/content/{language}/{folder}/{f}"
+        file_destination = f"{current_directory}/app/{course}/content/{language}/{folder}/{f}"
 
         # Creates folder if not exists
         if not (os.path.exists(file_destination)):
@@ -95,26 +95,26 @@ def generate_file(
 
     elif folder=="labs_checks" or folder=="psets_checks":
 
-        file_destination = f"{current_directory}/{course}/content/{language}/{folder}/{f}"
+        file_destination = f"{current_directory}/app/{course}/content/{language}/{folder}/{f}"
         
         # Creates folder if not exists
         if not (os.path.exists(file_destination)):
             os.makedirs(file_destination)
 
-        generated_file = open(f'{course}/content/{language}/{folder}/{f}/__init__.{extension}', 'w')
+        generated_file = open(f'app/{course}/content/{language}/{folder}/{f}/__init__.{extension}', 'w')
 
         generated_file.writelines(replace_incorrect_translations_checks(translated_content))
 
-        source_cs50yml = open(f"{course}/content/english/{folder}/{f}/.cs50.yml", "r")
-        cs50yml = open(f'{course}/content/{language}/{folder}/{f}/.cs50.yml', 'w')
+        source_cs50yml = open(f"app/{course}/content/english/{folder}/{f}/.cs50.yml", "r")
+        cs50yml = open(f'app/{course}/content/{language}/{folder}/{f}/.cs50.yml', 'w')
         cs50yml.writelines(source_cs50yml.readlines())
 
     elif folder=="psets_code":
-        new_file = open(f'{course}/content/{language}/{folder}/{f}.{extension}', 'w')
+        new_file = open(f'app/{course}/content/{language}/{folder}/{f}.{extension}', 'w')
         new_file.writelines(translated_content)
 
     elif folder=="notes":
-        file_destination = f"{current_directory}/{course}/content/{language}/{folder}"
+        file_destination = f"{current_directory}/app/{course}/content/{language}/{folder}"
 
         print(">>> File destination: ", file_destination)
 
@@ -125,5 +125,5 @@ def generate_file(
         generated_file = open(f'{file_destination}/{f}', 'a')
         generated_file.writelines("\n\n"+translated_content)
     else:
-        generated_file = open(f'{course}/content/{language}/{folder}/{f}.{extension}', 'w')
+        generated_file = open(f'app/{course}/content/{language}/{folder}/{f}.{extension}', 'w')
         generated_file.writelines(translated_content)

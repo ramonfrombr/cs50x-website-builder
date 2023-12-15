@@ -11,7 +11,7 @@ def index():
 @bp.route('/estilo')
 @bp.route('/estilo.html')
 def estilo():
-    with open(f"app/content/{os.environ['COURSE_LANGUAGE']}/style.md", "r") as f:
+    with open(f"app/tools/content/{os.environ['COURSE_LANGUAGE']}/style.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(

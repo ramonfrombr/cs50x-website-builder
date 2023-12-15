@@ -2,7 +2,7 @@ import os
 from flask import Blueprint, render_template
 from . import weeks_bp as bp
 
-from cs50x.content.english.language import (
+from ..content.english.language import (
     week_page as english_week_page,
     week_0 as english_week_0,
     week_1 as english_week_1,
@@ -14,12 +14,10 @@ from cs50x.content.english.language import (
     week_7 as english_week_7,
     week_8 as english_week_8,
     week_9 as english_week_9,
-    week_10 as english_week_10,
-    cibersecurity as english_cibesecurity
 )
 
 
-from cs50x.content.spanish.language import (
+from ..content.spanish.language import (
     week_page as spanish_week_page,
     week_0 as spanish_week_0,
     week_1 as spanish_week_1,
@@ -31,11 +29,9 @@ from cs50x.content.spanish.language import (
     week_7 as spanish_week_7,
     week_8 as spanish_week_8,
     week_9 as spanish_week_9,
-    week_10 as spanish_week_10,
-    cibersecurity as spanish_cibesecurity
 )
 
-from cs50x.content.portuguese.language import (
+from ..content.portuguese.language import (
     week_page as portuguese_week_page,
     week_0 as portuguese_week_0,
     week_1 as portuguese_week_1,
@@ -47,11 +43,9 @@ from cs50x.content.portuguese.language import (
     week_7 as portuguese_week_7,
     week_8 as portuguese_week_8,
     week_9 as portuguese_week_9,
-    week_10 as portuguese_week_10,
-    cibersecurity as portuguese_cibesecurity
 )
 
-from cs50x.content.french.language import (
+from ..content.french.language import (
     week_page as french_week_page,
     week_0 as french_week_0,
     week_1 as french_week_1,
@@ -63,11 +57,9 @@ from cs50x.content.french.language import (
     week_7 as french_week_7,
     week_8 as french_week_8,
     week_9 as french_week_9,
-    week_10 as french_week_10,
-    cibersecurity as french_cibesecurity
 )
 
-from cs50x.content.spanish.language import (
+from ..content.spanish.language import (
     week_page as spanish_week_page,
     week_0 as spanish_week_0,
     week_1 as spanish_week_1,
@@ -79,8 +71,6 @@ from cs50x.content.spanish.language import (
     week_7 as spanish_week_7,
     week_8 as spanish_week_8,
     week_9 as spanish_week_9,
-    week_10 as spanish_week_10,
-    cibersecurity as spanish_cibesecurity
 )
 
 if os.environ["COURSE_LANGUAGE"] == "portuguese":
@@ -96,8 +86,6 @@ if os.environ["COURSE_LANGUAGE"] == "portuguese":
         "week7": portuguese_week_7,
         "week8": portuguese_week_8,
         "week9": portuguese_week_9,
-        "week10": portuguese_week_10,
-        "cibersecurity": portuguese_cibesecurity,
     }
 elif os.environ["COURSE_LANGUAGE"] == "spanish":
     weeks_content = {
@@ -112,8 +100,6 @@ elif os.environ["COURSE_LANGUAGE"] == "spanish":
         "week7": spanish_week_7,
         "week8": spanish_week_8,
         "week9": spanish_week_9,
-        "week10": spanish_week_10,
-        "cibersecurity": spanish_cibesecurity,
     }
 elif os.environ["COURSE_LANGUAGE"] == "french":
     weeks_content = {
@@ -128,8 +114,6 @@ elif os.environ["COURSE_LANGUAGE"] == "french":
         "week7": french_week_7,
         "week8": french_week_8,
         "week9": french_week_9,
-        "week10": french_week_10,
-        "cibersecurity": french_cibesecurity,
     }
 elif os.environ["COURSE_LANGUAGE"] == "english":
     weeks_content = {
@@ -144,8 +128,6 @@ elif os.environ["COURSE_LANGUAGE"] == "english":
         "week7": english_week_7,
         "week8": english_week_8,
         "week9": english_week_9,
-        "week10": english_week_10,
-        "cibersecurity": english_cibesecurity,
     }
     
 weeks_content = {
@@ -160,8 +142,6 @@ weeks_content = {
     "week7": portuguese_week_7,
     "week8": portuguese_week_8,
     "week9": portuguese_week_9,
-    "week10": portuguese_week_10,
-    "cibersecurity": portuguese_cibesecurity,
 }
 
 @bp.route('/')
@@ -189,6 +169,7 @@ def week1():
         week=weeks_content["week1"]
     )
 
+
 @bp.route('/2')
 @bp.route('/2.html')
 def week2():
@@ -197,6 +178,7 @@ def week2():
         week_page=weeks_content["week_page"],
         week=weeks_content["week2"]
     )
+
 
 @bp.route('/3')
 @bp.route('/3.html')
@@ -207,6 +189,7 @@ def week3():
         week=weeks_content["week3"]
     )
 
+
 @bp.route('/4')
 @bp.route('/4.html')
 def week4():
@@ -215,6 +198,7 @@ def week4():
         week_page=weeks_content["week_page"],
         week=weeks_content["week4"]
     )
+
 
 @bp.route('/5')
 @bp.route('/5.html')
@@ -225,6 +209,7 @@ def week5():
         week=weeks_content["week5"]
     )
 
+
 @bp.route('/6')
 @bp.route('/6.html')
 def week6():
@@ -233,6 +218,7 @@ def week6():
         week_page=weeks_content["week_page"],
         week=weeks_content["week6"]
     )
+
 
 @bp.route('/7')
 @bp.route('/7.html')
@@ -243,6 +229,7 @@ def week7():
         week=weeks_content["week7"]
     )
 
+
 @bp.route('/8')
 @bp.route('/8.html')
 def week8():
@@ -252,6 +239,7 @@ def week8():
         week=weeks_content["week8"]
     )
 
+
 @bp.route('/9')
 @bp.route('/9.html')
 def week9():
@@ -259,19 +247,4 @@ def week9():
         'weeks/layout.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week9"]
-    )
-
-@bp.route('/10')
-@bp.route('/10.html')
-def week10():
-    return render_template('weeks/10.html', week_page=weeks_content["week_page"],
-        week=weeks_content["week10"])
-
-@bp.route('/ciberseguranca')
-@bp.route('/ciberseguranca.html')
-def cybersecurity():
-    return render_template(
-        'weeks/layout.html',
-        week_page=weeks_content["week_page"],
-        week=weeks_content["cibersecurity"]
     )

@@ -4,11 +4,10 @@ import os
 import marko
 from flask import send_file, url_for
 
-
 @bp.route('/')
 @bp.route('/index.html')
 def index():
-    with open(f"cs50x/content/{os.environ['COURSE_LANGUAGE']}/homepage.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/homepage.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -21,7 +20,7 @@ def index():
 @bp.route('/honestidade.html')
 def honesty():
         
-    with open(f"cs50x/content/{os.environ['COURSE_LANGUAGE']}/honesty.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/honesty.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -33,7 +32,7 @@ def honesty():
 @bp.route('/perguntas_frequentes.html')
 def faqs():
         
-    with open(f"cs50x/content/{os.environ['COURSE_LANGUAGE']}/faqs.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/faqs.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -45,7 +44,7 @@ def faqs():
 @bp.route('/certificado.html')
 def certificate():
         
-    with open(f"cs50x/content/{os.environ['COURSE_LANGUAGE']}/certificate.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/certificate.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -57,7 +56,7 @@ def certificate():
 @bp.route('/curriculo.html')
 def syllabus():
 
-    with open(f"cs50x/content/{os.environ['COURSE_LANGUAGE']}/syllabus.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/syllabus.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -68,7 +67,7 @@ def syllabus():
 @bp.route('/equipe')
 @bp.route('/equipe.html')
 def staff():
-    with open(f"cs50x/content/{os.environ['COURSE_LANGUAGE']}/staff.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/staff.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -79,7 +78,7 @@ def staff():
 @bp.route('/obrigado')
 @bp.route('/obrigado.html')
 def thanks():
-    with open(f"cs50x/content/{os.environ['COURSE_LANGUAGE']}/thanks.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/thanks.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -91,7 +90,7 @@ def thanks():
 @bp.route('/seminarios.html')
 def seminars():
 
-    with open(f"cs50x/content/{os.environ['COURSE_LANGUAGE']}/seminars.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/seminars.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -102,7 +101,7 @@ def seminars():
 @bp.route('/projeto_final')
 @bp.route('/projeto_final.html')
 def project():
-    with open(f"cs50x/content/{os.environ['COURSE_LANGUAGE']}/project.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/project.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -113,7 +112,7 @@ def project():
 @bp.route('/secoes')
 @bp.route('/secoes.html')
 def sections():
-    with open(f"cs50x/content/{os.environ['COURSE_LANGUAGE']}/sections.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/sections.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -124,7 +123,7 @@ def sections():
 @bp.route('/tutorias')
 @bp.route('/tutorias.html')
 def office_hours():
-    with open(f"cs50x/content/{os.environ['COURSE_LANGUAGE']}/office_hours.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/office_hours.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
