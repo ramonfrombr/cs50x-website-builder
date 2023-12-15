@@ -1,6 +1,6 @@
 from .translate import translate
 import os
-from ..types import TypeCourse
+from translate_types import TypeCourse
 
 def get_checks(course: TypeCourse):
     checks = [check for check in os.listdir(f'{course}/content/english/psets_checks')]

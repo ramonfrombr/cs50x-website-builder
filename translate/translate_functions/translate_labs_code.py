@@ -1,5 +1,5 @@
 from .translate import translate
-from ..constants import LABS_CODE
+from constants import LABS_CODE
 
 def translate_labs_code(language):
     code = ["inheritance", "scrabble", "volume"]

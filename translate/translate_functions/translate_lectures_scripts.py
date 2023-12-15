@@ -1,7 +1,7 @@
 from .translate import translate
 import os
 from translate_types import TypeCourse
-from constants import LECTURES_SCRIPTS
+from ..constants import LECTURES_SCRIPTS
 from get_files import get_files
 
 def translate_lectures_scripts(course, language):

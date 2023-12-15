@@ -1,6 +1,6 @@
 from .translate import translate
 from concatenate_files import concat_files
-from ..files_names import specifications, specifications_part1, specifications_part2
+from files_names import specifications, specifications_part1, specifications_part2
 
 def translate_specifications(language):
     translate(specifications, "specifications", language, "md", "Markdown file")

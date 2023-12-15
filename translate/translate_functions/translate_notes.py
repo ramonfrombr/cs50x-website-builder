@@ -1,6 +1,6 @@
 from .translate import translate
 import os
-from ..types import TypeCourse, TypeLanguage
+from translate_types import TypeCourse, TypeLanguage
 
 def get_notes(course: TypeCourse):
     notes = [note for note in os.listdir(f'{course}/content/english/notes')]
