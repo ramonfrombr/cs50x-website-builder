@@ -1,104 +1,191 @@
-menu = {
-    "title": "Este é o CS50x",
-    "intro": "O curso de Ciências da Computação da Universidade de Harvard",
-    "week": "Semana",
-    "week2": "Vetores",
-    "week3": "Algoritmos",
-    "week4": "Memória",
-    "week5": "Estruturas de Dados",
-    "cybersecurity": "Cibersegurança",
-    "seminars": "Seminários",
-    "project": "Projeto Final",
-    "honesty": "Honestidade Acadêmica",
-    "certificate": "Certificado CS50",
-    "faqs": "Perguntas Frequentes",
+from typing import TypedDict
+
+class IMenu(TypedDict):
+    title: str
+    intro: str
+    week: str
+    week2: str
+    week3: str
+    week4: str
+    week5: str
+    cybersecurity: str
+    seminars: str
+    project: str
+    honesty: str
+    certificate: str
+    faqs: str
+    gradebook: str
+    staff: str
+    syllabus: str
+    office_hours: str
+    psets: str
+    sections: str
+    python_documentation: str
+    adminer: str
+    sqlite_browser: str
+    manual: str
+    style: str
+
+class IWeekPage(TypedDict):
+    week: str
+    lecture: str
+    audio: str
+    notes: str
+    slides: str
+    source_code: str
+    subtitles: str
+    transcript: str
+    video: str
+    shorts: str
+    section: str
+    practice_problems: str
+    lab: str
+    problem_set: str
+
+class IWeek(TypedDict):
+    name: str
+    number: int
+    study_guide: str
+    lecture_url: str
+    lecture_embed_url: str
+    google_slides_link: str
+    pdf_slides_link: str
+
+class IWeekAfter0(IWeek):
+    zip_code_link: str
+    pdf_code_link: str
+    shorts: dict[str, dict[str, str]]
+
+class IUrls(TypedDict):
+    labs: str
+    weeks: str
+    notes: str
+    psets: str
+    cybersecurity: str
+    seminars: str
+    honesty: str
+    certificate: str
+    faqs: str
+    staff: str
+    syllabus: str
+    project: str
+    hello: str
+    mario_less: str
+    mario_more: str
+    cash: str
+    credit: str
+    readability: str
+    bulbs: str
+    caesar: str
+    substitution: str
+    wordle50: str
+    plurality: str
+    runoff: str
+    tideman: str
+    filter: str
+    recover: str
+    reverse: str
+    speller: str
+    dna: str
+    movies: str
+    fiftyville: str
+    homepage: str
+    finance: str
+    less: str
+    more: str
+
+menu: IMenu = {
+    "title": "This is CS50x",
+    "intro": "Harvard University's computer science course",
+    "week": "Week",
+    "week2": "Arrays",
+    "week3": "Algorithms",
+    "week4": "Memory",
+    "week5": "Data Structures",
+    "cybersecurity": "Cybersecurity",
+    "seminars": "Seminars",
+    "project": "Final Project",
+    "honesty": "Academic Honesty",
+    "certificate": "CS50 Certificate",
+    "faqs": "FAQs",
     "gradebook": "Gradebook",
-    "staff": "Equipe",
-    "syllabus": "Currículo do Curso",
-    "office_hours": "Mentorias",
-    "psets": "Listas de Problemas",
-    "sections": "Seções",
-    "python_documentation": "Documentação Python",
-    "adminer": "Navegador PostgreSQL",
-    "sqlite_browser": "Navegador SQLite",
-    "manual": "Manual do Programador",
+    "staff": "Staff",
+    "syllabus": "Course Syllabus",
+    "office_hours": "Office Hours",
+    "psets": "Problem Listss",
+    "sections": "Reviews",
+    "python_documentation": "Python Documentation",
+    "adminer": "PostgreSQL Browser",
+    "sqlite_browser": "SQLite Browser",
+    "manual": "Programmer's Manual",
     "style": "Style Guide"
 }
 
-week_page = {
-    "week": "Semana",
-    "lecture": "Aula",
-    "audio": "Áudio",
-    "notes": "Anotações",
+week_page: IWeekPage = {
+    "week": "Week",
+    "lecture": "Lecture",
+    "audio": "Audio",
+    "notes": "Notes",
     "slides": "Slides",
-    "source_code": "Código Fonte",
-    "subtitles": "Legendas",
-    "transcript": "Transcrição",
-    "video": "Vídeo",
-    "shorts": "Tópicos Importantes",
-    "section": "Seção",
-    "practice_problems": "Problemas Práticos",
-    "lab": "Laboratório",
-    "problem_set": "Lista de Problemas",
+    "source_code": "Source Code",
+    "subtitles": "SubtitlesLegendas",
+    "transcript": "Transcript",
+    "video": "Video",
+    "shorts": "Important Topics",
+    "section": "Review",
+    "practice_problems": "Practice Problems",
+    "lab": "Lab",
+    "problem_set": "Problem List",
 }
 
-menu_cs50x = {
-    "week0": "Functions, Variables",
-    "week1": "Conditionals",
-    "week2": "Loops",
-    "week3": "Exceptions",
-    "week4": "Libraries",
-    "week5": "Unit Tests",
-    "week6": "File I/O",
-    "week7": "Regular Expressions",
-    "week8": "Object-Oriented Programming",
-    "week9": "Et Cetera",
-}
-
-week_0 = {
+week_0: IWeek = {
     "name": "Scratch",
     "number": 0,
-    "study_guide": "https://drive.google.com/file/d/1mw1BkX7qoZRZwV8mnhdvIMinfP1BwNb0/view?usp=sharing",
-    "lecture_url": "https://www.youtube.com/watch?v=CfJYwHylIck",
-    "lecture_embed_url": "https://www.youtube.com/embed/CfJYwHylIck?si=LxCcYnvdbSmFJJnB",
-    "google_slides_link": "https://docs.google.com/presentation/d/1acUrdTo6VXEYxhN_iwES2Ruz7yVJZ3Fd-w5cn2jLcuM/edit?usp=sharing",
-    "pdf_slides_link": "https://drive.google.com/file/d/1or9fI5y5w5NMds7UfTWjgupotmAIQMMx/view"
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
+    "google_slides_link": "",
+    "pdf_slides_link": ""
 }
 
-week_1 = {
+week_1: IWeekAfter0 = {
     "name": "C",
     "number": 1,
-    "lecture_url": "https://www.youtube.com/watch?v=Li85z0EfiUA",
-    "lecture_embed_url": "https://www.youtube.com/embed/Li85z0EfiUA?si=YAR0TrclGFTlSdvB",
-    "pdf_code_link": "https://drive.google.com/file/d/1XR6QQhIGe3zthCzQmhr8m3ykNXKQYZT1/view?usp=drive_link",
-    "zip_code_link": "https://drive.google.com/file/d/1xAC-8xjFmLJQ3c_ibfT1YhFZlZb2PkyB/view?usp=sharing",
-    "google_slides_link": "https://docs.google.com/presentation/d/1b-5xwyf5wHEIMTvWn4IE3260Mgm_8a8G9FyppU4MWyo/edit?usp=sharing",
-    "pdf_slides_link": "https://drive.google.com/file/d/1ciyAdlhWj3sNKDq6Kunvs1B4dUj2Y8Dq/view?usp=sharing",
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
+    "pdf_code_link": "",
+    "zip_code_link": "",
+    "google_slides_link": "",
+    "pdf_slides_link": "",
     "shorts": {
         "data_types": {
-            "name": "Tipos de Dados",
-            "link": "https://www.youtube.com/watch?v=kyYFtm59r5Q"
+            "name": "Data Types",
+            "link": ""
         },
-            "operators":{
-            "name": "Operadores",
-            "link": "https://www.youtube.com/watch?v=NnVsN0RGXBs"
+        "operators":{
+            "name": "Operators",
+            "link": ""
         },
-            "conditionals": {
-            "name": "Estruturas Condicionais",
-            "link": "https://www.youtube.com/watch?v=LPKqDguO4JY"
+        "conditionals": {
+            "name": "Conditional Statements",
+            "link": ""
         },
-            "loops": {
-            "name": "Estruturas de Repetição",
-            "link": "https://www.youtube.com/watch?v=2CwCdEHU36o"
+        "loops": {
+            "name": "Loops",
+            "link": ""
         },
     }
 }
 
-week_2 = {
+week_2: IWeekAfter0 = {
     "name": "Arrays",
     "number": 2,
-    "pdf_code_link": "https://drive.google.com/file/d/1JStUjEyXk21OqHuHRDoP0FKg0TKRGESZ/view?usp=sharing",
-    "zip_code_link": "https://drive.google.com/file/d/1f7Ba870kj1KJZtOHONrVyPNj10ZQpFLP/view?usp=sharing",
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
+    "pdf_code_link": "",
+    "zip_code_link": "",
     "google_slides_link": "",
     "pdf_slides_link": "",
     "shorts": {
@@ -107,8 +194,8 @@ week_2 = {
             "link": ""
         },
         "variables_and_scope": {
-            "name": "Variáveis e Escopo",
-            "link": "https://www.youtube.com/watch?v=xfxa98WQXdw"
+            "name": "Variables and Scope e Escopo",
+            "link": ""
         },
         "debugging_step_through": {
             "name": "Debugging (“Step through”)",
@@ -119,43 +206,46 @@ week_2 = {
             "link": ""
         },
         "arrays": {
-            "name": "Vetores",
-            "link": "https://www.youtube.com/watch?v=WXJXqmmJATY"
+            "name": "Arrays",
+            "link": ""
         },
         "command_line_arguments": {
-            "name": "Argumentos de Linha de Comando",
-            "link": "https://www.youtube.com/watch?v=xipno6i0Z2c"
+            "name": "Command Line Arguments",
+            "link": ""
         },
     }
 }
 
-week_3 = {
+week_3: IWeekAfter0 = {
     "name": "Algorithms",
     "number": 3,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
     "pdf_slides_link": "",
     "shorts": {
         "linear_search": {
-            "name": "Pesquisa Linear",
-            "link": "https://www.youtube.com/watch?v=1gqgpqo7Ams"
+            "name": "Linear Search",
+            "link": ""
         },
         "binary_search": {
             "name": "Binary Search",
             "link": ""
         },
         "bubble_sort":  {
-            "name": "Ordenação por Flutuação",
-            "link": "https://www.youtube.com/watch?v=jMrWnPPZ6ZM"
+            "name": "Bubble Sort",
+            "link": ""
         },
         "selection_sort":  {
-            "name": "Ordenação por Seleção",
-            "link": "https://www.youtube.com/watch?v=k2XR-vsoT5s"
+            "name": "Selection Sort",
+            "link": ""
         },
         "insertion_sort": {
-            "name": "Ordenação por Inserção",
-            "link": "https://www.youtube.com/watch?v=NfGIj-r4IvM"
+            "name": "Insertion Sort",
+            "link": ""
         },
         "recursion":  {
             "name": "Recursion",
@@ -166,23 +256,26 @@ week_3 = {
             "link": ""
         },
         "algorithms_summary": {
-            "name": "Resumo dos Algoritmos",
-            "link": "https://www.youtube.com/watch?v=0tmqY6K3VK8",
+            "name": "Algorithms Summary",
+            "link": "",
         }
     }
 }
 
-week_4 = {
+week_4: IWeekAfter0 = {
     "name": "Memory",
     "number": 4,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
     "pdf_slides_link": "",
     "shorts": {
         "hexadecimal": {
-            "name": "Sistema Hexadecimal",
-            "link": "https://www.youtube.com/watch?v=bJcp5OnZ1U0"
+            "name": "Hexadecimal System",
+            "link": ""
         },
         "pointers": {
             "name": "Pointers",
@@ -193,12 +286,12 @@ week_4 = {
             "link": ""
         },
         "memory_allocation": {
-            "name": "Alocação de Memória Dinâmica",
-            "link": "https://www.youtube.com/watch?v=zh6p9MKynDw"
+            "name": "Dynamic Memory Allocation",
+            "link": ""
         },
         "call_stacks": {
             "name": "Call Stacks",
-            "link": "https://www.youtube.com/watch?v=ui4C0SgplWY"
+            "link": ""
         },
         "file_pointers": {
             "name": "File Pointers",
@@ -207,9 +300,12 @@ week_4 = {
     }
 }
 
-week_5 = {
+week_5: IWeekAfter0 = {
     "name": "Data Structures",
     "number": 5,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
@@ -218,35 +314,44 @@ week_5 = {
         "data_structures": {
             "name": "Data Structures",
             "link": ""
-        },"structures": {
+        },
+        "structures": {
             "name": "Structures",
             "link": ""
         },
         "linked_lists": {
             "name": "Singly-Linked Lists",
             "link": ""
-        },"doubly_linked_lists": {
+        },
+        "doubly_linked_lists": {
             "name": "Doubly-Linked Lists",
             "link": ""
-        },"hash_tables": {
+        },
+        "hash_tables": {
             "name": "Hash Tables",
             "link": ""
-        },"tries": {
+        },
+        "tries": {
             "name": "Tries",
             "link": ""
-        },"queues": {
+        },
+        "queues": {
             "name": "Queues",
             "link": ""
-        },"stacks": {
+        },
+        "stacks": {
             "name": "Stacks",
             "link": ""
         },
     }
 }
 
-week_6 = {
+week_6: IWeekAfter0 = {
     "name": "Python",
     "number": 6,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
@@ -259,9 +364,12 @@ week_6 = {
     }
 }
 
-week_7 = {
+week_7: IWeekAfter0 = {
     "name": "SQL",
     "number": 7,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
@@ -274,9 +382,12 @@ week_7 = {
     }
 }
 
-week_8 = {
+week_8: IWeekAfter0 = {
     "name": "HTML, CSS, JavaScript",
     "number": 8,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
@@ -289,31 +400,40 @@ week_8 = {
         "ip": {
             "name": "IP",
             "link": ""
-        },"tcp": {
+        },
+        "tcp": {
             "name": "TCP",
             "link": ""
-        },"http": {
+        },
+        "http": {
             "name": "HTTP",
             "link": ""
-        },"html": {
+        },
+        "html": {
             "name": "HTML",
             "link": ""
-        },"css": {
+        },
+        "css": {
             "name": "CSS",
             "link": ""
-        },"javascript": {
+        },
+        "javascript": {
             "name": "JavaScript",
             "link": ""
-        },"dom": {
+        },
+        "dom": {
             "name": "DOM",
             "link": ""
         },
     }
 }
 
-week_9 = {
+week_9: IWeekAfter0 = {
     "name": "Flask",
     "number": 9,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
@@ -330,54 +450,61 @@ week_9 = {
     }
 }
 
-week_10 = {
+week_10: IWeek = {
     "name": "Emoji",
     "google_slides_link": "",
     "pdf_slides_link": "",
     "number": 10,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
 }
 
-cibersecurity = {
+cibersecurity: IWeek  = {
     "name": "Cybersecurity",
     "google_slides_link": "",
     "pdf_slides_link": "",
+    "number": 11,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
 }
 
-urls = {
-    "labs": "laboratorios",
-    "weeks": "semanas",
-    "notes": "anotacoes",
-    "psets": "problemas",
-    "cybersecurity": "ciberseguranca",
-    "seminars": "seminarios",
-    "honesty": "honestidade",
-    "certificate": "certificado",
-    "faqs": "perguntas_frequentes",
-    "staff": "equipe",
-    "syllabus": "curriculo",
-    "project": "projeto",
-    "hello": "ola",
-    "mario_less": "mario/menos",
-    "mario_more": "mario/mais",
-    "cash": "dinheiro",
-    "credit": "credito",
-    "readability": "legibilidade",
-    "bulbs": "bulbos",
-    "caesar": "cesar",
-    "substitution": "substituicao",
+urls: IUrls = {
+    "labs": "labs",
+    "weeks": "weeks",
+    "notes": "notes",
+    "psets": "problems",
+    "cybersecurity": "cybersecurity",
+    "seminars": "seminars",
+    "honesty": "honesty",
+    "certificate": "certificate",
+    "faqs": "faqs",
+    "staff": "staff",
+    "syllabus": "syllabus",
+    "project": "project",
+    "hello": "hello",
+    "mario_less": "mario/less",
+    "mario_more": "mario/more",
+    "cash": "cash",
+    "credit": "credit",
+    "readability": "readability",
+    "bulbs": "bulbs",
+    "caesar": "caesar",
+    "substitution": "substitution",
     "wordle50": "wordle50",
-    "plurality": "pluralidade",
-    "runoff": "preferencia",
-    "tideman": "pares_ranqueados",
-    "filter": "filtrar",
-    "recover": "recuperar",
-    "reverse": "reversao",
-    "speller": "corretor",
+    "plurality": "plurality",
+    "runoff": "runoff",
+    "tideman": "tideman",
+    "filter": "filter",
+    "recover": "recover",
+    "reverse": "reverse",
+    "speller": "speller",
     "dna": "dna",
-    "movies": "filmes",
-    "fiftyville": "vila50",
-    "homepage": "pagina_inicial",
-    "finance": "financas",
-    "less": "menos",
-    "more": "mais"
+    "movies": "movies",
+    "fiftyville": "fiftyville",
+    "homepage": "homepage",
+    "finance": "finance",
+    "less": "less",
+    "more": "more",
 }

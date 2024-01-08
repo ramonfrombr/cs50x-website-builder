@@ -1,5 +1,7 @@
-menu = {
-    "title": "Este é o CS50x",
+from ..english.language import IMenu, IWeekPage
+
+menu: IMenu = {
+    "title": "Ceci est CS50x",
     "intro": "O curso de Ciências da Computação da Universidade de Harvard",
     "week": "Semana",
     "week2": "Vetores",
@@ -21,10 +23,11 @@ menu = {
     "python_documentation": "Documentação Python",
     "adminer": "Navegador PostgreSQL",
     "sqlite_browser": "Navegador SQLite",
-    "manual": "Manual do Programador"
+    "manual": "Manual do Programador",
+    "style": "Style"
 }
 
-week_page = {
+week_page: IWeekPage = {
     "week": "Semana",
     "lecture": "Aula",
     "audio": "Áudio",
@@ -41,18 +44,6 @@ week_page = {
     "problem_set": "Lista de Problemas",
 }
 
-menu_cs50x = {
-    "week0": "Functions, Variables",
-    "week1": "Conditionals",
-    "week2": "Loops",
-    "week3": "Exceptions",
-    "week4": "Libraries",
-    "week5": "Unit Tests",
-    "week6": "File I/O",
-    "week7": "Regular Expressions",
-    "week8": "Object-Oriented Programming",
-    "week9": "Et Cetera",
-}
 
 week_0 = {
     "name": "Scratch",

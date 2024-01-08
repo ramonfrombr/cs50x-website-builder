@@ -6,11 +6,6 @@ from .cs50x.content.portuguese.language import menu as menu_portuguese
 from .cs50x.content.spanish.language import menu as menu_spanish
 from .cs50x.content.english.language import menu as menu_english
 
-from .cs50x.content.french.language import menu_cs50x as menu_cs50x_french
-from .cs50x.content.portuguese.language import menu_cs50x as menu_cs50x_portuguese
-from .cs50x.content.spanish.language import menu_cs50x as menu_cs50x_spanish
-from .cs50x.content.english.language import menu_cs50x as menu_cs50x_english
-
 from .cs50x.content.french.language import urls as urls_french
 from .cs50x.content.portuguese.language import urls as urls_portuguese
 from .cs50x.content.spanish.language import urls as urls_spanish
@@ -31,7 +26,6 @@ def create_app():
         app.config["LANGUAGE"] = "portuguese"
         app.config["ASIDE_BG_COLOR"] = "green"
         app.config["LANGUAGE_MENU"] = menu_portuguese
-        app.config["LANGUAGE_MENU_CS50X"] = menu_cs50x_portuguese
         app.config["LANGUAGE_MENU_PYTHON"] = menu_python_portuguese
         app.config["LANGUAGE_MENU_AI"] = menu_ai_portuguese
         app.config["URLS"] = urls_portuguese
@@ -40,7 +34,6 @@ def create_app():
         app.config["LANGUAGE"] = "spanish"
         app.config["ASIDE_BG_COLOR"] = "red"
         app.config["LANGUAGE_MENU"] = menu_spanish
-        app.config["LANGUAGE_MENU_CS50X"] = menu_cs50x_spanish
         app.config["LANGUAGE_MENU_PYTHON"] = menu_python_spanish
         app.config["URLS"] = urls_spanish
 
@@ -48,7 +41,6 @@ def create_app():
         app.config["LANGUAGE"] = "french"
         app.config["ASIDE_BG_COLOR"] = "blue"
         app.config["LANGUAGE_MENU"] = menu_french
-        app.config["LANGUAGE_MENU_CS50X"] = menu_cs50x_french
         app.config["LANGUAGE_MENU_PYTHON"] = menu_python_french
         app.config["URLS"] = urls_french
 
@@ -56,7 +48,6 @@ def create_app():
         app.config["LANGUAGE"] = "english"
         app.config["ASIDE_BG_COLOR"] = "black"
         app.config["LANGUAGE_MENU"] = menu_english
-        app.config["LANGUAGE_MENU_CS50X"] = menu_cs50x_english
         app.config["LANGUAGE_MENU_PYTHON"] = menu_python_english
         app.config["URLS"] = urls_english
 
@@ -72,6 +63,4 @@ def create_app():
         from .ai import ai as ai_bp
         app.register_blueprint(ai_bp, url_prefix='/ai')
  
-
     return app
-

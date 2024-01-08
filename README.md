@@ -123,3 +123,11 @@ After translating the content, run the following command to build (freeze) the p
 `python freeze.py`
 
 This will create a folder called `build_LANGUAGE` (e.g. `build_portuguese`) that contains the files that compose the website. You can host it on Github Pages.
+
+## Python Type Checking
+
+To check typings in the `app` module
+
+```
+mypy -m app
+```

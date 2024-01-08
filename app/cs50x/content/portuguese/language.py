@@ -42,18 +42,7 @@ week_page = {
     "problem_set": "Lista de Problemas",
 }
 
-menu_cs50x = {
-    "week0": "Scratch",
-    "week1": "C",
-    "week2": "Vetores",
-    "week3": "Algoritmos",
-    "week4": "Memória",
-    "week5": "Estruturas de Dados",
-    "week6": "Python",
-    "week7": "SQL",
-    "week8": "HTML, CSS, JavaScript",
-    "week9": "Emoji",
-}
+
 
 week_0 = {
     "name": "Scratch",
