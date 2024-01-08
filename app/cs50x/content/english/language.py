@@ -23,7 +23,6 @@ menu = {
     "sqlite_browser": "Navegador SQLite",
     "manual": "Manual do Programador",
     "style": "Style Guide"
-
 }
 
 week_page = {

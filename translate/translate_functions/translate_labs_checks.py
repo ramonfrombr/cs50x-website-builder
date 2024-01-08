@@ -2,11 +2,8 @@ from .translate import translate
 import os
 from translate_types import TypeCourse
 from constants import LABS_CHECKS
-
-def get_checks(course: TypeCourse):
-    checks = [check for check in os.listdir(f'{course}/content/english/{LABS_CHECKS}')]
-    return checks
+from get_files import get_files
 
 def translate_labs_checks(course, language):
-    checks = get_checks(course)
+    checks = get_files(course, LABS_CHECKS)
     translate(course, checks, LABS_CHECKS, language, "py", "Python code")

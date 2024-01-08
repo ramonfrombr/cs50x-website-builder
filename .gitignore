@@ -8,3 +8,4 @@ venv3.7
 build_portuguese
 build_french
 build_spanish
+.pytest_cache

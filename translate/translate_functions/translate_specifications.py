@@ -1,9 +1,13 @@
 from .translate import translate
 from concatenate_files import concat_files
 from files_names import specifications, specifications_part1, specifications_part2
+from check_translation import get_files_not_created
 
-def translate_specifications(language):
-    translate(specifications, "specifications", language, "md", "Markdown file")
+def translate_specifications(course, language):
+    files_not_translated = get_files_not_created(course, language, "specifications")
+    print("Files to translate:")
+    print(files_not_translated)
+    translate(course, files_not_translated, "specifications", language, "md", "Markdown file")
 
 def translate_specifications_part1(language):
     translate(specifications_part1, "specifications", language, "md", "Markdown file")

@@ -30,8 +30,16 @@ def generate_file_psets(
         language: TypeLanguage,
         extension: str,
         translated_content: str):
+    
     current_directory = os.getcwd()
-    new_file = open(f'app/templates/{language}/psets/{filename}.{extension}', 'w')
+
+    file_destination = f"{current_directory}/app/{course}/content/{language}/{folder}"
+
+    # Creates folder if not exists
+    if not (os.path.exists(file_destination)):
+        os.makedirs(file_destination)
+
+    new_file = open(f'{file_destination}/{filename}', 'w')
     new_file.writelines(translated_content)
 
 def generate_file_manual(
@@ -128,5 +136,5 @@ def generate_file(
         extension: str,
         translated_content: str):
     
-    generated_file = open(f'app/{course}/content/{language}/{folder}/{f}.{extension}', 'w')
+    generated_file = open(f'app/{course}/content/{language}/{folder}/{f}', 'w')
     generated_file.writelines(translated_content)
