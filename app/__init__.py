@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask
 import os
 
 from .cs50x.content.french.language import menu as menu_french
@@ -21,6 +21,7 @@ from .ai.content.portuguese.language import menu_ai as menu_ai_portuguese
 
 def create_app():
     app = Flask(__name__)
+    app.config["FREEZER_DESTINATION"] = "build_" + os.environ["COURSE_LANGUAGE"]
 
     if os.environ["COURSE_LANGUAGE"] == "portuguese":
         app.config["LANGUAGE"] = "portuguese"
@@ -29,7 +30,7 @@ def create_app():
         app.config["LANGUAGE_MENU_PYTHON"] = menu_python_portuguese
         app.config["LANGUAGE_MENU_AI"] = menu_ai_portuguese
         app.config["URLS"] = urls_portuguese
-
+        
     elif os.environ["COURSE_LANGUAGE"] == "spanish":
         app.config["LANGUAGE"] = "spanish"
         app.config["ASIDE_BG_COLOR"] = "red"

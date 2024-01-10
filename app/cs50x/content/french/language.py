@@ -1,242 +1,359 @@
-from ..english.language import IMenu, IWeekPage
+from typing import TypedDict
+
+class IMenu(TypedDict):
+    title: str
+    intro: str
+    week: str
+    week2: str
+    week3: str
+    week4: str
+    week5: str
+    cybersecurity: str
+    seminars: str
+    project: str
+    honesty: str
+    certificate: str
+    faqs: str
+    gradebook: str
+    staff: str
+    syllabus: str
+    office_hours: str
+    psets: str
+    sections: str
+    python_documentation: str
+    adminer: str
+    sqlite_browser: str
+    manual: str
+    style: str
+
+class IWeekPage(TypedDict):
+    week: str
+    lecture: str
+    audio: str
+    notes: str
+    slides: str
+    source_code: str
+    subtitles: str
+    transcript: str
+    video: str
+    shorts: str
+    section: str
+    practice_problems: str
+    lab: str
+    problem_set: str
+
+class IWeek(TypedDict):
+    name: str
+    number: int
+    study_guide: str
+    lecture_url: str
+    lecture_embed_url: str
+    google_slides_link: str
+    pdf_slides_link: str
+
+class IWeekAfter0(IWeek):
+    zip_code_link: str
+    pdf_code_link: str
+    shorts: dict[str, dict[str, str]]
+
+class IUrls(TypedDict):
+    labs: str
+    weeks: str
+    notes: str
+    psets: str
+    cybersecurity: str
+    seminars: str
+    honesty: str
+    certificate: str
+    faqs: str
+    staff: str
+    syllabus: str
+    project: str
+    hello: str
+    mario_less: str
+    mario_more: str
+    cash: str
+    credit: str
+    readability: str
+    bulbs: str
+    caesar: str
+    substitution: str
+    wordle50: str
+    plurality: str
+    runoff: str
+    tideman: str
+    filter: str
+    recover: str
+    reverse: str
+    speller: str
+    dna: str
+    movies: str
+    fiftyville: str
+    homepage: str
+    finance: str
+    less: str
+    more: str
 
 menu: IMenu = {
     "title": "Ceci est CS50x",
-    "intro": "O curso de Ciências da Computação da Universidade de Harvard",
-    "week": "Semana",
-    "week2": "Vetores",
-    "week3": "Algoritmos",
-    "week4": "Memória",
-    "week5": "Estruturas de Dados",
-    "cybersecurity": "Cibersegurança",
-    "seminars": "Seminários",
-    "project": "Projeto Final",
-    "honesty": "Honestidade Acadêmica",
-    "certificate": "Certificado CS50",
-    "faqs": "Perguntas Frequentes",
-    "gradebook": "Gradebook",
-    "staff": "Equipe",
-    "syllabus": "Currículo do Curso",
-    "office_hours": "Mentorias",
-    "psets": "Listas de Problemas",
-    "sections": "Seções",
-    "python_documentation": "Documentação Python",
-    "adminer": "Navegador PostgreSQL",
-    "sqlite_browser": "Navegador SQLite",
-    "manual": "Manual do Programador",
-    "style": "Style"
+    "intro": "Cours d'informatique de l'Université Harvard",
+    "week": "Semaine",
+    "week2": "Tableaux",
+    "week3": "Algorithmes",
+    "week4": "Mémoire",
+    "week5": "Structures de données",
+    "cybersecurity": "Cybersécurité",
+    "seminars": "Séminaires",
+    "project": "Projet final",
+    "honesty": "Honnêteté académique",
+    "certificate": "Certificat CS50",
+    "faqs": "FAQs",
+    "gradebook": "Carnet de notes",
+    "staff": "Personnel",
+    "syllabus": "Programme du cours",
+    "office_hours": "Heures de bureau",
+    "psets": "Liste de problèmes",
+    "sections": "Révisions",
+    "python_documentation": "Documentation Python",
+    "adminer": "Navigateur PostgreSQL",
+    "sqlite_browser": "Navigateur SQLite",
+    "manual": "Manuel du programmeur",
+    "style": "Guide de style"
 }
 
 week_page: IWeekPage = {
-    "week": "Semana",
-    "lecture": "Aula",
-    "audio": "Áudio",
-    "notes": "Anotações",
-    "slides": "Slides",
-    "source_code": "Código Fonte",
-    "subtitles": "Legendas",
-    "transcript": "Transcrição",
-    "video": "Vídeo",
-    "shorts": "Tópicos Importantes",
-    "section": "Seção",
-    "practice_problems": "Problemas Práticos",
-    "lab": "Laboratório",
-    "problem_set": "Lista de Problemas",
+    "week": "Semaine",
+    "lecture": "Cours",
+    "audio": "Audio",
+    "notes": "Notes",
+    "slides": "Diapositives",
+    "source_code": "Code source",
+    "subtitles": "Sous-titres",
+    "transcript": "Transcription",
+    "video": "Vidéo",
+    "shorts": "Sujets importants",
+    "section": "Révision",
+    "practice_problems": "Problèmes pratiques",
+    "lab": "Laboratoire",
+    "problem_set": "Liste de problèmes",
+    "study_guide": "Guide d'Études"
 }
 
-
-week_0 = {
+week_0: IWeek = {
     "name": "Scratch",
     "number": 0,
-    "study_guide": "https://drive.google.com/file/d/1mw1BkX7qoZRZwV8mnhdvIMinfP1BwNb0/view?usp=sharing",
-    "lecture_url": "https://www.youtube.com/watch?v=CfJYwHylIck",
-    "lecture_embed_url": "https://www.youtube.com/embed/CfJYwHylIck?si=LxCcYnvdbSmFJJnB",
-    "google_slides_link": "https://docs.google.com/presentation/d/1acUrdTo6VXEYxhN_iwES2Ruz7yVJZ3Fd-w5cn2jLcuM/edit?usp=sharing",
-    "pdf_slides_link": "https://drive.google.com/file/d/1or9fI5y5w5NMds7UfTWjgupotmAIQMMx/view"
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
+    "google_slides_link": "",
+    "pdf_slides_link": ""
 }
 
-week_1 = {
+week_1: IWeekAfter0 = {
     "name": "C",
     "number": 1,
-    "lecture_url": "https://www.youtube.com/watch?v=Li85z0EfiUA",
-    "lecture_embed_url": "https://www.youtube.com/embed/Li85z0EfiUA?si=YAR0TrclGFTlSdvB",
-    "pdf_code_link": "https://drive.google.com/file/d/1XR6QQhIGe3zthCzQmhr8m3ykNXKQYZT1/view?usp=drive_link",
-    "zip_code_link": "https://drive.google.com/file/d/1xAC-8xjFmLJQ3c_ibfT1YhFZlZb2PkyB/view?usp=sharing",
-    "google_slides_link": "https://docs.google.com/presentation/d/1b-5xwyf5wHEIMTvWn4IE3260Mgm_8a8G9FyppU4MWyo/edit?usp=sharing",
-    "pdf_slides_link": "https://drive.google.com/file/d/1ciyAdlhWj3sNKDq6Kunvs1B4dUj2Y8Dq/view?usp=sharing",
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
+    "pdf_code_link": "",
+    "zip_code_link": "",
+    "google_slides_link": "",
+    "pdf_slides_link": "",
     "shorts": {
         "data_types": {
-            "name": "Tipos de Dados",
-            "link": "https://www.youtube.com/watch?v=kyYFtm59r5Q"
+            "name": "Types de données",
+            "link": ""
         },
-            "operators":{
-            "name": "Operadores",
-            "link": "https://www.youtube.com/watch?v=NnVsN0RGXBs"
+        "operators": {
+            "name": "Opérateurs",
+            "link": ""
         },
-            "conditionals": {
-            "name": "Estruturas Condicionais",
-            "link": "https://www.youtube.com/watch?v=LPKqDguO4JY"
+        "conditionals": {
+            "name": "Instructions conditionnelles",
+            "link": ""
         },
-            "loops": {
-            "name": "Estruturas de Repetição",
-            "link": "https://www.youtube.com/watch?v=2CwCdEHU36o"
+        "loops": {
+            "name": "Boucles",
+            "link": ""
         },
     }
 }
 
-week_2 = {
-    "name": "Arrays",
+week_2: IWeekAfter0 = {
+    "name": "Tableaux",
     "number": 2,
-    "pdf_code_link": "https://drive.google.com/file/d/1JStUjEyXk21OqHuHRDoP0FKg0TKRGESZ/view?usp=sharing",
-    "zip_code_link": "https://drive.google.com/file/d/1f7Ba870kj1KJZtOHONrVyPNj10ZQpFLP/view?usp=sharing",
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
+    "pdf_code_link": "",
+    "zip_code_link": "",
     "google_slides_link": "",
     "pdf_slides_link": "",
     "shorts": {
         "functions": {
-            "name": "Functions",
+            "name": "Fonctions",
             "link": ""
         },
         "variables_and_scope": {
-            "name": "Variáveis e Escopo",
-            "link": "https://www.youtube.com/watch?v=xfxa98WQXdw"
+            "name": "Variables et portée",
+            "link": ""
         },
         "debugging_step_through": {
-            "name": "Debugging (“Step through”)",
+            "name": "Débogage (« Pas à pas »)",
             "link": ""
         },
         "debugging_step_into": {
-            "name": "Debugging (“Step into”)",
+            "name": "Débogage (« Pas à l'intérieur »)",
             "link": ""
         },
         "arrays": {
-            "name": "Vetores",
-            "link": "https://www.youtube.com/watch?v=WXJXqmmJATY"
+            "name": "Tableaux",
+            "link": ""
         },
         "command_line_arguments": {
-            "name": "Argumentos de Linha de Comando",
-            "link": "https://www.youtube.com/watch?v=xipno6i0Z2c"
+            "name": "Arguments de ligne de commande",
+            "link": ""
         },
     }
 }
 
-week_3 = {
-    "name": "Algorithms",
+
+week_3: IWeekAfter0 = {
+    "name": "Algorithmes",
     "number": 3,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
     "pdf_slides_link": "",
     "shorts": {
         "linear_search": {
-            "name": "Pesquisa Linear",
-            "link": "https://www.youtube.com/watch?v=1gqgpqo7Ams"
+            "name": "Recherche linéaire",
+            "link": ""
         },
         "binary_search": {
-            "name": "Binary Search",
+            "name": "Recherche binaire",
             "link": ""
         },
         "bubble_sort":  {
-            "name": "Ordenação por Flutuação",
-            "link": "https://www.youtube.com/watch?v=jMrWnPPZ6ZM"
+            "name": "Tri à bulles",
+            "link": ""
         },
         "selection_sort":  {
-            "name": "Ordenação por Seleção",
-            "link": "https://www.youtube.com/watch?v=k2XR-vsoT5s"
+            "name": "Tri par sélection",
+            "link": ""
         },
         "insertion_sort": {
-            "name": "Ordenação por Inserção",
-            "link": "https://www.youtube.com/watch?v=NfGIj-r4IvM"
+            "name": "Tri par insertion",
+            "link": ""
         },
         "recursion":  {
-            "name": "Recursion",
+            "name": "Récursivité",
             "link": ""
         },
         "merge_sort":  {
-            "name": "Merge Sort", 
+            "name": "Tri fusion", 
             "link": ""
         },
         "algorithms_summary": {
-            "name": "Resumo dos Algoritmos",
-            "link": "https://www.youtube.com/watch?v=0tmqY6K3VK8",
+            "name": "Résumé des algorithmes",
+            "link": "",
         }
     }
 }
 
-week_4 = {
-    "name": "Memory",
+week_4: IWeekAfter0 = {
+    "name": "Mémoire",
     "number": 4,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
     "pdf_slides_link": "",
     "shorts": {
         "hexadecimal": {
-            "name": "Sistema Hexadecimal",
-            "link": "https://www.youtube.com/watch?v=bJcp5OnZ1U0"
+            "name": "Système hexadécimal",
+            "link": ""
         },
         "pointers": {
-            "name": "Pointers",
+            "name": "Pointeurs",
             "link": ""
         },
         "custom_types": {
-            "name": "Defining Custom Types",
+            "name": "Définition de types personnalisés",
             "link": ""
         },
         "memory_allocation": {
-            "name": "Alocação de Memória Dinâmica",
-            "link": "https://www.youtube.com/watch?v=zh6p9MKynDw"
+            "name": "Allocation dynamique de mémoire",
+            "link": ""
         },
         "call_stacks": {
-            "name": "Call Stacks",
-            "link": "https://www.youtube.com/watch?v=ui4C0SgplWY"
+            "name": "Piles d'appels",
+            "link": ""
         },
         "file_pointers": {
-            "name": "File Pointers",
+            "name": "Pointeurs de fichier",
             "link": ""
         },
     }
 }
 
-week_5 = {
-    "name": "Data Structures",
+week_5: IWeekAfter0 = {
+    "name": "Structures de données",
     "number": 5,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
     "pdf_slides_link": "",
     "shorts": {
         "data_structures": {
-            "name": "Data Structures",
+            "name": "Structures de données",
             "link": ""
-        },"structures": {
+        },
+        "structures": {
             "name": "Structures",
             "link": ""
         },
         "linked_lists": {
-            "name": "Singly-Linked Lists",
+            "name": "Listes chaînées simples",
             "link": ""
-        },"doubly_linked_lists": {
-            "name": "Doubly-Linked Lists",
+        },
+        "doubly_linked_lists": {
+            "name": "Listes chaînées doubles",
             "link": ""
-        },"hash_tables": {
-            "name": "Hash Tables",
+        },
+        "hash_tables": {
+            "name": "Tables de hachage",
             "link": ""
-        },"tries": {
+        },
+        "tries": {
             "name": "Tries",
             "link": ""
-        },"queues": {
-            "name": "Queues",
+        },
+        "queues": {
+            "name": "Files d'attente",
             "link": ""
-        },"stacks": {
-            "name": "Stacks",
+        },
+        "stacks": {
+            "name": "Piles",
             "link": ""
         },
     }
 }
 
-week_6 = {
+week_6: IWeekAfter0 = {
     "name": "Python",
     "number": 6,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
@@ -249,9 +366,12 @@ week_6 = {
     }
 }
 
-week_7 = {
+week_7: IWeekAfter0 = {
     "name": "SQL",
     "number": 7,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
@@ -264,46 +384,58 @@ week_7 = {
     }
 }
 
-week_8 = {
+week_8: IWeekAfter0 = {
     "name": "HTML, CSS, JavaScript",
     "number": 8,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
     "pdf_slides_link": "",
     "shorts": {
         "internet_primer": {
-            "name": "Internet Primer",
+            "name": "Introduction à Internet",
             "link": ""
         },
         "ip": {
             "name": "IP",
             "link": ""
-        },"tcp": {
+        },
+        "tcp": {
             "name": "TCP",
             "link": ""
-        },"http": {
+        },
+        "http": {
             "name": "HTTP",
             "link": ""
-        },"html": {
+        },
+        "html": {
             "name": "HTML",
             "link": ""
-        },"css": {
+        },
+        "css": {
             "name": "CSS",
             "link": ""
-        },"javascript": {
+        },
+        "javascript": {
             "name": "JavaScript",
             "link": ""
-        },"dom": {
+        },
+        "dom": {
             "name": "DOM",
             "link": ""
         },
     }
 }
 
-week_9 = {
+week_9: IWeekAfter0 = {
     "name": "Flask",
     "number": 9,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
     "pdf_code_link": "",
     "zip_code_link": "",
     "google_slides_link": "",
@@ -320,54 +452,61 @@ week_9 = {
     }
 }
 
-week_10 = {
+week_10: IWeek = {
     "name": "Emoji",
     "google_slides_link": "",
     "pdf_slides_link": "",
     "number": 10,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
 }
 
-cibersecurity = {
-    "name": "Cybersecurity",
+cybersecurity: IWeek = {
+    "name": "Cybersécurité",
     "google_slides_link": "",
     "pdf_slides_link": "",
+    "number": 11,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
 }
 
-urls = {
-    "labs": "laboratorios",
-    "weeks": "semanas",
-    "notes": "anotacoes",
-    "psets": "problemas",
-    "cybersecurity": "ciberseguranca",
-    "seminars": "seminarios",
-    "honesty": "honestidade",
-    "certificate": "certificado",
-    "faqs": "perguntas_frequentes",
-    "staff": "equipe",
-    "syllabus": "curriculo",
-    "project": "projeto",
-    "hello": "ola",
-    "mario_less": "mario/menos",
-    "mario_more": "mario/mais",
-    "cash": "dinheiro",
-    "credit": "credito",
-    "readability": "legibilidade",
-    "bulbs": "bulbos",
-    "caesar": "cesar",
-    "substitution": "substituicao",
+urls: IUrls = {
+    "labs": "labs",
+    "weeks": "weeks",
+    "notes": "notes",
+    "psets": "problems",
+    "cybersecurity": "cybersecurity",
+    "seminars": "seminars",
+    "honesty": "honesty",
+    "certificate": "certificate",
+    "faqs": "faqs",
+    "staff": "staff",
+    "syllabus": "syllabus",
+    "project": "project",
+    "hello": "hello",
+    "mario_less": "mario/less",
+    "mario_more": "mario/more",
+    "cash": "cash",
+    "credit": "credit",
+    "readability": "readability",
+    "bulbs": "bulbs",
+    "caesar": "caesar",
+    "substitution": "substitution",
     "wordle50": "wordle50",
-    "plurality": "pluralidade",
-    "runoff": "preferencia",
-    "tideman": "pares_ranqueados",
-    "filter": "filtrar",
-    "recover": "recuperar",
-    "reverse": "reversao",
-    "speller": "corretor",
+    "plurality": "plurality",
+    "runoff": "runoff",
+    "tideman": "tideman",
+    "filter": "filter",
+    "recover": "recover",
+    "reverse": "reverse",
+    "speller": "speller",
     "dna": "dna",
-    "movies": "filmes",
-    "fiftyville": "vila50",
-    "homepage": "pagina_inicial",
-    "finance": "financas",
-    "less": "menos",
-    "more": "mais"
+    "movies": "movies",
+    "fiftyville": "fiftyville",
+    "homepage": "homepage",
+    "finance": "finance",
+    "less": "less",
+    "more": "more",
 }

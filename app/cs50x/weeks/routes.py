@@ -2,7 +2,6 @@ import os
 from flask import Blueprint, render_template
 from . import weeks_bp as bp
 
-
 from ..content.english.language import (
     week_page as english_week_page,
     week_0 as english_week_0,
@@ -16,9 +15,8 @@ from ..content.english.language import (
     week_8 as english_week_8,
     week_9 as english_week_9,
     week_10 as english_week_10,
-    cibersecurity as english_cibesecurity
+    cybersecurity as english_cybersecurity
 )
-
 
 from ..content.spanish.language import (
     week_page as spanish_week_page,
@@ -33,7 +31,7 @@ from ..content.spanish.language import (
     week_8 as spanish_week_8,
     week_9 as spanish_week_9,
     week_10 as spanish_week_10,
-    cibersecurity as spanish_cibesecurity
+    cybersecurity as spanish_cybersecurity
 )
 
 from ..content.portuguese.language import (
@@ -49,7 +47,7 @@ from ..content.portuguese.language import (
     week_8 as portuguese_week_8,
     week_9 as portuguese_week_9,
     week_10 as portuguese_week_10,
-    cibersecurity as portuguese_cibesecurity
+    cybersecurity as portuguese_cybersecurity
 )
 
 from ..content.french.language import (
@@ -65,9 +63,8 @@ from ..content.french.language import (
     week_8 as french_week_8,
     week_9 as french_week_9,
     week_10 as french_week_10,
-    cibersecurity as french_cibesecurity
+    cybersecurity as french_cybersecurity
 )
-
 
 if os.environ["COURSE_LANGUAGE"] == "portuguese":
     weeks_content = {
@@ -83,7 +80,7 @@ if os.environ["COURSE_LANGUAGE"] == "portuguese":
         "week8": portuguese_week_8,
         "week9": portuguese_week_9,
         "week10": portuguese_week_10,
-        "cibersecurity": portuguese_cibesecurity,
+        "cybersecurity": portuguese_cybersecurity,
     }
 elif os.environ["COURSE_LANGUAGE"] == "spanish":
     weeks_content = {
@@ -99,7 +96,7 @@ elif os.environ["COURSE_LANGUAGE"] == "spanish":
         "week8": spanish_week_8,
         "week9": spanish_week_9,
         "week10": spanish_week_10,
-        "cibersecurity": spanish_cibesecurity,
+        "cybersecurity": spanish_cybersecurity,
     }
 elif os.environ["COURSE_LANGUAGE"] == "french":
     weeks_content = {
@@ -115,7 +112,7 @@ elif os.environ["COURSE_LANGUAGE"] == "french":
         "week8": french_week_8,
         "week9": french_week_9,
         "week10": french_week_10,
-        "cibersecurity": french_cibesecurity,
+        "cybersecurity": french_cybersecurity,
     }
 elif os.environ["COURSE_LANGUAGE"] == "english":
     weeks_content = {
@@ -131,24 +128,8 @@ elif os.environ["COURSE_LANGUAGE"] == "english":
         "week8": english_week_8,
         "week9": english_week_9,
         "week10": english_week_10,
-        "cibersecurity": english_cibesecurity,
+        "cybersecurity": english_cybersecurity,
     }
-    
-weeks_content = {
-    "week_page": portuguese_week_page,
-    "week0": portuguese_week_0,
-    "week1": portuguese_week_1,
-    "week2": portuguese_week_2,
-    "week3": portuguese_week_3,
-    "week4": portuguese_week_4,
-    "week5": portuguese_week_5,
-    "week6": portuguese_week_6,
-    "week7": portuguese_week_7,
-    "week8": portuguese_week_8,
-    "week9": portuguese_week_9,
-    "week10": portuguese_week_10,
-    "cibersecurity": portuguese_cibesecurity,
-}
 
 @bp.route('/')
 @bp.route('/index.html')
@@ -259,5 +240,5 @@ def cybersecurity():
     return render_template(
         'weeks/layout.html',
         week_page=weeks_content["week_page"],
-        week=weeks_content["cibersecurity"]
+        week=weeks_content["cybersecurity"]
     )

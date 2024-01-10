@@ -39,6 +39,8 @@ week_page = {
     "practice_problems": "Problemas Práticos",
     "lab": "Laboratório",
     "problem_set": "Lista de Problemas",
+    "study_guide": "Guia de Estudios"
+
 }
 
 
@@ -325,7 +327,7 @@ week_10 = {
     "number": 10,
 }
 
-cibersecurity = {
+cybersecurity = {
     "name": "Cybersecurity",
     "google_slides_link": "",
     "pdf_slides_link": "",

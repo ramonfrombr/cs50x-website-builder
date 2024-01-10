@@ -55,19 +55,19 @@ The course content to be translated can be divided into 3 groups: Video content,
 
 ### Chat GPT Limitations
 
-ChatGPT limits the number of words that can be translated in one api call, therefore some of the content has to be divided into multiple files so that they can be translated and then reassembled together in the correct order once translated.
+ChatGPT limits the number of words that can be translated in one api call, therefore some of the content has to be divided into multiple files so that they can be translated and then reassembled together in the correct order once translated. This is the case with most shorts, walkthroughs, notes, and specifications.
 
 ### Adapting the translated content
 
-It is important to differentiate when it is better to use an English term instead of the translation
+It is important to differentiate when it is better to use an English term instead of the target language. Also, ChatGPT's translation is not perfect, therefore it is still necessary for a human to review the translations, correct and adapt the material.
 
 ### How to translate the content
 
-The script `translate.py` is the program used to translate the content. To translate a group of content into a specific language, run the following command:
+The module `translate` is the program used to translate the content. To translate a group of content into a specific language, run the following command:
 
-`python translate.py CONTENT_TYPE LANGUAGE`
+`python translate COURSE CONTENT_TYPE LANGUAGE`
 
-where `CONTENT_TYPE` is the type of content to be translate (notes, psets, specifications, etc) and `LANGUAGE` is language the content will be translated to, eg. Portuguese.
+where `COURSE` is one of the courses (`cs50x`, `web`, `python`, `ai`, `sql`, `cybersecurity`, etc), `CONTENT_TYPE` is the type of content to be translate (`notes`, `psets`, `specifications`, etc) and `LANGUAGE` is language the content will be translated to (`portuguese`, `spanish`, `french`).
 
 The argument `CONTENT_TYPE` can be one of the following options:
 
@@ -89,15 +89,19 @@ The argument `CONTENT_TYPE` can be one of the following options:
 - `walkthroughs_slides`
 - `additional_pages`
 
-The translated content will be stored at `cs50x/content/LANGUAGE`. These translated files will then be used to build the course website using Frozen-Flask.
+The translated content will be stored at `app/COURSE/content/LANGUAGE`. These translated files will then be used to build the course website using Frozen-Flask.
 
-## Setup
+### How to check translation progress
+
+Run the following command to check which files were translated, and which weren't.
+
+`python translate check COURSE LANGUAGE`
 
 ### Courses
 
-Each course/section is contained in a module/package:
+Each course/section is contained in a module/package inside the `app` folder:
 
-- `app`: Core tools like Manual Pages, Help50, and more
+- `tools`: Core tools like Manual Pages, Help50, and more
 - `cs50x`: Introduction to Computer Science
 - `python`: Introduction to Programming with Python
 - `web`: Web Programming with Python and JavaScript
@@ -108,6 +112,8 @@ Each course/section is contained in a module/package:
 - `business`: Computer Science for Business Professionals
 - `law`: Computer Science for Lawyers
 - `technology`: Understanding Technology
+
+## Setup
 
 ### Environment Variables
 
@@ -122,11 +128,11 @@ After translating the content, run the following command to build (freeze) the p
 
 `python freeze.py`
 
-This will create a folder called `build_LANGUAGE` (e.g. `build_portuguese`) that contains the files that compose the website. You can host it on Github Pages.
+This will create a folder called `build_LANGUAGE` (e.g. `build_portuguese`), inside the `app` folder, that contains the files that compose the course's website. You can host it on Github Pages.
 
 ## Python Type Checking
 
-To check typings in the `app` module
+To check typings in the `app` module, use the `mypy` library as follows:
 
 ```
 mypy -m app

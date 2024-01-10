@@ -41,6 +41,7 @@ class IWeekPage(TypedDict):
     practice_problems: str
     lab: str
     problem_set: str
+    study_guide: str
 
 class IWeek(TypedDict):
     name: str
@@ -136,6 +137,7 @@ week_page: IWeekPage = {
     "practice_problems": "Practice Problems",
     "lab": "Lab",
     "problem_set": "Problem List",
+    "study_guide": "Study Guide"
 }
 
 week_0: IWeek = {
@@ -460,7 +462,7 @@ week_10: IWeek = {
     "lecture_embed_url": "",
 }
 
-cibersecurity: IWeek  = {
+cybersecurity: IWeek  = {
     "name": "Cybersecurity",
     "google_slides_link": "",
     "pdf_slides_link": "",

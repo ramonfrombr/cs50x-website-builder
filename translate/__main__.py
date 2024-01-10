@@ -54,9 +54,3 @@ else:
             translate_manual(COURSE, LANGUAGE)
         elif CONTENT_TYPE == SPECIFICATIONS:
             translate_specifications(COURSE, LANGUAGE)
-            """
-            translate_specifications_part1(LANGUAGE)
-            translate_specifications_part2(LANGUAGE)
-            translate_specifications_divided_part1(LANGUAGE)
-            translate_specifications_divided_part2(LANGUAGE)
-            """
