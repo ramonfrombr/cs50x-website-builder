@@ -1,0 +1,74 @@
+{% extends 'python/layout.html' %} {% block conteudo %} {% from
+"python/weeks/pset_item_macro.html" import pset_item with context %} {% from
+"python/weeks/notes_item_macro.html" import notes_item with context %}
+
+<h1>
+  {{week_page.week}} {{week.number}}
+  <small class="text-muted strong">{{week.name}}</small>
+</h1>
+
+<!--
+    <iframe width="560" height="315" src="{{week.lecture_embed_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    -->
+
+<ul>
+  <li data-marker="-">
+    {{week_page.lecture}}
+    <ul>
+      <li data-marker="*">
+        <a href="{{week.study_guide}}">{{week_page.study_guide}}</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{week.lecture_url}}">{{week_page.video}}</a>
+      </li>
+      {{ notes_item(title=week_page.notes, number=week.number) }}
+
+      <li data-marker="-">
+        {{week_page.source_code}}
+        <ul>
+          <li data-marker="*">
+            <a target="_blank" href="{{week.pdf_code_link}}">PDF</a>
+          </li>
+          <li data-marker="*">
+            <a target="_blank" href="{{week.zip_code_link}}">Zip</a>
+          </li>
+        </ul>
+      </li>
+
+      <li data-marker="-">
+        {{week_page.slides}}
+        <ul>
+          <li data-marker="*">
+            <a target="_blank" href="{{week.google_slides_link}}"
+              >Google Slides</a
+            >
+          </li>
+          <li data-marker="*">
+            <a target="_blank" href="{{week.pdf_slides_link}}">PDF</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  {% if week.shorts %}
+  <li data-marker="-">
+    {{week_page.shorts}}
+    <ol>
+      {% for short in week.shorts %} {% if week.shorts[short].link %}
+      <li>
+        <a target="_blank" href="{{week.shorts[short].link}}"
+          >{{week.shorts[short].name}}</a
+        >
+      </li>
+      {% endif %} {% endfor %}
+    </ol>
+  </li>
+  {% endif %}
+
+  <li data-marker="*">
+    <a href="{{url_for('python.project')}}">Final Project</a>
+  </li>
+</ul>
+
+{% endblock %}
