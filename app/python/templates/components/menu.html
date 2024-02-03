@@ -1,0 +1,38 @@
+<aside class="col-md" style="background-color: {{config['ASIDE_BG_COLOR']}}">
+  <header>
+    <h1 data-id="this-is-cs50">
+      <a href="{{ url_for('cs50x.index') }}"
+        >{{config['LANGUAGE_MENU'].title}}</a
+      >
+    </h1>
+    <p>
+      <a href="https://cs50.harvard.edu/x">{{config['LANGUAGE_MENU'].intro}}</a
+      ><br />2023
+    </p>
+  </header>
+
+  <button
+    aria-controls="nav"
+    aria-expanded="false"
+    class="btn btn-sm collapsed d-md-none"
+    data-target="aside &gt; nav"
+    data-toggle="collapse"
+  >
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr />
+    <ul class="fa-ul">
+      <!--<li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('cs50x.weeks.week10') }}"
+          >{{config['LANGUAGE_MENU'].week}} 10
+          <span class="semana-titulo">Emoji</span></a
+        >
+      </li>-->
+    </ul>
+    <hr />
+  </nav>
+  <footer></footer>
+</aside>
