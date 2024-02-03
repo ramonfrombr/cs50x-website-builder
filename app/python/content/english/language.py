@@ -48,7 +48,7 @@ class IWeek(TypedDict):
 
 menu: IMenu = {
     "title": "Introduction to Programming with Python",
-    "intro": "",
+    "intro": "CS50x",
     "week": "Week",
     "week0": "Functions, Variables",
     "week1": "Conditionals",
