@@ -44,4 +44,6 @@ def create_app():
         from .tools import app as cs50_app
         app.register_blueprint(cs50_app, url_prefix='/')
  
+        from .python import python as python_bp
+        app.register_blueprint(python_bp, url_prefix='/python')
     return app
