@@ -233,11 +233,7 @@
 
     <hr />
 
-    <p style="font-size: initial">
-      <a href="{{ url_for('cs50x.thanks') }}"
-        >{{config['LANGUAGE_MENU'].thanks}}</a
-      >
-    </p>
+    {% include 'components/courses.html' %}
   </nav>
 
   <footer></footer>

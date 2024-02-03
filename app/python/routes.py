@@ -53,7 +53,7 @@ def index():
         markdown_text = f.read()
 
     return render_template(
-        'index.html',
+        'python/index.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -65,7 +65,7 @@ def honesty():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'python/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -77,7 +77,7 @@ def faqs():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'python/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -89,7 +89,7 @@ def certificate():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'python/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -101,7 +101,7 @@ def syllabus():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'python/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -112,7 +112,7 @@ def staff():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'python/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -123,6 +123,6 @@ def project():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'python/blank.html',
         markdown_text=marko.convert(markdown_text)
     )

@@ -118,7 +118,8 @@ menu: IMenu = {
     "adminer": "Navigateur PostgreSQL",
     "sqlite_browser": "Navigateur SQLite",
     "manual": "Manuel du programmeur",
-    "style": "Guide de style"
+    "style": "Guide de style",
+    "courses": "Courses"
 }
 
 week_page: IWeekPage = {

@@ -22,7 +22,8 @@ menu = {
     "adminer": "Navegador PostgreSQL",
     "sqlite_browser": "Navegador SQLite",
     "manual": "Manual do Programador",
-    "style": "Guia de Estilo"
+    "style": "Guia de Estilo",
+    "courses": "Courses"
 }
 
 week_page = {
