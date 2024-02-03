@@ -10,6 +10,11 @@ from .cs50x.content.portuguese.language import urls as urls_portuguese
 from .cs50x.content.spanish.language import urls as urls_spanish
 from .cs50x.content.english.language import urls as urls_english
 
+from .python.content.french.language import menu as menu_french_python
+from .python.content.portuguese.language import menu as menu_portuguese_python
+from .python.content.spanish.language import menu as menu_spanish_python
+from .python.content.english.language import menu as menu_english_python
+
 def create_app():
     app = Flask(__name__)
     app.config["FREEZER_DESTINATION"] = "build_" + os.environ["COURSE_LANGUAGE"]
@@ -18,24 +23,28 @@ def create_app():
         app.config["LANGUAGE"] = "portuguese"
         app.config["ASIDE_BG_COLOR"] = "green"
         app.config["LANGUAGE_MENU"] = menu_portuguese
+        app.config["LANGUAGE_MENU_PYTHON"] = menu_portuguese_python
         app.config["URLS"] = urls_portuguese
         
     elif os.environ["COURSE_LANGUAGE"] == "spanish":
         app.config["LANGUAGE"] = "spanish"
         app.config["ASIDE_BG_COLOR"] = "red"
         app.config["LANGUAGE_MENU"] = menu_spanish
+        app.config["LANGUAGE_MENU_PYTHON"] = menu_spanish_python
         app.config["URLS"] = urls_spanish
 
     elif os.environ["COURSE_LANGUAGE"] == "french":
         app.config["LANGUAGE"] = "french"
         app.config["ASIDE_BG_COLOR"] = "blue"
         app.config["LANGUAGE_MENU"] = menu_french
+        app.config["LANGUAGE_MENU_PYTHON"] = menu_french_python
         app.config["URLS"] = urls_french
 
     elif os.environ["COURSE_LANGUAGE"] == "english":
         app.config["LANGUAGE"] = "english"
         app.config["ASIDE_BG_COLOR"] = "black"
         app.config["LANGUAGE_MENU"] = menu_english
+        app.config["LANGUAGE_MENU_PYTHON"] = menu_english_python
         app.config["URLS"] = urls_english
 
     with app.app_context():
