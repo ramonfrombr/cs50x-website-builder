@@ -19,10 +19,18 @@
   <li>
     Submit all of the problems below:
     <ul>
-      <li data-marker="*"><a href="lines/">Lines of Code</a></li>
-      <li data-marker="*"><a href="pizza/">Pizza Py</a></li>
-      <li data-marker="*"><a href="scourgify/">Scourgify</a></li>
-      <li data-marker="*"><a href="shirt/">CS50 P-Shirt</a></li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.lines') }}">Lines of Code</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.pizza') }}">Pizza Py</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.scourgify') }}">Scourgify</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.shirt') }}">CS50 P-Shirt</a>
+      </li>
     </ul>
   </li>
 </ol>

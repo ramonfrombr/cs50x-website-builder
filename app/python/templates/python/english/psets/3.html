@@ -19,10 +19,18 @@
   <li>
     Submit all of the problems below:
     <ul>
-      <li data-marker="*"><a href="fuel/">Fuel Gauge</a></li>
-      <li data-marker="*"><a href="taqueria/">Felipe’s Taqueria</a></li>
-      <li data-marker="*"><a href="grocery/">Grocery List</a></li>
-      <li data-marker="*"><a href="outdated/">Outdated</a></li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.fuel') }}">Fuel Gauge</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.taqueria') }}">Felipe’s Taqueria</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.grocery') }}">Grocery List</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.outdated') }}">Outdated</a>
+      </li>
     </ul>
   </li>
 </ol>

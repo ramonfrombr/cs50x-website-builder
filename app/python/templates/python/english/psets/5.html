@@ -24,12 +24,20 @@
   <li>
     Submit all of the problems below:
     <ul>
-      <li data-marker="*"><a href="test_twttr/">Testing my twttr</a></li>
-      <li data-marker="*"><a href="test_bank/">Back to the Bank</a></li>
       <li data-marker="*">
-        <a href="test_plates/">Re-requesting a Vanity Plate</a>
+        <a href="{{ url_for('python.psets.test_twttr') }}">Testing my twttr</a>
       </li>
-      <li data-marker="*"><a href="test_fuel/">Refueling</a></li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.test_bank') }}">Back to the Bank</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.test_plates') }}"
+          >Re-requesting a Vanity Plate</a
+        >
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.test_fuel') }}">Refueling</a>
+      </li>
     </ul>
   </li>
 </ol>

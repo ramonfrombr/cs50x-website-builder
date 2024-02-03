@@ -19,14 +19,26 @@
   <li>
     Submit all of the problems below:
     <ul>
-      <li data-marker="*"><a href="emojize/">Emojize</a></li>
       <li data-marker="*">
-        <a href="figlet/">Frank, Ian and Glen’s Letters</a>
+        <a href="{{ url_for('python.psets.emojize') }}">Emojize</a>
       </li>
-      <li data-marker="*"><a href="adieu/">Adieu, Adieu</a></li>
-      <li data-marker="*"><a href="game/">Guessing Game</a></li>
-      <li data-marker="*"><a href="professor/">Little Professor</a></li>
-      <li data-marker="*"><a href="bitcoin/">Bitcoin Price Index</a></li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.figlet') }}"
+          >Frank, Ian and Glen’s Letters</a
+        >
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.adieu') }}">Adieu, Adieu</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.game') }}">Guessing Game</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.professor') }}">Little Professor</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.bitcoin') }}">Bitcoin Price Index</a>
+      </li>
     </ul>
   </li>
 </ol>

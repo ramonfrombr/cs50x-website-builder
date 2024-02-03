@@ -19,11 +19,23 @@
   <li>
     Submit all of the problems below:
     <ul>
-      <li data-marker="*"><a href="camel/">camelCase</a></li>
-      <li data-marker="*"><a href="coke/">Coke Machine</a></li>
-      <li data-marker="*"><a href="twttr/">Just setting up my twttr</a></li>
-      <li data-marker="*"><a href="plates/">Vanity Plates</a></li>
-      <li data-marker="*"><a href="nutrition/">Nutrition Facts</a></li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.camel') }}">camelCase</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.coke') }}">Coke Machine</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.twttr') }}"
+          >Just setting up my twttr</a
+        >
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.plates') }}">Vanity Plates</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.nutrition') }}">Nutrition Facts</a>
+      </li>
     </ul>
   </li>
 </ol>

@@ -45,11 +45,21 @@
   <li>
     Submit all of the problems below:
     <ul>
-      <li data-marker="*"><a href="indoor/">Indoor Voice</a></li>
-      <li data-marker="*"><a href="playback/">Playback Speed</a></li>
-      <li data-marker="*"><a href="faces/">Making Faces</a></li>
-      <li data-marker="*"><a href="einstein/">Einstein</a></li>
-      <li data-marker="*"><a href="tip/">Tip Calculator</a></li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.indoor') }}">Indoor Voice</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.playback') }}">Playback Speed</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.faces') }}">Making Faces</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.einstein') }}">Einstein</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.tip') }}">Tip Calculator</a>
+      </li>
     </ul>
   </li>
 </ol>

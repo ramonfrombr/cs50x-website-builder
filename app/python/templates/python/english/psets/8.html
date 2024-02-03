@@ -19,9 +19,17 @@
   <li>
     Submit all of the problems below:
     <ul>
-      <li data-marker="*"><a href="seasons/">Seasons of Love</a></li>
-      <li data-marker="*"><a href="jar/">Cookie Jar</a></li>
-      <li data-marker="*"><a href="shirtificate/">CS50 Shirtificate</a></li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.seasons') }}">Seasons of Love</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.jar') }}">Cookie Jar</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.shirtificate') }}"
+          >CS50 Shirtificate</a
+        >
+      </li>
     </ul>
   </li>
 </ol>

@@ -19,11 +19,23 @@
   <li>
     Submit all of the problems below:
     <ul>
-      <li data-marker="*"><a href="deep/">Deep Thought</a></li>
-      <li data-marker="*"><a href="bank/">Home Federal Savings Bank</a></li>
-      <li data-marker="*"><a href="extensions/">File Extensions</a></li>
-      <li data-marker="*"><a href="interpreter/">Math Interpreter</a></li>
-      <li data-marker="*"><a href="meal/">Meal Time</a></li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.deep') }}">Deep Thought</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.bank') }}"
+          >Home Federal Savings Bank</a
+        >
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.extensions') }}">File Extensions</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.interpreter') }}">Math Interpreter</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.meal') }}">Meal Time</a>
+      </li>
     </ul>
   </li>
 </ol>
