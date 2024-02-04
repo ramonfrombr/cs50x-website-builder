@@ -16,7 +16,7 @@ def get_chatgpt_translation(system_message: str, prompt: str):
             {"role": "system", "content": system_message},
             {"role": "user", "content": prompt}
         ]
-        )
+    )
     translation = response.choices[0].message.content
     return translation
 
@@ -36,10 +36,14 @@ def get_translation_and_generate_file(system_message, prompt, course, folder, fi
             generate_file_manual(course, folder, filename, language, extension, translation)
         else:
             generate_file(course, folder, filename, language, extension, translation)
-
-    except client.error.InvalidRequestError:
-        print(f">>>> Error: there was an error when translating '{filename}'")
-    time.sleep(20)
+    except Exception as e:
+        print(f"Error: there was an error when translating '{filename}'")
+        print(e)
+    
+def define_root_folder(folder, course):
+  if folder=="manual":
+    return "app/tools/content/english"
+  return f"app/{course}/content/english"
 
 def translate(
         course: TypeCourse,
@@ -55,24 +59,16 @@ def translate(
     FOLDER_PSETS_CODE = "psets_code"
     FOLDER_LABS_CHECKS = "labs_checks"
     FOLDER_PSETS_CHECKS = "psets_checks"
+    FOLDER_LECTURES_CODE = "lectures_code"
 
-    # Defines root folder
-    if folder=="manual":
-        root_folder = "app/tools/content/english"
-    else:
-        root_folder = f"app/{course}/content/english"
-
+    root_folder = define_root_folder(folder, course)
     system_message = generate_system_message(extension, language)
 
     for filename in files:
         try:
-
             if (folder==FOLDER_NOTES):
-
                 source_file = open(f"{root_folder}/{folder}/{filename}", "r")
-
                 notes_chunks = source_file.read().split("\n## ")
-
                 for chunk in notes_chunks:
                     prompt = generate_prompt_notes(file_description, language, "\n## "+chunk)
                     get_translation_and_generate_file(system_message, prompt, course, folder, filename, language, extension)
@@ -88,7 +84,7 @@ def translate(
                 
                 prompt = generate_prompt(file_description, language, source_file)
                 get_translation_and_generate_file(system_message, prompt, course, folder, filename, language, extension)
-
         except:
-            print(f">>> Error: couldn't open the file '{filename}'")
-            pass
+            print(f"Error: couldn't open the file '{filename}'")
+            
+        time.sleep(21)

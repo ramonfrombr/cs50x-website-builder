@@ -6,9 +6,10 @@ from translate_functions.translate_labs_code import translate_labs_code
 from translate_functions.translate_psets_code import translate_psets_code
 from translate_functions.translate_labs_checks import translate_labs_checks
 from translate_functions.translate_psets_checks import translate_psets_checks
+from translate_functions.translate_lectures_code import translate_lectures_code
 from translate_functions.translate_manual import translate_manual
 from translate_types import TypeCourse, TypeLanguage, TypeContent
-from constants import COURSES, CONTENT_TYPES, LANGUAGES, NOTES, SPECIFICATIONS, MANUAL, PSETS, PSETS_CODE, LABS_CODE, PSETS_CHECKS, LABS_CHECKS
+from constants import COURSES, CONTENT_TYPES, LANGUAGES, NOTES, SPECIFICATIONS, MANUAL, PSETS, PSETS_CODE, LABS_CODE, PSETS_CHECKS, LABS_CHECKS,LECTURES_CODE
 from check_translation import check
 
 print("\n")
@@ -38,6 +39,7 @@ else:
     elif not LANGUAGE in LANGUAGES:
         raise Exception("Error: Invalid language")
     else:
+        print("Starting translation")
         if CONTENT_TYPE == PSETS:
             translate_psets(COURSE, LANGUAGE)
         elif CONTENT_TYPE == PSETS_CODE:
@@ -54,3 +56,6 @@ else:
             translate_manual(COURSE, LANGUAGE)
         elif CONTENT_TYPE == SPECIFICATIONS:
             translate_specifications(COURSE, LANGUAGE)
+        elif CONTENT_TYPE == LECTURES_CODE:
+            translate_lectures_code(COURSE, LANGUAGE)
+        print("Finished translation")
