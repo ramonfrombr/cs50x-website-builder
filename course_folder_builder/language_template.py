@@ -48,6 +48,8 @@ menu: IMenu = {
     "title": "",
     "intro": "",
     "week": "",
+    "week0": "",
+    "week1": "",
     "week2": "",
     "week3": "",
     "week4": "",
@@ -203,15 +205,4 @@ week_9: IWeek = {
     "pdf_slides_link": "",
 }
 
-week_10: IWeek = {
-    "name": "",
-    "number": 10,
-    "study_guide": "",
-    "lecture_url": "",
-    "lecture_embed_url": "",
-    "pdf_code_link": "",
-    "zip_code_link": "",
-    "google_slides_link": "",
-    "pdf_slides_link": "",
-}
 """

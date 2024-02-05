@@ -10,7 +10,7 @@ from flask import current_app
 @bp.route('/index.html')
 def psets():
    return render_template(
-        f'{os.environ["COURSE_LANGUAGE"]}/psets/index.html',
+        f'${course}/{os.environ["COURSE_LANGUAGE"]}/psets/index.html',
     )
 
 #############################################################################
@@ -21,7 +21,7 @@ def psets():
 @bp.route('/0.html')
 def pset0():
    return render_template(
-        f'{os.environ["COURSE_LANGUAGE"]}/psets/0.html',
+        f'${course}/{os.environ["COURSE_LANGUAGE"]}/psets/0.html',
     )
 
 @bp.route('/0/pset0_project/')
@@ -44,7 +44,7 @@ def pset0_project():
 @bp.route('/1.html')
 def pset1():
     return render_template(
-        f'{os.environ["COURSE_LANGUAGE"]}/psets/1.html',
+        f'${course}/{os.environ["COURSE_LANGUAGE"]}/psets/1.html',
     )
 
 @bp.route(f"/1/pset1_project/")
@@ -67,7 +67,7 @@ def pset1_project():
 @bp.route('/2.html')
 def pset2():
     return render_template(
-        f'{os.environ["COURSE_LANGUAGE"]}/psets/2.html',
+        f'${course}/{os.environ["COURSE_LANGUAGE"]}/psets/2.html',
     )
 
 @bp.route(f"/2/pset2_project/")
@@ -89,7 +89,7 @@ def pset2_project():
 @bp.route('/3.html')
 def pset3():
     return render_template(
-        f'{os.environ["COURSE_LANGUAGE"]}/psets/3.html',
+        f'${course}/{os.environ["COURSE_LANGUAGE"]}/psets/3.html',
     )
 
 @bp.route(f"/3/pset3_project/")
@@ -111,7 +111,7 @@ def pset3_project():
 @bp.route('/4.html')
 def pset4():
     return render_template(
-        f'{os.environ["COURSE_LANGUAGE"]}/psets/4.html',
+        f'${course}/{os.environ["COURSE_LANGUAGE"]}/psets/4.html',
     )
 
 @bp.route(f"/4/pset4_project")
@@ -133,7 +133,7 @@ def pset4_project():
 @bp.route('/5.html')
 def pset5():
     return render_template(
-        f'{os.environ["COURSE_LANGUAGE"]}/psets/5.html',
+        f'${course}/{os.environ["COURSE_LANGUAGE"]}/psets/5.html',
     )
     
 @bp.route(f"/5/pset5_project/")
@@ -155,7 +155,7 @@ def pset5_project():
 @bp.route('/6.html')
 def pset6():
     return render_template(
-        f'{os.environ["COURSE_LANGUAGE"]}/psets/6.html',
+        f'${course}/{os.environ["COURSE_LANGUAGE"]}/psets/6.html',
     )
 
 @bp.route(f"/6/pset6_project/")
@@ -177,7 +177,7 @@ def pset6_project():
 @bp.route('/7.html')
 def pset7():
     return render_template(
-        f'{os.environ["COURSE_LANGUAGE"]}/psets/7.html',
+        f'${course}/{os.environ["COURSE_LANGUAGE"]}/psets/7.html',
     )
 
 @bp.route(f"/7/pset7_project/")
@@ -199,7 +199,7 @@ def pset7_project():
 @bp.route('/8.html')
 def pset8():
     return render_template(
-        f'{os.environ["COURSE_LANGUAGE"]}/psets/8.html',
+        f'${course}/{os.environ["COURSE_LANGUAGE"]}/psets/8.html',
     )
     
 @bp.route(f"/8/pset8_project/")
@@ -221,7 +221,7 @@ def pset8_project():
 @bp.route('/9.html')
 def pset9():
     return render_template(
-        f'{os.environ["COURSE_LANGUAGE"]}/psets/9.html',
+        f'${course}/{os.environ["COURSE_LANGUAGE"]}/psets/9.html',
     )
 
 @bp.route(f"/9/pset9_project/")

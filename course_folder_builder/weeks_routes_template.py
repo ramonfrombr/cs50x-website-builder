@@ -1,4 +1,6 @@
-weeks_routes_template = """import os
+from string import Template
+
+weeks_routes_template = Template("""import os
 from flask import Blueprint, render_template
 from . import weeks_bp as bp
 
@@ -126,13 +128,13 @@ elif os.environ["COURSE_LANGUAGE"] == "english":
 @bp.route('/')
 @bp.route('/index.html')
 def weeks():
-    return render_template('weeks/index.html')
+    return render_template('${course}/weeks/index.html')
 
 @bp.route('/0')
 @bp.route('/0.html')
 def week0():
     return render_template(
-        'weeks/layout.html',
+        '${course}/weeks/layout.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week0"]
     )
@@ -141,7 +143,7 @@ def week0():
 @bp.route('/1.html')
 def week1():
     return render_template(
-        'weeks/layout.html',
+        '${course}/weeks/layout.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week1"]
     )
@@ -150,7 +152,7 @@ def week1():
 @bp.route('/2.html')
 def week2():
     return render_template(
-        'weeks/layout.html',
+        '${course}/weeks/layout.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week2"]
     )
@@ -159,7 +161,7 @@ def week2():
 @bp.route('/3.html')
 def week3():
     return render_template(
-        'weeks/layout.html',
+        '${course}/weeks/layout.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week3"]
     )
@@ -168,7 +170,7 @@ def week3():
 @bp.route('/4.html')
 def week4():
     return render_template(
-        'weeks/layout.html',
+        '${course}/weeks/layout.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week4"]
     )
@@ -177,7 +179,7 @@ def week4():
 @bp.route('/5.html')
 def week5():
     return render_template(
-        'weeks/layout.html',
+        '${course}/weeks/layout.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week5"]
     )
@@ -186,7 +188,7 @@ def week5():
 @bp.route('/6.html')
 def week6():
     return render_template(
-        'weeks/layout.html',
+        '${course}/weeks/layout.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week6"]
     )
@@ -195,7 +197,7 @@ def week6():
 @bp.route('/7.html')
 def week7():
     return render_template(
-        'weeks/layout.html',
+        '${course}/weeks/layout.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week7"]
     )
@@ -204,7 +206,7 @@ def week7():
 @bp.route('/8.html')
 def week8():
     return render_template(
-        'weeks/layout.html',
+        '${course}/weeks/layout.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week8"]
     )
@@ -213,7 +215,7 @@ def week8():
 @bp.route('/9.html')
 def week9():
     return render_template(
-        'weeks/layout.html',
+        '${course}/weeks/layout.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week9"]
     )
@@ -222,8 +224,8 @@ def week9():
 @bp.route('/10.html')
 def week10():
     return render_template(
-        'weeks/10.html',
+        '${course}/weeks/10.html',
         week_page=weeks_content["week_page"],
         week=weeks_content["week10"]
     )
-"""
+""")

@@ -1,0 +1,127 @@
+<aside class="col-md" style="background-color: {{config['ASIDE_BG_COLOR']}}">
+  <header>
+    <h2 data-id="this-is-cs50">
+      <a href="{{ url_for('web.index') }}"
+        >{{config['LANGUAGE_MENU_web'].title}}</a
+      >
+    </h2>
+  </header>
+
+  <button
+    aria-controls="nav"
+    aria-expanded="false"
+    class="btn btn-sm collapsed d-md-none"
+    data-target="aside &gt; nav"
+    data-toggle="collapse"
+  >
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr />
+    <ul class="fa-ul">
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('web.weeks.week0') }}"
+          >{{config['LANGUAGE_MENU'].week}} 0
+          <span class="semana-titulo"
+            >{{config['LANGUAGE_MENU_web'].week0}}</span
+          ></a
+        >
+      </li>
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('web.weeks.week1') }}"
+          >{{config['LANGUAGE_MENU'].week}} 1
+          <span class="semana-titulo"
+            >{{config['LANGUAGE_MENU_web'].week1}}</span
+          ></a
+        >
+      </li>
+
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('web.weeks.week2') }}"
+          >{{config['LANGUAGE_MENU'].week}} 2
+          <span class="semana-titulo"
+            >{{config['LANGUAGE_MENU_web'].week2}}</span
+          ></a
+        >
+      </li>
+
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('web.weeks.week3') }}"
+          >{{config['LANGUAGE_MENU'].week}} 3
+          <span class="semana-titulo"
+            >{{config['LANGUAGE_MENU_web'].week3}}</span
+          ></a
+        >
+      </li>
+
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('web.weeks.week4') }}"
+          >{{config['LANGUAGE_MENU'].week}} 4
+          <span class="semana-titulo"
+            >{{config['LANGUAGE_MENU_web'].week4}}</span
+          ></a
+        >
+      </li>
+
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('web.weeks.week5') }}"
+          >{{config['LANGUAGE_MENU'].week}} 5
+          <span class="semana-titulo"
+            >{{config['LANGUAGE_MENU_web'].week5}}</span
+          ></a
+        >
+      </li>
+
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('web.weeks.week6') }}"
+          >{{config['LANGUAGE_MENU'].week}} 6
+          <span class="semana-titulo"
+            >{{config['LANGUAGE_MENU_web'].week6}}</span
+          ></a
+        >
+      </li>
+
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('web.weeks.week7') }}"
+          >{{config['LANGUAGE_MENU'].week}} 7
+          <span class="semana-titulo"
+            >{{config['LANGUAGE_MENU_web'].week7}}</span
+          ></a
+        >
+      </li>
+
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('web.weeks.week8') }}"
+          >{{config['LANGUAGE_MENU'].week}} 8
+          <span class="semana-titulo"
+            >{{config['LANGUAGE_MENU_web'].week8}}</span
+          ></a
+        >
+      </li>
+
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('web.weeks.week9') }}"
+          >{{config['LANGUAGE_MENU'].week}} 9
+          <span class="semana-titulo"
+            >{{config['LANGUAGE_MENU_web'].week9}}</span
+          ></a
+        >
+      </li>
+    </ul>
+    <hr />
+    {% include 'components/courses.html' %}
+    <hr />
+  </nav>
+  <footer></footer>
+</aside>

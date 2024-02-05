@@ -1,11 +1,7 @@
 from .translate import translate
-import os
-from translate_types import TypeCourse
+from translate_types import TypeCourse,TypeLanguage
+from get_files import get_files
 
-def get_checks(course: TypeCourse):
-    checks = [check for check in os.listdir(f'{course}/content/english/psets_checks')]
-    return checks
-
-def translate_psets_checks(course, language):
-    checks = get_checks(course)
+def translate_psets_checks(course: TypeCourse, language: TypeLanguage):
+    checks = get_files(course, "psets_checks")
     translate(course, checks, "psets_checks", language, "py", "Python code")

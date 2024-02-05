@@ -118,7 +118,7 @@ elif os.environ["COURSE_LANGUAGE"] == "english":
 @bp.route('/')
 @bp.route('/index.html')
 def weeks():
-    return render_template('weeks/index.html')
+    return render_template('${course}/weeks/index.html')
 
 @bp.route('/0')
 @bp.route('/0.html')
