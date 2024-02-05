@@ -1,0 +1,43 @@
+{% extends 'python/layout.html' %} {% block conteudo %}
+<h1 id="problem-set-6">Conjunto de Problemas 6</h1>
+
+<h2 id="what-to-do">O que fazer</h2>
+
+<ol>
+  <li>
+    Faça login em <a href="https://cs50.dev/">cs50.dev</a>, que é uma versão baseada em nuvem do Visual Studio Code (VS Code) que fornece seu próprio "codespace" com tudo o que você precisa para o curso pré-instalado. Não é necessário baixar e instalar o VS Code ou o Python em seu próprio Mac ou PC!
+  </li>
+  <li>
+    Execute
+    <code class="language-plaintext highlighter-rouge">update50</code> na janela do terminal do seu codespace para garantir que seu codespace esteja atualizado; se solicitado, clique em <strong>Reconstruir agora</strong>.
+  </li>
+  <li>
+    Envie todos os problemas a seguir:
+    <ul>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.lines') }}">Linhas de Código</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.pizza') }}">Pizza Py</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.scourgify') }}">Scourgify</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.shirt') }}">Camiseta CS50</a>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="when-to-do-it">Quando Fazer</h2>
+
+<p>
+  Até
+  <a
+    data-local="2024-12-31T23:59:00-05:00"
+    href="https://time.cs50.io/20241231T235900-0500"
+    >2024-12-31T23:59:00-05:00</a
+  >.
+</p>
+{% endblock %}

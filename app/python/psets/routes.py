@@ -26,7 +26,7 @@ def pset0():
 @bp.route('/0/einstein.html')
 def einstein():
 
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/0/einstein.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/einstein.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -38,7 +38,7 @@ def einstein():
 @bp.route('/0/faces.html')
 def faces():
 
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/0/faces.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/faces.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -50,7 +50,7 @@ def faces():
 @bp.route('/0/indoor.html')
 def indoor():
 
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/0/indoor.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/indoor.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -62,7 +62,7 @@ def indoor():
 @bp.route('/0/playback.html')
 def playback():
 
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/0/playback.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/playback.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -74,7 +74,7 @@ def playback():
 @bp.route('/0/tip.html')
 def tip():
 
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/0/tip.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/tip.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -97,7 +97,7 @@ def pset1():
 @bp.route(f"/1/bank.html")
 def bank():
     
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/1/bank.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/bank.md", "r") as f:
         markdown_text = f.read()
     
     return render_template(
@@ -109,7 +109,7 @@ def bank():
 @bp.route(f"/1/deep.html")
 def deep():
     
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/1/deep.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/deep.md", "r") as f:
         markdown_text = f.read()
     
     return render_template(
@@ -121,7 +121,7 @@ def deep():
 @bp.route(f"/1/extensions.html")
 def extensions():
     
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/1/extensions.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/extensions.md", "r") as f:
         markdown_text = f.read()
     
     return render_template(
@@ -133,7 +133,7 @@ def extensions():
 @bp.route(f"/1/interpreter.html")
 def interpreter():
     
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/1/interpreter.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/interpreter.md", "r") as f:
         markdown_text = f.read()
     
     return render_template(
@@ -145,7 +145,7 @@ def interpreter():
 @bp.route(f"/1/meal.html")
 def meal():
     
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/1/meal.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/meal.md", "r") as f:
         markdown_text = f.read()
     
     return render_template(
@@ -168,7 +168,7 @@ def pset2():
 @bp.route(f"/2/camel/")
 @bp.route(f"/2/camel.html")
 def camel():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/2/camel.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/camel.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -179,7 +179,7 @@ def camel():
 @bp.route(f"/2/coke/")
 @bp.route(f"/2/coke.html")
 def coke():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/2/coke.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/coke.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -190,7 +190,7 @@ def coke():
 @bp.route(f"/2/nutrition/")
 @bp.route(f"/2/nutrition.html")
 def nutrition():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/2/nutrition.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/nutrition.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -201,7 +201,7 @@ def nutrition():
 @bp.route(f"/2/plates/")
 @bp.route(f"/2/plates.html")
 def plates():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/2/plates.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/plates.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -212,7 +212,7 @@ def plates():
 @bp.route(f"/2/twttr/")
 @bp.route(f"/2/twttr.html")
 def twttr():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/2/twttr.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/twttr.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -234,7 +234,7 @@ def pset3():
 @bp.route(f"/3/fuel/")
 @bp.route(f"/3/fuel.html")
 def fuel():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/3/fuel.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/fuel.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -245,7 +245,7 @@ def fuel():
 @bp.route(f"/3/grocery/")
 @bp.route(f"/3/grocery.html")
 def grocery():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/3/grocery.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/grocery.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -256,7 +256,7 @@ def grocery():
 @bp.route(f"/3/outdated/")
 @bp.route(f"/3/outdated.html")
 def outdated():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/3/outdated.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/outdated.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -267,7 +267,7 @@ def outdated():
 @bp.route(f"/3/taqueria/")
 @bp.route(f"/3/taqueria.html")
 def taqueria():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/3/taqueria.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/taqueria.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -289,7 +289,7 @@ def pset4():
 @bp.route(f"/4/adieu/")
 @bp.route(f"/4/adieu.html")
 def adieu():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/4/adieu.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/adieu.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -300,7 +300,7 @@ def adieu():
 @bp.route(f"/4/bitcoin/")
 @bp.route(f"/4/bitcoin.html")
 def bitcoin():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/4/bitcoin.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/bitcoin.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -311,7 +311,7 @@ def bitcoin():
 @bp.route(f"/4/emojize/")
 @bp.route(f"/4/emojize.html")
 def emojize():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/4/emojize.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/emojize.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -322,7 +322,7 @@ def emojize():
 @bp.route(f"/4/figlet/")
 @bp.route(f"/4/figlet.html")
 def figlet():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/4/figlet.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/figlet.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -333,7 +333,7 @@ def figlet():
 @bp.route(f"/4/game/")
 @bp.route(f"/4/game.html")
 def game():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/4/game.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/game.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -344,7 +344,7 @@ def game():
 @bp.route(f"/4/professor/")
 @bp.route(f"/4/professor.html")
 def professor():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/4/professor.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/professor.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -366,7 +366,7 @@ def pset5():
 @bp.route(f"/5/test_bank/")
 @bp.route(f"/5/test_bank.html")
 def test_bank():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/5/test_bank.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/test_bank.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -377,7 +377,7 @@ def test_bank():
 @bp.route(f"/5/test_fuel/")
 @bp.route(f"/5/test_fuel.html")
 def test_fuel():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/5/test_fuel.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/test_fuel.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -388,7 +388,7 @@ def test_fuel():
 @bp.route(f"/5/test_plates/")
 @bp.route(f"/5/test_plates.html")
 def test_plates():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/5/test_plates.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/test_plates.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -399,7 +399,7 @@ def test_plates():
 @bp.route(f"/5/test_twttr/")
 @bp.route(f"/5/test_twttr.html")
 def test_twttr():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/5/test_twttr.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/test_twttr.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -421,7 +421,7 @@ def pset6():
 @bp.route(f"/6/lines/")
 @bp.route(f"/6/lines.html")
 def lines():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/6/lines.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/lines.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -432,7 +432,7 @@ def lines():
 @bp.route(f"/6/pizza/")
 @bp.route(f"/6/pizza.html")
 def pizza():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/6/pizza.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/pizza.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -443,7 +443,7 @@ def pizza():
 @bp.route(f"/6/scourgify/")
 @bp.route(f"/6/scourgify.html")
 def scourgify():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/6/scourgify.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/scourgify.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -454,7 +454,7 @@ def scourgify():
 @bp.route(f"/6/shirt/")
 @bp.route(f"/6/shirt.html")
 def shirt():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/6/shirt.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/shirt.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -476,7 +476,7 @@ def pset7():
 @bp.route(f"/7/numb3rs/")
 @bp.route(f"/7/numb3rs.html")
 def numb3rs():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/7/numb3rs.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/numb3rs.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -487,7 +487,7 @@ def numb3rs():
 @bp.route(f"/7/response/")
 @bp.route(f"/7/response.html")
 def response():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/7/response.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/response.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -498,7 +498,7 @@ def response():
 @bp.route(f"/7/um/")
 @bp.route(f"/7/um.html")
 def um():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/7/um.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/um.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -509,7 +509,7 @@ def um():
 @bp.route(f"/7/watch/")
 @bp.route(f"/7/watch.html")
 def watch():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/7/watch.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/watch.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -520,7 +520,7 @@ def watch():
 @bp.route(f"/7/working/")
 @bp.route(f"/7/working.html")
 def working():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/7/working.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/working.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -542,7 +542,7 @@ def pset8():
 @bp.route(f"/8/jar/")
 @bp.route(f"/8/jar.html")
 def jar():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/8/jar.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/jar.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -553,7 +553,7 @@ def jar():
 @bp.route(f"/8/seasons/")
 @bp.route(f"/8/seasons.html")
 def seasons():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/8/seasons.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/seasons.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
@@ -564,7 +564,7 @@ def seasons():
 @bp.route(f"/8/shirtificate/")
 @bp.route(f"/8/shirtificate.html")
 def shirtificate():
-    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/8/shirtificate.md", "r") as f:
+    with open(f"app/python/content/{os.environ['COURSE_LANGUAGE']}/specifications/shirtificate.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(

@@ -1,0 +1,47 @@
+{% extends 'python/layout.html' %} {% block conteudo %}
+<h1 id="problem-set-8">Conjunto de Problemas 8</h1>
+
+<h2 id="what-to-do">O que Fazer</h2>
+
+<ol>
+  <li>
+    Acesse o <a href="https://cs50.dev/">cs50.dev</a>, que é uma versão baseada na nuvem
+    do Visual Studio Code (VS Code) que fornece seu próprio
+    "codespace" com tudo o que você precisa para o curso pré-instalado. Não
+    é necessário baixar e instalar o VS Code ou Python em seu próprio Mac ou PC!
+  </li>
+  <li>
+    Execute
+    <code class="language-plaintext highlighter-rouge">update50</code> na
+    janela do terminal do seu codespace para garantir que seu codespace esteja atualizado; se
+    solicitado, clique em <strong>Rebuild now</strong>.
+  </li>
+  <li>
+    Envie todos os problemas abaixo:
+    <ul>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.seasons') }}">Estações do Amor</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.jar') }}">Pote de Biscoitos</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.shirtificate') }}"
+          >Certificado de Camiseta CS50</a
+        >
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="when-to-do-it">Quando Fazer</h2>
+
+<p>
+  Até
+  <a
+    data-local="2024-12-31T23:59:00-05:00"
+    href="https://time.cs50.io/20241231T235900-0500"
+    >2024-12-31T23:59:00-05:00</a
+  >.
+</p>
+{% endblock %}

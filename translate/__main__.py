@@ -1,16 +1,15 @@
 import sys
 from translate_functions.translate_notes import translate_notes
-from translate_functions.translate_specifications import translate_specifications, translate_specifications_part1, translate_specifications_part2, translate_specifications_divided_part1, translate_specifications_divided_part2
 from translate_functions.translate_psets import translate_psets
+from translate_functions.translate_specifications import translate_specifications
 from translate_functions.translate_labs_code import translate_labs_code
-from translate_functions.translate_psets_code import translate_psets_code
 from translate_functions.translate_labs_checks import translate_labs_checks
 from translate_functions.translate_psets_checks import translate_psets_checks
 from translate_functions.translate_lectures_code import translate_lectures_code
-from translate_functions.translate_manual import translate_manual
 from translate_types import TypeCourse, TypeLanguage, TypeContent
-from constants import COURSES, CONTENT_TYPES, LANGUAGES, NOTES, SPECIFICATIONS, MANUAL, PSETS, PSETS_CODE, LABS_CODE, PSETS_CHECKS, LABS_CHECKS,LECTURES_CODE
+from constants import COURSES, CONTENT_TYPES, LANGUAGES, NOTES, SPECIFICATIONS, MANUAL, PSETS, PSETS_CODE, LABS_CODE, PSETS_CHECKS, LABS_CHECKS,LECTURES_CODE, ContentTypes
 from check_translation import check
+
 
 print("\n")
 print("Translation tool for CS50x Website Builder")
@@ -40,22 +39,21 @@ else:
         raise Exception("Error: Invalid language")
     else:
         print("Starting translation")
-        if CONTENT_TYPE == PSETS:
+        match CONTENT_TYPE:
+          case ContentTypes.PSETS:
             translate_psets(COURSE, LANGUAGE)
-        elif CONTENT_TYPE == PSETS_CODE:
-            translate_psets_code(COURSE, LANGUAGE)
-        elif CONTENT_TYPE == PSETS_CHECKS:
+          case ContentTypes.PSETS_CHECKS:
             translate_psets_checks(COURSE, LANGUAGE)
-        elif CONTENT_TYPE == LABS_CODE:
+          case ContentTypes.LABS_CODE:
             translate_labs_code(COURSE, LANGUAGE)
-        elif CONTENT_TYPE == LABS_CHECKS:
+          case ContentTypes.LABS_CHECKS:
             translate_labs_checks(COURSE, LANGUAGE)
-        elif CONTENT_TYPE == NOTES:
+          case ContentTypes.NOTES:
             translate_notes(COURSE, LANGUAGE)
-        elif CONTENT_TYPE == MANUAL:
-            translate_manual(COURSE, LANGUAGE)
-        elif CONTENT_TYPE == SPECIFICATIONS:
-            translate_specifications(COURSE, LANGUAGE)
-        elif CONTENT_TYPE == LECTURES_CODE:
+          case ContentTypes.LECTURES_CODE:
             translate_lectures_code(COURSE, LANGUAGE)
+          case ContentTypes.SPECIFICATIONS:
+            translate_specifications(COURSE, LANGUAGE)
+          case _:
+            print("Content type not found")
         print("Finished translation")

@@ -48,7 +48,7 @@ def zero_argv():
 @check50.verifique(compila)
 def rejeitar_entrada():
     """wordle rejeita entradas que não sejam 5, 6, 7, ou 8"""
-    para i em [3, 4, 9]:
+    for i in [3, 4, 9]:
         check50.c.executa(f"./wordle {i}").saida(1)
 
 

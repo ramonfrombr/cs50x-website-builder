@@ -1,0 +1,33 @@
+[MUSIC PLAYING] SPEAKER: OK, so we've seen so far that functions are these building blocks of programs that take input and produce output. Now, it turns out as we look more closely, functions can produce two kinds of outputs. One kind is a return value. And one kind is a side effect. So in this short, we'll look more closely at return values and what they can do to make our programs more flexible as you go off and write more complex programs over time. 
+
+Now, here, I have a function called Greet, where Greet takes an input, as you can see on line one. Now, the function does something very simple. It basically asks the question, is "hello," this text "hello," is that in the input? And if it is, it's going to print on the terminal "hello, there" in response. 
+
+Otherwise, it's going to say "I'm not sure what you mean." So it is if "hello" is not in the input, it's going to say "I'm not sure what you're talking about," which is fine. This is a very simple chat bot, if you will. 
+
+So I'll go down to line eight and let me try to actually run this function to call it with some input. So I'll type Greet down below and I'll say hello to the computer. I'll say "hello, computer." I'll save it. And I'll say python of greeting.py in my terminal, hit Enter, and now I should see "hello, there," which is really nice. 
+
+So this is an example of a side effect. I'm seeing something in my terminal. But a return value is slightly different. A return value is some value a function can pass to my program to use later on in my code. And actually, right now, I haven't explicitly said that Greet returns anything. 
+
+To do that, I need to use this keyword called Return in Python. So instead of printing here where printing produces some side effect of text on the screen, let me try returning the actual text. I'll say why don't I return "hello, there" and why don't I return "I'm not sure what you mean"? 
+
+So with this change, now I've said that Greet has an explicitly-defined return value. If hello is in the input, the return value will be "hello, there." If "hello" is not in the input, the return value will be "I'm not sure what you mean." 
+
+So let's try this again. I'll say python of greeting.py, and I'll hit enter. And I don't see anything anymore, but that doesn't mean things are broken. So what happens now is that Greet is returning some value, but I'm not really capturing it or using it in my program yet. 
+
+To capture it and to use it later on, I need to make sure I store the return value inside of some variable. And I can do that, let's say, in a variable called Greeting. So I'll say Greeting equals the result, or the return value of calling Greet with this input called "hello, computer." 
+
+So now line-by-line what will happen is I will first run Greet and I'll give the input "hello, computer." "Hello" is in that input, so Greet will return to me the value "hello, there" and it will then store it using this Greeting variable in this assignment operator, this equal sign here, inside this variable called Greeting. And now, I could actually go ahead and print the greeting itself. So on line nine here, I'll print Greeting. 
+
+Now, I'll try this. I'll say python of greeting.py and I'll hit Enter, and now I see "hello, there." What if I did something like, how's the weather, like this? I'll say python of greeting.py, and now I see "I'm not sure what you mean." So, kind of nice. 
+
+Now I'll say "hello, computer" again. And notice I can take this variable and modify it in all kinds of ways. Before, when I just had these simple print statements in Greet, going back to something like this, print "hello there" and print "I'm not sure what you mean," those were the only things I could print. 
+
+But now with the return value, I get access to all kinds of ways I could modify the return value later on in my code. Maybe I could do something like this. If maybe I could say-- why don't I print not just Greeting, but why don't I print something like "hm" and then add the greeting on later. So now everything will begin with "hm" followed by the greeting. 
+
+So I'll say python greeting.py, and now it should say "hm, hello, there." Or, I could say something like "how's the weather?" "How's the weather." Now I could say python greeting.py, and it's a little more thoughtful. "Hm, I'm not sure what you mean." 
+
+And I could even go further. I could say "hello, computer" again. And why don't I try to have different kinds of greetings? I could say a greeting and then I could say, space, "Carter," just like this. And now I could say python of greeting.py, and it says, oh, "hello, there, Carter." 
+
+Or, I could do greeting plus David, and now it says python greeting.py, and then "hello, there, David," or Rongxin. I could type any name after this and I could kind of add on people's names at the end. 
+
+So as you can see, the value of return value is that it allows us to modify things throughout our code and to use the output of some function later on. A side effect is slightly different. It simply produces some change immediately, whereas a return value, you can use throughout our code as you go off and build new programs. 
