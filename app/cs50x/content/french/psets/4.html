@@ -1,14 +1,23 @@
-{% extends 'layout.html' %} {% block conteudo %}
+{% extends 'layout.html' %} {% block content %}
 
 <h1 id="problem-set-4">Ensemble de problèmes 4</h1>
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    La collaboration sur les ensembles de problèmes n'est pas autorisée, sauf dans la mesure où vous pouvez demander de l'aide à vos camarades de classe et à d'autres personnes, à condition que cette aide ne se réduise pas à quelqu'un d'autre qui fait votre travail pour vous, conformément à la politique du cours sur l'<a href="{{url_for('cs50x.honesty')}}">honnêteté académique</a>.
+    La collaboration sur les ensembles de problèmes n'est pas autorisée, sauf
+    dans la mesure où vous pouvez demander de l'aide à vos camarades de classe
+    et à d'autres personnes, à condition que cette aide ne se réduise pas à
+    quelqu'un d'autre qui fait votre travail pour vous, conformément à la
+    politique du cours sur l'<a href="{{url_for('cs50x.honesty')}}"
+      >honnêteté académique</a
+    >.
   </p>
 
   <p>
-    L'équipe effectue des vérifications aléatoires des soumissions à CS50x. Les étudiants qui enfreignent cette politique seront exclus du cours. Les étudiants qui ont déjà terminé CS50x et qui sont reconnus coupables d'infraction verront leur certificat CS50 révoqué de manière permanente.
+    L'équipe effectue des vérifications aléatoires des soumissions à CS50x. Les
+    étudiants qui enfreignent cette politique seront exclus du cours. Les
+    étudiants qui ont déjà terminé CS50x et qui sont reconnus coupables
+    d'infraction verront leur certificat CS50 révoqué de manière permanente.
   </p>
 </div>
 
@@ -16,26 +25,37 @@
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    Assurez-vous d'avoir terminé <a href="{{url_for('cs50x.labs.lab4')}}">le Laboratoire 4</a> avant de commencer cet ensemble de problèmes.
+    Assurez-vous d'avoir terminé
+    <a href="{{url_for('cs50x.labs.lab4')}}">le Laboratoire 4</a> avant de
+    commencer cet ensemble de problèmes.
   </p>
 </div>
 
 <ol>
   <li>
-    Connectez-vous à <a href="https://code.cs50.io">code.cs50.io</a> en utilisant votre compte GitHub.
+    Connectez-vous à <a href="https://code.cs50.io">code.cs50.io</a> en
+    utilisant votre compte GitHub.
   </li>
   <li>
-    Exécutez <code class="language-plaintext highlighter-rouge">update50</code> dans la fenêtre du terminal de votre espace de code pour vous assurer que votre espace de code est à jour et, lorsque vous y êtes invité, cliquez sur <strong>Reconstruire maintenant</strong>.
+    Exécutez
+    <code class="language-plaintext highlighter-rouge">update50</code> dans la
+    fenêtre du terminal de votre espace de code pour vous assurer que votre
+    espace de code est à jour et, lorsque vous y êtes invité, cliquez sur
+    <strong>Reconstruire maintenant</strong>.
   </li>
   <li>
     Soumettez l'une des options suivantes :
     <ul>
       <li data-marker="*">
-        <a href="{{url_for('cs50x.psets.filter_less')}}">cette version de Filter</a>
+        <a href="{{url_for('cs50x.psets.filter_less')}}"
+          >cette version de Filter</a
+        >
         si vous vous sentez moins à l'aise
       </li>
       <li data-marker="*">
-        <a href="{{url_for('cs50x.psets.filter_more')}}">cette version de Filter</a>
+        <a href="{{url_for('cs50x.psets.filter_more')}}"
+          >cette version de Filter</a
+        >
         si vous vous sentez plus à l'aise
       </li>
     </ul>
@@ -54,7 +74,8 @@
 </ol>
 
 <p>
-  Si vous soumettez les deux versions de Filter, nous enregistrerons la meilleure de vos deux notes.
+  Si vous soumettez les deux versions de Filter, nous enregistrerons la
+  meilleure de vos deux notes.
 </p>
 
 <h2 id="when-to-do-it">Quand le faire</h2>
@@ -77,8 +98,12 @@
   </li>
   <li data-marker="*">
     Si vous voyez des erreurs lors de la compilation de votre code avec
-    <code class="language-plaintext highlighter-rouge">make</code>, concentrez-vous d'abord sur la réparation de la toute première erreur que vous voyez, en faisant défiler vers le haut si nécessaire. Si vous n'êtes pas sûr de ce que cela signifie, essayez de demander de l'aide à
-    <code class="language-plaintext highlighter-rouge">help50</code>. Par exemple, si vous essayez de compiler
+    <code class="language-plaintext highlighter-rouge">make</code>,
+    concentrez-vous d'abord sur la réparation de la toute première erreur que
+    vous voyez, en faisant défiler vers le haut si nécessaire. Si vous n'êtes
+    pas sûr de ce que cela signifie, essayez de demander de l'aide à
+    <code class="language-plaintext highlighter-rouge">help50</code>. Par
+    exemple, si vous essayez de compiler
     <code class="language-plaintext highlighter-rouge">filter</code>, et que
     <div class="language-plaintext highlighter-rouge">
       <div class="highlight">

@@ -1,15 +1,21 @@
-{% extends 'layout.html' %} {% block conteudo %}
+{% extends 'layout.html' %} {% block content %}
 
 <h1 id="problem-set-9">Problem Set 9</h1>
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    A colaboração nos conjuntos de problemas não é permitida, exceto na medida em que você pode pedir ajuda a colegas e a outras pessoas, desde que essa ajuda não se resuma a outra pessoa fazer o trabalho por você, de acordo com a política de integridade acadêmica do curso.
+    A colaboração nos conjuntos de problemas não é permitida, exceto na medida
+    em que você pode pedir ajuda a colegas e a outras pessoas, desde que essa
+    ajuda não se resuma a outra pessoa fazer o trabalho por você, de acordo com
+    a política de integridade acadêmica do curso.
     <a href="{{url_for('cs50x.honesty')}}">integridade acadêmica</a>.
   </p>
 
   <p>
-    A equipe realiza auditorias aleatórias das submissões do CS50x. Estudantes que forem encontrados em violação dessa política serão removidos do curso. Estudantes que já tenham concluído o CS50x, se encontrados em violação, terão seu Certificado CS50 permanentemente revogado.
+    A equipe realiza auditorias aleatórias das submissões do CS50x. Estudantes
+    que forem encontrados em violação dessa política serão removidos do curso.
+    Estudantes que já tenham concluído o CS50x, se encontrados em violação,
+    terão seu Certificado CS50 permanentemente revogado.
   </p>
 </div>
 
@@ -29,8 +35,11 @@
     conta do GitHub
   </li>
   <li>
-    Execute <code class="language-plaintext highlighter-rouge">update50</code> na
-    janela do terminal do seu espaço de código para garantir que seu espaço de código esteja atualizado e, quando solicitado, clique em <strong>Rebuild now</strong>
+    Execute
+    <code class="language-plaintext highlighter-rouge">update50</code> na janela
+    do terminal do seu espaço de código para garantir que seu espaço de código
+    esteja atualizado e, quando solicitado, clique em
+    <strong>Rebuild now</strong>
   </li>
   <li>Envie <a href="{{url_for('cs50x.psets.finance')}}">Finance</a></li>
 </ol>

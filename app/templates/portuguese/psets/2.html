@@ -1,19 +1,20 @@
-{% extends 'layout.html' %} {% block conteudo %}
+{% extends 'layout.html' %} {% block content %}
 <h1 id="problem-set-2">Problema Set 2</h1>
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    A colaboração nos problemas é proibida, exceto na medida em que você
-    possa pedir ajuda aos colegas e outras pessoas, desde que essa ajuda não se reduza
-    a outra pessoa fazer o trabalho por você, de acordo com a política do curso sobre
+    A colaboração nos problemas é proibida, exceto na medida em que você possa
+    pedir ajuda aos colegas e outras pessoas, desde que essa ajuda não se reduza
+    a outra pessoa fazer o trabalho por você, de acordo com a política do curso
+    sobre
     <a href="{{url_for('cs50x.honesty')}}">honestidade acadêmica</a>.
   </p>
 
   <p>
-    A equipe faz auditorias aleatórias das submissões para CS50x. Os alunos que forem
-    encontrados em violação desta política serão removidos do curso. Os alunos que
-    já tenham concluído CS50x, se forem encontrados em violação, terão seu
-    Certificado CS50 permanentemente revogado.
+    A equipe faz auditorias aleatórias das submissões para CS50x. Os alunos que
+    forem encontrados em violação desta política serão removidos do curso. Os
+    alunos que já tenham concluído CS50x, se forem encontrados em violação,
+    terão seu Certificado CS50 permanentemente revogado.
   </p>
 </div>
 
@@ -29,12 +30,14 @@
 
 <ol>
   <li>
-    Faça login em <a href="https://code.cs50.io">code.cs50.io</a> usando sua conta do GitHub
+    Faça login em <a href="https://code.cs50.io">code.cs50.io</a> usando sua
+    conta do GitHub
   </li>
   <li>
-    Execute <code class="language-plaintext highlighter-rouge">update50</code> na
-    janela do terminal do seu codespace para garantir que seu codespace esteja atualizado e,
-    quando solicitado, clique em <strong>Rebuild now</strong>
+    Execute
+    <code class="language-plaintext highlighter-rouge">update50</code> na janela
+    do terminal do seu codespace para garantir que seu codespace esteja
+    atualizado e, quando solicitado, clique em <strong>Rebuild now</strong>
   </li>
   <li>
     Envie <a href="{{url_for('cs50x.psets.readability')}}">Readability</a>
@@ -63,8 +66,8 @@
 </ol>
 
 <p>
-  Se você enviar mais de um dos problemas Bulbs, Caesar, Substitution ou Wordle50, nós
-  registraremos a pontuação mais alta entre esses problemas.
+  Se você enviar mais de um dos problemas Bulbs, Caesar, Substitution ou
+  Wordle50, nós registraremos a pontuação mais alta entre esses problemas.
 </p>
 
 <h2 id="when-to-do-it">Quando fazer</h2>
@@ -91,10 +94,11 @@
   </li>
   <li data-marker="*">
     Se você encontrar erros ao compilar seu código com
-    <code class="language-plaintext highlighter-rouge">make</code>, concentre-se primeiro
-    em corrigir o primeiro erro que você ver, se necessário, role para cima. Se não tiver certeza
-    do que isso significa, tente pedir ajuda usando
-    <code class="language-plaintext highlighter-rouge">help50</code>. Por exemplo, se estiver tentando compilar
+    <code class="language-plaintext highlighter-rouge">make</code>, concentre-se
+    primeiro em corrigir o primeiro erro que você ver, se necessário, role para
+    cima. Se não tiver certeza do que isso significa, tente pedir ajuda usando
+    <code class="language-plaintext highlighter-rouge">help50</code>. Por
+    exemplo, se estiver tentando compilar
     <code class="language-plaintext highlighter-rouge">readability</code>, e
     <div class="language-plaintext highlighter-rouge">
       <div class="highlight">

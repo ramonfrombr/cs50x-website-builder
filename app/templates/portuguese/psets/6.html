@@ -1,17 +1,20 @@
-{% extends 'layout.html' %} {% block conteudo %}
+{% extends 'layout.html' %} {% block content %}
 <h1 id="problem-set-6">Conjunto de Problemas 6</h1>
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    A colaboração nos conjuntos de problemas não é permitida, exceto na medida em que você
-    pode pedir ajuda a colegas e outros, desde que essa ajuda não se resuma a outra pessoa fazer o trabalho por você, de acordo com a política do curso sobre
+    A colaboração nos conjuntos de problemas não é permitida, exceto na medida
+    em que você pode pedir ajuda a colegas e outros, desde que essa ajuda não se
+    resuma a outra pessoa fazer o trabalho por você, de acordo com a política do
+    curso sobre
     <a href="{{url_for('cs50x.honesty')}}">honestidade acadêmica</a>.
   </p>
 
   <p>
-    A equipe realiza auditorias aleatórias das submissões para o CS50x. Os estudantes que forem encontrados em violação dessa política serão removidos do curso. Os estudantes que
-    já concluíram o CS50x terão seu
-    certificado CS50 permanentemente revogado se forem encontrados em violação.
+    A equipe realiza auditorias aleatórias das submissões para o CS50x. Os
+    estudantes que forem encontrados em violação dessa política serão removidos
+    do curso. Os estudantes que já concluíram o CS50x terão seu certificado CS50
+    permanentemente revogado se forem encontrados em violação.
   </p>
 </div>
 
@@ -27,11 +30,14 @@
 
 <ol>
   <li>
-    Faça login em <a href="https://code.cs50.io">code.cs50.io</a> usando sua conta do GitHub.
+    Faça login em <a href="https://code.cs50.io">code.cs50.io</a> usando sua
+    conta do GitHub.
   </li>
   <li>
-    Execute <code class="language-plaintext highlighter-rouge">update50</code> na
-    janela do terminal do seu espaço de código para garantir que seu espaço de código esteja atualizado.
+    Execute
+    <code class="language-plaintext highlighter-rouge">update50</code> na janela
+    do terminal do seu espaço de código para garantir que seu espaço de código
+    esteja atualizado.
   </li>
   <li>
     Envie <a href="{{url_for('cs50x.psets.python_hello')}}">Hello</a> em Python.
@@ -75,9 +81,9 @@
 </ol>
 
 <p>
-  Se você enviar as duas versões de Mario, registraremos a maior de suas
-  duas pontuações. Se você enviar tanto Cash quanto Credit, registraremos a maior de suas
-  duas pontuações.
+  Se você enviar as duas versões de Mario, registraremos a maior de suas duas
+  pontuações. Se você enviar tanto Cash quanto Credit, registraremos a maior de
+  suas duas pontuações.
 </p>
 
 <h2 id="when-to-do-it">Quando fazer</h2>
@@ -105,26 +111,32 @@
 <ul>
   <li data-marker="*">
     Para Hello, Mario, Cash, Credit e Readability, é
-    <strong>razoável</strong> olhar para implementações em C próprias e para implementações de outras pessoas <em>em C</em>.
+    <strong>razoável</strong> olhar para implementações em C próprias e para
+    implementações de outras pessoas <em>em C</em>.
   </li>
   <li data-marker="*">
-    Não é <strong>razoável</strong> olhar para implementações de outras pessoas do mesmo problema <em>em Python</em>.
+    Não é <strong>razoável</strong> olhar para implementações de outras pessoas
+    do mesmo problema <em>em Python</em>.
   </li>
   <li data-marker="*">
-    Tendo em vista que um dos objetivos desses problemas é ensinar a você como aprender uma nova linguagem, lembre-se de que esses atos são não apenas
-    <strong>razoáveis</strong>, de acordo com o programa, mas também incentivados nesse sentido:
+    Tendo em vista que um dos objetivos desses problemas é ensinar a você como
+    aprender uma nova linguagem, lembre-se de que esses atos são não apenas
+    <strong>razoáveis</strong>, de acordo com o programa, mas também
+    incentivados nesse sentido:
     <ul>
       <li data-marker="*">
-        Incorporar algumas linhas de código que você encontrar online ou em outro lugar em seu próprio código, desde que essas linhas não sejam soluções para
-        problemas atribuídos e que você cite a origem das linhas.
+        Incorporar algumas linhas de código que você encontrar online ou em
+        outro lugar em seu próprio código, desde que essas linhas não sejam
+        soluções para problemas atribuídos e que você cite a origem das linhas.
       </li>
       <li data-marker="*">
-        Recorrer à web ou a outros recursos para obter instruções além das do próprio curso, para referências e soluções para dificuldades técnicas, mas não para
-        soluções completas para os problemas do conjunto de problemas ou para seu próprio projeto final.
+        Recorrer à web ou a outros recursos para obter instruções além das do
+        próprio curso, para referências e soluções para dificuldades técnicas,
+        mas não para soluções completas para os problemas do conjunto de
+        problemas ou para seu próprio projeto final.
       </li>
     </ul>
   </li>
 </ul>
 
-{% endblock %}
-'
+{% endblock %} '

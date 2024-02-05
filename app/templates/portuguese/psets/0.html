@@ -1,13 +1,20 @@
-{% extends 'layout.html' %} {% block conteudo %}
+{% extends 'layout.html' %} {% block content %}
 <h1 id="problem-set-0">Lista de Problemas 0</h1>
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    Colaboração nas listas de problemas não é permitida, exceto na medida em que você possa pedir ajuda aos seus colegas de turma e outras pessoas, desde que essa ajuda não se resuma a outra pessoa fazendo seu trabalho, de acordo com a política de <a href="{{url_for('cs50x.honesty')}}">honestidade acadêmica</a> do curso.
+    Colaboração nas listas de problemas não é permitida, exceto na medida em que
+    você possa pedir ajuda aos seus colegas de turma e outras pessoas, desde que
+    essa ajuda não se resuma a outra pessoa fazendo seu trabalho, de acordo com
+    a política de
+    <a href="{{url_for('cs50x.honesty')}}">honestidade acadêmica</a> do curso.
   </p>
 
   <p>
-    A equipe faz auditorias aleatórias dos envios para o CS50x. Os alunos encontrados em violação desta política serão removidos do curso. Os alunos que já completaram o CS50x, se encontrados em violação, terão seu Certificado CS50 revogado permanentemente.
+    A equipe faz auditorias aleatórias dos envios para o CS50x. Os alunos
+    encontrados em violação desta política serão removidos do curso. Os alunos
+    que já completaram o CS50x, se encontrados em violação, terão seu
+    Certificado CS50 revogado permanentemente.
   </p>
 </div>
 
@@ -15,10 +22,13 @@
 
 <ol>
   <li>
-    Baixe e instale a versão mais recente do <a href="https://www.google.com/chrome/">Chrome</a>, se você ainda não o tiver.
+    Baixe e instale a versão mais recente do
+    <a href="https://www.google.com/chrome/">Chrome</a>, se você ainda não o
+    tiver.
   </li>
   <li>
-    Implemente seu próprio projeto Scratch usando o Chrome, de acordo com <a href="{{url_for('cs50x.psets.scratch')}}">esta especificação</a>.
+    Implemente seu próprio projeto Scratch usando o Chrome, de acordo com
+    <a href="{{url_for('cs50x.psets.scratch')}}">esta especificação</a>.
   </li>
 </ol>
 
@@ -36,7 +46,12 @@
 <h2 id="advice">Conselhos</h2>
 
 <p>
-  Aqui estão alguns <a href="https://scratch.mit.edu/studios/27380633">exemplos usados por Ramon</a> na aula, se você quiser revisar! Para ver o código-fonte de cada um, clique em <strong>Ver por dentro</strong>.
+  Aqui estão alguns
+  <a href="https://scratch.mit.edu/studios/27380633"
+    >exemplos usados por Ramon</a
+  >
+  na aula, se você quiser revisar! Para ver o código-fonte de cada um, clique em
+  <strong>Ver por dentro</strong>.
 </p>
 
 {% endblock %}

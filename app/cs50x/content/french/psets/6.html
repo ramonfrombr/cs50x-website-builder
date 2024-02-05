@@ -1,14 +1,21 @@
-{% extends 'layout.html' %} {% block conteudo %}
+{% extends 'layout.html' %} {% block content %}
 <h1 id="problem-set-6">Ensemble de problèmes 6</h1>
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    La collaboration sur les ensembles de problèmes n'est pas autorisée, sauf dans la mesure où vous pouvez demander l'aide de camarades de classe et d'autres personnes, à condition que cette aide ne réduise pas à ce que quelqu'un d'autre fasse votre travail à votre place, conformément à la politique du cours sur l'
+    La collaboration sur les ensembles de problèmes n'est pas autorisée, sauf
+    dans la mesure où vous pouvez demander l'aide de camarades de classe et
+    d'autres personnes, à condition que cette aide ne réduise pas à ce que
+    quelqu'un d'autre fasse votre travail à votre place, conformément à la
+    politique du cours sur l'
     <a href="{{url_for('cs50x.honesty')}}">honnêteté académique</a>.
   </p>
 
   <p>
-    Le personnel effectue des vérifications aléatoires des soumissions à CS50x. Les étudiants en violation de cette politique seront exclus du cours. Les étudiants qui ont déjà terminé CS50x, s'ils sont reconnus coupables de violation, verront leur certificat CS50 révoqué de manière permanente.
+    Le personnel effectue des vérifications aléatoires des soumissions à CS50x.
+    Les étudiants en violation de cette politique seront exclus du cours. Les
+    étudiants qui ont déjà terminé CS50x, s'ils sont reconnus coupables de
+    violation, verront leur certificat CS50 révoqué de manière permanente.
   </p>
 </div>
 
@@ -17,19 +24,25 @@
 <div class="alert" data-alert="warning" role="alert">
   <p>
     Assurez-vous d'avoir terminé le
-    <a href="{{url_for('cs50x.labs.lab6')}}">Laboratoire 6</a> avant de commencer cet ensemble de problèmes.
+    <a href="{{url_for('cs50x.labs.lab6')}}">Laboratoire 6</a> avant de
+    commencer cet ensemble de problèmes.
   </p>
 </div>
 
 <ol>
   <li>
-    Connectez-vous sur <a href="https://code.cs50.io">code.cs50.io</a> en utilisant votre compte GitHub
+    Connectez-vous sur <a href="https://code.cs50.io">code.cs50.io</a> en
+    utilisant votre compte GitHub
   </li>
   <li>
-    Exécutez <code class="language-plaintext highlighter-rouge">update50</code> dans la fenêtre du terminal de votre espace de codes pour vous assurer que votre espace de codes est à jour.
+    Exécutez
+    <code class="language-plaintext highlighter-rouge">update50</code> dans la
+    fenêtre du terminal de votre espace de codes pour vous assurer que votre
+    espace de codes est à jour.
   </li>
   <li>
-    Soumettez <a href="{{url_for('cs50x.psets.python_hello')}}">Hello</a> en Python
+    Soumettez <a href="{{url_for('cs50x.psets.python_hello')}}">Hello</a> en
+    Python
   </li>
   <li>
     Soumettez l'une des options suivantes :
@@ -70,7 +83,9 @@
 </ol>
 
 <p>
-  Si vous soumettez les deux versions de Mario, nous enregistrerons la meilleure des deux notes. Si vous soumettez à la fois Cash et Credit, nous enregistrerons la note la plus élevée des deux.
+  Si vous soumettez les deux versions de Mario, nous enregistrerons la meilleure
+  des deux notes. Si vous soumettez à la fois Cash et Credit, nous
+  enregistrerons la note la plus élevée des deux.
 </p>
 
 <h2 id="when-to-do-it">Quand le faire</h2>
@@ -98,19 +113,31 @@
 <ul>
   <li data-marker="*">
     Pour Hello, Mario, Cash, Credit et Readability, il est
-    <strong>raisonnable</strong> de consulter vos propres implémentations en C et les implémentations des autres <em>en C</em>.
+    <strong>raisonnable</strong> de consulter vos propres implémentations en C
+    et les implémentations des autres <em>en C</em>.
   </li>
   <li data-marker="*">
-    Il n'est pas <strong>raisonnable</strong> de consulter les implémentations des autres <em>en Python</em>.
+    Il n'est pas <strong>raisonnable</strong> de consulter les implémentations
+    des autres <em>en Python</em>.
   </li>
   <li data-marker="*">
-    Étant donné qu'un des objectifs de ces problèmes est de vous apprendre à apprendre un nouveau langage, rappelez-vous que ces actions sont non seulement <strong>raisonnables</strong>, selon le programme, mais encouragées à cette fin :
+    Étant donné qu'un des objectifs de ces problèmes est de vous apprendre à
+    apprendre un nouveau langage, rappelez-vous que ces actions sont non
+    seulement <strong>raisonnables</strong>, selon le programme, mais
+    encouragées à cette fin :
     <ul>
       <li data-marker="*">
-        Incorporation de quelques lignes de code que vous trouvez en ligne ou ailleurs dans votre propre code, à condition que ces lignes ne soient pas elles-mêmes des solutions aux problèmes assignés et que vous citiez leurs origines.
+        Incorporation de quelques lignes de code que vous trouvez en ligne ou
+        ailleurs dans votre propre code, à condition que ces lignes ne soient
+        pas elles-mêmes des solutions aux problèmes assignés et que vous citiez
+        leurs origines.
       </li>
       <li data-marker="*">
-        Recourir à Internet ou à d'autres sources pour obtenir des instructions au-delà de celles fournies par le cours, pour des références et pour des solutions à des difficultés techniques, mais pas pour des solutions complètes aux problèmes du jeu de problèmes ou à votre propre projet final.
+        Recourir à Internet ou à d'autres sources pour obtenir des instructions
+        au-delà de celles fournies par le cours, pour des références et pour des
+        solutions à des difficultés techniques, mais pas pour des solutions
+        complètes aux problèmes du jeu de problèmes ou à votre propre projet
+        final.
       </li>
     </ul>
   </li>

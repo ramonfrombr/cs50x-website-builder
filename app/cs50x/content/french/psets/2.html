@@ -1,13 +1,20 @@
-{% extends 'layout.html' %} {% block conteudo %}
+{% extends 'layout.html' %} {% block content %}
 <h1 id="problem-set-2">Ensemble de problèmes 2</h1>
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    La collaboration sur les ensembles de problèmes n'est pas autorisée, sauf dans la mesure où vous pouvez demander l'aide de vos camarades de classe et d'autres personnes, à condition que cette aide ne se réduise pas à ce que quelqu'un d'autre fasse votre travail à votre place, conformément à la politique de cours sur l'« honnêteté académique ».
+    La collaboration sur les ensembles de problèmes n'est pas autorisée, sauf
+    dans la mesure où vous pouvez demander l'aide de vos camarades de classe et
+    d'autres personnes, à condition que cette aide ne se réduise pas à ce que
+    quelqu'un d'autre fasse votre travail à votre place, conformément à la
+    politique de cours sur l'« honnêteté académique ».
   </p>
 
   <p>
-    Le personnel effectue des audits aléatoires des soumissions à CS50x. Les étudiants qui enfreignent cette politique seront exclus du cours. Les étudiants qui ont déjà terminé CS50x et qui sont reconnus coupables d'une violation verront leur Certificat CS50 révoqué de manière permanente.
+    Le personnel effectue des audits aléatoires des soumissions à CS50x. Les
+    étudiants qui enfreignent cette politique seront exclus du cours. Les
+    étudiants qui ont déjà terminé CS50x et qui sont reconnus coupables d'une
+    violation verront leur Certificat CS50 révoqué de manière permanente.
   </p>
 </div>
 
@@ -16,16 +23,22 @@
 <div class="alert" data-alert="warning" role="alert">
   <p>
     Assurez-vous d'avoir terminé le
-    <a href="{{url_for('cs50x.labs.lab2')}}">Lab 2</a> avant de commencer cet ensemble de problèmes.
+    <a href="{{url_for('cs50x.labs.lab2')}}">Lab 2</a> avant de commencer cet
+    ensemble de problèmes.
   </p>
 </div>
 
 <ol>
   <li>
-    Connectez-vous à <a href="https://code.cs50.io">code.cs50.io</a> en utilisant votre compte GitHub.
+    Connectez-vous à <a href="https://code.cs50.io">code.cs50.io</a> en
+    utilisant votre compte GitHub.
   </li>
   <li>
-    Exécutez <code class="language-plaintext highlighter-rouge">update50</code> dans la fenêtre du terminal de votre espace de code pour vous assurer que votre espace de code est à jour et, lorsque cela vous est demandé, cliquez sur <strong>Reconstruire maintenant</strong>.
+    Exécutez
+    <code class="language-plaintext highlighter-rouge">update50</code> dans la
+    fenêtre du terminal de votre espace de code pour vous assurer que votre
+    espace de code est à jour et, lorsque cela vous est demandé, cliquez sur
+    <strong>Reconstruire maintenant</strong>.
   </li>
   <li>
     Soumettez <a href="{{url_for('cs50x.psets.readability')}}">Readability</a>.
@@ -34,23 +47,28 @@
     Soumettez l'un des éléments suivants :
     <ul>
       <li data-marker="*">
-        <a href="{{url_for('cs50x.psets.bulbs')}}">Bulbs</a>, si vous vous sentez moins à l'aise.
+        <a href="{{url_for('cs50x.psets.bulbs')}}">Bulbs</a>, si vous vous
+        sentez moins à l'aise.
       </li>
       <li data-marker="*">
-        <a href="{{url_for('cs50x.psets.caesar')}}">Caesar</a>, si vous vous sentez moins à l'aise.
+        <a href="{{url_for('cs50x.psets.caesar')}}">Caesar</a>, si vous vous
+        sentez moins à l'aise.
       </li>
       <li data-marker="*">
-        <a href="{{url_for('cs50x.psets.substitution')}}">Substitution</a>, si vous vous sentez plus à l'aise.
+        <a href="{{url_for('cs50x.psets.substitution')}}">Substitution</a>, si
+        vous vous sentez plus à l'aise.
       </li>
       <li data-marker="*">
-        <a href="{{url_for('cs50x.psets.wordle50')}}">Wordle50</a>, si vous vous sentez plus à l'aise.
+        <a href="{{url_for('cs50x.psets.wordle50')}}">Wordle50</a>, si vous vous
+        sentez plus à l'aise.
       </li>
     </ul>
   </li>
 </ol>
 
 <p>
-  Si vous soumettez plus d'un des problèmes Bulbs, Caesar, Substitution ou Wordle50, nous enregistrerons la note la plus élevée parmi ces problèmes.
+  Si vous soumettez plus d'un des problèmes Bulbs, Caesar, Substitution ou
+  Wordle50, nous enregistrerons la note la plus élevée parmi ces problèmes.
 </p>
 
 <h2 id="when-to-do-it">Quand le faire</h2>
@@ -77,8 +95,12 @@
   </li>
   <li data-marker="*">
     Si vous voyez des erreurs lors de la compilation de votre code avec
-    <code class="language-plaintext highlighter-rouge">make</code>, concentrez-vous d'abord sur la correction de la toute première erreur que vous voyez, en faisant défiler vers le haut si nécessaire. Si vous n'êtes pas sûr de sa signification, essayez de demander de l'aide avec
-    <code class="language-plaintext highlighter-rouge">help50</code>. Par exemple, si vous essayez de compiler
+    <code class="language-plaintext highlighter-rouge">make</code>,
+    concentrez-vous d'abord sur la correction de la toute première erreur que
+    vous voyez, en faisant défiler vers le haut si nécessaire. Si vous n'êtes
+    pas sûr de sa signification, essayez de demander de l'aide avec
+    <code class="language-plaintext highlighter-rouge">help50</code>. Par
+    exemple, si vous essayez de compiler
     <code class="language-plaintext highlighter-rouge">readability</code> et que
     <div class="language-plaintext highlighter-rouge">
       <div class="highlight">

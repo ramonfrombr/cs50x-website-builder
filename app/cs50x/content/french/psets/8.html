@@ -1,13 +1,22 @@
-{% extends 'layout.html' %} {% block conteudo %}
+{% extends 'layout.html' %} {% block content %}
 <h1 id="problem-set-8">Ensemble de problèmes 8</h1>
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    La collaboration sur les ensembles de problèmes n'est pas autorisée, sauf dans la mesure où vous pouvez demander de l'aide à vos camarades de classe et à d'autres personnes, à condition que cette aide ne se réduise pas à quelqu'un d'autre qui fait le travail à votre place, conformément à la politique du cours sur l'<a href="{{url_for('cs50x.honesty')}}">honnêteté académique</a>.
+    La collaboration sur les ensembles de problèmes n'est pas autorisée, sauf
+    dans la mesure où vous pouvez demander de l'aide à vos camarades de classe
+    et à d'autres personnes, à condition que cette aide ne se réduise pas à
+    quelqu'un d'autre qui fait le travail à votre place, conformément à la
+    politique du cours sur l'<a href="{{url_for('cs50x.honesty')}}"
+      >honnêteté académique</a
+    >.
   </p>
 
   <p>
-    Le personnel effectue des audits aléatoires des soumissions à CS50x. Les étudiants qui enfreignent cette politique seront exclus du cours. Les étudiants qui ont déjà terminé CS50x, s'ils sont reconnus coupables de violation, verront leur certificat CS50 révoqué de manière permanente.
+    Le personnel effectue des audits aléatoires des soumissions à CS50x. Les
+    étudiants qui enfreignent cette politique seront exclus du cours. Les
+    étudiants qui ont déjà terminé CS50x, s'ils sont reconnus coupables de
+    violation, verront leur certificat CS50 révoqué de manière permanente.
   </p>
 </div>
 
@@ -15,24 +24,39 @@
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    Assurez-vous d'avoir terminé <a href="{{url_for('cs50x.labs.lab8')}}">Laboratoire 8</a> avant de commencer cet ensemble de problèmes.
+    Assurez-vous d'avoir terminé
+    <a href="{{url_for('cs50x.labs.lab8')}}">Laboratoire 8</a> avant de
+    commencer cet ensemble de problèmes.
   </p>
 </div>
 
 <ol>
   <li>
-    Connectez-vous à <a href="https://code.cs50.io">code.cs50.io</a> en utilisant votre compte GitHub
+    Connectez-vous à <a href="https://code.cs50.io">code.cs50.io</a> en
+    utilisant votre compte GitHub
   </li>
   <li>
-    Exécutez <code class="language-plaintext highlighter-rouge">update50</code> dans la fenêtre de terminal de votre espace de code pour vous assurer que votre espace de code est à jour et, lorsque vous y êtes invité, cliquez sur <strong>Reconstruire maintenant</strong>.
+    Exécutez
+    <code class="language-plaintext highlighter-rouge">update50</code> dans la
+    fenêtre de terminal de votre espace de code pour vous assurer que votre
+    espace de code est à jour et, lorsque vous y êtes invité, cliquez sur
+    <strong>Reconstruire maintenant</strong>.
   </li>
-  <li> Soumettez la <a href="{{url_for('cs50x.psets.homepage')}}">Page d'accueil</a></li>
+  <li>
+    Soumettez la
+    <a href="{{url_for('cs50x.psets.homepage')}}">Page d'accueil</a>
+  </li>
 </ol>
 
 <h2 id="when-to-do-it">Quand le faire</h2>
 
 <p>
-  Avant le <a data-local="2023-12-31T23:59:00+00:00" href="https://time.cs50.io/20231231T235900Z">31 décembre 2023 à 23h59</a>.
+  Avant le
+  <a
+    data-local="2023-12-31T23:59:00+00:00"
+    href="https://time.cs50.io/20231231T235900Z"
+    >31 décembre 2023 à 23h59</a
+  >.
 </p>
 
 {% endblock %}
