@@ -14,6 +14,7 @@ SPECIFICATIONS = "specifications"
 SHORTS_SLIDES = "shorts_slides"
 
 class ContentTypes:
+    PAGES = "pages"
     MANUAL = "manual"
     LECTURES_SCRIPTS = "lectures_scripts"
     LECTURES_CODE = "lectures_code"

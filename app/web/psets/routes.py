@@ -22,15 +22,15 @@ def pset0():
         f'web/{os.environ["COURSE_LANGUAGE"]}/psets/0.html',
     )
 
-@bp.route('/0/pset0_project/')
-@bp.route('/0/pset0_project.html')
-def pset0_project():
+@bp.route('/0/search/')
+@bp.route('/0/search.html')
+def search():
 
-    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/pset0_project.md", "r") as f:
+    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/search.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -45,15 +45,15 @@ def pset1():
         f'web/{os.environ["COURSE_LANGUAGE"]}/psets/1.html',
     )
 
-@bp.route(f"/1/pset1_project/")
-@bp.route(f"/1/pset1_project.html")
-def pset1_project():
+@bp.route(f"/1/wiki/")
+@bp.route(f"/1/wiki.html")
+def wiki():
     
-    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/pset1_project.md", "r") as f:
+    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/wiki.md", "r") as f:
         markdown_text = f.read()
     
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -68,14 +68,14 @@ def pset2():
         f'web/{os.environ["COURSE_LANGUAGE"]}/psets/2.html',
     )
 
-@bp.route(f"/2/pset2_project/")
-@bp.route(f"/2/pset2_project.html")
-def pset2_project():
-    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/pset2_project.md", "r") as f:
+@bp.route(f"/2/commerce/")
+@bp.route(f"/2/commerce.html")
+def commerce():
+    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/commerce.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -90,14 +90,14 @@ def pset3():
         f'web/{os.environ["COURSE_LANGUAGE"]}/psets/3.html',
     )
 
-@bp.route(f"/3/pset3_project/")
-@bp.route(f"/3/pset3_project.html")
-def pset3_project():
-    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/pset3_project.md", "r") as f:
+@bp.route(f"/3/mail/")
+@bp.route(f"/3/mail.html")
+def mail():
+    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/mail.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -112,14 +112,14 @@ def pset4():
         f'web/{os.environ["COURSE_LANGUAGE"]}/psets/4.html',
     )
 
-@bp.route(f"/4/pset4_project")
-@bp.route(f"/4/pset4_project.html")
-def pset4_project():
-    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/pset4_project.md", "r") as f:
+@bp.route(f"/4/network")
+@bp.route(f"/4/network.html")
+def network():
+    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/network.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -134,101 +134,13 @@ def pset5():
         f'web/{os.environ["COURSE_LANGUAGE"]}/psets/5.html',
     )
     
-@bp.route(f"/5/pset5_project/")
-@bp.route(f"/5/pset5_project.html")
-def pset5_project():
-    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/pset5_project.md", "r") as f:
+@bp.route(f"/5/capstone/")
+@bp.route(f"/5/capstone.html")
+def capstone():
+    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/capstone.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
-        markdown_text=marko.convert(markdown_text)
-    )
-
-#############################################################################
-#############################################################################
-#############################################################################
-
-@bp.route('/6')
-@bp.route('/6.html')
-def pset6():
-    return render_template(
-        f'web/{os.environ["COURSE_LANGUAGE"]}/psets/6.html',
-    )
-
-@bp.route(f"/6/pset6_project/")
-@bp.route(f"/6/pset6_project.html")
-def pset6_project():
-    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/pset6_project.md", "r") as f:
-        markdown_text = f.read()
-
-    return render_template(
-        'blank.html',
-        markdown_text=marko.convert(markdown_text)
-    )
-
-#############################################################################
-#############################################################################
-#############################################################################
-
-@bp.route('/7')
-@bp.route('/7.html')
-def pset7():
-    return render_template(
-        f'web/{os.environ["COURSE_LANGUAGE"]}/psets/7.html',
-    )
-
-@bp.route(f"/7/pset7_project/")
-@bp.route(f"/7/pset7_project.html")
-def pset7_project():
-    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/pset7_project.md", "r") as f:
-        markdown_text = f.read()
-
-    return render_template(
-        'blank.html',
-        markdown_text=marko.convert(markdown_text)
-    )
-
-#############################################################################
-#############################################################################
-#############################################################################
-
-@bp.route('/8/')
-@bp.route('/8.html')
-def pset8():
-    return render_template(
-        f'web/{os.environ["COURSE_LANGUAGE"]}/psets/8.html',
-    )
-    
-@bp.route(f"/8/pset8_project/")
-@bp.route(f"/8/pset8_project.html")
-def pset8_project():
-    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/pset8_project.md", "r") as f:
-        markdown_text = f.read()
-
-    return render_template(
-        'blank.html',
-        markdown_text=marko.convert(markdown_text)
-    )
-   
-#############################################################################
-#############################################################################
-#############################################################################
-
-@bp.route('/9')
-@bp.route('/9.html')
-def pset9():
-    return render_template(
-        f'web/{os.environ["COURSE_LANGUAGE"]}/psets/9.html',
-    )
-
-@bp.route(f"/9/pset9_project/")
-@bp.route(f"/9/pset9_project.html")
-def pset9_project():
-    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/specifications/pset9_project.md", "r") as f:
-        markdown_text = f.read()
-
-    return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )

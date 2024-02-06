@@ -1,41 +1,37 @@
 {% macro pset_item(number, title) %} {% if number == 0 %}
 <li data-marker="*">
-  <a href="{{ url_for('web.psets.pset0') }}">{{title}} {{number}} </a>
+  <a href="{{ url_for('web.psets.pset0') }}">{{title}} 0</a>
 </li>
 {% elif number == 1 %}
 <li data-marker="*">
-  <a href="{{ url_for('web.psets.pset1') }}">{{title}} {{number}} </a>
+  <a href="{{ url_for('web.psets.pset0') }}">{{title}} 0</a>
 </li>
 {% elif number == 2 %}
 <li data-marker="*">
-  <a href="{{ url_for('web.psets.pset2') }}">{{title}} {{number}} </a>
+  <a href="{{ url_for('web.psets.pset0') }}">{{title}} 0</a>
 </li>
 {% elif number == 3 %}
 <li data-marker="*">
-  <a href="{{ url_for('web.psets.pset3') }}">{{title}} {{number}} </a>
+  <a href="{{ url_for('web.psets.pset1') }}">{{title}} 1</a>
 </li>
 {% elif number == 4 %}
 <li data-marker="*">
-  <a href="{{ url_for('web.psets.pset4') }}">{{title}} {{number}} </a>
+  <a href="{{ url_for('web.psets.pset2') }}">{{title}} 2</a>
 </li>
 {% elif number == 5 %}
 <li data-marker="*">
-  <a href="{{ url_for('web.psets.pset5') }}">{{title}} {{number}} </a>
+  <a href="{{ url_for('web.psets.pset3') }}">{{title}} 3</a>
 </li>
 {% elif number == 6 %}
 <li data-marker="*">
-  <a href="{{ url_for('web.psets.pset6') }}">{{title}} {{number}} </a>
+  <a href="{{ url_for('web.psets.pset3') }}">{{title}} 3</a>
 </li>
 {% elif number == 7 %}
 <li data-marker="*">
-  <a href="{{ url_for('web.psets.pset7') }}">{{title}} {{number}} </a>
+  <a href="{{ url_for('web.psets.pset4') }}">{{title}} 4</a>
 </li>
 {% elif number == 8 %}
 <li data-marker="*">
-  <a href="{{ url_for('web.psets.pset8') }}">{{title}} {{number}} </a>
-</li>
-{% elif number == 9 %}
-<li data-marker="*">
-  <a href="{{ url_for('web.psets.pset9') }}">{{title}} {{number}} </a>
+  <a href="{{ url_for('web.psets.pset5') }}">{{title}} 5</a>
 </li>
 {% endif %} {% endmacro %}

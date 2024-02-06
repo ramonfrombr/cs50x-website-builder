@@ -1,6 +1,6 @@
 # Velocidade de Reprodução
 
-Algumas pessoas têm o hábito de falar durante uma palestra muito rapidamente, e seria bom diminuir a velocidade, como a velocidade de reprodução de 0.75 do YouTube, ou até mesmo pedir para que façam pausas entre as palavras.
+Algumas pessoas têm o hábito de falar durante uma aula muito rapidamente, e seria bom diminuir a velocidade, como a velocidade de reprodução de 0.75 do YouTube, ou até mesmo pedir para que façam pausas entre as palavras.
 
 Em um arquivo chamado `playback.py`, implemente um programa em Python que solicita a entrada do usuário e depois exibe essa mesma entrada, substituindo cada espaço por `...` (ou seja, três pontos).
 

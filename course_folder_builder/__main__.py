@@ -118,35 +118,17 @@ else:
       note_file.close()
 
   def create_psets_files(content_path):
+    pset_template = Template("""{% extends '${course}/layout.html' %} {% block content %} {% endblock %}""")
     for i in range(10):
       psets_path = f"{content_path}/english/psets/{i}.html"
       psets_file = open(psets_path, "w")
+      psets_file.write(pset_template.substitute(course=COURSE))
       psets_file.close()
 
   def create_lectures_code_files(content_path):
     for i in range(10):
       lectures_code_path = f"{content_path}/english/lectures_code/src{i}"
       os.mkdir(lectures_code_path)
-
-  def create_certificate_file(content_path):
-    certificate_path = f"{content_path}/english/certificate.md"
-    certificate_path = open(certificate_path, "w")
-    certificate_path.close()
-
-  def create_homepage_file(content_path):
-    homepage_path = f"{content_path}/english/homepage.md"
-    homepage_path = open(homepage_path, "w")
-    homepage_path.close()
-
-  def create_project_file(content_path):
-    project_path = f"{content_path}/english/project.md"
-    project_path = open(project_path, "w")
-    project_path.close()
-
-  def create_syllabus_file(content_path):
-    syllabus_path = f"{content_path}/english/syllabus.md"
-    syllabus_path = open(syllabus_path, "w")
-    syllabus_path.close()
 
   def create_pages_file(content_path, page):
     page_path = f"{content_path}/english/{page}.md"
@@ -213,7 +195,7 @@ else:
   create_psets_files(content_path)
   create_lectures_code_files(content_path)
 
-  pages = ["certificate", "homepage", "project", "syllabus"]
+  pages = ["certificate", "homepage", "project", "syllabus", "communities"]
   for page in pages:
     create_pages_file(content_path, page)
   

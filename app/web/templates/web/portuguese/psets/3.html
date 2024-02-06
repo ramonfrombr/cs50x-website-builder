@@ -1,0 +1,31 @@
+{% extends 'web/layout.html' %} {% block content %}
+<h1 id="project-3">Projeto 3</h1>
+
+<h2 id="what-to-do">O que fazer</h2>
+
+<ul>
+  <li data-marker="*">
+    Enviar <a href="{{ url_for('web.psets.mail') }}">Mail</a>
+  </li>
+</ul>
+
+<h2 id="when-to-do-it">Quando fazer</h2>
+
+<p>
+  Até
+  <a
+    data-local="2024-12-31T23:59:00-05:00"
+    href="https://time.cs50.io/20241231T235900-0500"
+    >2024-12-31T23:59:00-05:00</a
+  >.
+</p>
+
+<h2 id="how-to-get-help">Como obter ajuda</h2>
+
+<ol>
+  <li>
+    Faça perguntas em qualquer uma das
+    <a href="{{ url_for('web.communities') }}">comunidades</a> do CS50!
+  </li>
+</ol>
+{% endblock %}

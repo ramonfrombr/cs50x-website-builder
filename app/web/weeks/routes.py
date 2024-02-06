@@ -208,21 +208,3 @@ def week8():
         week_page=weeks_content["week_page"],
         week=weeks_content["week8"]
     )
-
-@bp.route('/9')
-@bp.route('/9.html')
-def week9():
-    return render_template(
-        'web/weeks/layout.html',
-        week_page=weeks_content["week_page"],
-        week=weeks_content["week9"]
-    )
-
-@bp.route('/10')
-@bp.route('/10.html')
-def week10():
-    return render_template(
-        'web/weeks/10.html',
-        week_page=weeks_content["week_page"],
-        week=weeks_content["week10"]
-    )

@@ -6,6 +6,7 @@ from translate_functions.translate_labs_code import translate_labs_code
 from translate_functions.translate_labs_checks import translate_labs_checks
 from translate_functions.translate_psets_checks import translate_psets_checks
 from translate_functions.translate_lectures_code import translate_lectures_code
+from translate_functions.translate_pages import translate_pages
 from translate_types import TypeCourse, TypeLanguage, TypeContent
 from constants import COURSES, CONTENT_TYPES, LANGUAGES, NOTES, SPECIFICATIONS, MANUAL, PSETS, PSETS_CODE, LABS_CODE, PSETS_CHECKS, LABS_CHECKS,LECTURES_CODE, ContentTypes
 from check_translation import check
@@ -40,20 +41,22 @@ else:
     else:
         print("Starting translation")
         match CONTENT_TYPE:
-          case ContentTypes.PSETS:
-            translate_psets(COURSE, LANGUAGE)
-          case ContentTypes.PSETS_CHECKS:
-            translate_psets_checks(COURSE, LANGUAGE)
-          case ContentTypes.LABS_CODE:
-            translate_labs_code(COURSE, LANGUAGE)
-          case ContentTypes.LABS_CHECKS:
-            translate_labs_checks(COURSE, LANGUAGE)
-          case ContentTypes.NOTES:
-            translate_notes(COURSE, LANGUAGE)
-          case ContentTypes.LECTURES_CODE:
-            translate_lectures_code(COURSE, LANGUAGE)
-          case ContentTypes.SPECIFICATIONS:
-            translate_specifications(COURSE, LANGUAGE)
-          case _:
-            print("Content type not found")
+            case ContentTypes.PSETS:
+                translate_psets(COURSE, LANGUAGE)
+            case ContentTypes.PSETS_CHECKS:
+                translate_psets_checks(COURSE, LANGUAGE)
+            case ContentTypes.LABS_CODE:
+                translate_labs_code(COURSE, LANGUAGE)
+            case ContentTypes.LABS_CHECKS:
+                translate_labs_checks(COURSE, LANGUAGE)
+            case ContentTypes.NOTES:
+                translate_notes(COURSE, LANGUAGE)
+            case ContentTypes.LECTURES_CODE:
+                translate_lectures_code(COURSE, LANGUAGE)
+            case ContentTypes.SPECIFICATIONS:
+                translate_specifications(COURSE, LANGUAGE)
+            case ContentTypes.PAGES:
+                translate_pages(COURSE, LANGUAGE)
+            case _:
+                print("Content type not found")
         print("Finished translation")

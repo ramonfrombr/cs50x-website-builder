@@ -2,7 +2,7 @@ import time
 from dotenv import load_dotenv
 load_dotenv()  
 import os
-from generate import generate_file, generate_prompt, generate_system_message, generate_file_manual, generate_file_notes, generate_file_psets, generate_file_psets_checks, generate_file_psets_code, generate_file_specifications
+from generate import generate_prompt, generate_system_message, generate_file_manual, generate_file_notes, generate_file_psets, generate_file_psets_checks, generate_file_psets_code, generate_file_specifications, generate_file_pages
 from translate_types import TypeCourse, TypeLanguage, TypeContent
 from typing import List
 from openai import OpenAI
@@ -37,7 +37,7 @@ def generate_file(translation, course, folder, filename, language, extension):
         case ContentTypes.MANUAL:
           generate_file_manual(course, folder, filename, language, extension, translation)
         case _:
-          generate_file(course, folder, filename, language, extension, translation)
+          generate_file_pages(course, folder, filename, language, extension, translation)
     except Exception as e:
         print(f"Error: there was an error when generating file '{filename}'")
         print(e)
@@ -58,13 +58,18 @@ def translate(
     root_folder = define_root_folder(folder, course)
     system_message = generate_system_message(extension, language)
 
+
     for filename in files:
         try:
             if (folder==ContentTypes.NOTES):
                 source_file = open(f"{root_folder}/{folder}/{filename}", "r")
                 file_chunks = source_file.read().split("\n## ")
-                for chunk in file_chunks:
-                    prompt = generate_prompt(file_description, language, "\n## "+chunk)
+
+                for idx, chunk in enumerate(file_chunks):
+                    if idx == 0:
+                      prompt = generate_prompt(file_description, language, chunk)
+                    else:
+                      prompt = generate_prompt(file_description, language, "\n## "+chunk)
                     translation = get_chatgpt_translation(system_message, prompt)
                     generate_file(translation, course, folder, filename, language, extension)
             elif (folder==ContentTypes.SPECIFICATIONS):
@@ -78,6 +83,8 @@ def translate(
                 elif (folder==ContentTypes.LABS_CHECKS or folder==ContentTypes.PSETS_CHECKS):
                     filepath = f"{root_folder}/{folder}/{filename}/__init__.{extension}"
                     source_file = open(filepath, "r").read()
+                elif (folder==ContentTypes.PAGES):
+                    source_file = open(f"{root_folder}/{filename}", "r").read()
                 else:
                     source_file = open(f"{root_folder}/{folder}/{filename}", "r").read()
                 

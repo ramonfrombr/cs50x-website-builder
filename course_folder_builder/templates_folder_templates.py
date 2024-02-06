@@ -268,7 +268,7 @@ menu_template = Template("""<aside class="col-md" style="background-color: {{con
       </li>
       <li data-marker="*">
         <span class="fa-li"><i class="fas fa-circle"></i></span>
-        <a href="https://cs50.me/cs50${course_first_letter}">{{config['LANGUAGE_MENU'].gradebook}}</a>
+        <a target="_blank" href="https://cs50.me/cs50${course_first_letter}">{{config['LANGUAGE_MENU'].gradebook}}</a>
       </li>
       <li data-marker="*">
         <span class="fa-li"><i class="fas fa-circle"></i></span>

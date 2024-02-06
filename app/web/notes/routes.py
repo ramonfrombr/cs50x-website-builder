@@ -101,14 +101,3 @@ def notes8():
         'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
-
-@bp.route('/9')
-@bp.route('/9.html')
-def notes9():
-    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/notes/9.md", "r") as f:
-        markdown_text = f.read()
-
-    return render_template(
-        'web/blank.html',
-        markdown_text=marko.convert(markdown_text)
-    )

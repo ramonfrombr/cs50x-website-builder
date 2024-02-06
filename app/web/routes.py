@@ -45,6 +45,13 @@ project_urls = {
   "spanish": "proyecto"
 }
 
+communities_urls = {
+  "english": "communities",
+  "portuguese": "comunidades",
+  "french": "communauté",
+  "spanish": "comunidades"
+}
+
 @bp.route('/')
 @bp.route('/index.html')
 def index():
@@ -120,6 +127,17 @@ def staff():
 @bp.route(f'/{project_urls[os.environ["COURSE_LANGUAGE"]]}.html')
 def project():
     with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/project.md", "r") as f:
+        markdown_text = f.read()
+
+    return render_template(
+        'web/blank.html',
+        markdown_text=marko.convert(markdown_text)
+    )
+
+@bp.route(f'/{communities_urls[os.environ["COURSE_LANGUAGE"]]}')
+@bp.route(f'/{communities_urls[os.environ["COURSE_LANGUAGE"]]}.html')
+def communities():
+    with open(f"app/web/content/{os.environ['COURSE_LANGUAGE']}/communities.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(

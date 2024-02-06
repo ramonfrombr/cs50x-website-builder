@@ -32,7 +32,7 @@ def pset0_project():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -55,7 +55,7 @@ def pset1_project():
         markdown_text = f.read()
     
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -77,7 +77,7 @@ def pset2_project():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -99,7 +99,7 @@ def pset3_project():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -121,7 +121,7 @@ def pset4_project():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -143,7 +143,7 @@ def pset5_project():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -165,7 +165,7 @@ def pset6_project():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -187,7 +187,7 @@ def pset7_project():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -209,7 +209,7 @@ def pset8_project():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
    
@@ -231,7 +231,7 @@ def pset9_project():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 """)

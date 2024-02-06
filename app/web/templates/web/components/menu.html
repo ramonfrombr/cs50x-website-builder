@@ -108,18 +108,8 @@
           ></a
         >
       </li>
-
-      <li data-marker="*">
-        <span class="fa-li"><i class="fas fa-circle"></i></span>
-        <a href="{{ url_for('web.weeks.week9') }}"
-          >{{config['LANGUAGE_MENU'].week}} 9
-          <span class="week-title"
-            >{{config['LANGUAGE_MENU_web'].week9}}</span
-          ></a
-        >
-      </li>
     </ul>
-    
+
     <hr />
 
     <ul class="fa-ul">
@@ -137,13 +127,13 @@
       </li>
       <li data-marker="*">
         <span class="fa-li"><i class="fas fa-circle"></i></span>
-        <a href="{{ url_for('web.faqs') }}"
-          >{{config['LANGUAGE_MENU'].faqs}}</a
-        >
+        <a href="{{ url_for('web.faqs') }}">{{config['LANGUAGE_MENU'].faqs}}</a>
       </li>
       <li data-marker="*">
         <span class="fa-li"><i class="fas fa-circle"></i></span>
-        <a href="https://cs50.me/cs50w">{{config['LANGUAGE_MENU'].gradebook}}</a>
+        <a target="_blank" href="https://cs50.me/cs50w"
+          >{{config['LANGUAGE_MENU'].gradebook}}</a
+        >
       </li>
       <li data-marker="*">
         <span class="fa-li"><i class="fas fa-circle"></i></span>
@@ -158,7 +148,7 @@
         >
       </li>
     </ul>
-              
+
     <hr />
     {% include 'components/courses.html' %}
     <hr />
