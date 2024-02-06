@@ -8,6 +8,8 @@ from root_routes_template import root_routes_template
 from language_template import language_template
 from pathlib import Path
 from templates_folder_templates import blank_template, index_template, layout_template, menu_template
+from templates_folder_weeks_templates import weeks_layout_template, weeks_pset_item_macro_template, weeks_notes_item_macro_template
+from string import Template
 
 # Folder variations
 languages = ["english", "french", "spanish", "portuguese", "japanese", "chinese", "german", "italian", "korean"]
@@ -49,18 +51,36 @@ else:
       routes_file.write(weeks_routes_template.substitute(course=COURSE))
       routes_file.close()
 
-  def create_templates_folder(path):
+  def create_templates_folder_weeks(path):
     Path(path).mkdir(parents=True, exist_ok=True)
     Path(f"{path}/weeks").mkdir(parents=True, exist_ok=True)
+
+    weeks_layout = open(f"{path}/weeks/layout.html", "w")
+    weeks_layout.write(weeks_layout_template.substitute(course=COURSE))
+    weeks_layout.close()
+
+    weeks_pset_item_macro = open(f"{path}/weeks/pset_item_macro.html", "w")
+    weeks_pset_item_macro.write(weeks_pset_item_macro_template.substitute(course=COURSE))
+    weeks_pset_item_macro.close()
+    
+    weeks_notes_item_macro = open(f"{path}/weeks/notes_item_macro.html", "w")
+    weeks_notes_item_macro.write(weeks_notes_item_macro_template.substitute(course=COURSE))
+    weeks_notes_item_macro.close()
+
+  def create_templates_folder(path):
+    create_templates_folder_weeks(path)
+
     # Components template folder
     Path(f"{path}/components").mkdir(parents=True, exist_ok=True)
     menu = open(f"{path}/components/menu.html", "w")
-    menu.write(menu_template.substitute(course=COURSE))
+    menu.write(menu_template.substitute(course=COURSE, course_first_letter=COURSE[0]))
     menu.close()
+
     # Language template folders
     for language in languages:
       Path(f"{path}/{language}").mkdir(parents=True, exist_ok=True)
       Path(f"{path}/{language}/psets").mkdir(parents=True, exist_ok=True)
+
     # Creates blank.html
     blank = open(f"{path}/blank.html", "w")
     blank.write(blank_template.substitute(course=COURSE))
@@ -133,6 +153,44 @@ else:
     page_file = open(page_path, "w")
     page_file.close()
 
+  def import_menus():
+    menu_import_template = Template("""from .${course}.content.${language}.language import menu as menu_${language}_${course}\n""")
+
+    with open('app/__init__.py', 'r+') as f: #r+ does the work of rw
+      lines = f.readlines()
+      for i, line in enumerate(lines):
+        if "# import menus" in line:
+          for language in languages:
+            lines[i] = lines[i].lstrip() + menu_import_template.substitute(course=COURSE, language=language)
+      f.seek(0)
+      for line in lines:
+          f.write(line)
+
+  def configure_menus():
+    menu_config_template = Template("""        app.config["LANGUAGE_MENU_${course}"] = menu_${language}_${course}\n""")
+
+    with open('app/__init__.py', 'r+') as f: #r+ does the work of rw
+      lines = f.readlines()
+      for i, line in enumerate(lines):
+        for language in languages:
+          if f'# {language} config' in line:
+            lines[i] = "        " + lines[i].lstrip() + menu_config_template.substitute(course=COURSE, language=language) 
+      f.seek(0)
+      for line in lines:
+          f.write(line)
+
+  def register_blueprint():
+    blueprint_register_template = Template("""        from .${course} import ${course} as ${course}_bp\n        app.register_blueprint(${course}_bp, url_prefix='/${course}')""")
+    
+    with open('app/__init__.py', 'r+') as f: #r+ does the work of rw
+      lines = f.readlines()
+      for i, line in enumerate(lines):
+        if '# Blueprint register' in line:
+          lines[i] = "        " + lines[i].lstrip() + "\n" + blueprint_register_template.substitute(course=COURSE)
+      f.seek(0)
+      for line in lines:
+          f.write(line)
+
   # Folder paths
   course_path = f"./app/{COURSE}"
   notes_path = f"./app/{COURSE}/notes"
@@ -158,4 +216,7 @@ else:
   pages = ["certificate", "homepage", "project", "syllabus"]
   for page in pages:
     create_pages_file(content_path, page)
-    
+  
+  import_menus()
+  configure_menus()
+  register_blueprint()

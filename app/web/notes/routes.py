@@ -10,7 +10,7 @@ def notes0():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -21,7 +21,7 @@ def notes1():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
     
@@ -32,7 +32,7 @@ def notes2():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -43,7 +43,7 @@ def notes3():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
     
@@ -54,7 +54,7 @@ def notes4():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -65,7 +65,7 @@ def notes5():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -76,7 +76,7 @@ def notes6():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -87,7 +87,7 @@ def notes7():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -98,7 +98,7 @@ def notes8():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -109,6 +109,6 @@ def notes9():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        'web/blank.html',
         markdown_text=marko.convert(markdown_text)
     )

@@ -1,6 +1,7 @@
-{% extends 'python/layout.html' %} {% block content %} {% from
-"python/weeks/pset_item_macro.html" import pset_item with context %} {% from
-"python/weeks/notes_item_macro.html" import notes_item with context %}
+{% extends 'web/layout.html' %}
+{% block content %}
+{% from "web/weeks/pset_item_macro.html" import pset_item with context %}
+{% from "web/weeks/notes_item_macro.html" import notes_item with context %}
 
 <h1>
   {{week_page.week}} {{week.number}}

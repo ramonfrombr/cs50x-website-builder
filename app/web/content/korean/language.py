@@ -4,17 +4,16 @@ class IMenu(TypedDict):
     title: str
     intro: str
     week: str
+    week0: str
+    week1: str
     week2: str
     week3: str
     week4: str
     week5: str
-    seminars: str
-    project: str
-    honesty: str
-    certificate: str
-    faqs: str
-    gradebook: str
-    staff: str
+    week6: str
+    week7: str
+    week8: str
+    week9: str
 
 class IWeekPage(TypedDict):
     week: str
@@ -58,13 +57,6 @@ menu: IMenu = {
     "week7": "",
     "week8": "",
     "week9": "",
-    "seminars": "",
-    "project": "",
-    "honesty": "",
-    "certificate": "",
-    "faqs": "",
-    "gradebook": "",
-    "staff": "",
 }
 
 week_page: IWeekPage = {
@@ -205,3 +197,14 @@ week_9: IWeek = {
     "pdf_slides_link": "",
 }
 
+week_10: IWeek = {
+    "name": "",
+    "number": 10,
+    "study_guide": "",
+    "lecture_url": "",
+    "lecture_embed_url": "",
+    "pdf_code_link": "",
+    "zip_code_link": "",
+    "google_slides_link": "",
+    "pdf_slides_link": "",
+}

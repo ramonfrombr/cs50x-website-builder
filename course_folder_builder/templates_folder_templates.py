@@ -149,7 +149,7 @@ menu_template = Template("""<aside class="col-md" style="background-color: {{con
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('${course}.weeks.week0') }}"
           >{{config['LANGUAGE_MENU'].week}} 0
-          <span class="semana-titulo"
+          <span class="week-title"
             >{{config['LANGUAGE_MENU_${course}'].week0}}</span
           ></a
         >
@@ -158,7 +158,7 @@ menu_template = Template("""<aside class="col-md" style="background-color: {{con
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('${course}.weeks.week1') }}"
           >{{config['LANGUAGE_MENU'].week}} 1
-          <span class="semana-titulo"
+          <span class="week-title"
             >{{config['LANGUAGE_MENU_${course}'].week1}}</span
           ></a
         >
@@ -168,7 +168,7 @@ menu_template = Template("""<aside class="col-md" style="background-color: {{con
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('${course}.weeks.week2') }}"
           >{{config['LANGUAGE_MENU'].week}} 2
-          <span class="semana-titulo"
+          <span class="week-title"
             >{{config['LANGUAGE_MENU_${course}'].week2}}</span
           ></a
         >
@@ -178,7 +178,7 @@ menu_template = Template("""<aside class="col-md" style="background-color: {{con
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('${course}.weeks.week3') }}"
           >{{config['LANGUAGE_MENU'].week}} 3
-          <span class="semana-titulo"
+          <span class="week-title"
             >{{config['LANGUAGE_MENU_${course}'].week3}}</span
           ></a
         >
@@ -188,7 +188,7 @@ menu_template = Template("""<aside class="col-md" style="background-color: {{con
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('${course}.weeks.week4') }}"
           >{{config['LANGUAGE_MENU'].week}} 4
-          <span class="semana-titulo"
+          <span class="week-title"
             >{{config['LANGUAGE_MENU_${course}'].week4}}</span
           ></a
         >
@@ -198,7 +198,7 @@ menu_template = Template("""<aside class="col-md" style="background-color: {{con
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('${course}.weeks.week5') }}"
           >{{config['LANGUAGE_MENU'].week}} 5
-          <span class="semana-titulo"
+          <span class="week-title"
             >{{config['LANGUAGE_MENU_${course}'].week5}}</span
           ></a
         >
@@ -208,7 +208,7 @@ menu_template = Template("""<aside class="col-md" style="background-color: {{con
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('${course}.weeks.week6') }}"
           >{{config['LANGUAGE_MENU'].week}} 6
-          <span class="semana-titulo"
+          <span class="week-title"
             >{{config['LANGUAGE_MENU_${course}'].week6}}</span
           ></a
         >
@@ -218,7 +218,7 @@ menu_template = Template("""<aside class="col-md" style="background-color: {{con
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('${course}.weeks.week7') }}"
           >{{config['LANGUAGE_MENU'].week}} 7
-          <span class="semana-titulo"
+          <span class="week-title"
             >{{config['LANGUAGE_MENU_${course}'].week7}}</span
           ></a
         >
@@ -228,7 +228,7 @@ menu_template = Template("""<aside class="col-md" style="background-color: {{con
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('${course}.weeks.week8') }}"
           >{{config['LANGUAGE_MENU'].week}} 8
-          <span class="semana-titulo"
+          <span class="week-title"
             >{{config['LANGUAGE_MENU_${course}'].week8}}</span
           ></a
         >
@@ -238,12 +238,52 @@ menu_template = Template("""<aside class="col-md" style="background-color: {{con
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('${course}.weeks.week9') }}"
           >{{config['LANGUAGE_MENU'].week}} 9
-          <span class="semana-titulo"
+          <span class="week-title"
             >{{config['LANGUAGE_MENU_${course}'].week9}}</span
           ></a
         >
       </li>
     </ul>
+    
+    <hr />
+
+    <ul class="fa-ul">
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('${course}.honesty') }}"
+          >{{config['LANGUAGE_MENU'].honesty}}</a
+        >
+      </li>
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('${course}.certificate') }}"
+          >{{config['LANGUAGE_MENU'].certificate}}</a
+        >
+      </li>
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('${course}.faqs') }}"
+          >{{config['LANGUAGE_MENU'].faqs}}</a
+        >
+      </li>
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="https://cs50.me/cs50${course_first_letter}">{{config['LANGUAGE_MENU'].gradebook}}</a>
+      </li>
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('${course}.staff') }}"
+          >{{config['LANGUAGE_MENU'].staff}}</a
+        >
+      </li>
+      <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-circle"></i></span>
+        <a href="{{ url_for('${course}.syllabus') }}"
+          >{{config['LANGUAGE_MENU'].syllabus}}</a
+        >
+      </li>
+    </ul>
+              
     <hr />
     {% include 'components/courses.html' %}
     <hr />

@@ -30,7 +30,7 @@
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.weeks.week0') }}"
           >{{config['LANGUAGE_MENU'].week}} 0
-          <span class="semana-titulo"
+          <span class="week-title"
             >Scratch <strong class="text-white">😺</strong></span
           ></a
         >
@@ -40,7 +40,7 @@
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.weeks.week1') }}"
           >{{config['LANGUAGE_MENU'].week}} 1
-          <span class="semana-titulo">C</span></a
+          <span class="week-title">C</span></a
         >
       </li>
 
@@ -48,9 +48,7 @@
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.weeks.week2') }}"
           >{{config['LANGUAGE_MENU'].week}} 2
-          <span class="semana-titulo"
-            >{{config['LANGUAGE_MENU'].week2}}</span
-          ></a
+          <span class="week-title">{{config['LANGUAGE_MENU'].week2}}</span></a
         >
       </li>
 
@@ -58,9 +56,7 @@
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.weeks.week3') }}"
           >{{config['LANGUAGE_MENU'].week}} 3
-          <span class="semana-titulo"
-            >{{config['LANGUAGE_MENU'].week3}}</span
-          ></a
+          <span class="week-title">{{config['LANGUAGE_MENU'].week3}}</span></a
         >
       </li>
 
@@ -68,9 +64,7 @@
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.weeks.week4') }}"
           >{{config['LANGUAGE_MENU'].week}} 4
-          <span class="semana-titulo"
-            >{{config['LANGUAGE_MENU'].week4}}</span
-          ></a
+          <span class="week-title">{{config['LANGUAGE_MENU'].week4}}</span></a
         >
       </li>
 
@@ -78,9 +72,7 @@
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.weeks.week5') }}"
           >{{config['LANGUAGE_MENU'].week}} 5
-          <span class="semana-titulo"
-            >{{config['LANGUAGE_MENU'].week5}}</span
-          ></a
+          <span class="week-title">{{config['LANGUAGE_MENU'].week5}}</span></a
         >
       </li>
 
@@ -88,7 +80,7 @@
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.weeks.week6') }}"
           >{{config['LANGUAGE_MENU'].week}} 6
-          <span class="semana-titulo">Python</span></a
+          <span class="week-title">Python</span></a
         >
       </li>
 
@@ -96,7 +88,7 @@
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.weeks.week7') }}"
           >{{config['LANGUAGE_MENU'].week}} 7
-          <span class="semana-titulo">SQL</span></a
+          <span class="week-title">SQL</span></a
         >
       </li>
 
@@ -104,7 +96,7 @@
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.weeks.week8') }}"
           >{{config['LANGUAGE_MENU'].week}} 8
-          <span class="semana-titulo">HTML, CSS, JavaScript</span></a
+          <span class="week-title">HTML, CSS, JavaScript</span></a
         >
       </li>
 
@@ -112,7 +104,7 @@
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.weeks.week9') }}"
           >{{config['LANGUAGE_MENU'].week}} 9
-          <span class="semana-titulo">Flask</span></a
+          <span class="week-title">Flask</span></a
         >
       </li>
 
@@ -120,7 +112,7 @@
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.weeks.week10') }}"
           >{{config['LANGUAGE_MENU'].week}} 10
-          <span class="semana-titulo">Emoji</span></a
+          <span class="week-title">Emoji</span></a
         >
       </li>
     </ul>
@@ -135,6 +127,7 @@
     </ul>
 
     <hr />
+
     <ul>
       <li data-marker="*">
         <a href="{{ url_for('cs50x.project') }}"
@@ -170,19 +163,18 @@
           >{{config['LANGUAGE_MENU'].certificate}}</a
         >
       </li>
-      <!--
       <li data-marker="*">
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.faqs') }}"
           >{{config['LANGUAGE_MENU'].faqs}}</a
         >
       </li>
-      -->
-      <!--
       <li data-marker="*">
         <span class="fa-li"><i class="fas fa-circle"></i></span>
-        <a href="{{ url_for('cs50x.staff') }}">{{config['LANGUAGE_MENU'].staff}}</a>
-      </li>-->
+        <a href="{{ url_for('cs50x.staff') }}"
+          >{{config['LANGUAGE_MENU'].staff}}</a
+        >
+      </li>
       <li data-marker="*">
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="{{ url_for('cs50x.syllabus') }}"
@@ -214,11 +206,6 @@
           >{{config['LANGUAGE_MENU'].adminer}}</a
         >
       </li>
-      <!--
-            <li data-marker="*">
-                <span class="fa-li"><i class="fas fa-circle"></i></span>
-                <a href="https://man.cs50.io/">Manual CS50</a>
-            </li>-->
       <li data-marker="*">
         <span class="fa-li"><i class="fas fa-circle"></i></span>
         <a href="https://docs.python.org/pt-br/3/search.html"
