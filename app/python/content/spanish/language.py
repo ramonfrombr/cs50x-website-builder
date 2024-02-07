@@ -8,6 +8,10 @@ class IMenu(TypedDict):
     week3: str
     week4: str
     week5: str
+    week6: str
+    week7: str
+    week8: str
+    week9: str
     seminars: str
     project: str
     honesty: str

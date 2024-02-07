@@ -25,6 +25,8 @@ class IMenu(TypedDict):
     sqlite_browser: str
     manual: str
     style: str
+    courses: str
+
 
 class IWeekPage(TypedDict):
     week: str
@@ -41,6 +43,7 @@ class IWeekPage(TypedDict):
     practice_problems: str
     lab: str
     problem_set: str
+    study_guide: str
 
 class IWeek(TypedDict):
     name: str

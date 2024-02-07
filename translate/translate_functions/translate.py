@@ -23,21 +23,24 @@ def get_chatgpt_translation(system_message: str, prompt: str):
 
 def generate_file(translation, course, folder, filename, language, extension):
     try:
-      match folder:
-        case ContentTypes.PSETS:
-          generate_file_psets(course, folder, filename, language, extension, translation)
-        case ContentTypes.PSETS_CODE | ContentTypes.LABS_CODE:
-          generate_file_psets_code(course, folder, filename, language, extension, translation)
-        case ContentTypes.PSETS_CHECKS | ContentTypes.LABS_CHECKS:
-          generate_file_psets_checks(course, folder, filename, language, extension, translation)
-        case ContentTypes.NOTES:
-          generate_file_notes(course, folder, filename, language, extension, translation)
-        case ContentTypes.SPECIFICATIONS:
-          generate_file_specifications(course, folder, filename, language, extension, translation)
-        case ContentTypes.MANUAL:
-          generate_file_manual(course, folder, filename, language, extension, translation)
-        case _:
-          generate_file_pages(course, folder, filename, language, extension, translation)
+        if ContentTypes.LECTURES_CODE in folder:
+            generate_file_psets(course, folder, filename, language, extension, translation)
+        else:
+            match folder:
+                case ContentTypes.PSETS:
+                    generate_file_psets(course, folder, filename, language, extension, translation)
+                case ContentTypes.PSETS_CODE | ContentTypes.LABS_CODE:
+                    generate_file_psets_code(course, folder, filename, language, extension, translation)
+                case ContentTypes.PSETS_CHECKS | ContentTypes.LABS_CHECKS:
+                    generate_file_psets_checks(course, folder, filename, language, extension, translation)
+                case ContentTypes.NOTES:
+                    generate_file_notes(course, folder, filename, language, extension, translation)
+                case ContentTypes.SPECIFICATIONS:
+                    generate_file_specifications(course, folder, filename, language, extension, translation)
+                case ContentTypes.MANUAL:
+                    generate_file_manual(course, folder, filename, language, extension, translation)
+                case _:
+                    generate_file_pages(course, folder, filename, language, extension, translation)
     except Exception as e:
         print(f"Error: there was an error when generating file '{filename}'")
         print(e)
@@ -58,7 +61,6 @@ def translate(
     root_folder = define_root_folder(folder, course)
     system_message = generate_system_message(extension, language)
 
-
     for filename in files:
         try:
             if (folder==ContentTypes.NOTES):
@@ -73,6 +75,11 @@ def translate(
                     translation = get_chatgpt_translation(system_message, prompt)
                     generate_file(translation, course, folder, filename, language, extension)
             elif (folder==ContentTypes.SPECIFICATIONS):
+                source_file = open(f"{root_folder}/{folder}/{filename}", "r").read()
+                prompt = generate_prompt(file_description, language, source_file)
+                translation = get_chatgpt_translation(system_message, prompt)
+                generate_file(translation, course, folder, filename, language, extension)
+            elif ContentTypes.LECTURES_CODE in folder:
                 source_file = open(f"{root_folder}/{folder}/{filename}", "r").read()
                 prompt = generate_prompt(file_description, language, source_file)
                 translation = get_chatgpt_translation(system_message, prompt)

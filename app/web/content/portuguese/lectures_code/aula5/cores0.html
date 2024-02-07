@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Alterar a cor da fonte para vermelho
+                document.querySelector("#vermelho").onclick = function () {
+                    document.querySelector("#ola").style.color = "red";
+                };
+
+                // Alterar a cor da fonte para azul
+                document.querySelector("#azul").onclick = function () {
+                    document.querySelector("#ola").style.color = "blue";
+                };
+
+                // Alterar a cor da fonte para verde
+                document.querySelector("#verde").onclick = function () {
+                    document.querySelector("#ola").style.color = "green";
+                };
+            });
+        </script>
+        <title>Cores</title>
+    </head>
+    <body>
+        <h1 id="ola">Olá!</h1>
+        <button id="vermelho">Vermelho</button>
+        <button id="azul">Azul</button>
+        <button id="verde">Verde</button>
+    </body>
+</html>

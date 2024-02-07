@@ -1,0 +1,1 @@
+Si viste nuestro video sobre recursión, el proceso podría parecer un poco mágico. ¿Cómo sabe una función esperar a otra función y pasar sus datos a alguna otra cosa que se esté ejecutando al mismo tiempo? Puede parecer un poco mágico al principio si no entiendes exactamente cómo se llaman y operan las funciones en C.

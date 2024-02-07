@@ -6,9 +6,9 @@ Introdução aos empreendimentos intelectuais da ciência da computação e à a
 
 Espera-se que você:
 
-- envie dez conjuntos de problemas,
-- envie nove laboratórios e
-- envie um projeto final.
+-   envie dez conjuntos de problemas,
+-   envie nove laboratórios e
+-   envie um projeto final.
 
 ## Certificados
 
@@ -37,7 +37,7 @@ ISBN 0-321-77641-0
 
 ## Aulas
 
-As palestras do curso introduzem os conceitos de cada semana.
+As aulas do curso introduzem os conceitos de cada semana.
 
 ## Passo a passo
 

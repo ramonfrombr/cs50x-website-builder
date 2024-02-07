@@ -3,12 +3,21 @@ from constants import LECTURES_CODE
 from get_files import get_files
 
 def translate_lectures_code(course, language):
-    n_source_code_folders = len(get_files(course, f"{LECTURES_CODE}"))
+    lectures_code = get_files(course, f"{LECTURES_CODE}/src5")
+    lectures_code_html = list(filter(lambda file: file.endswith('html'), lectures_code))
+    translate(course, lectures_code_html, f"{LECTURES_CODE}/src5", language, "html", "HTML language code")
 
-    for i in range(6,n_source_code_folders):
-      
-      lectures_code = get_files(course, f"{LECTURES_CODE}/src{i}")
+    """
+    source_code_folders = get_files(course, f"{LECTURES_CODE}")
 
-      lectures_code = list(filter(lambda file: file.endswith('py'), lectures_code))
-
-      translate(course, lectures_code, f"{LECTURES_CODE}/src{i}", language, "py", "Python language code")
+    for srcFolder in source_code_folders:
+        lectures_code = get_files(course, f"{LECTURES_CODE}/{srcFolder}")
+        lectures_code_python = list(filter(lambda file: file.endswith('py'), lectures_code))
+        lectures_code_html = list(filter(lambda file: file.endswith('html'), lectures_code))
+ 
+        if lectures_code_python: 
+            translate(course, lectures_code_python, f"{LECTURES_CODE}/{srcFolder}", language, "py", "Python language code")
+        
+        if lectures_code_html:
+            translate(course, lectures_code_html, f"{LECTURES_CODE}/{srcFolder}", language, "html", "HTML language code")
+    """

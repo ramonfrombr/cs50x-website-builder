@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Fazer com que cada botão altere a cor do cabeçalho
+                document
+                    .querySelectorAll(".selecao-de-cor")
+                    .forEach((button) => {
+                        button.onclick = () => {
+                            document.querySelector("#ola").style.color =
+                                button.dataset.cor;
+                        };
+                    });
+            });
+        </script>
+        <title>Cores</title>
+    </head>
+    <body>
+        <h1 id="ola">Olá!</h1>
+        <button class="selecao-de-cor" data-cor="red">Vermelho</button>
+        <button class="selecao-de-cor" data-cor="blue">Azul</button>
+        <button class="selecao-de-cor" data-cor="green">Verde</button>
+    </body>
+</html>

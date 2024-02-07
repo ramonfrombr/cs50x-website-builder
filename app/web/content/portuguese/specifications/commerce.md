@@ -1,6 +1,6 @@
 # Comércio
 
-<div class="alert alert-warning" data-alert="warning" role="alert"><p>O CS50W não possui uma correspondência um para um entre palestras e projetos. Se você está tentando este projeto sem ter assistido pelo menos à Aula 4, está tentando cedo demais!</p></div>
+<div class="alert alert-warning" data-alert="warning" role="alert"><p>O CS50W não possui uma correspondência um para um entre aulas e projetos. Se você está tentando este projeto sem ter assistido pelo menos à Aula 4, está tentando cedo demais!</p></div>
 
 Crie um site de leilões de comércio eletrônico semelhante ao eBay que permitirá aos usuários postar listagens de leilões, fazer lances em listagens, comentar essas listagens e adicionar listagens a uma "lista de observação".
 
@@ -31,26 +31,26 @@ Por fim, dê uma olhada em `auctions/models.py`. É aqui que você definirá qua
 
 Complete a implementação do seu site de leilões. Você deve cumprir os seguintes requisitos:
 
-- **Modelos**: Sua aplicação deve ter pelo menos três modelos além do modelo `User`: um para listagens de leilões, um para lances e um para comentários feitos em listagens de leilões. Cabe a você decidir quais campos cada modelo deve ter e quais devem ser os tipos desses campos. Você pode ter modelos adicionais se desejar.
-- **Criar Listagem**: Os usuários devem poder visitar uma página para criar uma nova listagem. Eles devem ser capazes de especificar um título para a listagem, uma descrição em texto e qual deve ser o lance inicial. Os usuários também devem poder fornecer opcionalmente uma URL para uma imagem da listagem e/ou uma categoria (por exemplo, Moda, Brinquedos, Eletrônicos, Casa, etc.).
-- **Página de Listagens Ativas**: A rota padrão de sua aplicação web deve permitir aos usuários visualizar todas as listagens de leilão ativas no momento. Para cada listagem ativa, esta página deve exibir (no mínimo) o título, a descrição, o preço atual e a foto (se houver) da listagem.
-- **Página de Listagem**: Clicar em uma listagem deve levar os usuários a uma página específica para essa listagem. Nessa página, os usuários devem poder visualizar todos os detalhes sobre a listagem, incluindo o preço atual da listagem.
-  - Se o usuário estiver conectado, ele deve poder adicionar o item à sua "Lista de Observação". Se o item já estiver na lista de observação, o usuário deve poder removê-lo.
-  - Se o usuário estiver conectado, ele deve poder dar lances no item. O lance deve ser pelo menos tão grande quanto o lance inicial e maior do que quaisquer outros lances já feitos (se houver). Se o lance não atender a esses critérios, o usuário deve receber um erro.
-  - Se o usuário estiver conectado e for o responsável por criar a listagem, ele deve ter a capacidade de "fechar" o leilão nesta página, tornando o maior licitante o vencedor do leilão e tornando a lista não mais ativa.
-  - Se um usuário estiver conectado em uma página de listagem fechada e o usuário tiver ganhado o leilão, a página deve informar isso.
-  - Usuários conectados devem poder adicionar comentários à página da listagem. A página da listagem deve exibir todos os comentários que foram feitos na listagem.
-- **Lista de Observação**: Usuários que estiverem conectados devem poder visitar uma página de Lista de Observação, que deve exibir todas as listagens que um usuário adicionou à sua lista de observação. Clicar em qualquer uma dessas listagens deve levar o usuário à página dessa listagem.
-- **Categorias**: Os usuários devem poder visitar uma página que exibe uma lista de todas as categorias de listagens. Clicar no nome de qualquer categoria deve levar o usuário a uma página que exibe todas as listagens ativas nessa categoria.
-- **Interface do Django Admin**: Por meio da interface do Django Admin, um administrador do site deve poder visualizar, adicionar, editar e excluir quaisquer listagens, comentários e lances feitos no site.
+-   **Modelos**: Sua aplicação deve ter pelo menos três modelos além do modelo `User`: um para listagens de leilões, um para lances e um para comentários feitos em listagens de leilões. Cabe a você decidir quais campos cada modelo deve ter e quais devem ser os tipos desses campos. Você pode ter modelos adicionais se desejar.
+-   **Criar Listagem**: Os usuários devem poder visitar uma página para criar uma nova listagem. Eles devem ser capazes de especificar um título para a listagem, uma descrição em texto e qual deve ser o lance inicial. Os usuários também devem poder fornecer opcionalmente uma URL para uma imagem da listagem e/ou uma categoria (por exemplo, Moda, Brinquedos, Eletrônicos, Casa, etc.).
+-   **Página de Listagens Ativas**: A rota padrão de sua aplicação web deve permitir aos usuários visualizar todas as listagens de leilão ativas no momento. Para cada listagem ativa, esta página deve exibir (no mínimo) o título, a descrição, o preço atual e a foto (se houver) da listagem.
+-   **Página de Listagem**: Clicar em uma listagem deve levar os usuários a uma página específica para essa listagem. Nessa página, os usuários devem poder visualizar todos os detalhes sobre a listagem, incluindo o preço atual da listagem.
+    -   Se o usuário estiver conectado, ele deve poder adicionar o item à sua "Lista de Observação". Se o item já estiver na lista de observação, o usuário deve poder removê-lo.
+    -   Se o usuário estiver conectado, ele deve poder dar lances no item. O lance deve ser pelo menos tão grande quanto o lance inicial e maior do que quaisquer outros lances já feitos (se houver). Se o lance não atender a esses critérios, o usuário deve receber um erro.
+    -   Se o usuário estiver conectado e for o responsável por criar a listagem, ele deve ter a capacidade de "fechar" o leilão nesta página, tornando o maior licitante o vencedor do leilão e tornando a lista não mais ativa.
+    -   Se um usuário estiver conectado em uma página de listagem fechada e o usuário tiver ganhado o leilão, a página deve informar isso.
+    -   Usuários conectados devem poder adicionar comentários à página da listagem. A página da listagem deve exibir todos os comentários que foram feitos na listagem.
+-   **Lista de Observação**: Usuários que estiverem conectados devem poder visitar uma página de Lista de Observação, que deve exibir todas as listagens que um usuário adicionou à sua lista de observação. Clicar em qualquer uma dessas listagens deve levar o usuário à página dessa listagem.
+-   **Categorias**: Os usuários devem poder visitar uma página que exibe uma lista de todas as categorias de listagens. Clicar no nome de qualquer categoria deve levar o usuário a uma página que exibe todas as listagens ativas nessa categoria.
+-   **Interface do Django Admin**: Por meio da interface do Django Admin, um administrador do site deve poder visualizar, adicionar, editar e excluir quaisquer listagens, comentários e lances feitos no site.
 
 ## Dicas
 
-- Para criar uma conta de superusuário que pode acessar a interface de administração do Django, execute `python manage.py createsuperuser`.
-- Consulte a [referência de campos de modelo do Django](https://docs.djangoproject.com/pt-br/4.0/ref/models/fields/) para possíveis tipos de campos para o modelo Django.
-- Provavelmente você precisará criar alguns [formulários do Django](https://docs.djangoproject.com/pt-br/4.0/topics/forms/) para várias partes desta aplicação web.
-- Adicionar o decorador [`@login_required`](https://docs.djangoproject.com/pt-br/4.0/topics/auth/default/#the-login-required-decorator) acima de qualquer visualização garantirá que apenas um usuário logado possa acessar aquela visualização.
-- Você pode modificar o CSS quanto quiser para tornar o site único! Algumas capturas de tela de exemplo são mostradas no início desta página. Elas são apenas exemplos: sua aplicação não precisa ser esteticamente igual às capturas de tela aqui (é encorajado ser criativo!).
+-   Para criar uma conta de superusuário que pode acessar a interface de administração do Django, execute `python manage.py createsuperuser`.
+-   Consulte a [referência de campos de modelo do Django](https://docs.djangoproject.com/pt-br/4.0/ref/models/fields/) para possíveis tipos de campos para o modelo Django.
+-   Provavelmente você precisará criar alguns [formulários do Django](https://docs.djangoproject.com/pt-br/4.0/topics/forms/) para várias partes desta aplicação web.
+-   Adicionar o decorador [`@login_required`](https://docs.djangoproject.com/pt-br/4.0/topics/auth/default/#the-login-required-decorator) acima de qualquer visualização garantirá que apenas um usuário logado possa acessar aquela visualização.
+-   Você pode modificar o CSS quanto quiser para tornar o site único! Algumas capturas de tela de exemplo são mostradas no início desta página. Elas são apenas exemplos: sua aplicação não precisa ser esteticamente igual às capturas de tela aqui (é encorajado ser criativo!).
 
 ## Como Enviar
 

@@ -1,4 +1,5 @@
 # FAQs
+
 Para respostas a outras perguntas, basta perguntar em uma das comunidades do CS50!
 
 Avaliações
@@ -199,7 +200,6 @@ Projeto Final - Projeto Final
 
 1 Ao concluir, queremos dizer que você obteve 70% ou mais nos problemas antes de 1 de janeiro de 2023.
 
-
 O trabalho que eu completei para CS50x 2022 (ou anterior) será transferido para CS50x 2024?
 
 O trabalho concluído em CS50x 2022 ou anterior não será transferido para o progresso. Apenas o trabalho completo em CS50x 2023 será transferido. Isso significa que se você recebeu crédito por trabalho anterior que foi transferido para CS50x 2023, esse crédito não será mais válido a partir de 1º de janeiro de 2024, e você pode precisar refazer (ou pelo menos enviar novamente) algumas tarefas. O que isso efetivamente significa é que, dependendo de quando você começa no ano calendário, você tem entre 12 e 24 meses para completar o CS50x sem precisar voltar atrás e começar a enviar novamente as tarefas. Sabemos, especialmente para aqueles que tentam terminar o curso logo no final de dezembro, que isso pode ser difícil, mas infelizmente não podemos fazer nenhuma exceção a essa regra por qualquer motivo. Portanto, encorajamos você, se possível, a evitar tentar correr para terminar o curso no prazo e, em vez disso, estender seus estudos por um período razoável de tempo.
@@ -220,7 +220,7 @@ Meu caderno de notas mostra apenas se eu pontuei alto o suficiente para passar e
 
 Você pode clicar no nome do problema para ir à sua submissão, onde as notas brutais de correção (check50) e estilo (style50) individuais serão exibidas.
 
-Sua nota geral do problema é ponderada em 75% para a correção e 25% para o estilo. Para receber o visto verde indicando conclusão, sua nota geral deve ser de 70% ou superior. Como exemplo, se sua pontuação check50 for 7/8 e sua pontuação style50 for 0,95, sua nota geral será (7/8 * 0,75) + (0,95 * 0,25) = 89%.
+Sua nota geral do problema é ponderada em 75% para a correção e 25% para o estilo. Para receber o visto verde indicando conclusão, sua nota geral deve ser de 70% ou superior. Como exemplo, se sua pontuação check50 for 7/8 e sua pontuação style50 for 0,95, sua nota geral será (7/8 _ 0,75) + (0,95 _ 0,25) = 89%.
 
 Se você não passou em um problema, pode pairar sobre a cruz vermelha para ver qual foi sua pontuação real.
 
@@ -240,4 +240,4 @@ Não regularmente! Infelizmente, o CS50x é muito grande, mas você ainda pode f
 
 O CS50x tem seções?
 
-Durante o outono de 2022, a equipe do curso conduziu pequenas seções com alguns alunos do CS50x enquanto as palestras estavam sendo filmadas. Embora o curso seja muito grande para realizar seções ao vivo para os alunos atuais, essas seções pré-gravadas estarão disponíveis (quando prontas!) para os alunos complementarem outros materiais do curso.
+Durante o outono de 2022, a equipe do curso conduziu pequenas seções com alguns alunos do CS50x enquanto as aulas estavam sendo filmadas. Embora o curso seja muito grande para realizar seções ao vivo para os alunos atuais, essas seções pré-gravadas estarão disponíveis (quando prontas!) para os alunos complementarem outros materiais do curso.

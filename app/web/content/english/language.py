@@ -44,18 +44,18 @@ class IWeek(TypedDict):
     pdf_slides_link: str
 
 menu: IMenu = {
-    "title": "",
+    "title": "Web Programming with Python and JavaScript",
     "intro": "",
-    "week": "",
-    "week0": "",
-    "week1": "",
-    "week2": "",
-    "week3": "",
-    "week4": "",
-    "week5": "",
-    "week6": "",
-    "week7": "",
-    "week8": "",
+    "week": "Week",
+    "week0": "HTML, CSS",
+    "week1": "Git",
+    "week2": "Python",
+    "week3": "Django",
+    "week4": "SQL, Models, and Migrations",
+    "week5": "JavaScript",
+    "week6": "User Interfaces",
+    "week7": "Testing, CI/CD",
+    "week8": "Scalability and Security",
     "week9": "",
 }
 
@@ -78,7 +78,7 @@ week_page: IWeekPage = {
 }
 
 week_0: IWeek = {
-    "name": "",
+    "name": "HTML, CSS",
     "number": 0,
     "study_guide": "",
     "lecture_url": "",
@@ -90,7 +90,7 @@ week_0: IWeek = {
 }
 
 week_1: IWeek = {
-    "name": "",
+    "name": "Git",
     "number": 1,
     "study_guide": "",
     "lecture_url": "",
@@ -102,7 +102,7 @@ week_1: IWeek = {
 }
 
 week_2: IWeek = {
-    "name": "",
+    "name": "Python",
     "number": 2,
     "study_guide": "",
     "lecture_url": "",
@@ -114,7 +114,7 @@ week_2: IWeek = {
 }
 
 week_3: IWeek = {
-    "name": "",
+    "name": "Django",
     "number": 3,
     "study_guide": "",
     "lecture_url": "",
@@ -126,7 +126,7 @@ week_3: IWeek = {
 }
 
 week_4: IWeek = {
-    "name": "",
+    "name": "SQL, Models, and Migrations",
     "number": 4,
     "study_guide": "",
     "lecture_url": "",
@@ -138,7 +138,7 @@ week_4: IWeek = {
 }
 
 week_5: IWeek = {
-    "name": "",
+    "name": "JavaScript",
     "number": 5,
     "study_guide": "",
     "lecture_url": "",
@@ -150,7 +150,7 @@ week_5: IWeek = {
 }
 
 week_6: IWeek = {
-    "name": "",
+    "name": "User Interfaces",
     "number": 6,
     "study_guide": "",
     "lecture_url": "",
@@ -162,7 +162,7 @@ week_6: IWeek = {
 }
 
 week_7: IWeek = {
-    "name": "",
+    "name": "Testing, CI/CD",
     "number": 7,
     "study_guide": "",
     "lecture_url": "",
@@ -174,7 +174,7 @@ week_7: IWeek = {
 }
 
 week_8: IWeek = {
-    "name": "",
+    "name": "Scalability and Security",
     "number": 8,
     "study_guide": "",
     "lecture_url": "",

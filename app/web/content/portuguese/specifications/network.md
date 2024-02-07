@@ -1,6 +1,6 @@
 # Rede
 
-<div class="alert alert-warning" data-alert="warning" role="alert"><p>O CS50W não apresenta uma correspondência direta entre as palestras e os projetos. Se você está tentando realizar este projeto sem ter assistido pelo menos à Aula 7, está tentando fazer isso cedo demais!</p></div>
+<div class="alert alert-warning" data-alert="warning" role="alert"><p>O CS50W não apresenta uma correspondência direta entre as aulas e os projetos. Se você está tentando realizar este projeto sem ter assistido pelo menos à Aula 7, está tentando fazer isso cedo demais!</p></div>
 
 Projete um site de rede social semelhante ao Twitter para criar postagens e seguir usuários.
 
@@ -29,32 +29,32 @@ Por fim, examine `network/models.py`. Aqui é onde você irá definir os modelos
 
 Usando Python, JavaScript, HTML e CSS, complete a implementação de uma rede social que permita aos usuários criar postagens, seguir outros usuários e "curtir" postagens. Você deve cumprir os seguintes requisitos:
 
-- **Nova Postagem**: Usuários conectados devem poder escrever uma nova postagem baseada em texto preenchendo um campo de texto e clicando em um botão para enviar a postagem.
-  - A captura de tela no topo desta especificação mostra o campo "Nova Postagem" no topo da página "Todas as Postagens". Você pode optar em ter isso também, ou pode fazer a funcionalidade "Nova Postagem" em uma página separada.
-- **Todas as Postagens**: O link "Todas as Postagens" na barra de navegação deve levar o usuário a uma página onde ele possa ver todas as postagens de todos os usuários, com as postagens mais recentes em primeiro lugar.
-  - Cada postagem deve incluir o nome de usuário do autor, o conteúdo da postagem em si, a data e hora em que a postagem foi feita e o número de "curtidas" que a postagem tem (que será 0 para todas as postagens até você implementar a capacidade de "curtir" uma postagem posteriormente).
-- **Página de Perfil**: Clicar em um nome de usuário deve carregar a página de perfil desse usuário. Esta página deve:
-  - Exibir o número de seguidores que o usuário possui, bem como o número de pessoas que o usuário segue.
-  - Exibir todas as postagens desse usuário, em ordem cronológica inversa.
-  - Para qualquer outro usuário autenticado, esta página deve exibir um botão "Seguir" ou "Deixar de Seguir" que permitirá ao usuário atual alternar se está seguindo ou não as postagens desse usuário. Observe que isso se aplica apenas a qualquer usuário "outro": um usuário não deve poder seguir a si mesmo.
-- **Seguindo**: O link "Seguindo" na barra de navegação deve levar o usuário a uma página onde ele veja todas as postagens feitas por usuários que o usuário atual segue.
-  - Esta página deve se comportar da mesma forma que a página "Todas as Postagens", só que com um conjunto mais limitado de postagens.
-  - Esta página deve estar disponível apenas para usuários autenticados.
-- **Paginação**: Em qualquer página que exiba postagens, as postagens devem ser exibidas em grupos de 10 por página. Se houver mais de dez postagens, um botão "Próximo" deve aparecer para levar o usuário para a próxima página de postagens (que deve ser mais antiga do que a página atual de postagens). Se não estiver na primeira página, um botão "Anterior" deve aparecer para levar o usuário para a página anterior de postagens também.
-  - Veja a seção **Dicas** para algumas sugestões sobre como implementar isso.
-- **Editar Postagem**: Os usuários devem poder clicar em um botão ou link "Editar" em qualquer uma de suas próprias postagens para editar aquela postagem.
-  - Quando um usuário clica em "Editar" em uma de suas próprias postagens, o conteúdo da postagem deve ser substituído por um `textarea` onde o usuário pode editar o conteúdo de sua postagem.
-  - O usuário deve então poder "Salvar" a postagem editada. Usando JavaScript, você deve conseguir fazer isso sem exigir que a página inteira seja recarregada.
-  - Por questões de segurança, garanta que sua aplicação seja projetada de forma que não seja possível para um usuário, por meio de qualquer rota, editar as postagens de outro usuário.
-- **"Curtir" e "Descurtir"**: Os usuários devem poder clicar em um botão ou link em qualquer postagem para alternar se eles "curtem" ou não aquela postagem.
-  - Usando JavaScript, você deve permitir de forma assíncrona que o servidor saiba para atualizar o contador de curtidas (como via uma chamada para `fetch`) e então atualizar o contador de curtidas da postagem exibida na página, sem exigir que a página inteira seja recarregada.
+-   **Nova Postagem**: Usuários conectados devem poder escrever uma nova postagem baseada em texto preenchendo um campo de texto e clicando em um botão para enviar a postagem.
+    -   A captura de tela no topo desta especificação mostra o campo "Nova Postagem" no topo da página "Todas as Postagens". Você pode optar em ter isso também, ou pode fazer a funcionalidade "Nova Postagem" em uma página separada.
+-   **Todas as Postagens**: O link "Todas as Postagens" na barra de navegação deve levar o usuário a uma página onde ele possa ver todas as postagens de todos os usuários, com as postagens mais recentes em primeiro lugar.
+    -   Cada postagem deve incluir o nome de usuário do autor, o conteúdo da postagem em si, a data e hora em que a postagem foi feita e o número de "curtidas" que a postagem tem (que será 0 para todas as postagens até você implementar a capacidade de "curtir" uma postagem posteriormente).
+-   **Página de Perfil**: Clicar em um nome de usuário deve carregar a página de perfil desse usuário. Esta página deve:
+    -   Exibir o número de seguidores que o usuário possui, bem como o número de pessoas que o usuário segue.
+    -   Exibir todas as postagens desse usuário, em ordem cronológica inversa.
+    -   Para qualquer outro usuário autenticado, esta página deve exibir um botão "Seguir" ou "Deixar de Seguir" que permitirá ao usuário atual alternar se está seguindo ou não as postagens desse usuário. Observe que isso se aplica apenas a qualquer usuário "outro": um usuário não deve poder seguir a si mesmo.
+-   **Seguindo**: O link "Seguindo" na barra de navegação deve levar o usuário a uma página onde ele veja todas as postagens feitas por usuários que o usuário atual segue.
+    -   Esta página deve se comportar da mesma forma que a página "Todas as Postagens", só que com um conjunto mais limitado de postagens.
+    -   Esta página deve estar disponível apenas para usuários autenticados.
+-   **Paginação**: Em qualquer página que exiba postagens, as postagens devem ser exibidas em grupos de 10 por página. Se houver mais de dez postagens, um botão "Próximo" deve aparecer para levar o usuário para a próxima página de postagens (que deve ser mais antiga do que a página atual de postagens). Se não estiver na primeira página, um botão "Anterior" deve aparecer para levar o usuário para a página anterior de postagens também.
+    -   Veja a seção **Dicas** para algumas sugestões sobre como implementar isso.
+-   **Editar Postagem**: Os usuários devem poder clicar em um botão ou link "Editar" em qualquer uma de suas próprias postagens para editar aquela postagem.
+    -   Quando um usuário clica em "Editar" em uma de suas próprias postagens, o conteúdo da postagem deve ser substituído por um `textarea` onde o usuário pode editar o conteúdo de sua postagem.
+    -   O usuário deve então poder "Salvar" a postagem editada. Usando JavaScript, você deve conseguir fazer isso sem exigir que a página inteira seja recarregada.
+    -   Por questões de segurança, garanta que sua aplicação seja projetada de forma que não seja possível para um usuário, por meio de qualquer rota, editar as postagens de outro usuário.
+-   **"Curtir" e "Descurtir"**: Os usuários devem poder clicar em um botão ou link em qualquer postagem para alternar se eles "curtem" ou não aquela postagem.
+    -   Usando JavaScript, você deve permitir de forma assíncrona que o servidor saiba para atualizar o contador de curtidas (como via uma chamada para `fetch`) e então atualizar o contador de curtidas da postagem exibida na página, sem exigir que a página inteira seja recarregada.
 
 ## Dicas
 
-- Para exemplos de chamadas `fetch` em JavaScript, você pode achar algumas rotas no Projeto 3 úteis para referência.
-- Provavelmente você precisará criar um ou mais modelos em `network/models.py` e/ou modificar o modelo `User` existente para armazenar os dados necessários para sua aplicação web.
-- A classe [Paginator](https://docs.djangoproject.com/en/4.0/topics/pagination/) do Django pode ser útil para implementar a paginação no lado do backend (no seu código Python).
-- Os recursos de [Paginação](https://getbootstrap.com/docs/4.4/components/pagination/) do Bootstrap podem ser úteis para exibir páginas no lado do frontend (no seu HTML).
+-   Para exemplos de chamadas `fetch` em JavaScript, você pode achar algumas rotas no Projeto 3 úteis para referência.
+-   Provavelmente você precisará criar um ou mais modelos em `network/models.py` e/ou modificar o modelo `User` existente para armazenar os dados necessários para sua aplicação web.
+-   A classe [Paginator](https://docs.djangoproject.com/en/4.0/topics/pagination/) do Django pode ser útil para implementar a paginação no lado do backend (no seu código Python).
+-   Os recursos de [Paginação](https://getbootstrap.com/docs/4.4/components/pagination/) do Bootstrap podem ser úteis para exibir páginas no lado do frontend (no seu HTML).
 
 ## Como Submeter
 

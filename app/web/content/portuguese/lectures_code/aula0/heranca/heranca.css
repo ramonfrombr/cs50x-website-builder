@@ -1,0 +1,24 @@
+.sucesso,
+.aviso,
+.erro {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.sucesso {
+    background-color: green;
+}
+
+.aviso {
+    background-color: orange;
+}
+
+.erro {
+    background-color: red;
+}
+
+/*# sourceMappingURL=inheritance.css.map */

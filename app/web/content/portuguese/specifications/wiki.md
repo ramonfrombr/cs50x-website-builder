@@ -1,7 +1,7 @@
 # Wiki
 
 <div class="alert alert-warning" data-alert="warning" role="alert">
-<p>O CS50W não apresenta correspondência direta entre as palestras e os projetos. Se você está tentando fazer este projeto sem ter assistido pelo menos aula 3, está tentando cedo demais!</p>
+<p>O CS50W não apresenta correspondência direta entre as aulas e os projetos. Se você está tentando fazer este projeto sem ter assistido pelo menos aula 3, está tentando cedo demais!</p>
 </div>
 
 Projete um enciclopédia online semelhante à Wikipedia.

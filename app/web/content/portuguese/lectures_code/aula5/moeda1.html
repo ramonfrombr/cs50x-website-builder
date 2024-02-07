@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <title>Moeda</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("form").onsubmit = function () {
+                fetch(
+                    "https://api.exchangeratesapi.io/latest?base=USD&access_key=ACCESS_KEY"
+                )
+                    .then((resposta) => resposta.json())
+                    .then((dados) => {
+                        const moeda = document
+                            .querySelector("#moeda")
+                            .value.toUpperCase();
+                        const taxa = dados.rates[moeda];
+                        if (taxa !== undefined) {
+                            const resultado = `1 USD é igual a ${taxa.toFixed(
+                                3
+                            )} ${moeda}`;
+                            document.querySelector("#resultado").innerHTML =
+                                resultado;
+                        } else {
+                            document.querySelector("#resultado").innerHTML =
+                                "Moeda inválida.";
+                        }
+                    })
+                    .catch((error) => {
+                        console.log("Erro:", error);
+                    });
+                return false;
+            };
+        });
+    </script>
+    <body>
+        <form>
+            <input id="moeda" placeholder="Moeda" />
+            <input type="submit" value="Converter" />
+        </form>
+        <div id="resultado"></div>
+    </body>
+</html>

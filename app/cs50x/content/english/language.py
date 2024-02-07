@@ -25,6 +25,7 @@ class IMenu(TypedDict):
     sqlite_browser: str
     manual: str
     style: str
+    courses: str
 
 class IWeekPage(TypedDict):
     week: str
