@@ -1,0 +1,39 @@
+Entonces, propongamos que volvamos a nuestro código aquí y veamos cómo podríamos usar la biblioteca CSV. De hecho, en Python existe un módulo llamado CSV. La documentación se encuentra en esta URL, aquí en la documentación oficial de Python.
+
+Pero hay algunas funciones que son bastante accesibles si nos sumergimos directamente. Y permítanme proponer que hagamos esto. Permítanme volver a mi código aquí.
+
+En lugar de reinventar la rueda y leer el archivo línea por línea, y dividir por comas, y lidiar ahora con comillas y casas de Privet Drive, y demás, hagamos esto en su lugar. Al inicio de mi programa, permítanme importar el módulo CSV. Usemos esta biblioteca que alguien más ha escrito y que está lidiando con todos estos casos especiales, si lo desean. Aún así, me voy a dar una lista, inicialmente vacía, en la cual almacenar a todos estos estudiantes.
+
+Pero voy a cambiar mi enfoque aquí ahora un poco. Cuando abro este archivo con "with", permítanme cambiar un poco esto. Voy a escribir esto aquí. "Reader equals csv.reader", pasando el archivo como entrada.
+
+Resulta entonces que, si leemos la documentación sobre el módulo CSV, encontramos una función llamada "reader" cuyo propósito en la vida es leer un archivo CSV por ti y averiguar dónde están las comas, dónde están las comillas, dónde están todos los casos especiales potenciales, y simplemente lidiar con ellos por ti. Puedes reemplazar ciertos valores predeterminados o supuestos en caso de que no uses comas, sino una barra vertical o algo más. Pero por defecto, creo que funciona correctamente.
+
+Ahora, ¿cómo integro el "reader" y no el archivo en bruto? Es casi lo mismo. La biblioteca te permite seguir haciendo esto. Por cada fila en el "reader", entonces no estás iterando directamente sobre el archivo ahora. Estás iterando sobre el "reader", que, nuevamente, se encargará de todo el análisis de comas, saltos de línea y más.
+
+Por cada fila en el "reader", ¿qué voy a hacer? Bueno, por el momento voy a hacer esto. Voy a agregar a mi lista de estudiantes el siguiente diccionario, un diccionario que tiene un nombre cuyo valor es la primera columna de la fila actual, y cuyo domicilio es la segunda columna de la fila.
+
+Ahora, vale la pena señalar que el "reader" por cada línea en el archivo en realidad me devuelve una fila. Pero me devuelve una fila que es una lista, lo que significa que el primer elemento de esa lista será el nombre del estudiante, como antes. El segundo elemento de esa lista será el domicilio del estudiante, como ahora.
+
+Pero si quiero acceder a cada uno de esos elementos, recuerden que las listas tienen índices desde 0. Comenzamos a contar desde 0 y luego 1, en lugar de 1 y luego 2. Entonces, si quiero acceder al nombre del estudiante, uso "row[0]". Y si quiero acceder al domicilio del estudiante, uso "row[1]".
+
+Pero en mi bucle "for", podemos hacer esa misma descomposición como antes. Si sé que el CSV solo va a tener dos columnas, incluso puedo hacer esto: "for name, home in reader". Y ahora no necesito usar notación de lista. Puedo desempaquetar todo a la vez y decir "name" aquí y "home" aquí. El resto de mi código puede permanecer exactamente igual porque, ¿qué estoy haciendo ahora en la línea 8?
+
+Todavía estoy construyendo el mismo diccionario que antes, aunque ahora para los domicilios en lugar de las casas. Y estoy obteniendo esos valores ahora, no del archivo en sí y de mi uso de "split", sino del "reader". Y de nuevo, lo que el "reader" va a hacer es averiguar dónde están esas comas, dónde están las comillas. Y simplemente solucionar ese problema por ti.
+
+Entonces, vayamos ahora a mi ventana de terminal y ejecutemos "python students.py" y presionemos Enter. Y ahora vemos con éxito, ordenado además, que Draco es de la Mansión Malfoy. Harry es del número cuatro, coma, Privet Drive. Y Ron es de The Burrow. ¿Alguna pregunta sobre esta técnica de usar el lector de CSV de ese módulo CSV, que nuevamente solo nos está sacando del problema de leer cada línea por nosotros mismos y leer cada una de esas comas y dividirlas?
+
+PREGUNTA DEL PÚBLICO: Mis preguntas están relacionadas con algo del pasado. Reconozco que estás leyendo un archivo cada vez; bueno, asumimos que ya tenemos el archivo CSV a mano en este caso. ¿Es posible hacer que un archivo sea legible y escribible? Entonces, en este caso, podrías escribir este tipo de cosas en el archivo, pero al mismo tiempo, podrías tener otra función que lo lea y haga cambios mientras avanzas.
+
+DAVID MALAN: Una pregunta muy buena. Y la respuesta corta es sí. Sin embargo, históricamente, el modelo mental para un archivo es el de una cinta de casete. Hace años, aunque ya no se usa realmente, las cintas de casete son secuenciales, lo que significa que comienzan desde el principio y si quieres llegar al final, más o menos tienes que rebobinar la cinta para llegar hasta ese punto.
+
+El equivalente más cercano en la actualidad sería algo como Netflix o cualquier servicio de transmisión, donde hay un control deslizante que tienes que mover de izquierda a derecha. No puedes saltar allí o allá. No tienes acceso aleatorio.
+
+Entonces, el problema con los archivos es que, si quieres leerlos y escribir en ellos, tú o alguna biblioteca necesita realizar un seguimiento de dónde te encuentras en el archivo para que, si estás leyendo desde la parte superior y luego escribes en la parte inferior, y deseas volver a empezar a leer, debas buscar el inicio. No es algo que hagamos aquí en clase. Es más complicado, pero definitivamente se puede hacer. Para nuestros propósitos, generalmente recomendamos leer el archivo y luego, si deseas cambiarlo, escribirlo nuevamente, en lugar de intentar hacer cambios más pieza por pieza, lo cual es útil si el archivo es muy grande y sería muy costoso en términos de tiempo cambiarlo por completo. ¿Otras preguntas sobre este lector de CSV?
+
+PREGUNTA DEL PÚBLICO: ¿Es posible escribir un párrafo en ese archivo?
+
+DAVID MALAN: Absolutamente. Por ahora, estoy escribiendo cadenas de texto muy pequeñas, solo nombres o domicilios, como hice antes. Pero absolutamente puedes escribir tanto texto como desees. ¿Otras preguntas sobre el lector de CSV?
+
+PREGUNTA DEL PÚBLICO: ¿Puede un usuario elegir él mismo una clave? Como, podría ingresar una clave que sea un nombre o un código.
+
+DAVID MALAN: La respuesta corta es sí, absolutamente podríamos escribir un programa que solicite al usuario un nombre y un domicilio, un nombre y un domicilio. Y podríamos escribir esos valores. Y en un momento, veremos cómo se puede escribir en un archivo CSV. Por ahora, estoy asumiendo, como el programador que creó students.csv, que sé cuáles serán las columnas. Y, por lo tanto, estoy nombrando mis variables en consecuencia.

@@ -9,3 +9,4 @@ build_portuguese
 build_french
 build_spanish
 .pytest_cache
+.mypy_cache

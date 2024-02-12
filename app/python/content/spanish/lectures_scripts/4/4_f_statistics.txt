@@ -1,0 +1,13 @@
+Permítanme volver ahora a nuestra implementación aquí de esta aleatoriedad y considerar cómo podríamos aprovechar otros tipos de funcionalidades que no están necesariamente en esta biblioteca específica aquí. Bueno, resulta que Python también viene con una biblioteca de estadísticas. Y esta contiene todo tipo de funciones para realizar cosas más estadísticas en su naturaleza, es decir, calcular medias, medianas, modas u otros aspectos de un conjunto de datos que puedas querer analizar.
+
+Entonces, ¿cómo podríamos usar el módulo de estadísticas en Python? Bueno, primero podríamos echar un vistazo a su documentación como cualquier otro módulo en Python. Y veremos dentro de esa biblioteca que hay toda una serie de funciones. Y una de esas funciones es una que es bastante simple. Es el promedio. Una función que te permite calcular el promedio de algunos números que has pasado.
+
+Permítanme avanzar y abrir un nuevo archivo llamado average.py en VS Code en mi ventana de terminal. Y en la parte superior de este archivo, voy a importar una biblioteca diferente esta vez, a saber, el módulo de estadísticas en Python. Y ahora, voy a pasar a llamar a una función que sé que viene en ese módulo, a saber, mean para obtener el promedio de algunos valores. Y voy a llamar a statistics.mean.
+
+Y voy a pasar a esta función mean una lista de algunos valores. Y supongamos que estoy tratando de calcular rápidamente cuál es mi promedio actual de calificaciones en la escuela. Y me fue muy bien en mi primer examen. Y obtuve un 100%. Y en el segundo, me fue bien pero no tan bien. Y obtuve un 90. E irónicamente, no soy muy bueno con las matemáticas. Así que me gustaría averiguar cuál es mi promedio ahora entre esos dos exámenes.
+
+Así que permítanme ahora escribir en esta lista el número 100, coma, 90, pasando así una lista de dos valores, dos enteros, 190. Y fuera de esos están los paréntesis porque, por supuesto, este es ahora el argumento que estoy pasando a la función llamada mean. Y esta función mean está en el módulo llamado statistics.
+
+Bueno, no es tan interesante simplemente calcular la media si no la veo realmente. Así que déjenme también pasar el valor de retorno de esa función mean a la función print como de costumbre. Ahora, voy a escribir en mi ventana de terminal en VS Code, Python de average.py y presionar Enter. Y voilà, como podrías esperar, mi promedio es del 95%.
+
+Entonces, la diferencia aquí es que simplemente estoy usando un módulo diferente que todavía viene con Python. Pero necesito importarlo en lugar del módulo random, por ejemplo. Y esta vez, sé por la documentación que existe una función llamada mean.

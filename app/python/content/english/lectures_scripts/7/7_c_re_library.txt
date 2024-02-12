@@ -1,0 +1,19 @@
+So how can we go about improving this? Well, it turns out in Python there's a library for regular expressions. It's called succinctly R-E. And in the re library, you have a lot of capabilities to define and check for and even replace patterns. Again, a regular expression is a pattern. And this library, the re library in Python, is going to let us define some of these patterns, like a pattern for an email address, and then use some built-in functions to actually validate a user's input against that pattern or even use these patterns to change the user's input or extract partial information therefrom. We'll see examples of all this and more. 
+
+So what can and should I do with this library? Well, first and foremost, it comes with a lot of functionality. Here is the URL, for instance, to the official documentation. And let me propose that we focus on using one of the most versatile functions in the library, namely this-- search. 
+
+re.search is the name of the function and the re module that allows you to pass in a few arguments. The first is going to be a pattern that you want to search for in, for instance, a string that came from a user. The string argument here is going to be the actual string that you want to search for that pattern. And then there's a third argument optionally that's a whole bunch of flags. 
+
+A flag in general is like a parameter you can pass in to modify the behavior of the function. But initially, we're not even going to use this. We're just going to pass in a couple of arguments instead. 
+
+So let me go ahead and employ this re library, this regular expression library, and just improve on this design incrementally. So we're not going to solve this problem all at once, but we'll take some incremental steps. 
+
+I'm going to go back to VS Code here. And I'm going to go ahead now and get rid of most of this code. But I'm going to go into the top of my file and first of fall, import this re library. So import re gives me access to that function and more. 
+
+Now, after I've gotten the user's input in the same way as before, stripping off any leading or trailing whitespace, I'm just going to use this function super trivially for now, even though this isn't really a big step forward. I'm going to say, if re.search contains quote, unquote "@" in the email address, then let's go ahead and print "valid." Else, let's go ahead and print "invalid." 
+
+At the moment, this is really no better than my very first version where I was just asking Python, if @ sign in the email address. But now I'm at least beginning to use this library by using its own re.search function, which for now you can assume returns a true value effectively if, indeed, the @ sign is an email. 
+
+Just to make sure that this version does work as I expect, let me go ahead and run python of validate.py and Enter. I'll type in my actual email address, and we're back in business. But of course, this is not great, because if I similarly run this version of the program and just type in an @ sign, not an email address, and yet my code, of course, thinks it is valid. 
+
+So how can I do better than this? Well, we need a bit more vocabulary in the realm of regular expressions, in order to be able to express ourselves a little more precisely. Really, the pattern I want to ultimately define is going to be something like, I want there to be something to the left, then an @ sign, then something to the right. And that something to the right should end with .edu but should also have something before the .edu, like Harvard, or Yale, or any other school in the US as well. 

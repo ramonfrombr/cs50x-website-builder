@@ -1,19 +1,21 @@
 <ul class="fa-ul">
-  <li data-marker="*">
-    <span class="fa-li"><i class="fas fa-square"></i></span
-    ><a href="courses/"><strong>{{config['LANGUAGE_MENU'].courses}}</strong></a>
-  </li>
-  <li data-marker="*" class="small">
-    <span class="fa-li"><i class="fas fa-square"></i></span
-    ><a href="{{url_for('cs50x.index')}}">CS50x</a>
-  </li>
-  <li data-marker="*" class="small">
-    <span class="fa-li"><i class="fas fa-square"></i></span
-    ><a href="{{url_for('python.index')}}">CS50 Python</a>
-  </li>
-
-  <li data-marker="*" class="small">
-    <span class="fa-li"><i class="fas fa-square"></i></span
-    ><a href="{{url_for('web.index')}}">CS50 Web</a>
-  </li>
+    <li data-marker="*">
+        <span class="fa-li"><i class="fas fa-square"></i></span
+        ><a href="courses/"
+            ><strong>{{config['LANGUAGE_MENU'].courses}}</strong></a
+        >
+    </li>
+    <li data-marker="*" class="small">
+        <span class="fa-li"><i class="fas fa-square"></i></span
+        ><a href="{{url_for('cs50x.index')}}">CS50x</a>
+    </li>
+    <li data-marker="*" class="small">
+        <span class="fa-li"><i class="fas fa-square"></i></span
+        ><a href="{{url_for('python.index')}}">CS50 Python</a>
+    </li>
+    <li data-marker="*" class="small">
+        <span class="fa-li"><i class="fas fa-square"></i></span
+        ><a href="{{url_for('web.index')}}">CS50 Web</a>
+    </li>
+    <!-- Additional Courses -->
 </ul>

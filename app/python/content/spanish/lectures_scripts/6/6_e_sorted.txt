@@ -1,0 +1,57 @@
+Bueno, permíteme combinar algunas ideas de antes. Permíteme seguir adelante y comenzar de nuevo con esto. Permíteme darme una lista llamada "nombres" y asignarle una lista vacía, solo para tener una variable en la que acumular todas estas líneas. Y ahora permíteme abrir el archivo con "open", comillas/llamada nombres.txt.
+
+Resulta que puedo simplificar esto un poco. Resulta que si estás abriendo un archivo para leerlo, no necesitas especificar "r". Ese es el valor predeterminado implícito.
+
+Así que puedes acortar las cosas diciendo simplemente "open nombres.txt". Y podrás leer el archivo pero no escribir en él. Me voy a dar una variable llamada "archivo", como antes.
+
+Voy a iterar sobre el archivo de la misma manera, "for linea in archivo". Pero en lugar de imprimir cada línea, voy a hacer esto. Voy a tomar mi lista de nombres y añadir a ella. Y esto está agregando a una lista en la memoria, no al archivo en sí. Voy a agregar la línea actual, pero voy a eliminar el salto de línea al final para que lo que esté añadiendo a esta lista sea solo cada uno de los nombres de los estudiantes.
+
+Ahora puedo usar esa técnica familiar de antes. Permíteme salir de esta declaración "with" porque ahora he leído todo el archivo, presumiblemente. Así que para cuando termine con las líneas 4 y 5, una y otra vez, para cada línea en el archivo, terminé con el archivo. Lo puedo cerrar.
+
+Ahora tengo todos los nombres de los estudiantes en esta variable de lista. Permíteme hacer esto. Para nombre en, no solo nombres, sino los nombres ordenados, usando nuestra función Python "sorted", que hace precisamente eso, e imprimir, comillas/llamada, con una cadena f, hola, coma, y ahora voy a insertar "nombre" entre corchetes.
+
+Entonces, ¿qué he hecho ahora? Estoy creando una lista al principio, solo para tener un lugar donde reunir mis datos. Luego, en las líneas 3 a 5, itero sobre el archivo de arriba a abajo, leyendo cada línea, una por una, eliminando el salto de línea y agregando solo el nombre del estudiante a esta lista. Y la razón por la que hago esto es para que en la línea 7 pueda ordenar todos esos nombres, ahora que todos están en memoria, e imprimirlos en orden. Necesito cargarlos todos en memoria antes de poder ordenarlos. De lo contrario, los estaría imprimiendo prematuramente, y Draco terminaría último en lugar de primero.
+
+Así que permíteme seguir adelante en mi ventana de terminal y ejecutar "python nombres.py" ahora, y presionar Enter. Y ahí vamos. La misma lista de cuatro "hola", pero ahora están ordenados. Y esta es una técnica muy común. Al tratar con archivos e información en general, si deseas cambiar esos datos de alguna manera, como ordenarlos, crear algún tipo de variable al principio de tu programa, como una lista, añadir o agregar información a ella solo para recopilarla en un solo lugar, y luego hacer algo interesante con esa colección, esa lista, es exactamente lo que he hecho aquí.
+
+Ahora, debo mencionar que si simplemente queremos ordenar el archivo, podemos hacer esto de manera aún más simple en Python, en particular sin preocuparnos por esta lista de nombres ni por el segundo bucle "for". Permíteme seguir adelante y hacer algo más simple, solo esto. Permíteme seguir adelante y decirle a Python que queremos que el propio archivo se ordene usando esa misma función "sorted", pero esta vez en el archivo mismo.
+
+Y luego, dentro de ese bucle "for", simplemente vamos a imprimir de inmediato nuestro "hola", coma, seguido de la línea misma, pero aún eliminando cualquier espacio en blanco al final. Si ejecutamos este mismo programa ahora con "python nombres.py" y presionamos Enter, obtendremos el mismo resultado. Pero, por supuesto, es mucho más compacto.
+
+Pero por el bien de la discusión, asumamos que realmente queremos potencialmente hacer algunos cambios en los datos a medida que los recorremos. Así que deshagamos esos cambios, dejemos las cosas como están. Por lo tanto, continuaremos acumulando todos los nombres primero en una lista, tal vez hacer algo con ellos, tal vez forzarlos a mayúscula o minúscula o algo similar, y luego ordenarlos e imprimir cada elemento.
+
+Permítanme pausar y ver si hay alguna pregunta ahora sobre la lectura o escritura de E/S de archivos o ahora acumulando todos estos valores en alguna lista.
+
+AUDIENCIA: Hola. ¿Hay alguna forma de ordenar los archivos, en lugar de ordenarlos alfabéticamente de la A a la Z, hay alguna forma de revertirlos de la Z a la A? ¿Hay una pequeña extensión que se pueda agregar al final para hacer eso? O ¿tendría que crear una nueva función?
+
+DAVID MALAN: ¿Si quisieras revertir el contenido del archivo?
+
+AUDIENCIA: Sí, así es, si, en lugar de ordenarlos de la A a la Z en orden ascendente, si quisieras que estén en orden descendente, ¿hay una extensión para eso?
+
+DAVID MALAN: Sí, la hay. Y como siempre, la documentación es tu amiga. Así que si el objetivo es ordenarlos, no en orden alfabético, que es el valor predeterminado, sino tal vez en orden alfabético inverso, puedes echar un vistazo, por ejemplo, a la documentación formal de Python ahí.
+
+Y lo que verás es este resumen. Verás que la función "sorted" toma el primer argumento, generalmente conocido como iterable. Y algo que es iterable significa que puedes iterar sobre él.
+
+Eso significa que puedes recorrerlo una cosa a la vez. Lo que significa el resto de esta línea aquí es que puedes especificar una clave, como cómo quieres ordenarlo, pero más sobre eso más adelante. Pero este último parámetro con nombre aquí es "reverse".
+
+Y por defecto, según la documentación, es falso. Por defecto no se invertirá. Pero si lo cambiamos a verdadero, apuesto a que podemos hacer eso.
+
+Así que volvamos a VS Code y hagámoslo. Permíteme pasar un segundo argumento a "sorted" además de este iterable, que es mi lista de nombres, un iterable, de nuevo, en el sentido de que se puede recorrer. Y déjame pasar "reverse=True", anulando así el valor predeterminado de falso.
+
+Ahora ejecutemos "python nombres.py". Y ahora Ron está en la parte superior y Draco en la parte inferior. Así que, ahí también, siempre que tengas una pregunta como esa en el futuro, considera, ¿qué dice la documentación? Y ve si hay una idea allí porque lo más probable es que si tienes algún problema, lo más probable es que algún programador antes que tú haya tenido la misma pregunta. ¿Algún otro comentario?
+
+AUDIENCIA: ¿Podemos limitar el número o los números de nombres? Y la segunda pregunta, ¿podemos buscar un nombre específico en la lista?
+
+DAVID MALAN: Muy buena pregunta, ¿podemos limitar el número de nombres en el archivo? ¿Y podemos encontrar uno específico? Definitivamente podríamos hacerlo. Si escribiéramos código, podríamos, por ejemplo, abrir el archivo primero, contar cuántas líneas hay en él y luego, si ya hay demasiadas, podríamos simplemente salir con "sys.exit" u otro mensaje para indicarle al usuario que lo siento, la clase está llena. En cuanto a encontrar a alguien específicamente, absolutamente.
+
+Podrías imaginar abrir el archivo, iterar sobre él con un bucle "for" una y otra vez y agregar una condición. Por ejemplo, si la línea actual es igual a "Harry", entonces encontramos al elegido. Y puedes imprimir algo así. Así que definitivamente puedes combinar estas ideas con ideas anteriores, como los condicionales, para hacer esas mismas preguntas. ¿Alguna otra pregunta sobre E/S de archivos?
+
+AUDIENCIA: Entonces, simplemente pensé en esta función, leer todas las líneas. Y parece que separa todas las líneas con este carácter especial, barra invertida. Y parece que este carácter no es necesario, y siempre lo eliminamos. Y parece un diseño defectuoso o de función. ¿Por qué no simplemente lo eliminamos dentro de esta función?
+
+DAVID MALAN: Una excelente pregunta. Entonces, en mis ejemplos hasta ahora, estamos usando "rstrip" para eliminar del final de la línea todos estos espacios en blanco. Es posible que no quieras hacer eso.
+
+En este caso, lo estoy eliminando porque sé que cada una de esas líneas no es alguna línea de texto genérica. Cada línea realmente representa un nombre que he puesto allí mismo. Estoy usando el salto de línea solo para separar un valor de otro.
+
+En otros escenarios, es posible que quieras mantener ese final de línea porque es una serie muy larga de texto, o un párrafo, o algo así, donde quieres mantenerlo distinto de los demás. Pero es solo una convención. Tenemos que usar algo, presumiblemente, para separar un fragmento de texto de otro.
+
+Hay otras funciones en Python que de hecho eliminarán ese espacio en blanco por ti. Sin embargo, "readlines" hace literalmente eso. Lee todas las líneas tal como están.

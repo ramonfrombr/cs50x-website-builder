@@ -1,0 +1,43 @@
+Muy bien. Permítanme proponer que pasemos a otra característica de Python que vale la pena conocer, especialmente porque es una que verás en la práctica cuando veas código o bibliotecas escritas por otras personas, conocida como doc string o cadenas de documentación. Resulta que en el mundo de Python existe una forma estandarizada según otra pep, Python Enhancement Proposal, en este caso la pep 257, que estandariza cómo debes documentar tus funciones y otros aspectos de tu código.
+
+Por ejemplo, volvamos a mi archivo meows.py aquí. Y propondré que ahora comencemos a documentar este código también para que yo sepa qué hace la función meow. Y de hecho, la forma estándar de hacer esto usando la notación de cadenas de documentación sería la siguiente. Para comentar esta función, no arriba de ella, como podrías estar acostumbrado a hacer con el código en general, sino dentro de ella.
+
+Pero en lugar de comentarlo así con el usual signo de almohadilla para los comentarios, como meow n veces, resulta que cuando estás formalmente documentando una función como meow en este caso, no usas comentarios inline regulares, por así decirlo. En su lugar, utilizas esta sintaxis.
+
+Utilizas comillas triples, ya sean dobles o simples. Luego escribes tu comentario, meow n veces. Y luego lo escribes nuevamente al final. Así que puedes usar tres comillas dobles al principio y al final o tres comillas simples al principio y al final.
+
+Y Python tiene incorporadas ciertas herramientas y suposiciones de que si detecta que hay un comentario usando estas cadenas de documentación con comillas triples a la izquierda y a la derecha, supondrá que eso es realmente la documentación de esa función. Y resulta que en el ecosistema de Python, hay muchas herramientas que puedes usar para analizar automáticamente tu código, extraer todas estas cadenas de documentación por ti e incluso generar páginas web o PDFs de documentación para tu propia función.
+
+Entonces existen estas convenciones mediante las cuales, si las sigues, puedes comenzar a documentar tu código para otras personas generando automáticamente la documentación desde tu propio código sin tener que escribir algo desde cero manualmente.
+
+Ahora bien, resulta que si tu función toma argumentos y tal vez hace un poco más, hay múltiples convenciones sobre cómo puedes documentar para los programadores humanos que pueden estar usando tu función, ya sea tú, un colega o alguien más en Internet, para realmente usar estas cadenas de documentación y estandarizar la información en ellas. Entonces podrías ver esto en su lugar.
+
+Usando estas mismas comillas triples arriba y abajo ahora, podrías poner una explicación de una sola oración de la función, meows - meow n veces. A veces, dependiendo del estilo y uso, en realidad aún puede estar en la primera línea pero con una línea en blanco debajo. Pero mantendré todo uniformemente indentado.
+
+Y esta es una convención utilizada por algunas herramientas populares de documentación de Python también. Dirías una sintaxis como esta - param n dos puntos y luego una descripción de qué es n, número de veces para maullar. Luego dos puntos tipo n dos puntos int, que simplemente indica que el tipo de n es un entero. Luego, si esta función realmente puede generar una excepción, también puedes documentarlo.
+
+Y en realidad, no es realmente, bueno, es discutible mi error aquí. Si n se recibe como un argumento y no es, de hecho, un entero, tal vez sea un flotante o una cadena o algo más, el signo de multiplicación aquí no funcionará. No multiplicará la cadena, sino que provocará lo que sé por experiencia que es un error de tipo.
+
+Así que voy a ser proactivo y decir en mi propia documentación que esta función, técnicamente, si se usa incorrectamente podría generar un error de tipo, aunque aquí estoy dando a entender con esta anotación que deberías pasar un entero. Nuevamente, Python no impone eso. Así que si pasas un flotante, esto podría, de hecho, generar un error de tipo para esta función. Y eso podría suceder si n no es un entero.
+
+Y luego, por último, podría decir para mayor claridad para otros programadores, esta función devuelve una cadena de n meows, uno por línea. Y el tipo de retorno de ese valor, r type, será str.
+
+Ahora, toda esta sintaxis que he usado aquí no es propiamente de Python. Esta es una convención conocida como restructured text, que es una forma de lenguaje similar a Markdown que se utiliza para la documentación, sitios web, blogs y más. Pero es una de las convenciones populares en el mundo de Python para documentar tus propias funciones.
+
+Por lo tanto, esto no tiene nada que ver fundamentalmente con las pistas de tipo. Las pistas de tipo son una característica de Python. Lo que estoy haciendo aquí es simplemente adherirme a una convención de terceros de incluir entre las cadenas de documentación de Python desde el principio hasta el final un cierto formato estándar para que estas herramientas de terceros puedan analizar mi código de arriba abajo, de izquierda a derecha e idealmente generar documentación para mí.
+
+Puede generar un PDF, una página web o algo más para que yo o mis colegas no necesitemos solo escribir código sino también crear manualmente la documentación para nuestro código. Podemos mantener todo junto y usar herramientas para generarlo para nosotros. ¿Alguna pregunta ahora sobre estas cadenas de documentación, que una vez más son una convención para documentar tu propio código siguiendo alguna sintaxis estándar?
+
+ESTUDIANTE: Sí. Entonces, cuando mencionas que lo documentarías y lo pondrías en un PDF, ¿el propósito de hacer esto es publicarlo y compartir tu función para que otros usuarios lo puedan usar?
+
+DAVID J. MALAN: Absolutamente. En el pasado, cuando hemos instalado algunas bibliotecas de terceros, por ejemplo, cowsay hace algunas semanas. Recuerda que te mostré qué funciones tenía. Pero si lees la documentación, es posible que veas que fue documentada para nosotros por el autor de ese programa.
+
+Ahora, no creo que estuvieran usando esta sintaxis en particular. Pero fue realmente útil para ti y para mí poder leer alguna página web o PDF que nos diga cómo usar la biblioteca en lugar de perder tiempo leyendo el código de otra persona e intentando inferir qué funciones existen y cómo usarlas. Simplemente resulta ser mucho más amigable para los desarrolladores tener documentación adecuada para nuestro propio código o bibliotecas también. ¿Alguna otra pregunta?
+
+ESTUDIANTE: Sí. Cuando utilizas las cadenas de documentación para generar un PDF o algo así, ¿incluye parte del código? Entonces, si haces referencia en tu comentario al código en sí y puede no tener sentido sin ver el código. ¿Las incluye?
+
+DAVID J. MALAN: Respuesta breve, puedes hacer eso. No en la convención que estoy utilizando aquí. Pero hay una forma inteligente de escribir en tus cadenas de documentación muestras de entradas para tus funciones y salidas de muestra para tus funciones.
+
+Y si usas una herramienta diferente que no hemos discutido, esa herramienta ejecutará tu código usando esas entradas de muestra. Comprobará que tus salidas coincidan con tus salidas de muestra. Y si no es así, el programa te advertirá diciendo que tienes un error en alguna parte. Así que esta es otra forma en que puedes usar cadenas de documentación no solo para documentar, sino también para detectar errores en tu código.
+
+Esto ha sido mucho. Y queda aún un poco más por recorrer. ¿Por qué no tomamos un descanso de cinco minutos aquí? Y cuando volvamos, echaremos un vistazo a otra característica de Python, otra biblioteca para escribir código más rápido.

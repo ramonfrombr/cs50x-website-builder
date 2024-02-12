@@ -1,0 +1,43 @@
+
+
+All right. As these sheep continue to fly across the, screen let me now go ahead and interrupt this, as you might have had to in the past with infinite loops in your own code. Even though this isn't infinite, it's just really long-- control C will interrupt with your keyboard that program, giving me back control of my computer. 
+
+Well, here we are at the end of CS50's Introduction to Programming with Python. And if today in particular of all days felt like a real escalation real quickly, realize that these are really-- these are just additional perhaps optional tools in your toolkit that you can add to all of the past lessons learned. So that as you exit from this course and tackle other courses or projects of your own, you have all the more of a mental model and all the more of a toolbox with which to solve those same problems. 
+
+If we think back now just a few weeks ago, it was probably in our focus on functions and variables that you first started struggling. But now in retrospect, if you look back at those problems and those same problems sets, odds are those same problems would come all too easily to you now. Conditionals was the next step in the class, wherein we gave you the ability to ask questions and get answers and therefore do things conditionally in your code. 
+
+We came full circle today. And you can see that you can now use those same kinds of conditionals now to do fancier things with list comprehension and dictionary comprehensions and the like. Loops, of course, have been omnipresent now for weeks, including today as we built up those same structures. 
+
+And of course, something can go wrong. And exceptions and exception handling was our mechanism for not only catching errors in code but also raising your own exception. So that if you're laying the foundation to write code for other people, as in the form of libraries, you can do that too. 
+
+Libraries, of course, are things you can not only use but now write on your own, be it a small module or whole package of code that you want to share with others around the world. And even better, can you write tests for your own code, for your libraries, for other's code as well. So that ultimately, you can be all the more confident that not only your code is correct today. But if you make a change to your code tomorrow, you haven't broken anything, at least according to your tests if they continue to pass. 
+
+File I/O though, meanwhile, was a way of now storing data not just in the computer's memory like all of these sheep, but actually storing things persistently, longer term to disk, being in a CSV or something more like a binary file like an image. 
+
+With regular expressions, you then had the ability to express patterns and actually validate data or extract data from information. All the more of a useful technique nowadays when so much of the world is trying to analyze and process data at scale, some of which might in fact be quite messy from the get-go. 
+
+And then, of course, most recently, object-oriented programming, an opportunity to solve the same kinds of problems but with a slightly different perspective, a way to encapsulate and to represent real world entities, this time in code. 
+
+And today, of course, et cetera with so many other tools that you can add that didn't necessarily fall under any of those earlier umbrellas but are useful functions, and data types, and techniques just to have, again, in your back pocket as yet other mechanisms for solving problems as well. 
+
+Not just putting everyone to sleep, but I thought another way to end might be a little more vocally to try writing one final program together, this one using a library we've seen in the past, as well as one other. I've taken the liberty of installing a text to speech library on my computer here. And I'm going to go ahead, perhaps, and open a new file here called say.py in VS Code. 
+
+And I'm going to go ahead here and first import our own friend, import cowsay. And I'm going to import this new library here, import pyttsx3, the Python text to speech library. And now, per its documentation, which I read in advance, I'm going to go ahead and create a variable for myself here, engine equals pyttsx3 init to initialize that library for text to speech. 
+
+I'm going to then ask the user, well, what do I want to hear spoken? And I might do something like this. A variable called this equals the return value of input. What's this shall be my simple question. And I'm going to keep it this time as a string. 
+
+We've seen how to use cowsay. We can do cowsay.cow of this. Turns out this new library can allow me to use its own engine to say this as well. But then, ultimately, I'm going to have to run the engine.runAndWait, just in case it's a long phrase or sentence to be said. 
+
+But that's it. In just eight lines of code, not only am I apparently going to have a cow appear on the screen to close us out now but also some synthesized text. 
+
+Ultimately then we hope with this course that you've not only learned Python, that you've not only learned programming, but you've really learned how to solve problems, and ultimately how to teach yourself new languages. Funny enough, I myself only learned Python just a few years ago. 
+
+And even though I certainly went through some formal documentation and resources online, I mostly learned what I know now and even what I had to learn again for today by just asking lots of questions, be it of Google, or friends, who are more versed in this language than I. 
+
+And so, having that instinct, having that vocabulary [INAUDIBLE] which to ask questions of others to search for answers to questions, you absolutely now have enough of a foundation in Python and programming to go off and stand on your own. So you can certainly-- and you're welcome and encouraged to go on and take other courses in Python and programming specifically. 
+
+But better still, as quickly as you can, is to find some project that's personally of interest that uses Python or some other language. Because at least from my own experience, I tend to learn best and I hope you might too by actually applying these skills. Not to problems in the classroom, but really truly to problems in the real world. 
+
+Allow me with all that said to look at my full screen terminal window here. Run Python of say.py, crossing my fingers one final time in hopes that I've not made any mistakes or bugs. And here we go. Python of say.py prompting me, what's this? How about we end on this note here. 
+
+COMPUTER: This was CS50. 

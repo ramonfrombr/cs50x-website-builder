@@ -1,0 +1,51 @@
+Bien, en Python, hay esta función llamada open cuyo propósito en la vida es hacer justamente eso, abrir un archivo, pero abrirlo de forma programática para que tú, el programador, puedas leer información de él o escribir información en él. Así que open es como el equivalente del programador a hacer doble clic en un icono en tu Mac o PC. Pero es una técnica del programador porque te va a permitir especificar exactamente lo que quieres leer o escribir en ese archivo. Formalmente, su documentación está aquí, y verás que su uso es relativamente sencillo. Como mínimo, solo requiere el nombre del archivo que queremos abrir y, opcionalmente, cómo queremos abrirlo.
+
+Entonces regresemos a VS Code aquí, y permíteme proponer ahora que haga esto. Voy a continuar y llamar a esta función llamada open, pasando un argumento para names.txt, que es el nombre del archivo en el que me gustaría almacenar todos estos nombres. Podría llamarlo como quiera. Pero como va a ser solo texto, es convencional llamarlo algo.txt.
+
+Pero también le diré a la función open que planeo escribir en este archivo. Así que como segundo argumento para open, voy a poner literalmente, entre comillas, la letra w, para "Write" (Escribir), y eso le dirá a open que abra el archivo de una manera que me permitirá cambiar el contenido. Y lo mejor es que, si ni siquiera existe todavía, va a crear el archivo para mí.
+
+Ahora, open devuelve lo que se llama un handle de archivo, un valor especial que me permite acceder a ese archivo posteriormente. Así que voy a continuar y lo asignaré a una variable como file. Y ahora voy a continuar y, de forma bastante sencilla, voy a escribir el nombre de esta persona en ese archivo. Así que simplemente voy a escribir file, que es la variable que hace referencia a ese archivo, .write, que es una función conocida como un método que viene con archivos abiertos y que me permite escribir ese nombre en el archivo. Y por último, simplemente voy a continuar y decir file.close, que cerrará y efectivamente guardará el archivo.
+
+Estas tres líneas de código aquí son básicamente el equivalente del programador a hacer doble clic en un icono en tu Mac o PC, hacer algunos cambios en Microsoft Word u otro programa, y luego hacer clic en "Archivo" y "Guardar". Estamos haciendo todo eso en código con solo estas tres líneas aquí. Bueno, veamos ahora cómo funciona esto.
+
+Permíteme continuar y ejecutar python names.py y presionar Enter. Vamos a escribir un nombre. Escribiré Hermione y presionaré Enter. Bien, ¿dónde terminó? Permíteme continuar y escribir code names.txt, que es un archivo que ahora existe porque lo abrí en modo de escritura. Y si lo abro en una pestaña, veremos que está Hermione.
+
+Bueno, vamos a ejecutar names.py una vez más. Voy a ejecutar python names.py y presionar Enter, y esta vez, voy a escribir Harry. Permíteme ejecutarlo una vez más. Y esta vez, voy a escribir Ron. Y ahora, vamos a subir a names.txt, donde, con suerte, veré a los tres aquí.
+
+Pero no. Solo acabo de ver a Ron. ¿Qué podría explicar lo que le pasó a Hermione y Harry, aunque estoy bastante seguro de que ejecuté el programa tres veces y definitivamente escribí el código que escribe su nombre en ese archivo? ¿Qué está pasando aquí, crees tú?
+
+AUDIENCIA: Creo que como no los estamos agregando, deberíamos agregar los nombres. Como los estamos escribiendo directamente, está borrando el contenido anterior y lo está reemplazando con el último conjunto de caracteres que mencionamos.
+
+DAVID MALAN: Exacto. Desafortunadamente, "w" entre comillas es un poco peligroso. No solo crea el archivo por ti, sino que también lo recrea cada vez que abres el archivo en ese modo. Así que si abres el archivo una vez y escribes Hermione, funciona perfectamente, como vimos.
+
+Pero si lo haces de nuevo para Harry, si lo haces de nuevo para Ron, el código está funcionando. Pero cada vez, abre el archivo y lo recrea con un contenido completamente nuevo, así que teníamos una versión con Hermione, y una versión con Harry, y una versión final con Ron. Pero idealmente, probablemente queramos agregar, como dice Vishal, cada uno de esos nombres al archivo, no simplemente sobrescribir el archivo cada vez.
+
+Entonces, ¿cómo puedo hacer esto? En realidad, es una corrección relativamente fácil. Permíteme continuar y hacer esto de la siguiente manera. Voy a primero eliminar la versión antigua de names.txt.
+
+Y ahora voy a cambiar mi código para hacer esto. Voy a cambiar la "w", entre comillas, a simplemente "a", entre comillas: a de append (agregar), lo que significa añadir al final, al final, al final, una y otra vez. Ahora, permíteme continuar y ejecutar python names.py nuevamente, presionar Enter.
+
+Voy a comenzar de nuevo con Hermione porque estoy creando el archivo de nuevo. Observa que si ahora ejecuto code names.txt, presiono Enter, vemos que Hermione está de vuelta. Así que después de eliminar el archivo, se recreó, aunque estoy usando la opción de agregar, lo cual es bueno. Pero ahora veamos qué sucede cuando vuelvo a mi terminal. Y esta vez, ejecuto python names.py nuevamente, esta vez escribiendo Harry.
+
+Y lo ejecutaré una vez más, esta vez escribiendo Ron. Así que con suerte, esta vez, en esa segunda pestaña, names.txt, debería ver a los tres. Pero, pero, pero, esto no se ve ideal. ¿Qué he hecho claramente mal? Algo me dice que, aunque los tres nombres están ahí, no va a ser fácil leerlos a menos que sepas dónde termina y comienza cada nombre.
+
+AUDIENCIA: El formato en inglés no es correcto. El formato en inglés no es correcto. Es incorrecto. No está concatenándolos.
+
+DAVID MALAN: Así es. Parece que está concatenando. Pero hablando técnica y estrictamente, solo los está añadiendo al archivo, primero Hermione, luego Harry, luego Ron. Tiene el efecto de combinarlos uno tras otro, pero no los está concatenando propiamente dicho.
+
+Realmente solo los está añadiendo. Vamos a ir a otra mano aquí. ¿Qué es lo que realmente hice mal? O, de manera equivalente, ¿cómo puedo solucionarlo? Sería agradable si hubiera algún tipo de espacio entre cada uno de los nombres, para poder leerlos de manera más limpia.
+
+AUDIENCIA: Hola. Deberíamos agregar un salto de línea antes de escribir un nuevo nombre.
+
+DAVID MALAN: Bien. Queremos añadir un salto de línea nosotros mismos. Mientras que print por defecto, recordemos, siempre imprime automáticamente un fin de línea con el carácter de escape "\n". A menos que lo anulemos con el parámetro con nombre llamado end, write no lo hace.
+
+Write toma todo de manera literal. Y si dices write Hermione, eso es todo. Obtendrás la H hasta la e. Si dices write Harry, obtienes la H hasta la y. No obtienes automáticamente nuevas líneas adicionales.
+
+Así que si quieres tener una nueva línea al final de cada uno de estos nombres, debemos hacerlo manualmente. Así que permíteme, de nuevo, cerrar names.txt y eliminar el archivo actual. Y permíteme regresar a mi código aquí. Y puedo solucionarlo de varias formas, pero simplemente voy a continuar y hacer esto.
+
+Voy a escribir una cadena f que contiene el nombre y el carácter de escape de nueva línea al final. Podríamos hacer esto de diferentes maneras. Podríamos imprimir manualmente solo la nueva línea u otra técnica, pero voy a continuar y usar mis cadenas f, como tengo la costumbre de hacerlo, e imprimir tanto el nombre como la nueva línea todo de una vez.
+
+Voy a continuar ahora y en mi ventana de la terminal, ejecutar python names.py nuevamente, presionar Enter. Escribiré Hermione de nuevo. Lo voy a ejecutar de nuevo, escribiré Harry. Lo voy a escribir de nuevo y esta vez, Ron.
+
+Ahora voy a ejecutar code names.txt y abrir ese archivo. Y ahora parece que el archivo está un poco más limpio. De hecho, tengo cada uno de los nombres en su propia línea, así como un salto de línea, lo que asegura que podemos separar uno del otro.
+
+Ahora, si estuviera escribiendo código, apuesto a que podría analizar, es decir, leer el archivo anterior mirando las diferencias entre letras minúsculas y mayúsculas. Pero eso rápidamente se volvería complicado. En general, cuando se almacena datos a largo plazo en un archivo, probablemente deberías hacerlo de alguna manera limpia, como hacerlo un nombre a la vez.

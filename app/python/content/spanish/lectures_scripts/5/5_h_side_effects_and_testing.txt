@@ -1,0 +1,53 @@
+Consideremos ahora cómo podríamos probar código que no solo espera números como entrada, sino realmente cadenas de texto. Permíteme rebobinarnos en el tiempo aquí en VS Code hasta ese primer programa que escribimos en varias versiones en hello.py, que al final se parecía un poco a esto. Tenía una función principal que le pedía al usuario el valor de una variable preguntándoles: "¿Cómo te llamas?".
+
+Luego procedíamos a hacer algo como hello, paréntesis abierto, nombre, pasando ese nombre del usuario a una función llamada hello. Ahora bien, esa función hello se veía más o menos así. Definimos hello para que tomara un parámetro llamado to, cuyo valor predeterminado era world, y esa función simplemente imprimía hello, seguido de una coma y luego el nombre que se había pasado.
+
+Luego llamamos a la función principal, pero de ahora en adelante, siempre voy a agregar esta condición "if", if name == "__main__", entonces solo quiero llamar a la función principal. Así que básicamente así es como se veía este programa en su última encarnación. ¿Cómo lo probamos? Aquí nuevamente, no voy a probar la entrada del usuario en sí misma en la función principal. Me voy a enfocar realmente en el módulo de código aquí que nos interesa, que es la función hello misma. ¿Cómo puedo probar la función hello?
+
+Desafortunadamente, incluso si comienzo haciendo algo así como "test hello.py", permíteme comenzar a escribir un programa de prueba, podría importar de mi programa hello una función llamada hello. Así que es un tanto extraño ver "from hello import hello", pero nota que en esta línea aquí, estoy importando desde el módulo, es decir, el archivo llamado hello.py, la función llamada hello.
+
+¿Y cómo hago para probar esto? Si tengo una función como "def test_argument" así, permíteme hacer esto. Si yo definiera una función como "def test_hello", ¿qué podría hacer? Podría llamar a hello con comilla, comilla, digamos, "David", y luego verificar si es igual a qué, "hello, David".
+
+Entonces, ¿esto funcionaría, este enfoque aquí? Si he escrito una prueba llamada test_hello que llama a hello con un argumento de David y luego prueba su valor de retorno, al igual que hemos hecho para nuestra calculadora, ¿funcionaría esto como está escrito? Y permíteme volver por un momento a la versión de hello que estamos probando. Así que puedes ver esa función hello. Aquí está la prueba. Aquí está el código real. ¿Esta prueba funcionaría ahora? ¿Algún pensamiento?
+
+INTERLOCUTOR 9: Creo que el problema es que en la primera versión en hello.py, estás usando el argumento "to" que declaraste al definir la función en lugar de usar el nombre.
+
+DAVID MALAN: En realidad, ese no es un error aquí. Permíteme indicar que en hello.py, este código realmente funciona según lo planeado. Y permíteme probarlo manualmente para demostrarlo. Ejecuto "Python hello.py", escribo mi nombre, D-A-V-I-D, y veo que dice: "¡Hola David!".
+
+Sin embargo, si cambiara este programa y eliminara el argumento del nombre, eliminara la variable del nombre y simplemente llamara a hello, nuevamente ejecutando "Python hello.py", esta vez no habría ninguna invitación, ya que eliminé la llamada de entrada, pero se comporta como espero. Dice "¡Hola mundo!". Así que permíteme indicar que este código en su forma actual es válido, pero mi prueba no funcionará como esperaba. Y hay una diferencia sutil entre mi función hello y mi función square que lo explica. ¿Por qué mi prueba no funcionaría como se pretendía?
+
+INTERLOCUTOR 10: Porque no está devolviendo un valor.
+
+DAVID MALAN: Exactamente. Recordemos nuestra discusión anterior sobre las funciones. Las funciones pueden devolver un valor, como mi función square te devuelve el cuadrado de algún valor, o pueden tener efectos secundarios, como artefactos visuales que pueden ocurrir en la pantalla, como imprimir algo en la pantalla. Y, por definición, así es como funciona print. Observa que hello, es corto, pero se implementa utilizando la función print, que no devuelve ningún valor como lo estoy usando aquí. En cambio, tiene este efecto secundario de imprimir algo en la pantalla.
+
+Entonces, no es correcto en mi función de prueba verificar si el valor devuelto de hello es igual a "hello David", porque nuevamente, hello no está devolviendo nada. Está imprimiendo algo, ese efecto secundario, pero nota, literalmente, que no tiene ninguna palabra clave de retorno, a diferencia de mi función square, que sí la tenía.
+
+Así que aquí tenemos una oportunidad para cambiar cómo implemento mis funciones reales. Resulta que a medida que tus programas se vuelven más sofisticados y complicados, tiende a ser una buena práctica evitar tener efectos secundarios si puedes evitarlo, especialmente si quieres que tu código sea comprobable. Y de hecho, propongo cambiar mi programa hello para que funcione de la siguiente manera.
+
+Permíteme cambiar esta función para que no imprima hello y luego ese nombre. Permíteme volver y, literalmente, devolver tal vez una expresión formateada, lo que limpiará un poco esto, "hello", coma, y cerrar comillas al final. Entonces, mi sintaxis aquí es simplemente la conocida cadena F o cadena de formato. Va a devolver "hello world" o "hello David" o "hello" y el nombre que se pase como argumento, pero ahora lo devuelvo. No lo imprimo.
+
+Entonces, ¿qué necesita cambiar aquí arriba? Podría hacer algo así. Podría decir algo como "output = hello" y luego imprimir output en mi función principal. O puedo simplificar eso, porque en realidad no necesito esa variable. En cambio, podría hacer esto. Todavía puedo llamar a hello, pero inmediatamente puedo imprimir el resultado.
+
+Y esta versión de mi programa hello ahora es realmente más probable. ¿Por qué? Porque estas afirmaciones "assert" que estamos usando, y hemos visto hasta ahora en nuestras pruebas, están diseñadas para probar los argumentos dentro de las funciones y los valores de retorno de las mismas, no para probar los efectos secundarios.
+
+Entonces, si estás usando ==, estás buscando un valor de retorno, algo que te sea entregado por la función. Así que está bien. Si modifico el diseño de mi programa para que no solo imprima hello, sino que devuelva la cadena, la frase que quiero construir, puedo dejar que el llamador, es decir, la función que usa esta función hello, maneje la impresión real.
+
+Ahora, ¿qué significa esto en mi código? Significa que ahora, si mi hello.py se ve así y hello realmente está devolviendo un valor, en mi función test_hello, puedo probarlo exactamente así. Así que permíteme ejecutar "pytest test_hello.py", cruzando los dedos como siempre, y voilà, uno aprobado. Pasé esta prueba, porque aparentemente el valor de retorno de hello en verdad es igual a "hello, David".
+
+Probemos el otro escenario. ¿Qué sucede si llamo a hello sin ningún argumento? Afirmemos que llamar a hello sin nada entre esos paréntesis sea igual a hello coma, pero world, el valor predeterminado. Permíteme ejecutar ahora "pytest test_hello.py". Y también pasa completamente. Pero, supongamos que cometí algunos errores. Es posible que no sea una buena práctica combinar varias pruebas en esta función, así que hagamos más claro qué puede pasar o fallar.
+
+Llamemos a la primera función "test_default". Y solo incluyamos esta primera línea de código. Y luego creemos otra función, como "test_argument", para probar esta otra línea de código aquí. Así que ahora tengo dos pruebas diferentes, cada una de las cuales prueba algo un poco fundamentalmente diferente.
+
+Entonces, cuando ejecuto mi código, aún no está roto. Si ejecuto "pytest test_hello.py", intro, ahora he pasado dos pruebas. Y eso es tan bueno como antes. Pero si tuviera un error, tener dos pruebas en lugar de una realmente me daría, tal vez, un poco más de pistas sobre lo que está mal. ¿Alguna pregunta ahora sobre esta prueba de valores de retorno, cuando estos valores de retorno son ahora cadenas en lugar de enteros y por qué hemos hecho esto?
+
+INTERLOCUTOR 11: Entonces, mi pregunta es sobre la función dentro de la función. ¿Podemos probar eso también o la recursividad que no hemos visto?
+
+DAVID MALAN: Si tienes una función recursiva, que no hemos discutido en esta clase, sí, absolutamente puedes probarlas simplemente llamándolas exactamente de esta manera. La recursividad no afecta este proceso. ¿Qué tal una pregunta más aquí sobre pruebas unitarias antes de ver un ejemplo final?
+
+INTERLOCUTOR 12: Al probar nuestros argumentos, ¿podemos usar algo como bucles o dentro de "assert" o para los valores?
+
+DAVID MALAN: Absolutamente. Puedes usar un bucle para probar varios valores. En este caso, por ejemplo, podría hacer algo como esto: podría decir "for name in la siguiente lista de Hermione, digamos, Harry y Ron", entonces dentro de este bucle afirmo que hello con ese nombre dado es igual a, digamos, la cadena formateada de "hello, name" y luego ejecutar todos estos aquí de una vez ejecutando nuevamente "pytest test_hello.py".
+
+Todavía solo va a ser una prueba dentro de esa función, pero si hay algo interesante acerca de esas varias cadenas que hace que sea convincente probar todas ellas, puedes automatizar la prueba de esa manera. Dicho esto, cada una de tus pruebas debe ser idealmente bastante simple y pequeña. ¿Por qué? Porque no quieres escribir tanto código, tanto código complicado que tus pruebas puedan tener fallas.
+
+Lo que no queremos hacer es escribir pruebas para nuestras pruebas y pruebas para nuestras pruebas para nuestras pruebas, porque nunca terminaría. Mantener las pruebas simples y claras es realmente el objetivo, para que un ser humano razonable, incluido tú mismo, pueda verificarlas visualmente y afirmar que están correctamente. No necesitamos pruebas para nuestras pruebas.

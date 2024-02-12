@@ -1,0 +1,87 @@
+Well, it turns out there's even more functionality that comes with Python and that comes with other modules in Python. And there's this feature generally known as command line arguments. This is a feature, not just of Python, but of languages more generally that allow you to provide input not when prompted inside of a program as happens whenever we call the Python function input. 
+
+But rather, there's this feature, command line arguments of programs, that allows you to provide arguments that is input to the program of just when you're executing at the command line. So up until now, for instance, recall that we've generally run Python of something.py. For instance, Python of hello.py. And I've never once really executed any words or phrases after the name of the file, but I could. 
+
+In fact, when you're running programs in a command-like environment like we are, you can provide any number of words or numbers or phrases after the command that you're typing. And all of those will somehow be passed in as inputs to the program itself. You don't have to prompt the user for one thing at a time by manually calling that input function. 
+
+So what does this mean in real terms? Well, let me go ahead back into VS Code here. And let me propose that we consider how we might leverage a certain module. I'm going to go ahead and create a file called name.py. And I'd like to use a new module this time that's going to give me access to values that have been typed at the command line. 
+
+But what's this module going to be? Well, this one's going to be called sys. And sys, short for system, contains a whole lot of functionality that's specific to the system itself and the commands that you and I are typing. The documentation for this module is at this URL here. And it lists all of the various functions and variables and the like that come with that module. But we're going to focus on something a little more specific, namely this thing here. 
+
+It turns out in the sys module in Python, there is a variable that just magically exists for you called argv. It stands for argument vector which is a fancy way of describing the list of all of the words that the human typed in at their prompt before they hit Enter. All of those are seemingly magically provided to you via Python in a variable called sys.argv. 
+
+This variable is a list, which means that the first element is going to be the first word that you type. The second element is going to be the second word that you typed in, so forth. And by way of this list, then, can you figure out what words did the human actually type at the prompt and maybe use that to influence the behavior of your own program? 
+
+So what does this mean now in real terms? Well, in this new tab called name.py, let me go ahead and import sys. Within that sys module is going to give me access to sys.argv, but how might I want to use it? Well, let's do this. Instead of writing a Hello World program that all of these times has just looked for the return value of input to figure out what the user wants me to print, let's go ahead and just expect the user to tell us when they run the Python program itself, what their name is. 
+
+And suppose this time, I'd like to generate a whole bunch of name tags, initially just one. And in the US here, it's very common to wear a sticker on your lapel that says Hello, my name is David. So I want to print out some text that resembles that. The idea being maybe I could enhance this program someday to even send that text straight to the printer and dynamically generate those name tags. 
+
+Well, let me go ahead now and do this. Let me go ahead and print out as always, Hello. But I'll say a little something more this time to make things more interesting. Hello, my name "is," quote, unquote. And then after that, I normally have been in the habit of calling input, storing the return value in a variable, and passing in the name of that variable here. 
+
+But I'm going to instead jump right to this-- sys.argvbracket1. And that's it. I'm going to have a program here that says Hello, my name is followed by whatever is in sys.argvbracket1. And notice, this .argv again is a list. And recall from our discussion of loops and in turn list, we use this square bracket notation to get at the various elements inside of a list. 
+
+All right, let me go down now into my terminal window and run Python of name.py. But this time, rather than just hit Enter and wait for the program to prompt me for my name, let me proactively just tell this program what my name is at the so-called command line. 
+
+Here we go. D-A-V-I-D separated with a space from the name of the file so that now when I execute Python, name.py David, I see on the screen, voila, Hello, my name is David. So based on this demonstration alone, I think we can infer exactly what's going on in sys.argv even though it sounds certainly at first glance, rather complicated here. 
+
+Let's look up. At sys.argv, I'm going to bracket1 here. So clearly, sys.argvbracket1 is storing D-A-V-I-D. But it's one. In the past when we looked at loops, recall that we said that they were zero index. That is the first element is zero. The next element is one. This next element is two and so forth. 
+
+And yet, here I am treating it as though my name is at the start of the list one. Well, let me ask this question, what is probably in sys.argv of 0? What is probably in sys.argv of 0-- the very first element actually in that list? 
+
+AUDIENCE: Oh, yeah. I think it's like in C, the name of program. 
+
+DAVID MALAN: Indeed, it's indeed like in C. Another language is the name of the program. Well, if we consider what it was I typed, I certainly typed Python because that's the name of my interpreter. And we don't really need to know that because we're using Python itself. 
+
+But after that, I did type two things. I typed name.py as I've done so many times any time I want Python to the interpreter program I've written. And it turns out by convention, what Python does is it stores in sys.argv the name of the file that you're executing or interpreting followed by any number of other words that you type. 
+
+So all this time, we could have been accessing the name of the program, which frankly, isn't all that interesting. But we can also now access words that are typed after that prompt as well. But of course, if I don't type anything in, what might happen here? This might be naive of me to assume that there's always going to be something at location1 in sys.argv. 
+
+Let me go ahead and try this. Python, name.py. And I'm not giving you my name because at this point, I might not even know that you want my name to be typed. So let me hit Enter now. And uh, oh, we see now an error. A so-called exception in Python, this one's a new one. This one's an index error that elaborates list index out of range. 
+
+And turns out this is actually one of the most common mistakes in programming, whether you're using a list in Python or arrays or vectors in other languages, is to try to access some element that does not exist. You try to go too far to the left. Or you try to go too far to the right in this object that is just a list of some values. 
+
+So of course, the mistake here is that I'm assuming there's going to be something at location1 when really, it's location0. That's the only one that has a value. But fixing this is not going to amount to doing bracket0 because now if I go ahead and rerun this program with no other words after name.py, it says Hello, my name is name.py, which is fine if we're making a name tag for the program, but that's not, of course, what my goal here is instead. 
+
+So if the fix is not just to change the one to a zero, how else might I handle this error? How else might I handle this error? This index error that happens if the user just doesn't remember to or doesn't know to type their actual name at the prompt. 
+
+AUDIENCE: We could always put an exception into the program, say, if there's nothing at location1, we just come out and say, OK, we haven't got parameter or something. But if there is, we continue along with the program. 
+
+DAVID MALAN: Perfect. So if I might simplify, we can try to execute this line of code, except if there's an error, we'll deal with it in some other way. Now, ideally-- and once I'm a strong enough programmer, I would have anticipated this and written the following code from the get go. But when you're learning, it's certainly reasonable to see an error. Oh, I didn't realize I should detect that and then go back and improve your code. 
+
+But of course, if you read the documentation, you ingrain some of the lessons learned from the past. You'll get into the habit of trying and checking for some of these exceptions yourself. So let me solve this in one possible way as you've proposed here. Let's try to handle this exception as follows. 
+
+Let me go ahead now. And instead of just blindly calling this print line, let me try to print out Hello, my name is such and such, except if there is an issue, specifically an index error, then what do I want to go ahead and do? I'm going to say something like too few arguments. 
+
+I could be more explanatory than that. But for now, I'm just going to explain to the user that they gave me too few arguments, too few words at the prompt. So now, it's still not going to work in quite the way I want. I'm still not going to be able to generate their name tag. But at least, they're not going to see some cryptic error message and think that they themselves broke the program. 
+
+Let me go ahead now and run Python of name.py Enter and too few arguments. OK, let me go ahead now and do Python of name.py and type in my name, David. And now we're back in business. And I see that my name is on the screen too. 
+
+But strictly speaking, I don't have to try to do this. I could actually be a little more defensive in writing this code. And maybe I could check whether or not the user has indeed provided a name or multiple names at the prompt so as to give them more refined error messages as well. 
+
+So how might I do this? Well, me go and undo the exception handling I've added. And why don't I instead more modestly try to do this? Let me go ahead and introduce a conditional here. If the length of sys.argv is less than 2 or equivalently equal to just one value-- but I'll just stick with less than 2 for now, then go ahead and print out two few arguments. 
+
+So I want ultimately two arguments. I want the name of the program at location0. And I want the name of the human at location1. So that's a total of two arguments. So if I have fewer than two arguments, let's tell the user with this print line, L if the length of sys.argv is say greater than 2, like they typed in too many words at the prompt, well, let's tell them, print, quote, unquote, "too" many arguments. Else if they did get it right, and they gave me exactly two arguments. Else, let's go ahead and print what I actually care about. 
+
+All right, let me go down to my terminal window here and run Python of name.py and voila. Uh, oh, a completely different type of error. This one a syntax error, which we've seen in the past. Now, a syntax error recall is mea culpa, like, I messed up here. And I wrote invalid syntax. 
+
+And so no amount of conditionals or exception handling's really going to catch this one. I need to go back and just get my program to work because it's not running at all. Well, let me go up here and see. Line four is the issue. And indeed, it looks like I have an unterminated string here. I need to go ahead and now add this double quote. 
+
+So let me go ahead now. And with that red herring gone, let me rerun Python of name.py and hit Enter. And now, we see too few arguments. OK, maybe it wants my full name. Let me go ahead now and run Python of name.py, David Malan, typing in both words after the name of the file and hit Enter. And now, of course, it's too many arguments. 
+
+Fine. Now, I'll oblige and do Python of name.py and just David. And there we have it. My name tag printed on the screen. So strictly speaking, we don't have to handle exceptions if we can be a little smarter about it and just check for the things that we're worried about, especially if we want to give the user more refined advice. 
+
+We don't want to just tell them no, something went wrong or we don't want to pass. We want to tell them no, that's too few or no, that's too many. We have conditionals in our vocabulary already via which we can now express that. 
+
+Well, let me pause here and see if there's any questions now on how we handled the error before with the index error or how now we're just proactively avoiding all index errors altogether by just checking first, is it too few? Is it too many? Or is it exactly what we want? 
+
+AUDIENCE: Hi, yeah, thank you. So I was wondering, you touched upon using your full name. Is there a way going forwards that perhaps we have people that want their full names and want just their first name that we separate that into, oh, this person has full name. This person has just the one name? 
+
+DAVID MALAN: Absolutely, and allow me to propose we come back to that support for multiple names. But indeed, we could do that. And I should note too, though, we can support full names right now if I do this. Instead of typing in David space Malan, which is problematic because again, by definition of how are argv works, each word ends up in a specific location in the list. 
+
+But if I add quotes, single quotes or double quotes at the command line, now, Python will view this as two total things. The name of the file and this full name. And now, when I hit Enter, I don't see the quotes. The whole thing is passed in as my full name. And if I want to adapt this further for multiple people, we'll be able to do that as well. Other questions now on this version with if, elif, else, or on except before. 
+
+AUDIENCE: Python. I want to ask you, can we use multiple else's statement? 
+
+DAVID MALAN: Can you use multiple else's statements? No, else is the last catchall statement that you can have. You can have multiple elif statements in the middle but not multiple elses. 
+
+AUDIENCE: [INAUDIBLE] 

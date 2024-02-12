@@ -1,11 +1,10 @@
 from .translate import translate
-import os
-from translate_types import TypeCourse
-from ..constants import LECTURES_SCRIPTS
+from translate_types import TypeCourse, TypeLanguage
+from constants import ContentTypes
 from get_files import get_files
 
-def translate_lectures_scripts(course, language):
-    numbers = ["2"]
+def translate_lectures_scripts(course: TypeCourse, language: TypeLanguage):
+    numbers = range(0,10)
     for number in numbers:
-        lectures = get_files(course, f"{LECTURES_SCRIPTS}/{number}")
-        translate(course, lectures[0:2], f"{LECTURES_SCRIPTS}/{number}", language, "txt", "text")
+        lectures = get_files(course, f"{ContentTypes.LECTURES_SCRIPTS}/{number}")
+        translate(course, lectures, f"{ContentTypes.LECTURES_SCRIPTS}/{number}", language, "txt", "text")

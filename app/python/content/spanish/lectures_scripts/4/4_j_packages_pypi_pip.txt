@@ -1,0 +1,11 @@
+Permíteme proponer ahora que vayamos más allá y nos alejemos de usar solo esos módulos, esas bibliotecas que Python trae consigo, para hablar más en general acerca de los paquetes que existen. Una de las razones por las que Python es tan popular y poderoso en estos días es que también hay muchas bibliotecas de terceros disponibles, también conocidas como paquetes.
+
+Estrictamente hablando, Python tiene un término técnico llamado "paquete", que es básicamente un módulo implementado en una carpeta, no solo en un archivo sino una carpeta. Pero en general, un paquete es una biblioteca de terceros que tú y yo podemos instalar en nuestras propias Mac o PC o en nuestro servidor en la nube y acceder a incluso más funcionalidad que otras personas han implementado para nosotros.
+
+Ahora, uno de los lugares donde puedes obtener todos estos paquetes se llama PYTI, el Índice de Paquetes de Python, que se encuentra en esta URL aquí. Y este es un sitio web que se puede buscar a través de la línea de comandos, así como a través de la web, que te permite descargar e instalar todo tipo de paquetes. Incluso CS50 tiene algunos de sus propios paquetes en servicios como estos.
+
+Ahora, hay uno divertido por ahí que es un recuerdo de un comando que ha existido durante años en entornos de línea de comandos llamado "cowsay". Cowsay es un paquete en Python que te permite hacer que una vaca diga algo en tu pantalla. Si tienes curiosidad por leer más al respecto, su propia documentación está en pi.py.org específicamente en esta URL aquí.
+
+Pero ¿cómo se obtiene realmente el paquete en tu sistema? Bueno, técnicamente podrías descubrir cómo descargar el archivo y tal vez descomprimirlo y colocarlo en la ubicación correcta en tu Mac o PC. Pero hoy en día, muchos lenguajes, incluido Python, tienen lo que se llama su propio administrador de paquetes. Este programa aquí llamado "pip" es uno de ellos.
+
+Entonces, pip es un programa que generalmente viene con Python en sí, hoy en día, que te permite instalar paquetes en tus propias Mac o PC o en tu entorno en la nube simplemente ejecutando un comando. Y voilà, tienes acceso a una nueva biblioteca completa en Python que no venía con Python en sí. Pero ahora está disponible en tu sistema para ti.

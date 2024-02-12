@@ -1,0 +1,48 @@
+
+
+
+For instance, among Python's various data types, there's this other one that we haven't had occasion to yet use, namely, a set. 
+
+In mathematics, a set is typically a collection of values wherein there are no duplicates. So it's not quite a list. It's a bit more special than that in that somehow any duplicates are eliminated for you. Well, it turns out within Python, this is an actual data type that you yourself can use in your code. And via the documentation here, might you be able to glean that it's a useful problem if you want to somehow automatically filter out duplicates. 
+
+So let me go ahead and go over to VS Code here. And let me go ahead and show you a file that I created a bit of in advance, whereby we have a file here called houses.py. And in houses.py, I already went ahead and whipped up a big list of students inside of which is a number of dictionaries, each of which represents a student's name and house respectively. 
+
+Now, this is a pretty sizable dictionary. And so, it lends itself to iteration over the same. And suppose that the goal here was quite simply to figure out, well, what are the unique houses at Hogwarts in the world of Harry Potter? 
+
+It would be nice, perhaps, to not have to know these kinds of details or look them up online. Here we have a set of students, albeit not exhaustive, with all of the houses. But among these students here, what are the unique houses in which they live? 
+
+Well, I could certainly, as a human, just eyeball this and tell you that it's, well, Gryffindor, Slytherin, and Ravenclaw. But how can we go about doing it programmatically for these students as well? Well, let's take one approach first here. 
+
+Let me go into houses.py. And let me propose that we first how about create an empty list called houses in which I'm going to accumulate each of the houses uniquely. So every time I iterate through this list of dictionaries, I'm only going to add a house to this list if I haven't seen it before. 
+
+So how do I express that? Well, let me iterate over all of the students with for student in students, as we've done in the past. 
+
+And let me ask you a question now. So if the current student's house-- and notice that I'm indexing into the current student because I know they are a dictionary or dict object, and if that student's house is not in my house's list, then, indented, am I going to say houses.append, because again, houses is a list. And I'm going to append that particular house to the list. 
+
+Then at the very bottom here, let me go ahead and do something somewhat interesting here and say, for each of the houses that I've accumulated in, I could just say houses. But if I just say houses, what was the point of accumulating them all at once? I could just do this whole thing in a loop. Let's at least go about and sort those houses with sorted, which is going to the strings alphabetically. 
+
+And let's go ahead therein and print each of the houses. Let me go ahead now in my terminal window and run Python of houses.py and hit Enter. And there we have it. Gryffindor, Ravenclaw, Slytherin in alphabetical order, even though in the list of dictionaries up here, technically the order in which we saw these was Gryffindor, Gryffindor, Gryffindor, Slytherin, Ravenclaw. So indeed, my code seems to have sorted them properly. 
+
+So this is perfectly fine. And it's one way of solving this problem. But it turns out we could use more that's built into the language Python to solve this problem ourself. Here I'm rather reinventing a wheel, really the notion of a set wherein duplicates are eliminated for me. 
+
+So let me go ahead and clear my terminal window and perhaps change the type of object I'm using here. Instead of a list, which could also be written like this to create an empty list, let me go ahead and create an empty set, whereby I call a function called set that's going to return to me some object in Python that represents this notion of a set wherein duplicates are automatically eliminated. 
+
+And now, I can tighten up my code. Because I don't have to use this if condition myself. I think I can just do something like this. Inside of my loop, let me do houses.add. So it's not append for a set, it's append for a list. But it's add to a set per the documentation. 
+
+Then let me go ahead and add this current student's house. And now, I think the rest of my code can be the same. I'm just now trusting per the documentation for set in Python that it's going to filter out duplicates for me. 
+
+And I can just blindly add, add, add, add all of these houses to the set and any duplicates already there will be gone. Python of houses.py and Enter. And voila, we're back in business with just those three there as well. 
+
+Let me pause here to see if there's any questions now on this use of set, which is just another data type that's available to you, another class in the world of Python that you can reach for when solving some problem like this. 
+
+STUDENT: How can we locate an item in a set, for example, find Gryffindor in that set? 
+
+DAVID J. MALAN: How do you find an item in a set? You can use very similar syntax as we've done for a list before. You can use syntax like if Gryffindor in houses then, and you can answer a question along those lines. So you can use in and not in and similar functions as well. Other questions on set? 
+
+STUDENT: Look what happens if you have a similar house name? Let's say instead of Slytherin, it is maybe an O instead of an I. Will the for loop loop throughout each of those letters in the house name? 
+
+DAVID J. MALAN: It would compare the strings. So if Slytherin appears more than once but is slightly misspelled or capitalized, if I heard you right, those would appear to be distinct strings. So you would get both versions of Slytherin in the result. 
+
+However, we've seen in the past how we can clean up users' data if indeed it might be messy. We could force everything to uppercase, or everything to lowercase, or we could use capitalize the function built into strs, or title case that would handle some of the cleanup for us. 
+
+In this case, because the data is not coming from humans using the input function, I wrote the code in advance, it's safer to assume that I got the houses right. But that's absolutely a risk if it's coming from users. 

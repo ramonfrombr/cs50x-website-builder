@@ -1,0 +1,115 @@
+Permíteme dirigir nuestra atención de nuevo a donde lo dejamos aquí, que son solo nombres para proponer que, con names.txt, tenemos la capacidad, parece ser, de almacenar cada uno de estos nombres de manera bastante sencilla. ¿Pero qué pasa si queremos realizar un seguimiento de otra información también? Supongamos que queremos almacenar información, incluido el nombre de un estudiante y su casa en Hogwarts, ya sea Gryffindor, Slytherin o cualquier otra cosa. ¿Bueno, dónde podemos poner eso?
+
+Hermione vive en Gryffindor, así que podríamos hacer algo como esto en nuestro archivo de texto. Harry vive en Gryffindor, así que podríamos hacer eso. Ron vive en Gryffindor, así que podríamos hacer eso. Y Draco vive en Slytherin, así que podríamos hacer eso.
+
+Pero me preocupo aquí, me preocupo ahora de que estamos mezclando manzanas y naranjas, por así decirlo. Algunas líneas son nombres. Algunas líneas son casas. Por lo tanto, probablemente este no sea el mejor diseño, en caso de que solo sea porque es confuso o ambiguo.
+
+Entonces, tal vez lo que podríamos hacer es adoptar una convención. Y de hecho, esto es lo que muchos programadores hacen. Cambian este archivo para que no sea names.txt, sino en su lugar, permíteme crear un nuevo archivo llamado names.csv. CSV significa Valores Separados por Comas.
+
+Y es una convención muy común almacenar múltiples piezas de información relacionadas en el mismo archivo. Y para hacer esto, voy a separar cada uno de estos tipos de datos, no con otra nueva línea, sino simplemente con una coma. Voy a mantener a cada estudiante en su propia línea, pero voy a separar la información sobre cada estudiante usando una coma en su lugar.
+
+Por lo tanto, ahora tenemos un archivo bidimensional, por así decirlo. Fila por fila, tenemos a nuestros estudiantes. Pero si piensas en estas comas como si representaran una columna, aunque no esté perfectamente alineado debido a las longitudes de estos nombres, es un poco irregular. Puedes pensar en estas comas como si representaran una columna.
+
+Y resulta que estos archivos CSV se usan comúnmente cuando usas algo como Microsoft Excel, Apple Numbers o Google Spreadsheets, y quieres exportar los datos para compartirlos con alguien más como un archivo CSV. O al contrario, si quieres importar un archivo CSV en tu software de hojas de cálculo preferido, como Excel, Numbers o Google Spreadsheets, también puedes hacerlo. Así que CSV es un formato de texto muy común y muy simple que simplemente separa los valores con comas y diferentes tipos de valores, en última instancia, con nuevas líneas también.
+
+Permíteme ejecutar el código de students.csv para crear un archivo completamente nuevo que inicialmente esté vacío. Y agregaremos a este archivo los mismos nombres pero también alguna otra información. Entonces, si ahora tengo este nuevo archivo, students.csv, dentro del cual hay una columna de nombres, por así decirlo, y una columna de casas, ¿cómo puedo cambiar mi código para leer no solo esos nombres sino también esos nombres y casas para que no estén todos en una sola línea? ¿Cómo podemos acceder a ambos tipos de valores por separado? Entonces, permíteme crear un nuevo programa aquí llamado students.py.
+
+En este programa, vamos a leer, no un archivo de texto en sí, sino un tipo de archivo de texto específico, un CSV, un archivo de Valores Separados por Comas. Y para hacer esto, voy a usar código similar al que usamos anteriormente. Voy a decir with open, comillas / comillas, students.csv. No me daré el trabajo de especificar, comillas / comillas, "r" porque eso es lo predeterminado.
+
+Pero me daré un nombre de variable para el archivo. Y luego, en este archivo, voy a hacer esto. Por línea en archivo, como antes, y ahora debo ser un poco hábil aquí.
+
+Permíteme volver a students.csv, mirando este archivo, y parece que en cada iteración de mi bucle obtendré acceso a toda la línea de texto. No voy a obtener automáticamente acceso solo a Hermione o solo a Gryffindor. Recuerda que el bucle me dará cada línea completa de texto. Entonces, lógicamente, ¿qué propondrías que hagamos dentro de un bucle for que lee una línea completa de texto a la vez, pero ahora queremos tener acceso a los valores individuales, como Hermione y Gryffindor, Harry y Gryffindor? ¿Cómo podemos tomar una línea de texto y acceder a esos valores individuales, crees? Instintivamente, incluso si no estás seguro de cuál sería el nombre de las funciones.
+
+AUDIENCIA: Puedes acceder a eso como si estuvieras usando un diccionario, como usar una clave y un valor.
+
+DAVID MALAN: Entonces, idealmente, accederíamos a eso usando una clave y un valor. Pero en este punto de la historia, todo lo que tenemos es este bucle, y este bucle me da una línea completa de texto cada vez. Soy el programador ahora. Tengo que resolver esto. No hay un diccionario todavía en cuestión. ¿Qué otra sugerencia tenemos aquí?
+
+AUDIENCIA: Entonces, ¿puedes de alguna manera separar las dos palabras basándote en la coma?
+
+DAVID MALAN: Sí, incluso si no estás muy seguro de qué función hará esto, intuitivamente, quieres tomar toda esta línea de texto: Hermione, coma, Gryffindor, Harry, coma, Gryffindor, y así sucesivamente, y dividir esa línea en dos partes. Y resulta maravillosamente que la función que utilizaremos se llama dividir y puede dividir cualquier carácter, pero puedes decirle qué carácter usar.
+
+Entonces, voy a volver a students.py, e dentro de este bucle voy a hacer esto. Voy a tomar la línea actual. Voy a eliminar los espacios en blanco al final, como siempre, utilizando rstrip aquí. Y luego, lo que sea que sea el resultado de eso, voy a llamar a split y, comillas / comillas, coma.
+
+Entonces, la función o método split viene con las cadenas. Todas las cadenas en Python tienen este método incorporado. Y si le pasas un argumento, como una coma, lo que hará esta función split es dividir esa cadena actual en 1, 2, 3 o más partes al buscar ese carácter una y otra vez.
+
+En última instancia, split nos devolverá una lista de todas las partes individuales a la izquierda y a la derecha de esas comas. Entonces puedo darme una variable llamada fila aquí. Y este es un paradigma común. Cuando sabes que estás iterando sobre un archivo, específicamente un CSV, es común pensar en cada línea como una fila y cada uno de los valores separados por comas como columnas, por así decirlo. Así que voy a darle deliberadamente a mi variable el nombre de fila para ser consistente con esa convención. Y ahora, ¿qué quiero imprimir?
+
+Bueno, voy a hacer esto. Voy a decir lo siguiente, una cadena f que comienza con llaves... bueno, ¿cómo puedo acceder a la primera cosa en esa fila? Bueno, ¿la fila va a tener cuántas partes? Dos, porque si estoy dividiendo por comas y hay una coma por línea, eso me dará una parte izquierda y una parte derecha, como Hermione y Gryffindor, Harry y Gryffindor.
+
+Cuando tengo una lista como fila, ¿cómo puedo acceder a valores individuales? Bueno, puedo hacer esto. Puedo decir fila, corchete, 0. Y eso irá al primer elemento de la lista, que con suerte debería ser el nombre del estudiante. Luego de eso, voy a decir está en, y voy a tener otro corchete aquí para fila, corchete, 1. Y luego cerraré toda mi comilla.
+
+Se ve un poco críptico a primera vista. Pero la mayor parte de esto es solo la sintaxis de la cadena f con llaves para insertar valores. ¿Y qué valores estoy insertando? Bueno, fila, de nuevo es una lista, y tiene dos elementos, presumiblemente, Hermione en uno y Gryffindor en el otro, y así sucesivamente. Entonces, el corchete 0 es el primer elemento porque, recuerda, comenzamos a indexar en 0 en Python. Y 1 va a ser el segundo elemento.
+
+Entonces, permíteme ejecutar esto ahora y ver qué sucede... python de students.py, Enter. Y vemos "Hermione está en Gryffindor". "Harry está en Gryffindor". "Ron está en Gryffindor". Y "Draco está en Slytherin".
+
+Así que hemos implementado nuestro propio código desde cero que realmente analiza, es decir, lee e interpreta un archivo CSV en última instancia aquí. Ahora, déjame hacer una pausa para ver si hay alguna pregunta. Pero lo haremos aún más fácil de leer en un momento. ¿Alguna pregunta sobre lo que acabamos de hacer aquí al dividir por coma?
+
+AUDIENCIA: Entonces, mi pregunta es, ¿podemos editar cualquier línea de código en cualquier momento que queramos? ¿O la única opción que tenemos es agregar líneas? O digamos, queremos, digamos, cambiar la casa de Harry a Slytherin u otra casa.
+
+DAVID MALAN: Sí, una pregunta realmente buena. ¿Qué pasa si quieres cambiar una línea en el archivo en Python y no solo agregar al final? Tendrías que implementar esa lógica tú mismo. Por ejemplo, podrías imaginarte ahora abrir el archivo y leer todo el contenido, luego iterar sobre cada una de esas líneas. Y tan pronto como veas que el nombre actual es igual a Harry, podrías cambiar su casa a Slytherin.
+
+Y luego dependería de ti, sin embargo, escribir todos esos cambios de vuelta al archivo. Por lo tanto, tal vez quieras, en su forma más simple, leer el archivo una vez y permitir que se cierre. Luego, ábrelo de nuevo, pero ábrelo en modo escritura y cambia todo el archivo.
+
+No es realmente posible o fácil cambiar solo una parte del archivo, aunque se puede hacer. Es más fácil realmente leer todo el archivo, hacer tus cambios en la memoria y luego escribir todo el archivo. Pero para archivos más grandes donde eso podría ser bastante lento, puedes ser más inteligente que eso.
+
+Bueno, permíteme proponer ahora que limpiemos esto un poco porque realmente creo que es un poco críptico para leer... fila, corchete, 0, fila, corchete, 1... no está tan bien escrito en este momento, diría. Pero resulta que cuando tienes una variable que es una lista como fila, no tienes que poner todas esas variables en una lista. En realidad, puedes desempaquetar toda esa secuencia al mismo tiempo. Es decir, si sabes que una función como split devuelve una lista, pero sabes de antemano que va a devolver dos valores en una lista, el primero y el segundo, no tienes que ponerlos todos en una variable que también sea una lista.
+
+En realidad, puedes desempaquetarlos simultáneamente en dos variables, haciendo nombre, coma, casa. Esta es una técnica agradable en Python para crear y asignar automáticamente, en paralelo, dos variables a la vez, en lugar de solo una. Esto tendrá el efecto de poner el nombre en la izquierda, Hermione, y tendrá el efecto de poner la casa Gryffindor en la variable de la derecha.
+
+Entonces, ahora ya no tenemos una fila. Ahora podemos hacer que nuestro código sea un poco más legible simplemente diciendo ahora nombre aquí y, por ejemplo, casa aquí. Así que un poco más legible, aunque funcionalmente el código ahora es exactamente el mismo.
+
+Muy bien, esto ahora funciona. Y lo confirmaré simplemente ejecutándolo una vez más... python de students.py, Enter. Y vemos que Hermione está en Gryffindor. Harry está en Gryffindor. Ron está en Gryffindor. Y Draco está en Slytherin.
+
+Así que ahora hemos implementado nuestro propio código desde cero que realmente analiza, es decir, lee e interpreta un archivo CSV en última instancia aquí. Ahora, permíteme hacer una pausa para ver si hay alguna pregunta. Pero lo haremos aún más fácil de leer en un momento. ¿Alguna pregunta sobre lo que acabamos de hacer aquí al dividir por coma?
+
+AUDIENCIA: Entonces, mi pregunta es, ¿podemos editar cualquier línea de código en cualquier momento que queramos? ¿O la única opción que tenemos es agregar líneas? O digamos, queremos, por ejemplo, cambiar la casa de Harry a Slytherin o alguna otra casa.
+
+DAVID MALAN: Sí, una pregunta realmente buena. ¿Qué pasa si quieres cambiar una línea en el archivo en Python y no solo agregar al final? Tendrías que implementar esa lógica tú mismo. Por ejemplo, podrías imaginarte ahora abrir el archivo y leer todo el contenido, luego iterar sobre cada una de esas líneas. Y tan pronto como veas que el nombre actual es igual a Harry, podrías cambiar su casa a Slytherin.
+
+Y luego dependería de ti, sin embargo, escribir todos esos cambios de vuelta al archivo. Por lo tanto, tal vez quieras, en su forma más simple, leer el archivo una vez y permitir que se cierre. Luego, ábrelo de nuevo, pero ábrelo en modo escritura y cambia todo el archivo.
+
+No es realmente posible o fácil cambiar solo una parte del archivo, aunque se puede hacer. Es más fácil realmente leer todo el archivo, hacer tus cambios en la memoria y luego escribir todo el archivo. Pero para archivos más grandes donde eso podría ser bastante lento, puedes ser más inteligente que eso.
+
+Bueno, permíteme proponer ahora que limpiemos esto un poco porque realmente creo que es un poco críptico para leer... fila, corchete, 0, fila, corchete, 1... no está tan bien escrito en este momento, diría. Pero resulta que cuando tienes una variable que es una lista como fila, no tienes que poner todas esas variables en una lista. En realidad, puedes desempaquetar toda esa secuencia al mismo tiempo. Es decir, si sabes que una función como split devuelve una lista, pero sabes de antemano que va a devolver dos valores en una lista, el primero y el segundo, no tienes que ponerlos todos en una variable que también sea una lista.
+
+En realidad, puedes desempaquetarlos simultáneamente en dos variables, haciendo nombre, coma, casa. Esta es una técnica agradable en Python para crear y asignar automáticamente, en paralelo, dos variables a la vez, en lugar de solo una. Esto tendrá el efecto de poner el nombre en la izquierda, Hermione, y tendrá el efecto de poner Gryffindor, la casa, en la variable de la derecha.
+
+Y ahora ya no tenemos una fila. Ahora podemos hacer que nuestro código sea un poco más legible simplemente diciendo ahora nombre aquí y, por ejemplo, casa aquí. Así que un poco más legible, aunque funcionalmente el código ahora es exactamente el mismo.
+
+Muy bien, esto ahora funciona. Y lo confirmaré simplemente ejecutándolo una vez más... python de students.py, Enter. Y vemos que Hermione está en Gryffindor. Harry está en Gryffindor. Ron está en Gryffindor. Y Draco está en Slytherin.
+
+Pero esto es discutiblemente un poco descuidado, ¿verdad? Parece un poco "hacker" que esté construyendo estas oraciones. E incluso si técnicamente quiero ordenar por nombre, técnicamente estoy ordenando por estas frases en inglés completas. Por lo tanto, no está mal.
+
+Está logrando el resultado deseado, pero no está realmente bien diseñado porque estoy teniendo suerte de que el inglés se lee de izquierda a derecha. Y por lo tanto, al imprimir esto, se está ordenando correctamente. Sería mejor, realmente, idear una técnica para ordenar los nombres del estudiante, no por alguna frase en inglés que he construido aquí en la línea 6.
+
+Para lograr esto, ahora voy a necesitar complicarme un poco más por un momento. Y voy a necesitar recopilar información sobre cada estudiante antes de molestarme en armar esa frase. Así que permíteme proponer que hagamos esto. Permíteme deshacer estas últimas líneas de código para que actualmente tengamos dos variables, nombre y casa, cada una de las cuales tiene nombre y la casa del estudiante, respectivamente. Y todavía tenemos nuestra variable global, estudiantes.
+
+Pero permíteme hacer esto. Recuerda que Python admite diccionarios. Y los diccionarios son solo colecciones de claves y valores. Entonces puedes asociar algo con otra cosa, como un nombre con Hermione, como una casa con Gryffindor. Eso realmente es un diccionario.
+
+Entonces, permíteme hacer esto. Permíteme crear temporalmente un diccionario que almacene esta asociación de nombre con casa. Permíteme hacer esto.
+
+Permíteme decir que el estudiante aquí se representará inicialmente por un diccionario vacío. Y al igual que puedes crear una lista vacía con corchetes, puedes crear un diccionario vacío con llaves. Así que dame un diccionario vacío que pronto tendrá dos claves, nombre y casa. ¿Cómo hago eso?
+
+Bueno, podría hacerlo de esta manera. Estudiante, corchete abierto, nombre, es igual al nombre del estudiante que obtuvimos de la línea. Estudiante, corchete, casa es igual a la casa que obtuvimos de la línea. Y ahora voy a agregar a la lista de estudiantes, en plural, ese estudiante en particular.
+
+Ahora, ¿por qué he hecho esto? He complicado mi código, lo entiendo. Son más líneas de código, pero he recopilado información sobre cada estudiante mientras sigo realizando un seguimiento, cuál es el nombre, cuál es la casa. La lista, mientras tanto, tiene todos los nombres y casas de los estudiantes juntos. ¿Por qué he hecho esto? Bueno, permíteme, por el momento, hacer algo simple. Permíteme hacer para estudiante en estudiantes, y permíteme muy simplemente decir, imprimir la siguiente cadena f, el estudiante actual con este nombre está en la casa del estudiante actual.
+
+Y ahora, nota un detalle. Dentro de esta cadena f, estoy usando mis llaves, como siempre. Estoy usando, dentro de esas llaves, el nombre de una variable, como siempre. Pero luego estoy usando comillas simples para rodear la casa y rodear el nombre. ¿Por qué comillas simples dentro de esta cadena f para acceder a esas claves?
+
+AUDIENCIA: Sí, porque tienes comillas dobles en esa línea 12. Y por lo tanto, tienes que decirle a Python que haga la diferencia.
+
+DAVID MALAN: Exactamente, porque ya estoy usando comillas dobles fuera de la cadena f, si quiero poner comillas alrededor de cualquier cadena en el interior, lo que debo hacer para los diccionarios porque, recuerda, cuando indexas en un diccionario, no usas números como en las listas... 0, 1, 2, en adelante... en cambio, usas cadenas que deben estar entre comillas.
+
+Pero si ya estás usando comillas dobles, es más fácil usar comillas simples en el interior, para que Python no se confunda sobre qué se alinea con qué. Entonces, en este momento, cuando ejecuto este programa, va a imprimir esos saludos.
+
+Pero aún no están ordenados. De hecho, lo que tengo ahora es una lista de diccionarios y aún no está ordenada. Pero permíteme apretar el código también para señalar que no tiene que ser tan verboso.
+
+Si tienes el hábito de crear un diccionario vacío, como esto en la línea 6, y luego inmediatamente poner en dos claves, nombre y casa, cada una con dos valores, nombre y casa respectivamente, en realidad puedes hacer esto todo de una vez. Permíteme mostrarte una sintaxis ligeramente diferente. Puedo hacer esto.
+
+Dame una variable llamada estudiante, y permíteme usar llaves en el lado derecho aquí. Pero en lugar de dejarlas vacías, definamos ahora esas claves y esos valores. Con comillas / comillas, nombre será nombre, y con comillas / comillas, casa será casa.
+
+Esto logra el mismo efecto en una línea en lugar de tres. Crea un nuevo diccionario no vacío que contiene una clave de nombre, cuyo valor es el nombre del estudiante, y una clave de casa, cuyo valor es la casa del estudiante. No necesita cambiar nada más.
+
+Eso seguirá funcionando para que si, de nuevo, ejecuto python de students.py, todavía estoy viendo esos saludos, pero aún no están realmente ordenados. Bueno, ¿qué podríamos hacer aquí para poder... qué podríamos hacer para mejorar esto aún más? Bueno, ahora necesitamos algún mecanismo para ordenar esos estudiantes. Pero desafortunadamente, no puedes hacer esto.
+
+No puedo ordenar a todos los estudiantes ahora porque esos estudiantes no son nombres como antes. No son frases como antes. Cada uno de los estudiantes es un diccionario, y no está claro cómo ordenar un diccionario dentro de una lista.

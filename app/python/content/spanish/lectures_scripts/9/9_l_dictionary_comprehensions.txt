@@ -1,0 +1,45 @@
+Bueno, déjame proponerte también que te equipemos con otra herramienta para tu conjunto de herramientas, a saber las comprensiones de diccionarios también. Y, admitámoslo, la sintaxis está empezando a volverse aún más extraña. Pero a medida que te sientas más cómodo con todas estas primitivas y otras, estas son solo herramientas que puedes usar opcionalmente pero quizás de manera poderosa para resolver problemas futuros.
+
+Y con una comprensión de diccionario, tenemos la capacidad de crear sobre la marcha un diccionario con claves y algunos valores sin tener que hacerlo a la antigua creando un diccionario vacío, y creando un bucle for, e iterando ese bucle e insertando más y más claves y valores en el diccionario. En cambio, podemos hacerlo todo de una vez.
+
+Por lo tanto, de hecho, déjame volver a VS Code aquí. Y déjame proponer ahora que haga esto. Permíteme seguir adelante e inicialmente hacerlo de la manera tradicional aquí como sigue.
+
+Permíteme seguir adelante y simplificar y eliminar las casas por completo para que podamos concentrarnos por ahora solo en una lista de nombres de estudiantes. Voy a seguir adelante y ejecutar estudiantes. Voy a seguir adelante y escribir estudiantes igual a cita sin cita Hermione, cita sin cita Harry, y lo mantendremos aún más corto esta vez, cita sin cita Ron, solo esos tres estudiantes en Gryffindor.
+
+Ahora, voy a ser proactivo como lo hemos hecho en el pasado y darme una lista vacía, para que tenga algo para acumular algunas respuestas a este problema. Y ahora, voy a hacer algo como esto. Para estudiantes en estudiantes, para que pueda iterar sobre cada uno de ellos,
+
+Sigamos adelante y agreguemos a la lista de Gryffindors el nombre del estudiante. Así cita sin cita nombre y luego estudiante, que es de hecho su nombre de esa lista. Y ahora, sigamos adelante y pongamos a todos estos estudiantes en Gryffindor. Sé que estos tres estudiantes están en Gryffindor. Supongamos que el problema en cuestión es que quiero construir una lista de diccionarios que solo contenga a los estudiantes de Gryffindor.
+
+Entonces es algo así como un paso atrás de la versión anterior donde ya tenía los nombres y las casas. Por ahora, supongamos simplemente que el problema es que tengo todos sus nombres, pero aún no tengo los diccionarios de los estudiantes en sí. Así que estoy reconstruyendo esa misma estructura que anteriormente daba por sentado.
+
+Ahora, sigamos adelante y, solo para fines de discusión, imprimamos a estos Gryffindors para que podamos ver lo que hemos construido. Si ejecuto Python de Gryffindors.py en mi terminal, veo una sintaxis un poco críptica. Pero nuevamente, busquen nuestras pequeñas pistas. Tengo un corchete cuadrado al final y un corchete cuadrado al principio. Y eso indica, como siempre, que esto es una lista.
+
+Luego tengo un montón de llaves con un montón de claves entre comillas. Por convención, generalmente se usan comillas simples al imprimir un diccionario. Pero eso es solo un indicador visual de que esa es mi clave.
+
+Y el primer valor es Hermione. La segunda clave es casa. El valor es Gryffindor. Luego hay una coma, que separa un objeto de diccionario del siguiente. Y si vamos más allá de Harry y Gryffindor, hay una segunda coma que separa a Harry y Gryffindor de Ron y Gryffindor también.
+
+Entonces, en resumen, aquí hay algún código mediante el cual construí de manera bastante manual con un bucle for en una lista inicialmente vacía la misma estructura de datos que antes, excepto Draco, solo para los estudiantes de Gryffindor. Pero aquí es donde, nuevamente, con las comprensiones de diccionarios o realmente las comprensiones de listas primero, ¿podemos hacer esto de manera más concisa?
+
+Permítanme borrar mi ventana de terminal. Deshagámonos de esta lista inicialmente vacía y de este bucle for que agrega, agrega, agrega a ella. Y hagamos esto. Una variable Gryffindors será igual a la siguiente comprensión de lista.
+
+Dentro de esa lista, quiero una estructura de diccionario con el nombre de alguien y su nombre. La casa de alguien y solo por ahora Gryffindor. Y eso es todo. Pero quiero que estos objetos de diccionario aquí en estas llaves estén para cada estudiante en estudiantes.
+
+Entonces, también aquí, dentro de mi comprensión de lista con mis corchetes, quiero un objeto que indique, quiero un diccionario que indique mediante las llaves. Quiero que cada uno de esos diccionarios tenga dos claves, nombre y casa respectivamente. Los valores son el nombre del estudiante anteriormente aquí y solo Gryffindor. ¿De qué estudiantes quiero crear esos objetos de diccionario? Bueno, para estudiante en estudiantes.
+
+Entonces, una vez más, a la izquierda tengo lo que quiero en la lista final. Y a la derecha, tengo un bucle y esta vez, sin condicional. Quiero que todos estos estudiantes estén en Gryffindor como su casa.
+
+Ahora, volvamos a imprimir esto, ejecuto Python de Gryffindors.py y presiono Enter. Y ahora, tenemos la misma salida exacta. Entonces, en lugar de tres líneas, es solo una. Es un poco más críptico de leer a primera vista. Pero una vez que estés familiarizado con las comprensiones de lista y este tipo de sintaxis, es solo otra forma de resolver ese mismo problema.
+
+¿Qué pasa si quiero cambiar esto y simplificarlo? ¿Qué pasa si no quiero una lista de diccionarios, que ahora tengo? Nuevamente, según los corchetes cuadrados, tengo una lista de tres objetos de diccionario aquí. ¿Qué pasa si solo quiero un diccionario más grande en el que haya una clave como Hermione: Gryffindor, Harry: Gryffindor, Ron: Gryffindor? No necesito una lista. No necesito objetos separados por estudiante.
+
+Solo quiero en cambio un diccionario grande donde las claves sean los nombres de los estudiantes y los valores sean su casa. Y supongo por ahora que nadie tendrá el mismo primer nombre en este mundo.
+
+Bueno, puedo hacer esto. Permíteme deshacerme de esto aquí y no crear una comprensión de lista, sino nuevamente esta cosa conocida como una comprensión de diccionario. Y el indicador visual o diferencia aquí es que en lugar de corchetes cuadrados en el exterior, esta vez serán llaves en su lugar.
+
+Entonces, dentro de estas llaves, ¿qué quiero que sea cada clave? Quiero que cada clave sea el nombre del estudiante. Quiero que cada valor sea Gryffindor por ahora. Y quiero hacer esto para cada estudiante en estudiantes.
+
+Y ahora, las cosas se están poniendo realmente interesantes. Y esta es otra manifestación de cómo Python en cierto punto de vista es muy legible de izquierda a derecha. Absolutamente requiere práctica y comodidad. Pero esto está creando una variable llamada Gryffindor que será un diccionario según estas llaves.
+
+Cada clave será el nombre de algún estudiante. Cada valor será Gryffindor. ¿Qué nombres de qué estudiantes? Bueno, esta comprensión de diccionario se construirá a partir de la lista de estudiantes uno por uno.
+
+Entonces, cuando imprimo esto ahora, la sintaxis se verá un poco diferente porque no es una lista de objetos de diccionario. Es solo un objeto de diccionario más grande en sí mismo. Pero ahora, al imprimir Gryffindors, obtengo Hermione: Gryffindor, Harry: Gryffindor, y Ron: Gryffindor también. ¿Algún pregunta ahora sobre lo que hemos llamado comprensiones de diccionario también? ¿Alguna pregunta sobre esto? ¿No?

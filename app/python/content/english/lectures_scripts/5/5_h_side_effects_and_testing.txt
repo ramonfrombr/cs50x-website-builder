@@ -1,0 +1,53 @@
+Let's now consider how we could test code that doesn't just expect numbers as input, but actually strings. And let me rewind us in time here in VS Code to that very first program we wrote a few different versions of in hello.py that ultimately looked a little something like this. I had a main function that prompted the user for the value of a variable by asking them, "what's your name?" question mark. 
+
+And then we went ahead and did something like hello, open paren, name, passing that user's name into a function called hello. Now that function hello recall ultimately looked like this. We defined hello as taking a parameter called to, the default value of which was world, and that function very simply printed hello, followed by a comma, and then whatever the name that had been passed in. 
+
+And then we ultimately called main, but for now onward, I'm going to always add this if conditional, if name equals equals underscore underscore main, then and only then do I want to call main. So that's essentially what this program looked like in its last incarnation. How do we go about testing it? Here again too, I'm not going to test the user's input per se in main. I'm going to focus really on the module of code here that's of interest, which is the hello function itself. How can I go about testing the hello function? 
+
+Unfortunately, even if I start by doing something like code of test hello.py-- let me go about and start writing a test program-- I could import from my hello program a function called hello. So a bit strange to see from hello import hello, but notice that on this line here, I'm importing from the module-- that is the file called hello.py-- the function called hello. 
+
+And how do I go about testing this? If I have a function like define test_argument like this-- let me do this. So if I were to define a function like define test_hello, what could I do? I could call hello with quote, unquote, say, "David," and then check if it equals, what, "hello, David." 
+
+So would this work, this approach here? If I've written a test, called test_hello, that calls hello with an argument of David and then tests its return value, just like we've done for our calculator, would this work as written? And let me go back to in just a moment the version of hello that we're testing. So you can see that function hello. Here's the test. Here is the actual code. Would this test now work? Any thoughts? 
+
+SPEAKER 9: I think the problem is that in the first version in hello.py, you're using the to argument that you first declared, when you declared the function instead of using the name. 
+
+DAVID MALAN: That is actually not a bug here. So let me stipulate that in hello.py, this code actually does work as intended. And let me go ahead and test it manually, just to demonstrate as much. Let me run Python of hello.py, typing in, as my name, D-A-V-I-D, and I see, in fact, that it says, "hello, David." 
+
+If, though, I were to change this program, and get rid of the name argument, get rid of the name variable, and just call hello, again, running Python of hello.py, this time I'm not even prompted, because I got rid of my input call, but it does behave as I expect. It does say "hello, world." So let me stipulate that this code in its current form is actually correct, but my test is not going to work as I'd hoped. And there's a subtle difference between my hello function and my square function that explains. Why might this test not work as intended? 
+
+SPEAKER 10: Because it's not returning a value. 
+
+DAVID MALAN: Yeah, exactly. Recall our discussion early on about functions. Functions can either return a value, like my square function hands you back the square of some value, or they can have side effects, sort of visual artifacts that might happen on the screen, like printing something out on the screen. And by definition, that's how print works. Notice that hello, it is short, but it's implemented ultimately using the print function, which does not return a value as I'm using it here. It instead has this side effect of printing something onto the screen. 
+
+So it is not correct in my test function to check if the return value of hello equals equals hello David, because again, hello is not returning anything. It's printing something, that side effect, but notice, literally, it has no return keyword, unlike my square function, which did. 
+
+So here's an opportunity to perhaps change how I go about implementing my actual functions. It turns out that as your programs get more and more sophisticated, more and more complicated, it tends to be best practice not to have side effects if you can avoid it, especially if you want your code to be testable. And in fact, I'm going to propose that we change my hello program to now work as follows. 
+
+Let me go ahead and change this function to not print hello and then that name. Let me go ahead and literally return maybe an F string, which will clean this up a little bit, hello comma to close quotes at the end. So my syntax here is just the familiar f string or format string. It's going to return hello, world or hello, David or hello, whomever's name is passed in as that argument, but I'm returning it now. I'm not printing it out. 
+
+So what needs to change up here? I could do something like this. I could say something like output equals hello and then print output in my main function. Or I can simplify that, because I don't really need that variable. I could instead just do this. I could still call hello, but I could immediately print out the result. 
+
+And this version of my hello program now is actually more testable. Why? Because these assert statements that we're using, and we've seen thus far for our tests, are really designed to test arguments into functions and return values they're from, not testing side effects. 
+
+So if you're doing equals equals, you're looking for a return value, something that's handed back from the function. So that's fine. If I modify the design of my program now not to just print hello, but to return the string, the sentence, the phrase that I want to construct, I can leave it to the caller-- that is the function who's using this hello function-- to handle the actual printing. 
+
+Now what does this mean in my code? It means now if my hello.py looks like this, and hello is indeed returning a value, in my test_hello function, I can test it exactly like this. So let me go ahead and run pytest of test_hello.py, crossing my fingers as always, and voila, one passed. So I passed this test, because apparently the return value of hello does indeed equal "hello, David." 
+
+Let's test the other scenario. What if I call hello without any arguments? Let's assert that calling hello with nothing in those parentheses similarly equals hello comma, but world, the default value. Let me now go ahead and run pytest of test_hello.py. And that too passes entirely. But there too, suppose that I had made some mistakes. Suppose that there were a bug in my code. It might not be best practice to combine multiple tests in this one function, so let's make it more clear what might pass or fail. 
+
+Let's call the first function test the default to this function. And let's only include this first line of code. And then let's go ahead and define another function, like test_argument, to test this other line of code here. So now I have two different tests, each of which is testing something a little fundamentally different. 
+
+So now when I run my code, it's still not broken. If I run pytest of test_hello.py, Enter, I've now passed two tests. And that's just as good as before. But if I did have a bug, having two tests instead of one would indeed give me, perhaps, a bit more of a hint as to what's wrong. Questions now on this testing of return values, when these return values are now strings instead of integers and why we've done this? 
+
+SPEAKER 11: So my question is about function inside the function. Can we test that too or recursion we haven't seen? 
+
+DAVID MALAN: If you have a recursive function, which we've not discussed in this class, yes, you can absolutely test those too by simply calling them exactly in this way. Recursion does not affect this process. How about one more question here on unit tests before we look at one final example? 
+
+SPEAKER 12: When testing our arguments, can we use something like loops or inside of assets or for the values? 
+
+DAVID MALAN: Absolutely. You can absolutely use a loop to test multiple values. In this case, for instance, I could do something like this. I could say for name in the following list of Hermione, say, Harry, and Ron, I could then within this loop assert that hello of that given name equals equals, say, the format string of hello, comma name, and then run all of these here at once by running, again, pytest of test_hello.py. 
+
+It's still going to be just one test within that function, but if there's something interesting about those several strings that makes it compelling to test all of them, you can absolutely automate the test in that way. With that said, each of your tests should ideally be pretty simple and pretty small. Why? Because you don't want to write so much code, so much complicated code that your tests might be flawed. 
+
+What we don't want to have to do is write tests for our tests and test for our tests for our test, because it would never end. So keeping tests nice and simple is really the goal, so that a reasonable human, yourself included, can eyeball them and just claim, yeah, that is correct. We don't need tests for our tests. 

@@ -1,0 +1,418 @@
+
+Slide [0]
+
+Web Programming 
+with Python and JavaScript
+
+Slide [1]
+
+Web Programming 
+
+Slide [2]
+
+HTML and CSS
+HTML
+
+Slide [3]
+
+Git
+
+Slide [4]
+
+Python
+
+Slide [5]
+
+Django
+
+Slide [6]
+
+SQL, Models, 
+and Migrations
+
+Slide [7]
+
+JavaScript
+
+Slide [8]
+
+User Interfaces
+
+Slide [9]
+
+Testing and CI/CD
+
+Slide [10]
+
+Scalability 
+and Security
+Server
+Load Balancer
+Server
+Server
+
+Slide [11]
+
+HTML and CSS
+
+Slide [12]
+
+HTML
+
+Slide [13]
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Hello!</title> 
+    </head> 
+    <body> 
+        Hello, world! 
+    </body> 
+</html>
+
+Slide [14]
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Hello!</title> 
+    </head> 
+    <body> 
+        Hello, world! 
+    </body> 
+</html>
+
+Slide [15]
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Hello!</title> 
+    </head> 
+    <body> 
+        Hello, world! 
+    </body> 
+</html>
+
+Slide [16]
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Hello!</title> 
+    </head> 
+    <body> 
+        Hello, world! 
+    </body> 
+</html>
+
+Slide [17]
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Hello!</title> 
+    </head> 
+    <body> 
+        Hello, world! 
+    </body> 
+</html>
+
+Slide [18]
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Hello!</title> 
+    </head> 
+    <body> 
+        Hello, world! 
+    </body> 
+</html>
+
+Slide [19]
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Hello!</title> 
+    </head> 
+    <body> 
+        Hello, world! 
+    </body> 
+</html>
+
+Slide [20]
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Hello!</title> 
+    </head> 
+    <body> 
+        Hello, world! 
+    </body> 
+</html>
+
+Slide [21]
+
+Document Object Model
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Hello!</title> 
+    </head> 
+    <body> 
+        Hello, world! 
+    </body> 
+</html>
+html
+head
+body
+title
+Hello, world!
+Hello!
+
+Slide [22]
+
+Common HTML Tags
+•<h1>, <h2>, ..., <h6> 
+•<ol>, <ul> 
+•<img> 
+•<a> 
+•<table> 
+•<form> 
+•...
+
+Slide [23]
+
+CSS
+
+Slide [24]
+
+Common CSS Properties
+• color 
+• text-align 
+• width, height 
+• margin, padding 
+• font-family, font-size, font-weight 
+• border 
+• ...
+
+Slide [25]
+
+Identifying Elements
+• div 
+• span 
+• id 
+• class
+
+Slide [26]
+
+Speciﬁcity
+1. inline 
+2. id 
+3. class 
+4. type
+
+Slide [27]
+
+Speciﬁcity
+<div id="foo"> 
+    Hello! 
+</div>
+Hello!
+div { 
+  color: blue; 
+} 
+
+Slide [28]
+
+Speciﬁcity
+<div id="foo"> 
+    Hello! 
+</div>
+div { 
+  color: blue; 
+} 
+#foo { 
+  color: red; 
+}
+Hello!
+
+Slide [29]
+
+Speciﬁcity
+<div id="foo"> 
+    Hello! 
+</div>
+#foo { 
+  color: red; 
+} 
+div { 
+  color: blue; 
+}
+Hello!
+
+Slide [30]
+
+CSS Selectors
+a, b
+Multiple Element Selector
+a b
+Descendant Selector
+a > b
+Child Selector
+a + b
+Adjacent Sibling Selector
+[a=b]
+Attribute Selector
+a:b
+Pseudoclass Selector
+a::b
+Pseudoelement Selector
+
+Slide [31]
+
+Responsive Design
+
+Slide [32]
+
+Responsive Design
+• viewport 
+• Media Queries 
+• Flexbox 
+• Grids
+
+Slide [33]
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+Slide [34]
+
+Viewport
+a
+
+Slide [35]
+
+Viewport
+a
+
+Slide [36]
+
+Media Queries
+• Media Types: print, screen, ... 
+• Media Features: height, width, orientation, ...
+
+Slide [37]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [38]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [39]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [40]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [41]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [42]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [43]
+
+Bootstrap
+
+Slide [44]
+
+
+Slide [45]
+
+Sass
+
+Slide [46]
+
+Web Programming 
+with Python and JavaScript

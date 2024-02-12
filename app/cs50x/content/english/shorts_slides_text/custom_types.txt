@@ -1,0 +1,142 @@
+
+[0]
+
+Defining Custom Data Types
+
+[1]
+
+Defining Custom Data Types
+• The C keyword typedef provides a way to create a shorthand 
+or rewritten name for data types.
+• The basic idea is to first define a type in the normal way, then 
+alias it to something else.
+
+[2]
+
+Defining Custom Data Types
+typedef <old name> <new name>;
+
+[3]
+
+Defining Custom Data Types
+typedef unsigned char byte;
+
+[4]
+
+Defining Custom Data Types
+typedef unsigned char byte;
+
+[5]
+
+Defining Custom Data Types
+typedef unsigned char byte;
+
+[6]
+
+Defining Custom Data Types
+typedef unsigned char byte;
+
+[7]
+
+Defining Custom Data Types
+typedef char * string;
+
+[8]
+
+Defining Custom Data Types
+typedef char * string;
+
+[9]
+
+Defining Custom Data Types
+struct car
+{
+int year;
+char model[10];
+char plate[7];
+int odometer;
+double engine_size;
+};
+typedef struct car car_t;
+
+[10]
+
+Defining Custom Data Types
+struct car
+{
+int year;
+char model[10];
+char plate[7];
+int odometer;
+double engine_size;
+};
+typedef struct car car_t;
+
+[11]
+
+Defining Custom Data Types
+struct car
+{
+int year;
+char model[10];
+char plate[7];
+int odometer;
+double engine_size;
+};
+typedef struct car car_t;
+
+[12]
+
+Defining Custom Data Types
+struct car
+{
+int year;
+char model[10];
+char plate[7];
+int odometer;
+double engine_size;
+};
+typedef struct car car_t;
+
+[13]
+
+Defining Custom Data Types
+typedef struct car
+{
+int year;
+char model[10];
+char plate[7];
+int odometer;
+double engine_size;
+}
+car_t;
+
+[14]
+
+Defining Custom Data Types
+// variable declaration
+struct car mycar;
+// field accessing
+mycar.year = 2011;
+strcpy(mycar.plate, “CS50”);
+mycar.odometer = 50505;
+
+[15]
+
+Defining Custom Data Types
+// variable declaration
+struct car mycar;
+// field accessing
+mycar.year = 2011;
+strcpy(mycar.plate, “CS50”);
+mycar.odometer = 50505;
+
+[16]
+
+Defining Custom Data Types
+// variable declaration
+car_t mycar;
+// field accessing
+mycar.year = 2011;
+strcpy(mycar.plate, “CS50”);
+mycar.odometer = 50505;

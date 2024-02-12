@@ -1,0 +1,17 @@
+[MÚSICA] DAVID MALAN: Muy bien, esto es CS50, Introducción a la programación con Python. Mi nombre es David Malan, y esta es nuestra semana sobre bibliotecas. Las bibliotecas son generalmente archivos de código que otras personas han escrito y que puedes usar en tus propios programas, o código de una biblioteca que tú has escrito y que puedes usar en tu propio programa, pero tal vez no solo en este programa, sino también en otro y en otro más.
+
+Python soporta exactamente esta idea. Esta capacidad de compartir código con otros, compartir código en tus propios proyectos. Y lo hace a través de lo que llama módulo.
+
+Un módulo en Python es simplemente una biblioteca que típicamente tiene una o más funciones u otras características incorporadas en ella.
+
+En general, el propósito de una biblioteca o un módulo específicamente es fomentar la reutilización del código. Si te encuentras usando las mismas funciones una y otra vez, la misma funcionalidad. Si te encuentras copiando y pegando de un proyecto antiguo a tu nuevo proyecto, lo más probable es que haya una oportunidad de factorizar ese código que sigues copiando y pegando, que sigues reutilizando, y ponerlo en una biblioteca que luego puedes cargar en tus programas en el futuro, para no solo copiarlo y pegarlo y tener todas estas copias diferentes en todas partes.
+
+Entonces, ¿cuáles son algunos de los módulos o bibliotecas que vienen con Python? Bueno, Python viene con una biblioteca llamada "random" literalmente, lo cual significa que cuando instalas el intérprete de Python en tu Mac, PC o en algún lugar en la nube, no solo obtienes Python, también obtienes un montón de módulos también.
+
+Ahora, estos módulos te proporcionan funciones a las que no tienes acceso de manera predeterminada, como sí tienes acceso a "print" e "input". "Print", "input" y otras funciones similares funcionan directamente en Python. Pero a veces las funciones están ocultas en estos módulos, por lo que debes ser más deliberado en cargarlas en la memoria de la computadora.
+
+Entonces, en algún lugar del disco duro de la computadora, una vez que has instalado Python, también hay, resulta que hay un archivo, probablemente llamado "random.py", que alguien más escribió, probablemente hace mucho tiempo pero al que tienes acceso. Y en ese archivo "random.py", probablemente haya una o más funciones que tú mismo puedes usar para hacer cosas aleatorias.
+
+Es decir, ¿cómo podrías lanzar una moneda en un programa en Python? ¿Cómo podrías elegir un número aleatorio entre 1 y 10 en Python? Bueno, necesitas un poco de aleatoriedad. Y aunque podrías descubrir matemáticamente cómo escribir funciones como esas por ti mismo, es mucho más fácil pararte en los hombros de otros que ya han resuelto ese problema por ti, para que puedas centrarte en el problema que tú quieres resolver.
+
+Así que para la documentación sobre la mayoría de los módulos de Python, vas a la documentación oficial de Python. Y vas a una URL como esta, donde está la documentación para ese módulo específico. Y dentro de la documentación, verás una lista de las funciones u otra funcionalidad que algunos módulos proporcionan.

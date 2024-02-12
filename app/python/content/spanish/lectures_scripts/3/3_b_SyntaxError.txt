@@ -1,0 +1,17 @@
+Entonces, ¿qué son algunas de las cosas que pueden salir mal? Así que voy a abrir VS Code en mi computadora. Y en la ventana del terminal, voy a ejecutar el código de hello.py. Eso, por supuesto, abrirá una nueva pestaña para mí, hello.py, en la que puedo escribir mi código.
+
+Déjame escribir un código muy simple para saludar al mundo. Vamos a imprimir "hola, mundo". Y luego, voy a olvidar cerrar esa comilla. Este es un error que tú mismo podrías haber cometido o que seguramente cometerás en el futuro, y es un poco sutil porque es posible que no te des cuenta de que te falta ese carácter.
+
+Bueno, ahora voy a ir al terminal y ejecutar Python de hello.py y presionar Enter. Y ese es el primero de mis errores. Dios mío, solo he escrito una línea de código y parece que tengo más líneas de errores en la pantalla.
+
+Pero el punto clave es esta última línea aquí abajo. Observa donde dice error de sintaxis. Un error de sintaxis es un problema con el código que has escrito, tu sintaxis. Al igual que el inglés y otros idiomas humanos tienen una sintaxis asociada, mi código también la tiene. Y no es del todo correcta.
+
+Algo está mal. No seguí las instrucciones correctamente. Y me explica más detalladamente: literal de cadena no terminada. Ahora, eso es un poco arcano. Es un mensaje de error confuso.
+
+Pero "no terminada" generalmente significa que comencé algo pero no lo terminé. No lo cerré. "String", por supuesto, es una secuencia de texto, como hemos discutido antes, o "stir" en Python. Y "literal" generalmente se refiere a algo que has escrito literalmente.
+
+No es una variable. Es algo como, entre comillas, "hello world". Entonces, la solución aquí, por supuesto, será terminar esa cadena y cerrar la comilla. Y si ahora vuelvo al terminal y vuelvo a ejecutar Python de hello.py, ahora estoy saludando al mundo.
+
+Así que el problema con los errores de sintaxis es que depende completamente de ti resolverlos. Un error de sintaxis es un problema que tienes que corregir en tu código desde el principio. No puedes esperar que se resuelva solo o esperar que otras partes de tu código lo detecten por ti. Los errores de sintaxis simplemente deben corregirse.
+
+Pero hay muchos otros tipos de errores en Python que podrían describirse como errores de tiempo de ejecución, que ocurren mientras tu código se está ejecutando. Y realmente depende de ti escribir código adicional de forma defensiva para detectar cuándo ocurren esos errores, porque no sabes necesariamente qué entrada van a escribir los humanos en tu programa. Así que es mejor que estés preparado de forma defensiva para manejar lo que escriben, incluso si se equivocan al escribirlo.

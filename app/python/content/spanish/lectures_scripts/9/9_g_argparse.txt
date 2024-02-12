@@ -1,0 +1,97 @@
+Bueno. Supongamos que queremos modificar este programa "meows" para que tome su entrada no de la función input en el prompt intermitente, sino de la línea de comandos. Recordemos en nuestra discusión de bibliotecas, que podríamos usar algo como sys.argv para obtener los argumentos de la línea de comandos que un humano ha proporcionado al ejecutar el programa. Entonces, ¿por qué no creamos una versión de "meow" que utilice argumentos de la línea de comandos en lugar de la entrada? 
+
+Así que voy a eliminar lo que hemos hecho hasta ahora. Y propongo importar sys como hemos hecho anteriormente. Y hagamos esto. ¿Qué tal si el usuario no escribe ningún argumento en la línea de comandos? Entonces, mi programa solo maullará una vez, solo para que haga algo visualmente interesante. De lo contrario, también demos al usuario la opción de especificar cuántas veces quiero que el gato maúlle. 
+
+Comencemos de forma sencilla. Primero, hagamos esto. Si la longitud de sys.argv es igual a 1, es decir, el usuario solo escribió el nombre del programa y nada más después del-- en su comando, entonces escribamos solo un maullido así. 
+
+De lo contrario, por ahora, escribamos algo como esto. Else, adelante y escribamos, digamos, el uso del programa, que será el uso de meows.py, solo para que el usuario sepa que el programa en sí se llama meows.py. 
+
+Ahora, vayamos a mi ventana de terminal y comencemos a escribir Python de meows.py. Y en este punto, nota que la longitud de sys.argv debe ser igual a 1. ¿Por qué? Bueno, el nombre de Python no termina en sys.argv en absoluto nunca. Pero meows.py, el nombre del archivo sí. Y va a ir en sys.argv cero. Pero eso es solo un elemento. Entonces, la longitud de esta cosa es uno. No hay nada más a la derecha. Entonces, cuando presione Enter ahora, deberíamos ver, efectivamente, un maullido. 
+
+Si no coopero, supongamos que hago algo como meows tres Enter. Luego voy a ver un recordatorio de cómo se usa el programa. Y esta es una convención común imprimir literalmente la palabra "uso", dos puntos, luego el nombre del programa y tal vez alguna explicación de cómo usarlo. Así que lo mantendré muy simple. 
+
+Pero seamos un poco más sofisticados. ¿Qué pasa si realmente quiero que el usuario escriba tal vez no tres, sino algo más sofisticado? Y de hecho, al controlar programas desde la línea de comandos, es muy común proporcionar lo que a menudo se llaman "interruptores" o "flags", mediante los cuales se pasa algo como una raya n, que significa semánticamente esta cantidad de veces, y a menudo un espacio, luego algo como el número tres. Esto todavía me permite hacer otras cosas en la línea de comandos si quiero. 
+
+Pero el hecho de que haya estandarizado en cómo estoy proporcionando argumentos de la línea de comandos a este programa con raya n tres es solo una forma más confiable para que mi programa sepa qué significa el tres. Es un poco menos obvio si simplemente hago meows.py espacio tres. 
+
+Bueno, ¿qué significa el tres? Al menos con una sintaxis como raya n tres, especialmente si has leído la documentación de este programa, en última instancia, oh, raya n significa número de veces. Entendido. Es una forma de pasar dos argumentos adicionales, pero que tienen alguna relación entre sí. 
+
+Entonces, ¿cómo modifico mi programa para entender raya n tres? Bueno, si estoy usando sys así, puedo hacer esto. elsi la longitud de sys.argv es igual a esta vez tres. Porque fíjate, hay uno, dos, tres cosas en mi indicador. 
+
+Entonces, sys.argv es cero, uno y dos, tres cosas en total separadas por espacios. Si es igual a tres, y seamos seguros, y sys.argv[1] es igual a raya n, entonces vamos y hagamos esto. 
+
+Vamos y convirtamos sys.argv[2] en un entero y asignémoslo a una variable, por ejemplo, llamada n. Y luego, hagamos esto. Para _ en range(n), vamos y escribamos algunos de estos maullidos. 
+
+Ahora, todavía hay una oportunidad tal vez de consolidar mis líneas de impresión con meow. Pero por ahora, voy a mantener estas ideas separadas. Así que voy a manejar el caso predeterminado sin argumentos aquí arriba como antes. 
+
+Y ahora, más interesante, voy a hacer esto para que quede claro. Verificaré si el usuario me dio tres argumentos de línea de comandos, el nombre del programa, raya n y un número. Si efectivamente la segunda cosa que me dieron en sys.argv[1] es igual a raya n, entonces asumiré que lo siguiente, sys.argv[2], será un número entero. Y lo convertiré a tal y lo almacenaré en esta variable n. 
+
+Y ahora, simplemente utilizando un bucle, voy a escribir meow tantas veces. Así que es una combinación de nuestro enfoque anterior en bucles, nuestro enfoque anterior en argumentos de línea de comandos, solo creando un programa que puedo afirmar que es representativo de cómo funcionan muchos programas en la línea de comandos, aunque normalmente no los hemos usado mucho así. Pero es muy común configurar un programa cuando estás a punto de ejecutarlo en la línea de comandos con algo como estos argumentos de línea de comandos como raya n o raya cualquier otra cosa. 
+
+Ahora, voy a escribir Python de meows.py seguido de Enter. Y creo que debería ver, efectivamente, tres maullidos. Por otro lado, si escribo dos al final, debería ver dos maullidos. Si escribo uno, debería ver un maullido. Y francamente, si omito esto por completo, debería ver un maullido también, porque ese era mi caso predeterminado antes. 
+
+Y ahora, permítanme suponer que este programa eventualmente se vuelve más complicado. Imaginemos un mundo en el que no quiero admitir solo raya n. Tal vez quiero admitir raya a, raya b, raya c, raya d y muchos otros. O diablos, en ese punto, tal vez debería darles palabras. Por lo tanto, tal vez sea raya, raya, número. 
+
+De hecho, es una convención en informática, por lo general, usar raya única con una sola letra, como n, pero usar raya doble si realmente estás usando toda una palabra como "number". Entonces, el argumento de la línea de comandos podría ser raya n o tal vez sea raya, raya "number". Pero pueden imaginar cuán complicado es el código si ahora quiero admitir raya n, raya a, raya b, raya c, etc. Tendré que comprobar en muchos lugares. 
+
+Y ¿qué pasa si vienen en un orden diferente? Tendrás que verificar si raya n es el primero, o si es el segundo, o si es el tercero, o si es el cuarto. Quiero decir, esto se vuelve muy doloroso muy rápido solo para hacer algo relativamente simple como permitir que el usuario pase argumentos de línea de comandos en el programa. 
+
+Bueno, esto es por qué, como siempre, existen bibliotecas. Y otra biblioteca que viene con Python que probablemente merece la pena conocer algo es argumentó. De hecho, con muchas de las herramientas que yo mismo o el equipo de CS50 escriben en Python, usamos muy frecuentemente argparse cuando son más complicadas que muchas de nuestras demos en clase y un poco más similares a esta en la que queremos permitir al usuario pasar opciones de configuración en la línea de comandos. 
+
+Y al admitir cosas como raya n o raya a, o raya b o raya c, argparse es una biblioteca que, según su documentación, solo maneja todo este análisis de argumentos de línea de comandos de forma automática para que puedas centrarte en escribir las partes interesantes de tu programa, no en los argumentos de línea de comandos. 
+
+Entonces, ¿cómo podríamos usar esto? Bueno, volvamos a VS Code aquí. Vamos a limpiar mi ventana de terminal. Y propongo que reescriba esto utilizando no sys, sino argparse. Y voy a comenzar de manera sencilla y luego volver a construir. 
+
+Así que voy a desechar todo esto por ahora e importar argparse. Argparse significa analizador de argumentos. Analizar algo significa leerlo, desmenuzarlo para analizarlo. Entonces, eso es precisamente lo que hará por mí. 
+
+Ahora, voy a hacer esto. Y para esta biblioteca, es útil tener un poco de programación orientada a objetos como todos ya sabemos. Voy a crear una variable llamada parser. Aunque podría llamarla como quiera. Voy a establecerla igual al valor de retorno de argparse.ArgumentParser, con una A mayúscula y una P mayúscula. Un constructor para una clase llamada argument parser que viene con Python mismo dentro de esta biblioteca aquí. 
+
+Ahora, voy a configurar este analizador de argumentos para que conozca los argumentos de línea de comandos específicos que yo mismo quiero admitir en mi programa. Así que voy a hacer esto, parser.add_argument. Así que aparentemente es un método en el objeto parser. Voy a añadir un argumento de raya n. Bastante fácil. 
+
+Ahora voy a analizar los argumentos de la línea de comandos. Voy a hacer args, o podría llamar a la variable como quiera, parser.parseargs. Y de forma predeterminada, parseargs automáticamente buscará en sys.argv por mí. No necesito importar sys yo mismo. Puedo dejarle al analizador de argumentos, su código para importar sys, buscar en sys.argv y descubrir dónde está raya n o cualquier otra cosa. 
+
+Y lo bueno ahora, porque esta línea de código aquí hace que el analizador haya analizado todos los argumentos de la línea de comandos, ahora tengo este objeto en esta variable llamada args dentro del cual se encuentran todos los valores de esos argumentos de la línea de comandos, sin importar en qué orden hayan aparecido. No es tan importante cuando solo tengo uno porque solo irá a un lugar al final. 
+
+Pero si tengo raya n, raya a, raya b, raya c, puedes imaginarlos en diferentes órdenes. Definitivamente no tienen que estar en orden alfabético. El usuario debería poder escribirlos en cualquier orden que quiera. Eso mejora la usabilidad. El analizador de argumentos lo descubrirá todo eso por mí. 
+
+Y todo lo que tengo que hacer ahora es esto. Si quiero iterar sobre esa cantidad de números de argumentos y esa cantidad de maullidos, puedo hacer esto. Para guion bajo en rango de la conversión a entero de args.n. Entonces, el punto es la sintaxis que hemos estado usando para acceder a cosas como propiedades dentro de un objeto. Y eso es lo que son args. Es el objeto devuelto por la función parseargs para mí. Voy a seguir adelante ahora e imprimir, entre comillas, meow tantas veces. 
+
+Entonces, no es muy simple. Estas son tres nuevas líneas de código que necesito escribir y comprender bastante. Pero ya es un poco más simple y compacto que mi if, mi elsi, mis or y mis ands, y toda esa lógica booleana. Manejará mucho de esto por mí. 
+
+Entonces, si no cometí errores, voy a ejecutar Python ahora de meows.py Enter. Y cometí un error aquí. Cometí un error. ¿Qué pasa ahora? ¿Qué pasa? Bueno, definitivamente no lo ejecuté como pretendía. Así que raya n tres Enter. 
+
+Así que funciona. Pero si no coopero, esta versión parece ser peor. Si no paso raya n y un número, simplemente genera un error con un error de tipo. Un int debe ser un string. None es lo que se recibió. Entonces, claramente hay un error aquí. Pero la biblioteca es más flexible. De hecho, puedo proporcionar algo de documentación sobre cómo usar esto. 
+
+Entonces, ¿cómo sé cómo usar esto? Bueno, típicamente es convencional en Python y en muchos entornos de programación ejecutar un programa con un argumento especial, raya h o raya, raya help. Y casi siempre afirmo que verás alguna información de uso. 
+
+Y de hecho, eso es lo que estoy viendo ahora. Acabo de ejecutar Python de meows.py espacio raya h. Lo haré de nuevo. Voy a borrar mi pantalla y esta vez hacer raya, raya help en inglés, Enter. Y veo lo mismo. No es muy útil en este momento. Solo me muestra cuál es el uso aquí arriba. 
+
+Y esto es interesante. Esta es una sintaxis estándar en informática. Y la hemos visto un poco en la documentación de Python antes. Esto simplemente significa que el nombre del programa es, por supuesto, meows.py. Los corchetes, casi siempre en la documentación, significa que es opcional. 
+
+Entonces, no tengo que escribir raya h, pero puedo. No tengo que escribir raya n y otro valor, pero puedo. Y luego, aquí abajo hay alguna explicación de estas opciones, y más expresivamente, que me muestra que también puedo hacer raya, raya help y no solo raya h. 
+
+Pero esto es muy genérico. Esto no tiene nada que ver con mi programa. Esto no ayudará a mis usuarios cuando actualmente lanzo este software al mundo. Entonces, voy a mejorarlo. Voy a agregar una descripción a mi analizador de argumentos que los humanos verán. "Meow like a cat" (maullar como un gato), entre comillas, será el valor de este parámetro llamado description. 
+
+Y también voy a añadir un parámetro de ayuda a mi argumento raya n que simplemente explica qué significa raya n, número de veces para maullar, entre comillas. No voy a cambiar nada más. Pero vuelvo a mi ventana de terminal y ejecuto Python de meow. Voy a ejecutar Python de meows.py raya h, o equivalente raya, raya help. 
+
+Y ahora, nota que esto es un poco más amigable para el usuario. Si corro hacia arriba, todavía vemos el mismo uso. Pero hay una frase rápida en inglés de explicación de que este programa maulla como un gato. Y si miro las opciones ahora, oh, eso es lo que significa n. Es la cantidad de veces que maúlla. Y esta N en mayúscula, una variable mental, si lo prefieren, solo está indicando que necesito escribir un número por convención después de la raya n en minúscula. 
+
+Entonces, sería agradable, aunque dicho esto, si mi programa aún no se rompiera cuando lo ejecuto sin argumentos de línea de comandos. Idealmente, mi programa manejaría esto como lo hizo mi versión manual cuando usé sys.argv yo mismo. Entonces, solo necesitamos agregar un poco más de funcionalidad a esta biblioteca. Y si leo la documentación, veré que add.argument toma otro argumento con nombre. Si quieres, puedes especificar un valor predeterminado para raya n, por ejemplo, uno. Y lo haré ahí. 
+
+Y también puedes especificar que debe ser un entero. Y esto, adicionalmente, me permitirá si le digo al analizador de argumentos que se asegure de que el valor de raya n sea un entero, no necesito hacer la conversión manualmente. Puedo confiar en la línea siete de que cuando accedo a la propiedad llamada n dentro de mi objeto args, automáticamente será un entero para mí. 
+
+Y nuevamente, este es el valor de una biblioteca. Permita que haga todo el trabajo por ti para que puedas volver a enfocarte en el proyecto interesante en cuestión, sea cual sea el problema que estés intentando resolver. En este caso, entendido, no tan interesante, pero maullar como un gato. 
+
+Entonces, voy a ejecutar Python de meows.py ahora y presionar Enter. Esta vez, sin argumentos. Y ahora maúlla. ¿Por qué? Porque especifiqué que si no, como usuario, especifico raya n, tendrá un valor predeterminado de uno aparentemente. 
+
+Y no tengo que convertir ese valor de una cadena a un entero porque le dije a argparse por favor, solo haz esto un entero por mí. ¿Alguna pregunta ahora sobre argparse o realmente el principio de externalizar las cosas comunes, lo que todos los programas eventualmente necesitan hacer, para que puedas centrarte en la parte interesante tú mismo? 
+
+ESTUDIANTE: ¿Qué contiene args.n? 
+
+DAVID J. MALAN: ¿Qué contiene args.n? Contiene el número entero que el humano escribió después de un espacio después de la raya n. Buena pregunta, ¿alguna otra pregunta? 
+
+ESTUDIANTE: Sí. Cuando se especifica el tipo para el argumento, ¿qué sucede si-- básicamente, ¿maneja la excepción si el usuario ingresa una cadena en este caso? 
+
+DAVID J. MALAN: Una pregunta muy buena. Supongamos que el humano no escribe un número y, por lo tanto, no es un entero. Bueno, veamos qué sucede. Entonces, Python de meows.py raya n dog, donde dog obviamente no es un número. Enter. 
+
+Y voilà, vemos un mensaje de error generado automáticamente. Un poco críptico, admitámoslo. Pero estoy viendo un recordatorio de cuál es el uso y una explicación menor de lo que es inválido en esto. Y nuevamente, esto es lo que te permite, esto es lo que me permite, enfocarme en escribir el código real que nos importa y que la biblioteca automatice alguna de estas cosas para nosotros.

@@ -1,0 +1,417 @@
+Slide [0]
+
+Programação Web
+com Python e JavaScript
+
+Slide [1]
+
+Programação Web
+
+Slide [2]
+
+HTML e CSS
+HTML
+
+Slide [3]
+
+Git
+
+Slide [4]
+
+Python
+
+Slide [5]
+
+Django
+
+Slide [6]
+
+SQL, Modelos
+e Migrações
+
+Slide [7]
+
+JavaScript
+
+Slide [8]
+
+Interfaces de Usuário
+
+Slide [9]
+
+Testes e CI/CD
+
+Slide [10]
+
+Escalabilidade
+e Segurança
+Servidor
+Balanceador de Carga
+Servidor
+Servidor
+
+Slide [11]
+
+HTML e CSS
+
+Slide [12]
+
+HTML
+
+Slide [13]
+
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head> 
+        <title>Olá!</title> 
+    </head> 
+    <body> 
+        Olá, mundo! 
+    </body> 
+</html>
+
+Slide [14]
+
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head> 
+        <title>Olá!</title> 
+    </head> 
+    <body> 
+        Olá, mundo! 
+    </body> 
+</html>
+
+Slide [15]
+
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head> 
+        <title>Olá!</title> 
+    </head> 
+    <body> 
+        Olá, mundo! 
+    </body> 
+</html>
+
+Slide [16]
+
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head> 
+        <title>Olá!</title> 
+    </head> 
+    <body> 
+        Olá, mundo! 
+    </body> 
+</html>
+
+Slide [17]
+
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head> 
+        <title>Olá!</title> 
+    </head> 
+    <body> 
+        Olá, mundo! 
+    </body> 
+</html>
+
+Slide [18]
+
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head> 
+        <title>Olá!</title> 
+    </head> 
+    <body> 
+        Olá, mundo! 
+    </body> 
+</html>
+
+Slide [19]
+
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head> 
+        <title>Olá!</title> 
+    </head> 
+    <body> 
+        Olá, mundo! 
+    </body> 
+</html>
+
+Slide [20]
+
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head> 
+        <title>Olá!</title> 
+    </head> 
+    <body> 
+        Olá, mundo! 
+    </body> 
+</html>
+
+Slide [21]
+
+Modelo de Objetos de Documentos
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head> 
+        <title>Olá!</title> 
+    </head> 
+    <body> 
+        Olá, mundo! 
+    </body> 
+</html>
+html
+head
+body
+title
+Olá, mundo!
+Olá!
+
+Slide [22]
+
+Tags HTML Comuns
+•<h1>, <h2>, ..., <h6> 
+•<ol>, <ul> 
+•<img> 
+•<a> 
+•<table> 
+•<form> 
+•...
+
+Slide [23]
+
+CSS
+
+Slide [24]
+
+Propriedades CSS Comuns
+• color 
+• text-align 
+• width, height 
+• margin, padding 
+• font-family, font-size, font-weight 
+• border 
+• ...
+
+Slide [25]
+
+Identificando Elementos
+• div 
+• span 
+• id 
+• class
+
+Slide [26]
+
+Especifidade
+1. inline 
+2. id 
+3. class 
+4. tipo
+
+Slide [27]
+
+Especifidade
+<div id="foo"> 
+    Olá! 
+</div>
+Olá!
+div { 
+  color: azul; 
+} 
+
+Slide [28]
+
+Especifidade
+<div id="foo"> 
+    Olá! 
+</div>
+div { 
+  color: azul; 
+} 
+#foo { 
+  color: vermelho; 
+}
+Olá!
+
+Slide [29]
+
+Especifidade
+<div id="foo"> 
+    Olá! 
+</div>
+#foo { 
+  color: vermelho; 
+} 
+div { 
+  color: azul; 
+}
+Olá!
+
+Slide [30]
+
+Seletores CSS
+a, b
+Seleção de Múltiplos Elementos
+a b
+Seleção Descendente
+a > b
+Seleção de Filho
+a + b
+Seleção de Irmão Adjacente
+[a=b]
+Seleção por Atributo
+a:b
+Seleção de Pseudoclasse
+a::b
+Seleção de Pseudo-elemento
+
+Slide [31]
+
+Design Responsivo
+
+Slide [32]
+
+Design Responsivo
+• viewport 
+• Media Queries 
+• Flexbox 
+• Grids
+
+Slide [33]
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+Slide [34]
+
+Viewport
+a
+
+Slide [35]
+
+Viewport
+a
+
+Slide [36]
+
+Media Queries
+• Tipos de Mídia: print, screen, ... 
+• Características de Mídia: altura, largura, orientação, ...
+
+Slide [37]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [38]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [39]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [40]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [41]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [42]
+
+Flexbox
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+
+Slide [43]
+
+Bootstrap
+
+Slide [44]
+
+
+Slide [45]
+
+Sass
+
+Slide [46]
+
+Programação Web
+com Python e JavaScript

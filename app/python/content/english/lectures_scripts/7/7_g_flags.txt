@@ -1,0 +1,23 @@
+But there's another mechanism here, which is worth seeing. It turns out that that function before called re.search supports, recall, a third argument as well, these so-called flags. And flags are configuration options, typically to a function, that allow you to configure it a little differently. And how might I go about configuring this call to re.search a little bit differently insofar as I'm currently only passing in two arguments? 
+
+Well, it turns out that some of the flags you can pass into this function are these. It turns out that the regular expression library in Python, a.k.a. re, comes with a few built-in variables, so to speak, things that you can think of as constants, that have meaning to re.search. And they do so as follows. If you pass in as a flag re.IGNORECASE, what re.search is going to do is ignore the case of the user's input. It can be uppercase, lowercase, a combination thereof, the case is going to be ignored. It will be treated case insensitively. 
+
+And you can do other things, too, that we won't do here. But if you want to handle the user's input that maybe spans multiple lines-- maybe they didn't just type in an email address but an entire paragraph of text, and you want to match different lines of that text that is multiple lines. Another flag is for re.MULTILINE for just that, or re.DOTALL, whereby you can configure the dot to recognize not just any character except newlines but any character plus newlines as well. 
+
+But for now, let me go ahead and just make use of this first one. Let me pass in a third argument to re.search, which is re.IGNORECASE. Let me now rerun the program without clearing my screen, python of validate.py. Let me type in again in all caps, effectively shouting, MALAN@HARVARD.EDU, Enter, and now it's considered valid, because I'm telling re.search specifically to ignore the case of the input. And that, too, here is fine. 
+
+And why might I do this approach rather than call .lower in one of those other locations? Eh, if I don't actually want to change the user's input for whatever reason, I can still treat it case insensitively without actually changing the value of that variable itself. All right, any final questions now on this validation of email addresses? 
+
+AUDIENCE: So the pattern is a string, right? 
+
+DAVID MALAN: Mm-hmm. 
+
+AUDIENCE: Can we use an fstring? 
+
+DAVID MALAN: You can. Yes, you can use an fstring so that you could plug in, for instance, the value of a variable and pass it into the function. Other questions on this? 
+
+AUDIENCE: Backslash w character, could we take it as an input from the user? 
+
+DAVID MALAN: Technically yes. That's not a problem we're trying to solve right now. We want the user to provide literal input, like their email address, not necessarily a regular expression. But you could imagine building software that asks the user, especially if they're more advanced users, to type in a regular expression for some reason to validate something else against that. 
+
+And in fact, that's what Google is doing. If you play around with Google Forms and create a form with response validation and select Regular Expression, Google lets you and I type in our own regular expressions, which would be a perfect example of that. 

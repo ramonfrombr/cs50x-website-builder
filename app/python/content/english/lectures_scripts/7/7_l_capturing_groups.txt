@@ -1,0 +1,55 @@
+
+
+So let me go ahead and do this. Let me go in and leave this code as is but go up to the top now and import re to import the library for regular expressions. And now let me go ahead and start changing my approach here. I'm going to go ahead and do this. I'm going to use the same function called re.search, and I'm going to search for a pattern that I think will be last, comma, first. So let me use my newfound regular expression syntax and represent a pattern for something like Malan, comma, space, David. 
+
+How can I do this? Well, inside of my quotes for re.search, I'm going to have something-- so dot +-- sorry. I'm going to have something, so dot +. Then I'm going to have a comma. Then I'm going to have a space. Then I'm going to have something dot +. 
+
+Now I'm going to preemptively refine this a little bit. I want this whole pattern to start matching at the beginning of the user's input. So I'm going to add the ^ right away. And I want the end of the user's input to be matched as well, so that I'm literally expecting any character one or more times, then a comma then a space, then any other character one or more times. And then that is it. And I'm going to pass in the name variable as before. 
+
+Now, when we've used re.search in the past, we really used it just to answer a question. Does the user's input match the following pattern or not, true or false, effectively. But re.search is actually more powerful than that. You can actually get back more information. 
+
+And you can do this. You can specify a variable and then an assignment operator, and get back more precise answers to what has been found when searched for. But what is it you want to get back? Well, it turns out there's this other feature of regular expressions which allow you to use parentheses, not just to group things together, but to capture them. 
+
+It turns out when you specify parentheses in a regular expression unbeknownst to us up until now, everything in the parentheses will be returned to you as a return value from the re.search function. It's going to allow you to extract specific amounts of information from the user's own input. 
+
+You can reverse this process, too, by using the non-capturing version as well. You can use parentheses, and then literally a question mark, and a colon, and then some other stuff. And that will say, don't either capturing this. I just want to group things. But for now, we're going to use just the parentheses themselves. 
+
+So how am I going to do this? Well, if I want to get back the user's last name and first name, I think what I want to capture is the dot + here and the dot + here. So I've deliberately surrounded in parentheses the dot + both to the left and the right of the comma, not because I'm grouping them together per se-- I'm not adding a question mark, I'm not adding up another + or a *-- I'm using parentheses now for capturing purposes. 
+
+Why? Well, I'm going to do this next. I'm going to still ask a Boolean question like, "if there are matches, then do this." So if matches is not effectively false, like none, I do expect I've gotten back some matches. And watch what I can do now. I can do last, comma, first equals whatever matches in and get back all of the groups of matches. Then go ahead and update name just like before with a format string and do first and then last in curly braces as well, and then at the very bottom, just like before, print out, for instance, "hello," comma, "name." 
+
+So the new code now is everything highlighted here. I'm using re.search to search for whether the user typed their name in last, comma, first format. But I am more powerfully using re.search to capture some of the user's input. What's going to get captured? Anything I surrounded in parentheses will be returned to me as return values. 
+
+How do you get at those return values? You ask the variable to which you assign them for all of the groups, all of the groups of parentheses that were captured. So let me go ahead and do this. Let me go ahead now and run python of format.py, Enter. And I'm going to type my name as usual. 
+
+In this case, nothing happens with this if condition. Why? Because I did not type a comma, and so this search does not find a comma, so there are no matches. So we immediately just print out "hello, name." Nothing interesting or new there. 
+
+But if I now go ahead, and clear my screen, and run python of format.py, and do Malan, comma, space, David, Enter, we've reformatted my name. Well, how did this work? Let me be a little more explicit now. 
+
+It turns out I don't have to just say matches.groups. I can get specific groups back that I want. So let me change my code a little bit more. Let me go ahead now and just say this. Let's update name to-- actually, let's do this. Let's say that the last name is going to be in the matches but specifically group 1. The first name is going to be in the matches but specifically group 2. 
+
+Why 1 and 2? Because this is the first set of parentheses to the left of the comma. This is the second set of parentheses to the right of the comma. And based on the input, this would be the user's last name in this scenario, Malan. This would be the user's first name, David, in this scenario. That's why I'm using group 1 for the last name and group 2 for the first name. 
+
+And now I'm going to go ahead and say name equals fstring, again, first and then last, done. And let me refine this one last step before we take questions. I don't really need these variables if I'm immediately using them. Let's just go ahead and tighten this up further as we've done in the past for design's sake. 
+
+If I want to make the name the concatenation of the person's first name and last name, let's just do this. matches.group 2 first, plus a space, plus matches.group 1. So it's just up to me from left to right, this is group 1, this is group 2. So group 1 is last, group 2 is first. So if I want to flip them around and update the value of name, I can explicitly get group 2 first, concatenate using +, a single space, and then concatenate on group 1. 
+
+All right. That was a lot. Let me pause to see if there are questions. The key difference here is we're still using re.search the exact same way, but now I'm using its return value, not just to answer a question true or false, but to actually get back specific matches anything I captured, so to speak, with parentheses. 
+
+AUDIENCE: Why is it here we're using 1 and 2 instead of 0 and 1 for capturing the first? 
+
+DAVID MALAN: Really good question. A good observation. In almost every other context, we've started counting at 0 and 1 instead of 1 and 2. It turns out there's something else in location 0 when it comes back from re.search related to the string itself. So according to the documentation of this function only, 1 is the first set of parentheses, and 2 is the second set, and onward from there. Just a different convention here. Other questions? 
+
+AUDIENCE: What if we write nothing, like whitespace, comma, whitespace? How do we check truth of condition? 
+
+DAVID MALAN: Before I answer directly, let me just run this and make sure I've not broken anything further. Let me run python of format.py. Let me type in David, space, Malan, the right way. Let me run it once more. Let me type in Malan, comma, David, the wrong way that we're fixing. And we're still good. 
+
+But I think it will still break. Let me run it a third time with Malan, comma, David with no space. And now it's still broken. Why? Because I'm still looking for comma space. 
+
+Now, how can I fix that? One way I could do that is to add a question mark here, which again, is zero or more of the thing before. So if I have a space and then a question mark literally, no need for any parentheses, then I can literally tolerate both Malan, comma, space, David or Malan, comma, David. 
+
+So let's try again. Before, this did not work. Let's do Malan, comma, David with no space. Now it does actually work. So we can tolerate different amounts of whitespace if I am a little more precise with my formula. 
+
+Let me go ahead and try once more. Let me very weirdly but possibly hit the space bar a few too many times so now they're really separated. This, again, is not going to work quite right, because it's going to consume all of that whitespace. So now I might want to strip, left and right, any of the leading white space on the result. Or what I could do here is say this. Instead of zero or one, I could use a * here, so space *. And now if I run this once more with Malan, comma, space, space, space, David, Enter, now we've cleaned up things further. 
+
+So you can imagine, depending on how messy the data is that you're cleaning up, your regular expressions might need to get more and more sophisticated. It really depends on just how many problems we want to solve at once. 

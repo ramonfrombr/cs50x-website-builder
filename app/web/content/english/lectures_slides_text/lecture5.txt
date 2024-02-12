@@ -1,0 +1,111 @@
+
+Slide [0]
+
+Web Programming 
+with Python and JavaScript
+
+Slide [1]
+
+JavaScript
+
+Slide [2]
+
+Client
+Server
+
+Slide [3]
+
+JavaScript
+
+Slide [4]
+
+<script> 
+</script>
+
+Slide [5]
+
+<script> 
+    alert('Hello, world!'); 
+</script>
+
+Slide [6]
+
+Functions
+function hello() { 
+    alert('Hello, world!'); 
+}
+
+Slide [7]
+
+Events
+•onclick 
+•onmouseover 
+•onkeydown 
+•onkeyup 
+•onload 
+•onblur 
+•...
+
+Slide [8]
+
+querySelector
+•document.querySelector('tag') 
+•document.querySelector('#id') 
+•document.querySelector('.class')
+
+Slide [9]
+
+Local Storage
+•localStorage.getItem(key) 
+•localStorage.setItem(key, value)
+
+Slide [10]
+
+APIs
+
+Slide [11]
+
+JSON
+
+Slide [12]
+
+{ 
+    "origin": "New York", 
+    "destination": "London", 
+    "duration": 415 
+}
+
+Slide [13]
+
+{ 
+    "origin": { 
+        "city": "New York", 
+        "code": "JFK" 
+    }, 
+    "destination": { 
+        "city": "London", 
+        "code": "LHR" 
+    }, 
+    "duration": 415 
+}
+
+Slide [14]
+
+{ 
+    "rates": { 
+        "EUR": 0.907, 
+        "JPY": 109.716, 
+        "GBP": 0.766, 
+        "AUD": 1.479 
+    }, 
+    "base": "USD" 
+}
+
+Slide [15]
+
+JavaScript
+
+Slide [16]
+
+Web Programming 
+with Python and JavaScript

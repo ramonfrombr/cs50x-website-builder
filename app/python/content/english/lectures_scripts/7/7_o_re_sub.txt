@@ -1,0 +1,95 @@
+
+
+Well, what else could we do here? Well, it turns out that regular expressions just let us express patterns much more precisely. We could spend all day using a whole bunch of different Python functions like removeprefix, or remove, and strip, and others, and kind of make our way to the right solution. But a regular expression just allows you to more succinctly, if admittedly more cryptically, express these kinds of patterns and goals. 
+
+And we've seen from parentheses, which can be used not just to group symbols together as sets but to capture information as well, we have a very powerful tool now in our toolkit. So let me do this. Let me go ahead and start fresh here and import the re library as before at the very top of my program. I'm still going to get the user's URL via the same line of code. But I'm now going to use another function as well. 
+
+It turns out that there's not just re.search, or re.match, or re.fullmatch. There's also re.sub in the regular expression library, where "sub" here means "substitute." And it takes more arguments, but they're fairly straightforward. The first argument to re.sub is the pattern, the regular expression that you want to look for. 
+
+Then you have a replacement string-- what do you want to replace that pattern with? And where do you want to do all that? Well, you pass in the string that you want to do the substitution on. Then there's some other arguments that I'll wave my hands at for now. 
+
+Among them are those same flags and also a count, like how many times do you want to do find and replace? Do you want it to do all, do you want to do just one, or so forth you can have further control there, too, just like you would in Google Docs or Microsoft Word. 
+
+Well, let me go back to my code here, and let me do this. I'm going to go ahead and call re not search but re.sub for substitute. I'm going to pass in the following regular expression, "https://twitter.com/" and then I'm going to close my quote. And now what do I want to replace that with? 
+
+Well, like before with the simple str replace function, I want to replace it with nothing, just get rid of it altogether. But what string do I want to pass in to do this to? The URL from the user. And now let me go ahead and assign the return value of re.sub to a variable called username. 
+
+So re.sub's purpose in life is, again, to substitute some value for some regular expression some number of times. It essentially is find and replace using regular expressions. And it returns to you the resulting string once you've done all those substitutions. 
+
+So now the very last line of my code can be the same as before, print-- and I'll use an fstring, username, colon, and then in curly braces, username. So I can print out literally just that. All right. Let's try this and see what happens. I'll clear my terminal window, run python of twitter.py. 
+
+And here we go, https://twitter.com/davidjmalan. Cross my fingers and hit Enter. OK, now we're in business. But it is still a little fragile. And so let me ask the group, what problem should I now further chip away at? They've been said before, but let's be clear. What's one or more problems that still remain? 
+
+AUDIENCE: The protocols and the domain prefix [INAUDIBLE]. 
+
+DAVID MALAN: Good. The protocols, so HTTP versus HTTPS. Maybe the subdomain, www, should it be there or not? And there's a few other mistakes here, too. Let me actually stay with the group. What are some other shortcomings of this current solution? 
+
+AUDIENCE: If we use a phrase like you do before, we are going to have the same problem, because it's not taking account in the first part of the text example. 
+
+DAVID MALAN: Good. I might still allow for some words, some English to the left of the URL because I didn't use my ^ symbol. So I'll fix that. And any final observations on shortcomings here? 
+
+AUDIENCE: Well, it could be an HTTP, or there could be less than two slashes. 
+
+DAVID MALAN: OK. So it could be HTTP. And I think that was mentioned, too, in terms of protocol. There could be fewer than two slashes. That I'm not going to worry about. If the user gives me instead of two, that's really user error. 
+
+And I could be tolerant of it, but you know what, at that point I'm OK yelling at them with an error message saying, please fix your input. Otherwise, we could be here all day long trying to handle all possible typos. For now, I think in the interests of usability, or user experience, UX, let's at least be tolerant of all possible valid inputs or reasonable INPUTS if you will. 
+
+So let me go here, and let me start chipping away at these here. What are some problems we can solve? Well, let me propose that we first address the issue of matching from the beginning of the string. So let me add the ^ to the beginning. 
+
+And let me add not a $ sign at the end, though, right? Because I don't want to match all the way to the end, because I want to tolerate a username there. So I think we just want the ^ symbol there. 
+
+There's a subtle bug that no one yet mentioned. And let me just kind of highlight it and see if it jumps out at you now. It's a little subtle here on my screen. I've highlighted in blue a final bug here-- maybe some smiles on the screen, yeah? Can we take one hand here? Why am I highlighting the dot in twitter.com, even though it definitely should be there? 
+
+AUDIENCE: So the dot without a backslash means any character except a newline. 
+
+DAVID MALAN: Yeah, exactly. It means any character. So I could type in something like twitter?com, or twitter anything com, and that would actually be tolerated. It's not really that bad, because why would the user do that? But if I want to be correct, and I want to be able to test my own code properly, I should really get this detail right. 
+
+So that's an easy fix, too, but it's a common mistake. Anytime you're writing regular expressions that happen to involve special symbols, like dots in a URL or domain name, a $ sign in something involving currency, remember you might, indeed, need to escape it with a backslash like this here. 
+
+All right. Let me ask the group about the protocol specifically. So HTTPS is a good thing in the world. It means secure. There is encryption being used. So generally, you like to see HTTPS. 
+
+But you still see people typing or copy-pasting HTTP. What would be the simplest fix here to tolerate, as has been proposed, both HTTP and HTTPS? I'm going to propose that I could do this. I could do HTTP vertical bar or HTTPS, which, again, means A or B. But I think I can be smarter than that. I can keep my code a little more succinct. 
+
+Any recommendations here for tolerating HTTP or HTTPS? 
+
+AUDIENCE: We could try to put in question mark behind the S. 
+
+DAVID MALAN: Perfect. Just use a question mark. Both of those would be viable solutions. If you want to be super explicit in your code, fine. Use parentheses and say HTTP or HTTPS, so that you, the reader, your boss, your teacher just know exactly what you're doing. But if you keep taking the more verbose approach all the time, it might actually become less readable, certainly once your regular expressions get this big instead of this big. 
+
+So let's save space where we can. And I would argue that this is pretty reasonable, so long as you're in the habit of reading regular expressions and know that question mark does not mean a literal question mark, but it means zero or one of the thing before. I think we've effectively made the S optional here. 
+
+Now, what else can I do? Well, suppose we want to tolerate the www dot, which may or may not be there, but it will work if you go to a browser. I could do this-- www dot-- wait, I want a backslash there so I don't repeat the same mistake as before. But this is no good either, because I want to tolerate being there or not being there. And now I've just required that it be there. 
+
+But I think I can take the same approach. Any recommendations? How do I make the www. optional, just to hammer this home? 
+
+AUDIENCE: We can group-- make a square and a question mark. 
+
+DAVID MALAN: Perfect. So question mark is the short answer again. But we have to be a little smarter this time. As Maria has noted, we need parentheses now. Because if I just put a question mark after the dot, that just means the dot is optional. 
+
+And that's wrong, because we don't want the user to type in W-W-W-T-W-I-T-T-E-R. We want the dot to be there or just not at all with no www. So we need to group this whole thing together, put a parenthesis there, and then a parenthesis, not after the third W, after the dot, so that that whole thing is either there or it's not there. 
+
+And what else could we still do here? There's going to be one other thing we should tolerate. And it's been said before, and I'll pluck this one off. What about the protocol? Like, what if the user just doesn't type or doesn't copy-paste the http:// or an https://? Honestly, you and I are not in the habit, generally, of even typing the protocol anymore nowadays. You just let the browser figure it out for you, and automatically add it instead. 
+
+So this one's going to look like more of a mouthful. But if I want this whole thing here in blue to be optional, it's actually the same solution as Maria offered a moment ago. I'm going to go ahead and put a parenthesis over here, and a parenthesis after the two slashes, and then a question mark so as to make that whole thing optional as well. And this is OK. It's totally fine to make this whole thing optional, or inside of it, this little thing, just the S optional as well. So long as I'm applying the same principles again and again, either on a small scale or a bigger scale, it's totally fine to nest one of these inside of the other. 
+
+Questions now on any of these refinements to this parsing, this analyzing of Twitter? 
+
+AUDIENCE: What if we put a vertical bar besides this www dot? 
+
+DAVID MALAN: What if we use a vertical bar there? So we could do something like that, too. We could do something like this. Instead of the question mark, I could do www dot or nothing and just leave that and the parentheses. That, too, would be fine. I personally tend not to like that, because it's a little less obvious to me-- wait, a minute. Is that deliberate, or did I forget to finish my thought by putting something after the vertical bar? 
+
+But that, too, would be allowed there as well, if that's what you mean. Other questions on where we left things here, where we made the protocol optional, too? 
+
+AUDIENCE: What happens if we have parenthesis, and inside we have another parenthesis, and another parenthesis? Will it interfere with each other? 
+
+DAVID MALAN: If you have parentheses inside of parentheses, that, too, is totally fine. And indeed, that should be one of the reassuring lessons today. As complicated as each of these regular expressions has admittedly gotten, I'm just applying the exact same principles and the exact same syntax again and again. 
+
+So it's totally fine to have parentheses inside of parentheses if they're each solving different problems. And in fact, the lesson I would really emphasize the most today is that you will not be happy if you try to write out a whole complicated regular expression all at once. Like, if you're anything like me, you will fail, and you will have trouble finding the mistake. 
+
+Because my god, look at these things. They are, even to me all these years later, cryptic. The better way, I would argue, whether you're new to programming or is old to it as I am, is to just take these baby steps, these incremental steps where you do something simple, you make sure it works. You add one more feature, make sure it works. Add one more feature, make sure it works. 
+
+And hopefully, by the end, because you've done each of those steps one at a time, the whole thing will make sense to you. But you'll also have gotten each of those steps correct at each turn. So please, do avoid the inclination to try to come up with long, sophisticated regular expressions all at once, because it's just not a good use of a time if you then stare at it trying to find a mistake that you could have caught if you did things more incrementally instead. 
+
+All right. There still remains, arguably, at least one problem with this solution in that even though I'm calling re.sub to substitute the URL with nothing, quote, unquote, I then in my final line of code, line 6, am just blindly assuming that it all worked, and I'm going to go ahead and print out the username. But what if the user-- if I clear my screen here and run python of twitter.py-- doesn't even type a Twitter URL? What if they do something like https://google.com/, like completely unrelated, for whatever reason, Enter, that is not their Twitter username. 
+
+So we need to have some conditional logic, I would argue, so that for this program's sake, we're only printing out or, in a back end system, we're only saving into our database or a CSV file the username if we actually matched the proper pattern.

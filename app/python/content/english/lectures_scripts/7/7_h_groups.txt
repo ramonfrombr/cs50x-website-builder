@@ -1,0 +1,67 @@
+
+
+All right. Well, let me propose that we try to solve one other problem here, whereby if I go into the same version as before, which is now ignoring case, but I type in one of my other email addresses. Let me go ahead and run python of validate.py. And this time, let me type in not malan@harvard.edu, which I use primarily, but another email address of mine, malan@cs50.harvard.edu, which forwards to the same. 
+
+Let me go ahead and hit Enter now. And huh, invalid, even though I'm pretty sure that is, in fact, my email address. Well, let's put our finger on the reason why. Why at the moment is malan@cs50.harvard.edu being considered invalid, even though I'm pretty sure I send and receive email from that address, too? Why might that be? 
+
+AUDIENCE: Because there is a dot that has come after the @ symbol. 
+
+DAVID MALAN: Exactly. There's a dot after my cs50. And I'm not expecting any dots there, I'm expecting only, again, word characters, which is A through z, 0 through 9, and underscore. So I'm going to have to retool here. 
+
+But how could I go about doing this? Well, it turns out theoretically, there could be other email addresses, even though they'd be getting a little excessively long, for instance, malan@something.cs50.harvard.edu, which does not technically exist, but it could. You can have, of course, multiple dots in a domain name like we see here. Wouldn't it be nice if we could handle that as well? 
+
+Well, let me propose that we modify my regular expression as follows. It turns out that you can group ideas together. And you can not only ask whether or not this pattern matches or this one using syntax like A vertical bar B, which means "either A or B," you can also group things together and then apply some other operator to them as well. 
+
+In fact, let me go back to the code here. And let me propose that if I want to tolerate a subdomain, like cs50, that may or may not be there, let me go ahead and change it as follows. I could naively do this. If I want to support subdomains, I could say, well, let's allow for other word characters plus, and then a literal dot. 
+
+And notice, I'll highlight in blue here what I've just added. Everything else is the same, but I'm now adding room for another sequence of one or more word characters and then a literal dot. So this now, I think, if I rerun python of validate.py, will work for malan@cs50.harvard.edu, Enter. 
+
+Unfortunately, does anyone see where this is going? Let me rerun python of validate.py and type in as I keep doing, malan@harvard.edu, which up until now has kept working despite all of my changes. But now, ugh, finally I've broken my own email address. So logically what's the solution here? 
+
+Well, there's a bunch of ways we could solve this. I could maybe start using two regular expressions and support email addresses of the form username@domain.tld, or username@subdomain.domain.tld, where TLD just means Top Level Domain, like edu. Or I could maybe just modify this one, because I'd prefer not to have two regular expressions or one that's twice as big. Why don't I just specify to re.search that part of this pattern is optional? 
+
+What was the symbol we saw earlier that allows you to specify that the thing before it is technically optional? 
+
+AUDIENCE: The straight bar? We were using the straight bar as an-- optional, make the argument optional. 
+
+DAVID MALAN: So we could. We could use a vertical bar and some parentheses and say, "either there's something here or there's nothing." We could do that in parentheses. But I think there's actually an even easier way. 
+
+AUDIENCE: Actually, it's a question mark. 
+
+DAVID MALAN: Indeed, question mark. Think back to this summary here of our first set of symbols, whereby we had not just dot and * and +, but also a question mark, which means literally "zero or one repetitions," which effectively means optional. It's either there, one, or it's not, zero. 
+
+Now, how can I translate that to this code here? Well, let me go ahead and surround this part of my pattern with parentheses, which doesn't mean I want literally a parentheses in the user's input, I just want to group these characters together. And in fact, this now will still work. I've only added parentheses around the new part for the subdomain. 
+
+Let me run python of validate.py. Let me run malan@cs50.harvard.edu, Enter. That's still valid. But to be clear, if I rerun it again for malan@harvard.edu, that is still invalid, but not if I go in here and say, after the parentheses, which now is one logical unit, it's one big group of ideas together, I add a single question mark there. This will now tell re.search that that whole thing in parentheses can either be there once or be there not at all, zero times. 
+
+So what does this translate into when I run it? Well, let me go ahead and rerun it with malan@cs50.harvard.edu so that the subdomain is there. That works as before. Let me clear my screen and run it again, python of validate.py with malan@harvard.edu, which used to work then broke. Are we back in business now? We are. That's now valid again. 
+
+Questions now on this approach, where we've used not just the question mark but the parentheses as well? 
+
+AUDIENCE: Yeah. You said it works for zero or one repetitions. What if you have more? 
+
+DAVID MALAN: What if you have more? That's OK. That's where you could do *. * is zero or more, which gives you all the flexibility in the world. 
+
+AUDIENCE: Yeah. So I was just asking that-- with question marks, there's only one repetition allowed. 
+
+DAVID MALAN: It means zero or one repetition. So it's either not there or it is there. And so that's why this pattern now, if I go back to my code, even though again, it admittedly looks cryptic, let me highlight everything after the @ sign and before the $ sign. This now represents a domain name, like harvard.edu, or a subdomain within the domain name. 
+
+Why? Well, this part to the right is the same as always. Backslash w + means something like Harvard or Yale. Backslash .edu means literally ".edu." So the new part is this. In parentheses, I have another set of backslash w + backslash dot now. But it's all in parentheses. 
+
+I'm now having a question mark right after that, which means that whole thing in parentheses either can be there, or it can't be there. It's either of those that are acceptable. So a question mark effectively make something optional. It would not be correct to remove the parentheses, because what would this mean? If I removed the parentheses, that would mean that only this dot is optional, which isn't really what we want to express. I want the subdomain, like cs50 and the additional dot to be what's there or not there. 
+
+How about one other question on regexes here? 
+
+AUDIENCE: Can we use this for the usernames? 
+
+DAVID MALAN: Absolutely. We still have other problems. We're not solving all of the problems today just yet. But absolutely. Right now, we are not letting you have a period in your username. 
+
+And again, some of you with Gmail accounts or other accounts, you probably have not just underscores, numbers, and letters. You might have periods, too. Well, we could fix that, not using question mark here per se. 
+
+But now that we have these parentheses at our disposal, what I could do is this. I could use parentheses to surround the backslash w to say "any word character," which is the same thing, again, as a letter, or a number, or an underscore. But I could also or in, using a vertical bar, something else, like a literal dot. 
+
+Now, a literal dot needs to be escaped, otherwise it represents any character, which would be a regression, a step back. But now notice what I've done. In parentheses, I'm telling re.search that those first few characters in your email address, that is your username, has to be a word character, like A through z, uppercase or lowercase, or 0 through 9, or an underscore, or a literal dot. 
+
+We could do this differently, too. I could get rid of the parentheses and the or, and I could just use a set of characters. I could, again, manually say a through z, A through Z, 0 through 9, underscore, and then I could do a literal dot with a backslash period. And now I technically don't even need the uppercase, because I'm already telling the computer to ignore case. I can just pick one or the other. 
+
+Which one is better is really up to you. Whichever one you think is more readable would generally be the better design.

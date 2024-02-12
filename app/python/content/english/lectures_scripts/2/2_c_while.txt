@@ -1,0 +1,75 @@
+So I bet we can do better than that if we think about a little harder how we go about structuring this program. And we can do that if we augment our vocabulary just a little bit. It turns out in Python, and in other languages, too, there's a keyword called while. And while is one way that we can express what's called a loop, a block of code that's going to do something again and again and again-- 0 times, 1 time, 2 times, 50 times, as many times as we want. 
+
+But while rather leaves to us the particulars of how we express ourselves to do something again and again. So let me go back over to VS Code here and let me propose that I do this. While is a construct that allows me to ask a question again and again. And any time we've seen a question, it's been in the form of a Boolean expression, a question to which the answer is true or false. 
+
+Well, how could I do this? How could I print out meow three times and ask three times a question to which the answer is true or false? Well, what if I did some counting? Like literally on my fingers. And if I'm trying to count maybe down from three, I want to meow three times, I can put three fingers up and I can meow. And then I can put like one of the fingers down and then meow. And I can put one of the fingers down and I can meow. Put one of the fingers down. 
+
+And maybe the question I can ask every time I meow is, do I have any fingers up still? Do I have any fingers up still? Do I have any fingers up still? And if the answer is true, keep going. If the answer is false, stop. So how can I translate that to code? Well, once we've added this while keyword-- I think we have all the building blocks already, let me propose that I do this. 
+
+Let me propose that I give myself a variable. And I'll call it i for integer, but I could call it anything I want, and I'm going to initialize it to 3. Then I'm going to use this new feature of Python, while, and I'm going to ask a question, the answer to which must be true or false. And I'm going to say, while i does not equal 0. So I'm going to ask the question, while i does not equal 0, do the following. 
+
+Notice the colon at the end of the line. Notice my indentation. And just like with functions, just like with conditionals, you indent the lines that you only want to execute as part of this other thing. What do I want to do while i does not equal 0? Well, I think I just want to meow. 
+
+But it's not enough just to write this code. If I were to very dangerously run Python of cat.py and hit Enter right now, what might happen on the screen? Whether you've programmed before or not. Why is this a very bad thing potentially? It's not going to break things, but it might lose control of my computer somehow. Any thoughts? Yeah, Timo? 
+
+AUDIENCE: Hi. I think it's going to continue to print out meow since i is always equal to 3 and the while is always true. 
+
+DAVID MALAN: Yeah, exactly. If I'm initializing i to 3-- that is, setting it equal to 3 on line 1, then I'm asking the question, while i does not equal 0, and that's going to be true, it does not equal 0, it obviously equals 3, print meow. And the way a while loop works is that the Python interpreter just keeps going back and forth. It goes from line 1 to line 2, then to line 3, and then it goes back to line 2 to ask the question again. If the answer is still true, it goes to line 3. It then goes back to line 2. If the answer is still true, it goes back to line 3. 
+
+And to Timo's point, if you're never actually changing the value of i, it's always 3, you're just going to be looping literally forever, and this is an accidental infinite loop. So we've got to be smarter than that. And I'm not going to hit Enter because I don't want to lose control over my computer here such that it's printing out meow forever. 
+
+Fortunately, if you ever do do that and you find yourself in an accidental infinite loop, Control-C for cancel or interrupt is going to be your friend. If you ever seem to lose control, you don't need to reboot or turn off the computer. You can just hit Control-C in your terminal window and that will likely fix it. 
+
+All right, well what do I want to do, then, after meowing each time? I think what I'd like to do here is maybe something like this. Let me update i to equal whatever the current value is minus 1 here-- whoops, sorry. Minus 1. So if i on each iteration-- I'm updating i to be one less, one less, one less, it should eventually hit 0, at which point the answer to 9.2's question will now be false. 
+
+So let's see if this works. I'm going to go down to my terminal window and run Python of cat.py, and I indeed get three meows. Why? Because I've wired this up like a machine in software, if you will. I've set i equal to 3, then I keep asking this question. But I keep turning the gears, I keep changing the value of the variable to make sure that ultimately it is actually being decremented-- that is, decreased by 1 until we eventually hit 0. 
+
+Now for those of you who think I'm a little more graphically, let me pull up one of our usual flow charts. This is just a representation graphically of the exact same thing. Notice what's happening. I first start the program, and then I initialize i to 3, and then I ask the first of my questions. Again, the diamonds always represent questions. And the answer is going to be true or false. Does i not equal 0? 
+
+Well, it doesn't, it equals 3. So if I follow the true line, I meow. And then I follow this arrow, and I update i to equal i minus 1. At this point in the story, i presumably equals 2 mathematically. I follow the arrow. And there's the loop. This is why it's nice to see this graphically, perhaps because you can literally see the loop back and forth. 
+
+Now I ask the question again. Does 2 not equal 0? Well, it does not equal 0, it's 2, so we meow again. We change i from 2 to 1. Well, does 1 not equal 0? Well obviously 1 is not 0, so we meow again. We decrement i again. i is now 0. Does 0 not equal 0? No, it equals 0, so the answer is false and we stop. 
+
+So there, perhaps more so than any of our flowcharts before, do you really see the structure of what's happening inside of the program? And you don't have to get into the habit of making these charts or creating these charts, but just as a first pass at what's going on inside of the computer, that's indeed one way to visualize it instead. 
+
+Well let me propose that, like always, there's many different ways to solve this problem. And suppose you just like to think a little differently. Maybe you don't like starting at 3 and then counting down to 0. Why? Maybe you're just brain doesn't work that way and you prefer to count up instead of down. Totally fine. 
+
+Let me go ahead and change my code here to set i equal to 1 instead of 3. And here, let me just change my logic. Rather than checking for not equal to 0, like maybe you don't like thinking in terms of not because it's a little confusing, and it might be, let's just check that i is less than or equal to 3. 
+
+So we'll be a little more explicit. We'll count from 1 up through 3, each time printing meow, but I'm going to need to change this line here. Let me see if we can't call on someone to change line for me. How do I want to change line 4 to be consistent with counting from 1 up to and through 3? 
+
+AUDIENCE: I would be plus 1 every time you meow. 
+
+DAVID MALAN: Yeah, exactly. In this case, we want to add one not subtract 1. And in fact, if you think about this, this 2 could end very poorly. If you start counting at 1 and you keep subtracting 1, subtracting 1, subtracting 1, I think we're going to find ourselves with the same problem, which is that we're never going to stop because we're going to keep getting more and more negative as opposed to ever getting up to the number 3. So I think you're right, I need to change this to be i equals i plus 1. 
+
+And now notice just for clarity, too, the equal sign is, again, our assignment operator from right to left. Logically, this might otherwise strike you as strange. Like how can i equal itself plus 1? Well, it doesn't until you execute this code from right to left. You add 1 to i or you subtract 1 from i, and then you update the value of i on the left. The assignment copies the value from the right to the left. 
+
+Well, how else might I do this? Well, I will say that most programmers, computer scientists more generally, tend to start counting from 0. It's a convention and it actually has upsides even in Python and other languages where generally speaking, it's a good thing to start counting from 0 instead of counting like we might in the real world from 1. Let's go ahead and adopt that convention now. Let me set i equal to 0, and I need to make a change now. 
+
+Notice, if I don't change my logic, this program just became buggy. The cat has a bug. It's now meowing four times if I run it as is. But the easiest fix here would be to change my inequality to be this, less than instead of less than or equal to. Now I'm starting at 0, but I'm going up to but not through 3. 
+
+And even though this might, of all the things we've seen thus far, seem maybe the least familiar, most of us might start at 1, 2, then 3, it's a good habit to get into now, start at 0, and go up to but not through the value that you care about ultimately, 3 in this case here. 
+
+Well, let me tighten things up a bit here. Not only will this now fix my counting problem, it now meows 3 times as expected, there's a more succinct way to express i equals i plus 1, and this, is because it's such a popular thing to do in code. You can instead just say i plus equals 1, and that's it. You don't need to put everything on the right-hand side. This is a special syntax that says the exact same thing, increment i, but it does it with a few fewer keystrokes. It's just a little more pleasant to type, it's a little faster to read, it's just a convention. 
+
+Those of you who have programmed in C, C++, Python-- no, not Python. C, C++, Java, JavaScript might have seen plus-plus before or minus-minus. Sorry, Python doesn't have it, so you cannot use that. This is as succinct as your line of code might get. All right. Let me pause here to see, then, if there's any questions about these implementations of while loops. 
+
+AUDIENCE: Can we use stuff like for loops which have a certain i-value initialized to it at the start and it runs from the particular condition you put into the thing and increment it as you go along? 
+
+DAVID MALAN: Short answer, no, you cannot do what you're describing, but there is another type of for loop that we will soon see. But let's come to that in just a moment. Other questions on loops using while here? 
+
+AUDIENCE: So I had a question about that flowchart. 
+
+DAVID MALAN: OK. 
+
+AUDIENCE: There were-- yeah. There were certain symbols for the certain kind of the statements were-- are they certainly used for that kind of statement that they-- 
+
+DAVID MALAN: They are. So I deliberate-- I deliberately use certain types of symbols, certain shapes here whereby an oval is conventional for start and stop. I used rectangles for any statement of code, like an assignment or a printing and so forth. And I used diamonds to represent questions that you might ask, conditions as we've seen. 
+
+If you're doing this for yourself, if you're just trying to make sense of your code and writing it down, you certainly don't need to use these formal symbols, but I tried to be consistent with some best practices. And in fact, let me come back to the same picture, because this was the first version of our picture, but we've since modified our code a couple of times. 
+
+This, recall, was the version where the question we were asking was i not equal to 0, let me go ahead and just change this code now to represent the next version we did, which, recall, changed our logic to start counting from 1, it changed our question to check as i less than or equal to 3, but then everything else was the same except for the counting, which is now plus instead of minus. 
+
+And then we refined it a little bit further by counting now from 0 up to but not through 3. And we tightened up this code here by just incrementing 1 by using the slightly more succinct syntax. 
+
+So at this point, these flowcharts might become less and less useful for us, because once you've wrapped your mind around the concept and hopefully the picture helps bring that concept to life, it certainly fine to focus entirely on the code and only think about or even draw something like this if you need to wrap your mind around something more complicated than you're used to. 

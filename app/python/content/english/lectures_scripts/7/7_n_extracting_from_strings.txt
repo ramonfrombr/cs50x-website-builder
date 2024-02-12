@@ -1,0 +1,52 @@
+
+All right. Let's go ahead and look at one final problem to solve, that of extracting information now as well. So at this point, we've now validated the user's input by checking whether or not it meets a certain pattern. We've cleaned up the user's input by checking against a pattern, whether it matches or not, and if it does match, we kind of reorganize some of the user's information so we can clean up their input and standardize the format in which we're storing or printing it, in this case. 
+
+Let's do one final example where we're very specifically extracting information in order to answer some question. So let me propose this. Let me go ahead and close format.py and create a new file called twitter.py, the goal of which is to prompt users for the URL of their Twitter profile and extract from it, infer from that URL, what is the user's username. 
+
+Now, why might you want to do this? Well, one, you might want users to be able to just very easily copy and paste the URL from their own Twitter profile into your form, into your app, so that you can figure out what their username is. Or you might have a form that asks the user for their Twitter username, and because people aren't necessarily paying very close attention, some people type their username. Some people type their whole URL or something else altogether. 
+
+It would be nice now that you're a programmer to just be more tolerant of different types of input and just take on the burden of canonicalizing, standardizing the data, but being flexible with the users. It's arguably a better user experience if you just let me copy-paste or type in what I want, you clean it up. You're the programmer not me. Lends for a better experience, perhaps. 
+
+Well, let me go ahead and do this with twitter.py. Let me first go ahead and prompt the user here for a value for a variable that I'll call url, and just ask them to input the URL of their Twitter profile. I'm going to go ahead and strip off any leading or trailing whitespace, just in case users accidentally hit the spacebar. That's literally the least I can do quite easily. 
+
+But now let's go ahead and do this. Suppose that the user's address is the following. Let me print out what did they type in. And let me clear my screen and run python of twitter.py. I'm going to go ahead and type in, for instance, https://twitter.com/davidjmalan, which happens to be my own Twitter username. For now, we're just going to print it back onto the screen just to make sure I've not messed up yet. 
+
+OK. So I've printed back out the exact same URL. But the goal at hand is to extract the username only. Now, let me just ask, perhaps, a straightforward question. Logically, what do I need to do to get at the user's username? 
+
+AUDIENCE: Well, we just ignore what's before the username and then just extract the username? 
+
+DAVID MALAN: Perfect. Yeah, I mean, it is as simple as that. If you know the username is at the end, well, let's just somehow ignore everything to the beginning. Well, what's at the beginning? 
+
+Well, it's a URL. So we're probably going to need to ignore an HTTPS, a ://, a twitter.com, and a /. So we just want to throw all of that away. Why? Because if it's an URL, we know by how Twitter works that the username comes at the end. 
+
+So let's use that very simple idea to get at the information we want. I'm going to try this a few different ways. Let me go back into my program here. And instead of just printing it out, which was just to see what's going on, let me do this. Let me create a new variable called username. And let me call url.replace. It turns out that if URL is a string or a str in Python, it, again, comes with multiple methods, like strip, and split, and others as well, one of which is called replace. 
+
+And replace will do just that. You pass it two arguments, the first of which is, what do you want to replace? The second argument is, what do you want to replace it with? So if I want to get rid of, as I've proposed, really just everything before the username, that is, the Twitter URL or the beginning thereof, let's just say this. Go ahead and replace "https://twitter.com/", close quote, that's what I want to replace. 
+
+And comma, second argument, what do you want to replace it with? Nothing. So I'm literally going to pass in quote unquote to effectively do a find and replace. That's what the replace method does, just like you can do it in Microsoft Word or Google Docs. This is the programmer's way of doing find and replace. 
+
+Now let me go ahead and print out just the username. So I'll use an fstring like this. I'll say username, colon, and then in curly braces, username, just to format it nicely. All right. Let me go ahead and clear my screen and run python of twitter.py, Enter, URL. Here we go. https://twitter.com/davidjmalan, Enter. 
+
+OK. Now we've made some progress. Done for the day, right? Well, what is suboptimal about this? Can anyone critique or find fault with my program? It is working now, but it's a little fragile. I bet we could contrive some scenarios where I think it works but it doesn't. 
+
+AUDIENCE: Well, I have a few ideas, actually. Well, first of all, if we don't specify HTTPS, it will be broken. Secondly, if we have a slash at the end, it also will be broken. If we have a question mark or something after question mark, it also won't work. 
+
+So a lot of scenarios, actually. 
+
+DAVID MALAN: Oh, my god. I mean, here we are. I was pretending to think I was done. But my god, like, Alex gave us a whole laundry list of problems. And just to recap, then, what if it's not HTTPS, it's HTTP? Slightly less secure, but I should still be able to tolerate that programmatically. 
+
+What if the protocol is not there? What if the user just typed twitter.com/davidjmalan? It would be nice to tolerate that rather than show an error and make me type in the protocol. Why? It's not good user experience. 
+
+What if it had a slash at the end of the username, or a question mark? If you think about URLs you've seen on the web, there's very commonly more information, especially if it's been shared on social media. There might be a HTTP parameters, so to speak, just stuff there that we don't want. There could be a www.twitter.com, which I'm also not expecting but does work if you go to that URL, too. 
+
+So there's just so many things that can go wrong. And even if I come back to my contrived example as earlier, what if I run this program and say this-- "my username is https://twitter.com/davidjmalan," Enter. Well, that too just didn't really work-- it got rid of the-- actually-- [LAUGHS] OK, actually that kind of worked. 
+
+But the goal here is to actually get the user's username, not an English sentence describing the user's username. So I would argue that even though I just accidentally created perfectly correct English grammar, I did not extract the Twitter username correctly. I don't want words like "my username is" as part of my input. 
+
+So how can we go about improving this, and maybe chipping away at some of those problems one by one? Well, let me clear my screen here. Let me come back up to my code. And let me not just replace it, but let me do something else instead. 
+
+I'm going to go ahead, and instead of using replace, I'm going to use another function called removeprefix. A prefix is a string or a substring that comes at the start of another. So if I remove prefix, I don't need a second argument for this function. I just need one. What prefix do you want to remove? 
+
+So this will at least now fix the problem I just described of typing in like a whole sentence, where the URL is there, but it's not at the beginning, it's only at the end. So here, this still is not correct. But we don't create this weird-looking output that just removes the URL part of the input-- "my username is https://twitter.com/davidjmalan." A moment ago, it did remove the URL and left only the davidjmalan. 
+
+This is not perfect still. But at least now, it does not weirdly remove the URL and then leave the English. It's just leaving it alone. So maybe I could handle this better, but at least it's removing it from the part of the string I might anticipate. 

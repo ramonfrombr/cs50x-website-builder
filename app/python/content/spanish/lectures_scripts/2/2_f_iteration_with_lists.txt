@@ -1,0 +1,39 @@
+Está bien. Entonces, si ahora tenemos esta capacidad de hacer cosas una y otra vez en estos bucles, veamos si podemos resolver algunos otros problemas a través de los cuales expresarnos cíclicamente, pero también obtener respuestas interesantes. Y permíteme proponer, por ejemplo, que examinemos un poco más de cerca estas listas.
+
+Resulta que en Python, y realmente, en programas en general, es útil tener una lista de valores, porque vamos a poder trabajar con cada vez más datos, conjuntos de datos más grandes. Así que permíteme proponer que volvamos a VS Code aquí y hagamos algo que tal vez sea un poco familiar para algunas personas, el mundo de Hogwarts.
+
+Déjame crear un archivo llamado Hogwarts, y veamos si podemos tener una lista de estudiantes aquí en Hogwarts. Así que tengo una nueva pestaña llamada hogwarts.py. Y permíteme proponer que simplemente defina en este programa una lista de estudiantes cuyos nombres conozco de antemano. Por ahora no voy a obtener la entrada del usuario. Solo voy a saber desde el principio que los tres estudiantes que quiero considerar son estos.
+
+Nuestra variable se llamará estudiantes. Será igual, como he hecho antes, a un corchete cuadrado, lo que significa "aquí viene una lista". Y esos valores serán Hermione entre comillas, porque es una cadena; Harry entre comillas, porque es una cadena; y luego Ron entre comillas, porque es una cadena también.
+
+Así que esta es una lista de longitud 3. Es similar en espíritu a mi lista de longitud 3 anterior, pero esa tenía 3 enteros, 0, 1, 2. Ahora tengo una lista de tres cadenas en su lugar. Y esto no es muy útil en este momento, pero déjame hacer una comprobación. Permíteme imprimir a cada uno de estos estudiantes. Pero espera un minuto, ¿cómo imprimo el contenido de una lista?
+
+Bueno, en el pasado, cuando hemos impreso una variable, simplemente hemos impreso el nombre de la variable. Pero no quiero imprimir todo Hermione, Harry y Ron de una vez. Tal vez quiero imprimir primero a Hermione, luego a Harry, luego a Ron. Entonces necesito una forma de expresar más precisamente qué valor quiero de esta lista.
+
+Y la forma de hacer esto en Python es usando corchetes de otro modo. Si tienes una variable, en este caso llamada estudiantes, y quieres entrar en esa variable y obtener un valor específico, es decir, quieres indexar en la lista, usas corchetes de esta manera, usando números dentro de los corchetes.
+
+Y aquí es donde vemos que es útil pensar y contar en términos del 0 hacia arriba en lugar del 1 hacia arriba. Estas listas en Python son, podríamos decir, indexadas en base cero. El primer elemento en una lista está en la posición 0, el segundo elemento en una lista de Python está en la posición 1, y el tercero está en la posición 2. Así que siempre estás un poco desfasado mentalmente, pero te acostumbras a ello con el tiempo si nunca has programado antes.
+
+Permíteme imprimir a los tres estudiantes. Así que permíteme imprimir estudiantes corchete 0, luego estudiantes corchete 1. Por último, permíteme imprimir estudiantes corchete 2, y esta es mi tercera y última línea. Y por supuesto, si ejecuto este código, probablemente hará lo que podrías suponer. Si ejecuto Python hogwarts.py, ahí están Hermione, Harry y Ron cada uno en su propia línea.
+
+Pero debe haber una mejor manera, especialmente si no sé de antemano quién estará en esta lista, si el próximo año hay nuevos estudiantes en Hogwarts, podemos usar un bucle para hacer algo automáticamente sin tener que escribir manualmente 0 y luego 1 y 2. Bueno, aquí hay otra característica de Python. Puedes usar un bucle for no solo para contar de 0 a 1 a 2, puedes usar Python para iterar sobre cualquier cosa. No solo números, sino también cadenas.
+
+Entonces podría hacer esto. Por estudiante en estudiantes, dos puntos, e indentado debajo de eso, puedo decir imprimir estudiante. Ahora no importa si tengo 3 estudiantes o 4 o 400, estas dos líneas de código, este bucle imprimirá todos esos estudiantes para mí uno a la vez. Así que si ahora ejecuto Python hogwarts.py, ahí está la misma lista, pero no necesito saber de antemano qué tan larga es esa lista real.
+
+Ahora, ten en cuenta que tomé una decisión consciente aquí. No llamé a esta variable guion bajo, porque esta vez estoy usando la variable. Y aunque podría hacer esto, ahora, no, no, no, no, tu código se está volviendo demasiado críptico. Si estás nombrando la variable guion bajo y estás usando la variable guion bajo, ahora no estás ayudando a nadie. Ahora estás confundiendo al lector, a ti mismo más adelante, deberías llamar a tus variables como son.
+
+Así que un nombre muy apropiado, aunque estoy seguro de que podrías encontrar otros, sería estudiante, y aquí, podrías decir que la mantengas como estudiante también. Si prefieres ser más conciso, no es irrazonable hacer algo conciso en un bucle como este. Para s en estudiantes, tal vez usando la misma letra con la que comienza la lista misma, pero nuevamente, ¿por qué molestarse? Python está diseñado para ser más legible. Si tienes una lista de estudiantes, itera sobre ellos uno por uno.
+
+Permítanme hacer una pausa aquí para ver si hay preguntas sobre listas como las he definido ahora, una lista de cadenas en este caso, o sobre cómo usar un bucle for para iterar e imprimir cada uno de esos nombres.
+
+AUDIENCIA: Sí. ¿Entonces no es necesario inicializar la variable estudiante en este caso? ¿O podemos simplemente declarar una variable en el bucle?
+
+DAVID MALAN: Buena pregunta. No necesitas inicializarla manualmente. Python se encarga de inicializar la variable estudiante a Hermione primero, luego a Harry segundo, luego a Ron tercero. A diferencia de otros lenguajes, no necesitas inicializarla tú mismo, simplemente existe y funcionará. ¿Alguna otra pregunta sobre bucles y listas de esta manera?
+
+AUDIENCIA: Como mencionaste break, ¿existe algún concepto de continue para poder omitir un caso particular en los bucles?
+
+DAVID MALAN: Sí. También puedes usar continue con otra sintaxis. No lo hemos mostrado todavía. Por ahora nos hemos centrado solo en break.
+
+AUDIENCIA: Entendido. ¿Entonces este bucle for puede funcionar con tablas hash u otros tipos de tablas o matrices?
+
+DAVID MALAN: En efecto. Nos estamos adelantando un poco, pero hay otros tipos de datos en Python, y efectivamente puedes usar un bucle for para iterar sobre ellos también. Cualquier cosa que sea iterable, por así decirlo, es un conjunto de datos que se puede utilizar con un bucle como este. Pero hablaremos más sobre eso, más pronto.

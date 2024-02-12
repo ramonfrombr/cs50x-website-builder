@@ -1,0 +1,48 @@
+
+[0]
+
+Introduction to
+Programming with Python
+Exceptions
+
+[1]
+
+SyntaxError
+
+[2]
+
+ValueError
+
+[3]
+
+try
+
+[4]
+
+except
+
+[5]
+
+ValueError
+
+[6]
+
+NameError
+
+[7]
+
+else
+
+[8]
+
+pass
+
+[9]
+
+raise
+
+[10]
+
+Introduction to
+Programming with Python
+Exceptions

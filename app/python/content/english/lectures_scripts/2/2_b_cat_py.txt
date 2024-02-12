@@ -1,0 +1,15 @@
+I'm going to go ahead here and open up VS Code. And in my terminal window, let's go ahead and create via code cat.py, a Python program that meows like a cat. And I'm going to go ahead here in this Code tab, and very simply, perhaps, I'm going to start by implementing this cat just by using print. We're going to have this cat not make audible sounds, but just print meow, meow, meow on the screen three times. 
+
+Well, I think the simplest way I can do this is just to print meow once, and to print meow again, and to print meow one last time on the screen. And now let me go down to my terminal window, let me run Python of cat.py, Enter, and meow, meow, meow. All right, so this program works. This program indeed works if my goal is to get the cat to meow three times. And let me propose, just to help us wrap our minds around what's going on inside of the computer, let me propose that we consider this flowchart. 
+
+So as before, we have this flowchart that starts with this oval, which just means start reading here. And then notice, it goes via arrows to a meow, meow, meow, and then it stops. It's perfectly correct, and honestly, it's wonderfully simple, but I daresay we can find fault with my code nonetheless. 
+
+Why is my code arguably poorly designed? Now the answer is going to be loops in some way, but let's see if we can identify in what way the code is actually poorly designed in some sense. Let's see. Any thoughts. Alex? 
+
+AUDIENCE: OK. So, I mean, repeating the same action like three times or even more is not a good habit. 
+
+DAVID MALAN: Yeah, I'm just repeating myself. And honestly, it's not that big a deal. If we go back to my code here, am I really doing such a bad thing by just printing meow, meow, meow three times? Not really, but let's consider the logical extension of this. Suppose I wanted to meow four times or five times or 50 times or 500 times. 
+
+Do you really think, even if you've never programmed before, is the solution to this problem really going to be to hit copy-paste 50 times? Like probably not. We can probably do better than that. And beyond it just being ugly at that point, having so many lines of identical code, just imagine if you wanted to change the code. 
+
+Maybe I change my mind and I don't want to make a cat, I want to make a dog. So now it has to say woof, woof, woof multiple times. Now I have to change that in 50 different places. And yeah, sure, I could do find and replace, but come on, like we're programmers now, there's got to be a better way than just repeating ourselves. 

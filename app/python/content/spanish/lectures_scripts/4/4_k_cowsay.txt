@@ -1,0 +1,33 @@
+Volviendo a VS Code aquí. Y en la ventana de terminal, voy a escribir pip install cowsay. ¿Y qué está pasando aquí? Pip es el comando, el gestor de paquetes. Y quiero instalar qué paquete? El paquete llamado cowsay. Voy a presionar Enter. Y después de un poco de salida, ha instalado correctamente cowsay.
+
+¿Qué significa eso? Eso significa que ahora puedo importar esto en mi propio código. Bueno, vamos a ver qué significa esto. Así que voy a crear un nuevo archivo con el nombre say.py porque quiero que algo se diga en la pantalla. Y en mi nueva pestaña, voy a importar cowsay, que presumiblemente ya está instalado.
+
+Ahora voy a importar también sys porque me gustaría usar algunos argumentos de línea de comandos en este programa para poder ejecutarlo rápidamente. Y sin usar la función input, puedo obtener el nombre del usuario inmediatamente desde el indicador. Y déjame hacer esto. Voy a hacer un poco de verificación de errores de manera anticipada esta vez. Y en lugar de usar menor que o mayor que, esta vez voy a decir si la longitud de sys.argv es igual a 2.
+
+Entonces, si el humano proporciona solo el nombre del programa y su propio nombre, estamos listos para continuar. Voy a hacer lo siguiente. Voy a llamar a una función llamada COW en el paquete llamado cowsay. Y voy a pasar una cadena, hola, coma. Y luego, como en el pasado, voy a pasar solo una cadena porque, según su documentación, no es como print. No puedo pasar coma esto, coma aquello.
+
+Solo puedo pasar una cadena. Así que voy a concatenarla con el contenido de sys.argv[1]. Si escribo mi nombre David después del nombre de este programa, debería terminar en sys.argv[1], en cuyo caso, esta línea cinco de código debería concatenar hola con mi nombre con un espacio entre ellos. Y aparentemente, una vaca lo dirá.
+
+Veamos qué sucede aquí. Vamos a limpiar la pantalla y aumentar el tamaño de mi ventana de terminal. Vamos a ejecutar Python say.py y escribir mi nombre David y presionar Enter. Ahí está el programa llamado cowsay. Literalmente, una vaca dice algo en la pantalla. Y esto es una referencia a un programa de tiempos pasados que solía venir con muchos sistemas. Esto también se conoce como arte ASCII. Es una forma textual de imprimir imágenes en la pantalla solo usando las teclas de tu teclado.
+
+Ahora, realmente podemos profundizar en el tema aquí. Y hay un valor académico cuestionable al hacerlo. Así que voy a hacerlo solo una vez. Resulta que el paquete cowsay viene con otras funciones también. Una de esas funciones, por ejemplo, es T-Rex. Y si ahora aumento el tamaño de mi ventana de terminal, tal vez veamos a dónde vamos con esto.
+
+Ahora voy a ejecutar nuevamente Python say.py. Esta vez, no voy a proporcionar mi nombre solo para ver si se rompe. Aún está bien porque tenemos esa condición if, si la longitud de sys.argv es igual a 2 y solo si es igual a 2, hacemos algo. Es por eso que no vemos nada aquí.
+
+Voy a cooperar ahora, say.py espacio David. Y ya no es una vaca, sino un T-Rex. ¿Por qué? Simplemente porque son las cosas que puedes hacer una vez que sabes cómo programar. Incluso puedes empaquetarlos y volverlos disponibles de forma gratuita para otros como software de código abierto. Para nosotros, esto es demostrativo de una característica más general aquí, a saber, poder instalar estos paquetes de terceros y cómo se puede hacer en Python.
+
+Ahora, dejaré esto en pantalla por un momento y veré si hay preguntas sobre vacas o Tyrannosaurus rex o paquetes en general. Solo estoy calificado para hablar de una de esas.
+
+AUDIENCIA: Hola, tengo dos preguntas, es un poco antes de lo previsto. Entonces, la primera pregunta es: los paquetes que estás llamando para usar en el programa, ¿son lo mismo que, digamos, algo en Java al llamar una clase, un archivo de Java para usar sus funciones?
+
+Y mi segunda pregunta es, ¿cuál es el propósito real de usar argumentos de línea de comandos como los usaste? Porque no es realmente la mejor manera de, como dices, ser amigable para el usuario, donde digamos la persona que usa el programa no sabe lo que el programa les está preguntando.
+
+DAVID MALAN: Muy buena pregunta. La primera pregunta sobre la comparación con Java, los paquetes de Python son similares a los paquetes de Java, donde tienes algo.algo.algo en la parte superior de tu programa que te da acceso a una clase o algo más. Python en sí admite clases. Más sobre eso más adelante. Y puedes hacer cosas muy similares en Python como puedes hacer en Java. Pero el análogo realmente son los paquetes de Python a los paquetes de Java aquí.
+
+En cuanto a los argumentos de línea de comandos, haces una buena pregunta. ¿Por qué los usamos, especialmente si no son realmente amigables para el usuario? Son un poco menos amigables para las personas que no están en esta conferencia Zoom, para ser honesto. Tú y yo, a medida que aprendemos más y más sobre programación y sobre argumentos de línea de comandos, seguramente nos sentiremos más cómodos y tenderemos a preferir la capacidad de personalizar comandos utilizando estos argumentos de línea de comandos. ¿Por qué? Productividad. Tiende a hacerte más rápido porque te acostumbras a saber exactamente cómo configurar tu software sin tener que responder manualmente preguntas.
+
+Y un ejemplo. ¿No hemos estado escribiendo Python de algo.py todo este tiempo? Puedes imaginarte no hacer eso. Puedes imaginar escribir solo Python, presionando Enter. Y luego te solicita el nombre del archivo que deseas ejecutar. Así que escribes algo.py y luego se ejecuta.
+
+No es gran cosa, pero yo diría que con el tiempo, te cansarás un poco de eso. Y preferirás automatizar el comando una y otra vez, especialmente con pequeñas comodidades como poder usar las teclas de arriba y abajo para volver a ejecutar esos mismos comandos. La automatización también es importante si sales de una clase como esta y comienzas a usar Python para automatizar procesos en el trabajo o para proyectos personales o similares. La capacidad de especificar todas tus entradas en una sola línea significa que puedes hacer el trabajo más rápidamente. Así que sin dudas, absolutamente.
+
+Usar argumentos de línea de comandos es una característica más arcaica de los sistemas con los que la mayoría de nosotros ya no estamos tan familiarizados debido a Windows, Mac OS y otros sistemas operativos que tienen botones, interfaces gráficas de usuario y menús. Pero cuanto más cómodo te sientas con la programación, seguramente tenderás a preferir estas capacidades porque te permiten hacer las cosas más rápidamente.

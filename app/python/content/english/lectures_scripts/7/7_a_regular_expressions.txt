@@ -1,0 +1,5 @@
+[ORCHESTRA TUNING] [MUSIC PLAYING] 
+
+DAVID MALAN: All right. This is CS50's Introduction to Programming with Python. My name is David Malan, and this is our week on regular expressions. So a regular expression, otherwise known as a regex, is really just a pattern. And indeed, it's quite common in programming to want to use patterns to match on some kind of data, often user input. 
+
+For instance, if the user types in an email address, whether to your program, or a website, or an app on your phone, you might ideally want to be able to validate that they did indeed type in an email address and not something completely different. So using regular expressions, we're going to have the newfound capability to define patterns in our code to compare them against data that we're receiving from someone else, whether it's just to validate it, or, heck, even if we want to clean up a whole lot of data that itself might be messy because it, too, came from us humans. 

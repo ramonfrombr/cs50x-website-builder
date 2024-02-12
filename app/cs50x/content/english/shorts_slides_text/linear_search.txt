@@ -1,0 +1,480 @@
+
+[0]
+
+Linear Search
+
+[1]
+
+Linear Search
+• In linear search, the idea of the algorithm is to iterate across 
+the array from left to right, searching for a specified element.
+In pseudocode:
+• Repeat, starting at the first element:
+• If the first element is what you’re looking for (the target), stop.
+• Otherwise, move to the next element.
+
+[2]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+9
+
+[3]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+9
+
+[4]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+9
+
+[5]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+9
+
+[6]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+9
+
+[7]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+9
+
+[8]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+9
+
+[9]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+9
+
+[10]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[11]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[12]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[13]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[14]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[15]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[16]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[17]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[18]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[19]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[20]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[21]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[22]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[23]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[24]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[25]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[26]
+
+Linear Search
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+In pseudocode:
+Repeat, starting at the first element:
+If the first element is what you’re looking for (the target), stop.
+Otherwise, move to the next element.
+Target
+50
+
+[27]
+
+Linear Search
+• Worst-case scenario: We have to look through the entire 
+array of n elements, either because the target element is the 
+last element of the array or doesn’t exist in the array at all.
+• Best-case scenario: The target element is the first element of 
+the array, and so we can stop looking immediately after we 
+start.
+
+[28]
+
+Linear Search
+O(n)
+Ω(1)

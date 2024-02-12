@@ -1,0 +1,17 @@
+So if I take us back to our code here, notice that what I've highlighted earlier, elif x equals equals y. 
+
+It's not wrong to ask that question. In fact, if you're trying to be especially thorough, it makes perfect sense to check if x is less than y, greater than y, or equal to y. But why don't I need to ask this third and final question? 
+
+SPEAKER 2: We don't need to ask if x is equal to y any more because, logically, if the two conditionals evaluate to false, there is only one conditional that will evaluate to true. And that is x is equal to y. 
+
+DAVID MALAN: Exactly. If we're all pretty comfortable with math, and comparisons here, of course x is either going to be less than y, greater than y, or equal to y. But once you rule out the first two scenarios, logically, it's got to be the case that x must equal y. If it wasn't the case, then it's less than or greater than. So Hope proposed that we use this other keyword, else. And how do we use this? Well, exactly as we might in English. Let me go back to my code here. And instead of bothering to ask the third and final question, let's not ask a question at all. 
+
+Let's just have this catch-all. so to speak, a final line of code that says, else just assume that x is equal to y. Therefore, printing it as well. So what's the upside of that? My code is still going to work exactly the same. And again, my computer is so darn fast, I don't even notice that it's working even faster than it was before. But we would notice these kinds of things if we were doing a lot more work, a lot bigger programs here. But let me run Python of compare.py. 
+
+Let's do, for instance, one and two. Still works for that. Let's do two and one. Still works for that. Let's do one and one. And it, indeed, now works for that. But in these cases now, let's consider the path we just went down. Previously, our diagram, when we had if, elif, elif in place, looked a little something like this. And notice, they began, we might have asked one question, or two, or worst case, three whole questions. 
+
+But we can do better than that, using else, as Hope proposed, we can whittle this diagram, now, down to this. And even though it looks like the diagram's getting bigger, notice that it's having fewer building blocks inside of it. There's fewer arrows and there's fewer nodes in this picture. Let's start at the top now. Start leads us to the first question, still. x less than y? If the answer is true, great. We can say as much, x is less than y, and we can stop. If it's not true, if it's false, we can ask the next question. 
+
+x is greater than y, true or false? If it is, great. We can print x is greater than y, and stop. Else, if it's not the case that x is greater than y, the answer is false. We can just immediately, logically, say x is equal to y. We don't have to add the third question at all. We can just immediately conclude there. So what's the implication here? You can see, with these pictures, a relative decrease in the complexity of a program. The first one was very long and stringy, with lots and lots of questions, unnecessarily, ultimately. 
+
+The next one got a little shorter. And this one's even shorter still. And again, the fewer lines of code you have, the less likely you are, arguably, to make any mistakes. The easier it is for other people to read. And so, generally, this readability, this simplification, is, indeed, a good thing. 

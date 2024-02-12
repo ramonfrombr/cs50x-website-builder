@@ -1,0 +1,105 @@
+Well, allow me to turn our attention back to where we left off here, which is just names to propose that, with names.txt, we have an ability, it seems, to store each of these names pretty straightforwardly. But what if we wanted to keep track of other information as well? Suppose that we wanted to store information, including a student's name and their house at Hogwarts, be it Gryffindor, or Slytherin, or something else. Well, where do we go about putting that? 
+
+Hermione lives in Gryffindor, so we could do something like this in our text file. Harry lives in Gryffindor, so we could do that. Ron lives in Gryffindor, so we could do that. And Draco lives in Slytherin, so we could do that. 
+
+But I worry here-- but I worry now that we're mixing apples and oranges, so to speak. Some lines are names. Some lines are houses. So this probably isn't the best design, if only because it's confusing, or it's ambiguous. 
+
+So maybe what we could do is adopt a convention. And indeed, this is, in fact, what a lot of programmers do. They change this file not to be names.txt, but instead, let me create a new file called names.csv. CSV stands for Comma-Separated Values. 
+
+And it's a very common convention to store multiple pieces of information that are related in the same file. And so to do this, I'm going to separate each of these types of data, not with another new line, but simply with a comma. I'm going to keep each student on their own line, but I'm going to separate the information about each student using a comma instead. 
+
+And so now we sort of have a two-dimensional file, if you will. Row by row, we have our students. But if you think of these commas as representing a column, even though it's not perfectly straight because of the lengths of these names, it's a little jagged. You can think of these commas as representing a column. 
+
+And it turns out, these CSV files are very commonly used when you use something like Microsoft Excel, Apple Numbers, or Google Spreadsheets, and you want to export the data to share with someone else as a CSV file. Or conversely, if you want to import a CSV file into your preferred spreadsheet software, like Excel, or Numbers, or Google Spreadsheets, you can do that as well. So CSV is a very common, very simple text format that just separates values with commas and different types of values, ultimately, with new lines as well. 
+
+Let me go ahead and run code of students.csv to create a brand-new file that's initially empty. And we'll add to it those same names but also some other information as well. So if I now have this new file, students.csv, inside of which is one column of names, so to speak, and one column of houses, how do I go about changing my code to read not just those names but also those names and houses so that they're not all on one line-- we somehow have access to both type of value separately? Well, let me go ahead and create a new program here called students.py. 
+
+And in this program, let's go about reading, not a text file, per se, but a specific type of text file, a CSV, a Comma-Separated Values file. And to do this, I'm going to use similar code as before. I'm going to say with open, quote/unquote, students.csv. I'm not going to bother specifying, quote/unquote, r because, again, that's the default. 
+
+But I'm going to give myself a variable name of file. And then in this file, I'm going to go ahead and do this. For line in file, as before, and now I have to be a bit clever here. 
+
+Let me go back to students.csv, looking at this file, and it seems that on my loop on each iteration, I'm going to get access to the whole line of text. I'm not going to automatically get access to just Hermione or just Gryffindor. Recall that the loop is going to give me each full line of text. So logically, what would you propose that we do inside of a for loop that's reading a whole line of text at once, but we now want to get access to the individual values, like Hermione and Gryffindor, Harry and Gryffindor? How do we go about taking one line of text and gaining access to those individual values, do you think? Just instinctively, even if you're not sure what the name of the functions would be. 
+
+AUDIENCE: You can access it as you would as if you were using a dictionary, like using a key and value. 
+
+DAVID MALAN: So ideally, we would access it using it a key and value. But at this point in the story, all we have is this loop, and this loop is giving me one line of text that is the time. I'm the programmer now. I have to solve this. There is no dictionary yet in question. How about another suggestion here? 
+
+AUDIENCE: So you can somehow split the two words based on the comma? 
+
+DAVID MALAN: Yeah, even if you're not quite sure what function is going to do this, intuitively, you want to take this whole line of text-- Hermione, comma, Gryffindor, Harry, comma, Gryffindor, and so forth-- and split that line into two pieces, if you will. And it turns out wonderfully, the function we'll use is actually called split that can split on any characters, but you can tell it what character to use. 
+
+So I'm going to go back into students.py, and inside of this loop, I'm going to go ahead and do this. I'm going to take the current line. I'm going to remove the white space at the end, as always, using rstrip here. And then whatever the result of that is, I'm going to now call split and, quote/unquote, comma. 
+
+So the split function or method comes with strings. Strs in Python-- any str has this method built-in. And if you pass in an argument, like a comma, what this split function will do is split that current string into 1, 2, 3, maybe more pieces by looking for that character again and again. 
+
+Ultimately, split is going to return to us a list of all of the individual parts to the left and to the right of those commas. So I can give myself a variable called row here. And this is a common paradigm. When you know you're iterating over a file, specifically a CSV, it's common to think of each line of it as being a row and each of the values therein separated by commas as columns, so to speak. So I'm going to deliberately name my variable row, just to be consistent with that convention. And now what do I want to print? 
+
+Well, I'm going to go ahead and say this. Print, how about the following, an f string that starts with curly braces-- well, how do I get access to the first thing in that row? Well, the row is going to have how many parts? Two, because if I'm splitting on commas, and there's one comma per line, that's going to give me a left part and a right part, like Hermione and Gryffindor, Harry and Gryffindor. 
+
+When I have a list like row, how do I get access to individual values? Well, I can do this. I can say, row, bracket, 0. And that's going to go to the first element of the list, which should hopefully be the student's name. Then after that, I'm going to say, is in, and I'm going to have another curly brace here for row, bracket, 1. And then I'm going to close my whole quote. 
+
+So it looks a little cryptic at first glance. But most of this is just f string syntax with curly braces to plug in values. And what values am I plugging in? Well, row, again, is a list, and it has two elements, presumably-- Hermione in one and Gryffindor in the other, and so forth. So bracket 0 is the first element because, remember, we start indexing at 0 in Python. And 1 is going to be the second element. 
+
+So let me go ahead and run this now and see what happens-- python of students.py, Enter. And we see Hermione is in Gryffindor. Harry's in Gryffindor. Ron is in Gryffindor. And Draco is in Slytherin. 
+
+So we have now implemented our own code from scratch that actually parses, that is, reads and interprets a CSV file ultimately here. Now, let me pause to see if there's any questions. But we'll make this even easier to read in just a moment. Any questions on what we've just done here by splitting by comma? 
+
+AUDIENCE: So my question is, can we edit any line of code any time we want? Or the only option that we have is to append the lines? Or let's say, we want to, let's say, change Harry's house to Slytherin or some other house. 
+
+DAVID MALAN: Yeah, a really good question. What if you want to, in Python, change a line in the file and not just append to the end? You would have to implement that logic yourself. So for instance, you could imagine now opening the file and reading all of the contents in, then maybe iterating over each of those lines. And as soon as you see that the current name equals equals Harry, you could maybe change his house to Slytherin. 
+
+And then it would be up to you, though, to write all of those changes back to the file. So in that case, you might want to, in simplest form, read the file once and let it close. Then open it again, but open for writing, and change the whole file. 
+
+It's not really possible or easy to go in and change just part of the file, though you can do it. It's easier to actually read the whole file, make your changes in memory, then write the whole file out. But for larger files where that might be quite slow, you can be more clever than that. 
+
+Well, let me propose now that we clean this up a little bit because I actually think this is a little cryptic to read-- row, bracket, 0, row, bracket, 1-- it's not that well-written at the moment, I would say. But it turns out that when you have a variable that's a list like row, you don't have to throw all of those variables into a list. You can actually unpack that whole sequence at once. That is to say, if you know that a function like split returns a list, but you know in advance that it's going to return two values in a list, the first and the second, you don't have to throw them all into a variable that itself is a list. 
+
+You can actually unpack them simultaneously into two variables, doing name, comma, house. So this is a nice Python technique to not only create, but assign, automatically, in parallel, two variables at once, rather than just one. So this will have the effect of putting the name in the left, Hermione, and it will have the effect of putting Gryffindor the house in the right variable. 
+
+And we now no longer have a row. We can now make our code a little more readable by now literally just saying name down here and, for instance, house down here. So just a little more readable, even though, functionally, the code now is exactly the same. 
+
+All right, so this now works. And I'll confirm as much by just running it once more-- python of students.py, Enter. And we see that the text is as intended. But suppose, for the sake of discussion, that I'd like to sort this list of output. 
+
+I'd like to say hello, again, to Draco first, then hello to Harry, then Hermione, then Ron. How can I go about doing this? Well, let's take some inspiration from the previous example, where we were only dealing with names and, instead, do it with these full phrases. So and so is in house. 
+
+Well, let me go ahead and do this. I'm going to go ahead and start scratch and give myself a list called students, equal to an empty list, initially. And then with open students.csv as file, I'm going to go ahead and say this-- for line in file. And then below this, I'm going to do exactly as before-- name, comma, house equals the current line, stripping off the white space at the end, splitting it on a comma-- so that's exact same as before. 
+
+But this time, before I go about printing the sentence, I'm going to store it temporarily in a list so that I can accumulate all of these sentences and then sort them later. So let me go ahead and do this. Students, which is my list, .append-- let me append the actual sentence I want to show on the screen-- so another f string. 
+
+So name is in house, just as before. But notice, I'm not printing that sentence. I'm appending it to my list-- not a file, but to my list. Why am I doing this? Well, just because, as before, I want to do this. For student in the sorted students, I want to go ahead and print out students, like this. 
+
+Well, let me go ahead and run python of students.py, and hit Enter now. And I think we'll see, indeed, Draco is now first. Harry is second. Hermione is third. And Ron is fourth. 
+
+But this is arguably a little sloppy, right? It seems a little hackish that I'm constructing these sentences. And even though I technically want to sort by name, I'm technically sorting by these whole English sentences. So it's not wrong. 
+
+It's achieving the intended result, but it's not really well designed because I'm just getting lucky that English is reading from left to right. And therefore, when I print this out, it's sorting properly. It would be better, really, to come up with a technique for sorting by the students' names, not by some English sentence that I've constructed here on line 6. 
+
+So to achieve this, I'm going to need to make my life more complicated for a moment. And I'm going to need to collect information about each student before I bother assembling that sentence. So let me propose that we do this. Let me go ahead and undo these last few lines of code so that we currently have two variables, name and house, each of which has name and the student's house respectively. And we still have our global variable, students. 
+
+But let me do this. Recall that Python supports dictionaries. And dictionaries are just collections of keys and values. So you can associate something with something else, like, a name with Hermione, like, a house with Gryffindor. That really is a dictionary. 
+
+So let me do this. Let me temporarily create a dictionary that stores this association of name with house. Let me go ahead and do this. 
+
+Let me say that the student here is going to be represented initially by an empty dictionary. And just like you can create an empty list with square brackets, you can create an empty dictionary with curly braces. So give me an empty dictionary that will soon have two keys, name and house. How do I do that? 
+
+Well, I could do it this way-- student, open bracket, name equals the student's name that we got from the line. Student, bracket, house equals the house that we got from the line. And now I'm going to append to the students list-- plural-- that particular student. 
+
+Now, why have I done this? I've admittedly made my code more complicated. It's more lines of code, but I've now collected all of the information I have about students while still keeping track-- what's a name, what's a house. The list, meanwhile, has all of the students' names and houses together. Now, why have I done this? Well, let me, for the moment, just do something simple. Let me do for student in students, and let me very simply now say, print the following f string, the current student with this name is in this current student's house. 
+
+And now notice one detail. Inside of this f string, I'm using my curly braces, as always. I'm using, inside of those curly braces, the name of a variable, as always. But then I'm using not bracket 0 or 1 because these are dictionaries now, not list. But why am I using single quotes to surround house and to surround name? Why single quotes inside of this f string to access those keys? 
+
+AUDIENCE: Yes, because you have double quotes in that line 12. And so you have to tell Python to differentiate. 
+
+DAVID MALAN: Exactly, because I'm already using double quotes outside of the f string, if I want to put quotes around any strings on the inside, which I do need to do for dictionaries because, recall, when you index into a dictionary, you don't use numbers like lists-- 0, 1, 2, onward-- you, instead, use strings, which need to be quoted. But if you're already using double quotes, it's easiest to then use single quotes on the inside, so Python doesn't get confused about what lines up with what. So at the moment, when I run this program, it's going to print out those hellos. 
+
+But they're not yet sorted. In fact, what I now have is a list of dictionaries, and nothing is yet sorted. But let me tighten up the code too to point out that it doesn't need to be quite as verbose. 
+
+If you're in the habit of creating an empty dictionary, like this on line 6, and then immediately putting in two keys, name and house, each with two values, name and house respectively, you can actually do this all at once. So let me show you a slightly different syntax. I can do this. 
+
+Give me a variable called student, and let me use curly braces on the right-hand side here. But instead of leaving them empty, let's just define those keys and those values now. Quote/unquote name will be name, and quote/unquote house will be house. 
+
+This achieves the exact same effect in one line instead of three. It creates a new non-empty dictionary containing a name key, the value of which is the student's name, and a house key, the value of which is the student's house. Nothing else needs to change. 
+
+That will still just work so that if I, again, run python of students.py, I'm still seeing those greetings, but they're still not quite actually sorted. Well, what might I go about doing here in order to-- what could I do to improve upon this further? Well, we need some mechanism now of sorting those students. But unfortunately, you can't do this. 
+
+We can't sort all of the students now because those students are not names like they were before. They aren't sentences like they were before. Each of the students is a dictionary, and it's not obvious how you would sort a dictionary inside of a list. 

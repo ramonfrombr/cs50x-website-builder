@@ -1,0 +1,81 @@
+Bueno, resulta que Python tiene aún más funcionalidades, al igual que otros módulos en Python. Existe una característica conocida como argumentos de línea de comandos. Esta es una característica no solo de Python, sino de muchos lenguajes en general, que te permite proporcionar entrada no cuando se te solicita dentro de un programa, como ocurre cuando llamamos a la función input de Python.
+
+En cambio, existe esta característica de los argumentos de línea de comandos de los programas, que te permite proporcionar argumentos que se toman como entrada del programa al ejecutarlo en la línea de comandos. Hasta ahora, si recuerdas, generalmente ejecutamos Python seguido del nombre del archivo.py, como por ejemplo, "Python hello.py". Y nunca hemos ejecutado ninguna palabra o frase después del nombre del archivo, pero podríamos hacerlo.
+
+De hecho, cuando ejecutas programas en un entorno de línea de comandos, como estamos haciendo, puedes proporcionar cualquier número de palabras, números o frases después del comando que estás escribiendo. Todas esas palabras se pasarán de alguna manera como entrada al programa en sí. No es necesario solicitar al usuario una cosa a la vez llamando manualmente a la función input.
+
+Entonces, ¿qué significa esto en términos reales? Permíteme ir a VS Code aquí. Permíteme proponer la forma en que podríamos aprovechar un cierto módulo. Voy a crear un archivo llamado name.py. Y me gustaría utilizar un nuevo módulo esta vez que me proporcionará acceso a los valores que se han escrito en la línea de comandos.
+
+¿Pero qué módulo será este? Bueno, este se llamará sys. Y sys, abreviatura de sistema, contiene muchas funcionalidades que son específicas del propio sistema y de los comandos que tú y yo estamos escribiendo. La documentación de este módulo se encuentra en esta URL. Y en ella se enumeran todas las diversas funciones, variables y similares que vienen con ese módulo. Pero nos vamos a centrar en algo más específico, concretamente en esto.
+
+Resulta que en el módulo sys de Python, hay una variable que simplemente existe para ti llamada argv. Significa argument vector, que es una forma elegante de describir la lista de todas las palabras que la persona escribió en su línea de comandos antes de presionar Enter. Todas estas palabras se proporcionan mágicamente a través de Python en una variable llamada sys.argv.
+
+Esta variable es una lista, lo que significa que el primer elemento será la primera palabra que escribiste. El segundo elemento será la segunda palabra que escribiste, y así sucesivamente. Y a través de esta lista, entonces, ¿puedes averiguar qué palabras escribió la persona en el prompt y tal vez utilizar eso para influir en el comportamiento de tu propio programa?
+
+Entonces, ¿qué significa esto ahora en términos reales? En esta nueva pestaña llamada name.py, permíteme importar sys. Con ese módulo sys, voy a tener acceso a sys.argv, pero ¿cómo puedo usarlo? Bueno, hagamos esto. En lugar de crear un programa de Hola Mundo que todas las veces solo ha buscado el valor de retorno de input para averiguar lo que el usuario quiere que se imprima, adelantémonos y esperemos que el usuario nos diga directamente cuando ejecute el programa en sí cuál es su nombre.
+
+Y supongamos que esta vez me gustaría generar un montón de etiquetas de nombre, inicialmente solo una. Y aquí, en los Estados Unidos, es muy común usar una pegatina en tu solapa que dice Hello, my name is David. Así que quiero imprimir un texto similar. La idea es que tal vez algún día pueda mejorar este programa y enviar ese texto directamente a la impresora y generar dinámicamente esas etiquetas de nombre.
+
+Permíteme hacer esto. Permíteme imprimir como siempre, Hola. Pero agregaré algo más esta vez para hacer las cosas más interesantes. Hola, mi nombre "es", comillas. Después de eso, generalmente he tenido la costumbre de llamar a input, almacenar el valor de retorno en una variable y pasar el nombre de esa variable aquí.
+
+Pero en cambio, voy a usar directamente sys.argv[1]. Y eso es todo. Ahora tendré un programa que dice Hola, mi nombre es seguido de lo que sea que esté en sys.argv[1]. Y ten en cuenta que .argv es nuevamente una lista. Y recordando nuestra discusión sobre bucles y listas, utilizamos esta notación de corchetes para obtener los diferentes elementos dentro de una lista.
+
+Muy bien, bajemos ahora a la ventana de la terminal y ejecutemos Python name.py. Pero esta vez, en lugar de simplemente presionar Enter y esperar a que el programa me pida mi nombre, permíteme proactivamente decirle a este programa cuál es mi nombre en la llamada a la línea de comandos.
+
+Aquí vamos. D-A-V-I-D, separado por un espacio del nombre del archivo, para que ahora, cuando ejecute Python name.py David, vea en la pantalla, voilà, Hola, mi nombre es David. Así que, basándonos solo en esta demostración, creo que podemos inferir exactamente lo que sucede en sys.argv, aunque pueda parecer complicado a primera vista.
+
+Fijémonos en sys.argv[1] aquí. Claramente, sys.argv[1] almacena D-A-V-I-D. Pero es la posición 1. En el pasado, cuando hablamos de bucles, mencionamos que son de índice cero. Es decir, el primer elemento es cero. El siguiente elemento es uno. Este siguiente elemento es dos y así sucesivamente.
+
+Y sin embargo, aquí estoy tratando esto como si mi nombre estuviera en el comienzo de la lista en la posición uno. Entonces, permíteme hacer esta pregunta, ¿qué hay probablemente en sys.argv[0]? ¿Qué hay probablemente en sys.argv[0], el primer elemento en esa lista?
+
+AUDIENCIA: Oh, sí. Creo que es como en C, el nombre del programa.
+
+DAVID MALAN: Exactamente, es exactamente igual que en C. En otros lenguajes, es el nombre del programa. Bueno, si consideramos lo que escribí, definitivamente escribí Python porque ese es el nombre de mi intérprete. Realmente no necesitamos saber eso porque estamos usando Python en sí.
+
+Pero después de eso, escribí dos cosas. Escribí name.py como lo he hecho tantas veces cuando quiero que Python ejecute el programa que he escrito. Y por convención, Python almacena en sys.argv el nombre del archivo que estás ejecutando o interpretando, seguido de cualquier número de otras palabras que hayas escrito.
+
+Así que todo este tiempo, podríamos haber estado accediendo al nombre del programa, que francamente no es tan interesante. Pero ahora también podemos acceder a las palabras que se escriben después de eso en el prompt. Pero, por supuesto, si no escribo nada, ¿qué podría suceder aquí? Sería ingenuo de mi parte asumir que siempre habrá algo en la posición 1 de sys.argv.
+
+Permíteme intentar esto. Python name.py. Y no voy a dar mi nombre porque en este punto, es posible que ni siquiera sepa que quieres que escriba mi nombre. Así que permíteme presionar Enter ahora. Y, oh, ahora vemos un error. Es decir, una llamada de excepción en Python. Este es uno nuevo. Es un error de índice, y el mensaje de error dice "índice de lista fuera de rango".
+
+Y resulta que este es uno de los errores más comunes en programación, ya sea que estés usando una lista en Python o matrices o vectores en otros lenguajes, intentar acceder a algún elemento que no existe. Intentas ir demasiado a la izquierda o demasiado a la derecha en este objeto que es simplemente una lista de algunos valores.
+
+Entonces, por supuesto, el error aquí es que asumo que habrá algo en la posición 1 cuando en realidad es la posición 0 la que tiene un valor. Pero corregir esto no significa simplemente cambiar el uno por un cero. ¿De qué otra manera podría manejar este error? ¿Cómo podría manejar este error? Este error de índice que ocurre si el usuario simplemente no recuerda o no sabe que debe escribir su nombre real en el prompt.
+
+AUDIENCIA: Siempre podemos agregar una excepción al programa, por ejemplo, si no hay nada en la posición 1, simplemente decimos "OK, no hemos recibido un parámetro o algo similar". Pero si lo hay, continuamos con el programa.
+
+DAVID MALAN: Perfecto. Entonces, si puedo resumir, podemos intentar ejecutar esta línea de código, excepto si hay un error, lo manejaremos de alguna otra manera. Idealmente, cuando te conviertas en un programador lo suficientemente competente, habrías anticipado esto y habrías escrito el siguiente código desde el principio. Pero cuando estás aprendiendo, es razonable ver un error y pensar "oh, no me di cuenta de que debería detectarlo" y luego mejorar tu código.
+
+Pero por supuesto, si lees la documentación, te impregnas de algunas de las lecciones aprendidas en el pasado, te acostumbrarás a intentar y comprobar algunas de estas excepciones tú mismo. Entonces, permíteme resolver esto de una forma posible como has propuesto aquí. Intentemos manejar esta excepción de la siguiente manera.
+
+Permíteme seguir adelante. En lugar de simplemente llamar ciegamente a esta línea de impresión, intentemos imprimir Hola, mi nombre es tal y tal, excepto si hay un problema, específicamente si hay un error de índice, ¿qué quiero hacer? Diré algo así como "argumentos insuficientes". Podría explicarlo de manera más detallada, pero por ahora simplemente les diré a los usuarios que me dieron argumentos insuficientes, es decir, palabras insuficientes en el prompt. Ahora, aún no funcionará exactamente como quiero. Todavía no podré generar su etiqueta de nombre. Pero al menos, no verán un mensaje de error críptico y pensarán que ellos mismos rompieron el programa.
+
+Permíteme ahora ejecutar Python name.py Enter y "argumentos insuficientes". Bueno, permíteme ejecutar Python name.py y escribir mi nombre, David. Y ahora volvemos a funcionar y veo que mi nombre está en la pantalla también.
+
+Pero estrictamente hablando, no tengo que intentar hacer esto. En realidad, puedo ser un poco más defensivo al escribir este código. Y tal vez pueda verificar si el usuario ha proporcionado o no un nombre o varios nombres en el prompt para darles mensajes de error más refinados también.
+
+Entonces, ¿cómo podría hacer esto? Permíteme deshacer el manejo de excepciones que agregué. Y en su lugar, ¿por qué no intento esto más modestamente? Permíteme introducir una condicional aquí. Si la longitud de sys.argv es menor que 2 o, de manera equivalente, igual a solo un valor (pero me quedo con menos de 2 por ahora), entonces ve adelante e imprime "argumentos insuficientes".
+
+Entonces, en última instancia, quiero dos argumentos. Quiero el nombre del programa en la posición 0. Y quiero el nombre de la persona en la posición 1. Entonces eso es un total de dos argumentos. Entonces, si tengo menos de dos argumentos, digámosle al usuario con esta línea de impresión, L si la longitud de sys.argv es mayor que 2, como si hubieran escrito demasiadas palabras en el prompt, bueno, digámosles "demasiados" argumentos. En cambio, si lo hicieron correctamente y nos dieron exactamente dos argumentos. En otro caso, adelante y imprimamos lo que realmente me interesa.
+
+Muy bien, permíteme ir a mi ventana de la terminal aquí y ejecutar Python name.py y voilà. Oh, otro tipo completamente diferente de error. Este es un error de sintaxis, que hemos visto anteriormente. Un error de sintaxis, recuerda, es un "mea culpa", es decir, lo he hecho mal aquí. Y escribí "sintaxis no válida".
+
+Y ninguna cantidad de condicionales o manejo de excepciones realmente capturará esto. Necesito volver atrás y hacer que mi programa funcione porque no se está ejecutando en absoluto. Permíteme ir aquí arriba y ver. La línea 4 es el problema. Y de hecho, parece que tengo una cadena no terminada aquí. Necesito ir adelante y agregar esta comilla doble.
+
+Entonces, permíteme seguir adelante. Y con esa pista falsa eliminada, permíteme volver a ejecutar Python name.py y presionar Enter. Y ahora, vemos "argumentos insuficientes". OK, tal vez quiere mi nombre completo. Permíteme ejecutar Python name.py, David Malan, escribiendo ambas palabras después del nombre del archivo y presionando Enter. Y ahora, por supuesto, hay "demasiados argumentos".
+
+De acuerdo. Ahora, obedeceré y haré Python name.py y solo David. Y ahí lo tenemos. Mi etiqueta de nombre impresa en la pantalla. Así que estrictamente hablando, no tenemos que manejar excepciones si podemos ser un poco más inteligentes al respecto y simplemente verificar las cosas que nos preocupan, especialmente si queremos darle al usuario consejos más refinados.
+
+No queremos simplemente decirles "no, algo salió mal" o simplemente pasar. Queremos decirles "no, eso es muy poco" o "no, eso es demasiado". Ya tenemos las condicionales en nuestro vocabulario, a través de las cuales ahora podemos expresar eso.
+
+Bueno, permíteme hacer una pausa aquí y ver si hay alguna pregunta ahora sobre cómo manejamos el error anterior con el error de índice o sobre cómo ahora evitamos proactivamente todos los errores de índice comprobando primero si son demasiado pocos, si son demasiados o si son exactamente lo que queremos.
+
+AUDIENCIA: Hola, sí, gracias. Me preguntaba, mencionaste la posibilidad de utilizar el nombre completo. ¿Hay alguna forma de, más adelante, tener personas que quieran utilizar su nombre completo y otras personas que solo quieran utilizar su primer nombre?
+
+DAVID MALAN: Absolutamente, permíteme proponer que volvamos a ese soporte para múltiples nombres. De hecho, podríamos hacer eso. Y también debo mencionar que podemos admitir nombres completos en este momento si hago esto. En lugar de escribir David espacio Malan, lo cual es problemático, porque según la definición de cómo funciona argv, cada palabra termina en una ubicación específica en la lista.
+
+Pero si agrego comillas, comillas simples o comillas dobles en la línea de comandos, Python verá esto como dos cosas en total. El nombre del archivo y este nombre completo. Y ahora, cuando presiono Enter, no veo las comillas. Todo se pasa como mi nombre completo. Y si quiero adaptar esto aún más para varias personas, también podremos hacerlo. Otras preguntas ahora sobre esta versión con if, elif, else o sobre el "except" anterior.
+
+AUDIENCIA: Hola, me gustaría preguntarte ¿podemos usar múltiples instrucciones else?
+
+DAVID MALAN: ¿Se pueden usar múltiples sentencias else? No, else es la última declaración de captura general que se puede tener. Puedes tener múltiples declaraciones elif en el medio, pero no múltiples elses.

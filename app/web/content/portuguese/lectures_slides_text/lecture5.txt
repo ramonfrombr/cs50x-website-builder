@@ -1,0 +1,110 @@
+Slide [0]
+
+Programação na Web
+com Python e JavaScript
+
+Slide [1]
+
+JavaScript
+
+Slide [2]
+
+Cliente
+Servidor
+
+Slide [3]
+
+JavaScript
+
+Slide [4]
+
+<script> 
+</script>
+
+Slide [5]
+
+<script> 
+    alert('Olá, mundo!'); 
+</script>
+
+Slide [6]
+
+Funções
+function hello() { 
+    alert('Olá, mundo!'); 
+}
+
+Slide [7]
+
+Eventos
+•onclick 
+•onmouseover 
+•onkeydown 
+•onkeyup 
+•onload 
+•onblur 
+•...
+
+Slide [8]
+
+querySelector
+•document.querySelector('tag') 
+•document.querySelector('#id') 
+•document.querySelector('.class')
+
+Slide [9]
+
+Armazenamento Local
+•localStorage.getItem(chave) 
+•localStorage.setItem(chave, valor)
+
+Slide [10]
+
+APIs
+
+Slide [11]
+
+JSON
+
+Slide [12]
+
+{ 
+    "origem": "Nova York", 
+    "destino": "Londres", 
+    "duração": 415 
+}
+
+Slide [13]
+
+{ 
+    "origem": { 
+        "cidade": "Nova York", 
+        "código": "JFK" 
+    }, 
+    "destino": { 
+        "cidade": "Londres", 
+        "código": "LHR" 
+    }, 
+    "duração": 415 
+}
+
+Slide [14]
+
+{ 
+    "taxas": { 
+        "EUR": 0,907, 
+        "JPY": 109,716, 
+        "GBP": 0,766, 
+        "AUD": 1,479 
+    }, 
+    "base": "USD" 
+}
+
+Slide [15]
+
+JavaScript
+
+Slide [16]
+
+Programação na Web
+com Python e JavaScript

@@ -1,0 +1,11 @@
+Allow me to propose now, that we take things further and move away from using only those modules, those libraries that Python comes with to talk about more generally packages that exist. One of the reasons that Python is so popular and powerful these days is that there's a lot of third-party libraries out there as well, otherwise known as packages. 
+
+Strictly speaking, Python itself has a term of art called a package, which is a module essentially that's implemented in a folder, not just a file but a folder. But more generally, a package is a third-party library that you, that I can install on our own Mac or PC or our cloud server and gain access to even more functionality that other people have implemented for us. 
+
+Now, one of the locations you can get all of these packages is called the PYTI website, the Python Package Index which lives at this URL here. And this is a website that is searchable via the command line, as well as via the web, that allows you to download and install all sorts of packages. Even CS50 has some of its own packages in services like these. 
+
+Now, there's a fun one out there that's a throwback to a command that's been around for years in command line environments called cowsay. Cowsay is a package in Python that allows you to have a cow say something on your screen. If curious to read up on it, its own documentation is on pi.py.org specifically at this URL here. 
+
+But how do you actually get the package into your system? Well, technically, you could figure out how to download the file and maybe unzip it and put it into the right location on your Mac or PC. But nowadays, a lot of languages, Python among them, has what's called its own package manager. This one here called pip which is just one. 
+
+So pip is a program that generally comes with Python itself, nowadays, that allows you to install packages onto your own Macs or PCs or cloud environment by just running a command. And then voila, you have access to a whole new library in Python that didn't come with Python itself. But now it's available on your system for you. 

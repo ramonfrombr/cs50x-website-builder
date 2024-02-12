@@ -1,0 +1,35 @@
+So how might I go about using a program like this? Well, let me come back to my generate the py file. And why don't we go ahead and try generating a random number between 1 and 10? 
+
+You might do this frequently in the real world. When you just want someone to pick a random number, you tell them as much in the human response. Let's get the computer to do the same here. Let me go ahead and delete my two lines of code at the bottom but keep my import random. 
+
+And let's go ahead and define a variable this time called number, set it equal to the return value of random.randint and now passing A, a value of 1 and B, a value of 10. And now, let's go ahead and print the number. I'm going to go ahead in my terminal window and run Python of generate.py and hit Enter. 
+
+4. A Python of generate.py and hit Enter. 8, again, 9, again, 7, again, 10, again, 2, again. And we can do this all day long. And if we add all of those up, they should end up being with 10% probability each. 
+
+Now, how might you use this information? Well, maybe we're playing a guessing game. Or maybe we're trying to randomize the behavior of some character in the game. You can imagine using very simple building blocks like this just spicing up your program by getting it to do things a little less predictably because you're choosing these values seemingly randomly. And you're deferring to Python to actually do the generation of these numbers using its own algorithms and its own math. 
+
+Well, what more could we do here? Let me propose that we introduce another function that comes from this random library. Yet, another that you yourself don't have to implement, shuffle. If you read the documentation for shuffle in the same random module, you'll see that it takes in a list, for instance, of values and just shuffles them up. It randomize them like a deck of cards. 
+
+Here, you might shuffle them so as to put them into seemingly random order. Well, how do I use this based on this function's name? Well, let me propose that we go back to VS Code here. And let me go ahead and this time do the following. Because I need to shuffle something like a deck of cards, let me go ahead and not just import random. But let me give myself a variable called cards that's going to be of type list. And just so I have something to shuffle, I don't need all 52 cards in a typical deck. 
+
+I'm just going to shuffle three cards. A Jack, a Queen, and a King. I could call those strings anything I want, but I just wanted a list of some values so as to shuffle them up. That is randomize the order therein. Well, how does this now work? If you read the documentation for random.shuffle, you'll see that it shuffles the argument in place. 
+
+That is unlike many of the functions we have seen. It doesn't return to you a value that contains the shuffled cards in this case. It actually shuffles the list it's given itself. So what this means for my code is that I need to do something like this-- random.shuffle and pass in the variable containing those cards. 
+
+And then on a final line here, how might I go about printing the cards? Well, I could do this, and I could say print card. But if I do that, I'm actually going to see Python syntax for lists. And it's just going to format in its own way using commas and the like. I want to print these cards out one at a time just because I think it'll look a little better so we can use some of our syntax from loops and say something like this-- for card in cards, go ahead and print out the current card. 
+
+So what's now happening here? Line three, I'm defining a list of three cards in this order-- Jack, Queen, King. I'm then shuffling those same cards on line four. And then on line five, I'm using a for loop for each of the cards in that list printed out one at a time and because I'm using print one line at a time. 
+
+Well, let's see the results. Down here in my terminal window, I'm going to run Python of generate.py and hit Enter. Queen, King, Jack seemingly shuffled because that's not the order I defined earlier. Let's do it again. Queen, King, Jack. Hmm, OK, that happens to be the same. But let's see. This could just be bad chance. 
+
+There we go. Jack, Queen, King. Doesn't look like it's shuffled, but at least we're getting back different orderings now. Again, Jack, Queen, King. Hmm, not so good. Jack, Queen, King. Not so good. This is someone you probably want to play against with cards. Queen, Jack, King, there we go. 
+
+But of course, we only have three cards here. So there's not that many permutations we might see. And if we do this over time, we will see all of them. But if we had, of course, 13 or 52 cards, we'd see a lot more permutations instead. 
+
+So we have now these three ways to generate random information. One, a simple coin toss if you want to start some kind of athletic event. One, pick a number between 1 and 10 if you want to decide something based on that. And now, using shuffle, we can even take in a list of things and shuffle them about so that we get some kind of random behavior. Well, let me pause here and see if where there's any questions yet on random, on modules, or any of these three functions. 
+
+AUDIENCE: Yeah, can we increase or decrease the probability of cards if we want to? For example, there are three. There is a 33% chance of probable B. So is there any chance to increase or decrease the probability? 
+
+DAVID MALAN: Can you set these probabilities not using these same functions? Can you set the probabilities? But you can absolutely implement some of your own functions or use more sophisticated functions that do exist in this library and others to exercise more control. 
+
+These are meant to be very user-friendly and simple functions, certainly the ones we looked at, that give you equal probability for all of those. But absolutely you could skew things, though, hopefully, if you're implementing a gambling game or the like, you're not actually making some cards more probable than others. 

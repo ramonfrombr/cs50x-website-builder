@@ -1,0 +1,49 @@
+
+
+
+
+In addition to functions like map, there's also this one called filter that can be used to achieve the same effect, but with a more functional approach, if you will. 
+
+Let me go back to VS Code here. And with the same example, let me do this. Let me leave the original list of above as before, including Draco, who's not in fact from Gryffindor. And let me temporarily define a function called is Gryffindor that takes in as a value something like a student S. 
+
+And then, let's do this. Let's go ahead and say if s quote unquote house equals equals Gryffindor, then go ahead and return true. Otherwise, go ahead and return false. Now, we've seen before conditionals like this that are a bit unnecessarily verbose. I don't need to have a conditional if I'm already asking a Boolean question up here. 
+
+So I can actually tighten this up as we've done in the past and just return does the student's house equal equal Gryffindor? Either it does and it's true, or it doesn't in it's false. I don't need to explicitly return true or false. I can just return the value of that Boolean. 
+
+Let's go ahead now and do this. I'm going to create, as before, a variable called Gryffindors, a list for all of my Gryffindor students that equals to, this time, the result of calling filter. Filter takes at least two arguments here, one of which is the name of a function to call is Gryffindor. And I'm going to apply that function to each of the elements of this sequence here. 
+
+So similar in spirit to map, I'm passing in a function that's going to be applied to each of the elements in the sequence. But map returns one value for each element in the sequence. That's how we forced all of the words to uppercase. 
+
+But if I want to conditionally include a student in my resulting Gryffindors list, I can use filter instead. Filter expects its first function to be not something like str.upper, but a function that returns true or false. Tell me whether or not I should include or not include the current student from the final list. 
+
+And the question being asked is, do they live in Gryffindor? We're checking the dictionary's house key for that answer. And so, ultimately, I think we'll be left with something quite similar. For Gryffindor in the sorted version-- let's do for Gryffindor in Gryffindors, let's go ahead then and print out the current students, Gryffindor name. 
+
+It's not going to be sorted just yet. But when I run this version here Python of Gryffindors.py and hit Enter, we're back in business. It's unsorted. But we have Hermione, Harry, and Ron, but not Draco. 
+
+And if you recall from a few weeks back, if we want to even a list of dictionaries, we can still do that too. I can call sorted on Gryffindors plural. And I can pass in a key. And that key can have a anonymous function, a.k.a. A Lambda function, that takes in a student as input, call it s, and then returns the value s quote unquote name, if my goal is to sort by, indeed, students own names. 
+
+If I go ahead now and run Python of Gryffindors.py, I see the same list of students. But this time, it's sorted. So here we've seen two approaches to this particular problem of Gryffindor students. Whereby we can either use something like a list comprehension, and inside of that list comprehension do a bit of filtration, including an if conditional as I did. 
+
+Or we can take a more functional approach by just using this filter function, passing into it the function that I want to make these decisions for me, and then include only those for whom true is returned. Any questions on either of these two approaches? 
+
+STUDENT: Yeah. I just had a question, that if we write a code like in the previous version, where everything is stuffed into one line, won't the-- if we check for the style of the code, then won't it have a problem with it because it's less readable? 
+
+DAVID J. MALAN: So would a formatter like black have a problem with the style of some of this code? 
+
+STUDENT: The previous one, where the everything was tucked into one line. 
+
+[INTERPOSING VOICES] 
+
+DAVID J. MALAN: Oh, a good question. Would something like Black have a problem with this code? Well, let me rewind to that version, which was using the somewhat longer list comprehension, which looked like, if we go far enough back, give me a few more undoes, which looked like this ultimately. Let me go ahead and run Black on Gryffindors.py. 
+
+And you'll see that I actually-- it reformatted ever so slightly. But I proactively fix this myself. Had I done this and done it on just one line, but I knew that Black might not like that, it would have fixed it for me. So I just proactively fixed it before writing the code myself. How about time for one other question on Gryffindors.py and this approach of using a list comprehension or filter? 
+
+STUDENT: Yeah. When using filter, instead of calling the function is Gryffindor, can you use it right there inside filter? 
+
+DAVID J. MALAN: Can you use the function is Gryffindor? So you don't want to call it like this. Because you don't want to call it then. You want filter to call the function for you, if that's what you mean. So I pass it in only by its name instead. 
+
+STUDENT: No, I mean, if you can write the return as house equals equals Gryffindor inside [INAUDIBLE]. 
+
+DAVID J. MALAN: Yes, indeed. In fact, so recall that we indeed used these Lambda functions way back when we wanted to pass in a quick and dirty function anonymously to allow sorted to filter by a different key of a dictionary. We can do that here. 
+
+I can actually take the essence of this is Gryffindor function. I can change the name of this function in my filter call to be another Lambda function, passing in an argument like s, and returning exactly that. I can now delete my is Gryffindor function all together. And now, when I run Python of Gryffindors.py, I still get the same answer. And I've not bothered defining a function only to then use it in one and only one place. 

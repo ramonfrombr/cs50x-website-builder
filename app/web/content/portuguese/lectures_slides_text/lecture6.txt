@@ -1,0 +1,71 @@
+Slide [0]
+
+Programação da Web
+com Python e JavaScript
+
+Slide [1]
+
+Interfaces do Usuário
+
+Slide [2]
+
+Aplicações de Página Única
+
+Slide [3]
+
+janela
+
+Slide [4]
+
+janela
+janela.innerWidth
+janela.innerHeight
+
+Slide [5]
+
+janela
+janela.scrollY
+document.body.offsetHeight
+janela.innerHeight
+janela.innerWidth
+
+Slide [6]
+
+React
+
+Slide [7]
+
+Programação Declarativa
+
+Slide [8]
+
+Programação Imperativa
+<h1>0</h1>
+Visualização
+let num = parseInt(document.querySelector("h1").innerHTML); 
+num += 1; 
+document.querySelector("h1").innerHTML = num;
+Lógica
+
+Slide [9]
+
+Programação Declarativa
+<h1>{num}</h1>
+Visualização
+num += 1;
+Lógica
+
+Slide [10]
+
+React
+ReactDOM
+Babel
+
+Slide [11]
+
+Interfaces do Usuário
+
+Slide [12]
+
+Programação da Web
+com Python e JavaScript

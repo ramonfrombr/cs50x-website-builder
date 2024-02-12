@@ -1,0 +1,7 @@
+
+
+So what more is there in the world of regular expressions and this own library? Not just re.search and also re.sub, there's other functions, too. There's re.split, via which you can split a string, not using a specific character or characters like a comma and a space, but multiple characters as well. And there's even functions like re.findall, which can allow you to search for multiple copies of the same pattern in different places in a string so that you can perhaps manipulate more than just one. 
+
+So at the end of the day now, you've really learned a whole other language, like that of regular expressions, and we've used them in Python. But these regular expressions actually exist in so many languages, too, among them JavaScript, and Java, and Ruby, and more. So with this new language, even though it's admittedly cryptic when you use it for the first time, you have this newfound ability to express these patterns that, again, you can use to validate data, to clean up data, or even extract data, and from any data set you might have in mind. 
+
+That's it for this week. We will see you next time. 

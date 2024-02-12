@@ -1,0 +1,14 @@
+
+Allow me to turn back now to our implementation here of this randomness and consider how we might leverage other types of functionality that aren't necessarily in this specific library here. Well, it turns out that Python also comes with a statistics library. And this contains all sorts of functions for doing things more statistical in nature, namely calculating means or medians or modes or other aspects of a data set that you might want to analyze. 
+
+So how might we use the statistics module in Python? Well, we might first just take a look at it's documentation like any other module in Python. And we'll see within that library that there's a whole bunch of function. And one of those functions is one that's quite simple. It's average. A function that allows you to calculate the average of some numbers that you've passed in. 
+
+Let me go ahead and in VS Code in my terminal window, open up a new file called average.py. And at the top of this file, I'm going to import a different library this time, namely the statistics module in Python. And now, I'm going to go ahead and call a function that I know comes in that module, namely mean for the average of some values. And I'm going to call statistics.mean. 
+
+And I'm going to pass into this function mean, a list of some values. And let's suppose that I'm quickly trying to calculate what my current grade average is in school. And I did really well on my first test. And I got 100%. And on my second, I did well but not as well. And I got a 90. And ironically, I'm not very good with math. So I'd like to figure out what my average now is between those two tests. 
+
+So let me go ahead now and in this list, type in the number 100, comma, 90, thereby passing in a list of two values, two INTs, 190. And outside of those are the parentheses because, of course, this is now the argument I'm passing to the function called mean. And this function mean is in the module called statistics. 
+
+Well, it's not that interesting to just calculate the mean if I don't actually see what it is. So let me additionally pass the return value of that mean function to the print function as usual. Let me now in my terminal window in VS Code, type in Python of average.py and hit Enter. And voila, as you might expect, my average is 95%. 
+
+So the difference here is that I'm just using a different module that still comes with Python. But I need to import it instead of, for instance, the random module instead. And this time, I know from the documentation that there exists a function called mean. 

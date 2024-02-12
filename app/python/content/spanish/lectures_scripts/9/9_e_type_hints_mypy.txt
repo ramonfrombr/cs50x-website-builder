@@ -1,0 +1,123 @@
+Resulta que Python es un lenguaje de tipado dinámico. Es decir, no es de tipado fuerte. Por lo tanto, cuando quieres un entero, debes indicarle al programa que estás utilizando un entero. No tienes que indicarle al programa que estás usando una cadena de texto, un número decimal, un conjunto o cualquier otra cosa.
+
+En general, hasta la fecha, cuando tú y yo creamos variables, simplemente le damos un nombre a la variable. A menudo la asignamos utilizando el signo igual y algún otro valor. Sinceramente, Python de forma dinámica determina qué tipo de variable es. Si es, por ejemplo, la cadena "Hola, mundo", la variable será de tipo cadena de texto. Si es 50, la variable será de tipo entero.
+
+Sin embargo, en otros lenguajes, como C, C++ y Java, a veces es necesario que el programador especifique qué tipos de variables se desean utilizar. La ventaja de esto es que ayuda a detectar errores más fácilmente. Porque si tienes la intención de almacenar una cadena de texto o un número entero, pero accidentalmente almacenas un número entero o una cadena de texto, inversamente, o algo completamente distinto, tu lenguaje puede detectar ese tipo de error por ti. Cuando, por ejemplo, ejecutas el programa, puede decirte "no, has cometido un error". Puedes solucionarlo antes de que tus usuarios reales se den cuenta.
+
+En Python también es posible proporcionar sugerencias al propio Python sobre qué tipo de variable debería ser. Pero el lenguaje en sí no hace cumplir esto de manera estricta. En su lugar, puedes usar una herramienta que te dirá si estás utilizando una variable correctamente. Pero normalmente se trata de una herramienta que ejecutarías como programador antes de publicar tu código en el mundo. O si tienes algún tipo de proceso automatizado, puedes ejecutar esta herramienta, al igual que podrías dar formato o enlazar tu código con algún otro programa antes de publicarlo en el mundo.
+
+Entonces, ¿cómo podríamos utilizar estas llamadas "sugerencias de tipo"? Bueno, están documentadas en el lugar habitual de la documentación de Python. Resulta que hay un programa bastante popular para comprobar si tu código se adhiere a tus propias sugerencias de tipo. Este programa se llama "mypy". Y es solo uno de varios. Pero este es particularmente popular y se puede instalar fácilmente de la forma habitual con "pip install mypy". Y su propia documentación está en esta URL. Pero lo usaremos de forma bastante sencilla para comprobar si nuestras variables están utilizando los tipos correctos.
+
+Entonces, ¿cómo podemos hacer esto? Muy bien, volvamos a VS Code y limpiemos mi ventana de terminal y, de hecho, borremos "meows.py" tal como estaba. Y vamos a implementar una versión diferente de "meows" que simplemente tenga una función llamada "meow" que haga el "maullido" real en la pantalla.
+
+Y luego, simplemente voy a llamara a esa función al final. No me molestaré en usar una función principal por simplicidad, para poder centrarnos siempre solo en lo que es nuevo.
+
+Aquí estamos definiendo una función llamada "meow". Tomará un número de veces para "maullar", por ejemplo "n" para número. Y dentro de esta función, haré mi bucle "for" habitual en el rango de "n" y luego imprimiré, entre comillas, "maullido".
+
+Basándonos en nuestro código anterior, creo que esto es correcto. No he usado la variable "i" porque he decidido usar el guion bajo porque no la necesito en ningún lado. Pero ahora creo que tengo una función de trabajo cuyo propósito en la vida es "maullar" cero, o una, o dos, o tres o más veces.
+
+Bueno, vamos a usar esta función, una vez más, sin preocuparnos por la función principal. Simplemente mantendré mi función en la parte superior porque solo hay una. Y escribiré mi código aquí en la línea seis. Así que me voy a dar a mí mismo... voy a pedirle al usuario que ingrese un número. Y voy a continuar y pedirles de la manera habitual que ingresen la cantidad de veces que deseen "maullar". Y ahora, voy a llamar a "meow" con ese número.
+
+Ahora, algunos de ustedes podrán ver lo que he hecho mal. Pero tal vez yo no lo vea. Así que voy a entrar en mi ventana de terminal y ejecutar Python en "meows.py", el objetivo es que me pida esto. Parece que esto está funcionando. Voy a escribir tres. Y esperaría que ahora la función "meow" imprimiera "maullido" tres veces. Intro.
+
+Pero no. Hay algún tipo de error aquí. No se puede interpretar el objeto de tipo cadena de texto como un número entero. ¿Por qué podría ser? ¿Por qué podría ser?
+
+ESTUDIANTE: Porque la función "input" devuelve una cadena de texto en lugar de un número entero.
+
+DAVID J. MALAN: Exactamente. La función "input" devuelve una cadena de texto o "str", no un número entero o "int". Entonces, en el pasado, por supuesto, nuestra solución a este problema ha sido simplemente convertir la cadena de texto a un número entero usando la función "int". Pero ahora, voy a empezar a programar de forma más defensiva para no encontrarme en esta situación en absoluto.
+
+Permítanme hacer esto. Voy a agregar lo que se llama una sugerencia de tipo a mi función que especifica explícitamente el tipo de variable que se debe utilizar para "meow".
+
+Voy a cambiar ahora la primera línea de mi código y mi función para especificar que "n" debe ser un número entero. Esto es una sugerencia de tipo, el hecho de que he agregado dos puntos, un espacio y la palabra "int" no creará otro entero ni nada por el estilo. Es solo una sugerencia, una anotación, que indica a Python que esta variable a la izquierda llamada "n" debe ser un número entero.
+
+Ahora, desafortunadamente, Python en sí no se preocupa por esto. Debido a que nuevamente estas sugerencias de tipo no son aplicadas por el lenguaje. Y esto es por diseño. El lenguaje en sí y la comunidad prefieren que Python tenga un tipado dinámico, no tan fuertemente tipado como para requerir que estas cosas sean verdaderas. Pero si ejecuto "meows.py", escribo tres nuevamente, el mismo error aparece.
+
+Pero veamos ahora este programa llamado "mypy", un ejemplo de un programa que entiende las sugerencias de tipo. Y si lo ejecuto de forma proactiva por mi cuenta, puedo encontrar errores como este en mi código antes de que yo o, peor aún, un usuario realmente ejecute y encuentre algo críptico como este error de tipo.
+
+Borre mi ventana de terminal y esta vez ejecute "mypy meows.py". Así que voy a ejecutar "mypy" en mi programa, pero no estoy ejecutando Python en sí. Cuando presiono Enter, veremos esto. Muy bien. Ahora vemos que "mypy" encontró aparentemente un error en la línea siete. Error, el argumento uno para "meow" tiene un tipo incompatible, se esperaba un "int" en lugar de un "str". Así que sigue siendo un mensaje de error.
+
+Pero "mypy" no es un programa que mis usuarios utilizarían. Este es un programa que tú y yo, como programadores, usaríamos. Y como hemos ejecutado este código ahora antes de que, por ejemplo, publiquemos este programa en el mundo, ahora puedo ver incluso antes de que se llame o se ejecute el código, oh, parece que estoy utilizando mi argumento en "meow" de manera incorrecta. Será mejor que lo solucione de alguna manera.
+
+Bueno, puedo agregar más sugerencias de tipo incluso a mis propias variables, para atrapar este tipo de error también. Si ya sé en la línea seis que estoy creando una variable llamada número y ya sé que la estoy asignando igual al valor de retorno de "input", puedo darle a "mypy" y a herramientas similares otra sugerencia y decirles, saben qué, esta variable llamada número también debería ser un entero.
+
+Es decir, si ahora comienzo a adquirir el hábito de anotar todos mis variables y argumentos de funciones, tal vez "mypy" pueda ayudarme a encontrar cosas rápidamente también, antes de llegar al punto de ejecutar Python en sí.
+
+Así que vamos a intentarlo de nuevo. "Mypy meows.py" y presionar Enter. Y esta vez, observa que "mypy" encontró el error un poco más rápidamente. Observa que esta vez encontró en la línea seis el error, tipos no compatibles, y una expresión de asignación tiene el tipo "str" pero la variable tiene el tipo "int".
+
+Entonces, antes de llegar al punto de llamar a "meow", la línea seis, al utilizar este tipo de sugerencia al ser utilizado y analizado por "mypy" me ha ayudado a encontrar, oh, espera un minuto. No debería asignar el valor de retorno de "input" a mi variable llamada número en primer lugar. ¿Por qué? "Mypy" me ha señalado que "input" devuelve un "str" y yo esperaba un "int". Debo corregir esto ahora en su lugar.
+
+Así que voy a borrar mi ventana de terminal. Y ahora, voy a hacer lo que probablemente pensaron que debería haber hecho desde el principio después de todas estas semanas. Pero ahora, voy a volver y convertir el valor de retorno de "input" en un entero. Para los propósitos de hoy, no voy a intentar atrapar ninguna excepción ni nada por el estilo. Simplemente vamos a asumir que el usuario lo ingresa de forma correcta.
+
+Y ahora, voy a ejecutar "mypy" en "meows.py", habiendo agregado no solo sugerencias de tipo a mi argumento, a mi función, a mi variable aquí en la línea seis. Y también he solucionado ahora el problema en sí. Voy a ejecutar "mypy". ¡Y éxito! No se encontraron problemas en un archivo fuente.
+
+Ahora es más razonable para mí ejecutar algo como "Python meows" y simplemente confiar en que cuando escribo tres, al menos no obtendré un error de tipo. Es decir, no cometí un error como programador en lo que respecta a los tipos de mis variables.
+
+¿Por qué? Porque cuando escribí el código en primer lugar, proporcioné estas anotaciones, estas sugerencias de tipo, que informan a las herramientas como "mypy" que mi intención debe coincidir con lo que realmente hace el código. Permítanme hacer una pausa aquí y ver si hay preguntas sobre las sugerencias de tipo o "mypy".
+
+ESTUDIANTE: ¿Es común o qué tan común es su uso? ¿O solo se usa en códigos más complejos donde es más difícil asegurarse de que se esté utilizando el tipo correcto de variables?
+
+DAVID J. MALAN: Es una buena pregunta. Y es más bien una cuestión de opinión. Python fue diseñado para ser un poco más versátil y flexible en lo que respecta a algunos de estos detalles, en parte por la capacidad de escribir código más rápidamente y con más facilidad, en parte por el rendimiento, para que el programa como Python no tenga que molestarse en verificar estos tipos de detalles, sino que podamos ir directamente al código.
+
+Sin embargo, la realidad es que las comprobaciones de tipos fuertes tienden a ser algo bueno para la corrección de tu código. ¿Por qué? Porque programas como "mypy" pueden encontrar, antes de que se ejecute el código, si ya se sabe que hay un error. Y tiende a ser bueno para la programación defensiva.
+
+Entonces, la situación es esencialmente que dentro del ecosistema de Python, puedes anotar tus tipos de esta manera. Puedes utilizar herramientas para utilizar esas sugerencias de tipo. Pero hasta la fecha, Python en sí mismo no hace cumplir ni espera hacer cumplir estas convenciones.
+
+En bases de código más grandes, en bases de código profesionales, comerciales, probablemente dependiendo del gestor de proyecto o del equipo de ingeniería, ellos mismos pueden querer usar sugerencias de tipo. ¿Por qué? Si simplemente disminuye la probabilidad de errores.
+
+De hecho, déjenme proponer ahora que... imaginen una situación en la que en lugar de esperar que "meow" imprima "maullido", "maullido", "maullido" una cantidad determinada de veces, supongamos que asumí por error que la función "meow" simplemente me devuelve "maullido" una cantidad determinada de veces.
+
+Vimos, por ejemplo, al centrarnos en las pruebas unitarias, que tiende a ser bueno tener funciones que devuelvan valores, ya sea un entero o una cadena de texto, en lugar de tener algún efecto secundario como imprimir cosas por sí mismas.
+
+Entonces, tal vez todavía esté pensando en eso. Y simplemente asumí por error por el momento que "meow" me devuelve un valor, como "maullido" o "maullido maullido" o "maullido maullido maullido", una gran cadena de una cantidad determinada de maullidos, en lugar de simplemente imprimirlo, como lo hace claramente en este momento en la línea tres.
+
+Y por lo tanto, supongamos que hice algo así. En lugar de obtener el número y pasarlo a "meow", supongamos que hice lo siguiente. Supongamos que declaré una cantidad de... una nueva variable llamada "meows", cuyo tipo creo que debería ser una cadena de texto.
+
+Y supongamos nuevamente que, por error, asumo que "meow" me devuelve una cadena de texto de esos maullidos para que yo mismo pueda imprimirlos más tarde. Esto sería un poco más propicio, según se argumenta, para probar mi función "meow". ¿Por qué? Porque podría esperar que devuelva "maullido", "maullido maullido", "maullido maullido maullido", separados por saltos de línea, devolviendo una cadena de texto que luego puedo verificar si es igual a lo que espero en algo como una prueba unitaria. No voy a molestarme en escribir ninguna prueba unitaria ahora.
+
+Pero supongamos que ese es el enfoque en el que estoy ahora. Y por lo tanto, en la línea siete, estoy asumiendo que quiero asignar el valor de retorno de "meow" a una nueva variable llamada "meows" que he anotado con esta sugerencia de tipo como una cadena de texto, solo para ver otra variable. Esta no es un entero sino una cadena de texto.
+
+Bueno, voy a ejecutar este código ahora, Python en "meows.py", presionar Enter, escribir tres y verán un error curioso. "Maullido maullido maullido none". Pero, ¿por qué es eso? Bueno, resulta que en este momento, mi función "meow" solo tiene un efecto secundario. Simplemente imprime "maullido" una cantidad determinada de veces. No devuelve explícitamente un valor como lo haría si hubiera una palabra clave "return" literal allí.
+
+Por defecto, entonces, cuando una función en Python no devuelve explícitamente un valor, el valor de retorno implícito es efectivamente "none". Y por lo tanto, lo que estamos viendo aquí es lo siguiente: en la línea ocho, porque estoy asignando el valor de retorno de "meow", que es "none", a mi variable "meows", es la línea tres lo que sigue imprimiendo "maullido" tres veces.
+
+Y la línea ocho es la que ahora imprime incorrectamente "none". Porque asumí accidentalmente que "meow" devuelve un valor, pero no lo hace. Por tanto, su valor de retorno es efectivamente "none". Así que estoy imprimiendo muy extrañamente la palabra "none" al final.
+
+Entonces, ¿cómo puedo detectar este tipo de error también? Podría cometer este error, pero tal vez con menos frecuencia si tengo el hábito de anotar mi código con esta nueva función llamada sugerencias de tipo.
+
+Lo que puedes hacer aquí es lo siguiente. Vamos a borrar mi ventana de terminal para eliminar ese artefacto. Y aquí arriba, voy a especificar adicionalmente con una sintaxis un tanto curiosa que mi función "meow", en realidad, por diseño devuelve "none". Entonces literalmente uso esta notación de flecha.
+
+En Python, al estar insinuando cuál es el valor de retorno de una función, harías esto. Después de los paréntesis, un espacio, un guion, un signo mayor, como una flecha, luego otro espacio y luego el tipo de valor de retorno. Por ahora, lo cierto es que va a... [TRAGA SALIVA], disculpa, va a retornar "none". Pero ahora, al menos puedo atraparlo así.
+
+Si ahora ejecuto no Python sino "mypy" en mi código, que sería un hábito en el que ahora me estoy metiendo si uso sugerencias de tipo, verificar que estoy utilizando todos mis tipos correctamente antes de siquiera ejecutar mi programa. Veremos que ahora "mypy" ha encontrado en la línea siete que "meow", entre comillas, no devuelve un valor.
+
+Y "mypy" sabe eso porque he anotado de forma proactiva mi función "meow" como devolviendo "none", según esta sugerencia de tipo también.
+
+Así que ahora "mypy" puede detectar eso. Ahora debería darme cuenta de que, oh, espera un minuto. Estoy siendo tonto aquí. "Meow" claramente no devuelve un valor. No debería tratarlo como si lo hiciera en la línea siete. Voy a solucionar esto ahora.
+
+Entonces, ¿cómo puedo solucionarlo? Bueno, hagamos lo que predicamos en nuestro enfoque en las pruebas unitarias, teniendo una función como "meow" que no tenga efectos secundarios como imprimir por sí misma. Pero hagámosla devolver la cadena de texto real. Y puedo hacer esto de manera bastante limpia. Borro mi mensaje de error aquí en mi ventana de terminal. Me deshago del bucle. 
+
+Digo ahora que "Ok, bien, "meow" va a devolver un valor, un "str" o cadena de texto real. Entonces he cambiado "none" por "str". Y ahora puedo implementar esto de cualquier forma, incluso utilizando un bucle. Pero recuerda que tenemos esta sintaxis en Python, que creo que resolverá este problema por nosotros. Si quiero devolver una cadena de texto de "n" maullidos, lo que puedo hacer realmente, recuerda, es esto. Devolver entre comillas "maullido", barra inclinada "n", multiplicado por ese número "n". 
+
+Por tanto, es una especie de forma inteligente de hacerlo en una línea, evitando la necesidad de un bucle "for" o algo más complicado que eso, simplemente digo, multiplica "maullido", barra inclinada "n" por sí mismo tres veces o "n" veces, en este caso en general, para obtener una gran cadena de "n" maullidos, cero, uno, dos, tres o muchos más maullidos. 
+
+Ahora creo que mi código en la línea seis es correcto. Ahora he cambiado el comportamiento de "meow" de la manera en que estaba fingiendo asumir que siempre funcionaba. Por tanto, estoy almacenando en "meows" en plural una variable que es del tipo cadena de texto. Porque ahora, "meow" tiene un valor de retorno de tipo cadena de texto según esta sugerencia de tipo también.
+
+Muy bien. Ahora voy a adelante e imprimir "meows". Pero como cada uno de mis "maullidos" viene con un salto de línea al final, la barra invertida "n", voy a corregir proactivamente lo que sería un error estético menor. Y voy a evitar imprimir un salto de línea adicional al final de esos tres. 
+
+Así que si ejecuto Python en "meows.py" ahora, escribo tres, obtengo mi "maullido", "maullido", "maullido". Y ahora, ninguna mención a "none". ¿Preguntas ahora sobre sugerencias de tipo, y estas anotaciones en "mypy" y usarlas para escribir código defensivo que simplemente disminuye, con suerte, la probabilidad de tus propios errores?
+
+ESTUDIANTE: ¿El "return three" tiene comillas dobles que tienen maullido, barra invertida "n", por qué el programa no lo toma como una cadena de texto?
+
+DAVID J. MALAN: ¿Por qué el programa no lo toma como un... como extraño?
+
+ESTUDIANTE: Sí, ¿por qué?
+
+DAVID J. MALAN: Recuerda que al principio de la clase vimos el símbolo "+" como un operador de concatenación que permite unir una cadena de texto a la izquierda y a la derecha. La multiplicación también es un operador sobrecargado para las cadenas de texto. Por lo tanto, si tienes una cadena de texto a la izquierda y un entero a la derecha, multiplicará la cadena de texto, por así decirlo, al concatenar o unir tantos "maullidos" como "n" haya juntos.
+
+Entonces, esto es una característica de la programación orientada a objetos y una sobrecarga de operadores como lo hemos visto en el pasado.
+
+¿Otras preguntas sobre las sugerencias de tipo o "mypy"?
+
+ESTUDIANTE: ¿No podemos hacer un tipo de cambio de tipo de datos de esta variable número?
+
+DAVID J. MALAN: No. Aún necesitas... y déjame corregir la terminología. No sería llamarlo cambio de tipo de datos en este contexto porque no es como en C o C++ donde hay una equivalencia entre estos tipos. Técnicamente, en la línea cinco estás convirtiendo una cadena de texto a un entero. Todavía debes hacer esta conversión tú mismo.

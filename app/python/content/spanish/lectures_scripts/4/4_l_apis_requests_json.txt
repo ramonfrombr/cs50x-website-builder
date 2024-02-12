@@ -1,0 +1,93 @@
+Dicho esto, permíteme proponer que nos inclinemos hacia otro paquete que es particularmente popular y tan fácil de instalar para poder utilizar las API. Ahora bien, las API no son algo específico de Python. Más generalmente, una API es una interfaz de programación de aplicaciones. Y puede referirse a archivos y funciones de Python. Pero a menudo, las API realmente se refieren a servicios de terceros a los cuales tú y yo podemos escribir código para comunicarnos.
+
+Muchas API, pero no todas, existen en Internet en estos días, por lo que siempre que tengas un navegador o algo de experiencia en programación en Python o cualquier otro lenguaje, puedes escribir código que simule ser un navegador, se conecte a esa API de terceros en un servidor y descargue datos que luego puedes incorporar a tu propio programa.
+
+¿Cómo hacer esto? Bueno, Python tiene un paquete muy popular que puedes instalar a través de pip llamado requests. La biblioteca requests te permite realizar solicitudes web, solicitudes de Internet utilizando código Python, como si fueras un navegador tú mismo. Puedes automatizar, por lo tanto, la recuperación de URL que comienzan con HTTP o HTTPS.
+
+La documentación de esta biblioteca es una URL como esta, pero también se puede instalar en la línea de comandos. Y aunque sea de terceros, es uno de los paquetes más populares y ampliamente utilizados en Python. Y esta también es una de las razones por las que Python es tan popular. Hay tantas soluciones a los problemas que tú y yo tenemos o vamos a tener cuando escribimos nuestros propios proyectos. Hay un ecosistema vibrante, una comunidad vibrante de software de código abierto que es fácil de instalar para nosotros.
+
+Permíteme regresar a mi ventana de terminal ahora y ejecutar pip install requests para instalar este paquete en mi propio sistema. Y después de algunas líneas de salida, veré que se ha instalado correctamente. Ahora, sigamos y creemos un nuevo archivo aquí. Por ejemplo, itunes.py. Resulta que Apple tiene su propia API para su servicio de iTunes. El software que te brinda la capacidad de descargar y buscar música, canciones y otra información también.
+
+Y resulta que... permíteme volver a mi computadora aquí y abrir un navegador como Chrome. Y permíteme visitar esta URL aquí, https://itunes.apple.com/search?entity=song&limit=1&term=weezer. search?entity=song&limit=1&term=weezer.
+
+Ahora, construí esta URL manualmente leyendo la documentación de la API de Apple para iTunes. Y lo que me dijeron es que si quiero buscar información sobre canciones en su base de datos, debo especificar entity igual a song para que sean canciones y no álbumes, artistas u otra cosa. Si solo quiero obtener información sobre una canción, debo proporcionar limit igual a 1. Y si la banda que quiero buscar, el artista es Weezer, debo especificar term igual a Weezer.
+
+Entonces, con esto, si adelanto y presiono Enter y visito esta URL, en realidad obtengo un archivo de texto en la carpeta de Descargas en mi Mac. Si adelanto y abro ese archivo de texto que mi navegador acaba de descargar, veremos todo este texto aquí, que a primera vista puede parecer un poco críptico, pero en realidad sigue un patrón.
+
+Observa esta llave de apertura al principio y observa esta llave de cierre al final. Observa este corchete cuadrado de apertura aquí y observa este corchete cuadrado de cierre aquí. Y entre estas piezas de sintaxis hay un montón de cadenas y valores. De hecho, un montón de pares clave-valor. Lo que estamos viendo aquí es un formato de texto estándar conocido como JSON, Notación de Objetos de JavaScript, que sí, está técnicamente relacionado con otro lenguaje de programación llamado JavaScript. Pero el JSON en sí se usa comúnmente en la actualidad como un formato agnóstico de lenguaje para intercambiar datos entre computadoras.
+
+Agnóstico de lenguaje significa que no tienes que usar JavaScript. Puedes usar Python u cualquier otro lenguaje para leer o escribir JSON también. Y es un formato completamente basado en texto, lo que significa que si visito esa URL con mi navegador, lo que se descarga es solo un montón de texto.
+
+Pero ese texto está formateado de una manera estándar utilizando llaves y corchetes cuadrados, usando comillas y dos puntos y que contiene toda la información de la base de datos de Apple sobre la canción de Weezer, al menos la primera porque la limité a una en su base de datos. Y esa es una API, una interfaz de programación de aplicaciones. Un mecanismo mediante el cual puedo acceder a datos en el servidor de otra persona e integrarlos de alguna manera en mi propio programa.
+
+Ahora, por supuesto, mi navegador, Chrome, no es algo que yo haya escrito. De hecho, debería escribir algún código en Python que se haga pasar por un navegador para obtener los mismos datos. Así que hagámoslo. Permíteme volver a VS Code aquí. Y permíteme escribir un programa con el código, itunes.py. Y vamos a escribir código para usar la API de iTunes y, a su vez, Python para obtener información sobre cualquier banda que pueda querer.
+
+Voy a importar primero la biblioteca requests, que instalé anteriormente para hacer esas solicitudes HTTP. Voy a importar también la biblioteca sys para poder usar argumentos de línea de comandos, como la especificación de la banda que quiero buscar si no es Weezer. Y luego aquí abajo, voy a incorporar alguna validación de errores para decir que si la longitud de sys.argv no es igual a..., por lo que si el usuario no me proporciona el nombre del archivo que quiere ejecutar y el nombre de una banda, eso es todo, sabes qué, vamos a salir por ahora.
+
+Podría proporcionar un mensaje más explicativo. Pero por ahora, voy a mantener las cosas simples y salir del programa prematuramente para poder confiar a partir de ahora en que sys.argv tenga lo que quiero. Y ahora, tengo la oportunidad de usar la biblioteca requests para escribir algo de código Python que simule ser un navegador web para poder conectarme a esa misma URL HTTPS en el servidor de Apple.
+
+Ahora que he garantizado que el usuario ha escrito no solo el nombre del archivo, sino también el nombre de una banda en la línea de comandos, especificando la longitud dos para sys.argv, sigamos adelante y ejecutemos la función requests.get, que es una función dentro del paquete requests que literalmente obtendrá alguna respuesta de un servidor. Y la URL que quiero obtener es exactamente la misma que antes. https://itunes.apple.com/search?entity=song&limit=1&term=previouslyweezer.
+
+Pero hagamos este programa un poco interactivo y permitamos que la persona especifique en la línea de comandos qué artistas le gustaría buscar. Entonces, voy a cerrar mi comilla temprano y simplemente agregar usando el operador de concatenación, como en el pasado, sys.argv[1].
+
+Y ahora, realmente sería bueno almacenar la respuesta del servidor en una variable. Así que voy a decir respuesta equals y para almacenar toda la respuesta que regrese del servidor en una variable llamada respuesta. Aquí abajo ahora, me gustaría simplemente entender lo que el servidor me está devolviendo para asegurarme de saber cómo proceder a continuación.
+
+Entonces esto no va a ser muy bonito aún. Pero voy a imprimir respuesta.json, lo cual asegura que los datos que estoy obteniendo se formatean en mi pantalla exactamente como eso, JSON, el mismo formato de texto que vimos en mi pantalla. Aún no es un programa útil. Realmente estoy aprendiendo en el camino. Pero permíteme aumentar el tamaño de mi ventana de terminal ahora y ejecutar Python de itunes.py y escribir el nombre de una banda como Weezer y presione Enter.
+
+Y lo que vemos en la pantalla, formateado casi de la misma manera que antes, es exactamente el mismo texto. Pero lo que verás aquí es que ahora se trata de un diccionario de Python. Lo que efectivamente Apple está devolviendo es técnicamente una respuesta JSON, Notación de Objetos de JavaScript. Pero Python, la biblioteca requests la convierte en un diccionario de Python que casualmente utiliza casi la misma sintaxis.
+
+Utiliza llaves para representar el diccionario aquí y una llave de cierre para representar el final aquí. Para cualquier lista que esté dentro, usa un corchete cuadrado aquí y un corchete cuadrado cerrado aquí. Usa comillas, comillas simples en este caso o, equivalente-mente, comillas dobles para representar las claves en ese diccionario. Y después de dos puntos, almacena el valor de esa clave.
+
+Y así verás que de hecho tenemos una clave count del resultado cuyo valor es 1, pero luego hay una clave Result más interesante llamada results cuyo valor es toda esta lista de datos. Ahora, honestamente, este es un gran montón de texto y me va a llevar mucho tiempo entender lo que estoy viendo. Así que permíteme proponer temporarymente que usemos otra biblioteca en Python que me permitirá formatear mis datos de una manera un poco más limpia.
+
+Resulta que Python también viene con una biblioteca especial llamada JSON que te permite manipular datos JSON e incluso imprimirlos de forma limpia y formateada de una manera que será mucho más fácil de entender para ti y para mí. Así que permíteme volver a mi código aquí. Reduzcamos el tamaño de mi ventana de terminal. Y propongamos ahora, solo temporalmente de nuevo, hacer esto.
+
+Importemos esta biblioteca adicional, JSON, que viene con Python. Por lo que no necesito instalarla manualmente con pip. Y ahora, en lugar de solo imprimir respuesta.json, que era esa gran ráfaga de texto difícil de entender, voy a utilizar otra función aquí llamada json.dumps para imprimir una cadena y pasarle esa respuesta.json.
+
+Una vez más, solo estoy introduciendo otra función que tengo la intención de tener la capacidad de impresión bonita y formateada correctamente en la pantalla de la misma información. Y lo sé por la documentación porque ya lo he hecho antes. Pero me gustaría que todo esté correctamente sangrado. Y según la documentación, si paso un parámetro nombrado de indent igual a 2, eso va a sangrar todo al menos dos espacios. Podría ser cuatro o algo más. Pero va a ser suficiente para ayudarme a entender los datos que estoy obteniendo. Porque nuevamente, solo estoy aprendiendo junto contigo.
+
+Así que aumentemos el tamaño de mi ventana de terminal nuevamente. Ejecutemos Python de itunes.py. Y de nuevo, busquemos a Weezer y presionemos Enter. Y ahora, nota que todavía es un poco críptico porque hay mucho sucediendo aquí. Pero vaya, ahora puedo leer esto mucho más fácilmente.
+
+Observa ahora que todavía veo la primera llave de apertura, lo que significa "hey, este es un diccionario en Python". Una colección de claves y valores. La primera clave se llama count del resultado. Aparece entre comillas dobles ahora. Pero eso es solo un problema de formato. Podría ser comillas dobles o simples, siempre y cuando seamos consistentes.
+
+El valor de esa clave es uno. ¿Por qué? Bueno, le di a la URL que solo limite las respuestas a una canción de Weezer, por lo que obtuve un conjunto de resultados de uno. Si aumento ese límite, probablemente podría obtener más. Luego, la parte interesante de esta respuesta es realmente los datos en sí. Observa en la clave resultados aquí, hay un valor realmente grande. El valor es una lista de Python, como se indica por este corchete cuadrado.
+
+¿Qué contiene esta lista? Bueno, sé por haber examinado rápidamente que contiene un diccionario. Y por eso vemos otra llave de apertura aquí. Entonces, nuevamente, si esto se vuelve un poco más complicado, ten en cuenta que un diccionario es solo una colección de pares clave-valor. Y Python usa llaves para indicar esto.
+
+Es perfectamente razonable que un diccionario esté dentro de otro diccionario si el valor de alguna clave en sí es otro diccionario. Este es un paradigma común. Y aunque pueda parecer un poco críptico, es algo que nos permite asociar más claves con más valores.
+
+Ahora, la mayoría de esta información probablemente no me importa. Por ejemplo, según Apple, el identificador único para Weezer es aparentemente 115.234. Eso puede ser útil si estoy haciendo mi propia base de datos y quiero que sea buscable. Pero para los propósitos de hoy, lo único que me importa es el nombre de la canción, también llamada track name como clave.
+
+Y la primera canción y única canción porque lo limité a uno que obtuvimos de iTunes aquí es la canción que quizás conoces de Weezer llamada "Say It Ain't So". Entonces, ahora tengo una pista si mi objetivo aquí es implementar un programa llamado itunes.py que no solo muestre la respuesta del servidor, que es bastante críptica, sino que imprima todas las canciones que iTunes tiene de la banda llamada Weezer, tal vez pueda iterar sobre esto de alguna manera.
+
+Así que permíteme retroceder. Aquí está la clave llamada track name. Está dentro de un diccionario que es el valor de los resultados aquí. Entonces, ¿cómo puedo obtener esto? Bueno, permíteme intentar esto. Permíteme bajar el tamaño de mi ventana de terminal nuevamente y proponerles ahora un último toque. No solo imprimamos perezosamente el contenido de esa respuesta porque eso no es interesante ni bonito para nadie.
+
+Hagamos esto. Permíteme crear una nueva variable solo por el bien de la discusión llamada O para objeto. Y voy a llamar o igual a respuesta.json solo para almacenar esa respuesta JSON específicamente en una variable llamada o, pero podría llamarla como quiera. Y ahora, voy a hacer esto. Por cada resultado en la clave resultados de ese objeto, imprime el nombre de la canción de ese resultado.
+
+Y observa que he utilizado exactamente la misma capitalización. El nombre de la canción tiene una N mayúscula. El resultado está todo en minúsculas. Y retrocedamos antes de ejecutar el programa real. En la línea ocho, estamos haciendo una solicitud HTTP utilizando Python al servidor, al igual que tú y yo como humanos escribimos URL en un navegador y presionamos Enter. Esto es el equivalente de Python.
+
+Luego, en la línea 10, simplemente estoy obteniendo de esa variable que contiene la respuesta del servidor, el objeto JSON que me importa. La cosa entre esas llaves al principio y al final. Pero como hemos investigado y porque leí la documentación anteriormente, sé que ese objeto tiene una clave llamada resultados. Y esa clave de resultados nuevamente es una lista.
+
+En este momento, esa lista contiene solo una canción, "Say It Ain't So", porque limité mi respuesta a uno. Pero aún así, mi bucle funcionará. Solo va a iterar una vez. Y cada vez a través de ese bucle, imprimirá el nombre de la canción actual del resultado.
+
+Si quiero que esto sea aún más interesante, permíteme cambiar este límite ahora de 1 a 50 para obtener al menos 50 nombres de canciones. Aumentemos el tamaño de mi ventana de terminal una vez más y ejecutemos Python de itunes.py. Y nuevamente, busquemos por Weezer y presionemos Enter. Y allí vamos, hay 50 canciones que iTunes tiene para Weezer.
+
+Y si nos desplazamos hacia arriba aquí, veremos que la primera de ellas es, de hecho, "Say It Ain't So". Pero ahora, hemos obtenido "Undone - The Sweater Song", "Buddy Holly". Aparentemente, otra versión de "Say It Ain't So" quizás de otro álbum, otro Buddy Holly, "Undone", "My Name Is Jonas" y así sucesivamente. ¿Preguntas ahora sobre este programa que integra Python con una API de terceros del mundo real?
+
+AUDIENCIA: Sí, hola. ¿Podemos usar break en vez de sys.exit?
+
+DAVID MALAN: Buena pregunta, pero no. Break se usa para salir de cosas como bucles como vimos anteriormente. Sys.exit se usa para salir del programa completo. Usa break para los bucles por ahora y sys.exit para terminar todo el programa. Buena pregunta. ¿Otras preguntas ahora sobre este programa o sobre otras cosas?
+
+AUDIENCIA: ¿De dónde obtenemos el nombre de la clave resultados?
+
+DAVID MALAN: ¿De dónde obtenemos el nombre de la clave? 
+
+AUDIENCIA: Resultados en sí. Sí, ¿y podemos cambiar el nombre de los resultados?
+
+DAVID MALAN: No puedes. Entonces, en nuestro programa, podría hacer eso. Por lo que las claves que vienen en esa respuesta JSON provienen de iTunes.Apple.com. Algún equipo de ingenieros decidió por nosotros cómo se llamarían todas esas claves, incluido "track name", "results", "result count" y todo lo demás.
+
+Tú y yo podemos almacenar estos mismos valores en variables, como estoy haciendo aquí con "O", como estoy haciendo aquí con "result". Puedes cambiar los nombres de esas claves como quieras utilizando variables de Python. Pero la respuesta JSON viene de ese servidor de terceros. ¿Otras preguntas?
+
+AUDIENCIA: Sí, señor. Así que tengo una pregunta relacionada con el paquete cowsay. Por ejemplo, sí. Entonces, señor, ¿qué tipo de gráficos ASCII es capaz de generar?
+
+DAVID MALAN: El paquete cowsay. Te remitiría a la URL en las diapositivas anteriormente si solo porque es más completo. No creo que utilices mucho este paquete en el mundo real. Realmente se pretende ser representativo de los tipos de paquetes que puedes instalar. Pero permíteme consultar la documentación para ver qué más hay. Pero el arte ASCII era todo lo que teníamos antes de los emojis, y mucho menos los GIF, JPEG y PNG. Pero eso es lo que se inmortalizó en cowsay.

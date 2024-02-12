@@ -1,0 +1,1239 @@
+Slide [0]
+
+Programação Web 
+com Python e JavaScript
+
+Slide [1]
+
+SQL, Modelos e Migrações
+
+Slide [2]
+
+Dados
+
+Slide [3]
+
+origem
+destino
+duração
+Nova York
+Londres
+415
+Xangai
+Paris
+760
+Istambul
+Tóquio
+700
+Nova York
+Paris
+435
+Moscou
+Paris
+245
+Lima
+Nova York
+455
+
+Slide [4]
+
+SQL
+
+Slide [5]
+
+Sistemas de Gerenciamento de Banco de Dados
+• MySQL 
+• PostgreSQL 
+• SQLite 
+• ...
+
+Slide [6]
+
+Tipos de SQLite
+•  TEXTO 
+•  NUMÉRICO 
+•  INTEIRO 
+•  REAL 
+•  BLOB
+
+Slide [7]
+
+Tipos de MySQL
+• CHAR(tamanho) 
+• VARCHAR(tamanho) 
+• SMALLINT 
+• INT 
+• BIGINT 
+• FLOAT 
+• DOUBLE 
+• ...
+
+Slide [8]
+
+CRIAR TABELA
+
+Slide [9]
+
+CRIAR TABELA voos ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origem TEXT NOT NULL, 
+    destino TEXT NOT NULL, 
+    duração INTEGER NOT NULL 
+);
+
+Slide [10]
+
+CRIAR TABELA voos ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origem TEXT NOT NULL, 
+    destino TEXT NOT NULL, 
+    duração INTEGER NOT NULL 
+);
+
+Slide [11]
+
+CRIAR TABELA voos ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origem TEXT NOT NULL, 
+    destino TEXT NOT NULL, 
+    duração INTEGER NOT NULL 
+);
+
+Slide [12]
+
+CRIAR TABELA voos ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origem TEXT NOT NULL, 
+    destino TEXT NOT NULL, 
+    duração INTEGER NOT NULL 
+);
+
+Slide [13]
+
+CRIAR TABELA voos ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origem TEXT NOT NULL, 
+    destino TEXT NOT NULL, 
+    duração INTEGER NOT NULL 
+);
+
+Slide [14]
+
+CRIAR TABELA voos ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origem TEXT NOT NULL, 
+    destino TEXT NOT NULL, 
+    duração INTEGER NOT NULL 
+);
+
+Slide [15]
+
+CRIAR TABELA voos ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origem TEXT NOT NULL, 
+    destino TEXT NOT NULL, 
+    duração INTEGER NOT NULL 
+);
+
+Slide [16]
+
+Restrições
+• CHECK 
+• DEFAULT 
+• NOT NULL 
+• PRIMARY KEY 
+• UNIQUE 
+• ...
+
+Slide [17]
+
+INSERIR
+
+Slide [18]
+
+INSERIR EM voos 
+    (origem, destino, duração) 
+    VALUES ("Nova York", "Londres", 415);
+
+Slide [19]
+
+INSERIR EM voos 
+    (origem, destino, duração) 
+    VALUES ("Nova York", "Londres", 415);
+
+Slide [20]
+
+INSERIR EM voos 
+    (origem, destino, duração) 
+    VALUES ("Nova York", "Londres", 415);
+
+Slide [21]
+
+INSERIR EM voos 
+    (origem, destino, duração) 
+    VALUES ("Nova York", "Londres", 415);
+
+Slide [22]
+
+INSERIR EM voos 
+    (origem, destino, duração) 
+    VALUES ("Nova York", "Londres", 415);
+
+Slide [23]
+
+INSERIR EM voos 
+    (origem, destino, duração) 
+    VALUES ("Nova York", "Londres", 415);
+
+Slide [24]
+
+SELECIONAR
+
+Slide [25]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos;
+
+Slide [26]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos;
+
+Slide [27]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR origem, destino FROM voos;
+
+Slide [28]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR origem, destino FROM voos;
+
+Slide [29]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE id = 3;
+
+Slide [30]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE id = 3;
+
+Slide [31]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE origem = "Nova York";
+
+Slide [32]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE origem = "Nova York";
+
+Slide [33]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE duração > 500;
+
+Slide [34]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE duração > 500;
+
+Slide [35]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE duração > 500 
+AND destino = "Paris";
+
+Slide [36]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE duração > 500 
+AND destino = "Paris";
+
+Slide [37]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE duração > 500 
+OU destino = "Paris";
+
+Slide [38]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE duração > 500 
+OU destino = "Paris";
+
+Slide [39]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE 
+origem IN ("Nova York", "Lima");
+
+Slide [40]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE 
+origem IN ("Nova York", "Lima");
+
+Slide [41]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE 
+origem LIKE "%a%";
+
+Slide [42]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+SELECIONAR * FROM voos WHERE 
+origem LIKE "%a%";
+
+Slide [43]
+
+Funções
+• MÉDIA 
+• CONTAGEM 
+• MÁXIMO 
+• MÍNIMO 
+• SOMA 
+• ...
+
+Slide [44]
+
+ATUALIZAR
+
+Slide [45]
+
+ATUALIZAR voos 
+    SET duração = 430  
+    WHERE origem = "Nova York" 
+    AND destino = "Londres";
+
+Slide [46]
+
+ATUALIZAR voos 
+    SET duração = 430  
+    WHERE origem = "Nova York" 
+    AND destino = "Londres";
+
+Slide [47]
+
+ATUALIZAR voos 
+    SET duração = 430  
+    WHERE origem = "Nova York" 
+    AND destino = "Londres";
+
+Slide [48]
+
+ATUALIZAR voos 
+    SET duração = 430  
+    WHERE origem = "Nova York" 
+    AND destino = "Londres";
+
+Slide [49]
+
+ATUALIZAR voos 
+    SET duração = 430  
+    WHERE origem = "Nova York" 
+    AND destino = "Londres";
+
+Slide [50]
+
+ATUALIZAR voos 
+    SET duração = 430  
+    WHERE origem = "Nova York" 
+    AND destino = "Londres";
+
+Slide [51]
+
+EXCLUIR
+
+Slide [52]
+
+EXCLUIR DE voos WHERE destino = "Tóquio";
+
+Slide [53]
+
+EXCLUIR DE voos WHERE destino = "Tóquio";
+
+Slide [54]
+
+EXCLUIR DE voos WHERE destino = "Tóquio";
+
+Slide [55]
+
+EXCLUIR DE voos WHERE destino = "Tóquio";
+
+Slide [56]
+
+EXCLUIR DE voos WHERE destino = "Tóquio";
+
+Slide [57]
+
+Outras Cláusulas
+• LIMIT 
+• ORDER BY 
+• GROUP BY 
+• HAVING 
+• ...
+
+Slide [58]
+
+Chaves Estrangeiras
+
+Slide [59]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+voos
+
+Slide [60]
+
+id
+origem
+origin_code
+destino
+destination_code
+duração
+1
+Nova York
+JFK
+Londres
+LHR
+415
+2
+Xangai
+PVG
+Paris
+CDG
+760
+3
+Istambul
+IST
+Tóquio
+NRT
+700
+4
+Nova York
+JFK
+Paris
+CDG
+435
+5
+Moscou
+SVO
+Paris
+CDG
+245
+6
+Lima
+LIM
+Nova York
+JFK
+455
+voos
+
+Slide [61]
+
+id
+código
+cidade
+1
+JFK
+Nova York
+2
+PVG
+Xangai
+3
+IST
+Istambul
+4
+LHR
+Londres
+5
+SVO
+Moscou
+6
+LIM
+Lima
+7
+CDG
+Paris
+8
+NRT
+Tóquio
+aeroportos
+
+Slide [62]
+
+id
+origem
+destino
+duração
+1
+Nova York
+Londres
+415
+2
+Xangai
+Paris
+760
+3
+Istambul
+Tóquio
+700
+4
+Nova York
+Paris
+435
+5
+Moscou
+Paris
+245
+6
+Lima
+Nova York
+455
+voos
+
+Slide [63]
+
+id
+id_origem
+id_destino
+duração
+1
+1
+4
+415
+2
+2
+7
+760
+3
+3
+8
+700
+4
+1
+7
+435
+5
+5
+7
+245
+6
+6
+1
+455
+voos
+
+Slide [64]
+
+id
+primeiro
+último
+id_voo
+1
+Harry
+Potter
+1
+2
+Ron
+Weasley
+1
+3
+Hermione
+Granger
+2
+4
+Draco
+Malfoy
+4
+5
+Luna
+Lovegood
+6
+6
+Ginny
+Weasley
+6
+passageiros
+
+Slide [65]
+
+id
+primeiro
+último
+1
+Harry
+Potter
+2
+Ron
+Weasley
+3
+Hermione
+Granger
+4
+Draco
+Malfoy
+5
+Luna
+Lovegood
+6
+Ginny
+Weasley
+pessoas
+
+Slide [66]
+
+id_pessoa
+id_voo
+1
+1
+2
+1
+2
+4
+3
+2
+4
+4
+5
+6
+6
+6
+passageiros
+
+Slide [67]
+
+JUNÇÃO
+
+Slide [68]
+
+primeiro
+origem
+destino
+Harry
+Nova York
+Londres
+Ron
+Nova York
+Londres
+Hermione
+Xangai
+Paris
+Draco
+Nova York
+Paris
+Luna
+Lima
+Nova York
+Ginny
+Livr Lima
+Nova York
+SELECIONAR primeiro, origem, destino 
+FROM voos JOIN passageiros 
+ON passageiros.id_voo = voos.id;
+
+Slide [69]
+
+JUNÇÕES
+• JUNÇÃO / INNER JOIN 
+• JUNÇÃO EXTERNA ESQUERDA 
+• JUNÇÃO EXTERNA DIREITA 
+• JUNÇÃO EXTERNA COMPLETA
+
+Slide [70]
+
+CRIAR ÍNDICE
+
+Slide [71]
+
+CRIAR ÍNDICE name_index EM passageiros (último);
+
+Slide [72]
+
+Injeção de SQL
+
+Slide [73]
+
+Nome de usuário:
+Senha:
+
+Slide [74]
+
+SELECIONAR * FROM usuários 
+WHERE nome_de_usuário = nome_de_usuário 
+AND senha = senha;
+
+Slide [75]
+
+Nome de usuário:
+harry
+Senha:
+12345
+
+Slide [76]
+
+SELECIONAR * FROM usuários 
+WHERE nome_de_usuário = nome_de_usuário 
+AND senha = senha;
+
+Slide [77]
+
+SELECIONAR * FROM usuários 
+WHERE nome_de_usuário = "harry" 
+AND senha = "12345";
+
+Slide [78]
+
+Nome de usuário:
+hacker" --
+Senha:
+
+Slide [79]
+
+SELECIONAR * FROM usuários 
+WHERE nome_de_usuário = nome_de_usuário 
+AND senha = senha;
+
+Slide [80]
+
+SELECIONAR * FROM usuários 
+WHERE nome_de_usuário = "hacker"--" 
+AND senha = "";
+
+Slide [81]
+
+SELECIONAR * FROM usuários 
+WHERE nome_de_usuário = "hacker"--" 
+AND senha = "";
+
+Slide [82]
+
+Condições de Corrida
+
+Slide [83]
+
+Modelos
+
+Slide [84]
+
+SQL, Modelos e Migrações
+
+Slide [85]
+
+Programação Web 
+com Python e JavaScript

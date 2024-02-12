@@ -1,0 +1,19 @@
+So how could we get access to not all four elements of argv but just a slice of argv? And this is actually a technical term in Python and some other languages. To take a slice of a list means to take a subset of it maybe from the beginning, maybe the middle, maybe the end. But a slice is a subset of a data structure like a list. 
+
+Well, how do I actually do this in code? Well, in Python, it's actually very easy to take a slice of a list that is a subset thereof. You can simply do this. At the end of the list name, sys.argv in this case, you can use square brackets. And then in those square brackets, you can specify the start and the end of the list that you want to retain. 
+
+I want to start at element1, not zero. I want to start at element1, and I want to just go to the end. So I'm actually going to omit a second number altogether. It's not necessary to have a second number. But I do need that colon because this is going to give me a slice of the list. It's going to give me a slice of the list that starts at location1, not zero. And the colon and then a blank just means it's going to give me everything else. 
+
+So this is in equivalently going to slice off the first element of the list and give me a new list that contains just those three human names, not the name of the file itself. Let me try running this again. I'm going to run Python of name.py, David Carter Rongshin. This time hopefully, I'm going to get three and only three name tags, hitting Enter. And indeed, I've done now just this. 
+
+So again, using some relatively simple syntax in Python, we can use square brackets not just to go to specific elements like bracket0 or bracket1. We can also get subsets of the list, slices of the list by doing bracket something colon something where each of those some things is a number, the beginning or the end, and they're optional depending on whether you want all of them or just some. Any questions now on this version, which adds the loop and these slices with that new syntax? 
+
+AUDIENCE: Can we slice starting from the end of the argument-- argument vector? 
+
+DAVID MALAN: You can. You can slice something from the end of the argument vector. And this might blow one's mind a little bit. Let me go ahead and do this. Let's see. Let me go ahead and do negative one at the end. Using a negative number here and running the same command, we've just uninvited Rongshin from receiving a name tag here. So if you use a negative number, it has the effect of counting in the other direction from the end of the list. A good question there. Other questions now on slices, on looping over sys.argv? 
+
+AUDIENCE: Hi, so I remember very early on when we were talking about only having two decimal places in float value. Is that in the same vein, like, because we use the code on 0.2F? Is that the same thing then? Why would the F be included then in the 0.2F as opposed to here when you just have the numbers? 
+
+DAVID MALAN: A really good question. And it's just the short answer's that context matters. So there's only so many keys on our keyboard. And so we sometimes use the same symbols for different things. So what you're alluding to is the format code in an F string for actually formatting a number using a colon, using a period, using a number, using the letter F and so forth. And that is very specific to the F string feature of Python. 
+
+This case has nothing to do with any of that syntax per se. This is just using a colon in a different context to solve this problem to implement a slice. The authors of Python could have chosen another symbol. But honestly looking down at my keyboard here, we don't have that many to choose from that are easy to type. So sometimes they have different meanings. A good question as well. 

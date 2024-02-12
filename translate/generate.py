@@ -139,6 +139,19 @@ def generate_file_specifications(
     generated_file = open(f'{file_destination}/{f}', 'a')
     generated_file.writelines("\n\n"+translated_content)
 
+def generate_file_lectures_scripts(
+        course: TypeCourse,
+        folder: TypeContent,
+        f: str,
+        language: TypeLanguage,
+        extension: str,
+        translated_content: str):
+    
+    file_destination = f'app/{course}/content/{language}/{folder}/{f}'
+    generated_file = open(file_destination, 'w')
+    generated_file.writelines(translated_content)
+
+
 def generate_file_pages(
         course: TypeCourse,
         folder: TypeContent,
@@ -148,5 +161,17 @@ def generate_file_pages(
         translated_content: str):
     
     file_destination = f'app/{course}/content/{language}/{f}'
+    generated_file = open(file_destination, 'w')
+    generated_file.writelines(translated_content)
+
+def generate_file_slides_text(
+        course: TypeCourse,
+        folder: TypeContent,
+        f: str,
+        language: TypeLanguage,
+        extension: str,
+        translated_content: str):
+    
+    file_destination = f'app/{course}/content/{language}/{folder}_text/{f}'
     generated_file = open(file_destination, 'w')
     generated_file.writelines(translated_content)

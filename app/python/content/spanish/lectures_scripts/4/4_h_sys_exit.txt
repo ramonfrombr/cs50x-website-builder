@@ -1,0 +1,45 @@
+DAVID MALAN: Muy bien. Muy bien, ahora volvamos nuestra atención a este código y veamos si podemos mejorarlo un poco añadiendo funcionalidad adicional que obtenemos con módulos como el módulo sys. Una de las cosas que no me gusta de esta versión del código, aunque se podría argumentar que ahora es correcta, es que la esencia de mi programa, que es simplemente imprimir la etiqueta de nombre, se relega a esta cláusula else. Y eso está bien.
+
+Lógicamente, es correcto, pero en general, hay algo bueno en mantener todos los manejos de errores separados del código al que realmente te importa tener todos estos ifs, elifs, tal vez al principio de tu código, que están comprobando que todos los datos sean los esperados.
+
+Pero entonces sería bueno si solo por diseño no ocultara en esta declaración else el código real que te importa. Preferiría, por ejemplo, hacer algo lógico como esto. Podría buscar errores en la parte superior. Y luego aquí abajo, imprimir la etiqueta de nombre.
+
+Sería bueno si esos son bloques de código distintos, todos los cuales están alineados a la izquierda aquí. Pero hay un problema con lo que acabo de hacer aquí. Lógicamente, ¿qué error introduje al eliminar el else e introducir la línea 10 por sí sola sin ninguna sangría fuera de la condicional? ¿Qué error acabo de introducir? ¿Qué error, para ser claro?
+
+AUDIENCIA: Error de nombre.
+
+DAVID MALAN: Irónicamente, es un error de nombre pero no una excepción de error de nombre. Es un error con mi nombre, pero creo que estás congelado para mí. Va a generar una excepción porque aunque estoy verificando la longitud de sys.argv en la parte superior y aunque lo estoy verificando nuevamente para asegurarme de que es mayor a 2, no solo menor a 2, sino mayor, aún asumo ciegamente e incorrectamente que ahora existirá.
+
+Entonces, para ser claro, si ejecuto Python de name.py y no escribo ningún argumento, tengo muy pocos, pero también veré esa misma excepción. En la parte superior de la salida de mi ventana de terminal, está mi mensaje de error, muy pocos argumentos. Pero nuevamente, en la línea 10, procedo ciegamente a indexar en mi lista en la ubicación 1 que no existe.
+
+Resulta que hay una mejor manera de manejar errores como este, especialmente si estás escribiendo un programa en Python que simplemente debe ejecutarse brevemente y luego salir de todos modos. Pero tal vez podríamos comenzar a salir de manera prematura si el programa en sí simplemente no puede continuar. Si el usuario no nos ha dado los datos que queremos, tal vez deberíamos salir del programa antes de lo que lo haríamos normalmente.
+
+Entonces, voy a hacer esto. Voy a eliminar mis comentarios para enfocarnos solo en el código aquí. Y voy a proponer que en lugar de imprimir solo "muy pocos argumentos", voy a usar otra función que viene con el módulo sys. Voy a llamar a sys.exit.
+
+Y como su nombre lo indica, hará exactamente eso. Con la ayuda del sistema, va a salir de mi programa ahí mismo en la línea cuatro. ¿Por qué está bien? Bueno, si me diste muy pocos argumentos, no tengo nada más que decirte, usuario. Podría salir un poco prematuramente. Y también puedo hacer esto en la línea seis.
+
+Vamos a imprimir eso, pero sys.exit, "muy pocos argumentos". Imprimamos ese mensaje y salgamos ahí mismo. Ahora, puedo confiar en que cuando llegue a la línea ocho, todas las condiciones de error se hayan verificado. Y así que es seguro para mí asumir que de hecho hay un elemento en la ubicación 1 en sys.argv.
+
+Así que ahora voy a ejecutar esto, Python de name.py, Enter, muy pocos argumentos. Pero estoy de vuelta en mi símbolo de comando. No ha sucedido nada más. Ejecútalo de nuevo. Python de name.py David Malan sin comillas, Enter. Ahora se imprime "demasiados argumentos" aquí. Finalmente, Python de name.py solo David, Enter. Hola, mi nombre es David.
+
+Entonces tenemos entonces en sys dos formas de funcionalidad. Ahora, tenemos acceso a esta variable sys.argv, este vector de argumentos, que me da todas las palabras que se escribieron en el símbolo de comando, incluido el nombre del propio programa. Y resulta que si leemos más en la documentación, hay una función de salida que puede recibir diferentes tipos de entrada. Pero si paso una cadena como esta, de hecho imprimirá esa cadena para mí y luego saldrá de mi programa ahí mismo.
+
+¿Preguntas ahora sobre cómo salir de programas como este? Para ser claro, todo este tiempo, una vez que Python llega al final de tu archivo, de todos modos va a salir. Así que estoy usando sys.exit ahora solo para asegurarme de salir antes de lo normal.
+
+AUDIENCIA: Mi pregunta es sobre sys.argv. ¿Es capaz de aceptar o tomar múltiples elementos a la vez? Digamos, por ejemplo, Python name.py, David Malan. Soy hombre, tengo 20 años. Y si, digamos, solo quiero acceder a tu nombre, que está en el primer índice. Y tu edad está, digamos, en el sexto índice. ¿Puedo decir sys.argv1 y otro para seis para acceder a lo que quiero? ¿Funciona así para sys.argv?
+
+DAVID MALAN: Respuesta corta, sí, creo que si entiendo correctamente tu pregunta, donde propones tener muchas palabras al final del comando. Y quieres acceder a esas palabras individuales. Absolutamente. En algún momento, se vuelve un poco frágil, diría yo, si estás escribiendo tantas palabras en el símbolo de comando que el orden realmente importa.
+
+Resulta que hay muchos programas y hay funcionalidades en Python que te permiten proporcionar esos valores, como nombre o edad o cualquier número de otros campos en el orden que desees, pero pasando un poco más de información textual que le dice al programa cómo quieres usarlo.
+
+Así que en resumen, lo que describes es posible. Y permíteme hacer una pequeña encarnación de eso de la siguiente manera. Permíteme proponer que volvamos a mi código aquí. Y propongamos ahora que realmente queremos admitir múltiples valores en el símbolo de comando. Entonces no habrá tal cosa como argumentos demasiado. Supongamos que quiero generar etiquetas de nombre no solo para David, sino para David, para Carter, para Rongshin, para otros en el grupo que también quieren sus etiquetas de nombre.
+
+Entonces voy a hacer esto. Voy a eliminar mi condición elif porque no quiero limitar el número máximo de palabras que se escriben en el símbolo de comando. En cambio, quiero iterar sobre cada nombre en el símbolo de comando. Así que voy a decir esto. For arg in sys.argv, veamos ahora, imprime esta vez, arg.
+
+¿Qué estoy haciendo aquí? Bueno, aunque la sintaxis es un poco diferente, la idea es la misma que antes cuando hemos tenido bucles. Estoy usando un bucle for para iterar sobre una lista. La lista en cuestión aquí es sys.argv. Arg es una variable que estoy creando sobre la marcha. El bucle for se asegurará de que la primera vez que pase por este bucle, arg esté configurado para la primera palabra en la línea de comandos.
+
+La segunda vez que pase por el bucle, Python se asegurará de que arg ahora esté configurado para la segunda cosa en la línea de comandos y así sucesivamente. Así funciona un bucle for. Actualiza la variable por nosotros. No tengo que llamarla arg. Podría llamarla nombre siempre y cuando lo cambie a nombre en ambos lugares. Pero arg es razonable si estoy iterando sobre argumentos de manera más general.
+
+Si ahora ejecuto este programa, desafortunadamente, hay un pequeño error. Incluso si escribo David, Carter y Rongshin, no voy a obtener solo tres etiquetas de nombre. En tu mente, ¿alguien ve el error en el que estoy a punto de tropezar? No es un gran problema si tengo suficientes etiquetas de nombre para repartir. Pero voy a estar desperdiciando una porque esto va a imprimir no tres, sino cuatro etiquetas de nombre, donde la primera contiene el nombre del programa en sí.
+
+Quizás no sea gran cosa. Tal vez esa sea la pegatina que no nos molemos en repartir, pero es un desperdicio. Y parece incorrecto.

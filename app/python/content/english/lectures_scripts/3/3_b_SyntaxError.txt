@@ -1,0 +1,18 @@
+
+So what are some of the things that can go wrong? So I'm going to go ahead and open up VS Code on my computer here. And in the terminal window, I'm going to go ahead and run code of hello.py. That's going to, of course, open up a brand new tab for me, hello.py, in which I can write my code. 
+
+And let me go ahead and write some very simple code just to say hello to the world. Let's go ahead and say print "hello, world. And then let me go ahead and-- I'm forgetting to close that quote. So a mistake that you yourself might have already made or might surely in the future make-- and it's a little subtle because you might not necessarily notice that you've just missed that one character. 
+
+Well, let me go ahead and somewhat optimistically go down to my terminal window now and run Python of hello.py and hit Enter. And that's the first of my errors. My gosh, I've only written one line of code. And I seem to have more lines of errors on the screen. 
+
+But the salient point is this bottom-most thing here. Notice where it says syntax error. A syntax error is a problem with the code that you have typed, your syntax. Just like English and other human languages have syntax associated with them, so does my code. And it's not quite correct. 
+
+Something is awry. I didn't follow the instructions properly. And it does elaborate for me, unterminated string literal. Now, that's a bit arcane. That is a bit of a confusing error message. 
+
+But unterminated would generally mean that I started something but didn't stop it. I didn't terminate it. String, of course, is a sequence of text, like we've discussed before-- or stir in Python. And literal generally refers to something that you literally typed. 
+
+It's not a variable. It's something like quote unquote-- or just "hello world. So the fix here, of course, is going to be to go ahead and terminate that string and actually close the quote. And if I now go back down into my terminal window and rerun Python of hello.py, now I'm saying hello to the world. 
+
+So the catch with syntax errors here is that syntax errors are entirely on you to solve. A syntax error is a problem that you've got to go back into your code and fix from the get-go. You can't just kind of hope that it's going to resolve itself or expect that other parts of your code will catch it for you. Syntax errors just must be fixed. 
+
+But there's a lot of other types of errors in Python that might be described as runtime errors, that happen while your code is running. And it's really up to you to write some additional code defensively to detect when those errors happen because you don't necessarily know, for instance, what input humans are going to type into your program. And so you better be ready, defensively, to accommodate things that they type or even misstype. 

@@ -1,0 +1,41 @@
+Entonces, permítanme proponer que sigamos adelante aquí y cerremos validate.py. Y creemos un programa completamente nuevo llamado format.py, cuyo objetivo es reformatear la entrada del usuario en el formato que esperamos. Voy a seguir adelante y ejecutar el código de format.py. Y supongamos que los datos que vamos a reformatear son el nombre del usuario, no la dirección de correo electrónico, sino el nombre esta vez.
+
+Esperemos que escriban su nombre correctamente, como David Malan. Pero algunos usuarios pueden tener la costumbre, por cualquier motivo, de escribir su nombre al revés, con una coma, como Malan, David en lugar de lo anteriormente mencionado. Ahora, está bien porque ambos son claramente legibles para los humanos. Pero si quieres estandarizar cómo se almacenan esos nombres en tu sistema, tal vez en una base de datos o archivo CSV, o algo más, sería bueno al menos estandarizar o hacer canónica el formato en el que se almacenan tus datos, para que si imprimes el nombre del usuario siempre sea en el mismo formato, David Malan, y no haya comas ni inversión en él.
+
+Así que sigamos adelante y hagamos algo familiar. Sigamos adelante y déjame crear una variable llamada nombre y asignarle el valor de retorno de la entrada, preguntándole al usuario, como hemos hecho muchas veces, "¿cuál es tu nombre?", signo de interrogación. Voy a seguir adelante y limpiar de antemano un poco de desorden, como hemos estado haciendo aquí, simplemente eliminando cualquier espacio en blanco al principio o al final. Solo por si acaso el usuario presiona accidentalmente la barra espaciadora, no queremos que eso termine en nuestro conjunto de datos.
+
+Y ahora vamos a hacer esto como hemos hecho antes. Déjame ir rápidamente y mostrar, solo para asegurarme de que estoy empezando correctamente, "hola" y luego entre llaves el nombre, por lo que estoy creando una cadena formateada para mostrar "hola", coma, "nombre".
+
+Ahora déjame limpiar mi pantalla y ejecutar python de format.py. Permítanme comportarme de manera adecuada y escribir mi nombre como lo haría normalmente, David, espacio, Malan, Enter. Y creo que el resultado se ve bastante bien. Se ve como se esperaba gramaticalmente.
+
+Ahora permítanme seguir adelante y jugar a este juego de nuevo. Pero esta vez, tal vez porque no estoy pensando o simplemente por la costumbre de escribir el apellido antes del nombre, escribo Malan, coma, David, y presiono Enter. Muy bien. Bueno, esto ahora es extraño.
+
+Aunque el programa simplemente muestra exactamente lo que escribí, esto no está ni cerca de ser correcto, al menos gramaticalmente. Realmente debería decir "hola, David Malan". Ahora, tal vez podría haber algunas condiciones if y simplemente rechazar la entrada del usuario si escriben una coma o invierten sus nombres de alguna manera.
+
+Pero eso sería demasiado poco y demasiado tarde si el usuario ya ha enviado un formulario en línea y ya tengo los datos, y ahora necesito limpiarlos. Y no será divertido ir a través de ellos manualmente en Google Spreadsheets, o Apple Numbers, o Microsoft Excel y corregir manualmente los nombres de muchas personas para eliminar las comas y mover el nombre antes que el apellido, como es convencional en los Estados Unidos.
+
+Así que hagamos esto. Puede ser un poco frágil, pero empecemos a expresarnos de manera más programática aquí y preguntemos esto. Si hay una coma en el nombre de la persona, lo cual es algo propio de Python, solo estoy preguntando, ¿esta cadena más corta está dentro de esta cadena más larga?, entonces déjame hacer esto. Déjame tomar ese nombre en la variable, dividirlo no solo por la coma sino también por el espacio después, asumiendo que el humano escribió un espacio después de su nombre.
+
+Y vamos a almacenar el resultado de esa división de Malan, coma, David en dos variables. Hagamos apellido, coma, nombre, nuevamente desempacando la secuencia de valores que se obtiene. Ahora déjame reformatear el nombre. Así que forzaré a que el nombre del usuario sea como yo espero.
+
+Por lo tanto, el nombre va a ser esta cadena de formato: nombre luego apellido, ambos entre llaves pero formateados juntos con un solo espacio, de modo que sobrescribo la entrada del usuario y actualizo mi variable de nombre en consecuencia. Por el momento, para ser claro, este programa es interactivo. Como, los usuarios, como yo, están escribiendo su nombre en el programa.
+
+Pero imaginen que los datos ya están en un archivo CSV. Provienen de algún proceso como un formulario de Google u otra cosa en línea. Podrías imaginar escribir un código similar a este, pero que quizás lee ese archivo en memoria primero. Quizás sea un CSV a través de CSV Reader o DictReader, y luego iterar sobre cada uno de esos nombres. Pero lo mantendremos simple y solo haremos un nombre a la vez.
+
+Pero ahora lo interesante aquí es si vuelvo a mi ventana de terminal, lo borro y ejecuto python de format.py, y presiono Enter, voy a escribir David, espacio, Malan como antes. Y creo que seguimos bien. Pero también haré esto: python de format.py Malan, coma, David, con un espacio en medio, cruzo los dedos y presiono Enter, y voilà. Ahora eso ha sido arreglado.
+
+Algo tan simple, sin duda. Pero es tan comúnmente necesario limpiar la entrada de los usuarios. Aquí vemos al menos una forma de hacerlo bastante fácilmente. Sin embargo, para ser justos, hay algunos problemas aquí. Y de hecho, ¿alguien puede imaginar un escenario en el que este código realmente no arregle la entrada del usuario? ¿Qué podría salir mal incluso con esta corrección en mi código? ¿Alguna idea?
+
+AUDIENCE: Si escriben su nombre, coma, y luego [INAUDIBLE].
+
+DAVID MALAN: Ah, y luego algo más. Sí. Permítanme intentar esto, por ejemplo. Voy a ejecutar un programa. Y soy el único David Malan que conozco. Pero supongamos que fuera, digamos, junior, como esto. Y es común, al menos en inglés, poner una coma ahí a veces. No necesariamente necesitas la coma, pero soy una de esas personas que la usa.
+
+Eso ahora está realmente, realmente roto. He roto alguna suposición allí. Y eso ciertamente podría salir mal aquí. ¿Qué más? Bueno, permítanme seguir adelante y ejecutar esto de nuevo. Y si escribo Malan, coma, David, sin espacio, porque estoy siendo un poco descuidado, no estoy prestando atención, lo que sucederá cuando finalmente tenga muchos usuarios, bueno, esto se rompe mucho ahora.
+
+Observen que tengo un ValueError, una excepción real. ¿Por qué? Porque split se supone que divide la cadena en dos cadenas buscando la coma y un espacio. Pero si no hay coma y espacio, no puede dividirlo en dos partes. Y el hecho de que tengo dos variables a la izquierda, pero solo obtengo una cosa a la derecha, significa que no puedo hacer este código exactamente como está.
+
+Así que es frágil, sin duda. Pero ¿no sería agradable si pudiéramos al menos mejorarlo? Por ejemplo, ahora sabemos algo de sintaxis de expresiones regulares. ¿Y si al menos quisiera hacer que este espacio sea opcional? Bueno, podría usar mi nueva sintaxis de expresiones regulares y poner un signo de interrogación. El signo de interrogación significa cero o uno de las cosas a la izquierda.
+
+¿Cuál es la cosa a la izquierda? Literalmente un espacio. Ni siquiera necesito paréntesis si solo hay una cosa allí. Por lo tanto, ese sería el comienzo de un patrón que dice: debo tener una coma y luego puedo o no tener un espacio, cero o un espacio después. Desafortunadamente, la versión de split incorporada en la variable str, como en este caso, no admite expresiones regulares.
+
+Si queremos usar nuestras expresiones regulares, debemos usar esa biblioteca aquí.

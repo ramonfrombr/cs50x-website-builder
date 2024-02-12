@@ -1,0 +1,147 @@
+
+[0]
+
+Introduction to
+Programming with Python
+Regular Expressions
+
+[1]
+
+regular expressions
+
+[2]
+
+regexes
+
+[3]
+
+re
+
+[4]
+
+docs.python.org/3/library/re.html 
+
+[5]
+
+re.search(pattern, string, flags=0)
+
+[6]
+
+.
+any character except a newline
+*
+0 or more repetitions
++
+1 or more repetitions
+?
+0 or 1 repetition
+{m}
+m repetitions
+{m,n}
+m–n repetitions
+
+[7]
+
+
+[8]
+
+.
+any character except a newline
+*
+0 or more repetitions
++
+1 or more repetitions
+?
+0 or 1 repetition
+{m}
+m repetitions
+{m,n}
+m–n repetitions
+
+[9]
+
+
+[10]
+
+^
+matches the start of the string
+$
+matches the end of the string or 
+just before the newline at the end 
+of the string
+
+[11]
+
+[]
+set of characters
+[^]
+complementing the set
+
+[12]
+
+\d
+decimal digit
+\D
+not a decimal digit
+\s
+whitespace characters
+\S
+not a whitespace character
+\w
+word character … as well as 
+numbers and the underscore
+\W
+not a word character
+
+[13]
+
+re.IGNORECASE
+re.MULTILINE
+re.DOTALL
+
+[14]
+
+^[a-zA-Z0-9.!#$%&'*+\/=?^_`
+{|}~-]+@[a-zA-Z0-9](?:[a-zA
+-Z0-9-]{0,61}[a-zA-Z0-9])?(
+?:\.[a-zA-Z0-9](?:[a-zA-Z0-
+9-]{0,61}[a-zA-Z0-9])?)*$
+
+[15]
+
+re.match(pattern, string, flags=0)
+
+[16]
+
+re.fullmatch(pattern, string, flags=0)
+
+[17]
+
+A|B
+either A or B
+(...)
+a group
+(?:...)
+non-capturing version
+
+[18]
+
+:=
+
+[19]
+
+re.sub(pattern, repl, string, count=0, flags=0)
+
+[20]
+
+re.split(pattern, string, maxsplit=0, flags=0)
+
+[21]
+
+re.findall(pattern, string, flags=0)
+
+[22]
+
+Introduction to
+Programming with Python
+Regular Expressions

@@ -4,6 +4,8 @@ class IMenu(TypedDict):
     title: str
     intro: str
     week: str
+    week0: str
+    week1: str
     week2: str
     week3: str
     week4: str
@@ -49,17 +51,19 @@ class IWeek(TypedDict):
     pdf_slides_link: str
 
 menu: IMenu = {
-    "title": "",
-    "intro": "",
-    "week": "",
-    "week2": "",
-    "week3": "",
-    "week4": "",
-    "week5": "",
-    "week6": "",
-    "week7": "",
-    "week8": "",
-    "week9": "",
+    "title": "Introduction to Programming with Python",
+    "intro": "CS50x",
+    "week": "Week",
+    "week0": "Functions, Variables",
+    "week1": "Conditionals",
+    "week2": "Loops",
+    "week3": "Exceptions",
+    "week4": "Libraries",
+    "week5": "Unit Tests",
+    "week6": "File I/O",
+    "week7": "Regular Expressions",
+    "week8": "Object-Oriented Programming",
+    "week9": "Et Cetera",
     "seminars": "",
     "project": "",
     "honesty": "",
@@ -88,7 +92,7 @@ week_page: IWeekPage = {
 }
 
 week_0: IWeek = {
-    "name": "",
+    "name": "Functions, Variables",
     "number": 0,
     "study_guide": "",
     "lecture_url": "",
@@ -100,7 +104,7 @@ week_0: IWeek = {
 }
 
 week_1: IWeek = {
-    "name": "",
+    "name": "Conditionals",
     "number": 1,
     "study_guide": "",
     "lecture_url": "",
@@ -112,7 +116,7 @@ week_1: IWeek = {
 }
 
 week_2: IWeek = {
-    "name": "",
+    "name": "Loops",
     "number": 2,
     "study_guide": "",
     "lecture_url": "",
@@ -124,7 +128,7 @@ week_2: IWeek = {
 }
 
 week_3: IWeek = {
-    "name": "",
+    "name": "Exceptions",
     "number": 3,
     "study_guide": "",
     "lecture_url": "",
@@ -136,7 +140,7 @@ week_3: IWeek = {
 }
 
 week_4: IWeek = {
-    "name": "",
+    "name": "Libraries",
     "number": 4,
     "study_guide": "",
     "lecture_url": "",
@@ -148,7 +152,7 @@ week_4: IWeek = {
 }
 
 week_5: IWeek = {
-    "name": "",
+    "name": "Unit Tests",
     "number": 5,
     "study_guide": "",
     "lecture_url": "",
@@ -160,7 +164,7 @@ week_5: IWeek = {
 }
 
 week_6: IWeek = {
-    "name": "",
+    "name": "File I/O",
     "number": 6,
     "study_guide": "",
     "lecture_url": "",
@@ -172,7 +176,7 @@ week_6: IWeek = {
 }
 
 week_7: IWeek = {
-    "name": "",
+    "name": "Regular Expressions",
     "number": 7,
     "study_guide": "",
     "lecture_url": "",
@@ -184,7 +188,7 @@ week_7: IWeek = {
 }
 
 week_8: IWeek = {
-    "name": "",
+    "name": "Object-Oriented Programming",
     "number": 8,
     "study_guide": "",
     "lecture_url": "",
@@ -196,20 +200,8 @@ week_8: IWeek = {
 }
 
 week_9: IWeek = {
-    "name": "",
+    "name": "Et Cetera",
     "number": 9,
-    "study_guide": "",
-    "lecture_url": "",
-    "lecture_embed_url": "",
-    "pdf_code_link": "",
-    "zip_code_link": "",
-    "google_slides_link": "",
-    "pdf_slides_link": "",
-}
-
-week_10: IWeek = {
-    "name": "",
-    "number": 10,
     "study_guide": "",
     "lecture_url": "",
     "lecture_embed_url": "",

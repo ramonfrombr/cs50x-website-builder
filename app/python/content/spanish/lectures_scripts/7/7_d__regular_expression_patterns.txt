@@ -1,0 +1,111 @@
+Bueno, ¿cómo puedo hacer esto? Bueno, resulta que en el mundo de las expresiones regulares, ya sea en Python o en muchos otros lenguajes también, hay ciertos símbolos que se pueden usar para definir patrones. Hasta ahora, solo he usado texto literal sin procesar.
+
+Si vuelvo a mi código aquí, esto técnicamente califica como una expresión regular. He pasado una cadena con comillas dentro de la cual hay un signo @. Ahora, eso no es un patrón muy interesante. Es solo un signo @. Pero resulta que una vez que tienes acceso a expresiones regulares o a una biblioteca que ofrece esa función, puedes expresarte más poderosamente de la siguiente manera.
+
+Permítame revelar que el patrón que se pasa a `re.search` puede tener una serie de símbolos especiales. Y aquí hay solo algunos de ellos. En los ejemplos que estamos a punto de ver, en los patrones que estamos a punto de definir, aquí están los símbolos especiales. Puedes usar un solo punto, un punto, para representar cualquier carácter excepto un salto de línea, una línea en blanco.
+
+Es decir, si realmente no me importa qué letras del alfabeto están en el nombre de usuario del usuario, solo quiero que haya uno o más caracteres en el nombre del usuario, el punto me permite expresar de la A a la z, mayúsculas y minúsculas, y muchas otras letras también.
+
+* va a significar: un solo asterisco, cero o más repeticiones. Entonces, si digo algo *, eso significa que estoy dispuesto a aceptar cero repeticiones, es decir, nada en absoluto, o más repeticiones: 1, o 2, o 3, o 300.
+
+Si ves un signo más (+) en mi patrón, significa que va a significar una o más repeticiones. Es decir, tiene que haber al menos un carácter allí, un símbolo, y luego opcionalmente más después de eso. Y luego puedes decir cero o una repetición. Puedes usar un solo signo de interrogación (?) después de un símbolo, y eso quiere decir: quiero cero de este carácter o uno, pero eso es todo lo que esperaré.
+
+Y por último, habrá una forma de especificar un número específico de símbolos. Si usas estas llaves y un número, aquí representado simbólicamente como m, puedes especificar que quieres m repeticiones, ya sea 1, o 2, o 3, o 300. Puedes especificar el número de repeticiones tú mismo. Y si quieres un rango de repeticiones, como quieres pocos caracteres o muchos caracteres, puedes usar las llaves y dos números dentro, llamados aquí m y n, que serían un rango de m a n repeticiones.
+
+Ahora, ¿qué significa todo esto? Bueno, permítame volver a VS Code aquí y proponer que trabajemos más en esta solución. No es suficiente con solo buscar el signo @. Ya sabemos eso. Minimamente queremos que haya algo a la izquierda y a la derecha.
+
+Entonces, ¿cómo puedo representar eso? Realmente no me importa cuál es el nombre de usuario del usuario, o qué letras del alfabeto están en él, ya sea malan u otro nombre. Entonces, lo que voy a hacer a la izquierda de este signo igual es usar un solo punto, el punto que, nuevamente, indica cualquier carácter excepto un salto de línea.
+
+Pero no solo quiero un solo carácter. De lo contrario, el nombre de usuario de la persona podría ser solo una a tal y tal, o b tal y tal. Quiero que sean varios caracteres así. Entonces, voy a usar inicialmente un *. Entonces, * de punto significa dame algo a la izquierda, y voy a hacer otro, punto * algo a la derecha.
+
+Ahora, esto no es perfecto, pero al menos es un paso adelante. Porque ahora lo que voy a hacer es esto. Voy a volver a ejecutar python validate.py. Y voy a seguir probando con mi propia dirección de correo electrónico solo para asegurarme de que no he empeorado las cosas. Y ahora está bien.
+
+Ahora voy a escribir otra entrada, como qué tal solo malan@ sin ningún nombre de dominio. Y pensarías que esto sería inválido. Pero, pero, pero aún se considera válido. ¿Pero por qué?
+
+Si vuelvo a esta tabla, ¿por qué ahora malan@ sin un dominio se considera válido? ¿Cuál es mi error al haber usado .*@.* como mi expresión regular o regex?
+
+AUDIENCIA: Porque estás usando el * en lugar del signo más (+).
+
+DAVID MALAN: Exactamente. El *, una vez más, significa cero o más repeticiones. Entonces, re.search está perfectamente feliz de aceptar nada después del signo @, porque eso serían cero repeticiones. Así que creo que necesito evolucionar esto como mínimo y volver a mi código.
+
+Permítame cambiar esto de punto * a punto +. Y voy a cambiar el final de punto * a punto + para que ahora, cuando ejecute mi código aquí, vuelvo a ejecutar python validate.py. Voy a probar mi dirección de correo electrónico como siempre. Sigue funcionando.
+
+Ahora, voy a escribir lo mismo de antes que fue considerado accidentalmente válido. Ahora presiono Enter, finalmente es inválido. Así que ahora estamos avanzando un poco más precisamente en lo que estamos haciendo.
+
+Ahora, debo señalar aquí, como con casi todo en programación, Python incluido, a menudo hay múltiples formas de resolver el mismo problema. ¿Alguien ve alguna forma en mi código aquí en la que puedo hacer un pequeño cambio si olvidara que existe el operador más y volviera a usar el asterisco? Si solo te permitiera usar puntos y solo estrellas, ¿podrías recrear la noción de más?
+
+AUDIENCIA: Sí. Usa otro punto, punto punto *.
+
+DAVID MALAN: Sí. Porque si un punto significa cualquier carácter, simplemente usaremos un punto. Y luego, cuando quieras decir "o más", usa otro punto y luego el * (asterisco). Por lo tanto, el equivalente a punto más (+) habría sido dot dot *(punto punto asterisco) porque el primer punto significa cualquier carácter, y el segundo par de caracteres, punto asterisco, significa cero o más caracteres adicionales.
+
+Y para ser claro, no tiene que ser el mismo carácter. Solo usando punto o punto * no significa que todo tu nombre de usuario deba ser una, oa, o aaa, oa aaaa. Puede variar con cada símbolo. Solo significa cero o más de cualquier carácter uno tras otro.
+
+Entonces puedo hacer esto tanto a la izquierda como a la derecha. ¿Cuál es mejor? Bueno, depende. Creo que se puede argumentar que esto es aún más claro, porque ahora es obvio que hay un punto, que significa cualquier carácter, y luego está el punto *(punto asterisco).
+
+Pero si tienes la costumbre de hacer esto con frecuencia, una de las razones por las que existen cosas como el signo más (+) es para consolidar tu código en algo un poco más sucinto. Y si estás familiarizado con ver el signo más ahora, tal vez esto sea más legible para ti. Así que nuevamente, al igual que con Python en general, a menudo verás diferentes formas de expresar los mismos patrones, y personas razonables pueden estar de acuerdo o no en cuál es mejor que otra.
+
+Bueno, permítanme proponerles que ahora podemos pensar un poco más gráficamente en ambos modelos. Si esto te parece un poco críptico, permítanme volver a la encarnación anterior de esta expresión regular, que era simplemente un solo punto asterisco.
+
+Esta expresión regular, .*@.*, ¿qué significa de nuevo? Significa cero o más caracteres seguidos de un signo @ literal seguido de cero o más caracteres adicionales. Ahora, cuando pasas este patrón como un argumento a `re.search`, lo va a leer de izquierda a derecha y luego lo usará para intentar hacer coincidir con la entrada, en este caso, el email, que el usuario escribió.
+
+Ahora, ¿cómo va a hacer la computadora, cómo va a hacer `re.search` para llevar un registro de si el correo electrónico del usuario coincide con este patrón? Bueno, resulta que va a usar una especie de máquina implementada en software conocida como una máquina de estado finito, o más formalmente, un autómata finito no determinista.
+
+Y la forma en que funciona, si lo representamos gráficamente, es la siguiente. La función `re.search` comienza aquí en un estado llamado estado inicial. Esa es la especie de condición en la que comienza. Y luego va a leer la dirección de correo electrónico del usuario de izquierda a derecha. Y va a decidir ya sea si quedarse en ese primer estado o hacer la transición al siguiente estado.
+
+Entonces, por ejemplo, en este primer estado, mientras el usuario lee mi dirección de correo electrónico, `malan@harvard.edu`, va a seguir esta curva y volver sobre sí mismo, una arista reflexiva. Y está etiquetada con punto, porque punto, nuevamente, solo significa cualquier carácter. Entonces, mientras la función está leyendo mi dirección de correo electrónico, `malan@harvard.edu`, de izquierda a derecha, va a seguir estas transiciones de la siguiente manera, M-A-L-A-N.
+
+Y luego, con suerte, va a seguir esta transición al segundo estado, porque hay un signo de arroba literal tanto en esta máquina como en mi dirección de correo electrónico. Luego intentará leer el resto de mi dirección de correo electrónico, H-A-R-V-A-R-D punto E-D-U, y eso es todo.
+
+Luego, la computadora va a verificar. ¿Terminó en un estado de aceptación, un estado final, que, de hecho, aquí se representa pictóricamente de manera un poco diferente con círculos dobles, uno dentro del otro? Y eso solo significa que si la computadora se encuentra en ese segundo estado de aceptación después de haber leído todo el input del usuario, es, de hecho, una dirección de correo electrónico válida. Si por alguna casualidad, la máquina de alguna manera quedara atrapada en ese primer estado, que no tiene círculos dobles y, por lo tanto, no es un estado de aceptación, la computadora concluiría que esta no es una dirección de correo electrónico válida.
+
+Por el contrario, si volvemos a mi otra versión del código donde en cambio tenía punto más en la izquierda y la derecha, recuerden que `re.search` va a usar una de estas máquinas de estado para decidir de izquierda a derecha si acepta el input del usuario, como `malan@harvard.edu`. ¿Podemos llegar desde el estado inicial, por así decirlo, hasta un estado de aceptación para decidir, sí, de hecho, esto cumple el patrón?
+
+Bueno, propongamos que este autómata finito no determinista se vea así en su lugar. Vamos a comenzar como antes en el estado de inicio más a la izquierda, y necesariamente vamos a consumir un carácter por esta primera arista, que está etiquetada con un punto para indicar que podemos consumir cualquier carácter, como la m en `malan@harvard.edu`. Luego podemos pasar algún tiempo consumiendo más caracteres antes del signo @, como el A-L-A-N.
+
+Luego podemos consumir el signo @. Luego podemos consumir al menos un carácter más, porque recuerden que la expresión regular tiene un punto más esta vez. Y luego podemos consumir aún más caracteres si queremos. Entonces si primero consumimos la H en `harvard.edu`, luego deja el A-R-V-A-R-D, y luego punto E-D-U.
+
+Y ahora aquí, también, estamos al final de la historia, pero estamos en un estado de aceptación, porque ese círculo al final tiene dos círculos en total, lo que significa que si la computadora, si esta función, se encuentra en ese estado de aceptación después de haber leído toda la entrada del usuario, también es una dirección de correo electrónico válida. Si por el contrario, nos hubiéramos quedado atascados en uno de esos otros estados, sin poder seguir una transición, una de esas aristas, y por lo tanto sin poder avanzar en la entrada del usuario de izquierda a derecha, entonces tendríamos que concluir que la dirección de correo electrónico es, de hecho, inválida.
+
+Bueno, ¿cómo podemos mejorar aún más esta implementación? Permítanme proponer ahora que no solo verifiquemos un nombre de usuario y también algo después del nombre de usuario, como un nombre de dominio, sino que exijamos mínimamente que la cadena termine con .edu también. Bueno, creo que puedo hacer esto de manera bastante sencilla. No solo quiero que haya algo después del signo @, como el dominio como Harvard, quiero que el todo termine con .edu.
+
+Pero hay un poco de peligro aquí. ¿Qué he hecho mal al implementar mi expresión regular de esta manera, al usar .+@.+.edu? ¿Qué podría salir mal con esta versión?
+
+AUDIENCIA: El punto es... el punto significa otra cosa en este contexto, donde significa tres o más repeticiones de un carácter, por lo que lo interpretará como un match más largo de lo esperado.
+
+DAVID MALAN: Exactamente. Aunque quiero que signifique literalmente .edu, un punto y luego .edu, desafortunadamente, en el mundo de las expresiones regulares, el punto significa cualquier carácter, lo que significa que esta cadena podría terminar técnicamente en aedu, oa bedu, o cedu, y así sucesivamente, pero eso no es lo que quiero.
+
+Entonces, ¿algún instinto ahora sobre cómo puedo solucionar este problema? ¿Cómo puedo hacer que esta nueva función, `re.search`, y una expresión regular en general, signifiquen literalmente un punto, podrías pensar?
+
+AUDIENCIA: ¿Puedes usar el carácter de escape, la barra invertida?
+
+DAVID MALAN: De hecho. El llamado carácter de escape, que hemos visto antes fuera del contexto de las expresiones regulares cuando hablamos de las nuevas líneas. `\n` fue una forma de decirle a la computadora que quiero una nueva línea, pero sin realmente presionar Enter y mover el cursor tú mismo. Y no quieres una `n` literal en la pantalla. Entonces, `\n` fue una forma de escapar a la `n` y transmitir que quieres un salto de línea.
+
+Resulta que las expresiones regulares usan una técnica similar para solucionar este problema. De hecho, permítanme entrar en mi expresión regular. Y antes de ese punto final, pongamos una sola barra invertida. En el mundo de las expresiones regulares, esto es una denominada secuencia especial. E indica, por esta barra invertida y un solo punto, que quiero coincidir literalmente con un punto. No es que quiera coincidir con cualquier carácter y luego edu. Quiero coincidir con un punto, o un período, edu.
+
+Pero no queremos que Python malinterprete esta barra invertida como el comienzo de una secuencia de escape, algo especial como `\n`. Y no quieres un literal `\n` en la pantalla. Entonces, resulta que hay una cosa más que debemos hacer para las expresiones regulares como esta que tienen una barra invertida que se usa de esta manera. Quiero especificarle a Python que quiero que esta cadena, esta expresión regular entre comillas dobles, se trate como una cadena sin procesar, pasando literalmente una r al principio de la cadena para indicarle a Python que no intente interpretar las barras invertidas de la manera habitual. Quiero pasar literalmente la barra invertida y el punto y el edu a esta función en particular, `search`, en este caso.
+
+Es similar en espíritu a usar esa `f` al comienzo de una cadena de formato, que, por supuesto, le indica a Python que formatee la cadena de una cierta manera, conectando variables que podrían estar entre llaves. Pero en este caso, `r` indica una cadena sin procesar que quiero pasar exactamente tal cual. Ahora, solo es estrictamente necesario si, de hecho, estás usando barras invertidas para indicar que quieres una secuencia especial, como `\.`. Pero en general, probablemente sea un buen hábito seguir usando cadenas sin procesar para todas tus expresiones regulares para que si eventualmente vuelves atrás, haces un cambio, haces una adición, no introduzcas accidentalmente una barra invertida y luego olvides que eso podría tener algún significado especial o malinterpretado.
+
+Bueno, permítanme proponer que ahora pruebo esta nueva expresión regular. Limpiaré mi terminal, ejecutaré python validate - ejutaré python validate.py. Y luego escribiré correctamente mi dirección de correo electrónico, malan@harvard.edu. Y eso, afortunadamente, todavía es válido.
+
+Limpio mi pantalla y ejecuto una vez más, python validate.py. Y esta vez, escribo malan@harvard?edu, donde obviamente no hay un punto allí, pero sí hay otro carácter que la última vez se interpretó como válido erróneamente. Pero esta vez, ahora que he mejorado mi expresión regular, se descubre como inválido.
+
+¿Alguna pregunta ahora sobre esta técnica para hacer coincidir algo a la izquierda del signo @, algo a la derecha y ahora terminar explícitamente con .edu?
+
+AUDIENCIA: ¿Qué sucede cuando el usuario inserta varios signos @?
+
+DAVID MALAN: Buena pregunta. Y me atrapaste aquí. Bueno, en caso de duda, probemos. Permítanme ir adelante y escribir python validate.py, malan@@@harvard.edu, lo cual también es incorrecto, desafortunadamente mi código piensa que es válido. Otro problema a resolver, pero por ahora, una limitación.
+
+¿Otras preguntas sobre estas expresiones regulares hasta ahora?
+
+AUDIENCIA: ¿Se pueden usar llaves para unir el número en lugar de la barra invertida?
+
+DAVID MALAN: ¿Se pueden usar llaves en lugar de la barra invertida? No en este caso. Si quieres un punto literal, la barra invertida punto es la forma de hacerlo de manera literal. ¿Una pregunta más sobre las expresiones regulares?
+
+AUDIENCIA: ¿Esta es la misma técnica que usa Google Forms para categorizar los datos en, digamos, algún... si tienes varias personas enviando solicitudes sobre algún comentario? ¿Categorizan los datos que reciben usando esta expresión regular en particular?
+
+DAVID MALAN: De hecho, si alguna vez has usado Google Forms no solo para enviarlo sino para crear un formulario de Google, una de las opciones del menú es la validación de respuestas, en inglés al menos. Y lo que eso te permite hacer es especificar que el usuario debe ingresar una dirección de correo electrónico, un URL, una cadena de cierta longitud.
+
+Pero hay una característica aún más poderosa que es posible que nunca hayas notado. Y de hecho, si quieres abrir Google Forms, crear un nuevo formulario temporalmente, y curiosear, en realidad verás, al menos en inglés, la denominada "expresión regular" se menciona como uno de los mecanismos que puedes usar para validar la entrada de tus usuarios en tu formulario de Google.
+
+Entonces, de hecho, después de hoy puedes comenzar a evitar los desplegables específicos como dirección de correo electrónico, URL, y similares, y puedes expresar tus propios patrones de manera precisa. Las expresiones regulares incluso se pueden usar en el propio VS Code. Si vas y buscas, o haces una búsqueda y reemplazo en VS Code, puedes, por supuesto, escribir palabras, como podrías hacerlo en Microsoft Word o Google Docs. También puedes escribir, si marcas la casilla correcta, expresiones regulares y comenzar a buscar patrones, no valores literales específicos.

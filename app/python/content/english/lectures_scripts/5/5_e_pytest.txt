@@ -1,0 +1,63 @@
+
+
+So people have solved this problem. If you are in the habit of testing your code a lot, or wanting to, if I'm in the habit of wanting to test my code a lot, if everyone else in the real world is in this habit of wanting to test their code, why don't we create tools that make it a little easier to do so? And in fact, there is a mechanism for doing this, whereby we can use a tool that's popularly called pytest. 
+
+So pytest is a third party program that you can download and install that will automate the testing of your code, so long as you write the tests. But what's nice about this library and others like it is that it adopts some conventions so that you don't have to write as many lines of code yourself manually. They do some of that automatically for you. 
+
+Now this is a third party library. There's other libraries for unit tests, so to speak, that is testing units of your code. Some of them come with Python itself. We're proposing that we look at pytest today because it's actually a little simpler than the unit testing frameworks that come with Python itself. And what do we mean by unit testing? Unit testing is just a formal way of describing testing individual units of your program. What are those individual units? They're typically functions. So unit tests are typically tests for functions that you have written. 
+
+Now what does this mean in practice here. Let me go back to my VS code here and let me propose that we simplify my test calculator significantly. I'm going to go ahead and delete all of these tests, which were accumulating to like 31 lines of code. And let's see if we can distill the tests to their essence, using pytest. 
+
+From my same calculator program, let me still import square. So I do still need that line of code so that I can test that's specific function. Now I'm going to go ahead and define a function, just like I did before, as follows. I'm going to define a function called test square, again by convention, test underscore and the name of the function you want to test, though it doesn't have to be that way. And now I'm going to go ahead and make a few assertions. 
+
+I'm going to assert that the square of 2 should equal 4. I'm going to assert that the square of 3 should equal 9. I'm going to assert that the square of negative 2 should equal 4. And I'm going to assert that the square of negative 3 should equal 9. And lastly for now I'm going to assert that the square of 0 should equal 0. 
+
+So I'm still using the assert keyword, as I introduced earlier. And even though it was a little tedious to type those, it's only eight lines of code now. And they're so easy to type. It's not try and except and all of this. Wouldn't it be nice if something else, someone else, handled the try, the except, the printing, all of the standardization of actually running these tests? And that's where, indeed, pytest comes into play. 
+
+Per the documentation for pytest, which can itself be installed with pip install pytest, which we've used to install other libraries in the past, you can look at the documentation here for all of its formal usage. But fortunately, pytest is pretty user friendly, as testing frameworks go, and it actually allows us to dive right in by just running pytest on the code that we've written. 
+
+So if I go back to VS Code here and look at my test_calculator.py, which, notice, has no main function anymore-- it has no conditional. It has no tries. It has no excepts. It has no prints. It just has my few assertions-- pytest and other libraries like it are going to automate the process of running these tests for me and informing me on the screen whether or not any of those tests failed. 
+
+So let me go ahead and do this. I'm going to go ahead and increase the size of my terminal window for a moment, just so we can see more on the screen. And I'm going to run not python, as I've been doing. I'm going to run pytest, which, again, is this third party tool for running tests in your code. I'm going to run pytest of test_calculator, so that same file. I'm going to cross my fingers as always and hit Enter, and we'll see that something has failed. 
+
+Now admittedly, even though I do think you'll find that pytest is relatively simple to use, it's output, at least at first glance, is not necessarily super user friendly. So what are we seeing here? Notice at the very top of my window is the command that I ran after my prompt. Right below that is a single F in red, which means fail, so not very encouraging. I tried really hard here, but fail is my grade on this program. 
+
+But let's see exactly what happened. If I look at this excerpt here under failures, you'll see that test square is the function that failed. That makes sense, because that's the only one I wrote. And you'll see here somewhat arcane output describing what the error was. So what you're seeing here is the first line of output equals equals 4, which is fine. There's no red error message below that, so that one's OK. 
+
+But this line of code here assert that square of 3 equals equals 9, pytest did not like that assertion, because it didn't end up being true. In fact, per the red E at the start of this line, you'll see that I'm effectively trying to assert that 6 equals equals 9. Now, where did the 6 come from? Wait a minute, if my test involves this, notice that where 6 equals square of 3, this is saying that because I've called square, passing in a value of 3, it turns out it's return value is 6. And of course, mathematically, 6 does not equal equal 9. So that's why this is failing. 
+
+Now, pytest is not as user friendly as telling you exactly why the bug is there or how to fix it. This is really just a clue to you what must be wrong. What you're seeing here is a clue that the first test passed, because there's no red error below that line of code, but this test failed. Somehow or other, your square function is returning 6 when passed in 3 instead of 9. 
+
+So at this point, you sort of put your detective hat on, you go back to your actual code, and you think about in calculator.py, how in the world is line 7 of my square function returning 6 instead of 9. And at this point, odds are the light bulb would go off above your head proverbially, and you would see, I'm using addition, instead of multiplication. 
+
+But what pytest has done for us is automate the process of at least pointing out that error for us. And if I now go in and fix this-- let me go ahead, and the light bulb has gone off. I change the plus to a multiply. Now I'm going to go ahead, and after clearing my screen, I'm going to run not Python, but pytest of test_calculator.py, crossing my fingers again. And now it's green. And I see just a dot, which indicates that my one and only test passed. I'm good, 100% success with my test now after fixing that bug. Let me pause here and see if there's any questions. 
+
+SPEAKER 3: So my question is, what if a user, instead of, because we are taking input from the user, what if the user is somewhat malicious and types in a string instead of an integer, or maybe he types in a float or some other data type? 
+
+DAVID MALAN: Yeah, so what if the user, like we've seen in past examples, types in cat, instead of a number, when we're expecting an integer? How do we test for something like that? At the moment, I'm admittedly not testing user input. If I go back to my code here, notice that my calculator function, of course, has the square function that we keep testing and retesting. 
+
+But notice that all of the user input is currently relegated to my main function. And admittedly, as of now, I am not testing my main function. So there could be one of those bugs. And in fact, there would be, because if the user types in a string, like cat, instead of an integer, like 2 or 3, then line two recall would actually raise a value error exception. So we've seen that before. 
+
+So when it comes to testing your code, this is actually a good reason for having multiple functions in your program. Rather than putting all of your logic in just the file itself, rather than putting all of the logic in just main, it's actually really good, really helpful practice to break your ideas up into smaller bit-sized functions that themselves are testable. 
+
+And what do I mean here? Square is perfectly testable. Why? Because it takes as input a parameter called n, and it returns as output in integer, which is going to be the square thereof, hopefully. It has a well-defined input and a well-defined output. It is therefore completely within your control in your test program to pass in those values. 
+
+Now I will say, if you want to test whether square behaves properly when passed something like a string, like, quote, unquote, "cat," we could absolutely do something like this, assert that the square of quote, unquote, "cat," it's not going to equal something. You can actually, using different syntax, assert that a specific exception will be raised. 
+
+So if we were actually going to go back into our square function, improve it, and deliberately raise an exception, we could test for that too. But for now, I'm deliberately only testing the square function. I'm not testing for specific user input. But that's another problem to be solved. Other questions now on unit tests? 
+
+SPEAKER 4: Do use the unit test to test code for the CS50 check? 
+
+DAVID MALAN: So Check 50 is similar in spirit. Check 50 is a tool that we, CS50, wrote that is essentially doing something like pytest for the evaluation of students' code. It is similar in spirit, but think of Check 50 as being an alternative to pytest, if you will. But it works a little bit differently. But same idea, pytest and unit testing more generally is a technique that is independent of CS50 and is something that you can and should be doing on your own code, both in or outside of this class. How about one other question here on our unit tests? 
+
+SPEAKER 5: My question is that is instead of writing four times, like as a square of, 2 squared 4, instead of that, can we write equals to in square brackets the numbers we want, instead of writing four lines? 
+
+DAVID MALAN: A really good question, absolutely. Right now if I go back to test_calculator.py, it's indeed pretty manual. It took me a while to say and to type out those several lines, and you could imagine writing some kind of loop to just assert in a loop that this equals that, that this equals that, and so forth, using a list or using maybe a list or a dictionary or some structure like that. 
+
+So yes, you can absolutely automate some of these tests by not just doing the same thing again and again. You can still use all of the syntax of Python to do loops. But generally speaking, your tests should be pretty simple. And in fact, let me propose that we improve upon even this design further, because at the moment what's not really ideal, when I run all of these tests when my function is buggy, is notice the output that I got. 
+
+Let me reintroduce that same bug by changing my multiplication back to addition. Let me increase the size of my terminal window again. And let me run pytest again of test_calculator.py. So this is the version of my code now that has the bug again. So I'm going to see that big massive failure where this failure has been displayed to me. 
+
+But this is not as helpful as it could be, because I have all of those other tests in my code. Recall that I had, what, one, two, three, four, five separate tests, and I'm only seeing the output of the first. Now, why is that? If we go back to my code here, you'll see that the first assertion that's failing, namely this one here, that assert of square of 3 equals equals 9, the other tests aren't even getting run. 
+
+And that's not a big deal in the sense that my code is buggy, so one or more of them are probably going to fail anyway, but wouldn't it be nice to know which of them are going to fail? And in fact, it's ideal to run as many tests all at once as possible to give you as many clues as possible to finding your bug.

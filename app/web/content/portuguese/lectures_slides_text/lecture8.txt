@@ -1,0 +1,708 @@
+Slide [0]
+
+Programação Web
+com Python e JavaScript
+
+Slide [1]
+
+Escalabilidade e Segurança
+
+Slide [2]
+
+Escalabilidade
+
+Slide [3]
+
+Servidor
+
+Slide [4]
+
+Servidor
+
+Slide [5]
+
+Servidores
+• Nuvem 
+• No local
+
+Slide [6]
+
+Benchmarking
+
+Slide [7]
+
+Escalonamento Vertical
+
+Slide [8]
+
+Servidor
+
+Slide [9]
+
+Servidor
+
+Slide [10]
+
+Escalonamento Horizontal
+
+Slide [11]
+
+Servidor
+Servidor
+
+Slide [12]
+
+Servidor
+Servidor
+
+Slide [13]
+
+Servidor
+Servidor
+Balanceador de Carga
+
+Slide [14]
+
+Balanceamento de Carga
+
+Slide [15]
+
+Métodos de Balanceamento de Carga
+• Escolha Aleatória 
+• Round Robin 
+• Menos Conexões 
+• ...
+
+Slide [16]
+
+Balanceamento de Carga Consciente de Sessão
+• Sessões Fixas 
+• Sessões no Banco de Dados 
+• Sessões no Lado do Cliente 
+• ...
+
+Slide [17]
+
+Dimensionamento Automático
+
+Slide [18]
+
+Servidor
+Servidor
+Balanceador de Carga
+
+Slide [19]
+
+Servidor
+Balanceador de Carga
+Servidor
+Servidor
+
+Slide [20]
+
+Servidor
+Balanceador de Carga
+Servidor
+Servidor
+Servidor
+
+Slide [21]
+
+Servidor
+Balanceador de Carga
+Servidor
+Servidor
+Servidor
+
+Slide [22]
+
+Servidor
+Servidor
+Servidor
+Servidor
+Balanceador de Carga
+
+Slide [23]
+
+Escalonamento de Bancos de Dados
+
+Slide [24]
+
+Servidor
+Servidor
+Balanceador de Carga
+
+Slide [25]
+
+Servidor
+Servidor
+Balanceador de Carga
+Banco de Dados
+
+Slide [26]
+
+Particionamento de Bancos de Dados
+
+Slide [27]
+
+id
+origem
+código_origem 
+destino
+código_destino 
+duração
+1
+Nova York
+JFK
+Londres
+LHR
+415
+2
+Xangai
+PVG
+Paris
+CDG
+760
+3
+Istambul
+IST
+Tóquio
+NRT
+700
+4
+Nova York
+JFK
+Paris
+CDG
+435
+5
+Moscou
+SVO
+Paris
+CDG
+245
+6
+Lima
+LIM
+Nova York
+JFK
+455
+voos
+
+Slide [28]
+
+id
+código
+cidade
+1
+JFK
+Nova York
+2
+PVG
+Xangai
+3
+IST
+Istambul
+4
+LHR
+Londres
+5
+SVO
+Moscou
+6
+LIM
+Lima
+7
+CDG
+Paris
+8
+NRT
+Tóquio
+aeroportos
+
+Slide [29]
+
+id
+id_origem
+id_destino
+duração
+1
+1
+4
+415
+2
+2
+7
+760
+3
+3
+8
+700
+4
+1
+7
+435
+5
+5
+7
+245
+6
+6
+1
+455
+voos
+
+Slide [30]
+
+voos
+voos_nacionais
+voos_internacionais
+
+Slide [31]
+
+Replicação de Banco de Dados
+
+Slide [32]
+
+Replicação de Banco de Dados
+• Replicação com Único Primário 
+• Replicação com Múltiplos Primários
+
+Slide [33]
+
+Replicação com Único Primário
+Banco de Dados
+Banco de Dados
+Banco de Dados
+atualização
+atualização
+escrita
+leitura
+leitura
+leitura
+
+Slide [34]
+
+Replicação com Múltiplos Primários
+Banco de Dados
+Banco de Dados
+Banco de Dados
+escrita
+leitura
+atualização
+atualização
+atualização
+escrita
+leitura
+escrita
+leitura
+
+Slide [35]
+
+Cache
+
+Slide [36]
+
+Cache no Lado do Cliente
+
+Slide [37]
+
+Controle de Cache: max-age=86400 
+
+Slide [38]
+
+Controle de Cache: max-age=86400 
+ETag: "7477656E74796569676874"
+
+Slide [39]
+
+Cache no Lado do Servidor
+
+Slide [40]
+
+Servidor
+Servidor
+Balanceador de Carga
+Banco de Dados
+Cache
+
+Slide [41]
+
+Framework de Cache do Django
+• Cache por Visão 
+• Cache de Fragmento de Template 
+• API de Cache de Baixo Nível
+
+Slide [42]
+
+Segurança
+
+Slide [43]
+
+Tópicos
+• HTML e CSS 
+• Git 
+• Python 
+• Django 
+• SQL 
+• JavaScript 
+• Interfaces de Usuário 
+• Testes e CI/CD
+
+Slide [44]
+
+Git
+
+Slide [45]
+
+Software de Código Aberto
+
+Slide [46]
+
+primeiro 
+commit
+
+Slide [47]
+
+primeiro 
+commit
+credenciais 
+expostas
+
+Slide [48]
+
+primeiro 
+commit
+credenciais 
+removidas
+credenciais 
+expostas
+
+Slide [49]
+
+HTML
+
+Slide [50]
+
+<a href="url1"> 
+    url2 
+</a>
+
+Slide [51]
+
+Django
+
+Slide [52]
+
+HTTP e HTTPS
+
+Slide [53]
+
+
+Slide [54]
+
+Criptografia de Chave Secreta
+
+Slide [55]
+
+Chave
+Texto Simples
+Chave
+Texto Cifrado
+Texto Cifrado
+
+Slide [56]
+
+Chave
+Texto Simples
+Chave
+Texto Cifrado
+Texto Cifrado
+Texto Simples
+
+Slide [57]
+
+Criptografia de Chave Pública
+
+Slide [58]
+
+Chave Pública
+Chave Privada
+
+Slide [59]
+
+Chave Pública
+Texto Simples
+Chave Privada
+
+Slide [60]
+
+Chave Pública
+Texto Simples
+Chave Privada
+Texto Cifrado
+Texto Cifrado
+
+Slide [61]
+
+Chave Pública
+Texto Simples
+Chave Privada
+Texto Cifrado
+Texto Cifrado
+Texto Simples
+
+Slide [62]
+
+SQL
+
+Slide [63]
+
+id
+nome_de_usuário
+senha
+1
+harry
+hello
+2
+ron
+password
+3
+hermione
+12345
+4
+ginny
+abcdef
+5
+luna
+qwerty
+usuários
+
+Slide [64]
+
+id
+nome_de_usuário
+senha
+1
+harry
+48c8e8c3f9e80b68ac67304c7c510e9fcb
+2
+ron
+6024aba15e3f9be95e3c9e6d3bf261d78e
+3
+hermione
+90112701066c0a536f2f6b2761e5edb09e
+4
+ginny
+b053b7574c8a25751e2a896377e5d477c5
+5
+luna
+a4048eaaee50680532845b2025996b44a9
+usuários
+
+Slide [65]
+
+
+Slide [66]
+
+
+Slide [67]
+
+
+Slide [68]
+
+Injeção de SQL
+
+Slide [69]
+
+Nome de Usuário:
+Senha:
+
+Slide [70]
+
+SELECT * FROM usuários 
+WHERE nome_de_usuário = nome_de_usuário AND senha = senha;
+
+Slide [71]
+
+Nome de Usuário:
+harry
+Senha:
+12345
+
+Slide [72]
+
+SELECT * FROM usuários 
+WHERE nome_de_usuário = nome_de_usuário AND senha = senha;
+
+Slide [73]
+
+SELECT * FROM usuários 
+WHERE nome_de_usuário = "harry" AND senha = "12345";
+
+Slide [74]
+
+Nome de Usuário:
+hacker" --
+Senha:
+
+Slide [75]
+
+SELECT * FROM usuários 
+WHERE nome_de_usuário = nome_de_usuário AND senha = senha;
+
+Slide [76]
+
+SELECT * FROM usuários 
+WHERE nome_de_usuário = "hacker"--" AND senha = "";
+
+Slide [77]
+
+SELECT * FROM usuários 
+WHERE nome_de_usuário = "hacker"--" AND senha = "";
+
+Slide [78]
+
+APIs
+
+Slide [79]
+
+Chaves de API
+• Limite de Taxa 
+• Autenticação por Rota
+
+Slide [80]
+
+Cross-Site Scripting
+
+Slide [81]
+
+Cross-Site Request Forgery
+
+Slide [82]
+
+<body> 
+    <a href="http://seubanco.com/transferir?para=brian&valor=2800"> 
+        Clique Aqui! 
+    </a> 
+</body>
+
+Slide [83]
+
+<body> 
+    <img src="http://seubanco.com/transferir?para=brian&valor=2800"> 
+</body>
+
+Slide [84]
+
+<body> 
+    <form action="https://seubanco.com/transferir"  
+          method="post"> 
+        <input type="hidden" name="para" value="brian"> 
+        <input type="hidden" name="valor" value="2800"> 
+        <input type="submit" value="Clique Aqui!"> 
+    </form> 
+</body>
+
+Slide [85]
+
+<body onload="document.forms[0].submit()"> 
+    <form action="https://seubanco.com/transferir"  
+          method="post"> 
+        <input type="hidden" name="para" value="brian"> 
+        <input type="hidden" name="valor" value="2800"> 
+        <input type="submit" value="Clique Aqui!"> 
+    </form> 
+</body>
+
+Slide [86]
+
+<form action="/transferir" method="post"> 
+    {% csrf_token %} 
+    <input name="para" value="brian"> 
+    <input name="valor" value="2800"> 
+    <input type="submit" value="Transferir"> 
+</form>
+
+Slide [87]
+
+Programação Web
+
+Slide [88]
+
+O que vem a seguir?
+
+Slide [89]
+
+Outros Frameworks Web
+• Lado do Servidor 
+• Express.js 
+• Ruby on Rails 
+• ... 
+• Lado do Cliente 
+• AngularJS 
+• React 
+• Vue.js 
+• ...
+
+Slide [90]
+
+Implantação de Sites
+• Amazon Web Services 
+• GitHub Pages 
+• Google Cloud 
+• Heroku 
+• Microsoft Azure 
+• ...
+
+Slide [91]
+
+Programação Web
+
+Slide [92]
+
+HTML e CSS
+HTML
+
+Slide [93]
+
+Git
+
+Slide [94]
+
+Python
+
+Slide [95]
+
+Django
+
+Slide [96]
+
+SQL, Modelos  
+e Migrações
+
+Slide [97]
+
+JavaScript
+
+Slide [98]
+
+Interfaces de Usuário
+
+Slide [99]
+
+Testes e CI/CD
+
+Slide [100]
+
+Escalabilidade 
+e Segurança
+Servidor
+Balanceador de Carga
+Servidor
+Servidor
+
+Slide [101]
+
+Programação Web 
+com Python e JavaScript

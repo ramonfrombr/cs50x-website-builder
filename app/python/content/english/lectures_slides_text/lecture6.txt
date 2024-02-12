@@ -1,0 +1,56 @@
+
+[0]
+
+Introduction to
+Programming with Python
+File I/O
+
+[1]
+
+list
+
+[2]
+
+open
+
+[3]
+
+docs.python.org/3/library/functions.html#open 
+
+[4]
+
+with
+
+[5]
+
+docs.python.org/3/library/functions.html#sorted 
+
+[6]
+
+sorted(iterable, /, *, key=None, reverse=False)
+
+[7]
+
+CSV
+
+[8]
+
+csv
+
+[9]
+
+docs.python.org/3/library/csv.html 
+
+[10]
+
+PIL
+
+[11]
+
+pillow.readthedocs.io
+
+[12]
+
+Introduction to
+Programming with Python
+File I/O

@@ -1,0 +1,29 @@
+But how do you go about loading a module into your own program so that you can use the functions in that module? Well, we need a new keyword in Python and namely it's import. The import keyword in Python allows you to import the contents of the functions from some module in Python. 
+
+Well, how might I go about using this in practice? Well, let me propose that there exists in that random module this function among others. So I have copied and pasted from the documentation this summary of a function called Choice. 
+
+Now, the function exists in the random module, so to speak, not a random module, the random module. And so generally the documentation describes it fully like this. random.choice is how you would technically call this function, though, we'll see alternatives to that. 
+
+In parentheses, there is a parameter called S-E-Q for sequence. And sequence generally means a list or something that is list-like if you have a list of numbers or strings or anything else. And the documentation elaborate. Well, how can I go about using this function to solve, perhaps, a familiar problem? 
+
+Well, let me go ahead and open up VS Code here. And let me propose that we implement a program that simulates flipping a coin. A coin that in the US has heads or tails, the idea of which is to pick a decision with 50/50 probability. 50% probability of heads, 50% probability of tails. Or you can use some other mechanism like that. 
+
+Well, let me go ahead and open a program with code called generate.py because I want to start generating a whole bunch of random information. The first of which is just going to be a coin toss. Now, how do I go about using that function? 
+
+Well, I first have to import the random library. So literally the first or among the first lines of my file should be import random. And that just gives me access to all of the functions in that specific module. Now, suppose I want to flip a coin. Well, I can do random.choice per the documentation a moment ago. And that again takes a sequence. 
+
+What's a sequence? It's a list or something that's list-like. And we know about lists. We've used lists to iterate over numbers. We've used lists to iterate over students at Hogwarts. Let's go ahead now and iterate over just a list of two sides of a coin, "heads," quote, unquote, or tails. 
+
+Now, I could call these anything I want. These are my string. I just want to simulate a tossing a coin. So I'm just going to say in all lowercase, heads and tail. But notice the syntax. I have "heads" and "tails" in double quotes. That's because they're strings. I could also use single quotes so long as I'm consistent. There's a comma between them, which means the list has two elements. They're square brackets to the right and the left, which indicates that this is indeed a list. That's the syntax recall for defining a list in Python. 
+
+And then lastly, there's something more familiar. There's the parentheses outside of those square brackets. But those are just the parentheses that belong to the Choice function and specify where its parameter gets passed in. But again, unlike past function, I have to specify what module this function is in at least for now. And so I do random.choice to call the specific function. 
+
+All right, well, it's one thing to flip a coin picking between those with 50% probability. And that's what random.choice does. It takes in a list, and it returns to one of those values randomly with equal probability. Because I've passed in two items, I've got a 50/50 chance. If I passed in three items, it'd be a 33% chance for each of those items and so forth. Python does the math for you. 
+
+But I want to store the value of this in a variable. So let's define a variable called coin equals whatever the return value is. So this is indeed like flipping a coin. I'm going to store in a variable called coin, whatever that value is, heads or tails. And now, just so I can see what's going on, let's go ahead and print out the value of that string coin 
+
+All right, let me go ahead now and run this program in my terminal window. Python of generate.py, Enter. And it looks like the first coin toss was the heads. Let's go ahead and run it again. And it looks like it was heads again. Maybe you want to chime into the chat here. 
+
+If I run it a third time, what's it going to be this time? If you want to type your thoughts in the chat, you might think there's a bug here. But this is probability in action. If I go ahead and hit Enter a third time there, it's actually now tails And again, tails and again tails and again tails and again tails and again heads. 
+
+Now, if we did this an infinite number of times, it would indeed work out to be 50/50. If we only do it a few times, it might not work out as cleanly. But that's how probabilities indeed work. 

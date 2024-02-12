@@ -1,0 +1,43 @@
+Now, how do we go about doing that in Python? Well, it turns out whether you want to catch a value error or other types of errors as well-- though not syntax error-- Python actually has this keyword called try. And it's sort of aptly named. 
+
+If you want to try to do something in Python, you can literally use this keyword. And you can check whether or not something exceptional, something erroneous, has happened. So using both try and this other keyword, except, can I go and try to do something except if something goes wrong? I can do something else instead. 
+
+So let's consider, how can I go about trying to convert the user's input to an int except if something goes wrong? Well, let me go back to my code here. And let me propose that I now modify this example as follows. 
+
+Let me go ahead and, above my first line of code, I literally write, try and a colon, telling Python, try to do the following. I'm going to go ahead and indent my existing lines of codes here by the same number of spaces, four in this case. And then I'm going to add one more new line down here that literally says, except Value Error. And notice it's important that I've capitalized the V and I've capitalized the E. These symbols are case sensitive. 
+
+And this is now an opportunity, after this colon, to tell Python what I want to do in exceptional cases, when the number or the input from the user is not, in fact, a number. And I'm going to say something plain like print, quote unquote, "x is not an integer." I'm at least going to tell the user roughly what the problem actually is. 
+
+So notice another detail. The indentation is important. Because I have try on line one and I've indented lines two and three, those are the two lines of code that I'm trying, except if I see a value error, line five, because it's indented is what is going to get executed in cases of those errors. 
+
+Let me go ahead now back to my terminal window and run Python of number.py, Enter. And let's go ahead and type in again. Still seems to work. And, of course, I'm trying and succeeding. Let me go ahead and try once more, this time, though, with the word cat or, really, anything that's not a decimal number. 
+
+And now you'll see much more cleanly x is not an integer. I'm not seeing some scary error message that I, the user, am going to have no idea how to handle. Now you, the programmer, have anticipated that something exceptional can happen. And you've gone about actually handling the error for the user, giving them an appropriate error message instead. Let me pause here and see, are there any questions now on what we've just done by introducing try and accept to handle this value error? 
+
+AUDIENCE: Is value ever the only type of error you can get? Or are there other types? 
+
+DAVID MALAN: Is value error the only thing you can catch? There are other errors as well. And we'll see a few of them today. And there's many, many more, honestly, that if you continue programming and programming in Python, you're going to see a lot of them over the weeks the months the years to come. But the technique for handling them is going to be largely the same other questions on try, accept, or these exceptions more generally? 
+
+AUDIENCE: Yes, sir. Actually, to use the except block, you need to know the type of error, right? [INAUDIBLE] what if you can't anticipate this particular type of error? 
+
+DAVID MALAN: A really good question. So I'm being very good about catching, so to speak, the very error that I might happen. I don't know when it might happen because it's going to depend on the user. But I know what kind of error will happen from the int function. There is a way in Python where you can say, except if anything goes wrong. And you can literally omit value error and just catch everything. 
+
+The problem with that is that it sometimes hides other bugs in your code because you don't necessarily know what's going wrong. And if you don't necessarily know what's going wrong, how can you possibly handle it correctly? So bad practice. And it put another way, it's lazy to do that, to just say, catch everything and I'll deal with it here. 
+
+So a much better practice would be to figure out what kind of errors could happen and include mention of them explicitly, as I have done. Now, with that said, if you read Python's official documentation, as you'll eventually invariably do, it is not great about telling you proactively what kinds of errors can be raised in this way. So it's a bit of contradictory advice. 
+
+You should do it this way. But it's not always obvious what you should be checking for. But you get better at it with practice. And some of the times, the documentation does spell out what could go wrong. 
+
+Let me turn our attention now back to this and point out that even though this is better code, it is more correct in the sense that I'm not just leaving it to the user to see some really ugly default Python error message that most people are going to have no idea what to do with, I'm at least handling it more elegantly. And I'm printing out x is not an integer. So it's at least more instructive. 
+
+But this isn't necessarily the best way to implement this code. Why? Well, here, too, I'm actually still being a little lazy. So notice that I'm trying to do not one line of code but two lines of code. And this isn't a huge deal because we're only talking about two lines of code. 
+
+But in the interest of preaching best practices, you should really only be trying to do the one or very few lines of code that can actually raise an exception that can actually fail in some way. I am pretty sure that calling print here is not going to raise a value error. Whether x is an int or a string or a float or anything else, the format string feature of Python is going to handle printing it just fine. 
+
+So, really, what I'm going to do is this. I'm going to move this line three down to the bottom of my code. I no longer need to indent it. I'm just going to execute it at the bottom of my file here. 
+
+Unfortunately, by doing this-- I've done a good thing by now only trying to do the minimal amount of work necessary that might raise the exception of value error. But I fear I've introduced a new mistake. Well, let's see. What is now incorrect? 
+
+Let me go ahead and again run Python of number.py, Enter. Let me go ahead and do it correctly with 50. And all seems to be well. But, again, let's try those corner cases-- the zeros, the negative numbers, or, in this case, the cat. 
+
+Let me go ahead and type in C-A-T again. Enter. Now I have a name error. So now it's yet another type of error in my code that I've introduced here. 

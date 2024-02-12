@@ -1,0 +1,36 @@
+
+However, this is a good segue to one final feature of reading CSVs, which is that you don't have to rely on either getting a row as a list and using bracket 0 or bracket 1, and, you don't have to unpack things manually in this way. We could actually be smarter and start storing the names of these columns in the CSV file itself. And in fact, if any of you have ever opened a spreadsheet file before, be it in Excel, Apple Numbers, Google Spreadsheets or the like, odds are, you've noticed that the first row, very frequently, is a little different. It actually is boldface sometimes, or it actually contains the names of those columns, the names of those attributes below. 
+
+And we can do this here. In students.csv, I don't have to just keep assuming that the student's name is first and that the student's home is second. I can explicitly bake that information into the file just to reduce the probability of mistakes down the road. 
+
+I can literally use the first row of this file and say, name, comma, home. So notice that name is not literally someone's name, and home is not literally someone's home. It is literally the words, name and home, separated by comma. 
+
+And if I now go back into students.py and don't use CSV reader, but instead, I use a dictionary reader, I can actually treat my CSV file even more flexibly, not just for this, but for other examples too. Let me do this. Instead of using a CSV reader, let me use a CSV dict reader, which will now iterate over the file top to bottom, loading in each line of text not as a list of columns but as a dictionary of columns. 
+
+What's nice about this is that it's going to give me automatic access now to those columns' names. I'm going to revert to just saying, for row in reader, and now I'm going to append a name and a home. But how am I going to get access to the current row's name and the current row's home? Well, earlier, I used bracket 0 for the first and bracket 1 for the second when I was using a reader. 
+
+A reader returns lists. A dict reader or dictionary reader returns dictionaries, one at a time. And so if I want to access the current row's name, I can say, row, quote/unquote, name. 
+
+I can say here for home, row, quote/unquote, home. And I now have access to those same values. The only change I had to make, to be clear, was in my CSV file, I had to include, on the very first row, little hints as to what these columns are. 
+
+And if I now run this code, I think it should behave pretty much the same-- python of students.py. And indeed, we get the same sentences. But now my code is more robust against changes in this data. If I were to open the CSV file in Excel, or Google Spreadsheets, or Apple Numbers, and for whatever reason change the columns around, maybe this is a file that you're sharing with someone else, and just because, they decide to sort things differently left to right by moving the columns around, previously, my code would have broken because I was assuming that name is always first, and home is always second. 
+
+But if I did this-- be it manually in one of those programs or here-- home, comma, name, and suppose, I reversed all of this. The home comes first, followed by Harry, The Burrow, then by Ron, and then lastly, Malfoy Manor, then Draco, notice that my file is now completely flipped. The first column is now the second, and the second's the first. But I took care to update the header of that file, the first row. 
+
+Notice my Python code, I'm not going to touch it at all. I'm going to rerun python of students.py, and hit Enter. And it still just works. And this, too, is an example of coding defensively. What if someone changes your CSV file, your data file? 
+
+Ideally, that won't happen. But even if it does now, because I'm using a dictionary reader that's going to infer from that first row for me what the columns are called, my code just keeps working. And so it keeps getting, if you will, better and better. Any questions now on this approach? 
+
+AUDIENCE: Yeah, what is the importance of new line in the CSV file? 
+
+DAVID MALAN: What's the importance of the new line in the CSV file? It's partly a convention. In the world of text files, we humans have just been, for decades, in the habit of storing data line by line. It's visually convenient. It's just easy to extract from the file because you just look for the new lines. 
+
+So the new line just separates some data from some other data. We could use any other symbol on the keyboard, but it's just common to hit Enter to just move the data to the next line. Just a convention. Other questions? 
+
+AUDIENCE: It seems to be working fine if you just have name and home. I'm wondering what will happen if you want to put in more data. Say, you wanted to add a house to both the name and the home. 
+
+DAVID MALAN: Sure, if you wanted to add the house back-- so if I go in here and add house last, and I go here and say, Gryffindor for Harry, Gryffindor for Ron, and Slytherin for Draco, now I have three columns, effectively, if you will-- home on the left, name in the middle, house on the right, each separated by commas with weird things, like Number Four, comma, Privet Drive still quoted. Notice, if I go back to students.py, and I don't change the code at all and run python of students.py, it still just works. And this is what's so powerful about a dictionary reader. 
+
+It can change over time. It can have more and more columns. Your existing code is not going to break. 
+
+Your code would break, would be much more fragile, so to speak, if you were making assumptions like, the first column's always going to be name. The second column is always going to be house. Things will break fast if those assumptions break down-- so not a problem in this case. 

@@ -1,0 +1,467 @@
+
+[0]
+
+Stacks (Data Structure)
+
+[1]
+
+Stacks (Data Structure)
+• A stack is a special type of structure that can be used to 
+maintain data in an organized way.
+• This data structure is commonly implemented in one of two 
+ways: as an array or as a linked list.
+• In either case, the important rule is that when data is added to 
+the stack, it sits “on top,” and so if an element needs to be 
+removed, the most recently added element is the only element 
+that can legally be removed.
+• Last in, first out (LIFO)
+
+[2]
+
+Stacks (Data Structure)
+• There are only two operations that may legally be performed 
+on a stack.
+• Push: Add a new element to the top of the stack.
+• Pop: Remove the most recently-added element from the top of the 
+stack.
+
+[3]
+
+Stacks (Data Structure)
+• Array-based implementation
+typedef struct _stack
+{
+VALUE array[CAPACITY];
+int top;
+}
+stack;
+
+[4]
+
+Stacks (Data Structure)
+• Array-based implementation
+typedef struct _stack
+{
+VALUE array[CAPACITY];
+int top;
+}
+stack;
+
+[5]
+
+Stacks (Data Structure)
+• Array-based implementation
+typedef struct _stack
+{
+VALUE array[CAPACITY];
+int top;
+}
+stack;
+
+[6]
+
+Stacks (Data Structure)
+• Array-based implementation
+typedef struct _stack
+{
+VALUE array[CAPACITY];
+int top;
+}
+stack;
+
+[7]
+
+Stacks (Data Structure)
+• Array-based implementation
+stack s;
+
+[8]
+
+Stacks (Data Structure)
+• Array-based implementation
+stack s;
+s
+
+[9]
+
+Stacks (Data Structure)
+• Array-based implementation
+stack s;
+s.top = 0;
+s
+
+[10]
+
+Stacks (Data Structure)
+• Array-based implementation
+stack s;
+s.top = 0;
+0
+s
+
+[11]
+
+Stacks (Data Structure)
+• Array-based implementation
+• Push: Add a new element to the top of the stack.
+In the general case, push() needs to:
+• Accept a pointer to the stack.
+• Accept data of type VALUE to be added to the stack.
+• Add that data to the stack at the top of the stack.
+• Change the location of the top of the stack.
+
+[12]
+
+Stacks (Data Structure)
+• Array-based implementation
+void push(stack* s, VALUE data);
+0
+s
+
+[13]
+
+Stacks (Data Structure)
+• Array-based implementation
+stack s;
+s.top = 0;
+push(&s, 28);
+0
+s
+
+[14]
+
+Stacks (Data Structure)
+• Array-based implementation
+stack s;
+s.top = 0;
+push(&s, 28);
+28
+0
+s
+
+[15]
+
+Stacks (Data Structure)
+• Array-based implementation
+stack s;
+s.top = 0;
+push(&s, 28);
+28
+1
+s
+
+[16]
+
+Stacks (Data Structure)
+• Array-based implementation
+push(&s, 33);
+28
+1
+s
+
+[17]
+
+Stacks (Data Structure)
+• Array-based implementation
+push(&s, 33);
+28 33
+1
+s
+
+[18]
+
+Stacks (Data Structure)
+• Array-based implementation
+push(&s, 33);
+28 33
+2
+s
+
+[19]
+
+Stacks (Data Structure)
+• Array-based implementation
+push(&s, 19);
+28 33
+2
+s
+
+[20]
+
+Stacks (Data Structure)
+• Array-based implementation
+push(&s, 19);
+28 33 19
+2
+s
+
+[21]
+
+Stacks (Data Structure)
+• Array-based implementation
+push(&s, 19);
+28 33 19
+3
+s
+
+[22]
+
+Stacks (Data Structure)
+• Array-based implementation
+• Pop: Remove the most recent element from the top of the stack.
+In the general case, pop() needs to:
+• Accept a pointer to the stack.
+• Change the location of the top of the stack.
+• Return the value that was removed from the stack.
+
+[23]
+
+Stacks (Data Structure)
+• Array-based implementation
+VALUE pop(stack* s);
+28 33 19
+3
+s
+
+[24]
+
+Stacks (Data Structure)
+• Array-based implementation
+int x = pop(&s);
+28 33 19
+3
+s
+
+[25]
+
+Stacks (Data Structure)
+• Array-based implementation
+int x = pop(&s);
+28 33
+3
+s
+19
+x
+
+[26]
+
+Stacks (Data Structure)
+• Array-based implementation
+int x = pop(&s);
+28 33 19
+3
+s
+19
+x
+
+[27]
+
+Stacks (Data Structure)
+• Array-based implementation
+int x = pop(&s);
+28 33 19
+2
+s
+19
+x
+
+[28]
+
+Stacks (Data Structure)
+• Array-based implementation
+int x = pop(&s);
+28 33 19
+2
+s
+19
+x
+
+[29]
+
+Stacks (Data Structure)
+• Array-based implementation
+int x = pop(&s);
+28 33 19
+2
+s
+33
+x
+
+[30]
+
+Stacks (Data Structure)
+• Array-based implementation
+int x = pop(&s);
+28 33 19
+1
+s
+33
+x
+
+[31]
+
+Stacks (Data Structure)
+• Array-based implementation
+push(&s, 40);
+28 33 19
+1
+s
+
+[32]
+
+Stacks (Data Structure)
+• Array-based implementation
+push(&s, 40);
+28 40 19
+1
+s
+
+[33]
+
+Stacks (Data Structure)
+• Array-based implementation
+push(&s, 40);
+28 40 19
+2
+s
+
+[34]
+
+Stacks (Data Structure)
+• Linked list-based implementation
+typedef struct _stack
+{
+VALUE val;
+struct _stack *next;
+}
+stack;
+
+[35]
+
+Stacks (Data Structure)
+• Just make sure to always maintain a pointer to the head of the 
+linked list!
+• To push, dynamically allocate a new node, set its next pointer 
+to point to the current head of the list, then move the head 
+pointer to the newly-created node.
+
+[36]
+
+Stacks (Data Structure)
+list = push(list, 12);
+15
+9
+13
+10
+list
+
+[37]
+
+Stacks (Data Structure)
+list = push(list, 12);
+15
+9
+13
+10
+list
+new
+
+[38]
+
+Stacks (Data Structure)
+list = push(list, 12);
+12
+15
+9
+13
+10
+list
+new
+
+[39]
+
+Stacks (Data Structure)
+list = push(list, 12);
+12
+15
+9
+13
+10
+list
+new
+
+[40]
+
+Stacks (Data Structure)
+list = push(list, 12);
+12
+15
+9
+13
+10
+list
+new
+
+[41]
+
+Stacks (Data Structure)
+• To pop, traverse the linked list to its second element (if it 
+exists), free the head of the list, then move the head pointer to 
+the (former) second element.
+
+[42]
+
+Stacks (Data Structure)
+pop(list);
+12
+15
+9
+13
+10
+list
+
+[43]
+
+Stacks (Data Structure)
+pop(list);
+12
+15
+9
+13
+10
+list
+trav
+
+[44]
+
+Stacks (Data Structure)
+pop(list);
+12
+15
+9
+13
+10
+list
+trav
+
+[45]
+
+Stacks (Data Structure)
+pop(list);
+15
+9
+13
+10
+list
+trav
+
+[46]
+
+Stacks (Data Structure)
+pop(list);
+15
+9
+13
+10
+list
+trav

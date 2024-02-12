@@ -1,0 +1,39 @@
+So let's propose that we go back to our code here and see how we might use the CSV library. Indeed, within Python, there is a module called CSV. The documentation for it is at this URL here in Python's official documentation. 
+
+But there's a few functions that are pretty readily accessible if we just dive right in. And let me propose that we do this. Let me go back to my code here. 
+
+And instead of re-inventing this wheel and reading the file line by line, and splitting on commas, and dealing now with quotes, and Privet Drives, and so forth, let's do this instead. At the start of my program, let me go up and import the CSV module. Let's use this library that someone else has written that's dealing with all of these corner cases, if you will. I'm still going to give myself a list, initially empty, in which to store all these students. 
+
+But I'm going to change my approach here now just a little bit. When I open this file with with, let me go in here and change this a little bit. I'm going to go in here now and say this. Reader equals csv.reader, passing in file as input. 
+
+So it turns out, if you read the documentation for the CSV module, it comes with a function called reader whose purpose in life is to read a CSV file for you and figure out, where are the commas, where are the quotes, where are all the potential corner cases, and just deal with them for you. You can override certain defaults or assumptions in case you're using not a comma, but a pipe or something else. But by default, I think it's just going to work. 
+
+Now, how do I integrate over a reader and not the raw file itself? It's almost the same. The library allows you still to do this. For each row in the reader-- so you're not iterating over the file directly now. You're iterating over the reader, which is, again, going to handle all of the parsing of commas, and new lines, and more. 
+
+For each row in the reader, what am I going to do? Well, at the moment, I'm going to do this. I'm going to append to my students list the following dictionary, a dictionary that has a name whose value is the current row's first column, and whose house, or rather, home now is the row's second. column. 
+
+Now, it's worth noting that the reader for each line in the file, indeed, returns to me a row. But it returns to me a row that's a list, which is to say that the first element of that list is going to be the student's name, as before. The second element of that list is going to be the student's home, as now before. 
+
+But if I want to access each of those elements, remember that lists are 0 indexed. We start counting at 0 and then 1, rather than 1 and then 2. So if I want to get at the student's name, I use row, bracket, 0. And if I want to get at the student's home, I use row, bracket, 1. 
+
+But in my for loop, we can do that same unpacking as before. If I know the CSV is only going to have two columns, I could even do this-- for name, home in reader. And now I don't need to use list notation. I can unpack things all at once and say, name here, and home here. The rest of my code can stay exactly the same because, what am I doing now on line 8? 
+
+I'm still constructing the same dictionary as before, albeit for homes instead of houses. And I'm grabbing those values now, not from the file itself and my use of split, but the reader. And again, what the reader is going to do is figure out, where are those commas, where are the quotes? And just solve that problem for you. 
+
+So let me go now down to my terminal window and run python of students.py, and hit Enter. And now we see successfully, sorted no less, that Draco is from Malfoy Manor. Harry is from Number Four, comma, Privet Drive. And Ron is from The Burrow. Questions now on this technique of using CSV reader from that CSV module, which, again, is just getting us out of the business of reading each line ourself and reading each of those commas and splitting? 
+
+AUDIENCE: So my questions are related to something in the past. I recognize that you are reading a file every time-- well, we assume that we have the CSV file to hand already in this case. Is it possible to make a file readable and writable? So in this case, you could write such stuff to the file, but then at the same time, you could have another function that reads through the file and does changes to it as you go along? 
+
+DAVID MALAN: A really good question. And the short answer is, yes. However, historically, the mental model for a file is that of a cassette tape. Years ago, not really in use anymore, but cassette tapes are sequential whereby they start at the beginning, and if you want to get to the end, you kind of have to unwind the tape to get to that point. 
+
+The closest analog nowadays would be something like Netflix or any streaming service, where there's a scrubber that you have to go left to right. You can't just jump there or jump there. You don't have random access. 
+
+So the problem with files, if you want to read and write them, you or some library needs to keep track of where you are in the file so that if you're reading from the top and then you write at the bottom, and you want to start reading again, you seek back to the beginning. So it's not something we'll do here in class. It's more involved, but it's absolutely doable. For our purposes, we'll generally recommend, read the file. And then if you want to change it, write it back out, rather than trying to make more piecemeal changes, which is good if, though, the file is massive, and it would just be very expensive time-wise to change the whole thing. Other questions on this CSV reader? 
+
+AUDIENCE: It's possible to write a paragraph in that file? 
+
+DAVID MALAN: Absolutely. Right now, I'm writing very small strings, just names or houses, as I did before. But you can absolutely write as much text as you want, indeed. Other questions on CSV reader? 
+
+AUDIENCE: Can a user chose himself a key? Like, input key will be a name or code. 
+
+DAVID MALAN: So short answer, yes, we could absolutely write a program that prompts the user for a name and a home, a name and a home. And we could write out those values. And in a moment, we'll see how you can write to a CSV file. For now, I'm assuming, as the programmer who created students.csv, that I know what the columns are going to be. And therefore, I'm naming my variables accordingly. 

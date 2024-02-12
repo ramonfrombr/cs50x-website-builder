@@ -1,0 +1,1319 @@
+
+Slide [0]
+
+Web Programming 
+with Python and JavaScript
+
+Slide [1]
+
+Git
+
+Slide [2]
+
+git
+
+Slide [3]
+
+a = 1 
+b = 2 
+c = 3
+Create file
+Keep track of changes to code.
+
+Slide [4]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Create file
+Add a line
+Keep track of changes to code.
+
+Slide [5]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+c = 3 
+d = 4
+Create file
+Add a line
+Remove a line
+Keep track of changes to code.
+
+Slide [6]
+
+b = 2 
+c = 3
+b = 2 
+c = 3
+b = 2 
+c = 3
+Synchronizes code between different people.
+
+Slide [7]
+
+b = 2 
+c = 3
+b = 2 
+c = 3
+b = 2 
+c = 3
+Synchronizes code between different people.
+
+Slide [8]
+
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3
+b = 2 
+c = 3 
+d = 4
+Synchronizes code between different people.
+
+Slide [9]
+
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Synchronizes code between different people.
+
+Slide [10]
+
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+int a = 1; 
+int b = 2; 
+int c = 3;
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Synchronizes code between different people.
+
+Slide [11]
+
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3
+Test changes to code without losing the original.
+
+Slide [12]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Test changes to code without losing the original.
+
+Slide [13]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Test changes to code without losing the original.
+
+Slide [14]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+c = 3 
+d = 4
+Create file
+Add a line
+Remove a line
+Revert back to old versions of code.
+
+Slide [15]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Create file
+Add a line
+Revert back to old versions of code.
+
+Slide [16]
+
+GitHub
+
+Slide [17]
+
+git clone
+
+Slide [18]
+
+git clone <url>
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [19]
+
+git clone <url>
+git clone <url>
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [20]
+
+git clone <url>
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+git clone <url>
+
+Slide [21]
+
+git add
+
+Slide [22]
+
+git add <filename>
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [23]
+
+git add <filename>
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+
+Slide [24]
+
+git add <filename>
+git add foo.py
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [25]
+
+git add <filename>
+Changes to be committed: 
+modified: foo.py
+git add foo.py
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [26]
+
+git commit
+
+Slide [27]
+
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+git commit -m "message"
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+
+Slide [28]
+
+git commit -m "message"
+git commit -m 
+   "Add line"
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+
+Slide [29]
+
+git commit -m "message"
+git commit -m 
+   "Add line"
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Add line
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+
+Slide [30]
+
+git status
+
+Slide [31]
+
+git status
+Add line
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [32]
+
+git status
+git status
+Add line
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [33]
+
+git status
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+git status
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Add line
+On branch master 
+Your branch is ahead of 'origin/master' by 1 commit. 
+  (use "git push" to publish your local commits)
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [34]
+
+git push
+
+Slide [35]
+
+git push
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4; 
+int e = 5;
+Add line
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+Add line
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [36]
+
+git push
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+git push
+Add line
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+Add line
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [37]
+
+git push
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+git push
+Add line
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+Add line
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [38]
+
+git pull
+
+Slide [39]
+
+git pull
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+Add line
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+Add line
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+int a = 1; 
+int c = 3; 
+int d = 4; 
+int e = 5;
+Remove line
+a = 1 
+c = 3 
+d = 4 
+e = 5
+Remove line
+
+Slide [40]
+
+git pull
+git pull
+Add line
+Add line
+a = 1 
+c = 3 
+d = 4 
+e = 5
+Remove line
+a = 1 
+c = 3 
+d = 4 
+e = 5
+Remove line
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+
+Slide [41]
+
+git pull
+git pull
+Add line
+Add line
+a = 1 
+c = 3 
+d = 4 
+e = 5
+Remove line
+a = 1 
+c = 3 
+d = 4 
+e = 5
+Remove line
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [42]
+
+Merge Conﬂicts
+
+Slide [43]
+
+Merge Conﬂicts
+
+Slide [44]
+
+Merge Conﬂicts
+git pull
+
+Slide [45]
+
+Merge Conﬂicts
+git pull
+CONFLICT (content): Merge conflict in foo.py 
+Automatic merge failed; fix conflicts and then 
+commit the result.
+
+Slide [46]
+
+Merge Conﬂicts
+git pull
+a = 1 
+<<<<< HEAD 
+b = 2 
+===== 
+b = 0 
+>>>>> 57656c636f6d6520746f20576562 
+c = 3 
+d = 4 
+e = 5
+foo.c
+
+Slide [47]
+
+Merge Conﬂicts
+git pull
+a = 1 
+<<<<< HEAD 
+b = 2 
+===== 
+b = 0 
+>>>>> 57656c636f6d6520746f20576562 
+c = 3 
+d = 4 
+e = 5
+foo.c
+your 
+changes
+remote 
+changes
+conflicting commit
+{
+{
+
+Slide [48]
+
+Merge Conﬂicts
+git pull
+a = 1 
+<<<<< HEAD 
+b = 2 
+===== 
+b = 0 
+>>>>> 57656c636f6d6520746f20576562 
+c = 3 
+d = 4 
+e = 5
+foo.c
+
+Slide [49]
+
+Merge Conﬂicts
+git pull
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+foo.c
+
+Slide [50]
+
+Merge Conﬂicts
+git pull
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+foo.c
+
+Slide [51]
+
+git log
+
+Slide [52]
+
+git log
+
+Slide [53]
+
+git log
+git log
+
+Slide [54]
+
+git log
+git log
+commit 436f6d6d6974204d73672048657265 
+Author: Brian Yu <brian@cs.harvard.edu> 
+Date:   Tue Jan 14 14:06:28 2020 -0400 
+    Remove a line 
+commit 57656c636f6d6520746f20576562 
+Author: Brian Yu <brian@cs.harvard.edu> 
+Date:   Tue Jan 14 14:05:28 2020 -0400 
+    Add a line
+
+Slide [55]
+
+git reset
+
+Slide [56]
+
+git reset
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+- git reset --hard <commit> 
+- git reset --hard origin/master
+Add line
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 3 
+c = 3 
+d = 4 
+e = 5
+Remove line
+57656c6
+436f6d6
+
+Slide [57]
+
+git reset
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+Add line
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 3 
+c = 3 
+d = 4 
+e = 5
+Remove line
+git reset --hard  
+   57656c6
+57656c6
+436f6d6
+- git reset --hard <commit> 
+- git reset --hard origin/master
+
+Slide [58]
+
+git reset
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+git reset --hard  
+   57656c6
+Add line
+a = 1 
+b = 2 
+c = 3 
+d = 4
+57656c6
+- git reset --hard <commit> 
+- git reset --hard origin/master
+
+Slide [59]
+
+Making Changes
+
+Slide [60]
+
+first 
+commit
+
+Slide [61]
+
+first 
+commit
+changes
+
+Slide [62]
+
+first 
+commit
+changes
+more 
+changes
+
+Slide [63]
+
+first 
+commit
+changes
+more 
+changes
+start new 
+feature
+
+Slide [64]
+
+first 
+commit
+changes
+more 
+changes
+start new 
+feature
+keep working 
+on new feature
+
+Slide [65]
+
+Branching
+
+Slide [66]
+
+first 
+commit
+
+Slide [67]
+
+first 
+commit
+changes
+
+Slide [68]
+
+first 
+commit
+changes
+more 
+changes
+
+Slide [69]
+
+first 
+commit
+changes
+more 
+changes
+start new 
+feature
+
+Slide [70]
+
+first 
+commit
+changes
+more 
+changes
+start new 
+feature
+keep working 
+on new feature
+
+Slide [71]
+
+first 
+commit
+changes
+more 
+changes
+start new 
+feature
+keep working 
+on new feature
+fix bug
+
+Slide [72]
+
+first 
+commit
+changes
+more 
+changes
+start new 
+feature
+keep working 
+on new feature
+fix bug
+← master
+← feature
+
+Slide [73]
+
+first 
+commit
+changes
+more 
+changes
+start new 
+feature
+keep working 
+on new feature
+fix bug
+← master
+← feature
+← HEAD
+
+Slide [74]
+
+first 
+commit
+changes
+more 
+changes
+start new 
+feature
+keep working 
+on new feature
+fix bug
+← master
+← feature ← HEAD
+
+Slide [75]
+
+first 
+commit
+changes
+more 
+changes
+start new 
+feature
+keep working 
+on new feature
+fix bug
+
+Slide [76]
+
+first 
+commit
+changes
+more 
+changes
+start new 
+feature
+keep working 
+on new feature
+fix bug
+merge
+
+Slide [77]
+
+Branching
+• git branch 
+• git checkout 
+• git merge
+
+Slide [78]
+
+Remotes
+
+Slide [79]
+
+Remotes
+
+Slide [80]
+
+Remotes
+↑ 
+master
+↑ 
+master
+
+Slide [81]
+
+Remotes
+↑ 
+master
+git fetch
+↑ 
+master
+
+Slide [82]
+
+Remotes
+↑ 
+master
+↑ 
+master
+git fetch
+origin/master
+↑
+
+Slide [83]
+
+Remotes
+↑ 
+master
+↑ 
+master
+git fetch
+git merge 
+  origin/master
+origin/master
+↑
+
+Slide [84]
+
+Remotes
+↑ 
+master
+↑ 
+master
+git fetch
+git merge 
+  origin/master
+origin/master
+↑
+
+Slide [85]
+
+Remotes
+↑ 
+master
+↑ 
+master
+git pull
+origin/master
+↑
+
+Slide [86]
+
+Forks
+
+Slide [87]
+
+Pull Requests
+
+Slide [88]
+
+Web Programming 
+with Python and JavaScript

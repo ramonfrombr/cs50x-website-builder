@@ -1,0 +1,41 @@
+ 
+
+Well, what might code like this look like? Well, let me go back to hogwarts.py and let me start fresh for just a moment. And let me propose that I enhance this with a bit more data. And this data is going to look as follows. My students variable now, I'm going to propose we think of it as a list. What if we have a list of dictionaries as follows? Indeed I want to literally implement this picture here. 
+
+So notice that my previous picture just represented a single dictionary. But suppose I wanted to compose a list of dictionaries. That is, for students-- so a list of four students. And suppose that each of those students is itself a dictionary, a collection of key value pairs, keys and values, something and something else. 
+
+Well, here's one other way we can do this in code. Let me go back to VS Code here and let me define a variable called students that is equal to a list. And I'm going to preemptively move my cursor onto separate lines, because I know this is going to be long, and I want to fit all of the elements of this list inside of it. 
+
+I'm now going to create a dictionary, one dictionary per student. And how do I create a dictionary? I just use those curly braces. But it's up to me to define what those keys are. And let me propose that one key this time won't be the student's name explicitly, it will literally be the word name, and there, going to have the name Hermione. 
+
+The same student is going to have another key called house and the value is going to be Gryffindor. And the same student is going to have a third key called patronus, and the value of that is going to be-- I had to look it up-- an otter, according to the book. Now I'm going to create a second dictionary inside of this list. And again, a dictionary is like literally like the human dictionary of words. It's a book that contains keys and values, words and definitions. What are the three words I'm storing in each of my dictionaries? Name, house, and patronus. What are the definitions of those words for Hermione? Hermione, Gryffindor, and otter respectively. 
+
+For Harry, the definitions are going to be different in this new dictionary. Let me give myself another pair of curly braces and say this, name, quote-unquote, colon, Harry. House here is, again, going to be Gryffindor. And this one I knew, his patronus, is going to be, in this case, a stag. 
+
+Next, a third dictionary. The name here will be Ron. And I'm going to go ahead and do that just like this. Next, I have the house, and he, too, was Gryffindor. Lastly, had to look this one up, Ron's patronus was a Jack Russell terrier. Lastly is Draco. In a fourth dictionary now-- so another pair of curly braces, the name of the student is, of course, Draco. The house of this student is Slytherin. 
+
+And Draco, interestingly enough, at least according to the internet, has no patronus. Was never revealed in the books or the movies. So it turns out, this is actually a wonderful teachable moment. There is a special key word in Python that is literally None, and N-O-N-E, with the first letter capitalized. This represents officially the absence of a value. 
+
+So I could a little sloppily do something like quote-unquote, but does that mean I didn't get around to typing it or not? It's a little clear semantically to say literally None, a special keyword in Python to make clear that I know Draco has no patronus, it's not just an oversight on my part. 
+
+Now that I have this, what do I have in the computer's memory? I have a list. How do I know it's a list? Because I see a square bracket at the beginning and another square bracket at the end. That's just my visual clue, OK, I don't know necessarily what else is going on here, but there's a list of something. 
+
+What is in that list? Well, here, too, the syntax is our clue. Because this line 2 starts with a curly brace and ends with a curly brace, I just know, that is a dictionary, a collection of key value pairs. Now this all fit on my screen perfectly, so I didn't bother moving all of the key value pairs onto new lines, it would have made it really tall, so I kept it all together here this time. But how many keys does this first dictionary have? 
+
+Put another way, in Hermione's physical dictionary, how many words are in that dictionary? Three. The words are name, house, and patronus. What are the three definitions or values of those words in Hermione's dictionary? Hermione, Gryffindor, and otter respectively. And the same story goes for Harry, then for Ron, then for Draco, I have, by design, chosen to give them dictionaries that have all the same keys, all the same names, but they all have unique values. And that's my design, that's my prerogative as a programmer. 
+
+So why is this useful at the end of the day now? I have access to a whole collection of interesting data about all of these students, and I can still do a loop. I can say for students in students, that's going to allow me to iterate over this list of students. And let me go ahead and print out just one thing at a time. Let me print out the current student's name. 
+
+So as complicated as the dictionary is, this should be pretty comfortable. For student in students is just going to iterate over every student in the list. 1, 2, 3, 4 total. The next line is just going to print out the value of the name key. It's like opening a physical dictionary, looking up the word name, and giving us Hermione, Harry, Ron, and Draco respectively from each dictionary. 
+
+So if I run this version of Hogwarts and hit Enter, there, I get all three of their names. But what if I want more information than that? I want both their names and their houses. Well, just add to print's arguments student, open bracket, house, close bracket. All right, let's go ahead and run this. Python of hogwarts.py and hit Enter. So I now see Hermione, Gryffindor; Harry, Gryffindor; and so forth. 
+
+Well, we can aesthetically clean this up a little bit by adding a separator with print, like a comma and a space, just so that when I run this again, I now see some comma separating these values. But recall that students have not just a name, not just a house, but also that patronus. So if we want to print out that, too, we now have the syntax via which to go into that same dictionary for each student and output their patronus as well as their house in their name. 
+
+So if I run this program one final time, now I see all of the data in this here dictionary. So this is a lot to absorb all at once, I'm sure. It's the last of our new data types. On top of lists, we have these dictionaries, but again, a dictionary, at the end of the day, is just a collection of values similar to these values here that allow you to associate keys with values. 
+
+And the first version of this program associated literally the student's names with their houses, but then I realized in my next version, wait a minute, what if every student has not just a name in a house, but a patronus? Let's actually standardize the names of our keys to be name, house, and patronus, and then the values of those keys can actually be the data, like Hermione, Gryffindor, otter, and so forth. Questions now on these dictionaries and iteration thereof? 
+
+AUDIENCE: I just was wondering, suppose the dictionary is very huge, and if I want to look up for a specific student, so how do I know where to look that student from? Like can we sort it out in alphabetical order or numeric order or anything like that? 
+
+DAVID MALAN: In short answer, yes. One of the features of Python is that it makes these dictionaries very highly performant for you. That is, even if they're very large, as they will be in future weeks when we manipulate more data, Python will find the data you care about quickly for you. And in fact, that is a feature of the language, that is a feature of a dictionary to get you the data quickly. And there are functions that you can use. You can sort the data, you can sift through it, you can do very performant operations as we eventually will.

@@ -1,0 +1,72 @@
+
+Slide [0]
+
+Web Programming 
+with Python and JavaScript
+
+Slide [1]
+
+User Interfaces
+
+Slide [2]
+
+Single-Page Applications
+
+Slide [3]
+
+window
+
+Slide [4]
+
+window
+window.innerWidth
+window.innerHeight
+
+Slide [5]
+
+window
+window.scrollY
+document.body.offsetHeight
+window.innerHeight
+window.innerWidth
+
+Slide [6]
+
+React
+
+Slide [7]
+
+Declarative Programming
+
+Slide [8]
+
+Imperative Programming
+<h1>0</h1>
+View
+let num = parseInt(document.querySelector("h1").innerHTML); 
+num += 1; 
+document.querySelector("h1").innerHTML = num;
+Logic
+
+Slide [9]
+
+Declarative Programming
+<h1>{num}</h1>
+View
+num += 1;
+Logic
+
+Slide [10]
+
+React
+ReactDOM
+Babel
+
+Slide [11]
+
+User Interfaces
+
+Slide [12]
+
+Web Programming 
+with Python and JavaScript

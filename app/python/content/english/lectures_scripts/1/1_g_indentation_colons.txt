@@ -1,0 +1,9 @@
+
+
+SPEAKER 4: Yeah, I have a couple of questions. What if indentation is not used? 
+
+DAVID MALAN: If indentation is not used, your program will not work. So Python is a little different from a lot of languages in that it enforces the indentation requirement. Some of you who have been programming for years might not necessarily be in the best habit of indenting your code properly. And one of the features, arguably, of Python is that it makes you indent your code, or it will not just work. And I think, did you have one other question? 
+
+SPEAKER 4: Yeah, is the colon necessary? 
+
+DAVID MALAN: Is the colon necessary? Yes, the colon, too, is necessary. So with Python, what you see is what you get here. And, indeed, it needs to be indented and the colon is necessary. Python does not use, in the same way by convention as C, and C++, and Java, curly braces to connote blocks. Instead, it relies, indeed, on this indentation.

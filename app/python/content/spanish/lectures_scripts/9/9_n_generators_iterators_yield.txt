@@ -1,0 +1,57 @@
+Permítenos equiparte con una última herramienta para tu kit de herramientas, en particular, esta capacidad de generar valores en Python a partir de funciones. Este no es necesariamente un problema que hayamos encontrado antes. Pero resulta que, si estás escribiendo una función que lee o genera muchos datos, tu función, tu programa, tu computadora podrían quedarse sin memoria. Y tu programa podría no poder seguir corriendo.
+
+Pero resulta que hay una solución a este problema que tal vez tengas en mente, especialmente si después de este curso comienzas a hacer muchos cálculos y analizar aún más datos. De hecho, volvamos a VS Code aquí. Y creemos un programa que quizás sea oportuno en esta hora del día, sobre todo dependiendo de tu zona horaria, quizás te estés sintiendo aún más somnoliento.
+
+Aquí en los Estados Unidos, es bastante común quedarse dormido cuando estás luchando por contar ovejas en tu mente. Y por lo general, como se muestra en los dibujos animados, puedes ver en tu mente cómo una oveja salta por encima de una cerca, y luego dos ovejas, y luego tres ovejas, y luego cuatro. Y luego, eventualmente, supones que te aburres tanto contando esas ovejas que finalmente te quedas dormido.
+
+Entonces, en VS Code aquí, creemos un programa llamado sleep.py que me permita imprimir una cierta cantidad de ovejas como si las estuviera contando en mi mente. Y a través de este programa, hagamos esto. Pidamos al usuario una variable n, estableciéndola igual a la conversión entera del valor de retorno de input, preguntándole al usuario cuál es n, ¿cuántas ovejas quieren intentar contar?
+
+Y luego, hagamos un bucle for familiar aquí. Y comenzaremos contando desde cero como siempre. Así que primero tendremos cero ovejas, luego una oveja, luego dos ovejas, y así sucesivamente para i en el rango de ese valor n. Continuemos e imprimamos.
+
+Y pegaré aquí un emoji que representa una oveja multiplicada por i. Así que en la primera iteración veré cero ovejas. En la segunda iteración, verás una, y luego dos, y luego tantas como se especifique con n al final menos uno.
+
+Bajemos a mi ventana de terminal aquí y ejecutemos Python con sleep.py. Y debería ver, efectivamente, después de escribir, digamos, tres para mi valor de n, cero ovejas, luego una oveja, luego dos ovejas y así sucesivamente.
+
+Y si hago mi ventana de terminal aún más grande aquí, por supuesto, podemos hacer muchas más, escribiendo, por ejemplo, 10. Y verás que obtenemos cada vez más ovejas a medida que pasa el tiempo, y que presumiblemente se vuelve cada vez más tedioso imaginarlo en mi mente.
+
+Así que ahora continuemos practicando lo que hemos estado predicando en términos del diseño de este programa y veamos si y cuando realmente nos encontramos con un problema. Permíteme continuar aquí ahora y poner todo esto en una función principal definiendo main aquí arriba como siempre. Permíteme continuar e indentar todo este código aquí. Y luego, hagámoslo de manera condicional como siempre, si el nombre de este archivo es igual a "main", continuemos y llamemos a main.
+
+Asegurémonos de que no haya roto nada todavía, aunque funcionalmente esto debería ser casi lo mismo. Y si escribo tres, aún tengo cero, luego una, luego dos ovejas en la pantalla.
+
+Pero hemos estado en el hábito, por supuesto, de crear funciones auxiliares para nosotros mismos. Es decir, factorizar nuestro código de manera que nos permita ocultar cierta funcionalidad, como generar una cierta cantidad de ovejas en funciones separadas. De esta manera, uno, de hecho, seais ocultando.
+
+Y ya no tenemos que pensar en cómo se implementan. E incluso podemos reutilizarlos en proyectos y librerías. Pero también hemos estado en el hábito de probar esas funciones como con pruebas unitarias.
+
+Probablemente no debería seguir manteniendo toda mi lógica en main de todos modos. Y vamos a factorizar un poco esto. ¿No sería bueno si pudiera, por ejemplo, simplemente llamar a una función de oveja tomando esta línea de código aquí? Y en lugar de simplemente imprimirlo aquí, vamos a imprimir el valor de retorno de una nueva función llamada oveja que le indique a la función cuántas ovejas imprimir, en este caso i.
+
+Sigamos adelante y creemos otra función aquí llamada oveja. La función oveja ahora tomará un parámetro n que especifica cuántas ovejas quieres devolver. Y para que podamos probar esto con pruebas unitarias, aunque no lo haremos aquí, permíteme imprimir ahora las ovejas no como un efecto secundario sino que voy a devolver una de esas ovejas multiplicada por n para que el usuario reciba una cadena completa de ovejas que es el número apropiado para imprimir.
+
+Así que aquí también, no creo que hayamos cambiado algo fundamentálmente. Python of sleep.py escribir tres aún nos da cero, luego una y luego dos ovejas. Pero ahora al menos tenemos una estructura en la que podemos centrarnos en la implementación de esta función de oveja.
+
+Pero es un poco inelegante que ahora sea la función principal la que hace esta iteración. Hemos visto en el pasado, allá en la semana cero, ¿no sería bueno definir una función que realmente maneje el proceso de devolver la cadena completa que queremos en lugar de solo una fila de ovejas a la vez?
+
+Bueno, creo que podemos hacer esto. ¿Por qué no cambio la función oveja de la siguiente manera? Permíteme continuar aquí y crear una manada de ovejas que inicialmente está vacía usando una lista vacía. Luego, para i en el rango de n, continuemos y agreguemos a esa manada, por ejemplo, una oveja multiplicada por i, para que siga agregando a esta lista cero ovejas, luego una oveja, luego dos ovejas, luego tres y así sucesivamente.
+
+Y luego, en última instancia, voy a devolver toda la manada de ovejas de una vez. Por lo tanto, esto va a devolver el equivalente de todas esas cadenas de ovejas para que la función main pueda manejar la impresión de las mismas.
+
+Así que aquí en main, hagamos esto. ¿Qué tal si por cada oveja, lo llamaré s ya que oveja puede ser singular o plural, por s en oveja de n, que nuevamente me devuelve una lista de todas las ovejas, de toda la manada, imprimamos simplemente cada oveja, s, una a la vez.
+
+Hasta ahora, todo bien aquí, creo. Permíteme continuar y ejecutar Python de sleep.py y presionar Enter. ¿Qué es n? Tres todavía funcionaría: cero, luego una y luego dos. Permíteme continuar y aumentar el tamaño de esto aquí y ejecutar Python de sleep.py. Intentemos un millón como antes y presionemos Enter. Y ahora veo resultados de inmediato.
+
+No creo que esperemos a que se impriman todas estas ovejas, porque entonces todos estaríamos literalmente dormidos. Pero lo que notarás que sucede ahora es que el programa no se cuelga, por así decirlo. No espera y piensa, y genera todo el rebaño de una vez. Solo está generando una fila de ovejas a la vez.
+
+Y está parpadeando en la pantalla porque hay tantas. Y todo eso gracias a yield. Está generando un poco de datos a la vez, no todos a la vez. ¿Alguna pregunta ahora sobre esta característica llamada generadores? ¿Alguna pregunta en absoluto?
+
+Para agregar otro término a la mezcla, solo para que lo hayas escuchado. Esta misma característica aquí está devolviendo lo que técnicamente ahora llamaremos un iterador. Yield está devolviendo un iterador que permite que tu propio código, tu propio bucle for en main, itere sobre estos valores generados uno a la vez.
+
+Estudiante: ¿Cómo funciona yield debajo del capó? Quiero decir, ¿está utilizando la multiprogramación?
+
+DAVID J. MALAN: Puedes pensar en la implementación como asíncrona en este sentido. Mediante la cual la función devuelve un valor de inmediato y luego te devuelve otro posteriormente también. Básicamente, lo que realmente sucede bajo el capó es que el generador simplemente retiene el estado por ti. No va a ejecutar todo el ciclo de principio a fin y luego devolver un valor. Va a hacer una iteración y entregar un resultado.
+
+Y Python se encargará de suspender la función, por así decirlo, pero recordará en qué iteración estaba. Por lo tanto, la próxima vez que realices una iteración, como sucede una y otra vez en este bucle for en main, obtienes otro valor una y otra vez.
+
+Yield devuelve, efectivamente, esta cosa llamada un iterador. Y ese iterador se puede recorrer en bucle, uno a la vez. Pero el lenguaje, Python, se encarga de todo eso para que no necesites realizar toda la infraestructura subyacente tú mismo. ¿Cómo suena si respondemos una pregunta más sobre estos generadores e iteradores mientras nuestras ovejas continúan volando?
+
+Estudiante: Entonces, ¿en cada iteración, el programa devolverá la memoria al sistema para que el programa no se bloquee?
+
+DAVID J. MALAN: Correcto. En cada iteración, solo está devolviendo la cadena de ovejas que es apropiada para el valor actual de i. No está tratando de devolver todas las filas al mismo tiempo. Y por lo tanto, utiliza realmente una millonésima parte de la cantidad de memoria, aunque eso es un poco simplificar demasiado.

@@ -1,0 +1,169 @@
+Muy bien. Permítanme proponer ahora que echemos un vistazo a otra característica de Python que ya hemos visto antes. Pero resulta que podemos usarla de manera aún más poderosa a medida que nuestros programas se vuelven más sofisticados y los problemas que estamos tratando de resolver se vuelven más complejos.
+
+Permítanme ir a VS Code, cerrando meows.py y creando un nuevo archivo llamado unpack.py, por ejemplo. Entonces, el código de unpack.py. Permítanme recordarles lo que queremos decir con desempaquetar, porque en realidad es una característica de Python que ya hemos visto antes.
+
+Por ejemplo, supongamos que escribo un programa que le pide al usuario su nombre, como David espacio Malan. ¿No sería bueno si pudiéramos dividir el nombre del usuario en dos variables separadas? Y cuando hemos hecho esto en el pasado, lo hemos hecho de varias formas diferentes. Pero una de ellas involucra desempaquetar un único valor que se devuelve de eso, como una lista u otra estructura de datos, e inmediatamente colocarlo en dos variables.
+
+Así que vamos a hacer esto aquí. Permítanme llamar a la función input, preguntando a alguien "¿Cuál es tu nombre?". Luego, permítanme dividirlo de manera un tanto ingenua en un solo espacio.
+
+Así que asumo que los únicos usuarios en este momento son personas como yo, David Malan. Ningún segundo nombre, ningún nombre múltiple. Es solo uno y dos, lo que en sí mismo podría ser un error para otros usuarios. Pero por ahora, lo mantendré simple, solo para recordarnos que ahora puedo desempaquetar ese valor de retorno usando algo como "first underscore last" igual al valor de retorno de input.
+
+Y ahora puedo hacer algo como esto, como imprimir con una cadena "f", "Hola, coma", y luego entre llaves "first". Si solo quiero saludarme a mí mismo o a cualquier otro usuario como "Hola, David", sin el apellido. Y francamente, si no estoy usando el apellido, recuerden que una convención en Python es simplemente llamarlo guion bajo para dejar claro que saben que no están usando ese valor. Pero debe estar ahí porque están desempaquetando dos valores a la vez.
+
+Entonces, si ejecuto esto, no será algo tan extraño. Solo voy a ejecutar ahora "python unpack.py". Escribiré David Malan, que tiene un solo espacio. Y ahí lo tenemos, Hola, David.
+
+Bueno, resulta que hay otras formas de desempaquetar valores. Y hay otras características que Python ofrece, especialmente cuando se trata de definir y usar funciones. Y esta es una funcionalidad ligeramente más avanzada, si se quiere, que es útil porque puedes comenzar a escribir un código aún más elegante y poderoso una vez que te sientas cómodo con esta sintaxis.
+
+Entonces, permítanme proponer ahora que no solo juguemos con nombres de saludo, sino que hagamos algo que tal vez involucre alguna moneda nuevamente. Entonces, tal vez no dólares y centavos, sino tal vez, nuevamente, como en el pasado, algunas galeones, sickles y knuts, entre las cuales hay una relación matemática en cuanto a cuántos de estos en el mundo de la magia son equivalentes entre sí.
+
+Permítanme hacer esto. Permítanme definir una función simple llamada "total" que simplemente me diga el valor total del cofre de alguien en Gringotts, el banco de la magia, según la cantidad de galeones, sickles y knuts que tienen, que nuevamente son monedas del mundo de la magia en lugar de nuestro mundo humano real.
+
+Entonces, esta función total podría tomar una variable como galeones, sickles y knuts, así. Y luego, va a devolver la fórmula, que admito que tuve que buscar yo mismo. Y resulta que la fórmula para convertir galeones y sickles a knuts sería esta. Galeones multiplicado por 17 más sickles, luego todo eso multiplicado por 29 y luego se agrega los knuts individuales. No estoy seguro de en qué detalle apareció esto en los libros o las películas. Pero aquí tenemos la fórmula oficial.
+
+Bueno. Ahora hagamos esto. Permítanme llamar a la función total con solo algunas entradas de ejemplo. Supongan que alguien como Harry tiene 100 galeones, 50 sickles y 25 knuts. Permítanme imprimir eso en la pantalla.
+
+Si total retorna un número entero, lo cual creo que esta expresión aritmética hará, permítanme almacenar, en lugar de pasar, el valor de retorno total a print. Y solo para mayor claridad, permítanme escribir "knuts" al final. Entonces, sé que la unidad de medida aquí es realmente knuts en total.
+
+Ahora, permítanme ir a mi terminal y ejecutar "python unpack.py" y presionar Enter. Y resulta que matemáticamente, si calculé bien, 100 galeones más 50 sickles más 25 knuts es igual a un total de 50,775 knuts. Evitando el uso de nuestra propia moneda humana aquí, pero por ahora, no estoy haciendo nada relacionado con el desempaque.
+
+Permítanme proponer ahora que haga esto. Solo por el bien de la discusión, permítame proponer que deje la función total como está. Pero permítanme apropiadamente almacenar todas mis monedas en una lista. Entonces, monedas en orden de izquierda a derecha, 100, 50, 25, solo porque por cualquier razón en esta historia, tengo todas mis monedas en una lista en este orden. Como una especie de bolso o billetera.
+
+Bueno, ¿cómo puedo pasar esto? No voy a codificar los mismos valores dos veces. Solo por el bien de la discusión, ¿cómo podría pasar los elementos individuales de una lista a mi función total? Bueno, por supuesto, no voy a codificar los mismos valores dos veces. Solo por el bien de la discusión, ¿cómo podría pasar los elementos individuales de una lista a mi función total? Bueno, por supuesto, podríamos tratar esta lista como siempre lo hacemos usando índices numéricos al hacer "monedas[0], monedas[1], monedas[2]". Esto es algo "antiguo" con las listas.
+
+Si tengo una lista llamada monedas y tiene tres elementos, los índices o indices de esos elementos son cero, uno y dos respectivamente de izquierda a derecha. Así que todo lo que estoy haciendo aquí es pasar el primer elemento de esa lista como galeones, el segundo elemento de esa lista como sickles y el tercer elemento de esa lista como mis knuts. Y eso coincide, por supuesto, con la firma de esta función, ya que total espera que haya pasado esas tres cosas en ese orden de izquierda a derecha.
+
+Permítanme ir y ejecutar, solo para asegurarme de que no rompí nada, unpack.py y presionar Enter. Y las matemáticas aún concuerdan. Pero esto se está volviendo un poco excesivo, y no sería genial si pudiera simplemente pasar la lista de monedas a esta función total. No sería genial si pudiera simplemente decir algo como esto, monedas.
+
+Pero permítanme hacer una pausa y preguntar al grupo, ¿por qué esto en realidad no funcionaría tal como está? Técnicamente, está pasando los tres. ¿Pero por qué obtendría algún tipo de error al ejecutar esto? ¿Eric?
+
+ESTUDIANTE: Porque estás pasando una lista a los galeones.
+
+DAVID J. MALAN: Sí. Estoy pasando una lista a los galeones y nada para los sickles y los knuts. Y tengan en cuenta que esos no tienen valores predeterminados. No hay signos iguales en esa primera línea de código, lo que significa que Python no va a saber qué valor debería asumir allí. Así que parece que simplemente no va a funcionar. Además, es el tipo incorrecto, como señala Eric. Es una lista y no un número entero como antes.
+
+Así que vamos a ejecutar esta versión incorrecta, 'python unpack.py', Enter, error de tipo. Y eso es probablemente lo que podrían esperar, como si estuviera mal con los tipos aquí. Y se requiere que pase dos argumentos posicionales, sickles y knuts, que ni siquiera fueron pasados. Así que definitivamente me equivoqué aquí.
+
+Pero ciertamente parece desafortunado si la única solución a esto es hacer lo que hice anteriormente, que es indexar en el primer elemento, indexar en el segundo elemento, indexar en el tercero. Se pueden imaginar, con funciones más grandes y más sofisticadas que toman aún más argumentos, esto se volverá muy largo y, sinceramente, vulnerable potencialmente a errores tipográficos por mi parte.
+
+Pero aquí es donde pueden hacer lo que se conoce, una vez más, como desempaquetar un valor en Python. En este caso, una lista tiene varios valores empaquetados. Mi lista actual tiene estos tres valores, 100, 50 y 25 respectivamente. Pero todos están empaquetados en esta única lista. ¿No sería bueno si pudiera desempaquetar esa lista, al igual que desempaqué el valor de retorno de la función split de la clase str en varias cosas también?
+
+Y de hecho, puedo hacer eso. Python en realidad me permite pasar star-star coins, no coins como antes. Si usas un solo asterisco al principio de tu variable, eso lo desempaquetará y tomará una secuencia, en este caso una lista de tamaño tres, y la explotará, si se quiere, desempaquetará en tres argumentos individuales. No se necesitan comas. Python maneja esto por ti.
+
+Pero el efecto de pasar star-star coins es pasar los miembros individuales de esa lista. Que en este caso serán 100, 50 y 25 respectivamente. Lo cual es perfecto, porque ahora se alineará con galeones, sickles, knuts respectivamente.
+
+Entonces, ahora cuando ejecuto 'python unpack.py', volvemos a los negocios y las matemáticas aún concuerdan. Pero he limpiado mi código simplemente presentando este nuevo símbolo, que hemos usado, por supuesto, en otros contextos para la multiplicación y similares. Pero ahora también se usa para desempaquetar de esta manera.
+
+¿Preguntas sobre lo que acabamos de hacer? Es un solo operador, pero ya es bastante poderoso. Porque nos permite tomar una estructura de datos y desempaquetarla y pasarla individualmente.
+
+ESTUDIANTE: ¿Esto funciona también para tuples, sets, dicts, diccionarios?
+
+DAVID J. MALAN: Las tuples, sí. Sets no lo sé. ¿Ranshin? No sé si se mantiene el orden. No. ¿Oh, eso significa que no, o estás comprobando? El orden no se mantiene. Por lo que no funcionaría con un set. No funciona con sets.
+
+Lo siento, estoy buscando verbalmente solo para ahorrar algunas pulsaciones de teclas. Por lo que funcionaría para enumeraciones donde el orden se mantiene. Y veremos otro ejemplo en un momento donde en realidad se puede usar de una manera diferente para los diccionarios, que hoy en día sí mantienen el orden. ¿Otras preguntas sobre desempaquetar de esta manera?
+
+ESTUDIANTE: Sí. Hola.
+
+DAVID J. MALAN: Hola.
+
+ESTUDIANTE: ¿Podemos usar el desempaquetamiento para obtener el valor, por ejemplo, 10 más 50 más 25 en lugar de usar un bucle y luego "resultado + ="?
+
+DAVID J. MALAN: En resumen, no. Si quieres los valores individuales, deberías simplemente indexar. En este caso, usás la forma anterior si te interesan las ubicaciones individuales. ¿Cómo una pregunta más sobre el desempaquetado?
+
+ESTUDIANTE: ¿Qué pasa si declaramos, declaramos algunos valores predeterminados? Y si usas esto con dos puntos, ¿funcionará correctamente o los omitirá?
+
+DAVID J. MALAN: Buena pregunta. Si te entendí bien, ¿qué pasaría si, por ejemplo, la lista tiene cuatro valores como aquí y aún estás desempaquetándola cuando solo se esperan tres? Bueno, probémoslo. Ejecutamos 'python unpack.py' y presionamos Enter.
+
+Otro error de tipo. Esta vez se esperaban tres argumentos posicionales pero se dieron cuatro. Así que la carga es nuestra como programadores de no hacer eso en este caso. Entonces, potencialmente frágil, pero evitable si estamos controlando el contenido de esta lista.
+
+De hecho, permítanme proponer ahora que echemos un vistazo a una variante de esto. Donde usamos no solo argumentos posicionales, donde confiamos en que el primero es galeones, el segundo es sickles, el tercero es knuts. Supongamos que en realidad pasamos los nombres como se permiten hacer en Python. Y luego, técnicamente, podríamos pasarlos en cualquier orden y Python lo entendería usando parámetros con nombre en su lugar.
+
+¿Cómo podría hacer esto? Bueno, al principio, será un poco un retroceso. Así que permítanme deshacerme de esta lista aquí. Ahora, permítanme cambiar esto para pasar manualmente los valores que me importan. Quiero que galeones siga siendo igual a 100. Quiero que sickles sea igual a 50. Y quiero que knuts sea igual a 25.
+
+Entonces, esto es pasar los argumentos de manera "antigua". Ya no especifico la posición, sino que especifico explícitamente los nombres de estos parámetros. Pero eso simplemente funcionará porque eso es exactamente lo que son los nombres de estos parámetros en mi función total como antes.
+
+Asegurémonos de que, no obstante, no haya roto nada. Ejecutamos 'python unpack.py' e ingresamos. Ahí lo tenemos, todavía 50.775 knuts.
+
+Bueno, una vez que comenzamos a asignar nombres y valores, nombres y valores, eso probablemente debería hacer pensar en una de nuestras estructuras de datos más versátiles en Python y en otros lenguajes, la de un diccionario. Recuerden que un diccionario es simplemente una colección de pares de clave y valor, nombres y sus respectivos valores.
+
+Entonces, esto abre una oportunidad. ¿Qué pasa si hago esto? ¿Qué pasa si en realidad, por alguna razón en mi programa, tengo en una variable, como antes, llamada monedas, pero en lugar de hacerla una lista de tres valores como antes, ¿qué pasaría si es un diccionario adecuado? Entonces, ¿qué pasaría si fuera galeones, por así decirlo, dos puntos, 100 por un total de 100 de estos, sickles, por así decirlo, y 50 de ellos, y knuts, por así decirlo, 25 de ellos, cada uno de ellos separado por dos puntos?
+
+Y déjenme corregir mis corchetes para que esta vez sean llaves, que, recuerden, es el símbolo que usamos para diccionarios u objetos dict en Python. Entonces, ahora tengo un diccionario llamado monedas. No una lista. Es una colección de claves y valores, tres claves, galeones, sickles, knuts y tres valores, 100, 50 y 25 respectivamente.
+
+Si ahora quiero pasar estos valores individuales a mi función total, puedo hacerlo como siempre con mi diccionario. Entonces, lo estoy haciendo a la antigua ahora. Monedas es el nombre de mi diccionario. Indexo en él no con números como con listas, sino con palabras. Entonces, galeones, como cadenas, así, monedas, entre comillas, sickles entre corchetes y luego, finalmente, monedas, corchetes, entre comillas, knuts.
+
+Así que se está volviendo verboso de nuevo. Esto probablemente no sea el mejor camino a seguir. Pero retrocederemos en un momento. Esto es solo cómo, si por casualidad tienes todas tus monedas almacenadas en un diccionario, podrías pasar los galeones, sickles y knuts respectivamente a tu función. Asegurémonos de no haber roto nada. Vamos a ejecutar 'python unpack.py' de nuevo y está todo bien.
+
+Ahora, ¿cómo podríamos llegar a una situación como esta? Bueno, como siempre, imaginemos que este programa es un poco más largo que este aquí. Y de alguna manera estás usando un diccionario, tal vez solo para realizar un seguimiento del bolso o la billetera de alguien, como cuántas monedas de cada tipo tienen. Y como tal, es completamente razonable usar un diccionario.
+
+Pero luego quieres imprimir el total. Y vaya, si esa función total no espera un diccionario, por lo que no puedes simplemente hacer algo agradable y simple como pasar monedas. Por las razones que vimos antes, eso sería un error de tipo. Total espera tres argumentos, tres enteros. No puedes simplemente pasar un diccionario. Pero si esa es la estructura de datos que estás usando para almacenar el bolso o la billetera de la persona, bueno, es un poco desafortunado que haya este conflicto entre estos tipos de datos.
+
+Bueno, esto es lo que podemos hacer. No podemos pasar monedas. Porque observen, si pruebo a hacer eso y ejecuto 'python unpack.py', estamos obteniendo otro error de tipo. Argumento de palabra clave inesperado 'pennies', porque eso no es lo que espera la función total. Veremos en un momento maravillosamente una solución para eso. Pero por ahora, no funciona así. ¿Otras preguntas sobre desempaquetar con diccionarios o listas?
+
+ESTUDIANTE: En los valores de la lista, dimos el mismo número de argumentos y declaramos un valor predeterminado en la función. Ahora, si uso este asterisco, ¿sobrescribirá ese valor o lo omitirá?
+
+DAVID J. MALAN: Buena pregunta. Si tuviéramos valores predeterminados aquí arriba, por ejemplo, igual a cero, igual a cero, igual a cero, la ventaja de eso, recuerden, fue que ahora no tienes que pasar todos esos valores. Por defecto, serán cero. Por lo tanto, podrías pasar menos de tres valores, ya sea usando una lista o un diccionario y desempaquetados en este escenario. Deliberadamente no lo hice porque quería encontrarme con este error específico en este caso. Pero absolutamente podrías volver atrás y agregar esos valores predeterminados.
+
+Resulta que este solo asterisco o este doble asterisco no solo se usa en el contexto del desempaquetado. Esa misma sintaxis se usa en Python como un indicador visual cuando, en una función, esta misma podría tomar un número variable de argumentos.
+
+Es decir, una función puede ser variádica. Lo que significa que no necesariamente tiene que tomar, digamos, tres argumentos específicamente. Incluso si tienen o no valores predeterminados, puede tomar tal vez cero, uno, dos o tres. Y resulta que la sintaxis para implementar esta idea es bastante similar en espíritu.
+
+De hecho, permítanme volver a VS Code aquí. Y permítanme proponer que volvamos a comenzar con este código y eliminar nuestra noción de galeones, sickles y knuts, y hacer algo un poco más genérico solo para que hayamos visto la sintaxis para esto. Supongamos que defino una función de la siguiente manera. Defino una función, llamémosla f. Y esa función no va a tomar un número específico de argumentos, sino uno variable.
+
+Voy a usar esta sintaxis aquí, star args, que indica que esta función es realmente variádica. Toma un número variable de argumentos posicionales. Posicional en el sentido de que van típicamente de izquierda a derecha. Pero no sé cuántos quiero admitir por ahora.
+
+Supongamos que además quiero admitir algunos argumentos nombrados, es decir, parámetros nombrados que pueden ser llamados opcionalmente e individualmente por su propio nombre. Bueno, la convención sintáctica aquí sería usar dos asteriscos y luego kwargs. Podría llamarlos args o kwargs, cualquier otra cosa que quiera.
+
+Pero una convención que verán con frecuencia en la propia documentación de Python es que cuando tienes marcadores de posición como este para algún número de argumentos y algún número de argumentos nombrados, el mundo tiende a usar args y kwargs.
+
+Bien. Dentro de esta función, hagamos algo muy simple por ahora. Permítanme imprimir literalmente las palabras "posicional" para indicarnos a nosotros mismos mientras envolvemos nuestra mente en lo que está sucediendo aquí, qué son los argumentos posicionales.
+
+Y permítanme simplemente imprimir esos args. Esto no es algo que normalmente harías. Normalmente no simplemente tomas estos argumentos y los imprimes, sin importar cuántos haya. Solo estoy haciendo esto diagnósticamente por ahora para mostrarte cómo funciona la sintaxis.
+
+Ahora, permítanme ir a la parte inferior de mi archivo... Y no me molestaré con una función principal esta vez para poder enfocarnos solo en esta función f. Permítanme llamar simplemente a la función f con tres argumentos. Usaré los mismos argumentos que antes. Pero esta vez no me molestaré en darles nombres, como galeones, sickles y knuts, por ahora.
+
+Entonces, ¿qué tengo aquí? Un programa que llama a esta función f sin importar qué, pero primero define f en la parte superior del archivo. La función toma un número variable de argumentos posicionales, un número variable de argumentos nombrados.
+
+Y por ahora, estoy imprimiendo solo los argumentos posicionales. Permítanme ir y ejecutar, solo para asegurarme de que no rompí nada, `unpack.py` y presionar Enter. Y verán que los argumentos posicionales pasados son aparentemente esto, una secuencia, 100, 50, 25.
+
+Pero tengan en cuenta esto. Si borro mi ventana terminal allí y paso algo más, como 5, un cuarto argumento. Anteriormente, si intentaba cambiar el número de argumentos que estoy pasando a mi función total, que solo se definió como tomando tres, hubiera obtenido un error de tipo, alguna indicación visual de que no puedes pasar más o menos argumentos de los que realmente están en la definición de la función.
+
+Pero ahora observen. Si ejecuto `python unpack.py`, esta vez pasando 100, 50, 25 y 5, un cuarto argumento, los cuatro se pasan sin problemas. Puedo eliminar todos menos uno, por ejemplo, ahora vuelvo a ejecutar mi programa después de borrar mi pantalla.
+
+Y ahora veré solo un argumento aquí. Y aunque hay una coma y nada después de ella, esto es en realidad la sintaxis cuando se ve una tupla, en efecto, donde la coma simplemente indica que esto es en realidad una lista, pero hay solo un elemento en ella.
+
+Bueno, vamos a curiosear un poco más. Permítanme volver atrás aquí a donde comenzamos con solo esos tres valores. Y esta vez, permítanme imprimir mi argumento nombrado, por así decirlo, que no es args sino kwargs. Nuevamente, los args posicionales en esta sintaxis vienen primero. Los argumentos nombrados, kwargs, vienen después. Eso es lo que prescribe Python.
+
+Así que ahora voy a imprimir mi argumento nombrado, por así decirlo, que no es args sino kwargs. Nuevamente, los args posicionales vienen primero. Los argumentos nombrados, kwargs, vienen después. Eso es lo que prescribe Python.
+
+Entonces, ahora, permítanme no pasar solo estos números. Permítanme pasar en realidad argumentos nombrados. Así que ahora hagamos algo más específicamente, como galeones igual a 100, y sickles igual a 50, y knuts igual a 25. No voy a molestarme en hacer ninguna operación matemática con total. Solo quiero explorar por ahora esta funcionalidad de tener un número variable de argumentos.
+
+Y lo interesante ahora es que si ejecuto `python unpack.py` y presiono enter, no hay problema. Lo que es kwargs, es automáticamente un diccionario que contiene todos los argumentos nombrados que se pasaron a mi función.
+
+Lo cual es decir, cuando diseñas tus propias funciones, si quieres admitir más de un argumento, tal vez más de dos o tres, o cuatro, tal vez un número variable de argumentos, de hecho, puedes admitir tanto un número variable de argumentos posicionales que son simplemente valores coma valor coma valor, o cualquier cantidad de argumentos nombrados, donde realmente pones el nombre del parámetro igual al valor y luego tal vez una coma y un poco más de lo mismo.
+
+Entonces, ahora resulta que hemos visto esto antes en algunas de las funciones que hemos usado hasta ahora. No necesariamente vimos que se llamaran args o necesariamente los vimos llamar kwargs. Pero hemos visto al menos un ejemplo de esto. Recuerda a nuestro viejo amigo print, que hemos estado usando durante varias semanas.
+
+Y cuando vimos por primera vez la documentación para print hace mucho tiempo, se veía algo así. El primer argumento de print era objects. Y yo alcé la mano en ese momento sobre el asterisco que estaba al comienzo de ese nombre de variable.
+
+Pero luego teníamos sep para separador, el valor predeterminado de eso era un espacio. Teníamos n, el valor predeterminado de eso era un salto de línea. Y luego algunos otros argumentos nombrados que no vimos en ese momento y vuelvo a hacer ahora.
+
+Pero lo que ahora puedes inferir de nuestro énfasis en estos asteriscos hoy, los asteriscos simples o los asteriscos dobles, es que sabes qué, esta es la convención en la documentación de Python para indicar que print toma un número variable de argumentos.
+
+Entonces, si miráramos realmente la implementación de la función print implementada por los propios autores de Python, podría parecer algo así. Definir print, y luego el primer argumento sería estrellas objects, indicando así que print toma un número variable de argumentos. El siguiente de los cuales podría ser sep igual a las comillas dobles, sencillas o como en la documentación también.
+
+El siguiente podría ser n, el valor predeterminado de eso es un salto de línea. Y luego algunos de esos otros argumentos nombrados que no hemos visto también. Y luego, tal vez dentro de la función print implementada por los autores de Python, tal vez haya un bucle for, como for object in objects que les permite iterar sobre cada uno de esos argumentos variables y imprimir cada uno de ellos.
+
+Y es por eso que en programas pasados, tú y yo hemos podido hacer simplemente print paréntesis abierto paréntesis cerrado sin nada adentro. O tú y yo hemos podido imprimir algo como "Hola, mundo", una sola cadena de texto dentro de esos paréntesis. O tú y yo hemos podido hacer una sola cadena de texto, "Hola" y luego otra cadena de texto "mundo", pasando así dos argumentos o incluso más.
+
+Entonces, desde hace mucho hemos tenido esta capacidad de usar funciones variádicas, mediante las cuales puedes pasar un número variable de argumentos. Lo que ahora tienes a través de esta sintaxis args y kwargs, aunque no necesariamente se les debe llamar así, es la capacidad de implementar ese tipo de funciones tú mismo.
+
+Mi propia función f hace un momento no hizo nada tan interesante. Pero sugiere cómo podrías, si en el futuro tienes un caso de uso, tomar cero o uno o más de cualquiera de esos tipos de argumentos. ¿Alguna pregunta sobre estos tipos de argumentos?
+
+ESTUDIANTE: ¿Qué sucederá si imprimes kwargs y el argumento es una lista?
+
+DAVID J. MALAN: Ah. Entonces, ¿qué pasaría si imprimo el argumento como si fuera una lista? Creo que ya vimos eso. Si retrocedo en mi historial aquí a cuando tenía esa función f. Que llamé f solo para ser muy genérico para poder jugar con la sintaxis. Esto es lo que tenía aquí. Entonces, esta es una, pasé 100 coma 50 coma 25. Eso es almacenado automáticamente en args.
+
+Cuando ejecuto esto, puedes ver esa secuencia de valores al ejecutar `python unpack.py`. Hay esa secuencia en forma de una sola variable. Estoy imprimiéndola solo con fines diagnósticos. Esto no es realmente un programa útil o bonito. Pero sugiere cómo podemos acceder a toda esa secuencia de valores. ¿Otras preguntas sobre este enfoque aquí?
+
+ESTUDIANTE: ¿Podemos pasar los kwargs desde una función a otra función?
+
+DAVID J. MALAN: Absolutamente. Puedes pasar cualquiera de esos a otra función, lo cual podrías querer hacer si quieres envolver otra función, proporcionar alguna funcionalidad adicional, pero aún así pasar todos los argumentos admitidos a la función subyacente también.

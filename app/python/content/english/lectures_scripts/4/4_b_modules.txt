@@ -1,0 +1,18 @@
+[MUSIC PLAYING] DAVID MALAN: All right, this is CS50, Introduction to Programming with Python. My name is David Malan, and this is our week on library. So libraries are generally files of code that other people have written that you can use in your own programs or a library's code that you've written that you can use in your own program, but maybe not just this program, but another and another as well. 
+
+So Python supports exactly this idea. This ability to share code with others, share code across your own projects. And it does so by way of what it calls module.
+
+
+A module in Python is just a library that typically has one or more functions or other features built into it. 
+
+Generally, the purpose of a library or a module specifically is to encourage reusability of code if you find yourself using the same types of functions again and again, the same functionality. If you find yourself copying and pasting from an old project into your new project, odds are there's an opportunity there to factor out that code that you keep copying and pasting that you keep reusing and put it into a library that you can then load into your programs moving forward so as to not just copy and paste it and have all these different copies all over. 
+
+So what are some of the modules or libraries that Python comes with? Well, Python comes with a random library literally, which is to say that when you install the Python interpreter on your Mac or PC or somewhere in the cloud, not only do you get Python, you get a whole bunch of modules as well. 
+
+Now, these modules provide you with functions that you don't have access to just by default like you do print and input. Print and input and other such functions just work in Python. But sometimes functions are tucked away in these modules, so you have to be more deliberate about loading them into the computer's memory. 
+
+So somewhere on the computer's hard drive, once you've installed Python, there is also, it turns out a file, probably called random.py that someone else wrote probably long ago but that you have access to. And in that random.py file, there's probably one or more functions that you yourself can use in order to do things randomly. 
+
+That is to say how could you flip a coin in a program in Python? How could you pick a random number between 1 and 10 in Python? Well, you need a bit of randomness. And while you could figure out mathematically how to write functions like that yourself, it's a lot easier to stand on the shoulders of others who've already solved that problem for you so you can focus on the problem that you yourself want to solve. 
+
+So for documentation on most any Python module, you go to the official Python docs. And you go to a URL like this where the documentation for that specific module lives. And within the documentation, you'll see a list of the functions or other functionality that some module provide. 

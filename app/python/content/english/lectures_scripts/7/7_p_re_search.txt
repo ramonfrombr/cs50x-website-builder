@@ -1,0 +1,63 @@
+
+
+So rather than use re.sub, which is useful for cleaning up data, as we've done here to get rid of something we don't want there, why don't we go back to re.search, where we began today, and use it to solve this same problem but in a way that's conditional, whereby I can confidently say, yes or no, at the end of my program, here's the username, or here it is not? 
+
+So let me go ahead now. And I'll clear my terminal window here. I'm going to keep most of-- I'm going to keep the first two lines the, same where I import re, and I get the URL from the user. But this time, let's do this. 
+
+Let's this time search for, using re.search instead of re.sub, the following. I'm going to start matching at the beginning of the string, https, question mark to make the S optional, colon, slash, slash, I'm going to make my www optional by putting that in question marks there, then a twitter.com with a literal dot there so I stay ahead of that issue, too, then a slash. And then well, this is where davidjmalan is supposed to go. How do I detect this? 
+
+Well, I think I'll just tolerate anything at the end of the URL here. All right, $ sign at the very end, close quote. For the moment, I'm going to stipulate that we're not going to worry about question marks at the end or hashes, like for fragment IDs in URLs. We're going to assume for simplicity now that the URL just ends with the username alone. 
+
+Now what am I going to do? Well, I want to search for this URL specifically, and I'm going to ignore case, so re.IGNORECASE, applying that same lesson learned from before. re.search, recall, will return to you the matches you've captured. Well, what do I want to capture? Well, I want to capture everything to the right of the twitter.com URL here. So let me surround what should be the user's username with parentheses, not for making them optional but to say, "capture this set of characters." 
+
+Now, re.search, recall, returns an answer. matches will be my variable name again, but I could call it anything I want. And then I can do this. If matches, now I know I can do this. Let's print out the format string, username colon. And then what do I want to print out? 
+
+Well, I think I want to print out matches.group 1 for my matched username. All right. So what am I doing just to recap? Line 1, I'm importing the library. Line 2, I'm getting the URL from the user. So nothing new there. 
+
+Line 5, I'm searching the user's URL, as indicated here as the second argument, for this regular expression, this pattern. I have surrounded the dot + with parentheses so that they are captured ultimately, so I can extract, in this final scenario, the user's username. If I indeed got a match, and matches is non-none, it is actually containing some match, then and only then, print out username. 
+
+In this way, let me try this now. If I run python of twitter.py and type in https://www.google.com/, now nothing gets printed. So I've at least solved the mistake we just saw, where I was just assuming that my code worked. Now I'm making sure that I have searched for and found the Twitter URL prefix. 
+
+All right. Well, let's run this for real now. Python of twitter.py https://twitter.com/davidjmalan. But note, I could use HTTP, I could use www. I'm just going to go ahead here and hit Enter. Huh, none. 
+
+What has gone wrong? This one's a bit more subtle. But why does matches.group 1 contain nothing? Wait a minute. Let me-- maybe I did this wrong. Maybe-- maybe do we need the www? Let me run it again. 
+
+So here we go. https://, let's add a www.twitter.com/davidjmalan. All right. Enter. Ho, ho, ho. What is going on? 
+
+AUDIENCE: You have to say group 2. 
+
+DAVID MALAN: I have to say group 2? Well, wait-- oh, right, because we had the subdomain was optional. And to make it optional, I needed to use parentheses here. And so I then said zero or on. 
+
+OK. So that means that actually, I'm unintentionally but by design capturing the www dot, or none of it if it wasn't there before, but I have a second match over here because I have a second set of parentheses. So I think, yep, let me change matches.group 1 to matches.group 2, and let's run this. Python of twitter.py https://www.twitter-- let's do this, twitter.com/davidjmalan, Enter, and now we've got access to the username. 
+
+Let me go ahead and tighten it up a little bit further. If you like our new friend-- it's hard not to like. If we like our old friend the walrus operator, let's go ahead and add this just to tighten things up. Let me go back to VS Code here, and let me get rid of the unnecessary condition there and combine it up here, if matches equals that. But let's change the single assignment operator to the walrus operator. Now I've tightened things up further. 
+
+But I bet, I bet, I bet there might be another solution here. And indeed, it turns out that we can come back to this final set of syntax. Recall that when we introduce these parentheses, we did it so that we could do A or B, for instance, with the vertical bar. Then you can even combine more than just one bar. 
+
+We use the group to combine ideas like the, www dot. And then there's this admittedly weird syntax at the bottom here, up until now not used. There is a non-capturing version of parentheses if you want to use parentheses logically because you need to, but you don't want to bother capturing the result. 
+
+And this would arguably be a better solution here, because, yes, if I go back to VS Code, I do need to surround the www dot with parentheses, at least as I've written my regex here, because I wanted to put the question mark after it. But I don't need the www dot coming back. In fact, let's only extract the data we care about, just so there's no confusion down the road, for me, or my colleagues, or my teachers. 
+
+So what could I do? Well, the syntax per this slide is to use a question mark and a colon immediately after the open parentheses. It looks weird admittedly. Those of you who have prior programming experience might recognize the syntax from ternary operators, doing an if else all in one line. A question mark colon at the beginning of that parenthetical means, yes, I'm using parentheses to group these things together, but no, you do not need to capture them instead. 
+
+So I can change my code back now to matches.group 1. I'll clear my screen here, run python of twitter.py. I'll again run here https://twitter.com/davidjmalan with or without the www. And now, I indeed get back that username. 
+
+Any questions, then, on these final techniques? 
+
+AUDIENCE: So first of all, could we move the ^ right at the beginning of Twitter, and then just start reading from there, and then get rid of everything else before that, the kind of www issues that we had? And then my second question is, how would we use kind of, I guess, either a list or a dictionary to sort the .com kind of thing, because we have .co.uk, and that kind of stuff. How would we bring that into the re function? 
+
+DAVID MALAN: A good question but no. If I move the ^ before twitter.com and throw away the protocol and the www, then the user is going to have to type in literally twitter.com/username. They can't even type in that other stuff. So that would be a regression, a step back. 
+
+As for the .com, the .org, and .edu, and so forth, the short answer is there's many different solutions here. If I wanted to be stringent about .com-- and suppose that Twitter probably owns multiple domain names, even though they tend to use just this one. Suppose they have something like .org as well. You could use more parentheses here and do something like this-- com or org. I'd probably want to go in and add a question mark colon to make it non-capturing, because I don't care which it is, I just want to tolerate both. 
+
+Alternatively, we could capture that. We could do something like this, where we do dot + so as to actually capture that. And then we could do something like this. If matches.group 1 now equals equals com, then we could support this. So you could imagine factoring out the logic just by extracting the Top-Level Domain, or TLD, and then just using Python code, maybe a list, maybe a dictionary, to validate elsewhere, outside of the regex, if it's, in fact, what you expect. 
+
+For now, though, we kept things simple. We focused only on the .com in this case. Let's make one final change to this program so that we're being a little more specific with the definition of a Twitter username. 
+
+It turns out that we're being a little too generous over here, whereby we're accepting one or more of any character. I checked the documentation for Twitter. And Twitter only supports letters of the alphabet, a through Z, numbers 0 through 9, or underscores, so not just dot, which is literally anything. 
+
+So let me go ahead and be more precise here. At the end of my string, let me go ahead and say, this set of symbols in square brackets. I'm going to go ahead and say a through Z, 0 through 9, and an underscore. Because, again, those are the only valid symbols. I don't need to bother with an uppercase A or a lowercase z, because we're using re.IGNORECASE over here. 
+
+But I want to make sure now that I tolerate not only one or more of these symbols here but also maybe some other stuff at the end of the URL. I'm now going to be OK with there being a slash, or a question mark, or a hash at the end of the URL, all of which are valid symbols in a URL, but I know from the Twitter's documentation, are not part of the username. 
+
+All right. Now I'm going to go ahead and run python of twitter.py one final time, typing in https://twitter.com/davidjmalan, maybe with, maybe without a trailing slash. But hopefully, with my biggest fingers crossed here, I'm going to go ahead now and hit Enter, and thankfully my username is, indeed, davidjmalan. 

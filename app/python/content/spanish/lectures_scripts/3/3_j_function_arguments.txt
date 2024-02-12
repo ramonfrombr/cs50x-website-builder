@@ -1,0 +1,17 @@
+Bueno, permíteme proponer algunas refinaciones finales a este programa que realmente ajustan las cosas, un paso adicional para mejorar la implementación de esta función get int. Permíteme proponer que no codifiquemos duro, por así decirlo, es decir, no escribamos manualmente la x en todos lados. Hagamos que esta función, get int, sea un poco más reutilizable.
+
+Ahora mismo, me doy cuenta de que simplemente estoy confiando en que, bueno, main está definiendo una variable llamada x. Y get int está pidiendo una variable llamada x. Pero sería bueno si el llamador, main, no tuviera que saber cómo se llaman las variables del llamado y viceversa. Así que el llamador - llamar a una función significa usarla - es la función que la está usando.
+
+El llamado es simplemente la función que está siendo llamada. Sería bueno si no tuviera que esperar que x sea el mismo en ambos lugares. Así que permíteme proponer esto. Permíteme proponer que agreguemos realmente un parámetro a get int, así. ¿Qué es x?
+
+Es decir, si main quiere usar la función get int, entonces main probablemente debería decirle a la función get int qué mensaje mostrar al usuario. Al igual que la función input, recordemos, que viene con Python, depende de ti pasarle un mensaje que el usuario vea cuando se le pide la entrada. ¿Cómo hago esto funcionar aquí?
+
+Puedo ir a mi definición de get int. Y puedo decir, bien, get int ahora va a tomar un parámetro llamado prompt. Podría llamarlo como quiera. Pero prompt en inglés es bastante autoexplicativo.
+
+Significa el mensaje que verá el usuario. Y ahora, aquí abajo, cuando realmente uso input, no tengo que suponer qué es x, porque ¿qué pasaría si el programa, el llamador, quiere pedir y o z u otra variable? Puedo simplemente pasarle a input cualquier mensaje que el llamador haya proporcionado.
+
+Así que ahora estoy haciendo código más reutilizable. Todavía funciona igual que antes. No he cambiado la funcionalidad en sí. Pero ahora es un poco más dinámico porque ahora get int no tiene que saber ni interesarse en qué variable se está pidiendo. Solo necesita saber qué mensaje debe mostrar al usuario.
+
+Así que si ahora ejecuto este programa aquí abajo, de nuevo, prompt number.py, entrar, ¿qué es x? 50 parece que aún funciona. Vamos a ejecutarlo de nuevo. Vamos a escribir cat.
+
+Todavía parece funcionar. Y si escribo cat, dog, bird o cualquier otra cosa, seguirá mostrando ese mismo mensaje, lo que hace que este código sea aún más utilizable. Además, resulta que incluso puedes generar excepciones tú mismo usando la palabra clave raise de Python. Pero eso es para otro momento.

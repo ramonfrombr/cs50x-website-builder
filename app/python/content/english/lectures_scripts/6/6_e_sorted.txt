@@ -1,0 +1,58 @@
+
+Well, let me combine some ideas from before. Let me go ahead and start fresh with this. Let me give myself a list called names, and assign it an empty list, just so I have a variable in which to accumulate all of these lines. And now let me open the file with open, quote/unquote, names.txt. 
+
+And it turns out, I can tighten this up a little bit. It turns out, if you're opening a file to read it, you don't need to specify, quote/unquote, r. That is the implicit default. 
+
+So you can tighten things up by just saying, open names.txt. And you'll be able to read the file but not write it. I'm going to give myself a variable called file, as before. 
+
+I am going to iterate over the file in the same way, for line in file. But instead of printing each line, I'm going to do this. I'm going to take my names list and append to it. And this is appending to a list in memory, not appending to the file itself. I'm going to go ahead and append the current line, but I'm going to strip off the new line at the end so that all I'm adding to this list is each of the students' names. 
+
+Now I can use that familiar technique from before. Let me go outside of this with statement because now I've read the entire file, presumably. So by the time I'm done with lines 4 and 5, again, and again, and again, for each line in the file, I'm done with the file. It can close. 
+
+I now have all of the students' names in this list variable. Let me do this. For name in, not just names, but the sorted names, using our Python function sorted, which does just that, and do print, quote/unquote, with an f string, hello, comma, and now I'll plug in bracket name. 
+
+So now, what have I done? I'm creating a list at the beginning, just so I have a place to gather my data. I then, on lines 3 through 5, iterate over the file from top to bottom, reading in each line, one at a time, stripping off the new line and adding just the student's name to this list. And the reason I'm doing that is so that on line 7, I can sort all of those names, now that they're all in memory, and print them in order. I need to load them all into memory before I can sort them. Otherwise, I'd be printing them out prematurely, and Draco would end up last instead of first. 
+
+So let me go ahead in my terminal window and run python of names.py now, and hit Enter. And there we go. The same list of four hellos, but now they're sorted. And this is a very common technique. When dealing with files and information more generally, if you want to change that data in some way, like sorting it, creating some kind of variable at the top of your program, like a list, adding or appending information to it just to collect it in one place, and then do something interesting with that collection, that list, is exactly what I've done here. 
+
+Now, I should note that if we just want to sort the file, we can actually do this even more simply in Python, particularly by not bothering with this names list, nor the second for loop. And let me go ahead and, instead, just do more simply this. Let me go ahead and tell Python that we want the file itself to be sorted using that same sorted function, but this time on the file itself. 
+
+And then inside of that for loop, let's just go ahead and print right away our hello, comma, followed by the line itself, but still stripping off of the end of it any white space therein. If we go ahead and run this same program now with python of names.py and hit Enter, we get the same result. But of course, it's a lot more compact. 
+
+But for the sake of discussion, let's assume that we do actually want to potentially make some changes to the data as we iterate over it. So let me undo those changes, leave things as is. Whereby now, we'll continue to accumulate all of the names first into a list, maybe do something to them, maybe forcing them to uppercase or lowercase or the like, and then sort and print out each item. 
+
+Let me pause and see if there's any questions now on File I/O reading or writing or now accumulating all of these values in some list. 
+
+AUDIENCE: Hi. Is there a way to sort the files-- instead if you want it from alphabetically from A to Z, is there a way to reverse it from Z to A. Is there a little extension that you can add to the end to do that? Or would you have to create a new function? 
+
+DAVID MALAN: If you wanted to reverse the contents of the file? 
+
+AUDIENCE: Yeah, so if you, instead of sorting them from A to Z in ascending order, if you wanted them in descending order, is there an extension for that? 
+
+DAVID MALAN: There is, indeed. And as always, the documentation is your friend. So if the goal is to sort them, not in alphabetical order, which is the default, but maybe reverse alphabetical order, you can take a look, for instance, at the formal Python documentation there. 
+
+And what you'll see is this summary. You'll see that the sorted function takes the first argument, generally known as an iterable. And something that's iterable means that you can iterate over it. 
+
+That is you can loop over it one thing at a time. What the rest of this line here means is that you can specify a key, like, how you want to sort it, but more on that later. But this last named parameter here is reverse. 
+
+And by default, per the documentation, it's false. It will not be reversed by default. But if we change that to true, I bet we can do that. 
+
+So let me go back to VS Code here and do just that. Let me go ahead and pass in a second argument to sorted in addition to this iterable, which is my names list-- iterable, again, in the sense that it can be looped over. And let me pass in reverse=True, thereby overriding the default of false. 
+
+Let me now run python of names.py. And now Ron's at the top, and Draco's at the bottom. So there, too, whenever you have a question like that moving forward, consider, what does the documentation say? And see if there's a germ of an idea there because, odds are, if you have some problem, odds are, some programmer before you has had the same question. Other thoughts? 
+
+AUDIENCE: Can we limit the number or numbers of names? And the second question, can we find a specific name in list? 
+
+DAVID MALAN: Really good question, can we limit the number of the names in the file? And can we find a specific one? We absolutely could. If we were to write code, we could, for instance, open the file first, count how many lines are already there, and then if there's too many already, we could just exit with sys.exit or some other message to indicate to the user that, sorry, the class is full. As for finding someone specifically, absolutely. 
+
+You could imagine opening the file, iterating over it with a for loop again and again and then adding a conditional. Like, if the current line equals equals Harry, then we found the chosen run. And you can print something like that. So you can absolutely combine these ideas with previous ideas, like conditionals, to ask those same questions. How about one other question on File I/O? 
+
+AUDIENCE: So I just thought about this function, like read all the lines. And it looks like it's separate all the lines by this special character, backslash. And but it looks like we don't need it character, and we always strip it. And it looks like some bad design or function. Why wouldn't we just strip it inside this function? 
+
+DAVID MALAN: A really good question. So we are, in my examples thus far, using rstrip to strip from the end of the line all of this white space. You might not want to do that. 
+
+In this case, I am stripping it away because I know that each of those lines isn't some generic line of text. Each line really represents a name that I have put there myself. I'm using the new line just to separate one value from another. 
+
+In other scenarios, you might very well want to keep that line ending because it's a very long series of text, or a paragraph, or something like that, where you want to keep it distinct from the others. But it's just a convention. We have to use something, presumably, to separate one chunk of text from another. 
+
+There are other functions in Python that will, in fact, handle the removal of that white space for you. Readlines, though, does literally that, though. It reads all of the lines as is. 

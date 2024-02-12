@@ -1,0 +1,13 @@
+
+
+SPEAKER 3: You can ask is x is just equal to y. Then if you print x is equal to y, else x is not equal to y. 
+
+DAVID MALAN: Perfect. Recall one of the other symbols we saw on the available list earlier. We can check not just less than, or greater than, or equal to. We can literally ask the question is it not equal to? Why are we wasting time asking if it's less than or if it's greater than? Well, if all you care about is is it not equal, I think we can do exactly that. Let's just ask the one simple question we do care about. And so let me go back up here. And let me just say not both of these questions, let's get rid of the or. 
+
+Let's just say if x is not equal to y, then go ahead and print x is not equal to y. And that, too, I think is going to work exactly the same. But the picture now looks a little bit different. Notice that this was our flow chart earlier, that represented that same logic. And there's a bit of complexity. You've got to go left, you've got to go right, based on the answer to these couple of questions. If we now take into account what this version of the program looks like, it's even simpler, perhaps the simplest one we've seen yet. 
+
+When we start off the program, we ask just one, and only one, question, is x not equal to y? And if so, true, we go ahead and print out x not equal to y. If the answer is false, then, of course, it must be equal to y, so we say that instead. And if we really want, we could invert this. If I go back here to my code, and if, for whatever reason, you just prefer to think in terms of equal or not equal, as opposed to not equal or equal, it's really up to you. 
+
+We could change this to be equals equals. But I'm going to have to change my print statements to be in the opposite order. So let me go ahead, now, and reverse these two here, and move the second one first and the first one second. So now, when I execute this code, I'm asking still just one question. So it's still just as good, just as succinct. But now the diagram, instead of looking like this, is going to change the not equal to equal equal. And we just need to make sure that we print out the right thing, accordingly. 
+
+And again, here too, just as the code is getting a little more compact, a little more compact, with fewer and fewer characters, so are these diagrams, these flow charts capturing the relative simplification of each of those programs, too. Let me go ahead and pause here to see if there's any questions, now, on any of these versions of code. 

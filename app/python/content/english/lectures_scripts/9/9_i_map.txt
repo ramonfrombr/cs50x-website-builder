@@ -1,0 +1,59 @@
+
+
+All right. How about this next. It turns out that a few other tools we can add to your tool kit relate to the types of programming models that Python supports. We started out quite some time ago focusing really on procedural programming in Python. Whereby we wrote code top to bottom, left to right, defining some functions, or if you will, procedures along the way, defining variables, and having side effects, and assigning values as needed. 
+
+But we then eventually introduced or really revealed that Python is also very much object-oriented. And a lot of those variables, a lot of those types that we were using all that time were in fact objects, objects that came from certain classes. And those classes were templates of sorts, blueprints, via which you could encapsulate both data and functionality therein. 
+
+Well, we also saw along the way some hints of a third paradigm of programming that Python also, to some extent, supports, which is known as functional programming. Whereby functions are ever more powerful in that they tend not to have side effects, no printing or changing of state globally. But rather, they're completely self-contained and might take as inputs and return values. 
+
+And that's generally a paradigm we saw when we started sorting things, particularly with functions like our sort function or Lambda function when we passed in the function we wanted to use to sort a list way back when. 
+
+Well, it turns out Python has other functionality that is reminiscent of functional programming and indeed is a powerful way to solve problems a little more differently still. Let me propose this. Let me propose that I whip up a new program here in VS Code by closing our unpack.py and this time creating another program called yell. 
+
+Suppose the goal at hand is to implement some program that allows the user to pass an input, and then it yells the response by forcing everything to uppercase. My apologies to those with headphones there. I'll modulate. 
+
+So let me go ahead and run code of yell.py. And within yell.py, let's go ahead and implement a program that really does just that. Let's go ahead and define a main function up here. And let's assume for the moment that this yell function already exists and yell something like, This is CS50, properly capitalized, not in all caps. 
+
+Now, let's go ahead and implement this yell function with def yell. It's going to take, for now, a single word or phrase. And let's go ahead. And I'll call it phrase here. And I'm going to go ahead and just print out the phrase.upper. So phrase.upper is going to force the hole thing to uppercase. And as usual, down here if the name of this file equals equals quote unquote main, then let's go ahead, as always, and call main. 
+
+So let's just run this. But for the most part, it should be fairly straightforward. When I run Python of yell.py, THIS IS CS50 is yelled on the screen. 
+
+All right, that's nice. But it's not great that yell only expects a single phrase. Wouldn't it be nice, like print, if I could pass in one phrase, or two, or three, or really multiple words more generally but as individual words themselves. 
+
+So let me retool this a little bit and change yell to take in not a phrase but how about something like a list of words. So that ultimately, I can call yell like this. Quote unquote, this inside of a list, quote unquote, "This" inside of a list, and, quote unquote, "CS50" inside of a list. I'm not going to bother with type hints or annotations for now. But I'll just assume that yell has been defined now as taking a list of words as defined here. 
+
+But now I want to force them all to lowercase. So I don't quite want to do something as simple as this. Like for word in words, I could, for instance, print that given word and maybe end the line with nothing right now. But I think if I do this, Python of yell.py, no, that's not right. I haven't forced anything to uppercase. So let's fix this. 
+
+Well, let's go ahead and do the following. Let me go ahead and accumulate the uppercase words as follows. Let me create a variable called uppercase and initialize it to an empty list using square brackets or our more verbose list syntax. 
+
+And now, let me go ahead and iterate over each of those words in words. And for each of them, let's go into our upper cased list, append to it the current words uppercase version. So this is a way of creating a new list called uppercase that is just appending, appending, appending to that list each of the current words in the loop but uppercased instead. 
+
+And now, just let me go ahead and print out the uppercased list. This isn't quite right. Let's see what happens here. Python of yell.py, OK. It's not quite right, because I don't think I want those quotes or those square brackets. 
+
+What am I seeing? I'm actually printing a list. But, but, but, here's where some of our unpacking syntax now can be useful. I don't have to change my approach to this problem. I can just unpack uppercase by adding a single star. 
+
+And now, let me go ahead and rerun Python of yell.py. And now, it's actually just English. There's no remnants of Python syntax like the quotes, and the commas, and the square brackets. I've now unpacked, this is CS50 as three separate arguments to print. So already now, this unpacking technique would seem to be useful. 
+
+Well, it's a little unfortunate that I now need to call yell though with a list of values in this way. This is just not the norm. Or it's at least, it's not nearly as user-friendly as something like the print function where I can pass in zero, or one, or two, or three, or any number of arguments. Why are you making me for your yell function pass in only a list? 
+
+Well, we can do better. Let's adopt some of the new conventions we've learned. And let's go ahead and get rid of the list by removing the square brackets. And let's just pass yell three arguments. Now, I don't want to do something like change the definition of words to take in word one, word two. That's not going to scale and it's not going to handle different number of words. 
+
+But we have a technique now. We can say star args, which will allow the yell function to accept any number of arguments. And just for specificity, let's not call it generically args. Let's name it something a little more self explanatory like star words. This just means I have a variable number of words being passed in. 
+
+Now, I think, I've made a marginal improvement. Let me run this again, Python of yell.py. This is CS50 is in all caps. But it's just a little better. Because now I can treat yell just like I've long treated print, pass in as many things as you want, and print will deal with it. Now, my yell function is just as powerful it would seem. And better still, it also forces everything to uppercase. 
+
+Well, it turns out Python comes with this function called map, whose purpose in life is to allow you to map, that is, apply some function to every element of some sequence like a list. So for instance, if we want to force to uppercase each of the words, this is CS50 in the list of words that's been passed in, well, we essentially want to map the upper case function to each of those values. 
+
+So using map in Python can I do just that? Let me go back here to VS Code. And let me propose now that I re-implement this as follows. I get rid of all three of these lines here, getting rid of that loop in particular. 
+
+Let me still declare a variable called uppercased. But let me set it equal to the return value of this new function called map. Map takes two arguments here. In this case, the name of a function that I want to map on to a sequence of values. 
+
+Well, what function do I want to apply to every word that's been passed in? Well, it turns out, thanks to my knowledge now of object-oriented programming, I know that in the str class there is a function called upper. We've usually called it by using the name of a string variable.upper open paren close paren. 
+
+But if you read the documentation for the str class, you'll see that the function is described indeed as str.upper. I'm not using parentheses, open and close, at the end of str.upper. Because I don't want to call it now. I want to pass this function to the map function, so that map can somehow add those parentheses, so to speak, and call it on every one of these words. 
+
+And this is what map does quite powerfully, and is an instance, indeed, of functional programming. Whereby I'm passing to this map function another function. Not calling it. I'm just passing it in by a reference of sorts. 
+
+And what map is going to do for me is iterate over each of those words, call str.upper on each of those words, and return to me a brand new list containing all of those results together in one list. It completely obviates the need for me to do this more manually using that list. I'm still going to print the whole thing using star uppercase. So that if I get back a list of three uppercase words, I'm going to unpack them and print them all out. 
+
+So let's run this again. Python of yell.py Enter. And voila, it's still working. But the code now is even more tight-- even tighter than before.

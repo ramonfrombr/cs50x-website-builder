@@ -138,7 +138,7 @@ def project():
                                 
 @bp.route(f'/{communities_urls[os.environ["COURSE_LANGUAGE"]]}')
 @bp.route(f'/{communities_urls[os.environ["COURSE_LANGUAGE"]]}.html')
-def project():
+def communities():
     with open(f"app/${course}/content/{os.environ['COURSE_LANGUAGE']}/communities.md", "r") as f:
         markdown_text = f.read()
 

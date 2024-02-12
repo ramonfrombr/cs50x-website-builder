@@ -1,0 +1,57 @@
+Está bien. ¿Qué tal esto siguiente? Resulta que hay algunas otras herramientas que podemos agregar a tu kit de herramientas relacionadas con los tipos de modelos de programación que Python admite. Comenzamos hace bastante tiempo centrándonos principalmente en la programación procedural en Python. Escribimos código de arriba a abajo, de izquierda a derecha, definiendo algunas funciones, o si prefieres, procedimientos en el camino, definiendo variables, teniendo efectos secundarios y asignando valores según sea necesario.
+
+Pero luego eventualmente introdujimos o revelamos realmente que Python también es muy orientado a objetos. Y muchas de esas variables, muchos de esos tipos que estábamos utilizando todo ese tiempo eran de hecho objetos, objetos que provenían de ciertas clases. Y esas clases eran plantillas de cierto tipo, planos, mediante los cuales se podía encapsular tanto datos como funcionalidad en ellos.
+
+Bueno, también vimos a lo largo del camino algunos indicios de un tercer paradigma de programación que Python también, hasta cierto punto, admite, que se conoce como programación funcional. En la cual las funciones son aún más poderosas en el sentido de que tienden a no tener efectos secundarios, como imprimir o cambiar el estado global. Más bien, son completamente independientes y pueden recibir valores como entradas y devolver valores.
+
+Y generalmente este es un paradigma que vimos cuando comenzamos a ordenar cosas, especialmente con funciones como nuestra función de ordenar o la función Lambda cuando pasamos la función que queríamos usar para ordenar una lista en el pasado.
+
+Bueno, resulta que Python tiene otras funcionalidades que recuerdan a la programación funcional y de hecho es una forma poderosa de resolver problemas de una manera un poco más diferente. Permíteme proponer esto. Permíteme proponer que cree un nuevo programa aquí en VS Code cerrando nuestro unpack.py y esta vez creando otro programa llamado yell.
+
+Supongamos que el objetivo es implementar algún programa que permita al usuario pasar una entrada, y luego grite la respuesta forzando todo en mayúsculas. Mis disculpas a aquellos que tienen auriculares puestos. Modularé el volumen.
+
+Entonces, vamos a ejecutar el código de yell.py. Y dentro de yell.py, vamos a implementar un programa que realmente haga eso. Vamos a definir una función principal aquí arriba. Y vamos a asumir por el momento que esta función yell ya existe y grita algo como "Esto es CS50", correctamente capitalizado, no todo en mayúsculas.
+
+Ahora, vamos a implementar esta función yell con def yell. Por ahora, va a tomar una sola palabra o frase. Y vamos a seguir adelante y la llamaremos "frase" aquí. Y vamos a imprimir la frase.upper. Entonces, frase.upper va a forzar que todo esté en mayúsculas. Y como de costumbre, si el nombre de este archivo es igual a "main", entonces sigamos adelante, como siempre, y llamemos a main.
+
+Así que vamos a ejecutar esto. Pero en su mayor parte, debería ser bastante sencillo. Cuando ejecuto Python yell.py, SE GRITA "ESTO ES CS50" en la pantalla.
+
+Está bien, eso está bien. Pero no es genial que yell solo espere una sola frase. ¿No sería bueno, al igual que print, si pudiera pasar una frase, o dos, o tres, o realmente múltiples palabras de manera general, pero como palabras individuales?
+
+Entonces, permíteme cambiar esto un poco y hacer que yell acepte no una frase, sino algo como una lista de palabras. Así que, en última instancia, puedo llamar a yell de esta manera: "Esto" dentro de una lista, "Esto" dentro de una lista y "CS50" dentro de una lista. No me molestaré con las sugerencias de tipo o anotaciones por ahora. Pero simplemente asumiré que yell se ha definido ahora como tomando una lista de palabras como se define aquí.
+
+Pero ahora quiero que todas estén en minúsculas. Entonces, no quiero hacer algo tan simple como eso. Al recorrer cada palabra en palabras, por ejemplo, podría imprimir esa palabra dada y tal vez terminar la línea sin nada por ahora. Pero creo que si hago esto, Python yell.py no, eso no está bien. No he forzado nada a mayúsculas. Así que vamos a arreglar esto.
+
+Bueno, vamos a hacer lo siguiente. Permíteme acumular las palabras en mayúsculas de la siguiente manera. Creemos una variable llamada "en_mayusculas" y inicialicémosla como una lista vacía utilizando corchetes o nuestra sintaxis de lista más verbosa.
+
+Y ahora, vamos a iterar sobre cada una de esas palabras en palabras. Y por cada una de ellas, vamos a agregar a nuestra lista en mayúsculas la versión en mayúsculas de la palabra actual. Entonces, esta es una forma de crear una nueva lista llamada en mayúsculas que simplemente agrega, agrega, agrega a esa lista cada una de las palabras actuales en el bucle, pero en mayúsculas.
+
+Y ahora, simplemente voy a imprimir la lista en mayúsculas. Esto no es del todo correcto. Veamos qué sucede aquí. Python yell.py, OK. No está del todo bien, porque creo que no quiero esas comillas o esos corchetes.
+
+¿Qué estoy viendo? De hecho, estoy imprimiendo una lista. Pero, pero, pero, aquí es donde ahora puede ser útil parte de nuestra sintaxis de desempaquetado. No tengo que cambiar mi enfoque en este problema. Simplemente puedo desempaquetar en mayúsculas agregando un solo asterisco.
+
+Y ahora, ejecutemos de nuevo Python yell.py. Y ahora, es simplemente inglés. No hay restos de la sintaxis de Python como las comillas, las comas o los corchetes. Ahora he desempaquetado "Esto es CS50" como tres argumentos separados para imprimir. Así que, ya ahora, esta técnica de desempaquetado parecería ser útil.
+
+Bueno, es un poco desafortunado que ahora tenga que llamar a yell con una lista de valores de esta manera. Esto simplemente no es lo habitual. O al menos, no es tan amigable para el usuario como algo como la función print, donde puedo pasar cero, uno, dos, tres o cualquier número de argumentos. ¿Por qué me haces pasar solo una lista para tu función yell?
+
+Bueno, podemos hacerlo mejor. Adoptemos algunas de las nuevas convenciones que hemos aprendido. Y vamos a deshacernos de la lista eliminando los corchetes. Y simplemente pasemos tres argumentos a yell. Ahora, no quiero hacer algo como cambiar la definición de palabras para que tome palabra uno, palabra dos. Eso no va a ser escalable y no va a manejar un número diferente de palabras.
+
+Pero ahora tenemos una técnica. Podemos decir "star args", lo que permitirá que la función yell acepte cualquier número de argumentos. Y solo por especificidad, no lo llamemos genéricamente args. Démosle un nombre un poco más autoexplicativo como "star words". Esto significa que tengo un número variable de palabras que se pasan.
+
+Ahora, creo que he hecho una mejora marginal. Vamos a ejecutar esto de nuevo, Python yell.py. "Esto es CS50" está completamente en mayúsculas. Pero es un poco mejor. Porque ahora puedo tratar yell de la misma manera en que siempre he tratado a print, pasar tantas cosas como quieras y print se ocupará de ellas. Ahora, mi función yell parece ser tan poderosa. Y mejor aún, también fuerza todo a mayúsculas.
+
+Resulta que Python viene con esta función llamada map, cuyo propósito en la vida es permitirte asignar, es decir, aplicar alguna función a cada elemento de alguna secuencia como una lista. Por ejemplo, si queremos forzar en mayúsculas cada una de las palabras "Esto es CS50" en la lista de palabras que se ha pasado, bueno, esencialmente queremos mapear la función "upper case" a cada uno de esos valores.
+
+Entonces, usar map en Python, ¿puedo hacer eso? Permíteme volver aquí a VS Code. Y permíteme proponer ahora que reimplemente esto de la siguiente manera. Me deshago de estas tres líneas aquí, eliminando ese bucle en particular.
+
+Permítanme declarar una variable llamada "en_mayusculas". Pero permítanme establecerla igual al valor de retorno de esta nueva función llamada map. Mapa toma dos argumentos aquí. En este caso, el nombre de una función que quiero mapear en una secuencia de valores.
+
+Bueno, ¿qué función quiero aplicar a cada palabra que se ha pasado? Bueno, resulta que, gracias a mi conocimiento ahora de la programación orientada a objetos, sé que en la clase str hay una función llamada upper. Por lo general, la hemos llamado usando el nombre de una variable de cadena.upper abrir paréntesis cerrar paréntesis.
+
+Pero si lees la documentación de la clase str, verás que la función se describe de hecho como str.upper. No estoy usando paréntesis, abierto y cerrado, al final de str.upper. Porque no quiero llamarlo ahora. Quiero pasar esta función a la función map, para que map de alguna manera añada esos paréntesis, por así decirlo, y la llame en cada una de estas palabras.
+
+Y esto es lo que hace map de manera bastante poderosa, y es un ejemplo, de hecho, de programación funcional. En la cual estoy pasando a esta función map otra función. No la estoy llamando. Simplemente la paso como una referencia de cierto tipo.
+
+Y lo que map va a hacer por mí es iterar sobre cada una de esas palabras, llamar a str.upper en cada una de esas palabras y devolverme una nueva lista que contenga todos esos resultados juntos en una lista. Esto obvia por completo la necesidad de hacer esto de manera más manual usando esa lista. Todavía voy a imprimirlo todo usando *en_mayusculas. Para que si obtengo una lista de tres palabras en mayúsculas, las desempaquetaré e imprimiré todas.
+
+Así que vamos a ejecutar esto de nuevo. Python yell.py Enter. Y voilà, todavía funciona. Pero el código ahora es aún más compacto, incluso más compacto que antes.

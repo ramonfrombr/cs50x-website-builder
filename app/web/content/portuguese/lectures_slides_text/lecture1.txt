@@ -1,0 +1,1242 @@
+Slide [0]
+
+Programação Web 
+com Python e JavaScript
+
+Slide [1]
+
+Git
+
+Slide [2]
+
+git
+
+Slide [3]
+
+a = 1 
+b = 2 
+c = 3
+Criar arquivo
+Manter registro das alterações no código.
+
+Slide [4]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Criar arquivo
+Adicionar uma linha
+Manter registro das alterações no código.
+
+Slide [5]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+c = 3 
+d = 4
+Criar arquivo
+Adicionar uma linha
+Remover uma linha
+Manter registro das alterações no código.
+
+Slide [6]
+
+b = 2 
+c = 3
+b = 2 
+c = 3
+b = 2 
+c = 3
+Sincroniza o código entre pessoas diferentes.
+
+Slide [7]
+
+b = 2 
+c = 3
+b = 2 
+c = 3
+b = 2 
+c = 3
+Sincroniza o código entre pessoas diferentes.
+
+Slide [8]
+
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3
+b = 2 
+c = 3 
+d = 4
+Sincroniza o código entre pessoas diferentes.
+
+Slide [9]
+
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Sincroniza o código entre pessoas diferentes.
+
+Slide [10]
+
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+int a = 1; 
+int b = 2; 
+int c = 3;
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Sincroniza o código entre pessoas diferentes.
+
+Slide [11]
+
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3
+Testar alterações no código sem perder o original.
+
+Slide [12]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Testar alterações no código sem perder o original.
+
+Slide [13]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Testar alterações no código sem perder o original.
+
+Slide [14]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+c = 3 
+d = 4
+Criar arquivo
+Adicionar uma linha
+Remover uma linha
+Reverter para versões anteriores do código.
+
+Slide [15]
+
+a = 1 
+b = 2 
+c = 3
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Criar arquivo
+Adicionar uma linha
+Reverter para versões anteriores do código.
+
+Slide [16]
+
+GitHub
+
+Slide [17]
+
+git clone
+
+Slide [18]
+
+git clone <url>
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [19]
+
+git clone <url>
+git clone <url>
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [20]
+
+git clone <url>
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+git clone <url>
+
+Slide [21]
+
+git add
+
+Slide [22]
+
+git add <nome do arquivo>
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [23]
+
+git add <nome do arquivo>
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+
+Slide [24]
+
+git add <nome do arquivo>
+git add foo.py
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [25]
+
+git add <nome do arquivo>
+Alterações a serem confirmadas: 
+modificado: foo.py
+git add foo.py
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [26]
+
+git commit
+
+Slide [27]
+
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+git commit -m "mensagem"
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+
+Slide [28]
+
+git commit -m "mensagem"
+git commit -m 
+   "Adicionar linha"
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+
+Slide [29]
+
+git commit -m "mensagem"
+git commit -m 
+   "Adicionar linha"
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Adicionar linha
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+
+Slide [30]
+
+git status
+
+Slide [31]
+
+git status
+Adicionar linha
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [32]
+
+git status
+git status
+Adicionar linha
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [33]
+
+git status
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+git status
+a = 1 
+b = 2 
+c = 3 
+d = 4
+Adicionar linha
+No ramo master
+Seu ramo está adiante do 'origin/master' em 1 confirmação.
+  (use "git push" para publicar suas confirmações locais)
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+int a = 1; 
+int b = 2; 
+int c = 3; 
+int d = 4;
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [34]
+
+git push
+
+Slide [35]
+
+git push
+controle de versão: 436f6d
+   Autor: Brian Yu <brian@cs.harvard.edu> 
+   Data: Terça, 14 de janeiro de 2020, 14:06:28 -0400 
+ Remover uma linha 
+controle de versão: 57656c
+   Autor: Brian Yu <brian@cs.harvard.edu> 
+   Data: Terça, 14 de janeiro de 2020, 14:05:28 -0400 
+   Adicionar uma linha
+
+Slide [36]
+
+git push
+controle de versão: 436f6d
+   Autor: Brian Yu <brian@cs.harvard.edu> 
+   Data: Terça, 14 de janeiro de 2020, 14:06:28 -0400 
+ Remover uma linha 
+controle de versão: 57656c
+   Autor: Brian Yu <brian@cs.harvard.edu> 
+   Data: Terça, 14 de janeiro de 2020, 14:05:28 -0400 
+   Adicionar uma linha
+git push
+Adicionar linha
+controle de versão: 436f6d
+controle de versão: 57656c
+controle de versão: 436f6d
+controle de versão: 57656c
+
+Slide [37]
+
+git push
+controle de versão: 436f6d
+   Autor: Brian Yu <brian@cs.harvard.edu> 
+   Data: Terça, 14 de janeiro de 2020, 14:06:28 -0400 
+ Remover uma linha 
+controle de versão: 57656c
+   Autor: Brian Yu <brian@cs.harvard.edu> 
+   Data: Terça, 14 de janeiro de 2020, 14:05:28 -0400 
+   Adicionar uma linha
+git push
+Adicionar linha
+controle de versão: 436f6d
+controle de versão: 57656c
+controle de versão: 436f6d
+controle de versão: 57656c
+
+Slide [38]
+
+git pull
+
+Slide [39]
+
+git pull
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+Adicionar linha
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+Adicionar linha
+a = 1 
+b = 2 
+c = 3 
+d = 4
+int a = 1; 
+int c = 3; 
+int d = 4; 
+int e = 5;
+Remover linha
+a = 1 
+c = 3 
+d = 4 
+e = 5
+Remover linha
+
+Slide [40]
+
+git pull
+git pull
+Adicionar linha
+Adicionar linha
+a = 1 
+c = 3 
+d = 4 
+e = 5
+Remover linha
+a = 1 
+c = 3 
+d = 4 
+e = 5
+Remover linha
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+
+Slide [41]
+
+git pull
+git pull
+Adicionar linha
+Adicionar linha
+a = 1 
+c = 3 
+d = 4 
+e = 5
+Remover linha
+a = 1 
+c = 3 
+d = 4 
+e = 5
+Remover linha
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+a = 1 
+b = 2 
+c = 3 
+d = 4
+
+Slide [42]
+
+Conflitos de Mesclagem
+
+Slide [43]
+
+Conflitos de Mesclagem
+
+Slide [44]
+
+Conflitos de Mesclagem
+git pull
+
+Slide [45]
+
+Conflitos de Mesclagem
+git pull
+CONFLITO (conteúdo): Conflito de mesclagem em foo.py 
+Falha na mesclagem automática; corrija os conflitos e, em seguida, 
+confirme o resultado.
+
+Slide [46]
+
+Conflitos de Mesclagem
+git pull
+a = 1 
+<<<<< HEAD 
+b = 2 
+===== 
+b = 0 
+>>>>> 57656c636f6d6520746f20576562 
+c = 3 
+d = 4 
+e = 5
+foo.c
+
+Slide [47]
+
+Conflitos de Mesclagem
+git pull
+a = 1 
+<<<<< HEAD 
+b = 2 
+===== 
+b = 0 
+>>>>> 57656c636f6d6520746f20576562 
+c = 3 
+d = 4 
+e = 5
+foo.c
+suas 
+alterações
+alterações do 
+repositório remoto
+compromisso conflitante
+{
+{
+
+Slide [48]
+
+Conflitos de Mesclagem
+git pull
+a = 1 
+<<<<< HEAD 
+b = 2 
+===== 
+b = 0 
+>>>>> 57656c636f6d6520746f20576562 
+c = 3 
+d = 4 
+e = 5
+foo.c
+
+Slide [49]
+
+Conflitos de Mesclagem
+git pull
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+foo.c
+
+Slide [50]
+
+Conflitos de Mesclagem
+git pull
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+foo.c
+
+Slide [51]
+
+git log
+
+Slide [52]
+
+git log
+
+Slide [53]
+
+git log
+git log
+
+Slide [54]
+
+git log
+git log
+confirmação 436f6d6d6974204d73672048657265 
+Autor: Brian Yu <brian@cs.harvard.edu> 
+Data: Ter, 14 de janeiro de 2020, 14:06:28 -0400 
+    Remover uma linha 
+confirmação 57656c636f6d6520746f20576562 
+Autor: Brian Yu <brian@cs.harvard.edu> 
+Data: Ter, 14 de janeiro de 2020, 14:05:28 -0400 
+    Adicionar uma linha
+
+Slide [55]
+
+git reset
+
+Slide [56]
+
+git reset
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+- git reset --hard <confirmação> 
+- git reset --hard origin/master
+Adicionar linha
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 3 
+c = 3 
+d = 4 
+e = 5
+Remover linha
+57656c6
+436f6d6
+
+Slide [57]
+
+git reset
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+Adicionar linha
+a = 1 
+b = 2 
+c = 3 
+d = 4
+a = 3 
+c = 3 
+d = 4 
+e = 5
+Remover linha
+git reset --hard  
+   57656c6
+57656c6
+436f6d6
+- git reset --hard <confirmação> 
+- git reset --hard origin/master
+
+Slide [58]
+
+git reset
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+git reset --hard  
+   57656c6
+Adicionar linha
+a = 1 
+b = 2 
+c = 3 
+d = 4
+57656c6
+- git reset --hard <confirmação> 
+- git reset --hard origin/master
+
+Slide [59]
+
+git reset
+a = 1 
+b = 2 
+c = 3 
+d = 4 
+e = 5
+git reset --hard  
+   57656c6
+Adicionar linha
+a = 1 
+b = 2 
+c = 3 
+d = 4
+57656c6
+- git reset --hard <confirmação> 
+- git reset --hard origin/master
+
+Slide [60]
+
+Fazendo Alterações
+
+Slide [61]
+
+primeira
+confirmação
+
+Slide [62]
+
+primeira
+confirmação
+alterações
+
+Slide [63]
+
+primeira
+confirmação
+alterações
+mais alterações
+
+Slide [64]
+
+primeira
+confirmação
+alterações
+mais alterações
+iniciar nova
+funcionalidade
+
+Slide [65]
+
+Ramificações
+
+Slide [66]
+
+primeira
+confirmação
+
+Slide [67]
+
+primeira
+confirmação
+alterações
+
+Slide [68]
+
+primeira
+confirmação
+alterações
+mais alterações
+
+Slide [69]
+
+primeira
+confirmação
+alterações
+mais alterações
+iniciar nova
+funcionalidade
+
+Slide [70]
+
+primeira
+confirmação
+alterações
+mais alterações
+iniciar nova
+funcionalidade
+continuar trabalho
+na nova funcionalidade
+
+Slide [71]
+
+primeira
+confirmação
+alterações
+mais alterações
+iniciar nova
+funcionalidade
+continuar trabalho
+na nova funcionalidade
+corrigir bug
+
+Slide [72]
+
+primeira
+confirmação
+alterações
+mais alterações
+iniciar nova
+funcionalidade
+continuar trabalho
+na nova funcionalidade
+corrigir bug
+← master
+← feature
+
+Slide [73]
+
+primeira
+confirmação
+alterações
+mais alterações
+iniciar nova
+funcionalidade
+continuar trabalho
+na nova funcionalidade
+corrigir bug
+← master
+← feature
+← HEAD
+
+Slide [74]
+
+primeira
+confirmação
+alterações
+mais alterações
+iniciar nova
+funcionalidade
+continuar trabalho
+na nova funcionalidade
+corrigir bug
+← master
+← feature ← HEAD
+
+Slide [75]
+
+primeira
+confirmação
+alterações
+mais alterações
+iniciar nova
+funcionalidade
+continuar trabalho
+na nova funcionalidade
+corrigir bug
+
+Slide [76]
+
+primeira
+confirmação
+alterações
+mais alterações
+iniciar nova
+funcionalidade
+continuar trabalho
+na nova funcionalidade
+corrigir bug
+mesclar
+
+Slide [77]
+
+Ramificações
+• git branch 
+• git checkout 
+• git merge
+
+Slide [78]
+
+Remotos
+
+Slide [79]
+
+Remotos
+
+Slide [80]
+
+Remotos
+↑ 
+master
+↑ 
+master
+
+Slide [81]
+
+Remotos
+↑ 
+master
+git fetch
+↑ 
+master
+
+Slide [82]
+
+Remotos
+↑ 
+master
+↑ 
+master
+git fetch
+origin/master
+↑
+
+Slide [83]
+
+Remotos
+↑ 
+master
+↑ 
+master
+git fetch
+git merge 
+  origin/master
+origin/master
+↑
+
+Slide [84]
+
+Remotos
+↑ 
+master
+↑ 
+master
+git fetch
+git merge 
+  origin/master
+origin/master
+↑
+
+Slide [85]
+
+Remotos
+↑ 
+master
+↑ 
+master
+git pull
+origin/master
+↑
+
+Slide [86]
+
+Forks
+
+Slide [87]
+
+Pull Requests
+
+Slide [88]
+
+Programação Web 
+com Python e JavaScript

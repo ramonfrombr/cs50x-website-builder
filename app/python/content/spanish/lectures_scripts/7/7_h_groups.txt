@@ -1,0 +1,65 @@
+Muy bien. Permíteme proponer que intentemos resolver otro problema aquí, en el que si introduzco la misma versión que antes, que ahora ignora las mayúsculas y minúsculas, pero escribo una de mis otras direcciones de correo electrónico. Permíteme ejecutar el comando de Python `validate.py`. Y esta vez, permíteme escribir "malan@cs50.harvard.edu", que es otra dirección de correo mía, que se redirige a la misma dirección.
+
+Permíteme presionar Enter ahora. Y, ¡oh!, inválido, a pesar de que estoy bastante seguro de que es, de hecho, mi dirección de correo electrónico. Bien, coloquemos el dedo en la razón por la cual. ¿Por qué en este momento se considera inválida "malan@cs50.harvard.edu", a pesar de que estoy bastante seguro de que envío y recibo correo electrónico desde esa dirección también? ¿Por qué podría ser eso?
+
+AUDIENCIA: Porque hay un punto después del símbolo @.
+
+DAVID MALAN: Exactamente. Hay un punto después de mi cs50. Y no espero que haya puntos allí. Espero solamente, nuevamente, caracteres de palabra, que son de la A a la z, del 0 al 9 y guiones bajos. Así que voy a tener que ajustar esto.
+
+¿Pero cómo podría hacerlo? Bueno, resulta que teóricamente podría haber otras direcciones de correo electrónico, aunque se volverían un poco excesivamente largas, por ejemplo, "malan@something.cs50.harvard.edu", que técnicamente no existe, pero podría existir. Por supuesto, puedes tener múltiples puntos en un nombre de dominio como vemos aquí. ¿No sería genial si pudiéramos manejar eso también?
+
+Permíteme proponer que modifiquemos mi expresión regular de la siguiente manera. Resulta que puedes agrupar ideas juntas. Y no solo puedes preguntar si este patrón coincide o no con este otro usando la sintaxis "A barra vertical B", que significa "o A o B", sino que también puedes agrupar cosas juntas y luego aplicarles algún otro operador también.
+
+De hecho, permíteme volver al código aquí. Y permíteme proponer que si quiero tolerar un subdominio, como cs50, que puede o no estar presente, permíteme cambiarlo de la siguiente manera. Podría hacer esto de forma ingenua. Si quiero admitir subdominios, podría decir, bueno, permitamos otros caracteres de palabra plus, y luego un punto literal.
+
+Y observa, resaltaré en azul aquí lo que acabo de agregar. Todo lo demás es lo mismo, pero ahora estoy dejando espacio para otra secuencia de uno o más caracteres de palabra y luego un punto literal. Así que esto ahora, creo, si vuelvo a ejecutar el comando de Python `validate.py`, funcionará para "malan@cs50.harvard.edu", Enter.
+
+Desafortunadamente, ¿alguien ve a dónde va esto? Permíteme ejecutar nuevamente el comando de Python `validate.py` y escribir, como he estado haciendo, "malan@harvard.edu", que hasta ahora ha seguido funcionando a pesar de todos mis cambios. Pero ahora, je, finalmente he dañado mi propia dirección de correo electrónico. Entonces, ¿lógicamente cuál es la solución aquí?
+
+Bueno, hay muchas formas en las que podríamos resolver esto. Podría comenzar a usar dos expresiones regulares y admitir direcciones de correo electrónico del tipo "username@domain.tld" o "username@subdomain.domain.tld", donde TLD significa Top Level Domain, como edu. O podría simplemente modificar esta, porque preferiría no tener dos expresiones regulares o una que sea el doble de grande. ¿Por qué no especifico simplemente que esta parte del patrón es opcional?
+
+¿Cuál fue el símbolo que vimos anteriormente que te permite especificar que lo que está antes de él es técnicamente opcional?
+
+AUDIENCIA: ¿La barra vertical? Estábamos usando la barra vertical como opcional, para hacer opcional el argumento.
+
+DAVID MALAN: Así que podríamos. Podríamos usar una barra vertical y algunos paréntesis y decir "o hay algo aquí o no hay nada". Podríamos hacer eso entre paréntesis. Pero creo que hay una forma aún más fácil.
+
+AUDIENCIA: En realidad, es un signo de interrogación.
+
+DAVID MALAN: En efecto, un signo de interrogación. Volvamos a este resumen aquí de nuestro primer conjunto de símbolos, en el que no solo teníamos el punto, el asterisco y el más, sino también un signo de interrogación, que significa literalmente "cero o una ocurrencia", lo que efectivamente significa opcional. Es o está ahí una vez, o no está ahí, cero veces.
+
+Ahora, ¿cómo puedo traducir esto a este código aquí? Bueno, permíteme rodear esta parte de mi patrón con paréntesis, lo cual no significa que quiero literalmente un paréntesis en la entrada del usuario, simplemente quiero agrupar estos caracteres juntos. Y de hecho, esto seguirá funcionando. Solo he agregado paréntesis alrededor de la nueva parte para el subdominio.
+
+Ejecutaré el comando de Python `validate.py`. Escribiré "malan@cs50.harvard.edu", Enter. Esto todavía es válido. Pero para ser claro, si lo vuelvo a ejecutar nuevamente para "malan@harvard.edu", aún es inválido, pero no si aquí agrego un signo de interrogación después de los paréntesis, que ahora es una sola unidad lógica, es un grupo grande de ideas juntas. Esto le dirá a `re.search` que toda esa cosa entre paréntesis puede estar allí una vez o no estar allí en absoluto, cero veces.
+
+Entonces, ¿qué se traduce esto en cuando lo ejecuto? Bueno, permíteme volver a ejecutarlo con "malan@cs50.harvard.edu" para que el subdominio esté presente. Eso funciona como antes. Borremos la pantalla y lo ejecutamos nuevamente, `python validate.py` con "malan@harvard.edu", que solía funcionar y luego se rompió. ¿Estamos de vuelta en marcha ahora? Sí, lo estamos. Eso ahora es válido nuevamente.
+
+¿Preguntas ahora sobre este enfoque, donde hemos utilizado no solo el signo de interrogación sino también los paréntesis?
+
+AUDIENCIA: Sí. Dijiste que funciona para cero o una ocurrencia. ¿Y si tienes más?
+
+DAVID MALAN: ¿Y si tienes más? Eso está bien. Ahí es donde podrías usar el asterisco. El asterisco es cero o más, lo que te da toda la flexibilidad del mundo.
+
+AUDIENCIA: Sí. Así que solo preguntaba eso, con el signo de interrogación solo se permite una repetición.
+
+DAVID MALAN: Significa cero o una repetición. Por lo tanto, o no está ahí, o está ahí. Es por eso que este patrón ahora, si regreso a mi código, aunque se vea críptico, lo admito, permíteme resaltar todo después del signo @ y antes del signo $.
+
+Esto ahora representa un nombre de dominio, como harvard.edu, o un subdominio dentro del nombre de dominio. ¿Por qué? Bueno, esta parte a la derecha es la misma de siempre. `\w+` significa algo como Harvard o Yale. `\edu` significa literalmente ".edu". Entonces, la nueva parte es esta. En paréntesis, tengo otro conjunto de `\w+\.`. Pero todo está entre paréntesis.
+
+Ahora pongo un signo de interrogación justo después de eso, lo que significa que toda esa cosa entre paréntesis puede estar ahí o no estar ahí. Cualquiera de esas opciones es aceptable. Entonces, un signo de interrogación hace que algo sea opcional. No sería correcto quitar los paréntesis, porque ¿qué significaría esto? Si quito los paréntesis, eso significaría que solo este punto es opcional, lo cual no es realmente lo que queremos expresar. Quiero que el subdominio, como cs50 y el punto adicional, sean lo que esté o no esté ahí.
+
+¿Qué tal si hay otra pregunta sobre las expresiones regulares aquí?
+
+AUDIENCIA: ¿Podemos usar esto para los nombres de usuario?
+
+DAVID MALAN: Absolutamente. Todavía tenemos otros problemas. No estamos resolviendo todos los problemas hoy todavía. Pero absolutamente. Por ahora, no te permitimos tener un punto en tu nombre de usuario.
+
+Y nuevamente, algunos de ustedes con cuentas de Gmail u otras cuentas, probablemente no solo tengan guiones bajos, números y letras. Es posible que también tengan puntos. Bueno, podríamos solucionar eso, no usando el signo de interrogación aquí en sí.
+
+Pero ahora que tenemos estos paréntesis a nuestra disposición, lo que podría hacer es esto. Podría usar paréntesis para rodear `\w` para decir "cualquier caracter de palabra", que es lo mismo, nuevamente, que una letra o un número o un guión bajo. Pero también puedo añadir, usando una barra vertical, algo más, como un punto literal.
+
+Ahora, un punto literal necesita ser escapado, de lo contrario, representa cualquier caracter, lo cual sería un retroceso, un paso atrás. Pero ahora observa lo que he hecho. Entre paréntesis, le estoy diciendo a `re.search` que esos primeros caracteres en tu dirección de correo electrónico, es decir, tu nombre de usuario, tienen que ser un caracter de palabra, como de la A a la z, en mayúscula o minúscula; o del 0 al 9; o un guión bajo; o un punto literal.
+
+También podríamos hacer esto de manera diferente. Podría eliminar los paréntesis y la barra vertical, y podría usar simplemente un conjunto de caracteres. Podría decir manualmente de la A a la z, de la A a la Z, del 0 al 9, un guión bajo, y luego podría agregar un punto literal con un punto atrás. Y ahora, técnicamente no necesito ni siquiera las mayúsculas, porque ya le estoy diciendo a la computadora que ignore las mayúsculas y minúsculas. Puedo elegir una u otra.
+
+Cuál es mejor realmente depende de ti. Cualquiera que consideres más legible generalmente sería el mejor diseño.

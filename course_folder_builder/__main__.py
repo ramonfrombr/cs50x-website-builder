@@ -135,7 +135,7 @@ else:
     page_file = open(page_path, "w")
     page_file.close()
 
-  def import_menus():
+  def import_menu_language():
     menu_import_template = Template("""from .${course}.content.${language}.language import menu as menu_${language}_${course}\n""")
 
     with open('app/__init__.py', 'r+') as f: #r+ does the work of rw
@@ -148,7 +148,7 @@ else:
       for line in lines:
           f.write(line)
 
-  def configure_menus():
+  def configure_menu_language():
     menu_config_template = Template("""        app.config["LANGUAGE_MENU_${course}"] = menu_${language}_${course}\n""")
 
     with open('app/__init__.py', 'r+') as f: #r+ does the work of rw
@@ -169,6 +169,21 @@ else:
       for i, line in enumerate(lines):
         if '# Blueprint register' in line:
           lines[i] = "        " + lines[i].lstrip() + "\n" + blueprint_register_template.substitute(course=COURSE)
+      f.seek(0)
+      for line in lines:
+          f.write(line)
+
+  def add_course_link_to_menu():
+    course_link_template = Template("""    <li data-marker="*" class="small">
+        <span class="fa-li"><i class="fas fa-square"></i></span
+        ><a href="{{url_for('${course}.index')}}">CS50 ${course}</a>
+    </li>\n""")
+    
+    with open('app/templates/components/courses.html', 'r+') as f: #r+ does the work of rw
+      lines = f.readlines()
+      for i, line in enumerate(lines):
+        if '<!-- Additional Courses -->' in line:
+          lines[i] = course_link_template.substitute(course=COURSE) + "    " + lines[i].lstrip() 
       f.seek(0)
       for line in lines:
           f.write(line)
@@ -199,6 +214,7 @@ else:
   for page in pages:
     create_pages_file(content_path, page)
   
-  import_menus()
-  configure_menus()
+  import_menu_language()
+  configure_menu_language()
   register_blueprint()
+  add_course_link_to_menu()

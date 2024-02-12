@@ -1,0 +1,55 @@
+Now honestly, this is a regular expression that you might be in the habit of typing in the real world. As cryptic as this might look, this is the world of regular expressions. So you'll get more comfortable with this syntax over time. But thankfully, some of these patterns are so common that there are built-in shortcuts for representing some of the same information. 
+
+That is to say, you don't have to constantly type out all of the symbols that you want to include, because odds are some other programmer has had the same problem. So built into regular expressions themselves are some additional patterns you can use. And in fact, I can go ahead and get rid of this entire set, a through z lowercase, A through Z uppercase, 0 through 9 and an underscore, and just replace it with a single backslash w. 
+
+Backslash w in this case represents a "word character," which is commonly known as a alphanumeric symbol or the underscore as well. I'm going to do the same thing over here. I'm going to highlight the entire set of square brackets, delete it, and replace it with a single backslash w. And now I feel like we're making progress, because even though it's cryptic, and would have looked way cryptic a little bit ago-- and even though it would have looked even more cryptic a little bit ago, now it's at least starting to read a little more friendly. 
+
+This ^ on the left means "start matching at the beginning of the string." Backslash w means "any word character." The + means "one or more." @ symbol literally. Then another word character, one or more. then a literal dot, then literally edu, and then match at the very end of the string, and that's it. So there's more of these, too. 
+
+And we won't use them all here, but here is a partial list of the patterns you can use within a regular expression. One, you have backslash d for any decimal digit, "decimal digit" meaning 0 through 9. Commonly done here, too, is if you want to do the opposite of that, the complement, so to speak, you can do backslash capital D, which is anything that's not a decimal digit. So it might be letters, and punctuation, and other symbols as well. 
+
+Meanwhile, backslash s means whitespace characters, like a single hit of the space, or maybe hitting Tab on the keyboard. That's whitespace. Backslash capital S is the opposite or complement of that-- anything that's not a whitespace character. Backslash w, we've seen, a word character, as well as numbers and the underscore. And if you want the complement or opposite of that, you can use backslash capital W to give you everything but a word character. 
+
+Again, these are just common patterns that so many people were presumably using in yesteryear that it's now baked into the regular expression syntax so that you can more succinctly express your same ideas. Any questions, then, on this approach here, where we're now using backslash w to represent my word character? 
+
+AUDIENCE: So what I want to ask about was the-- actually the previous approach, like the square bracket approach. Could we accept lists in there? 
+
+DAVID MALAN: Yes. We'll see this before long. But suppose you wanted to tolerate not just .edu, but maybe .edu, or .com, you could do this. You could introduce parentheses, and then you can or those together. I could say com or edu. Could also add in something like in the US, or gov, or net, or anything else, or org, or the like. And each of the vertical bars here means something special. It means "or." And the parentheses simply group things together. 
+
+Formally, you have this syntax here-- A or B, A or vertical bar B, means "A has to match or B has to match," where A and B can be any other patterns you want. In parentheses, you can group those things together. So just like math, you can combine ideas into one phrase and do this thing or the other. And there's other syntax as well that we'll soon see. 
+
+Other questions on these regular expressions and this syntax here? 
+
+AUDIENCE: What if we put spaces in the expression? 
+
+DAVID MALAN: Sure. So if you want spaces in there, you can't use backslash w alone, because that is only a word character which is alphabetical, numerical, or the underscore. But you could do this. You could go back to this approach whereby you use square brackets. And you could say a through z, or A through Z, or 0 through 9, or underscore, or I'm going to hit the space bar, a single space. You can put a literal space inside of the square brackets, which will allow you then to detect a space. 
+
+Alternatively, I could still use backslash w, But I could combine it as follows. I could say, give me a backslash w or a backslash s, because recall that backslash s is whitespace. So it's even more than a single space. It could be a tab. But by putting those things in parentheses, now you can match either the thing on the left or the thing on the right one or more times. 
+
+How about one other question on these regular expressions? 
+
+AUDIENCE: Perfect. So I was going to ask, does the backslash w include a dot? Because-- no, OK. 
+
+DAVID MALAN: No, it only Includes letters, numbers, and underscore. That is it. 
+
+AUDIENCE: And I was wondering, you gave an example at the beginning that had spaces, like this is my email, so-and-so. I don't think our current version-- or even quite a long while ago stopped accepting it. Was that because of the ^ or because of something else? 
+
+DAVID MALAN: No, the reason I was handling spaces in other English words when I typed out my email address as malan@harvard.edu was because we were using initially dot *, or dot +, which is any character. And even after that, we said anything except the @ sign, which includes spaces. Only once I started using square brackets and a through z and 0 through 9 and underscore did we finally get to the point where we would reject white space. 
+
+And in fact, I can run this here. Let me go into the current version of my code in VS Code, which is using, again, the backslash w's for word characters, let me run python of validate.py and incorrectly type in something like "my email address is malan@harvard.edu," period, which has spaces to the left of my username, and that is now invalid, because space is not a word character. 
+
+You're going to notice, too, that technically I'm not allowing dots. And some of you might be thinking, wait a minute. My Gmail address has a dot in it. That's something we're going to still have to fix. A backslash w is not the end all here. It's just allowing us to express our previous solution a little more succinctly. 
+
+Now, one thing we're still not handling quite properly is uppercase versus lowercase. The backslash w technically does handle lowercase letters and uppercase, because it's the exact same thing as that set from before, which had little a through little z and big A through big Z. But watch this. 
+
+Let me go ahead in my current form run python of validate.py, and just because my Caps lock key is down, MALAN@HARVARD.EDU, shouting my email address. It's going to be OK in terms of the MALAN. It's going to be OK in terms of the HARVARD, because those are matching the backslash w, which does include lowercase and uppercase. But I'm about to see invalid. 
+
+Why? Why is MALAN@HARVARD.EDU invalid when it's in all caps here, even though I'm using backslash w? 
+
+AUDIENCE: Yeah. So you are asking for the domain.edu in lowercase, and you're typing it in uppercase. 
+
+DAVID MALAN: Exactly. I'm typing in my email address in all uppercase, but I'm looking for literally ".edu." And as I see you with AirPods and so many of you with headphones, I apologize for yelling into my microphone just now to make this point. But let's see if we can't fix that. 
+
+Well, if my pattern on line 5 is expecting it to be lowercase, there's actually a few ways I can solve this. One would be something we've seen before. I could just force the user's input to all lowercase. And I could put onto the end of my first line .lower and actually force it all to lowercase. 
+
+Alternatively, I could do that a little later. Instead of passing an email, I could pass in the lowercase version of email, because email addresses should, in fact, be case insensitive. So that would work, too.

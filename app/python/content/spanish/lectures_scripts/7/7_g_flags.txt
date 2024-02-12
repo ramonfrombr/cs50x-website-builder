@@ -1,0 +1,23 @@
+Pero hay otro mecanismo aquí, que vale la pena ver. Resulta que esa función antes llamada re.search admite, como recordarás, un tercer argumento también, llamado así flags. Y los flags son opciones de configuración, normalmente para una función, que te permiten configurarla de manera un poco diferente. ¿Y cómo podría yo configurar esta llamada a re.search de manera un poco diferente, considerando que actualmente solo estoy pasando dos argumentos?
+
+Bueno, resulta que algunos de los flags que puedes pasar a esta función son los siguientes. Resulta que la biblioteca de expresiones regulares en Python, o sea, re, viene con algunas variables integradas, por así decirlo, cosas que puedes considerar como constantes, que tienen un significado para re.search. Y lo hacen de la siguiente manera. Si pasas como flag re.IGNORECASE, lo que re.search hará es ignorar el caso de la entrada del usuario. Puede ser en mayúscula, minúscula o una combinación de ambas, el caso será ignorado. Se tratará de manera insensible a mayúsculas y minúsculas.
+
+Y puedes hacer otras cosas también, que no haremos aquí. Pero si quieres manejar la entrada del usuario que tal vez abarque varias líneas, tal vez no sólo escribieron una dirección de correo electrónico sino un párrafo completo de texto, y quieres coincidir con diferentes líneas de ese texto que tiene varias líneas, otro flag es re.MULTILINE para eso, o re.DOTALL, donde puedes configurar que el punto reconozca no sólo cualquier carácter excepto saltos de línea sino cualquier carácter más saltos de línea también.
+
+Pero por ahora, voy a hacer uso de este primero. Voy a pasar un tercer argumento a re.search, que es re.IGNORECASE. Ahora voy a ejecutar el programa de nuevo sin borrar la pantalla, python de validate.py. Voy a escribir nuevamente en mayúsculas, prácticamente gritando, MALAN@HARVARD.EDU, Enter, y ahora se considera válido, porque le estoy diciendo a re.search específicamente que ignore el caso de la entrada. Y eso también está bien aquí.
+
+¿Y por qué podría hacer esto en lugar de llamar a .lower en una de esas otras ubicaciones? Eh, si en realidad no quiero cambiar la entrada del usuario por alguna razón, aún así puedo tratarla de manera insensible a mayúsculas y minúsculas sin cambiar el valor de esa variable en sí. ¿De acuerdo, alguna pregunta final ahora sobre esta validación de direcciones de correo electrónico?
+
+AUDIENCIA: Entonces, ¿el patrón es una cadena, verdad?
+
+DAVID MALAN: Mm-hmm.
+
+AUDIENCIA: ¿Podemos usar un fstring?
+
+DAVID MALAN: Sí, se puede. Sí, se puede usar un fstring para que puedas insertar, por ejemplo, el valor de una variable y pasarlo a la función. ¿Alguna otra pregunta sobre esto?
+
+AUDIENCIA: ¿El carácter de barra invertida w, podríamos obtenerlo como entrada del usuario?
+
+DAVID MALAN: Técnicamente sí. Ese no es un problema que estamos tratando de resolver en este momento. Queremos que el usuario proporcione una entrada literal, como su dirección de correo electrónico, no necesariamente una expresión regular. Pero podrías imaginar construir software que le pida al usuario, especialmente si son usuarios más avanzados, que escriban una expresión regular por alguna razón para validar algo más contra eso.
+
+De hecho, eso es lo que hace Google. Si juegas un poco con Google Forms y creas un formulario con validación de respuestas y seleccionas Expresión Regular, Google te permite a ti y a mí escribir nuestras propias expresiones regulares, lo cual sería un ejemplo perfecto de eso.

@@ -1,0 +1,188 @@
+
+[0]
+
+Introduction to
+Programming with Python
+Object-Oriented Programming
+
+[1]
+
+tuple
+
+[2]
+
+classes
+
+[3]
+
+docs.python.org/3/tutorial/classes.html 
+
+[4]
+
+class
+
+[5]
+
+objects
+
+[6]
+
+attributes
+
+[7]
+
+instance variables
+
+[8]
+
+methods
+
+[9]
+
+instance methods
+
+[10]
+
+_ _init_ _
+
+[11]
+
+raise
+
+[12]
+
+_ _str_ _
+
+[13]
+
+properties
+
+[14]
+
+@property
+
+[15]
+
+decorators
+
+[16]
+
+int
+
+[17]
+
+docs.python.org/3/library/functions.html#int 
+
+[18]
+
+class int(x, base=10)
+
+[19]
+
+str
+
+[20]
+
+docs.python.org/3/library/stdtypes.html#str 
+
+[21]
+
+class str(object='')
+
+[22]
+
+str.lower()
+
+[23]
+
+str.strip([chars])
+
+[24]
+
+list
+
+[25]
+
+docs.python.org/3/library/stdtypes.html#list 
+
+[26]
+
+docs.python.org/3/tutorial/datastructures.html 
+
+[27]
+
+class list([iterable])
+
+[28]
+
+list.append(x)
+
+[29]
+
+dict
+
+[30]
+
+docs.python.org/3/library/stdtypes.html#dict 
+
+[31]
+
+class methods
+
+[32]
+
+@classmethod
+
+[33]
+
+static methods
+
+[34]
+
+@staticmethod
+
+[35]
+
+inheritance
+
+[36]
+
+docs.python.org/3/library/exceptions.html 
+
+[37]
+
+BaseException
+ +-- KeyboardInterrupt
+ +-- Exception
+      +-- ArithmeticError
+      |    +-- ZeroDivisionError
+      +-- AssertionError
+      +-- AttributeError
+      +-- EOFError
+      +-- ImportError
+      |    +-- ModuleNotFoundError
+      +-- LookupError
+      |    +-- KeyError
+      +-- NameError
+      +-- SyntaxError
+      |    +-- IndentationError
+      +-- ValueError
+ ...
+
+[38]
+
+operator overloading
+
+[39]
+
+docs.python.org/3/reference/datamodel.html#special-method-names 
+
+[40]
+
+object.__add__(self, other)
+
+[41]
+
+Introduction to
+Programming with Python
+Object-Oriented Programming

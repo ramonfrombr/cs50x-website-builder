@@ -1,0 +1,35 @@
+Sin embargo, esto es una buena transición hacia una característica final de la lectura de archivos CSV, que es que no tienes que depender de obtener una fila como una lista y usar corchete 0 o corchete 1, y no tienes que desempaquetar manualmente de esta manera. En realidad, podríamos ser más inteligentes y comenzar a almacenar los nombres de estas columnas en el propio archivo CSV. De hecho, si alguno de ustedes ha abierto alguna vez un archivo de hoja de cálculo, ya sea en Excel, Apple Numbers, Google Spreadsheets o similares, es probable que se haya dado cuenta de que la primera fila, muy frecuentemente, es un poco diferente. En realidad, a veces está en negrita, o en realidad contiene los nombres de esas columnas, los nombres de esos atributos debajo.
+
+Y podemos hacer esto aquí. En students.csv, no tengo que seguir asumiendo que el nombre del estudiante es el primero y que el hogar del estudiante es el segundo. Puedo incluir explícitamente esa información en el archivo solo para reducir la probabilidad de errores en el futuro.
+
+Literalmente puedo usar la primera fila de este archivo y decir, nombre, coma, hogar. Así que nota que nombre no es literalmente el nombre de alguien, y hogar no es literalmente el hogar de alguien. Son literalmente las palabras, nombre y hogar, separadas por coma.
+
+Y si ahora vuelvo a students.py y no uso CSV reader sino en cambio uso un CSV dict reader, puedo tratar mi archivo CSV aún más flexiblemente, no solo para esto, sino también para otros ejemplos. Déjame hacer esto. En lugar de usar un CSV reader, usaré un CSV dict reader, que ahora iterará sobre el archivo de arriba a abajo, cargando cada línea de texto no como una lista de columnas, sino como un diccionario de columnas.
+
+Lo bueno de esto es que ahora tendré acceso automático a los nombres de esas columnas. Volveré a solo decir, para fila en reader, y ahora agregaré un nombre y un hogar. Pero, ¿cómo obtendré acceso al nombre actual de la fila y al hogar actual de la fila? Bueno, anteriormente usé corchete 0 para el primero y corchete 1 para el segundo cuando estaba usando un reader.
+
+Un reader devuelve listas. Un dict reader o dictionary reader devuelve diccionarios, uno a la vez. Y así que si quiero acceder al nombre de la fila actual, puedo decir, fila, comillas/"nombre".
+
+Puedo decir aquí para hogar, fila, comillas/"hogar". Y ahora tengo acceso a esos mismos valores. El único cambio que tuve que hacer, para dejarlo claro, fue en mi archivo CSV, tuve que incluir, en la primera fila, pequeñas pistas sobre cuáles son estas columnas.
+
+Y si ahora ejecuto este código, creo que debería comportarse prácticamente igual: python de students.py. Y efectivamente, obtenemos las mismas frases. Pero ahora mi código es más robusto contra cambios en estos datos. Si abriera el archivo CSV en Excel, o Google Spreadsheets, o Apple Numbers, y por alguna razón cambiará las columnas, tal vez este sea un archivo que está compartiendo con otra persona, y solo porque deciden ordenar las cosas de manera diferente de izquierda a derecha moviendo las columnas alrededor, anteriormente, mi código se habría roto porque estaba asumiendo que el nombre es siempre primero y el hogar es siempre segundo.
+
+Pero si hiciera esto, ya sea manualmente en uno de esos programas o aquí, hogar, coma, nombre, y supongamos que invertí todo esto. El hogar viene primero, seguido de Harry, The Burrow, luego Ron, y por último, Malfoy Manor, luego Draco, observa que mi archivo ahora está completamente invertido. La primera columna es ahora la segunda, y la segunda es la primera. Pero me aseguré de actualizar el encabezado de ese archivo, la primera fila.
+
+Observa que mi código de Python no lo modificaré en absoluto. Lo volveré a ejecutar, python de students.py, y darle Enter. Y todavía funciona. Y esto también es un ejemplo de programar de forma defensiva. ¿Qué sucede si alguien cambia tu archivo CSV, tu archivo de datos?
+
+Idealmente, eso no debería suceder. Pero incluso si sucede ahora, porque estoy usando un dictionary reader que va a deducir de esa primera fila cuáles son los nombres de las columnas, mi código sigue funcionando. Y así sigue mejorando cada vez más. ¿Alguna pregunta sobre este enfoque?
+
+AUDIENCIA: Sí, ¿cuál es la importancia de la nueva línea en el archivo CSV?
+
+DAVID MALAN: ¿Cuál es la importancia de la nueva línea en el archivo CSV? Es en parte una convención. En el mundo de los archivos de texto, nosotros los humanos hemos estado acostumbrados durante décadas a almacenar datos línea por línea. Es visualmente conveniente. Es fácil de extraer del archivo porque solo buscas las nuevas líneas.
+
+Así que la nueva línea simplemente separa algunos datos de otros datos. Podríamos usar cualquier otro símbolo en el teclado, pero es común presionar Enter para simplemente mover los datos a la siguiente línea. Solo una convención. ¿Otras preguntas?
+
+AUDIENCIA: Parece que está funcionando bien si solo tienes nombre y hogar. Me pregunto qué sucederá si deseas agregar más datos. Digamos, si quieres agregar una casa tanto para el nombre como para el hogar.
+
+DAVID MALAN: Claro, si quisieras agregar la casa nuevamente, si voy aquí y agrego house al final, y voy aquí y digo Gryffindor para Harry, Gryffindor para Ron y Slytherin para Draco, ahora tengo tres columnas, efectivamente, si quieres; hogar a la izquierda, nombre en el medio, casa a la derecha, cada uno separado por comas con cosas extrañas, como "Number Four, coma, Privet Drive" aún entre comillas. Observa que si vuelvo a students.py y no cambio el código en absoluto y ejecuto python de students.py, todavía funciona. Y esto es lo poderoso de un dictionary reader.
+
+Puede cambiar con el tiempo. Puede tener más y más columnas. Tu código existente no se romperá.
+
+Tu código se rompería, sería mucho más frágil, por así decirlo, si estuvieras haciendo suposiciones como, la primera columna siempre va a ser nombre. La segunda columna siempre va a ser casa. Las cosas se romperán rápidamente si esas suposiciones se desmoronan, así que no es un problema en este caso.

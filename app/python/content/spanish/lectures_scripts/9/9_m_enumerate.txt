@@ -1,0 +1,17 @@
+Bien, introduzcamos otra función de la caja de herramientas de Python, seguida de una característica y remate final. Y luego estarás en tu camino. Bueno, vamos a recapitular esto. Hace algún tiempo, teníamos simplemente una lista simple de estudiantes como tenemos aquí, Hermione, Harry y Ron. Y por ejemplo, en aquel entonces, queríamos imprimir, por ejemplo, su clasificación de uno a dos a tres.
+
+Desafortunadamente, cuando haces algo como esto "for student in students", puedes imprimir fácilmente el nombre del estudiante. Claro, si hago "Python de Gryffindors.py", obtengo Hermione, Harry, Ron en ese mismo orden. Pero no veo ninguna clasificación numérica. No veo el número uno, dos o tres. Así que tal vez podría hacer esto con otro tipo de bucle “for”. En lugar de esto, ¿por qué no intento esto?
+
+Entonces, tal vez podría hacer "for i in el rango de la longitud de la lista de estudiantes" y ya hemos hecho algo similar antes. Y luego puedo imprimir i y puedo imprimir el nombre del estudiante indexando esa lista en la ubicación i.
+
+¿Qué aspecto tiene esto? Si ejecuto "Python de Gryffindors.py" está cerca. Pero estos no son programadores. Ellos no se consideran a sí mismos con índice cero. Hermione probablemente quiere ser la primera, no cero.
+
+Entonces, ¿cómo podemos solucionar esto? Bueno, solo un poco de aritmética. Podría imprimir i más uno, por supuesto, y luego el nombre del estudiante. Si limpio mi ventana de terminal y ejecuto "Python de Gryffindors.py" de nuevo, ahora tenemos esta enumeración, uno, dos, tres de cada uno de estos estudiantes.
+
+Pero resulta que Python en realidad ha tenido todo este tiempo otra función integrada que ahora podrías encontrar útil. Es decir, "enumerate". Y "enumerate" te permite resolver este tipo de problema de manera mucho más simple al iterar sobre alguna secuencia, pero no solo obteniendo cada valor uno a la vez, sino también el índice correspondiente. Te devuelve dos respuestas al mismo tiempo.
+
+Entonces, si vuelvo a VS Code aquí ahora y adopto este enfoque, no necesito hacer este rango complicado, y longitud, y luego i por todas partes. Puedo hacer esto más conciso. Puedo decir "for i, student in el valor de retorno de "enumerate" pasando students". Entonces esto me devuelve una enumeración, por así decirlo. Y ahora puedo proceder a imprimir i más 1 como antes. Y puedo imprimir al estudiante.
+
+Entonces, no necesito indexar en la lista con la notación de corchete i. No necesito llamar a "range". No necesito llamar a "length". Nuevamente, "enumerate" toma una secuencia de valores como estos estudiantes, y me permite obtener el índice actual cero, uno, dos, y el valor actual Hermione, Harry, Ron respectivamente.
+
+Así que ahora, solo ajustemos las cosas aún más. Efectivamente, ese ha sido nuestro tema aquí. ¿Podemos resolver los mismos problemas que hemos estado resolviendo durante semanas, pero ajustando las cosas usando más de esta caja de herramientas?

@@ -1,0 +1,19 @@
+Entonces, ¿cómo podríamos acceder no a los cuatro elementos de argv sino solo a una porción de argv? Y esto es en realidad un término técnico en Python y en algunos otros lenguajes. Tomar una porción de una lista significa tomar un subconjunto de ella, tal vez desde el principio, tal vez desde el medio, tal vez desde el final. Pero una porción es un subconjunto de una estructura de datos como una lista.
+
+Bueno, ¿cómo puedo hacer esto en código? Bueno, en Python, es en realidad muy fácil tomar una porción de una lista que es un subconjunto de la misma. Simplemente puedes hacer esto. Al final del nombre de la lista, sys.argv en este caso, puedes usar corchetes. Y luego en esos corchetes, puedes especificar el inicio y el final de la lista que deseas conservar.
+
+Quiero comenzar en el elemento1, no en cero. Quiero comenzar en el elemento1 y quiero ir hasta el final. Así que en realidad voy a omitir un segundo número por completo. No es necesario tener un segundo número. Pero sí necesito ese dos puntos porque esto me va a dar una porción de la lista. Me va a dar una porción de la lista que comienza en la ubicación1, no en cero. Y los dos puntos y luego un espacio en blanco simplemente significa que me va a dar todo lo demás.
+
+Entonces esto va a equivaler a quitar el primer elemento de la lista y darme una nueva lista que solo contiene esos tres nombres humanos, no el nombre del archivo en sí. Déjame intentar ejecutar esto de nuevo. Voy a ejecutar Python de name.py, David Carter Rongshin. Esta vez, con suerte, voy a obtener tres y solo tres etiquetas de nombres, presionando Enter. Y en efecto, ahora solo tengo esto.
+
+Entonces, una vez más, utilizando una sintaxis relativamente simple en Python, podemos usar corchetes no solo para ir a elementos específicos como corchete0 o corchete1. También podemos obtener subconjuntos de la lista, porciones de la lista, haciendo corchete algo dos puntos algo, donde cada una de esas "algo" es un número, el principio o el final, y son opcionales según si quieres todos ellos o solo algunos. ¿Alguna pregunta ahora sobre esta versión, que incluye el bucle y estas porciones con esa nueva sintaxis?
+
+AUDIENCE: ¿Podemos tomar una porción empezando desde el final del vector de argumentos?
+
+DAVID MALAN: Sí, puedes tomar una porción desde el final del vector de argumentos. Y esto puede resultar un poco sorprendente. Permíteme hacer esto. Veamos. Permíteme simplemente poner -1 al final. Usando un número negativo aquí y ejecutando el mismo comando, acabamos de "desinvitar" a Rongshin a recibir una etiqueta de nombre aquí. Entonces, si usas un número negativo, tiene el efecto de contar en la otra dirección desde el final de la lista. Una buena pregunta. ¿Alguna otra pregunta ahora sobre porciones, sobre iterar sobre sys.argv?
+
+AUDIENCE: Hola, recuerdo que al principio hablábamos de tener solo dos decimales en un valor flotante. ¿Es eso en la misma línea, como, porque usamos el código en 0.2F? ¿Es lo mismo entonces? ¿Por qué se incluiría la F aquí en 0.2F en lugar de simplemente tener los números?
+
+DAVID MALAN: Es una muy buena pregunta. Y la respuesta breve es que el contexto importa. Así que solo hay tantas teclas en nuestro teclado. Y a veces usamos los mismos símbolos para diferentes cosas. Entonces, lo que estás insinuando es el código de formato en una cadena F para formatear un número usando dos puntos, un punto, un número, la letra F y demás. Y eso es muy específico de la característica de cadena F de Python.
+
+Este caso no tiene nada que ver con esa sintaxis en sí. Esto es simplemente usar dos puntos en un contexto diferente para resolver este problema y implementar una porción. Los autores de Python podrían haber elegido otro símbolo. Pero honestamente, mirando mi teclado aquí, no tenemos tantos para elegir que sean fáciles de escribir. Así que a veces tienen diferentes significados. También una buena pregunta.

@@ -1,0 +1,46 @@
+{% extends 'python/layout.html' %} {% block content %}
+<h1 id="problem-set-7">Problema Set 7</h1>
+
+<h2 id="what-to-do">Qué hacer</h2>
+
+<ol>
+  <li>
+    Inicia sesión en <a href="https://cs50.dev/">cs50.dev</a>, que es una versión en la nube de Visual Studio Code (VS Code) que te proporciona tu propio "espacio de código" con todo lo que necesitas para el curso preinstalado. ¡No es necesario descargar e instalar VS Code o Python en tu propio Mac o PC!
+  </li>
+  <li>
+    Ejecuta
+    <code class="language-plaintext highlighter-rouge">update50</code> en la ventana del terminal de tu espacio de código para asegurarte de que tu espacio de código esté actualizado; si se te solicita, haz clic en <strong>Reconstruir ahora</strong>.
+  </li>
+  <li>
+    Envía todos los problemas a continuación:
+    <ul>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.numb3rs') }}">NUMB3RS</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.watch') }}">Ver en YouTube</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.working') }}">Trabajando de 9 a 5</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.um') }}">Expresiones Regulares, um</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.response') }}">Validación de Respuesta</a>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="when-to-do-it">Cuándo hacerlo</h2>
+
+<p>
+  Antes del
+  <a
+    data-local="2024-12-31T23:59:00-05:00"
+    href="https://time.cs50.io/20241231T235900-0500"
+    >2024-12-31T23:59:00-05:00</a
+  >.
+</p>
+{% endblock %}

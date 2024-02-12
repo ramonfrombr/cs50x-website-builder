@@ -1,0 +1,19 @@
+
+
+Well, let's introduce one other function from Python's toolkit followed by one final feature and flourish. And then you're off on your way. Well, let's go ahead and think back to this. Recall some time ago that we had just a simple list of students as we have here, Hermione, Harry, and Ron. And for instance, way back when, we wanted to print out, for instance, their ranking from one, to two, to three. 
+
+Unfortunately, when you do something like this for student in students, you can print out the student's name quite easily. Of course, if I do Python of Gryffindors.py, I get Hermione, Harry, Ron in that same order. But I don't see any numerical rank. I see no number one, two, or three. So I could maybe do this with maybe a different type of for loop. Instead of this, why don't I try this? 
+
+So maybe I could do for i in the range of the length of the students list-- and we've done something like this before. And then I could print out i, and I could print out the student's name by indexing into that list at location i. 
+
+Well, what does this look like? If I run Python of Gryffindors.py it's close. But these aren't programmers. They don't necessarily think of themselves as zero-indexed. Hermione he probably wants to be first not zero. 
+
+So how can we fix this? Well. Just a little bit of arithmetic. I could print out i plus one, of course, and then the student's name. So if I clear my terminal window and run Python of Gryffindors.py doorstop once more, now we have this enumeration, one, two, three of each of these students. 
+
+But it turns out that Python actually has had all this time another built-in function that you might now find useful. That is namely enumerate. And enumerate allows you to solve this kind of problem much more simply by iterating over some sequence but finding out not each value one at a time, but both the value one at a time and the index thereof. It gives you back two answers at once. 
+
+So if I go back to VS Code here now and take this approach, I don't need to do this complicated range, and length, and then i all over the place. I can more succinctly do this. I can say for i comma student in the enumerate return value passing in students. So this gives me back an enumeration, if you will. And now, I can go about printing i plus 1 as before. And I can print out the student. 
+
+So I don't need to index into the list with bracket i notation. I don't need to call range. I don't need to call length. Again, enumerate takes a sequence of values like these students, and it allows me to get back the current index zero, one, two, and the current value Hermione, Harry, Ron respectively. 
+
+So now, just tighten things up further. And indeed, that's been our theme here. Can we solve the same problems as we've been solving for weeks but tighten things up using just more of this toolkit? 

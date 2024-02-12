@@ -1,0 +1,43 @@
+So, for instance, let's go back over here to VS Code. And let me propose that we take a look at a new file all together. I'm going to close hello.py. And I'm going to write code of say number.py. So let's play around with some numbers in Python. 
+
+And the first thing I'm going to go ahead here and do with number.py, after opening this new tab, is I think I'm going to go ahead and print-- type up a relatively simple program that maybe prompts the user for an integer, like x, and then just prints out what x is. So we're going to start simple, but, again, in starting simple, we'll be able to really see where I've done something wrong. 
+
+Well, here we go. I'm going to go ahead and say a variable called x is going to get assigned the value of the return value of input, quote unquote, "what's x?" And I'm going to include a space to move the cursor over a little bit. And then, ultimately, I'm going to go ahead and-- oh, wait a minute. If I'm wanting to get an int from the user, recall that I need to do something proactively. 
+
+I need to actually convert that input to an integer using the int function in Python. So now I'm passing the return value of input as the argument to int. And that will store in x, ultimately, an integer, not a string that looks like an integer. All right, let me go ahead now and just quite simply print out what this is. 
+
+I'm going to go ahead and print out, quote unquote, "x is x." But I don't want to literally say x is x. I want to plug in the value of x. So maybe the easiest way to do that is to surround it with curly braces. 
+
+And then if I'm using these curly braces and I want Python to interpolate the value of that variable, that is substitute what x actually is in between those curly braces, recall that I need to use a format string or an F-string by fixing this whole thing with an F. Now that I've done that, let's go ahead and see what happens. I'm going to go ahead in my terminal window and run Python of number.py. 
+
+I hit Enter. And so far, so good. All is well and being prompted for x. Let me go ahead and type in a number like 50. All right, that seems to work. Program seems to be correct. 
+
+Or is it? What could go wrong in this program, even though nothing did just go wrong? But if I run it and run it and run it again, during the running of my program, what could still go wrong, especially if I'm not the human interacting with it but some other human instead? Any volunteers here for this one? 
+
+What could go wrong? And in what way is this program not really correct, even though at first glance it seems so. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: So I'm not calling an integer. I'm still having trouble hearing you. But what I think I heard is that if what the user types in is not, in fact, an integer, I can't just blindly convert it to an int. If I'm not putting too many words into your mouth, I think what I should perhaps do here is be a little defensive. And let me see if I can't simulate exactly the problem that could go wrong here. 
+
+Let me go ahead and run, again, Python of number.py. Let me try another number. In fact, when testing your code, generally it's a good idea to test corner cases, maybe numbers that aren't quite as plain as or 49 or 51. Let's choose some numbers that might be a little more interesting, if only mathematically, like zero. 
+
+All right, zero seems to work. My code still prints out that x is zero. What might be another corner case to consider? Well, let me go ahead and try a negative number. That, too, is pretty different in spirit from negative. 
+
+Negative 1? OK, that works too. Well, let me try it one more time. I've tried positive numbers, negative numbers, 0. Let me try something like a cat. So literally, C-A-T-- typing in a string that doesn't even look like a number. 
+
+And yet, let's see now what happens when I hit Enter. All right, we'll see now we've got another kind of error. It's not a syntax error, because I didn't make a typographical mistake. I didn't forget some piece of syntax. I actually now have an error with one of my values. 
+
+And it's an a value I didn't even anticipate. The human, me, in this case typed it in long after I wrote the code. So what does this refer to? A value error. Well, let's see what the explanation is. 
+
+Invalid literal for int with base 10, quote unquote, "cat." Now, this, too, is a bit of a mouthful. And, unfortunately, in Python and a lot of programming languages, the error messages are written for pretty comfortable programmers. And, of course, when you're learning programming for the first time, you might not be so comfortable with the programming language let alone the error messages. 
+
+But let's see if we can't glean some insight. So invalid literal. Well, again, a literal is just something that's been typed in, it would seem, for int. What is int exactly? 
+
+Well, int is the function I'm using to convert the user's input to a corresponding integer. Base 10, that refers to the decimal system, which is this the default that Python is using. And it looks like at the end of the day, what Python really doesn't like is that I passed cat, quote unquote, "to the int function." 
+
+So how do I go about actually fixing this problem? Well, I could just add instructions in my program. Maybe I could add a line of print telling the user more explicitly, be sure to type an integer, or, please don't type cat. Please don't type strings. 
+
+Of course, the user might still not oblige. They might not be reading the instruction. So that too is probably not an effective strategy. What we really want to do is write our code with error handling in mind. 
+
+We want to write lines of code that not only accomplish the problems we care about but that also handle errors that might unexpectedly happen. And, in general, when programming, programming defensively. Assume that the users aren't going to be paying attention or, worse, they're malicious. They're trying to crash your program. So we want to handle as many errors as we can.

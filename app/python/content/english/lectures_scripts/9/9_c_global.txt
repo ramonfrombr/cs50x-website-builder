@@ -1,0 +1,114 @@
+
+Allow me to turn our attention back to some of the other features here that we can leverage in Python if we dig further into the documentation and read up more on its features. Well, in some language, there's this notion of global variables, whereby you can define a variable that's either local to a function, as we've seen many times, or if you put a variable outside of all of your functions, perhaps near the top of your file, that would generally be considered a global variable. 
+
+Or in the world of Python, it might be specific to the module. But for all intents and purposes, it's going to behave for a given program as though it is global. 
+
+However, it turns out that if you do this when solving some problem down the line, whereby you have multiple functions and you do have one or more variables that are outside of those functions, you might not be able to change those variables as easily as you might think. So indeed, let me go back to VS Code here. And in just a moment, I'm going to go ahead and create a new file, how about called bank.py. 
+
+Let's go ahead and implement the notion of a bank wherein we can store things like money in various forms. And let me go ahead and do this. Let me go ahead and implement a very simple bank that simply keeps track of my total balance, the number of dollars or cents or whatever I might be storing in this bank. And I'm going to give myself a variable called balance at the top, which is an integer, a set to zero. 
+
+Now let me go ahead and define a main function as we often do. And inside of my main function, let me go ahead and print out, quote unquote, balance, and then print out the value of balance itself. Passing to print, as we've often done, more than one argument so that they get separated by a single white space. 
+
+And now, since I have a main function, really setting the stage for doing more interesting things soon, let me go ahead and do our usual if the name of this file equals equals underscore underscore main, then go ahead and call main. 
+
+So this is a terribly short program, but it's perhaps representative of how you might solve some future problem in Python. Whereby you have a main function that's going to eventually do some interesting stuff. And at the top of your file, you have one or more variables that are just useful to keep there because then you know where they are. And perhaps not just main but other functions can access them as well. 
+
+So let's see. When I run this program, Python of bank.py, I would hope based on my own intuition thus far that I'm going to see that my current balance is zero. That is to say, even though the balance variable is defined on line one, hopefully I can still print it online five inside of main, even though balance was not defined in my main function. 
+
+Here we go. Hitting Enter. And voila, balance zero. So it does seem to work. Even if you declare a variable in Python outside of your functions, it appears that you can access it. You can read the value of that variable even inside of a function like main. 
+
+Well, let's get a little more adventurous now. Because this program really isn't solving anyone's problems. Let's go ahead and implement more of a bank, like the ability to deposit money into the bank and to withdraw money from the bank. Thereby giving me some more functions that might very well need to access that same variable. 
+
+Let me clear my terminal window here. And let me go ahead and pretend for the moment that I have the ability to deposit, say, $100 or 100 coins, whatever the unit of currency is here. And then, maybe I want to withdraw straight away 50 of those same dollars or coins. 
+
+And now, let me go ahead and just print out at the bottom of main what my new balance should be so that in an ideal world, once I have deposited 100 then withdrawn 50, after starting at 0, I'd like to think that my new balance on line eight should indeed be 50. 
+
+All right. But I haven't implemented these functions yet. So let's do that as we've done in the past. Down here, I'm going to go ahead and define another function deposit. I'm going to say that it takes an argument called n for a number of coins or dollars or the like. 
+
+And I'm just going to do this. I'm going to go ahead and say, balance plus equals n, thereby changing the value of n. I could do it more verbosely, balance equals balance plus n. But I'm going to use the shorter hand notation here instead. 
+
+And now, let's implement withdraw. So define a function called withdraw. It too is going to take a variable-- an argument n for number of dollars or coins. And now, I'm going to go ahead and subtract from balance using minus equals n as well. And I'm still going to call main if the name of this file is main. 
+
+So what have I done? I've just added not just one but three functions total, all of which apparently need to access balance by printing it, incrementing it, or decrementing it, as we've seen here. 
+
+All right. Let me go ahead and focus on these three functions here. Let me go back to my terminal window and run Python of bank.py and hit Enter. And wow. Seems like we've introduced some number of problems here. 
+
+And what are these problems? Well, unbound local error is perhaps the first time we've seen this one here. Local variable balance referenced before assignment. And that's a bit misleading, definitely confusing. Because I absolutely assigned balance of value on the top of my code. 
+
+And indeed, if I scroll back up, nothing has changed or been lost up there. It's definitely been assigned to value. And now on line 12, it would seem, that when deposit is called I'm just trying to access that variable again. 
+
+So intuitively, what might explain this error message, unbound local error? What is Python telling us there that Python can or can't do when it comes to these so-called global variables that are at the top of my file? 
+
+STUDENT: So if you want to change this variable, you should write an inside left function main. And the global variable unchangeable. 
+
+DAVID J. MALAN: Yeah. 
+
+STUDENT: [INAUDIBLE] 
+
+DAVID J. MALAN: So if you want to change the value, it might need to be local to the function. If you are trying to change a global variable though in a function, it clearly does not work. So it's OK to read a global variable. Read meaning access it and print it and so forth. But apparently, you can't write to a global variable in the same way from within one of these functions. 
+
+All right. Well, maybe the fix is to do this. Let me clear my terminal window and that error. And maybe I could just do this. Let's get rid of the global variable. And let's go ahead and put it, for instance, inside of main. Might this now work? 
+
+Well, let me try this now. Python of Bank.py Enter. That alone did not solve it. I still have an unbound local error. This time though, it's for a different reason. It turns out now that balance on line two is by definition a local variable. A local variable is one that exists in the context of a function, at least in this case. A global variable is the opposite, one that does not, for instance at the top of my file. 
+
+So here is another distinction in Python. If you declare a variable in a function, like main, just as I've done on line two with balance, it is indeed local to that function. Deposit and withdraw do not have access to that same variable. Why? Because it's local to main. 
+
+And so, you would think now we're kind of stuck in this vicious cycle. Well, maybe the solution then is to move balance globally so all three functions can access it. But clearly, where we began, as Elena noted, we can't therefore change it. 
+
+So it turns out the solution to this problem in Python is ironically exactly this keyword here. It's a little different as you might have seen if you've programmed before in other languages. But there's indeed a keyword in Python called global that allows you to tell a function that, hey, this is not a variable that's local to you. I mean it to be a global variable that I want you to edit. 
+
+So if I go back to VS Code here, clearing my terminal window to get rid of that error. Let me go ahead and undo the change I just made and put balance back at the top of my file. But this time, what I'm going to do is I'm going to inform my two functions that need to change the value of balance, that it is indeed global, by typing global balance again here as well as here. Global balance. 
+
+I still leave the same lines of code now on lines 13 and 18, that increment and decrement balance. But this now use of keyword global is a little bit of a clue to Python that, oh, OK. It's not a local variable. This is not a bug that you've introduced. You mean for me to edit this variable up above. 
+
+So now, let me go ahead in my terminal window and run Python of bank.py. I'm hoping to see that my balance is zero plus 100 minus 50 is 50. And indeed, it now is. It starts off at zero per my first print statement on line five. But it ends up at 50 total at below that on line eight. Let me pause here to see if now there's any questions on these global or local variables. 
+
+STUDENT: What happens when you declare a variable globally, and as in the same variable globally and in a function? 
+
+DAVID J. MALAN: A good question. You're always thinking about the so-called corner cases. So if you declare a variable both globally, like at the top of your file, and then an identically named variable inside of a function, same name, the latter will shadow, so to speak, the former. That is, you'll be able to use the latter, that is the local variable. But it will have no effect on the global variable. Temporarily, Python will only know that the local variable exists. 
+
+So in general, the rule of thumb is, just don't do that. Not only might it create bugs in your code because you don't quite change what you intend to change. It's also perhaps non-obvious to other readers as well. Other questions on globals or locals? 
+
+STUDENT: OK, what if we decide to add balance as an argument inside the main function? 
+
+DAVID J. MALAN: Yeah, another good instinct. But in this case, that also is not going to solve the problem. Because if you pass in a variable like balance to each of the functions and then change it within that function, it's only going to be changing in effect a local copy thereof. It's not going to be changing what's outside of those functions. So I think we actually need a better way altogether. 
+
+And in fact, allow me to transition to perhaps a modification of this same program. Recall that we looked most recently at this notion of object-oriented programming. Whereby you can model real world entities, for instance a bank, and you can model and encapsulate information about that real world entity, for instance, like someone's account balance. 
+
+So let me propose that we actually do this. Let me start from scratch with bank.py. Get rid of the global variable altogether. And actually use some object-oriented code. Let me define a class called account to represent someone's bank account. And then, let me go ahead and initialize with my init method, which again, takes by convention at least one argument called self. 
+
+Let me go ahead and initialize every person's bank account to some value like zero. Now, how can I do that? Well, I'm going to go ahead and do self.balance equals zero. Thereby giving me an instance variable called balance initialized for this account to zero. 
+
+But I'm going to proactively remember how we also introduced this notion of properties which might otherwise collide with the names of my instance variables. So just by convention I'm going to do this. I'm going to rename this instance variable proactively to underscore balance to effectively indicate that it's private, even though that's not enforced by Python. It's just a visual clue to myself that this is something that really I should not-- or other code should not touch, just functions in this class. 
+
+Now, let me go ahead and do this. Let me go ahead and define an actual function called balance that really is going to be a property whose purpose in life is just to return self.balance. And I'm going to go explicitly and say this is indeed a property of this class. Now, let me go ahead and re-implement those other two functions, deposit and withdraw, but in the confines of this class. 
+
+So I'm going to say, define deposit. It's going to take in an argument self as always, but an additional one n, a number of dollars or coins to deposit. And how do I now manipulate this? Well, I'm going to do self._balance plus equals n. And now down here, I'm going to do def withdraw self n, just like for deposit. But here, I'm going to do self.balance minus equals n. 
+
+And now, if I go down below this class, I'm going to go ahead and define myself a main function just so I can try this now out. I'm going to go ahead and create an account object by calling the account constructor, that is the name of the class with two parentheses if I'm not passing in any arguments to init. I'm going to go ahead now and print out as before the balance of my account. 
+
+But to do that, I'm going to access the property of that account like this. And I'm going to go ahead now and say, deposit another $100 or coins with deposit 100. And I'm going to go ahead, like before, and also now immediately withdraw for whatever reason 50 of the same. 
+
+And now, I'm going to print one last time balance followed by account.balance, again, accessing that property. And for this whole thing to work, of course, I need one of these if name equals equals underscore main, then go ahead and call main. 
+
+Now, before I run this, you'll see that it rather escalated quickly. I had a very simple goal at hand to implement the notion of a bank. And I was able to implement that perfectly fine ultimately by declaring balance to be global but then to tell each of my functions that it is indeed global. 
+
+But that's not really the best form of encapsulation we have at our disposal now. Per our focus on object-oriented programming, if we're trying to implement some real world entity like an account at a bank, that's what classes allow us to do. And it allows us to solve that same problem perhaps a little more cleanly, certainly if we're going to accumulate more and more functions or methods over time. 
+
+So if I didn't make any mistakes here, if I run Python of bank.py and hit Enter now, you'll see that it just works just fine. Because in the world of classes in Python, these so-called instance variables are by definition accessible to all of the methods in that class because we're accessing them all by way of that special parameter self. 
+
+So which way to do it? For a reasonably small script wherein you are simply trying to implement a script that has some global information, like an account balance that you then need to manipulate elsewhere, the global keyword is a solution to that problem. 
+
+But generally speaking, in many languages, Python to some extent among them, using global variables tends to be frowned upon only because things can get messy quickly. And it can become less obvious quickly exactly where your information is stored, if some of it's up here, some of it's in your function. 
+
+So generally, the rule of thumb is to use global variables sparingly. Though technically speaking, in Python these global variables are technically local to our module if we were indeed implementing a library and not just a program. 
+
+So in short, try to use global variables sparingly. But when you do, there is a solution to these same problems. Questions now on globals or our reimplementation of the same idea but using full-fledged object-oriented programming? 
+
+STUDENT: I just would like to ask, what this property does? 
+
+DAVID J. MALAN: What this property does. So if I go back to VS Code here, you'll see that this was a technique we looked at in our lecture on object-oriented programming. Whereby a property is a instance variable that somehow protected. It allows me to control it can be read and written. 
+
+So in this case, I only have what's called generally a setter. And or sorry. In this case, I only have what's generally called a getter. And there's no mention of the word getter here. This is just @property means. That function balance will allow me, recall, to use syntax like this, where I can pretend as though balance is indeed with no underscore an instance variable. 
+
+But I can now prevent code like mine in main from trying to change balance. Because I do not have a setter, I would not be able to do something like account balance equals 1,000 to just give myself 1,000 or coins because I have not defined a setter. So again, per our focus on object-oriented programming, these properties just allow me some finer-grained control. 

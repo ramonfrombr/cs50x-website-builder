@@ -1,0 +1,26 @@
+
+So let me propose, if we go back to students.py here, and we revert back to the approach where we have get_name as the function, both used and defined here, and that function returns the student's name, what happens to be clear is that the sorted function will use the value of key-- get_name, in this case-- calling that function on every dictionary in the list that it's supposed to sort. And that function, get_name, returns the string that sorted will actually use to decide whether things go in this order, left-right, or in this order, right-left. It alphabetizes these things based on that return value. 
+
+So notice that I'm not calling the function get_name here with parentheses. I'm passing it in only by its name so that the sorted function can call that get name function for me. 
+
+Now, it turns out, as always, if you're defining something, be it a variable or, in this case, a function, and then immediately using it but never, once again, needing the name of that function, like, get_name, we can actually tighten this code up further. I can actually do this. I can get rid of the get_name function all together, just like I could get rid of a variable that isn't strictly necessary. 
+
+And instead of passing key, the name of a function, I can actually pass key what's called a lambda function, which is an anonymous function, a function that just has no name. Why? Because you don't need to give it a name if you're only going to call it in one place. And the syntax for this in Python is a little weird. But if I do key equals literally the word lambda, then something like student, which is the name of the parameter I expect this function to take, and then I don't even type the Return key. I instead just say, student, bracket, name. 
+
+So what am I doing here with my code? This code here that I've highlighted is equivalent to the get_name function I implemented a moment ago. The syntax is admittedly a little different. I don't use def. 
+
+I didn't even give it a name, like get_name. I, instead, am using this other keyword in Python called lambda, which says, hey, Python, here comes a function, but it has no name. It's anonymous. 
+
+That function takes a parameter. I could call it anything I want. I'm calling it student. Why? Because this function that's passed in as key is called on every one of the students in that list, every one of the dictionaries in that list. 
+
+What do I want this anonymous function to return? Well given a student, I want to index into that dictionary and access their name so that the string Hermione, and Harry, and Ron, and Draco is ultimately returned. And that's what the sorted function uses to decide how to sort these bigger dictionaries that have other keys, like house, as well. 
+
+So if I now go back to my terminal window and run python of students.py, it still seems to work the same, but it's arguably a little better design because I didn't waste lines of code by defining some other function, calling it in one and only one place. I've done it all sort of in one breath, if you will. All right, let me pause here to see if there's any questions specifically about lambda, or anonymous functions, and this tightening up of the code. 
+
+AUDIENCE: I have a question, like whether we could define lambda twice. 
+
+DAVID MALAN: You can use lambda twice. You can create as many anonymous functions as you'd like. And you generally use them in contexts like this, where you want to pass to some other function a function that itself does not need a name. So you can absolutely use it in more than one place. I just have only one use case for it. How about one other question on lambda or anonymous functions specifically? 
+
+AUDIENCE: What if our lambda would take more than one line, for example? 
+
+DAVID MALAN: Sure, if your lambda function takes multiple parameters, that is fine. You can simply specify commas followed by the names of those parameters, maybe x and y or so forth, after the name student. So here too, lambda looks a little different from def in that you don't have parentheses, you don't have the keyword def, you don't have a function name. But ultimately, they achieve that same effect. They create a function anonymously and allow you to pass it in, for instance, as some value here. 

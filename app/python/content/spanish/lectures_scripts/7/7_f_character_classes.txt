@@ -1,0 +1,55 @@
+Ahora honestamente, esta es una expresión regular que es posible que estés acostumbrado a escribir en el mundo real. Por más críptico que parezca, este es el mundo de las expresiones regulares. Con el tiempo te familiarizarás más con esta sintaxis. Pero afortunadamente, algunos de estos patrones son tan comunes que hay atajos incorporados para representar la misma información.
+
+Es decir, no tienes que escribir constantemente todos los símbolos que deseas incluir, porque es probable que algún otro programador haya tenido el mismo problema. Por lo tanto, en las expresiones regulares en sí mismas hay algunos patrones adicionales que puedes usar. De hecho, puedo eliminar por completo este conjunto, desde la "a" hasta la "z" minúscula, desde la "A" hasta la "Z" mayúscula, del 0 al 9 y el guión bajo, y reemplazarlo con una sola barra invertida seguida de "w".
+
+La barra invertida seguida de "w" en este caso representa un "carácter de palabra", que comúnmente se conoce como un símbolo alfanumérico o el guión bajo también. Voy a hacer lo mismo aquí. Voy a resaltar todo el conjunto de corchetes cuadrados, borrarlo y reemplazarlo con una sola barra invertida seguida de "w". Y ahora siento que estamos avanzando, porque aunque es críptico, y hubiera sido más críptico hace un poco de tiempo, ahora al menos comienza a leerse un poco más amigable.
+
+Este "^" a la izquierda significa "comenzar a hacer coincidir desde el principio de la cadena". La barra invertida seguida de "w" significa "cualquier carácter de palabra". El signo "+" significa "uno o más". El símbolo "@" literalmente. Luego, otro carácter de palabra, uno o más. luego un punto literal, luego literalmente "edu", y luego hacer coincidir al final de la cadena, y eso es todo. Por lo tanto, hay más de estos también.
+
+Y no los usaremos todos aquí, pero aquí hay una lista parcial de los patrones que puedes usar dentro de una expresión regular. Uno, tienes la barra invertida seguida de "d" para cualquier dígito decimal, "dígito decimal" significa del 0 al 9. También se hace comúnmente aquí, si quieres hacer lo opuesto a eso, el complemento, por así decirlo, puedes utilizar la barra invertida seguida de mayúscula "D", que es cualquier cosa que no sea un dígito decimal. Por lo tanto, podrían ser letras, puntuación y otros símbolos también.
+
+Mientras tanto, la barra invertida seguida de "s" significa caracteres de espacio en blanco, como un solo espacio o tal vez presionar Tab en el teclado. Eso es espacio en blanco. La barra invertida seguida de mayúscula "S" es el opuesto o el complemento de eso, cualquier cosa que no sea un carácter de espacio en blanco. La barra invertida seguida de "w" ya la hemos visto, un carácter de palabra, así como números y el guión bajo. Y si quieres el complemento o lo opuesto a eso, puedes usar la barra invertida seguida de mayúscula "W" para darte todo excepto un carácter de palabra.
+
+Nuevamente, estos son solo patrones comunes que tanta gente presumiblemente estaba usando en el pasado que ahora están integrados en la sintaxis de expresiones regulares para que puedas expresar de manera más concisa tus mismas ideas. ¿Algún pregunta acerca de este enfoque aquí, donde ahora estamos usando la barra invertida seguida de "w" para representar mi carácter de palabra?
+
+AUDIENCIA: Entonces, lo que quiero preguntar es sobre el enfoque anterior, como el enfoque de corchetes cuadrados. ¿Podríamos aceptar listas ahí?
+
+DAVID MALAN: Sí. Veremos esto en poco tiempo. Pero supongamos que quieres tolerar no solo ".edu", sino que tal vez ".edu" o ".com", puedes hacer esto. Puedes introducir paréntesis y luego puedes usar el operador "o" para combinarlos. Podría decir "com" o "edu". También podrías agregar algo como "us", o "gov", o "net", o cualquier otra cosa, o "org", o algo similar. Y cada una de las barras verticales aquí significa algo especial. Significa "o". Y los paréntesis simplemente agrupan las cosas juntas.
+
+Formalmente, esta es la sintaxis: A o B, A o barra vertical B, significa "A tiene que hacer coincidir o B tiene que hacer coincidir", donde A y B pueden ser cualquier otro patrón que desees. Con paréntesis, puedes agrupar esas cosas juntas. Así como en matemáticas, puedes combinar ideas en una frase y hacer una cosa u otra. Y hay otras sintaxis también que veremos pronto.
+
+¿Otras preguntas sobre estas expresiones regulares y esta sintaxis aquí?
+
+AUDIENCIA: ¿Qué sucede si colocamos espacios en la expresión?
+
+DAVID MALAN: Claro. Si deseas incluir espacios, no puedes usar solo la barra invertida seguida de "w", porque esto es solo un carácter de palabra que incluye caracteres alfabéticos, numéricos o el guión bajo. Pero podrías hacer esto. Podrías volver a este enfoque utilizando corchetes cuadrados. Y podrías decir que es desde "a" hasta "z", o desde "A" hasta "Z", o del 0 al 9, o guión bajo, o presionar la barra espaciadora, un solo espacio. Puedes poner un espacio literal dentro de los corchetes cuadrados, lo que te permitirá detectar un espacio.
+
+Alternativamente, aún podría usar la barra invertida seguida de "w", pero podría combinarlo de la siguiente manera. Podría decir "dame una barra invertida seguida de "w" o una barra invertida seguida de "s", porque recuerda que la barra invertida seguida de "s" es espacio en blanco. Es incluso más que un solo espacio. Podría ser una tabulación. Pero al poner esas cosas entre paréntesis, ahora puedes hacer coincidir tanto la cosa a la izquierda como la cosa a la derecha una o más veces.
+
+¿Qué tal otra pregunta sobre estas expresiones regulares?
+
+AUDIENCIA: Perfecto. Entonces, iba a preguntar, ¿la barra invertida seguida de "w" incluye un punto? Porque... No, está bien.
+
+DAVID MALAN: No, solo incluye letras, números y guión bajo, eso es todo.
+
+AUDIENCIA: Y estaba pensando, diste un ejemplo al principio que tenía espacios, como "este es mi correo electrónico, tal y tal". Creo que nuestra versión actual, o incluso hace un tiempo, dejó de aceptar eso. ¿Fue por el ^ o por algo más?
+
+DAVID MALAN: No, la razón por la que estaba tratando los espacios en otras palabras en mi dirección de correo electrónico como malan@harvard.edu fue porque inicialmente estábamos usando "." o "+", que es cualquier carácter. E incluso después de eso, dijimos que cualquier cosa excepto el signo "@", que incluye espacios. Solo cuando comencé a usar corchetes cuadrados y "a" a "z" y del 0 al 9 y el guión bajo finalmente llegamos al punto en el que rechazaríamos los espacios.
+
+Y de hecho, puedo ejecutar esto aquí. Permíteme ir a la versión actual de mi código en VS Code, que está utilizando nuevamente las barras invertidas seguidas de "w" para los caracteres de palabra, permíteme ejecutar python validate.py e incorrectamente escribir algo como "mi dirección de correo electrónico es malan@harvard.edu", punto, que tiene espacios a la izquierda de mi nombre de usuario, y ahora es inválido, porque el espacio no es un carácter de palabra.
+
+También notarán que técnicamente no permito puntos. Y algunos de ustedes podrían estar pensando, un momento. Mi dirección de Gmail tiene un punto en ella. Eso es algo que todavía tendremos que solucionar.
+
+Ahora, una cosa que aún no estamos manejando correctamente es sobreescribir frente a minúsculas. La barra invertida seguida de "w" técnicamente maneja tanto letras minúsculas como mayúsculas, porque es exactamente lo mismo que ese conjunto previo que tenía de la "a" minúscula a la "z" minúscula y de la "A" mayúscula a la "Z" mayúscula. Pero mira esto.
+
+Permíteme continuar en mi forma actual y ejecutar python validate.py, y simplemente porque tengo activada la tecla Bloq Mayús, MALAN@HARVARD.EDU, gritando mi dirección de correo electrónico. Va a estar bien en términos de MALAN. Va a estar bien en términos de HARVARD, porque coinciden con la barra invertida seguida de "w", que incluye minúsculas y mayúsculas. Pero estoy a punto de ver inválido.
+
+¿Por qué? ¿Por qué es inválido MALAN@HARVARD.EDU cuando está todo en mayúsculas aquí, a pesar de que estoy usando la barra invertida seguida de "w"?
+
+AUDIENCIA: Sí. Estás pidiendo que el ".edu" esté en minúsculas, y lo estás escribiendo en mayúsculas.
+
+DAVID MALAN: Exacto. Estoy escribiendo mi dirección de correo electrónico en todas mayúsculas, pero estoy buscando literalmente ".edu". Y como los veo a ustedes con AirPods y a muchos de ustedes con auriculares, me disculpo por gritar en mi micrófono en este momento para hacer este punto. Pero veamos si no podemos solucionarlo.
+
+Bueno, si mi patrón en la línea 5 espera que esté en minúsculas, en realidad hay algunas formas en las que puedo solucionarlo. Una sería algo que hemos visto antes. Podría forzar que la entrada del usuario esté en minúsculas. Y podría añadir a la parte final de mi primera línea .lower y forzar así la minúscula.
+
+Alternativamente, también podría hacer eso un poco más tarde. En lugar de pasar un correo electrónico, podría pasar la versión en minúsculas del correo electrónico, porque las direcciones de correo electrónico deben ser insensibles a mayúsculas y minúsculas. Eso también funcionaría.

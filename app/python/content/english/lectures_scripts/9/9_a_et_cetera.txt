@@ -1,0 +1,7 @@
+[MUSIC PLAYING] DAVID J. MALAN: All right. This is CS50'S Introduction to Programming with Python. My name is David Malan. And over these past many weeks have we focused on functions and variables early on, then conditionals, and loops, and exceptions, a bit of libraries, unit test file layout, regular expressions, object-oriented programming, and really, et cetera. 
+
+And indeed, that's where we focus today, is on all the more that you can do with Python and programming more generally beyond some of those fundamental concepts as well. In fact, if you start to flip through the documentation for Python and all of its form, all of which is as always accessible at docs.python.org, you'll see additional documentation on Python's own tutorial and library, its reference, its how-to. 
+
+And among all of those various documents as well as others more online, you'll see that there's some tidbits that we didn't quite touch on. And indeed, even though we themed these past several weeks of around fairly broad topics that are rather essential for doing typical types of problems in Python, it turns out there's quite a number of other features as well, that we didn't necessarily touch on, that didn't necessarily fit within any of those overarching concepts, or might have been a little too much too soon if we did them too early on in the course. 
+
+And so, in today, our final lecture, well, we focus really on all the more that you can do with Python and hopefully whet your appetite for teaching yourself all the more to.
