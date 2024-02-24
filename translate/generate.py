@@ -57,7 +57,7 @@ def generate_file_manual(
 
     translated_content = remove_leading_and_trailing_quote(translated_content)
 
-    new_file = open(f'{file_destination}/{f}.{extension}', 'w')
+    new_file = open(f'{file_destination}/{f}', 'w')
     new_file.writelines(translated_content)
 
 def generate_file_psets_code(

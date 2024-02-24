@@ -9,6 +9,7 @@ from translate_functions.translate_lectures_code import translate_lectures_code
 from translate_functions.translate_pages import translate_pages
 from translate_functions.translate_lectures_scripts import translate_lectures_scripts
 from translate_functions.translate_lectures_slides import translate_lectures_slides
+from translate_functions.translate_manual import translate_manual
 from translate_types import TypeCourse, TypeLanguage, TypeContent
 from constants import COURSES, LANGUAGES, ContentTypes
 from check_translation import check
@@ -67,6 +68,8 @@ else:
                 translate_lectures_code(COURSE, LANGUAGE)
             case ContentTypes.LECTURES_SLIDES:
                 translate_lectures_slides(COURSE, LANGUAGE)
+            case ContentTypes.MANUAL:
+                translate_manual(COURSE, LANGUAGE)
             case _:
                 print("Content type not found")
         print("Finished translation")

@@ -1,10 +1,10 @@
 let contador = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector("button").onclick = count;
+    document.querySelector("button").onclick = contar;
 });
 
-function count() {
+function contar() {
     contador++;
 
     if (contador % 10 === 0) {

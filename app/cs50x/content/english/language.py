@@ -4,11 +4,17 @@ class IMenu(TypedDict):
     title: str
     intro: str
     week: str
+    week0: str
+    week1: str
     week2: str
     week3: str
     week4: str
     week5: str
-    cybersecurity: str
+    week6: str
+    week7: str
+    week8: str
+    week9: str
+    week10: str
     seminars: str
     project: str
     honesty: str
@@ -43,6 +49,7 @@ class IWeekPage(TypedDict):
     lab: str
     problem_set: str
     study_guide: str
+    final_project: str
 
 class IWeek(TypedDict):
     name: str
@@ -100,11 +107,16 @@ menu: IMenu = {
     "title": "This is CS50x",
     "intro": "Harvard University's computer science course",
     "week": "Week",
+    "week0": "Scratch",
     "week2": "Arrays",
     "week3": "Algorithms",
     "week4": "Memory",
     "week5": "Data Structures",
-    "cybersecurity": "Cybersecurity",
+    "week6": "Python",
+    "week7": "SQL",
+    "week8": "HTML, CSS, JavaScript",
+    "week9": "Flask",
+    "week10": "Cybersecurity",
     "seminars": "Seminars",
     "project": "Final Project",
     "honesty": "Academic Honesty",
@@ -139,7 +151,8 @@ week_page: IWeekPage = {
     "practice_problems": "Practice Problems",
     "lab": "Lab",
     "problem_set": "Problem List",
-    "study_guide": "Study Guide"
+    "study_guide": "Study Guide",
+    "final_project": "Final Project"
 }
 
 week_0: IWeek = {
@@ -459,16 +472,6 @@ week_10: IWeek = {
     "google_slides_link": "",
     "pdf_slides_link": "",
     "number": 10,
-    "study_guide": "",
-    "lecture_url": "",
-    "lecture_embed_url": "",
-}
-
-cybersecurity: IWeek  = {
-    "name": "Cybersecurity",
-    "google_slides_link": "",
-    "pdf_slides_link": "",
-    "number": 11,
     "study_guide": "",
     "lecture_url": "",
     "lecture_embed_url": "",

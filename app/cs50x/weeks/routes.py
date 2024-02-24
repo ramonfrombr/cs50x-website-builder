@@ -15,7 +15,6 @@ from ..content.english.language import (
     week_8 as english_week_8,
     week_9 as english_week_9,
     week_10 as english_week_10,
-    cybersecurity as english_cybersecurity
 )
 
 from ..content.spanish.language import (
@@ -31,7 +30,6 @@ from ..content.spanish.language import (
     week_8 as spanish_week_8,
     week_9 as spanish_week_9,
     week_10 as spanish_week_10,
-    cybersecurity as spanish_cybersecurity
 )
 
 from ..content.portuguese.language import (
@@ -47,7 +45,6 @@ from ..content.portuguese.language import (
     week_8 as portuguese_week_8,
     week_9 as portuguese_week_9,
     week_10 as portuguese_week_10,
-    cybersecurity as portuguese_cybersecurity
 )
 
 from ..content.french.language import (
@@ -63,7 +60,6 @@ from ..content.french.language import (
     week_8 as french_week_8,
     week_9 as french_week_9,
     week_10 as french_week_10,
-    cybersecurity as french_cybersecurity
 )
 
 if os.environ["COURSE_LANGUAGE"] == "portuguese":
@@ -80,7 +76,6 @@ if os.environ["COURSE_LANGUAGE"] == "portuguese":
         "week8": portuguese_week_8,
         "week9": portuguese_week_9,
         "week10": portuguese_week_10,
-        "cybersecurity": portuguese_cybersecurity,
     }
 elif os.environ["COURSE_LANGUAGE"] == "spanish":
     weeks_content = {
@@ -96,7 +91,6 @@ elif os.environ["COURSE_LANGUAGE"] == "spanish":
         "week8": spanish_week_8,
         "week9": spanish_week_9,
         "week10": spanish_week_10,
-        "cybersecurity": spanish_cybersecurity,
     }
 elif os.environ["COURSE_LANGUAGE"] == "french":
     weeks_content = {
@@ -112,7 +106,6 @@ elif os.environ["COURSE_LANGUAGE"] == "french":
         "week8": french_week_8,
         "week9": french_week_9,
         "week10": french_week_10,
-        "cybersecurity": french_cybersecurity,
     }
 elif os.environ["COURSE_LANGUAGE"] == "english":
     weeks_content = {
@@ -128,7 +121,6 @@ elif os.environ["COURSE_LANGUAGE"] == "english":
         "week8": english_week_8,
         "week9": english_week_9,
         "week10": english_week_10,
-        "cybersecurity": english_cybersecurity,
     }
 
 @bp.route('/')
@@ -232,16 +224,7 @@ def week9():
 @bp.route('/10.html')
 def week10():
     return render_template(
-        'weeks/10.html',
-        week_page=weeks_content["week_page"],
-        week=weeks_content["week10"]
-    )
-
-@bp.route('/ciberseguranca')
-@bp.route('/ciberseguranca.html')
-def cybersecurity():
-    return render_template(
         'weeks/layout.html',
         week_page=weeks_content["week_page"],
-        week=weeks_content["cybersecurity"]
+        week=weeks_content["week10"]
     )

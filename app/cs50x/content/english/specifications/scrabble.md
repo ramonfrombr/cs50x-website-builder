@@ -1,187 +1,300 @@
-# Lab 2: Scrabble
+# Scrabble
 
-<div class="alert" data-alert="warning" role="alert"><p>You are welcome to collaborate with one or two classmates on this lab, though it is expected that every student in any such group contribute equally to the lab.</p></div>
+![Scrabble Board](scrabble.png)
 
-Determine which of two Scrabble words is worth more.
+## Problem to Solve
+
+In the game of [Scrabble](https://scrabble.hasbro.com/en-us/rules), players create words to score points, and the number of points is the sum of the point values of each letter in the word.
+
+| A   | B   | C   | D   | E   | F   | G   | H   | I   | J   | K   | L   | M   | N   | O   | P   | Q   | R   | S   | T   | U   | V   | W   | X   | Y   | Z   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1   | 3   | 3   | 2   | 1   | 4   | 2   | 4   | 1   | 8   | 5   | 1   | 3   | 1   | 1   | 3   | 10  | 1   | 1   | 1   | 1   | 4   | 4   | 8   | 4   | 10  |
+
+For example, if we wanted to score the word “CODE”, we would note that the ‘C’ is worth 3 points, the ‘O’ is worth 1 point, the ‘D’ is worth 2 points, and the ‘E’ is worth 1 point. Summing these, we get that “CODE” is worth 7 points.
+
+In a file called `scrabble.c` in a folder called `scrabble`, implement a program in C that determines the winner of a short Scrabble-like game. Your program should prompt for input twice: once for “Player 1” to input their word and once for “Player 2” to input their word. Then, depending on which player scores the most points, your program should either print “Player 1 wins!”, “Player 2 wins!”, or “Tie!” (in the event the two players score equal points).
+
+## Demo
+
+## Advice and Hints
+
+Write some code that you know will compile
+
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+
+    int main(void)
+    {
+
+    }
+
+Notice that you’ve now included a few header files that will give you access to functions which might help you solve this problem.
+
+Write some pseudocode before writing more code
+
+If unsure how to solve the problem itself, break it down into smaller problems that you can probably solve first. For instance, this problem is really only a handful of problems:
+
+1.  Prompt for the user for two words
+2.  Compute the score of each word
+3.  Print the winner
+
+Let’s write some pseudcode as comments to remind you to do just that:
+
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+
+    int main(void)
+    {
+        // Prompt the user for two words
+
+        // Compute the score of each word
+
+        // Print the winner
+    }
+
+Some problems in problem sets, like this one, might contain spoilers (like the next one) that ultimately walk you through the entire solution. While you are permitted to use this code, we really do strongly encourage you to try things out yourself first! The other problems in the problem set won’t have this sort of walkthrough, and typically the problem that contains the “full spoiler” is a warm-up version of the bigger problem you’ll later need to tackle.
+
+Convert the pseudocode to code
+
+First, consider how you might prompt the user for two words. Recall that `get_string`, a function in the CS50 library, can prompt the user for a string.
+
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+
+    int main(void)
+    {
+        // Prompt the user for two words
+        string word1 = get_string("Player 1: ");
+        string word2 = get_string("Player 2: ");
+
+        // Compute the score of each word
+
+        // Print the winner
+    }
+
+Next consider how to compute the score of each word. Since the same scoring algorithm applies to both words, you have a good opportunity for _abstraction_. Here we’ll define a function called `compute_score` that takes a string, called `word`, as input, and then returns `word`’s score as an `int`.
+
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+
+    int compute_score(string word);
+
+    int main(void)
+    {
+        // Prompt the user for two words
+        string word1 = get_string("Player 1: ");
+        string word2 = get_string("Player 2: ");
+
+        // Compute the score of each word
+        int score1 = compute_score(word1);
+        int score2 = compute_score(word2);
+
+        // Print the winner
+    }
+
+    int compute_score(string word)
+    {
+        // Compute and return score for word
+    }
+
+Now turn to implementing `compute_score`. To compute the score of a word, you need to know the point value of each letter in the word. You can associate letters and their point values with an _array_. Imagine an array of 26 `int`s, called `POINTS`, in which the first number is the point value for ‘A’, the second number is the point value for ‘B’, and so on. By declaring and initializing such an array outside of any single function, you can ensure this array is accessible to any function, including `compute_score`.
+
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+
+    // Points assigned to each letter of the alphabet
+    int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+
+    int compute_score(string word);
+
+    int main(void)
+    {
+        // Prompt the user for two words
+        string word1 = get_string("Player 1: ");
+        string word2 = get_string("Player 2: ");
+
+        // Compute the score of each word
+        int score1 = compute_score(word1);
+        int score2 = compute_score(word2);
+
+        // Print the winner
+    }
+
+    int compute_score(string word)
+    {
+        // Compute and return score for word
+    }
+
+To implement `compute_score`, first try to find the point value of a single letter in `word`.
+
+-   Recall that to find the character at the nth index of a string, `s`, you can write `s[n]`. So `word[0]`, for example, will give you the first character of `word`.
+-   Now, recall that computers represent characters using [ASCII](http://asciitable.com/), a standard that represents each character as a number.
+-   Recall too that the 0th index of `POINTS`, `POINTS[0]`, gives you the point value of ‘A’. Think about how you could transform the numeric representation of ‘A’ into the index of its point value. Now, what about ‘a’? You’ll need to apply different transformations to upper- and lower-case letters, so you may find the functions [`isupper`](https://manual.cs50.io/3/isupper) and [`islower`](https://manual.cs50.io/3/islower) to be helpful to you.
+-   Keep in mind that characters that are _not_ letters should be given zero points For example, `!` is worth 0 points.
+
+If you can properly calculate the value of _one_ character in `words`, odds are you can use a loop to sum the points for the rest of the characters. Once you’ve tried the above on your own, consider this (quite revealing!) hint below.
+
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+
+    // Points assigned to each letter of the alphabet
+    int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+
+    int compute_score(string word);
+
+    int main(void)
+    {
+        // Prompt the user for two words
+        string word1 = get_string("Player 1: ");
+        string word2 = get_string("Player 2: ");
+
+        // Compute the score of each word
+        int score1 = compute_score(word1);
+        int score2 = compute_score(word2);
+
+        // Print the winner
+    }
+
+    int compute_score(string word)
+    {
+        // Keep track of score
+        int score = 0;
+
+        // Compute score for each character
+        for (int i = 0, len = strlen(word); i < len; i++)
+        {
+            if (isupper(word[i]))
+            {
+                score += POINTS[word[i] - 'A'];
+            }
+            else if (islower(word[i]))
+            {
+                score += POINTS[word[i] - 'a'];
+            }
+        }
+
+        return score;
+    }
+
+Finally, finish your pseudocode’s last step: printing the winner. Recall that an `if` statement can be used to check if a condition is true, and that the additional usage of `else if` or `else` can check for other (exclusive) conditions.
+
+    if (/* Player 1 wins */)
+    {
+        // ...
+    }
+    else if (/* Player 2 wins */)
+    {
+        // ...
+    }
+    else
+    {
+        // ...
+    }
+
+And once you’ve tried the above, feel free to take a peek at the hint (or, rather, complete solution!) below.
+
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+
+    // Points assigned to each letter of the alphabet
+    int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+
+    int compute_score(string word);
+
+    int main(void)
+    {
+        // Prompt the user for two words
+        string word1 = get_string("Player 1: ");
+        string word2 = get_string("Player 2: ");
+
+        // Compute the score of each word
+        int score1 = compute_score(word1);
+        int score2 = compute_score(word2);
+
+        // Print the winner
+        if (score1 > score2)
+        {
+            printf("Player 1 wins!\n");
+        }
+        else if (score1 < score2)
+        {
+            printf("Player 2 wins!\n");
+        }
+        else
+        {
+            printf("Tie!\n");
+        }
+    }
+
+    int compute_score(string word)
+    {
+        // Keep track of score
+        int score = 0;
+
+        // Compute score for each character
+        for (int i = 0, len = strlen(word); i < len; i++)
+        {
+            if (isupper(word[i]))
+            {
+                score += POINTS[word[i] - 'A'];
+            }
+            else if (islower(word[i]))
+            {
+                score += POINTS[word[i] - 'a'];
+            }
+        }
+
+        return score;
+    }
+
+## How to Test
+
+Your program should behave per the examples below.
+
+    $ ./scrabble
+    Player 1: Question?
+    Player 2: Question!
+    Tie!
+
+
+    $ ./scrabble
+    Player 1: red
+    Player 2: wheelbarrow
+    Player 2 wins!
+
 
     $ ./scrabble
     Player 1: COMPUTER
     Player 2: science
     Player 1 wins!
 
-## Getting Started
 
-Open [VS Code](https://code.cs50.io/).
+    $ ./scrabble
+    Player 1: Scrabble
+    Player 2: wiNNeR
+    Player 1 wins!
 
-Start by clicking inside your terminal window, then execute `cd` by itself. You should find that its “prompt” resembles the below.
+### Correctness
 
-    $
+In your terminal, execute the below to check your work’s correctness.
 
-Click inside of that terminal window and then execute
+    check50 cs50/problems/2024/x/scrabble
 
-    wget https://cdn.cs50.net/2022/fall/labs/2/scrabble.zip
-
-followed by Enter in order to download a ZIP called `scrabble.zip` in your codespace. Take care not to overlook the space between `wget` and the following URL, or any other character for that matter!
-
-Now execute
-
-    unzip scrabble.zip
-
-to create a folder called `scrabble`. You no longer need the ZIP file, so you can execute
-
-    rm scrabble.zip
-
-and respond with “y” followed by Enter at the prompt to remove the ZIP file you downloaded.
-
-Now type
-
-    cd scrabble
-
-followed by Enter to move yourself into (i.e., open) that directory. Your prompt should now resemble the below.
-
-    scrabble/ $
-
-If all was successful, you should execute
-
-    ls
-
-and you should see a file called `scrabble.c`. Open that file by executing the below:
-
-    code scrabble.c
-
-If you run into any trouble, follow these same steps steps again and see if you can determine where you went wrong!
-
-## Background
-
-In the game of [Scrabble](https://scrabble.hasbro.com/en-us/rules), players create words to score points, and the number of points is the sum of the point values of each letter in the word.
-
-<table>
-  <thead>
-    <tr>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-      <th>D</th>
-      <th>E</th>
-      <th>F</th>
-      <th>G</th>
-      <th>H</th>
-      <th>I</th>
-      <th>J</th>
-      <th>K</th>
-      <th>L</th>
-      <th>M</th>
-      <th>N</th>
-      <th>O</th>
-      <th>P</th>
-      <th>Q</th>
-      <th>R</th>
-      <th>S</th>
-      <th>T</th>
-      <th>U</th>
-      <th>V</th>
-      <th>W</th>
-      <th>X</th>
-      <th>Y</th>
-      <th>Z</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>3</td>
-      <td>3</td>
-      <td>2</td>
-      <td>1</td>
-      <td>4</td>
-      <td>2</td>
-      <td>4</td>
-      <td>1</td>
-      <td>8</td>
-      <td>5</td>
-      <td>1</td>
-      <td>3</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>10</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-      <td>8</td>
-      <td>4</td>
-      <td>10</td>
-    </tr>
-  </tbody>
-</table>
-
-For example, if we wanted to score the word `Code`, we would note that in general Scrabble rules, the `C` is worth `3` points, the `o` is worth `1` point, the `d` is worth `2` points, and the `e` is worth `1` point. Summing these, we get that `Code` is worth `3 + 1 + 2 + 1 = 7` points.
-
-## Implementation Details
-
-Complete the implementation of `scrabble.c`, such that it determines the winner of a short scrabble-like game, where two players each enter their word, and the higher scoring player wins.
-
-- Notice that we’ve stored the point values of each letter of the alphabet in an integer array named `POINTS`.
-  - For example, `A` or `a` is worth 1 point (represented by `POINTS[0]`), `B` or `b` is worth 3 points (represented by `POINTS[1]`), etc.
-- Notice that we’ve created a prototype for a helper function called `compute_score()` that takes a string as input and returns an `int`. Whenever we would like to assign point values to a particular word, we can call this function. Note that this prototype is required for C to know that `compute_score()` exists later in the program.
-- In `main()`, the program prompts the two players for their words using the `get_string()` function. These values are stored inside variables named `word1` and `word2`.
-- In `compute_score()`, your program should compute, using the `POINTS` array, and return the score for the string argument. Characters that are not letters should be given zero points, and uppercase and lowercase letters should be given the same point values.
-  - For example, `!` is worth `0` points while `A` and `a` are both worth `1` point.
-  - Though Scrabble rules normally require that a word be in the dictionary, no need to check for that in this problem!
-- In `main()`, your program should print, depending on the players’ scores, `Player 1 wins!`, `Player 2 wins!`, or `Tie!`.
-
-### Walkthrough
-
-<div class="alert" data-alert="primary" role="alert"><p>This video was recorded when the course was still using CS50 IDE for writing code. Though the interface may look different from your codespace, the behavior of the two environments should be largely similar!</p></div>
-
-<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://video.cs50.io/RtjxxxlN1gc"></iframe>
-
-### Hints
-
-- You may find the functions `isupper()` and `islower()` to be helpful to you. These functions take in a character as the argument and return a boolean.
-- To find the value at the `n`th index of an array called `arr`, we can write `arr[n]`. We can apply this to strings as well, as strings are arrays of characters.
-- Recall that computers represent characters using [ASCII](https://asciitable.com/), a standard that represents each character as a number.
-
-<details><summary>Not sure how to solve?</summary><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://video.cs50.io/USiLkXuXJEg"></iframe></details>
-
-### How to Test Your Code
-
-Your program should behave per the examples below.
-
-```
-$ ./scrabble
-Player 1: Question?
-Player 2: Question!
-Tie!
-```
-
-```
-$ ./scrabble
-Player 1: Oh,
-Player 2: hai!
-Player 2 wins!
-```
-
-```
-$ ./scrabble
-Player 1: COMPUTER
-Player 2: science
-Player 1 wins!
-```
-
-```
-$ ./scrabble
-Player 1: Scrabble
-Player 2: wiNNeR
-Player 1 wins!
-```
-
-Execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
-
-    check50 cs50/labs/2023/x/scrabble
+### Style
 
 Execute the below to evaluate the style of your code using `style50`.
 
@@ -191,4 +304,4 @@ Execute the below to evaluate the style of your code using `style50`.
 
 In your terminal, execute the below to submit your work.
 
-    submit50 cs50/labs/2023/x/scrabble
+    submit50 cs50/problems/2024/x/scrabble

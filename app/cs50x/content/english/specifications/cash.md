@@ -1,62 +1,26 @@
 # Cash
 
-## Getting Started
+![US coins](coins.jpg)
 
-Open [VS Code](https://code.cs50.io/).
+## Problem to Solve
 
-Start by clicking inside your terminal window, then execute `cd` by itself. You should find that its “prompt” resembles the below.
+Suppose you work at a store and a customer gives you $1.00 (100 cents) for candy that costs $0.50 (50 cents). You’ll need to pay them their “change,” the amount leftover after paying for the cost of the candy. When making change, odds are you want to minimize the number of coins you’re dispensing for each customer, lest you run out (or annoy the customer!). In a file called `cash.c` in a folder called `cash`, implement a program in C that prints the minimum coins needed to make the given amount of change, in cents, as in the below:
 
-```
-$
-```
+    Change owed: 25
+    1
 
-Click inside of that terminal window and then execute
+But prompt the user for an `int` greater than 0, so that the program works for any amount of change:
 
-```
-wget https://cdn.cs50.net/2022/fall/psets/1/cash.zip
-```
+    Change owed: 70
+    4
 
-followed by Enter in order to download a ZIP called `cash.zip` in your codespace. Take care not to overlook the space between `wget` and the following URL, or any other character for that matter!
+Re-prompt the user, again and again as needed, if their input is not greater than or equal to 0 (or if their input isn’t an `int` at all!).
 
-Now execute
-
-```
-unzip cash.zip
-```
-
-to create a folder called `cash`. You no longer need the ZIP file, so you can execute
-
-```
-rm cash.zip
-```
-
-and respond with “y” followed by Enter at the prompt to remove the ZIP file you downloaded.
-
-Now type
-
-```
-cd cash
-```
-
-followed by Enter to move yourself into (i.e., open) that directory. Your prompt should now resemble the below.
-
-```
-cash/ $
-```
-
-If all was successful, you should execute
-
-```
-ls
-```
-
-and see a file named `cash.c`. Executing `code cash.c` should open the file where you will type your code for this problem set. If not, retrace your steps and see if you can determine where you went wrong!
+## Demo
 
 ## Greedy Algorithms
 
-![US coins](https://cs50.harvard.edu/x/2023/psets/1/cash/coins.jpg)
-
-When making change, odds are you want to minimize the number of coins you’re dispensing for each customer, lest you run out (or annoy the customer!). Fortunately, computer science has given cashiers everywhere ways to minimize numbers of coins due: greedy algorithms.
+Fortunately, computer science has given cashiers everywhere ways to minimize numbers of coins due: greedy algorithms.
 
 According to the National Institute of Standards and Technology (NIST), a greedy algorithm is one “that always takes the best immediate, or local, solution while finding an answer. Greedy algorithms find the overall, or globally, optimal solution for some optimization problems, but may find less-than-optimal solutions for some instances of other problems.”
 
@@ -64,69 +28,170 @@ What’s all that mean? Well, suppose that a cashier owes a customer some change
 
 It turns out that this greedy approach (i.e., algorithm) is not only locally optimal but also globally so for America’s currency (and also the European Union’s). That is, so long as a cashier has enough of each coin, this largest-to-smallest approach will yield the fewest coins possible. How few? Well, you tell us!
 
-## Implementation Details
+## Advice
 
-In `cash.c`, we’ve implemented most (but not all!) of a program that prompts the user for the number of cents that a customer is owed and then prints the smallest number of coins with which that change can be made. Indeed, `main` is already implemented for you. But notice how `main` calls several functions that aren’t yet implemented! One of those functions, `get_cents`, takes no arguments (as indicated by `void`) and returns an `int`. The rest of the functions all take one argument, an `int`, and also return an `int`. All of them currently return `0` so that the code will compile. But you’ll want to replace every `TODO` and `return 0;` with your own code. Specifically, complete the implementation of those functions as follows:
+Write some code that you know will compile
 
-- Implement `get_cents` in such a way that the function prompts the user for a number of cents using `get_int` and then returns that number as an `int`. If the user inputs a negative `int`, your code should prompt the user again. (But you don’t need to worry about the user inputting, e.g., a `string`, as `get_int` will take care of that for you.) Odds are you’ll find a `do while` loop of help, as in [`mario.c`](https://cdn.cs50.net/2022/fall/lectures/1/src1/mario8.c?highlight)!
-- Implement `calculate_quarters` in such a way that the function calculates (and returns as an `int`) how many quarters a customer should be given if they’re owed some number of cents. For instance, if `cents` is `25`, then `calculate_quarters` should return `1`. If `cents` is `26` or `49` (or anything in between, then `calculate_quarters` should also return `1`. If `cents` is `50` or `74` (or anything in between), then `calculate_quarters` should return `2`. And so forth.
-- Implement `calculate_dimes` in such a way that the function calculates the same for dimes.
-- Implement `calculate_nickels` in such a way that the function calculates the same for nickels.
-- Implement `calculate_pennies` in such a way that the function calculates the same for pennies.
+Even though this program won’t do anything, it should at least compile with `make`!
 
-Note that, unlike functions that only have side effects, functions that return a value should do so explicitly with `return`! Take care not to modify the distribution code itself, only replace the given `TODO`s and the subsequent `return` value! Note too that, recalling the idea of abstraction, each of your calculate functions should accept any value of `cents` , not just those values that the greedy algorithm might suggest. If `cents` is 85, for example, `calculate_dimes` should return 8.
+    #include <cs50.h>
+    #include <stdio.h>
 
-<details><summary>Hint</summary><ul>
-  <li data-marker="*">Recall that there are several sample programs in Week 1’s <a href="https://cdn.cs50.net/2022/fall/lectures/1/src1/">Source Code</a> that illustrate how functions can return a value.</li>
-</ul></details>
+    int main(void)
+    {
 
-Your program should behave per the examples below.
+    }
 
-```
-$ ./cash
-Change owed: 41
-4
-```
-```
-$ ./cash
-Change owed: -41
-Change owed: foo
-Change owed: 41
-4
-```
+Notice that you’ve now included `cs50.h` and `stdio.h`, two “header files” that will give you access to functions that might help you solve this problem.
 
-### How to Test Your Code
+Write some pseudocode before writing more code
 
-For this program, try testing your code manually–it’s good practice:
+If unsure how to solve the problem itself, break it down into smaller problems that you can probably solve first. For instance, this problem is really only a handful of problems:
 
-- If you input `-1`, does your program prompts you again?
-- If you input `0`, does your program output `0`?
-- If you input `1`, does your program output `1` (i.e., one penny)?
-- If you input `4`, does your program output `4` (i.e., four pennies)?
-- If you input `5`, does your program output `1` (i.e., one nickel)?
-- If you input `24`, does your program output `6` (i.e., two dimes and four pennies)?
-- If you input `25`, does your program output `1` (i.e., one quarter)?
-- If you input `26`, does your program output `2` (i.e., one quarter and one penny)?
-- If you input `99`, does your program output `9` (i.e., three quarters, two dimes, and four pennies)?
+1.  Prompt the user for change owed, in cents.
+2.  Calculate how many _quarters_ you should give customer. Subtract the value of those quarters from cents.
+3.  Calculate how many _dimes_ you should give customer. Subtract the value of those dimes from remaining cents.
+4.  Calculate how many _nickels_ you should give customer. Subtract the value of those nickels from remaining cents.
+5.  Calculate how many _pennies_ you should give customer. Subtract the value of those pennies from remaining cents.
+6.  Sum the number of quarters, dimes, nickels, and pennies used.
+7.  Print that sum.
 
-You can also execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
+This is the greedy algorithm you can use to solve this problem, so let’s write some pseudcode as comments to remind you to do just that:
 
-```
-check50 cs50/problems/2023/x/cash
-```
+    #include <cs50.h>
+    #include <stdio.h>
 
-<details><summary>Is <code>check50</code> failing to compile your code?</summary><p>Be sure you have only modified those parts of the program marked as <code class="language-plaintext highlighter-rouge">TODO</code>.  If you modify the <code class="language-plaintext highlighter-rouge">main</code> function or add any global variables, for example, your code may <strong>fail to compile</strong>.  <code class="language-plaintext highlighter-rouge">check50</code> will test your five functions independently, beyond just checking for the final answer.</p></details>
+    int main(void)
+    {
+        // Prompt the user for change owed, in cents
 
-And execute the below to evaluate the style of your code using `style50`.
+        // Calculate how many quarters you should give customer
+        // Subtract the value of those quarters from cents
 
-```
-style50 cash.c
-```
+        // Calculate how many dimes you should give customer
+        // Subtract the value of those dimes from remaining cents
+
+        // Calculate how many nickels you should give customer
+        // Subtract the value of those nickels from remaining cents
+
+        // Calculate how many pennies you should give customer
+        // Subtract the value of those pennies from remaining cents
+
+        // Sum the number of quarters, dimes, nickels, and pennies used
+        // Print that sum
+    }
+
+Convert the pseudocode to code
+
+First, consider how you might prompt the user for the cents they are owed. Recall that a `do while` loop is helpful when you want to do something at least once, and possibly again and again, as in the below:
+
+    #include <cs50.h>
+    #include <stdio.h>
+
+    int main(void)
+    {
+        // Prompt the user for change owed, in cents
+        int cents;
+        do
+        {
+            cents = get_int("Change owed: ");
+        }
+        while (cents < 0);
+    }
+
+It’s wise to stop here and `make` your program. Test to be sure your program compiles, and that it reprompts you if you enter less than 0 cents (or if you enter an input like “cat”).
+
+Next, consider how to calculate how many quarters you should give the customer. Since we’re using a greedy algorithm, this question becomes “what’s the _greatest_ number of quarters could you give them?”. You _could_ write a solution to this problem in your `main` function. But, it might clear up your thinking to write a new function: one called `calculate_quarters`. That way you can better focus on the logic to calculate quarters. Later, you can integrate this function into your larger solution.
+
+    int calculate_quarters(int cents)
+    {
+        // Calculate how many quarters you should give customer
+    }
+
+Notice that this function is indeed named `calculate_quarters`. Per `int cents` in parentheses, it takes an `int` called `cents` as input. And, per the `int` in front of its name, it should also “return” an `int`. That is, the output of this function is an integer: the number of quarters that fit into cents. If curious about this idea, recall there are several sample programs in Week 1’s [Source Code](https://github.com/cs50/lectures/tree/2023/fall/1/src1) that illustrate how functions can return a value.
+
+Now consider this way of implementing `calculate_quarters` by adding to the number of quarters until we’ve run out of cents to convert to quarters:
+
+    int calculate_quarters(int cents)
+    {
+        // Calculate how many quarters you should give customer
+        int quarters = 0;
+        while (cents >= 25)
+        {
+            quarters++;
+            cents = cents - 25;
+        }
+        return quarters;
+    }
+
+Granted, there is at least one simpler way to solve this `calculate_quarters` problem. But we’ll leave that up to you to figure out!
+
+With `calculate_quarters` functioning as intended, you can integrate this function into your program. Take care to “declare” the function’s “signature” (i.e., `int calculate_quarters(int cents)`) above your `main` function, so you can indeed use `calculate_quarters` there while defining it later, below `main`.
+
+    #include <cs50.h>
+    #include <stdio.h>
+
+    int calculate_quarters(int cents);
+
+    int main(void)
+    {
+        // Prompt the user for change owed, in cents
+        int cents;
+        do
+        {
+            cents = get_int("Change owed: ");
+        }
+        while (cents < 0);
+
+        // Calculate how many quarters you should give customer
+        int quarters = calculate_quarters(cents);
+
+        // Subtract the value of those quarters from cents
+        cents = cents - (quarters * 25);
+    }
+
+    int calculate_quarters(int cents)
+    {
+        // Calculate how many quarters you should give customer
+        int quarters = 0;
+        while (cents >= 25)
+        {
+            quarters++;
+            cents = cents - 25;
+        }
+        return quarters;
+    }
+
+A few problems down, and a few more to go! Notice a pattern you could re-use here?
+
+## How to Test
+
+For this program, try testing your code manually. It’s good practice:
+
+-   If you input `-1`, does your program prompt you again?
+-   If you input `0`, does your program output `0`?
+-   If you input `1`, does your program output `1` (i.e., one penny)?
+-   If you input `4`, does your program output `4` (i.e., four pennies)?
+-   If you input `5`, does your program output `1` (i.e., one nickel)?
+-   If you input `24`, does your program output `6` (i.e., two dimes and four pennies)?
+-   If you input `25`, does your program output `1` (i.e., one quarter)?
+-   If you input `26`, does your program output `2` (i.e., one quarter and one penny)?
+-   If you input `99`, does your program output `9` (i.e., three quarters, two dimes, and four pennies)?
+
+### Correctness
+
+In your terminal, execute the below to check your work’s correctness.
+
+    check50 cs50/problems/2024/x/cash
+
+### Style
+
+Execute the below to evaluate the style of your code using `style50`.
+
+    style50 cash.c
 
 ## How to Submit
 
 In your terminal, execute the below to submit your work.
 
-```
-submit50 cs50/problems/2023/x/cash
-```
+    submit50 cs50/problems/2024/x/cash
