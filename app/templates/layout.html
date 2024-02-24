@@ -59,9 +59,12 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{{ url_for('static', filename='highlight/styles/atom-one-light.min.css') }}"
+      href="{{ url_for('static', filename='highlight/styles/atom-one-dark.css') }}"
     />
     <script>hljs.initHighlightingOnLoad();</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+
     <style>
       code {
         border: 1px solid #dee2e6;
@@ -76,17 +79,27 @@
       pre {
         font-size: inherit;
       }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
     </style>
     <title>CS50x em Português</title>
   </head>
 
   <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({ startOnLoad: true });
+    </script>
     <div class="container-fluid">
+
       <div class="row">
-        {% include 'componentes/menu.html' %}
+        {% include 'components/menu.html' %}
 
         <main class="col-md markdown-body" style="margin-bottom: 286px">
-          {% block conteudo %} {% endblock %}
+          {% block content %} {% endblock %}
         </main>
       </div>
     </div>

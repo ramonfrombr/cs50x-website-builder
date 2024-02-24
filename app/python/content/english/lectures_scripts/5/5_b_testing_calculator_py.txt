@@ -1,0 +1,47 @@
+So let's rewind a few weeks now to a program we wrote a while back, namely to calculate numbers. And specifically, we left off with this calculator on trying to compute the power of a number, like x squared or where x might be two or three or some other number as well. Let me go ahead and resurrect that file by going into my terminal window here and running again code of calculator.py. 
+
+And let me go ahead and pick up where we left off way back when by defining a main function here. And then in my main function, I did something like this. I said, x equals int of input. And I ask the user, what's x, question mark? And then I immediately went ahead and printed out something like, x squared is, and then I passed in as a second argument to print the result of calling a function called square passing in that value, x. 
+
+Now of course, I haven't yet implemented the square function. So let's define that as well. Let me go down a couple of lines and define square. And it takes an argument recall, a parameter that at the time I called n, for number, so I'll do that again, though I could technically choose any name for this variable. And I recall, did this. I returned n times n. 
+
+And there were multiple ways to do this. Squaring a number is multiplying it by itself. So I could also use other syntax here, but this is what we ultimately settled on, and then recall that I ultimately called main in order to kick off the process of running this program. So just as a test manually, let me go ahead and run Python of calculator.py and hit Enter. 
+
+What's x? Let's start with 2. x squared is 4. I think that's correct. So let's run it again, just for good measure. Python of calculator.py, let's type in 3 for x this time. X squared is 9. And I think that's correct. And I might be feeling pretty good at this point, and I go off and submit my code to a course, or I post it on the internet for others to use. 
+
+But I haven't really methodically tested this code. And it's not necessarily the case that it works entirely. In fact, I haven't really considered a number of corner cases. I went with some pretty obvious numbers like 2 and 3, but what about 0? What about negative numbers? What about any number of other infinite numbers? We're not going to test an infinite number of inputs to this, because the program would never halt, but we should test some representative inputs ultimately. 
+
+But before we do that, let's get into the habit of making sure that main isn't always called. Let's adopt this habit, again, of doing If__name__=="__main__", only then should we execute main. And I'm doing this now proactively, because I want to make sure that when I import my square function, perhaps from another library, from another file, treating it as though it's a library, I want to make sure that main is not just automatically called itself. 
+
+Now what do I want to do from here now that I've modified this program as follows? Let's go ahead and write a completely different program whose sole purpose in life is to now test this program. So I've got my actual calculator and calculator.py. I've readied myself to call main conditionally so that I can safely import one or more things from this file in another file. 
+
+What should that other file be? By convention, I'm going to create a file that's called test_, and then because the thing I'm testing is this calculator itself, let's call this file test_calculator.py. That's going to give me a new tab, in which I can write a brand new program whose purpose in life is now specifically to test that program, but really that program's specific functionality. Built into that program is the square function. Let's focus on testing that function. 
+
+So how do I access that function in this program? Recall that I can import a function from another file as though it's a library of my own, a so-called module. So I'm going to do this. From calculator, import square. I could go ahead and just import square itself. But then I would have to prefix my use of square recall by saying calculator dot everywhere, and it's just a little cleaner to just import the one function. 
+
+And now let me go ahead and do this. Let me go ahead and define a function called test square. This too is a convention. If you want to test a function called square, your function for testing should be called test_square. Or alternatively, you could do square_test, I'll adopt this convention here. 
+
+Now what kind of tests can we do? I don't dislike the tests I ran earlier, testing x equals 2 and x equals 3. But every time I want to test my program previously, I would have to do that manually. And that's going to get tedious. It's not going to be easy for someone else to test it. And if I'm actually working in the real world, it would be nice if I could automatically have my program tested again and again by having some automated process run my own code. So let's do that and take the human ultimately out of the equation. 
+
+So how might I go about testing the square function that I've now imported per line one? In my test square function, why don't I do this? If the result of calling square of 2 does not equal 4, why don't we go ahead and print an error message, because I know that in the real world, 2 squared should equal 4, so if square of 2 does not equal 4, there's a bug in my program. There's a bug in my function. I've made a mistake. 
+
+So let me go ahead and print something like that so I or someone else knows 2 squared was not 4, for instance. So I could print out anything here. What should I maybe next test? Let's do more than one test. Let's say if the square of 3 does not equal 3 squared 9, then let's go ahead and print out that 3 squared was not 9. 
+
+So I haven't done any more testing than I did earlier. But I've baked those two tests, x equals 2 and x equals 3, into my own code here, so I can now run those tests automatically, if you will. Now, it's not enough to just define a function called test square. I actually, if I want to run this function, need to call it somehow. And our convention for doing that is the same as always. 
+
+In this file too, let me define main. And main's sole purpose in life is going to be to test square. And now at the bottom of this file, as before, let me go ahead and adopt my convention of if__name__=="__main__", then go ahead and call main. 
+
+So a lot of this is just boilerplate. We've seen this before, defining a main function and calling a function to kick off some process, now adding the conditional at the bottom of the file to make sure I'm only conditionally calling main, just in case I import anything from this file elsewhere. So let's see. Let's go ahead and test my code now. Let me go ahead and run test_calculator Python and hit Enter, and nothing outputs. Nothing outputs. 
+
+But I think it's OK. I think no output is good, because look at my test square function. I'm not printing anything if all seems well. So let's demonstrate as much by going back to my calculator, and let me break it. Let me introduce a bug. Maybe I didn't even get it right the first time. Maybe my code originally looked like this. I wasn't thinking. I forgot my squares. And so I thought that the square of a number is n plus n, instead of n times n, so a reasonable mistake to make, perhaps arithmetically. 
+
+Let me now go back to my test calculator, which I'm not going to change, but I am going to rerun it, python of test_calculator.py. I'm going to cross my fingers here, but for naught, I'm going to see immediately that 3 squared was not 9. Now what is it? Let's see, when your tests fail, how can we put our finger on what's wrong? It's a little interesting that I completely broke my square function, and yet only one of these tests is failing. 
+
+It looks like this test, lines 9 and 10, is fine, because I'm not seeing that output. But of course these two lines, this test, is failing, because 3 squared is not 9 when I'm using plus. So just to be clear here, why is my function only partially broken, just to be clear. Why am I seeing only I error instead of two, even though the square function is now mathematically broken? 
+
+SPEAKER 1: Because 2 plus 2 is 4. 
+
+DAVID MALAN: Yeah, it's as simple as that. I just got lucky that 2 plus 2 is the same thing as 2 times 2. So this is one of those corner cases, and this is why it's good to be in the habit of not just testing one thing, but test several and make sure you're covering your bases, so to speak. 
+
+So I got lucky here. And that explains why I'm seeing only I error, even though the function itself is flawed, but let me propose that there's another way we could do this, because honestly, if I extrapolate from this simple example, running not just two tests but 3, or 4, or 10, or 20 tests, you can imagine that, my God, the code is going to get so much more complicated than the function itself. 
+
+Already, look, in calculator.py, the function in question is two lines long. And yet in test_calculator, the code in question is five lines long. I've written more code to test my code than I actually wrote original code. So the fewer lines of code we can write when testing code, I think the more likely you and I are to do it, because it's going to be literally a little less work and just fewer opportunities for mistakes. 

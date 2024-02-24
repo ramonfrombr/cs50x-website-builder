@@ -1,0 +1,36 @@
+
+Some languages allow you to define variables that are, so to speak, constant. That is, once you have set a value to them, you cannot change the value of that variable. And that tends to be a good thing because it allows you to program defensively. Just in case you accidentally, or someone else, accidentally tries to modify the value of that variable, if you have declared it in some language as a constant, it cannot be changed, or usually cannot be changed without great effort. 
+
+Unfortunately, in Python, we're again on the sort of honor system here. Where we have conventions to indicate that something should be treated as though it's constant. But that's not actually enforced by the language. 
+
+So for instance, let me go back here to VS Code. And let me create a new file, for instance, called meows.py. And let's see if we can't implement the notion of a cat meowing on the screen. So I'll do code of meows.py. And in meows.py, let me go ahead for instance and implement a very simple program that just has a cat meowing three times. 
+
+So how about this. For i in the range of three, go ahead and print out, quote unquote, meow. All right. Well, we've seen in the past how we can clean this up a little bit. For instance, if I'm not actually using i, I might as well Pythonically just change the name of that variable to underscore even though that has no functional effect here. But here we have this three randomly hardcoded, that is, typed explicitly into my code. And it's totally not a big deal when your code is only two lines. 
+
+But imagine that this is a much bigger program with dozens or even hundreds of lines. And imagine that one of those lines just has a three in there somewhere. You're never going to find that three very easily. And it's going to be very easily overlooked by you or colleagues or others that you've hardcoded some magic value like a three right there in your code. 
+
+So it tends to be best practice, not just in Python but other languages as well, any time you have what is essentially a constant, like a number three that shouldn't ever change, is to at least let it bubble up, surface it to the top of your code, so that it's just obvious what your code's constant values are. 
+
+And so, by that I mean this. At the top of this file, it would probably be a little clearer to colleagues, and frankly, me tomorrow after I've forgotten what I did today, to define a variable like meows and set it equal to three. 
+
+And then, instead of hardcoding three here or even lower in a much bigger program, let me just go ahead and pass in that variable's value to my loop. So that now it's just kind of obvious to me that meows is apparently the number of times to meow. 
+
+And if I ever want to change it, the only code I have to change is at the very top of my file. I don't need to go fishing around or figure out what's going to break, what do I need to change. I just know that I can change these constants up at the top. 
+
+The problem though with Python is that Python doesn't actually make variables constant. It's indeed a convention in Python and some other languages to at least capitalize your variables when you want to indicate to the world that you should not touch this. It is constant. But there is literally nothing in my code preventing me from saying, you know what? Today I feel like four meows instead. That would work. 
+
+In other languages though there's typically a keyword or some other mechanism syntactically that would allow you to prevent line three currently from executing. So that when you try to run your code, you would actually get an error message explicitly saying, you cannot do that. So Python, again, is a bit more on the honor system when it comes to these conventions instead. 
+
+Now, it turns out there's other types of constants, quote unquote, that Python typically manifests. And in fact, let me go ahead and change this around a little bit. Let me delete this version of meows. And let me introduce, again, a class from our discussion of object-oriented programming, like a class representing a cat, another real-world entity. 
+
+Recall that within classes, you can have not just instance variables but class variables. That is variables inside of the class that aren't inside of self, per se, but they're accessible to all of the methods inside of that class. Here too, there's a convention but not enforced by Python of having class constants, whereby inside of the class, you might want to have a variable that should, should, should not be changed. But you just want to indicate that visually by capitalizing its name. 
+
+So for instance, if the default number of meows for a cat is meant to be three, I can literally inside of my class but outside of any of my defined methods just create a class variable all capitalized with that same value. And then, if I want to create a method, like meow, for instance, which as an instance method might take in self as we know. And then, I might have my loop here for underscore in the range of-- and now I need to access this. 
+
+The convention would be to say cat.meows to make clear that I want the meows variable that's associated with the class called cat. Then I'm going to go ahead and print out one of these meows. And now, at the bottom of my code, outside of the class, let me go ahead and do something like this. Let me instantiate a cat using the cat constructor. 
+
+Notice this is important. Per our discussion of OOP, the class is capitalized by convention. But the variable over here is lowercase. And I could call it just C or anything else. But I kind of like the symmetry of calling it little cat here and big cat, so to speak, over here. 
+
+And now, if I want this particular cat to meow that default number of three times, I can just do cat.meow like this. And that method meow is going to, per line five, access that class constant. But again, it's constant only in the fact-- only in the sense that you should not touch that, not that it's actually going to be enforced by the language. 
+
+Let me go ahead then and run this with Python of meows.py. And there it is, three of our meows, meow, meow.

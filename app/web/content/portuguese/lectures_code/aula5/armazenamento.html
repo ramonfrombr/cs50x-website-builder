@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <script>
+            // Definir o valor inicial do contador como 0
+            if (!localStorage.getItem("contador"))
+                localStorage.setItem("contador", 0);
+
+            // Carregar o valor atual do contador
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector("#contador").innerHTML =
+                    localStorage.getItem("contador");
+
+                // Contar cada vez que o botão é clicado
+                document.querySelector("button").onclick = () => {
+                    // Incrementar o contador atual
+                    let contador = localStorage.getItem("contador");
+                    contador++;
+
+                    // Atualizar o contador
+                    document.querySelector("#contador").innerHTML = contador;
+                    localStorage.setItem("contador", contador);
+                };
+            });
+        </script>
+        <title>Armazenamento Local</title>
+    </head>
+    <body>
+        <h1 id="contador"></h1>
+        <button>Clique Aqui!</button>
+    </body>
+</html>

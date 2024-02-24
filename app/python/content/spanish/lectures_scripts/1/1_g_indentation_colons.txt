@@ -1,0 +1,7 @@
+INTERLOCUTOR 4: Sí, tengo un par de preguntas. ¿Qué sucede si no se utiliza la indentación?
+
+DAVID MALAN: Si no se utiliza la indentación, tu programa no funcionará. Python es un poco diferente de muchos lenguajes en el sentido de que impone el requisito de la indentación. Algunos de ustedes que han estado programando durante años es posible que no tengan el hábito de indentar correctamente su código. Y una de las características, discutiblemente, de Python es que te obliga a indentar tu código, o de lo contrario simplemente no funcionará. ¿Y creo que tenías otra pregunta?
+
+INTERLOCUTOR 4: Sí, ¿es necesario el dos puntos?
+
+DAVID MALAN: ¿Es necesario el dos puntos? Sí, también es necesario el dos puntos. Así que con Python, lo que ves es lo que obtienes aquí. Efectivamente, debe estar indentado y los dos puntos son necesarios. Python no utiliza, de la misma manera por convención que C, C++ y Java, llaves de apertura y cierre para indicar bloques. En su lugar, se basa, efectivamente, en esta indentación.

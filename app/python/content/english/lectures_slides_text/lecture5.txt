@@ -1,0 +1,40 @@
+
+[0]
+
+Introduction to
+Programming with Python
+Unit Tests
+
+[1]
+
+assert
+
+[2]
+
+AssertionError
+
+[3]
+
+pytest
+
+[4]
+
+pip install pytest
+
+[5]
+
+docs.pytest.org
+
+[6]
+
+packages
+
+[7]
+
+_ _init_ _.py
+
+[8]
+
+Introduction to
+Programming with Python
+Unit Tests

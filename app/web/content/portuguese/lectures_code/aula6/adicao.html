@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <script
+            src="https://unpkg.com/react@17/umd/react.production.min.js"
+            crossorigin
+        ></script>
+        <script
+            src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+            crossorigin
+        ></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <style>
+            #app {
+                text-align: center;
+                font-family: sans-serif;
+            }
+
+            #problema {
+                font-size: 72px;
+            }
+
+            #vencedor {
+                font-size: 72px;
+                color: green;
+            }
+
+            .incorreto {
+                color: red;
+            }
+        </style>
+        <title>Contador</title>
+    </head>
+    <body>
+        <div id="app"></div>
+
+        <script type="text/babel">
+            function App() {
+                const [state, setState] = React.useState({
+                    num1: 1,
+                    num2: 1,
+                    resposta: "",
+                    pontuacao: 0,
+                    incorreto: false,
+                });
+
+                function exibirTelaVencedor() {
+                    return <div id="vencedor">Você ganhou!</div>;
+                }
+
+                function inputKeyPress(event) {
+                    if (event.key === "Enter") {
+                        const _resposta = parseInt(state.resposta);
+                        if (_resposta === state.num1 + state.num2) {
+                            // Usuário acertou a pergunta
+                            setState({
+                                ...state,
+                                pontuacao: state.pontuacao + 1,
+                                resposta: "",
+                                num1: Math.ceil(Math.random() * 10),
+                                num2: Math.ceil(Math.random() * 10),
+                                incorreto: false,
+                            });
+                        } else {
+                            // Usuário errou a pergunta
+                            setState({
+                                ...state,
+                                pontuacao: state.pontuacao - 1,
+                                resposta: "",
+                                incorreto: true,
+                            });
+                        }
+                    }
+                }
+
+                function atualizarResposta(event) {
+                    setState({
+                        ...state,
+                        resposta: event.target.value,
+                    });
+                }
+
+                function exibirProblema() {
+                    return (
+                        <div>
+                            <div
+                                className={state.incorreto ? "incorreto" : ""}
+                                id="problema"
+                            >
+                                {state.num1} + {state.num2}
+                            </div>
+                            <input
+                                onKeyPress={inputKeyPress}
+                                onChange={atualizarResposta}
+                                autoFocus={true}
+                                value={state.resposta}
+                            />
+                            <div>Pontuação: {state.pontuacao}</div>
+                        </div>
+                    );
+                }
+
+                if (state.pontuacao === 10) {
+                    return exibirTelaVencedor();
+                } else {
+                    return exibirProblema();
+                }
+            }
+
+            ReactDOM.render(<App />, document.querySelector("#app"));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+Voy a ir por delante aquí y abrir VS Code. Y en mi ventana de terminal, vamos a seguir adelante y crear a través de código cat.py, un programa en Python que maulla como un gato. Y voy a seguir adelante aquí en esta pestaña de código, y muy simplemente, tal vez, voy a empezar por implementar este gato simplemente usando print. Vamos a hacer que este gato no emita sonidos audibles, sino que simplemente imprima "meow, meow, meow" en la pantalla tres veces.
+
+Bueno, creo que la forma más sencilla de hacer esto es imprimir "meow" una vez, y luego imprimir "meow" de nuevo, y luego imprimir "meow" una última vez en la pantalla. Y ahora déjame ir a mi ventana de terminal, ejecutar Python cat.py, Enter, y "meow, meow, meow". Bien, este programa funciona. Este programa en realidad funciona si mi objetivo es hacer que el gato maúlle tres veces. Y permíteme proponer, solo para ayudarnos a entender lo que está sucediendo dentro de la computadora, que consideremos este diagrama de flujo.
+
+Entonces, como antes, tenemos este diagrama de flujo que comienza con un óvalo, que significa "comenzar a leer aquí". Y luego, observa, va mediante flechas a un "meow, meow, meow", y luego se detiene. Es perfectamente correcto, y sinceramente, es maravillosamente simple, pero me atrevo a decir que aún podemos encontrar fallos en mi código.
+
+¿Por qué se argumenta que mi código está mal diseñado? Ahora, la respuesta va a ser bucles de alguna manera, pero veamos si podemos identificar de qué manera el código está realmente mal diseñado en cierto sentido. Veamos. ¿Alguna idea? Alex?
+
+AUDIENCIA: Bueno, quiero decir, repetir la misma acción tres veces o incluso más no es un buen hábito.
+
+DAVID MALAN: Sí, simplemente me estoy repitiendo a mí mismo. Y honestamente, no es tan grave. Si volvemos a mi código aquí, ¿realmente estoy haciendo algo tan malo al simplemente imprimir "meow, meow, meow" tres veces? No realmente, pero consideremos la extensión lógica de esto. Supongamos que quiero que maúlle cuatro veces o cinco veces o 50 veces.
+
+¿Realmente crees que, incluso si nunca has programado antes, la solución a este problema va a ser hacer copiar y pegar 50 veces? Probablemente no. Probablemente podamos mejorar eso. Y más allá de que simplemente sea feo en ese punto, tener tantas líneas de código idéntico, imagina si quisieras cambiar el código.
+
+Quizás cambie de opinión y no quiera hacer un gato, sino un perro. Ahora tiene que decir "woof, woof, woof" varias veces. Ahora tengo que cambiar eso en 50 lugares diferentes. Y sí, claro, podría hacer buscar y reemplazar, pero vamos, ahora somos programadores, debe haber una mejor manera que simplemente repetirnos.

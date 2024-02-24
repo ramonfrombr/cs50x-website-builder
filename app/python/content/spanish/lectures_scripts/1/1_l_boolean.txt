@@ -1,0 +1,25 @@
+Hemos visto en Python que Python tiene cadenas de texto, enteros, valores de punto flotante, todos los cuales son diferentes tipos de datos en Python. Python también tiene un cuarto tipo de dato llamado "bool" para un valor booleano. Y aunque esto solo está agregando a nuestra lista, lo bueno de los "bools" es que solo pueden ser verdaderos o falsos. Un entero puede ser cualquier número de un número infinito de valores posibles. Un "bool" solo puede ser verdadero o falso.
+
+Y debe ser una T mayúscula y una F mayúscula si lo está escribiendo usted mismo. Entonces, si vuelvo ahora a mi código y considero exactamente lo que quiero devolver aquí. Bueno, si n % 2 es igual a cero, es decir, si n dividido por dos tiene un resto de cero, bueno, creo que es par, también, Elena, según tu definición. Así que vamos a devolver verdadero, con una T mayúscula. Si no tiene un resto de cero, estoy bastante seguro, matemáticamente, de que tiene que tener un resto de uno.
+
+Pero no importa. Sé que no es par, así que voy a devolver falso. Y devolvemos falso, con una F mayúscula. Y ahora que hemos definido tanto "main" como "is_even", y estoy llamando a "main" en la parte inferior, creo que lo tengo bien. Python parity.py, enter. ¿Cuál es x? Intentemos algo simple, como dos. Y es par. Hágamoslo de nuevo. ¿Cuál es x? ¿Qué tal cuatro? Par. Una vez más, ¿cuál es x? ¿Qué tal tres? Y es impar.
+
+Ahora, ¿qué he hecho aquí? Acabo de hacer el punto de que si quiero crear mi propia función llamada "is_even," que me responda esta pregunta, que ahora puedo usar, en este programa, y tal vez incluso en futuros programas que escriba, ahora tengo una función que nadie me dio, me la di yo mismo, que puedo usar y reutilizar. E incluso puedo, tal vez, compartirla con otros. Estoy usando esa función ahora en la línea tres, solo para tomar una decisión. Estoy usando una condicional allí.
+
+Y mi expresión booleana, algo que es verdadero o falso, va a ser no algo explícito, como x es menor que y, o y es mayor que x, o algo similar. Va a ser una llamada de función. Estoy usando una función como mi expresión booleana. Pero eso está bien porque yo sé, porque la escribí, que esa función "is_even" devuelve verdadero o falso. Y eso es todo lo que necesito en una condicional para tomar una decisión de imprimir par o imprimir impar.
+
+Así que permítanme hacer una pausa aquí para ver si hay alguna pregunta ahora sobre cómo he implementado "is_even" usando este "bool".
+
+INTERLOCUTOR 6: Hola, hola David. En primer lugar, gracias por esta maravillosa clase de anteayer y hoy, señor. Tengo solo una pregunta, basada en mi conocimiento de Java. Allí, cuando solíamos pasar el argumento, también podíamos pasar la dirección de las variables. Entonces, ¿hay algún tipo de este concepto en Python?
+
+DAVID MALAN: Respuesta corta, no. Aquellos que no están familiarizados con Java u otros lenguajes, o C, o C++, generalmente hay formas de pasar valores en diferentes mecanismos que te permiten o te impiden cambiarlos. En Python, no. Todo lo que vamos a ver es, de hecho, un objeto. Pero más sobre eso más adelante. ¿Qué tal si respondemos una pregunta más aquí sobre estos "bools" y estos "is_even"?
+
+INTERLOCUTOR 7: Así que en realidad tenía una pregunta sobre la definición de una función, si está bien.
+
+DAVID MALAN: Claro.
+
+INTERLOCUTOR 7: Entonces, si defines una, dentro de tu código, como si la inventaras, ¿se puede usar el operador de punto como hicimos con "nombre.strip" y usarlo así?
+
+DAVID MALAN: Buena pregunta. Si has creado tu propia función, ¿puedes usar otras funciones, como "strip" o "title" o "capitalize", que hemos visto en el pasado? Puedes usar esas en cadenas de texto. Esas funciones vienen con las cadenas de texto. No puedes usarlas necesariamente en tus propias funciones, a menos que tu función devuelva una cadena de texto, para los ejemplos que diste. Estoy devolviendo un "bool". Los "bools" no tienen noción de espacio en blanco a la izquierda o a la derecha. No puedes llamar a "strip", no puedes llamar a "capitalize".
+
+Pero si estuvieras escribiendo una función diferente que devuelve una cadena de texto, absolutamente. Podrías usar esas funciones, también.

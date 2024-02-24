@@ -1,0 +1,87 @@
+Slide [0]
+
+Programação Web 
+com Python e JavaScript
+
+Slide [1]
+
+Django
+
+Slide [2]
+
+Aplicações Web
+
+Slide [3]
+
+HTTP
+
+Slide [4]
+
+
+Slide [5]
+
+GET / HTTP/1.1 
+Host: www.example.com 
+...
+
+Slide [6]
+
+HTTP/1.1 200 OK 
+Content-Type: text/html 
+...
+
+Slide [7]
+
+Código de Status
+Descrição
+200
+OK
+301
+Movido Permanentemente
+403
+Proibido
+404
+Não Encontrado
+500
+Erro Interno do Servidor
+Códigos de Status HTTP
+
+Slide [8]
+
+Django
+
+Slide [9]
+
+pip
+
+Slide [10]
+
+pip3 install Django
+
+Slide [11]
+
+django-admin startproject NOME_DO_PROJETO
+
+Slide [12]
+
+Arquivos do Projeto
+•  manage.py: utilitário para interagir com o projeto 
+• NOME_DO_PROJETO/settings.py: configurações e configuração
+• NOME_DO_PROJETO/urls.py: URLs que podem ser visitadas
+
+Slide [13]
+
+python manage.py runserver
+
+Slide [14]
+
+python manage.py startapp NOME_DO_APP
+
+Slide [15]
+
+Django
+
+Slide [16]
+
+Programação Web 
+com Python e JavaScript

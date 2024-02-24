@@ -1,0 +1,1 @@
+Muy bien. La búsqueda binaria es un algoritmo que podemos usar para encontrar un elemento dentro de una matriz. A diferencia de la búsqueda lineal, requiere que se cumpla una condición especial de antemano, pero es mucho más eficiente si se cumple esa condición.

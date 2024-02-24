@@ -1,0 +1,61 @@
+Así que en lugar de usar re.sub, que es útil para limpiar datos, como hemos hecho aquí para deshacernos de algo que no queremos allí, ¿por qué no volvemos a re.search, donde empezamos hoy, y lo usamos para resolver este mismo problema pero de una manera condicional, de manera que pueda decir con confianza, sí o no, al final de mi programa, aquí está el nombre de usuario, o aquí no está?
+
+Así que voy a continuar. Y voy a borrar mi ventana de la terminal aquí. Voy a mantener la mayoría de --voy a mantener las dos primeras líneas igual, donde importo re y obtengo la URL del usuario. Pero esta vez, hagamos esto.
+
+Esta vez, busquemos, usando re.search en lugar de re.sub, lo siguiente. Voy a empezar a buscar al principio de la cadena, https, signo de interrogación para hacer que la S sea opcional, dos puntos, barra, barra, voy a hacer que mi www sea opcional poniendo eso en signos de interrogación, luego un twitter.com con un punto literal allí para evitar ese problema, también, luego una barra. Y luego, bueno, aquí es donde se supone que va davidjmalan. ¿Cómo puedo detectar esto?
+
+Bueno, creo que simplemente toleraré cualquier cosa al final de la URL aquí. Bien, signo de dólar al final, comillas cerradas. Por el momento, voy a estipular que no vamos a preocuparnos por signos de interrogación al final ni por marcas de fragmento en las URL. Vamos a suponer, por simplicidad, que la URL termina solo con el nombre de usuario.
+
+¿Y ahora qué voy a hacer? Bueno, quiero buscar específicamente esta URL, y voy a ignorar mayúsculas y minúsculas, así que re.IGNORECASE, aplicando la misma lección aprendida anteriormente. re.search, recordemos, te devuelve las coincidencias que has capturado. Bueno, ¿qué quiero capturar? Bueno, quiero capturar todo lo que está a la derecha de la URL de twitter.com aquí. Así que rodearé lo que debería ser el nombre de usuario del usuario con paréntesis, no para hacerlos opcionales, sino para decir "captura este conjunto de caracteres".
+
+Ahora, re.search, recordemos, devuelve una respuesta. las coincidencias serán el nombre de mi variable nuevamente, pero puedo llamarla como quiera. Y luego puedo hacer esto. Si las coincidencias, ahora sé que puedo hacer esto. Imprimamos la cadena de formato, "nombre de usuario:" y luego, ¿qué quiero imprimir?
+
+Bueno, creo que quiero imprimir matches.group 1 para obtener mi nombre de usuario coincidente. Muy bien. ¿Entonces, qué estoy haciendo para recapitular? En la línea 1, estoy importando la biblioteca. En la línea 2, estoy obteniendo la URL del usuario. Así que nada nuevo ahí.
+
+En la línea 5, estoy buscando la URL del usuario, como se indica aquí como el segundo argumento, para esta expresión regular, este patrón. He rodeado el punto + con paréntesis para que se capturen finalmente, para que pueda extraer, en este escenario final, el nombre de usuario del usuario. Si de hecho tengo una coincidencia, y las coincidencias no son ninguna, es decir, que contiene alguna coincidencia, entonces y solo entonces, imprime el nombre de usuario.
+
+De esta manera, ahora intentemos esto. Si ejecuto python de twitter.py y escribo https://www.google.com/, ahora no se imprime nada. Así que al menos hemos resuelto el error que acabamos de ver, donde simplemente estaba asumiendo que mi código funcionaba. Ahora me aseguro de que he buscado y encontrado el prefijo de URL de Twitter.
+
+Muy bien. Bueno, ahora ejecutemos esto de verdad. Python de twitter.py https://twitter.com/davidjmalan. Pero ten en cuenta que podría usar HTTP, podría usar www. Solo voy a seguir adelante aquí y presionar Enter. ¡Huh, ninguno!
+
+¿Qué salió mal? Este es un poco más sutil. Pero ¿por qué matches.group 1 no contiene nada? Espera un minuto. Déjame -- tal vez hice esto mal. Tal vez, ¿necesitamos el www? Vamos a ejecutarlo de nuevo.
+
+Aquí vamos. https://, vamos a agregar un www.twitter.com/davidjmalan. Muy bien. Enter. ¡Ho, ho, ho! ¿Qué está pasando?
+
+PÚBLICO: Tienes que decir grupo 2.
+
+DAVID MALAN: ¿Tengo que decir grupo 2? Bueno, espera -- oh, cierto, porque el subdominio era opcional. Y para hacerlo opcional, necesitaba usar paréntesis aquí. Y luego dije cero o uno.
+
+OK. Eso significa que en realidad, capturo por accidente pero a propósito el www punto, o nada de eso si no estaba allí antes, pero tengo una segunda coincidencia aquí porque tengo un segundo conjunto de paréntesis. Así que creo, sí, voy a cambiar matches.group 1 a matches.group 2, y vamos a ejecutar esto. Python de twitter.py https://www.twitter -- vamos a hacer esto, twitter.com/davidjmalan, Enter, y ahora tenemos acceso al nombre de usuario.
+
+Voy a ajustarlo un poco más. Si les gusta nuestro nuevo amigo -- es difícil no gustar. Si nos gusta nuestro viejo amigo el operador walrus, vamos a agregar esto para ajustar las cosas. Voy a volver a VS Code aquí, y me voy a deshacer de la condición innecesaria y combinarla aquí, si las coincidencias son iguales a eso. Pero vamos a cambiar el operador de asignación única por el operador walrus. Ahora he ajustado las cosas aún más.
+
+Pero apuesto, apuesto, apuesto que puede haber otra solución aquí. Y de hecho, resulta que podemos volver a este conjunto final de sintaxis. Recuerda que cuando introdujimos estos paréntesis, lo hicimos para que pudiéramos hacer A o B, por ejemplo, con la barra vertical. Luego puedes combinar más de una barra vertical.
+
+Usamos el grupo para combinar ideas como el www punto. Y luego está esta sintaxis, admitamos, extraña en la parte inferior aquí, que hasta ahora no hemos usado. Hay una versión no capturadora de paréntesis si quieres usar paréntesis lógicamente porque lo necesitas, pero no quieres molestarte en capturar el resultado.
+
+Y esta sería una solución mejor aquí, porque sí, si vuelvo a VS Code, necesito rodear el www punto con paréntesis, al menos tal como he escrito mi expresión regular aquí, porque quiero poner el signo de interrogación después de eso. Pero no necesito que vuelva el www punto. De hecho, solo vamos a extraer los datos que nos importan, para evitar confusiones más adelante, para mí, para mis colegas, o para mis profesores.
+
+Entonces, ¿qué puedo hacer? Bueno, la sintaxis según esta diapositiva es usar un signo de interrogación y dos puntos inmediatamente después del paréntesis abierto. Admito que se ve extraño. Aquellos de ustedes que tienen experiencia previa en programación podrán reconocer la sintaxis de los operadores ternarios, haciendo un if else en una sola línea. Un signo de interrogación dos puntos al principio de ese paréntesis significa que sí, estoy usando paréntesis para agrupar estas cosas juntas, pero no, no necesitas capturarlas en su lugar.
+
+Entonces puedo cambiar mi código nuevamente a matches.group 1. Voy a borrar mi pantalla aquí, ejecutar python de twitter.py. De nuevo, voy a ejecutar aquí https://twitter.com/davidjmalan con o sin el www. Y ahora, de hecho, recibo ese nombre de usuario.
+
+¿Alguna pregunta entonces sobre estas técnicas finales?
+
+PÚBLICO: Entonces, en primer lugar, ¿podríamos mover el ^ justo al principio de Twitter, y luego comenzar a leer desde ahí, y deshacernos de todo lo demás antes de eso, los problemas con www? Y luego mi segunda pregunta es, ¿cómo usaríamos una lista o un diccionario para clasificar la parte de .com, porque tenemos .co.uk y esas cosas? ¿Cómo lo llevaríamos a la función re?
+
+DAVID MALAN: Buena pregunta, pero no. Si muevo el ^ antes de twitter.com y descarto el protocolo y el www, entonces el usuario tendrá que escribir literalmente twitter.com/usuario. Ni siquiera pueden escribir esas otras cosas. Así que sería una regresión, un paso atrás.
+
+En cuanto a .com, .org y .edu, y demás, la respuesta corta es que hay muchas soluciones diferentes aquí. Si quisiera ser estricto con .com, y supongamos que Twitter probablemente tiene varios nombres de dominio, aunque tienden a usar solo este. Supongamos que tienen algo como .org también. Podrías usar más paréntesis aquí y hacer algo como esto-- com o org. Probablemente querría agregar un signo de interrogación dos puntos para hacerlo no capturador, porque no importa cuál sea, solo quiero tolerar ambos.
+
+Alternativamente, podríamos capturar eso. Podríamos hacer algo como esto, donde hacemos punto + para capturar realmente eso. Y luego podríamos hacer algo como esto. Si coincidencias.group 1 ahora es igual a com, entonces podríamos soportar esto. Así que podrías imaginar aislar la lógica solo extrayendo el dominio de nivel superior, o TLD, y luego usar código de Python, tal vez una lista, tal vez un diccionario, para validar fuera de la expresión regular, si es, de hecho, lo que esperas.
+
+Por ahora, sin embargo, mantuvimos las cosas simples. Nos centramos solo en el .com en este caso. Hagamos un cambio final a este programa para que seamos un poco más específicos con la definición de un nombre de usuario de Twitter.
+
+Resulta que estamos siendo un poco generosos aquí, al aceptar uno o más de cualquier carácter. Consulté la documentación de Twitter. Y Twitter solo admite letras del alfabeto, de la A a la Z, números del 0 al 9 o guiones bajos, no solo punto, que es literalmente cualquier cosa.
+
+Así que voy a ser más preciso aquí. Al final de mi cadena, voy a decir, este conjunto de símbolos entre corchetes. Voy a decir desde a hasta z, de 0 a 9, y un guion bajo. Porque, de nuevo, esos son los únicos símbolos válidos. No necesito preocuparme por una A mayúscula o una Z minúscula, porque estamos usando re.IGNORECASE aquí.
+
+Pero ahora quiero asegurarme de tolerar no solo uno o más de estos símbolos aquí, sino también tal vez algunas otras cosas al final de la URL. Ahora voy a estar bien si hay una barra, o un signo de interrogación, o un hashtag al final de la URL, todos los cuales son símbolos válidos en una URL, pero sé, por la documentación de Twitter, que no son parte del nombre de usuario.
+
+Muy bien. Ahora voy a ejecutar python de twitter.py una última vez, escribiendo https://twitter.com/davidjmalan, tal vez con, tal vez sin una barra final. Pero con suerte, con los dedos más cruzados aquí, voy a continuar y presionar Enter, y afortunadamente mi nombre de usuario es, de hecho, davidjmalan.

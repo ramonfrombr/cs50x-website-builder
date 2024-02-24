@@ -1,0 +1,5 @@
+Entonces, ¿qué más hay en el mundo de las expresiones regulares y esta propia biblioteca? No solo re.search, sino también re.sub, hay otras funciones también. Hay re.split, a través del cual puedes dividir una cadena, no utilizando un carácter o caracteres específicos como una coma y un espacio, sino también varios caracteres. Y también hay funciones como re.findall, que te permiten buscar múltiples copias del mismo patrón en diferentes lugares de una cadena para que puedas manipular más que solo uno.
+
+Así que al final del día, realmente has aprendido todo un nuevo lenguaje, como el de las expresiones regulares, y las hemos utilizado en Python. Pero estas expresiones regulares existen en muchos otros lenguajes también, como JavaScript, Java, Ruby y más. Así que con este nuevo lenguaje, aunque reconozcamos que es críptico cuando lo usas por primera vez, tienes esta nueva capacidad para expresar estos patrones que, de nuevo, puedes usar para validar datos, limpiar datos o incluso extraer datos, de cualquier conjunto de datos que tengas en mente.
+
+Eso es todo por esta semana. Nos vemos la próxima vez.

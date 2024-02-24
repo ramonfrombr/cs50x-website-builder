@@ -1,0 +1,59 @@
+Well, let me go ahead, if I may, and propose that we transition to another approach of types of loops using another keyword here, namely a for loop. And this is a word that does exist in other languages, but doesn't necessarily have as many features as other languages might use it for. But there is a different type of loop-- not a while loop, but a for loop. 
+
+And a for loop is going to allow us to express ourselves a little differently, but to do so, I propose that the easiest way is if we introduce one other idea in Python, which is that of a list. And here, too, no pun intended, we're adding to the list of data types that Python supports. 
+
+We've seen strs or strings. Ints or integers. Floats or floating point values. Bools or Boolean expressions. Python also has lists, which is another type of data, but wonderfully, this one is probably pretty familiar. A list of things in the real world is a list of things in Python. It's a way of containing multiple values all in the same place, all in the same variable. 
+
+So what do I mean by this? Well let me propose that we go back to our VS Code here, and let me start fresh with my code here and not use a while loop at all, but let me use this new keyword for. The way for loop works is that it allows you to iterate over a list of items. 
+
+So what does this look like? It might look like this-- for i and the following list of items, 0, 1, 2. This is my starting point, and on each iteration of this loop-- that is, on each execution of this loop again and again, I want to print out meow. Now I'll admit, I kind of like the look of this code already even though there's some new syntax here, because it's just shorter than the while loop. 
+
+The while loop had multiple lines a moment ago and it was entirely up to me to decide what i is. I have to check a condition, I have to increment or decrement i. Like I was doing a lot of work, relatively speaking, to make that thing turn, to make that loop going to go. It was very mechanical in a sense. You can in your mind's eye maybe see the gears turning as all of these variables are changing and these questions are being asked. 
+
+A for loop simplifies all of that, and it just says, if you want a variable like i, a number, and you know in advance how many times want this loop to execute-- three times, we'll just kind of specify what it is you want i to take on as values explicitly. 
+
+In this loop, i will be automatically initialized by Python to be 0, then meow will be printed. Then Python would automatically update i to equal 1, then meow will be printed. Then Python will automatically update i to be 2 and meow will be printed. And because that's it for the values in that list, Python will stop and it will only meow a total of three times. 
+
+What is the list? The list in this program is exactly that, 0, comma, 1, comma, 2, and notice the square brackets. Those aren't parentheses, those are square brackets that represent a list. That's how visually as the programmer-- that's how Python knows as the language that you intend for that to be a list. 
+
+So let me go ahead and run this Python of cat.py, and it works just the same. But it's only two lines. It's pretty readable once you have familiarity with that construct, but to my constant point about correctness not necessarily being the same as design, in what sense is this program perhaps poorly designed? 
+
+It seems to work. It meows three times, but why might this not be the best way to solve this problem? Even if you've never programmed before, again, think about corner cases, things that may or may not happen. Think about extreme cases that really test the quality of this code. 
+
+AUDIENCE: OK. I think that because we are saying 0, 1, 2 3 times. And then if you want to take a million, you say 1, 2, 3. 
+
+DAVID MALAN: Yeah, exactly. And that's what I mean about thinking about the extreme cases. If you're trying to decide for yourself if your own code is good or someone else's code is good, it might look so at first glance, but think about the extreme. Well, what if it's not three things, it's a million things? I mean, are you really going to write out 0 through a million or 0 through 9-- 999,999? 
+
+Like no, you're not going to write that many numbers on the screen there's got to be a better way. So let's do the better way from the get-go rather than set the stage for doing something poorly. And the one way we can solve this problem to improve the design is don't just manually specify the list of values, use a function, someone else's function that comes with Python that gives you the list you want. 
+
+And the easiest way to do that in Python is to use a function called range that returns to a range of values. It expects as input at least one argument, and that number is going to be the number of values you want back. Those values are going to start at 0 and go to 1, to 2, and so forth, but they will go up two but not through the number you specify. 
+
+So by specifying range 3, you're essentially being handed back 1, 2, 3 values. And by default, those values are 0, 1, and 2, and that's it. But what's brilliant about this is that now, to Hope's point, if I do want to meow a million times-- I mean, that is an angry cat, I can now do a million by just typing a million. I don't have to literally type 0, comma, 1, comma, 2, comma, 3, comma, 4, all the way up to 999,999, I just do this. So that's got to be a better way long-term. 
+
+So that's indeed one improvement we can indeed make here still using a for loop, but now using this range function. And just to show you something else that's Pythonic-- this is not strictly necessary, but it's commonly done, there's a minor improvement we can make here, even if we're just meowing three times. And notice that even though I'm defining a variable i, I'm not ever using it. 
+
+And it's kind of necessary logically, because Python, presumably, has to use something for counting. It has to know what it's iterating over. But there's this convention in Python where if you need a variable, just because the programming feature requires it to do some kind of counting or automatic updating, but you, the human, don't care about its value, a Pythonic improvement here would be to name that variable a single underscore. 
+
+Just because it's not required, it doesn't change the correctness of the program, but it signals to yourself later, it signals to colleagues or teachers that are looking at your code, too, that yes, it's a variable, but you don't care about its name because you're not using it later, it's just necessary in order to use this feature, this loop in this case here. So just a minor improvement or change there. 
+
+But to really gets you intrigued by what's possible in Python, let's take this one step further. So if we really want to be Pythonic, this one, if you've programmed before, is kind of going to blow your mind, so to speak, whereby if I want the cat to meow three times, what if I actually do this? print, open parenthesis, quote-unquote, meow times 3. You have to be kind of a geek to think this is cool, but this is kind of cool. 
+
+So you can literally just print what you want, multiply it by the number of times that you want it, and you will get back exactly that result. Now I've kind of made a mistake here. So let's see what this does. It's not quite as beautiful as this code might look to you-- to some of you, to me. Let me run Python of cat.py, Enter. OK, it's a really like hungry cat or something. It's meowing really fast. 
+
+But I can fix this, I bet. Let's think about now some of the basic building blocks we've discussed. The problem is clearly that literally meow, meow, meow is being repeated three times, but it's not as pretty as I want it. I want it to be meow, meow, meow on separate lines. What might be a possible solution here while still using this multiplication operator? 
+
+And think back. We've used plus to concatenate strings. You can apparently use multiplication to concatenate strings, but more than once again and again and again. How could I clean this up without reverting to my for loop or my while loop and still use multiplication in this way? 
+
+AUDIENCE: We can use the escape sequence which would be backslash n. 
+
+DAVID MALAN: Amazing. Yes. Think back to backslash n, which is the way you as the programmer can express a new line in code. And I think, if I take your advice, I put a backslash in there inside of my quotes, so that at the end of every M-E-O-W, there's a new line, let's see how this looks. Let me clear my screen and run Python of cat.py. OK, so close. I like this. 
+
+Let me call on someone else. The only thing I don't like-- and I know I'm being really nitpicky now-- is that it's meow, meow, meow on separate lines, but there's this extra blank line, which I'm just not loving aesthetically. 
+
+AUDIENCE: I think we can make n equal to column-- column, not-- like a slash n. 
+
+DAVID MALAN: Yeah. So here, too, like all of these things we've seen in past weeks are kind of coming together. Recall that the print function lets you control what the line ending is. By default, it's backslash n itself. Which is why at the very end of this print, the cursor is being moved again to the next line. Well, we need to just override that. 
+
+So let me go into my code here and let me change this to comma n equals quote-unquote so that it's no longer the default backslash n, it's instead now going to be nothing whatsoever. That should eliminate, then, hopefully that additional blank line. So let me run this one last time here, Python of cat.py, Enter, and there we have it. 
+
+So now, at least as programming goes, it's kind of cool that I can distill this into a short line and express myself all at once. Now to be fair, it's a little less readable. Like now I've got backslash n, I've got times 3, I've got n equals quote-unquote. So you don't have to do things this way. My previous approach with a for loop, totally fine. My previous approach with a while loop, totally fine, and in some sense, perfectly well-designed. But this is just yet another way to do it, but it's not a good thing if you or your teacher, your colleague, your friend are going to struggle to read your own code. But this is a feature of Python that some languages do not, in fact, have. 

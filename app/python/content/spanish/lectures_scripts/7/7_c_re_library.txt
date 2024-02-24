@@ -1,0 +1,19 @@
+Entonces, ¿cómo podemos mejorar esto? Bueno, resulta que en Python hay una biblioteca para expresiones regulares. Se llama de forma concisa R-E. Y en la biblioteca re, tienes muchas capacidades para definir, verificar e incluso reemplazar patrones. Nuevamente, una expresión regular es un patrón. Y esta biblioteca, la biblioteca re en Python, nos permitirá definir algunos de estos patrones, como un patrón para una dirección de correo electrónico, y luego usar algunas funciones incorporadas para validar realmente la entrada del usuario contra ese patrón o incluso usar estos patrones para cambiar la entrada del usuario o extraer información parcial de ella. Veremos ejemplos de todo esto y más.
+
+Entonces, ¿qué puedo y debo hacer con esta biblioteca? Bueno, en primer lugar, viene con muchas funcionalidades. Aquí está la URL, por ejemplo, a la documentación oficial. Y permíteme proponer que nos centremos en el uso de una de las funciones más versátiles de la biblioteca, a saber, esta: buscar.
+
+re.search es el nombre de la función y el módulo re que te permite pasar algunos argumentos. El primero será un patrón que quieras buscar, por ejemplo, en una cadena que provenga de un usuario. El argumento cadena aquí será la cadena real que deseas buscar para ese patrón. Y luego hay un tercer argumento opcional, que son un montón de banderas.
+
+Una bandera en general es como un parámetro que puedes pasar para modificar el comportamiento de la función. Pero inicialmente, ni siquiera vamos a usar esto. Solo vamos a pasar un par de argumentos en su lugar.
+
+Entonces déjame seguir y utilizar esta biblioteca re, esta biblioteca de expresiones regulares, y simplemente mejorar este diseño de forma incremental. Por lo tanto, no resolveremos este problema de una vez, sino que daremos algunos pasos incrementales.
+
+Voy a volver a VS Code aquí. Y voy a continuar y eliminar la mayor parte de este código. Pero voy a ir al principio de mi archivo y primero de todo, importar esta biblioteca re. Entonces import re me da acceso a esa función y más.
+
+Ahora, después de haber obtenido la entrada del usuario de la misma manera que antes, eliminando cualquier espacio en blanco al principio o al final, simplemente voy a utilizar esta función de manera sencilla por ahora, aunque esto no sea realmente un gran avance. Voy a decir, si re.search contiene comillas dobles "@" en la dirección de correo electrónico, entonces vamos a imprimir "válido". De lo contrario, vamos a imprimir "inválido".
+
+En este momento, esto realmente no es mejor que mi primera versión donde solo estaba preguntando a Python si el símbolo "@" está en la dirección de correo electrónico. Pero al menos estoy empezando a usar esta biblioteca utilizando su propia función re.search, que por ahora se puede asumir que devuelve un valor verdadero si, de hecho, el símbolo "@" es un correo electrónico.
+
+Solo para asegurarme de que esta versión funciona como espero, voy a ejecutar python validate.py y Enter. Escribiré mi dirección de correo electrónico real y estaremos listos. Pero por supuesto, esto no es genial, porque si ejecuto esta versión del programa y simplemente escribo un símbolo "@" que no es una dirección de correo electrónico, mi código, por supuesto, cree que es válido.
+
+Entonces, ¿cómo puedo hacerlo mejor que esto? Bueno, necesitamos un poco más de vocabulario en el ámbito de las expresiones regulares, para poder expresarnos un poco más precisamente. Realmente, el patrón que quiero definir en última instancia va a ser algo así como: quiero que haya algo a la izquierda, luego un símbolo "@", luego algo a la derecha. Y ese algo a la derecha debe terminar con .edu pero también debe tener algo antes del .edu, como Harvard, o Yale, o cualquier otra universidad en los Estados Unidos también.

@@ -1,0 +1,75 @@
+Así que apuesto a que podemos hacerlo mejor si pensamos un poco más en cómo estructuramos este programa. Y podemos hacerlo si aumentamos un poco nuestro vocabulario. Resulta que en Python y en otros lenguajes también hay una palabra clave llamada "while". Y "while" es una forma de expresar lo que se llama un bucle, un bloque de código que va a hacer algo una y otra vez, 0 veces, 1 vez, 2 veces, 50 veces, tantas veces como queramos.
+
+Pero "while" nos deja a nosotros los detalles de cómo nos expresamos para hacer algo una y otra vez. Así que déjenme volver al VS Code aquí y déjenme proponer esto. "While" es una construcción que me permite hacer una pregunta una y otra vez. Y cada vez que hemos visto una pregunta, ha sido en forma de una expresión booleana, una pregunta a la que la respuesta es verdadera o falsa.
+
+Entonces, ¿cómo podría hacer esto? ¿Cómo podría imprimir "meow" tres veces y hacer una pregunta tres veces a la que la respuesta sea verdadera o falsa? Bueno, ¿y si hago un recuento? Como literalmente con mis dedos. Y si estoy tratando de contar tal vez hacia atrás desde tres, quiero decir "meow" tres veces, puedo levantar tres dedos y puedo "meow". Y luego puedo bajar uno de los dedos y luego "meow". Y puedo bajar uno de los dedos y luego "meow". Bajar un dedo.
+
+Y tal vez la pregunta que puedo hacer cada vez que diga "meow" es, ¿todavía tengo algún dedo levantado? ¿todavía tengo algún dedo levantado? ¿todavía tengo algún dedo levantado? Y si la respuesta es verdadera, sigo. Si la respuesta es falsa, paro. ¿Entonces, cómo puedo traducir eso al código? Bueno, una vez que hemos agregado esta palabra clave "while" - creo que ya tenemos todos los bloques de construcción, permítanme proponer esto.
+
+Permítanme proponer que me dé una variable. Y la llamaré "i" para entero, pero puedo llamarla como quiera, y la inicializaré en 3. Luego voy a usar esta nueva característica de Python, "while", y voy a hacer una pregunta, cuya respuesta debe ser verdadera o falsa. Y voy a decir, mientras "i" no sea igual a 0. Así que voy a hacer la pregunta, mientras "i" no sea igual a 0, haz lo siguiente.
+
+Nota el signo de dos puntos al final de la línea. Nota mi sangría. Y al igual que con las funciones, al igual que con las condicionales, sangrías las líneas que solo quieres ejecutar como parte de esta otra cosa. ¿Qué quiero hacer mientras "i" no sea igual a 0? Bueno, creo que solo quiero decir "meow".
+
+Pero no es suficiente escribir este código. Si corriera Python de manera muy peligrosa "cat.py" y presionara Enter ahora mismo, ¿qué podría suceder en la pantalla? Ya sea que hayas programado antes o no. ¿Por qué esto es potencialmente algo muy malo? No va a romper las cosas, pero podría perder el control de mi computadora de alguna manera. ¿Alguna idea? Sí, Timo?
+
+AUDIENCIA: Hola. Creo que va a seguir imprimiendo "meow" ya que "i" siempre es igual a 3 y el "while" siempre es verdadero.
+
+DAVID MALAN: Sí, exactamente. Si estoy inicializando "i" en 3, es decir, estableciéndolo como igual a 3 en la línea 1, luego estoy haciendo la pregunta, mientras "i" no sea igual a 0, y eso va a ser verdadero, no es igual a 0, obviamente es igual a 3, imprime "meow". Y la forma en que funciona un bucle "while" es que el intérprete de Python sigue yendo y viniendo. Va de la línea 1 a la línea 2, luego a la línea 3, y luego regresa a la línea 2 para hacer la pregunta nuevamente. Si la respuesta sigue siendo verdadera, va a la línea 3. Luego regresa a la línea 2. Si la respuesta sigue siendo verdadera, regresa a la línea 3.
+
+Y como señaló Timo, si en realidad nunca estás cambiando el valor de "i", siempre es 3, simplemente estarás entrando en un bucle infinito, y esto es un bucle infinito accidental. Así que tenemos que ser más inteligentes que eso. Y no voy a presionar Enter porque no quiero perder el control sobre mi computadora aquí y que imprima "meow" para siempre.
+
+Afortunadamente, si alguna vez haces eso y te encuentras en un bucle infinito accidental, Control-C para cancelar o interrumpir será tu amigo. Si parece que has perdido el control, no necesitas reiniciar o apagar la computadora. Solo presiona Control-C en tu ventana de terminal y eso probablemente lo solucionará.
+
+Bueno, ¿qué quiero hacer entonces después de maullar cada vez? Creo que me gustaría hacer algo como esto. Deje que actualice "i" para que sea igual al valor actual menos 1 aquí, ¡ups, lo siento! Menos 1. Entonces, si en cada iteración actualizo "i" para que sea uno menos, uno menos, uno menos, eventualmente debería llegar a 0, momento en el cual la respuesta a la pregunta del 9.2 será ahora falsa.
+
+Veamos si esto funciona. Voy a ir a mi ventana de terminal y ejecutar Python de "cat.py", y efectivamente obtengo tres "meow". ¿Por qué? Porque he conectado esto como una máquina en software, por así decirlo. Establezco "i" en 3, luego hago esta pregunta una y otra vez. Pero sigo girando las ruedas, sigo cambiando el valor de la variable para asegurarme de que finalmente se esté decrementando, es decir, disminuyendo en 1 hasta que finalmente lleguemos a 0.
+
+Ahora, para aquellos de ustedes que piensan que soy un poco más gráfico, permítanme mostrar uno de nuestros diagramas de flujo habituales. Esto es solo una representación gráfica de lo mismo. Fíjense en lo que está sucediendo. Primero inicio el programa, y luego inicializo "i" en 3, y luego hago la primera de mis preguntas. Nuevamente, los óvalos siempre representan preguntas. ¿Y la respuesta va a ser verdadera o falsa? ¿"i" no es igual a 0?
+
+Bueno, no lo es, es igual a 3. Entonces, si sigo la línea verdadera, maúllo. Y luego sigo esta flecha, y actualizo "i" para que sea igual a "i" menos 1. En este punto de la historia, "i" presume ser 2 matemáticamente. Sigo la flecha. Y ahí está el bucle. Esto es por qué es bueno ver esto gráficamente, tal vez porque puedes ver literalmente el bucle de ida y vuelta.
+
+Ahora hago la pregunta de nuevo. ¿"2" no es igual a 0? Bueno, no lo es, es 2, por lo que maúllo de nuevo. Cambio "i" de 2 a 1. Bueno, ¿1 no es igual a 0? Bueno, obviamente 1 no es igual a 0, por lo que maúllo de nuevo. Decremento "i" nuevamente. "i" es ahora 0. ¿0 no es igual a 0? No, es igual a 0, por lo que la respuesta es falsa y nos detenemos.
+
+Entonces, quizás más que con cualquier otro de nuestros diagramas de flujo anteriores, ¿realmente ves la estructura de lo que está sucediendo dentro del programa? Y no es necesario acostumbrarse a hacer estos diagramas o crearlos, pero como un primer paso para comprender lo que está sucediendo dentro de la computadora, esa es realmente una forma de visualizarlo.
+
+Bueno, permítame proponer que, como siempre, hay muchas formas diferentes de resolver este problema. Y supongamos que simplemente te gusta pensar de manera un poco diferente. Tal vez no te gusta empezar en 3 y luego contar hacia atrás hasta 0. ¿Por qué? Tal vez tu cerebro no funciona de esa manera y prefieres contar hacia arriba en lugar de hacia abajo. Totalmente bien.
+
+Permítanme cambiar aquí mi código para establecer "i" en 1 en lugar de 3. Y aquí, permítanme simplemente cambiar mi lógica. En lugar de verificar que no sea igual a 0, como tal vez no te gusta pensar en términos de negación porque es un poco confuso, y podría serlo, solo verifiquemos que "i" sea menor o igual a 3.
+
+Así que seremos un poco más explícitos. Contaremos desde 1 hasta 3, imprimiendo "meow" cada vez, pero tendré que cambiar esta línea aquí. Déjenme ver si no puedo llamar a alguien para que cambie la línea por mí. ¿Cómo quiero cambiar la línea 4 para que sea consistente con contar de 1 a y a través de 3?
+
+AUDIENCIA: Sería sumar 1 cada vez que maúllas.
+
+DAVID MALAN: Sí, exactamente. En este caso, queremos sumar uno, no restar uno. Y, de hecho, si piensas en esto, este 2 podría terminar muy mal. Si comienzas a contar en 1 y sigues restando 1, restando 1, restando 1, creo que nos encontraremos con el mismo problema, que nunca nos detendremos porque iremos obteniendo más y más negativos en lugar de llegar al número 3. Así que creo que tienes razón, necesito cambiar esto para que sea "i" es igual a "i" más 1.
+
+Y ahora, nota que solo por claridad, el signo igual es, nuevamente, nuestro operador de asignación de derecha a izquierda. Lógicamente, esto de otra manera podría parecerte extraño. Como, ¿cómo puede "i" ser igual a sí mismo más 1? Bueno, no lo es hasta que ejecutes este código de derecha a izquierda. Sumas 1 a "i" o restas 1 de "i" y luego actualizas el valor de "i" en la izquierda. La asignación copia el valor de la derecha a la izquierda.
+
+Bueno, ¿cómo más podría hacer esto? Bueno, diría que la mayoría de los programadores, los científicos de la computación en general, tienden a comenzar a contar desde 0. Es una convención y en realidad tiene ventajas incluso en Python y otros lenguajes donde, en general, es algo bueno comenzar a contar desde 0 en lugar de contar como podríamos hacerlo en el mundo real desde 1. Continuemos y adoptemos esa convención ahora. Permítanme establecer "i" en 0, y ahora necesito hacer un cambio.
+
+Observa, si no cambio mi lógica, este programa se volvió defectuoso. El gato tiene un defecto. Ahora está maullando cuatro veces si lo ejecuto tal como está. Pero la solución más fácil aquí sería cambiar mi desigualdad a esto, menos que en lugar de menos que o igual a. Ahora estoy comenzando en 0, pero estoy yendo hasta pero sin llegar a 3.
+
+E incluso aunque esto podría, de todo lo que hemos visto hasta ahora, parecer tal vez lo menos familiar, la mayoría de nosotros podríamos comenzar con 1, 2 y luego 3, es una buena costumbre adoptar ahora, comenzar en 0 y llegar pero sin atravesar el valor que te importa en última instancia, 3 en este caso aquí.
+
+Bueno, déjenme hacer esto un poco más restringido. No solo esto ahora arreglará mi problema de conteo, ahora maullará 3 veces como se esperaba, hay una forma más sucinta de expresar "i es igual a i más 1", y esto es porque es algo muy popular para hacer en el código. En su lugar, puedes simplemente decir "i más igual a 1", y ya está. No es necesario poner todo en el lado derecho. Esta es una sintaxis especial que significa exactamente lo mismo, incrementa "i", pero lo hace con unos pocos menos escritos. Es solo un poco más agradable de escribir, un poco más rápido de leer, solo una convención.
+
+Aquellos de ustedes que han programado en C, C++, Python, no, no Python, C, C++, Java, JavaScript pueden haber visto plus-plus antes o minus-minus. Lo siento, Python no lo tiene, por lo que no puedes usar eso. Esta es tan concisa como podría ser tu línea de código aquí. Muy bien. Permítanme hacer una pausa aquí para ver si hay alguna pregunta sobre estas implementaciones de bucles "while".
+
+AUDIENCIA: ¿Podemos usar cosas como bucles "for" que tienen un cierto valor de "i" inicializado al principio y se ejecutan a partir de la condición que se coloca en eso e incrementarlo a medida que avanzas?
+
+DAVID MALAN: Respuesta corta, no, no puedes hacer lo que estás describiendo, pero hay otro tipo de bucle "for" que pronto veremos. Pero volvamos a eso en un momento. ¿Otras preguntas sobre los bucles "while" aquí?
+
+AUDIENCIA: Así que tenía una pregunta sobre ese diagrama de flujo.
+
+DAVID MALAN: Muy bien.
+
+AUDIENCIA: Había ciertos símbolos para cierto tipo de declaraciones. ¿Se utilizan ciertamente para ese tipo de declaración que...?
+
+DAVID MALAN: Así es. Deliberadamente utilicé ciertos tipos de símbolos, ciertas formas aquí, donde una elipse es convencional para iniciar y detener. Usé rectángulos para cualquier declaración de código, como una asignación o una impresión y demás. Y utilicé diamantes para representar preguntas que podrías hacer, condiciones como hemos visto.
+
+Si lo estás haciendo por ti mismo, si solo estás tratando de comprender tu código y escribiéndolo, ciertamente no necesitas usar estos símbolos formales, pero intenté ser consistente con algunas mejores prácticas. Y de hecho, permítanme volver a la misma imagen, porque esta fue la primera versión de nuestra imagen, pero desde entonces hemos modificado nuestro código un par de veces.
+
+Esto, recuerden, fue la versión en la que la pregunta que estábamos haciendo era si "i" no es igual a 0, déjame cambiar ahora este código para representar la siguiente versión que hicimos, que, recuerden, cambió nuestra lógica para comenzar a contar desde 1, cambió nuestra pregunta para verificar si "i" es menor o igual a 3, pero luego todo lo demás fue igual excepto por el conteo, que ahora es más y no menos.
+
+Y luego lo refinamos un poco más contando ahora desde 0 hasta pero sin llegar a 3. Y ajustamos este código aquí simplemente incrementando 1 mediante la sintaxis ligeramente más concisa.
+
+En este punto, estos diagramas de flujo pueden volverse menos y menos útiles para nosotros, porque una vez que hayas comprendido el concepto y esperemos que la imagen ayude a dar vida a ese concepto, ciertamente está bien enfocarse completamente en el código y solo pensar o incluso dibujar algo como esto si necesitas comprender algo más complicado de lo que estás acostumbrado.

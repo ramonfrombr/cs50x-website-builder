@@ -1,15 +1,21 @@
-{% extends 'layout.html' %} {% block conteudo %}
+{% extends 'layout.html' %} {% block content %}
 
 <h1 id="problem-set-4">Problema 4</h1>
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    Colaboração nos conjuntos de problemas não é permitida, exceto na medida em que você possa pedir ajuda a colegas de classe e outras pessoas, desde que essa ajuda não se resuma a outra pessoa fazendo o trabalho por você, de acordo com a política de honestidade acadêmica do curso.
+    Colaboração nos conjuntos de problemas não é permitida, exceto na medida em
+    que você possa pedir ajuda a colegas de classe e outras pessoas, desde que
+    essa ajuda não se resuma a outra pessoa fazendo o trabalho por você, de
+    acordo com a política de honestidade acadêmica do curso.
     <a href="{{url_for('cs50x.honesty')}}">honestidade acadêmica</a>.
   </p>
 
   <p>
-    A equipe realiza auditorias aleatórias das submissões para o CS50x. Os estudantes que forem encontrados em violação desta política serão removidos do curso. Os estudantes que já tenham concluído o CS50x também terão seu Certificado CS50 revogado permanentemente, se forem encontrados em violação.
+    A equipe realiza auditorias aleatórias das submissões para o CS50x. Os
+    estudantes que forem encontrados em violação desta política serão removidos
+    do curso. Os estudantes que já tenham concluído o CS50x também terão seu
+    Certificado CS50 revogado permanentemente, se forem encontrados em violação.
   </p>
 </div>
 
@@ -18,17 +24,22 @@
 <div class="alert" data-alert="warning" role="alert">
   <p>
     Certifique-se de ter concluído
-    <a href="{{url_for('cs50x.labs.lab4')}}">Laboratório 4</a> antes de começar este
-    conjunto de problemas.
+    <a href="{{url_for('cs50x.labs.lab4')}}">Laboratório 4</a> antes de começar
+    este conjunto de problemas.
   </p>
 </div>
 
 <ol>
   <li>
-    Faça login em <a href="https://code.cs50.io">code.cs50.io</a> usando sua conta do GitHub
+    Faça login em <a href="https://code.cs50.io">code.cs50.io</a> usando sua
+    conta do GitHub
   </li>
   <li>
-    Execute <code class="language-plaintext highlighter-rouge">update50</code> na janela do terminal do seu espaço de código para garantir que seu espaço de código esteja atualizado e, quando solicitado, clique em <strong>Rebuild now</strong>
+    Execute
+    <code class="language-plaintext highlighter-rouge">update50</code> na janela
+    do terminal do seu espaço de código para garantir que seu espaço de código
+    esteja atualizado e, quando solicitado, clique em
+    <strong>Rebuild now</strong>
   </li>
   <li>
     Envie um dos seguintes:
@@ -61,7 +72,8 @@
 </ol>
 
 <p>
-  Se você enviar ambas as versões do Filtro, registraremos a pontuação mais alta das duas.
+  Se você enviar ambas as versões do Filtro, registraremos a pontuação mais alta
+  das duas.
 </p>
 
 <h2 id="when-to-do-it">Quando fazer isso</h2>
@@ -84,8 +96,11 @@
   </li>
   <li data-marker="*">
     Se você encontrar erros ao compilar seu código com
-    <code class="language-plaintext highlighter-rouge">make</code>, concentre-se primeiro em corrigir o primeiro erro que você ver, rolando a tela conforme necessário. Se não tiver certeza do que significa, tente pedir ajuda para
-    <code class="language-plaintext highlighter-rouge">help50</code>. Por exemplo, se estiver tentando compilar
+    <code class="language-plaintext highlighter-rouge">make</code>, concentre-se
+    primeiro em corrigir o primeiro erro que você ver, rolando a tela conforme
+    necessário. Se não tiver certeza do que significa, tente pedir ajuda para
+    <code class="language-plaintext highlighter-rouge">help50</code>. Por
+    exemplo, se estiver tentando compilar
     <code class="language-plaintext highlighter-rouge">filter</code>, e
     <div class="language-plaintext highlighter-rouge">
       <div class="highlight">
@@ -104,5 +119,4 @@
   </li>
 </ul>
 
-{% endblock %}
-'
+{% endblock %} '

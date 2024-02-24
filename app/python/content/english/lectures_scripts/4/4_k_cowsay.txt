@@ -1,0 +1,35 @@
+Let's go back to VS Code here. And in my terminal window, I'm going to go ahead and type pip install cowsay. Now, what's going on here? Pip is the command, the package manager. And I want to install what package? The package called cowsay. I'm going to go ahead and hit Enter here. And after a little bit of output, it has successfully installed cowsay. 
+
+Now, what does that mean? That means I can now go about importing this into my own code. Well, let's go ahead and see what this means. So let me go ahead and create a new file with code called say.py because I want something to be said on the screen. And in my new tab here, I'm going to go ahead and import cowsay, which presumably is now installed. 
+
+I'm now going to import sys as well because I'd like to use some command line arguments in this program just so that I can run it quickly. And without using the input function, I can get the user's name immediately from the prompt. And let me go ahead and do this. I'm going to do a bit of error checking proactively this time. And rather than use less than or greater than, I'm this time going to say if the length of sys.argv does equal 2. 
+
+So if the human is provided just the name of the program and their own first name, we're good to go. I'm going to do the following. I'm going to call a function called COW in the package called cowsay. And I'm going to pass in a string, hello, comma. And then as in the past, I'm going to pass in just one string because according to its documentation, it's not like print. I can't pass in comma this, comma that. 
+
+I can only pass in one string. So I'm going to concatenate it the contents of sys.argv, bracket1. So long as then I type in my name David after the name of this program, it should end up in sys.argv1 in which case, this line five of code should concatenate hello with my name with a space in between. And apparently, a cow is going to say it. 
+
+So let's see what happens here. Let me go ahead and clear my screen and increase the size of my terminal window. Let me go ahead and run Python of say.py and type my name David and Enter. There is the program called cowsay. 
+
+It literally has a cow say something on the screen. And this is a throwback to a program from yesteryear that tended to come with a lot of systems. This is otherwise known as ASCII art. It's a textual way using just keys on your keyboard to print pictures of sorts on the screen. 
+
+Now, we can really go down the rabbit hole here. And there's questionable academic value of doing so. So I'll do so just once. Turns out the cowsay package comes with other functions as well. One of those functions, for instance, is T-Rex. And if I now increase the size of my terminal window, we'll perhaps see where we're going with this. 
+
+Let me now run again, Python of say.py. This time, let me not provide my name just to see if it's broken. It's still OK because we have that if condition if the length of sys.argv equals equals 2 and only if it equals equals 2, do we do anything. That's why we're not seeing anything here. 
+
+Let me go ahead and cooperate now, say.py space David. And it's no longer a cow. But if I zoom out on my screen, a T-Rex. Why? Just because these are the things you can do once you know how to program. You can even package them up and make them freely available to others as open source software. For us, it's demonstrative of a feature more generally here namely being able to install these third-party packages and how you might do so in Python. 
+
+Now, I'll leave this up on the screen for a moment and see if there's any questions about cows or Tyrannosaurus rex's or packages more generally. I'm really qualified to speak to just one of those. 
+
+AUDIENCE: Hi, I've got two questions it's a bit earlier than what's supposed to be. So the first question is the packages that you're calling to use in the program, are they the same as, let's say, something Java the same as calling a class, a Java file in order to use its functions? 
+
+And my second question is, what's the actual purpose of using command line arguments as you used because is not really the best way to, as you say, be user friendly where as in let's say the person who's using the program doesn't know what they want-- what the program's asking them? 
+
+DAVID MALAN: Really good question. The first question about the comparison with Java, Python packages are similar to Java packages where you have something.something.something at the top of your program that gives you access to a class or something else. Python itself supports classes. More on those down the road. And you can do very similar things in Python as you can do with Java. But the analog really is Python packages to Java packages here. 
+
+As for command line arguments, you ask a good question. Why do we use them, especially if they are literally user friendly? They're a little less user friendly to people who aren't in this Zoom to be honest. You and I as we learn more and more about programming and more about command line arguments, I daresay we'll become more comfortable with and tend to prefer the ability to customize commands using these command line arguments. Why? Productivity. It tends to make you faster because you get into the habit of knowing exactly how you can configure your software without having to manually answer questions. 
+
+And case in point. All of this time have we been running Python of something.py. You could imagine not doing that. You can imagine typing only Python, hitting Enter. And then you're prompted for the name of the file you want to run. So you type in something.py, and then it runs. 
+
+Not a big deal, but I would argue that over time, you're going to get a little tired of that TDM. And you would much prefer to just automate the command again and again and again, especially with little conveniences like being able to hit up and down in your keyboard history so as to rerun those same command. Automation is big too if you emerge from a class like this and start using Python to automate processes at work or for personal projects or the like, the ability to specify all of your inputs on the one line just means you can get work done more quickly. So hands down, absolutely. 
+
+Using command line arguments is a more arcane feature of systems that most of us are no longer as familiar with because of Windows and Mac OS and other operating systems that have buttons and GUIs and menus. But the more comfortable you get with programming, I daresay the more you will tend to prefer these capabilities because they allow you to do things more quickly. 

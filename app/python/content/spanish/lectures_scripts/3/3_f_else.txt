@@ -1,0 +1,35 @@
+Entonces, ¿cómo puedo resolver algo como esto? Bueno, resulta que hay otra característica de la sintaxis de try y except que Python admite, que también admite la palabra clave else. Ahora, hemos visto else antes. Si piensas en nuestra discusión de condicionales, vimos if. Vimos elif. Vimos else, que era como un comodín, lo que deberías hacer en caso de que nada más sea relevante.
+
+Esa es más o menos la misma intuición aquí para la característica try-except de Python. Lo que puedes hacer es esto. Puedes intentar hacer lo siguiente, como he hecho, excepto si esto sale mal. Pero si nada sale mal, entonces ve y haz esto.
+
+Entonces, esta es una forma en la que puedo resolver este mismo problema ahora. De cualquier manera, Python va a intentar ejecutar la línea dos. Si algo sale mal, ejecutará las líneas tres y cuatro para manejar ese ValueError.
+
+Sin embargo, si intentas y este código tiene éxito, entonces no hay ninguna excepción que manejar. Así que vas a ejecutar esta línea aquí. Es un poco confuso, tal vez, en el sentido de que ahora estamos usando else tanto para condicionales, if, elif, elif, elif, else.
+
+Y también estamos usando else con estos bloques try-except. Pero eso está bien. Eso es parte del lenguaje. Esa es una de las características.
+
+Entonces, ahora si vuelvo a ejecutar este código en mi ventana del terminal, Python de number.py -- hagamos algo correcto, como 50 -- veo que x es 50. Entonces se ejecuta la línea uno. Estamos intentando hacer lo siguiente.
+
+La línea dos se ejecuta porque la conversión se realizó correctamente y el número 50 se copia de derecha a izquierda. La excepción no ocurre. Así que ignoramos las líneas tres y cuatro. Saltamos inmediatamente a la línea cinco y seis, que imprime el resultado.
+
+En cambio, permítanme hacer esto una última vez. Python de number.py -- ingresamos cat o, de nuevo, cualquier otra palabra y presionamos Enter ahora. No vemos qué es x. En cambio, vemos, entre comillas, "x no es un entero", que es lo que se está manejando en mi bloque except.
+
+Muy bien, permítanme hacer una pausa aquí porque eso es mucho código nuevo, y ver si hay alguna pregunta sobre el try, el except, el else, el name error o el value error.
+
+AUDIENCIA: ¿Puedes repetir la función try?
+
+DAVID MALAN: ¿Repetir el name error? ¿Cuál es el problema con el name error?
+
+AUDIENCIA: Sí. Sí.
+
+DAVID MALAN: Sí. Así que retrocedamos un par de líneas aquí antes de solucionar este problema al eliminar el else. Hace un momento, teníamos un código que se veía así, en el que estaba obteniendo un name error, Python de number.py, Enter, escribiendo cat, que se veía así, donde decía que el nombre x no está definido. Y el problema estaba en la línea seis, según esta salida en Python.
+
+Bueno, reflexionemos sobre esto ahora deductivamente. Intenteremos un enfoque diferente. En la línea seis, veo un error que dice que el nombre x no está definido. OK, Python ya me está diciendo que x no existe en ese punto. Entonces, ¿cómo podría ser posible?
+
+Bueno, ¿dónde debería estar definido x? Bueno, presumiblemente, x está definido en la línea dos, aquí arriba. Entonces, ¿qué podría salir mal? Bueno, si el usuario ha ingresado algo que no parece un número, como la palabra cat, pasar cat como valor de retorno de input, como argumento de int para convertir la palabra a un entero, no tiene sentido.
+
+No se puede convertir un cat, C-A-T, a un entero en absoluto. Entonces, la función int está generando un value error en ese punto. Y el error se maneja con este código aquí.
+
+Pero fíjense en que la línea seis no está sangrada. Está alineada a la izquierda con el resto de mi código, lo que significa que, pase lo que pase, la línea seis se va a ejecutar. Se va a ejecutar tanto si escribo 50 como si escribo cat.
+
+Pero si escribo cat, de nuevo, x nunca obtiene un valor. Entonces, no está definido aquí en la línea seis. Así que cuando introduje, finalmente, la declaración else, eso asegura que estas cosas sean mutuamente excluyentes. Solo ejecuto el else si lo intenté y tuve éxito arriba.

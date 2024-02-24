@@ -1,0 +1,87 @@
+
+Slide [0]
+
+Web Programming 
+with Python and JavaScript
+
+Slide [1]
+
+Testing and CI/CD
+
+Slide [2]
+
+Testing
+
+Slide [3]
+
+assert
+
+Slide [4]
+
+unittest
+
+Slide [5]
+
+unittest Methods
+•assertEqual 
+•assertNotEqual 
+•assertTrue 
+•assertFalse 
+•assertIn 
+•assertNotIn 
+•...
+
+Slide [6]
+
+Django Testing
+
+Slide [7]
+
+Browser Testing
+
+Slide [8]
+
+CI/CD
+
+Slide [9]
+
+CI/CD
+• Continuous Integration 
+• Frequent merges to main branch 
+• Automated unit testing 
+• Continuous Delivery 
+• Short release cycles
+
+Slide [10]
+
+GitHub Actions
+
+Slide [11]
+
+YAML
+
+Slide [12]
+
+key1: value1 
+key2: value2 
+key3: 
+    - item1 
+    - item2 
+    - item3
+
+Slide [13]
+
+Docker
+
+Slide [14]
+
+Source: h*ps://docs.docker.com
+
+Slide [15]
+
+Testing and CI/CD
+
+Slide [16]
+
+Web Programming 
+with Python and JavaScript

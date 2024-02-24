@@ -1,50 +1,12 @@
 # Mario
 
-## Getting Started
+## Problem to Solve
 
-Open [VS Code](https://code.cs50.io/).
+Toward the end of World 1-1 in Nintendo’s [Super Mario Bros.](https://en.wikipedia.org/wiki/Super_Mario_Bros.), Mario must ascend right-aligned pyramid of bricks, as in the below.
 
-Start by clicking inside your terminal window, then execute `cd` by itself. You should find that its “prompt” resembles the below.
+![screenshot of Mario jumping up a right-aligned pyramid](pyramid.png)
 
-    $
-
-Click inside of that terminal window and then execute
-
-    wget https://cdn.cs50.net/2022/fall/psets/1/mario-less.zip
-
-followed by Enter in order to download a ZIP called `mario-less.zip` in your codespace. Take care not to overlook the space between `wget` and the following URL, or any other character for that matter!
-
-Now execute
-
-    unzip mario-less.zip
-
-to create a folder called `mario-less`. You no longer need the ZIP file, so you can execute
-
-    rm mario-less.zip
-
-and respond with “y” followed by Enter at the prompt to remove the ZIP file you downloaded.
-
-Now type
-
-    cd mario-less
-
-followed by Enter to move yourself into (i.e., open) that directory. Your prompt should now resemble the below.
-
-    mario-less/ $
-
-If all was successful, you should execute
-
-    ls
-
-and see a file named `mario.c`. Executing `code mario.c` should open the file where you will type your code for this problem set. If not, retrace your steps and see if you can determine where you went wrong!
-
-## World 1-1
-
-Toward the end of World 1-1 in Nintendo’s Super Mario Brothers, Mario must ascend right-aligned pyramid of blocks, a la the below.
-
-![screenshot of Mario jumping up a right-aligned pyramid](https://cs50.harvard.edu/x/2023/psets/1/mario/less/pyramid.png)
-
-Let’s recreate that pyramid in C, albeit in text, using hashes (`#`) for bricks, a la the below. Each hash is a bit taller than it is wide, so the pyramid itself will also be taller than it is wide.
+In a file called `mario.c` in a folder called `mario-less`, implement a program in C that recreates that pyramid, using hashes (`#`) for bricks, as in the below:
 
            #
           ##
@@ -55,208 +17,256 @@ Let’s recreate that pyramid in C, albeit in text, using hashes (`#`) for brick
      #######
     ########
 
-The program we’ll write will be called `mario`. And let’s allow the user to decide just how tall the pyramid should be by first prompting them for a positive integer between, say, 1 and 8, inclusive.
+But prompt the user for an `int` for the pyramid’s actual height, so that the program can also output shorter pyramids like the below:
 
-Here’s how the program might work if the user inputs `8` when prompted:
+      #
+     ##
+    ###
 
-    $ ./mario
-    Height: 8
-           #
-          ##
-         ###
-        ####
-       #####
-      ######
-     #######
-    ########
+Re-prompt the user, again and again as needed, if their input is not greater than 0 or not an `int` altogether.
 
-Here’s how the program might work if the user inputs `4` when prompted:
+Hints
 
-    $ ./mario
-    Height: 4
-       #
-      ##
-     ###
-    ####
+-   Recall that you can get an `int` from a user with `get_int`, which is declared in `cs50.h`.
+-   Recall that you can print a `string` with `printf`, which is declared in `stdio.h`.
 
-Here’s how the program might work if the user inputs `2` when prompted:
+## Demo
 
-    $ ./mario
-    Height: 2
-     #
-    ##
+## Advice
 
-And here’s how the program might work if the user inputs `1` when prompted:
+Write some code that you know will compile
 
-    $ ./mario
-    Height: 1
-    #
+Even though this program won’t do anything, it should at least compile with `make`!
 
-If the user doesn’t, in fact, input a positive integer between 1 and 8, inclusive, when prompted, the program should re-prompt the user until they cooperate:
+    #include <cs50.h>
+    #include <stdio.h>
 
-    $ ./mario
-    Height: -1
-    Height: 0
-    Height: 42
-    Height: 50
-    Height: 4
-       #
-      ##
-     ###
-    ####
+    int main(void)
+    {
 
-How to begin? Let’s approach this problem one step at a time.
+    }
+
+Write some pseudocode before writing more code
+
+If unsure how to solve the problem itself, break it down into smaller problems that you can probably solve first. For instance, this problem is really two problems:
+
+1.  Prompt the user for the pyramid’s height
+2.  Print a pyramid of that height
+
+So write some pseudcode as comments that remind you to do just that:
+
+    #include <cs50.h>
+    #include <stdio.h>
+
+    int main(void)
+    {
+        // Prompt the user for the pyramid's height
+
+        // Print a pyramid of that height
+    }
+
+Convert the pseudocode to code
+
+First, consider how you might prompt the user for the pyramid’s height. Recall that a `do while` loop is helpful when you want to do something at least once, and possibly again and again, as in the below:
+
+    #include <cs50.h>
+    #include <stdio.h>
+
+    int main(void)
+    {
+        // Prompt the user for the pyramid's height
+        int n;
+        do
+        {
+            n = get_int("Height: ");
+        }
+        while (n < 1);
+
+        // Print a pyramid of that height
+    }
+
+Second, consider how you might print a pyramid of that height, from top to bottom. Notice how the first row should have one brick, the second row should have two bricks, and so on. Odds are you’ll want a loop, as in the below, even if not (yet!) sure what to put in that loop. So add some more pseudocode as a comment for now:
+
+    #include <cs50.h>
+    #include <stdio.h>
+
+    int main(void)
+    {
+        // Prompt the user for the pyramid's height
+        int n;
+        do
+        {
+            n = get_int("Height: ");
+        }
+        while (n < 1);
+
+        // Print a pyramid of that height
+        for (int i = 0; i < n; i++)
+        {
+            // Print row of bricks
+        }
+    }
+
+How to print that row of bricks? Well, wouldn’t it be nice if there were a function called `print_row` that could do just that? Let’s suppose that there is:
+
+    #include <cs50.h>
+    #include <stdio.h>
+
+    void print_row(int bricks);
+
+    int main(void)
+    {
+        // Prompt the user for the pyramid's height
+        int n;
+        do
+        {
+            n = get_int("Height: ");
+        }
+        while (n < 1);
+
+        // Print a pyramid of that height
+        for (int i = 0; i < n; i++)
+        {
+            // Print row of bricks
+        }
+    }
+
+    void print_row(int bricks)
+    {
+        // Print row of bricks
+    }
+
+We could then call that function from `main`, as in the below:
+
+    #include <cs50.h>
+    #include <stdio.h>
+
+    void print_row(int bricks);
+
+    int main(void)
+    {
+        // Prompt the user for the pyramid's height
+        int n;
+        do
+        {
+            n = get_int("Height: ");
+        }
+        while (n < 1);
+
+        // Print a pyramid of that height
+        for (int i = 0; i < n; i++)
+        {
+            // Print row of bricks
+            print_row(i + 1);
+        }
+    }
+
+    void print_row(int bricks)
+    {
+        // Print row of bricks
+    }
+
+Why `i + 1`, though?
+
+Let’s now implement `print_row`:
+
+    #include <cs50.h>
+    #include <stdio.h>
+
+    void print_row(int bricks);
+
+    int main(void)
+    {
+        // Prompt the user for the pyramid's height
+        int n;
+        do
+        {
+            n = get_int("Height: ");
+        }
+        while (n < 1);
+
+        // Print a pyramid of that height
+        for (int i = 0; i < n; i++)
+        {
+            // Print row of bricks
+            print_row(i + 1);
+        }
+    }
+
+    void print_row(int bricks)
+    {
+        for (int i = 0; i < bricks; i++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+
+Why the `\n` at the end, though?
+
+Unfortunately, this code prints a left-aligned pyramid, but you need a right-aligned one! Perhaps we should print some blank spaces before some of the bricks, to move them to the right? Let’s change `print_row` as follows so that it can print both:
+
+    #include <cs50.h>
+    #include <stdio.h>
+
+    void print_row(int spaces, int bricks);
+
+    int main(void)
+    {
+        // Prompt the user for the pyramid's height
+        int n;
+        do
+        {
+            n = get_int("Height: ");
+        }
+        while (n < 1);
+
+        // Print a pyramid of that height
+        for (int i = 0; i < n; i++)
+        {
+            // Print row of bricks
+        }
+    }
+
+    void print_row(int spaces, int bricks)
+    {
+        // Print spaces
+
+        // Print bricks
+    }
+
+Some pseudocode now remains in both `main` and `print_row`, so that we leave to you!
+
+And consider whether you could factor out some of the code in `main` to a `get_height` function, too, that returns the `int` you need!
 
 ## Walkthrough
 
-<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/NAs4FIWkJ4s?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+Note this walkthrough specifies your program should prompt the user for a pyramid’s height and _re_\-prompt if the user inputs a value less than 1 or greater than 8. The specification only requires you to re-prompt the user if they input a value less than 1.
 
-## Pseudocode
+## How to Test
 
-First, execute
+Does your code work as prescribed when you input:
 
-    cd
+-   `-1` or other negative numbers?
+-   `0`?
+-   `1` or other positive numbers?
+-   letters or words?
+-   no input at all, when you only hit Enter?
 
-to ensure you’re in your codespace’s default directory.
+### Correctness
 
-Then, execute
+In your terminal, execute the below to check your work’s correctness.
 
-    cd mario-less
+    check50 cs50/problems/2024/x/mario/less
 
-to change to your `mario-less` directory.
-
-Then, execute
-
-    code pseudocode.txt
-
-to open the file called `pseudocode.txt` inside that directory.
-
-Write in `pseudocode.txt` some pseudocode that implements this program, even if not (yet!) sure how to write it in code. There’s no one right way to write pseudocode, but short English sentences suffice. Recall how we wrote [pseudocode for finding someone in a phone book](https://docs.google.com/presentation/d/1X3AMSenwZGSE6WxGpzoALAfMg2hmh1LYIJp3N2a1EYI/edit#slide=id.g41907da2bc_0_265). Odds are your pseudocode will use (or imply using!) one or more functions, conditionals, Boolean expressions, loops, and/or variables.
-
-<details><summary>Spoiler</summary><p>There’s more than one way to do this, so here’s just one!</p>
-
-<ol>
-  <li>Prompt user for height</li>
-  <li>If height is less than 1 or greater than 8 (or not an integer at all), go back one step</li>
-  <li>Iterate from 1 through height:
-    <ol>
-      <li>On iteration <em>i</em>, print <em>i</em> hashes and then a newline</li>
-    </ol>
-  </li>
-</ol>
-
-<p>It’s okay to edit your own after seeing this pseudocode here, but don’t simply copy/paste ours into your own!</p></details>
-
-## Prompting for Input
-
-Whatever your pseudocode, let’s first write only the C code that prompts (and re-prompts, as needed) the user for input. Open the file called `mario.c` inside of your `mario` directory. (Remember how?)
-
-Now, modify `mario.c` in such a way that it prompts the user for the pyramid’s height, storing their input in a variable, re-prompting the user again and again as needed if their input is not a positive integer between 1 and 8, inclusive. Then, simply print the value of that variable, thereby confirming (for yourself) that you’ve indeed stored the user’s input successfully, a la the below.
-
-    $ ./mario
-    Height: -1
-    Height: 0
-    Height: 42
-    Height: 50
-    Height: 4
-    Stored: 4
-
-<details><summary>Hints</summary><ul>
-  <li data-marker="*">Recall that you can compile your program with <code class="language-plaintext highlighter-rouge">make</code>.</li>
-  <li data-marker="*">Recall that you can print an <code class="language-plaintext highlighter-rouge">int</code> with <code class="language-plaintext highlighter-rouge">printf</code> using <code class="language-plaintext highlighter-rouge">%i</code>.</li>
-  <li data-marker="*">Recall that you can get an integer from the user with <code class="language-plaintext highlighter-rouge">get_int</code>.</li>
-  <li data-marker="*">Recall that <code class="language-plaintext highlighter-rouge">get_int</code> is declared in <code class="language-plaintext highlighter-rouge">cs50.h</code>.</li>
-  <li data-marker="*">Recall that we prompted the user for a positive integer in lecture using a <code class="language-plaintext highlighter-rouge">do while</code> loop in <a href="https://cdn.cs50.net/2022/fall/lectures/1/src1/mario8.c?highlight"><code class="language-plaintext highlighter-rouge">mario.c</code></a>.</li>
-</ul></details>
-
-## Building the Opposite
-
-Now that your program is (hopefully!) accepting input as prescribed, it’s time for another step.
-
-It turns out it’s a bit easier to build a left-aligned pyramid than right-, a la the below.
-
-    #
-    ##
-    ###
-    ####
-    #####
-    ######
-    #######
-    ########
-
-So let’s build a left-aligned pyramid first and then, once that’s working, right-align it instead!
-
-Modify `mario.c` at right such that it no longer simply prints the user’s input but instead prints a left-aligned pyramid of that height.
-
-<details>
-  <summary>Hints</summary>
-  <ul>
-    <li data-marker="*">Keep in mind that a hash is just a character like any other, so you can print it with <code class="language-plaintext highlighter-rouge">printf</code>.</li>
-    <li data-marker="*">Just as Scratch has a <a href="https://docs.google.com/presentation/d/1mRIN6EDK92NJJlazpFfBNKhxrAQUUxJOJW0UH7knS0g/edit#slide=id.gee4e5a99f9_0_313"><code class="language-plaintext highlighter-rouge">repeat</code></a> block, so does C have a <a href="https://docs.google.com/presentation/d/1mRIN6EDK92NJJlazpFfBNKhxrAQUUxJOJW0UH7knS0g/edit#slide=id.gee4e5a99f9_0_313"><code class="language-plaintext highlighter-rouge">for</code></a> loop, via which you can iterate some number times. Perhaps on each iteration, <em>i</em>, you could print that many hashes?</li>
-    <li data-marker="*">
-      <p>You can actually “nest” loops, iterating with one variable (e.g., <code class="language-plaintext highlighter-rouge">i</code>) in the “outer” loop and another (e.g., <code class="language-plaintext highlighter-rouge">j</code>) in the “inner” loop. For instance, here’s how you might print a square of height and width <code class="language-plaintext highlighter-rouge">n</code>, below. Of course, it’s not a square that you want to print!</p>
-
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  for (int i = 0; i &lt; n; i++)
-
-      {
-      for (int j = 0; j &lt; n; j++)
-      {
-      printf("#");
-      }
-      printf("\n");
-      }
-      </code></pre></div> </div>
-
-</li>
-  </ul>
-</details>
-
-## Right-Aligning with Dots
-
-Let’s now right-align that pyramid by pushing its hashes to the right by prefixing them with dots (i.e., periods), a la the below.
-
-    .......#
-    ......##
-    .....###
-    ....####
-    ...#####
-    ..######
-    .#######
-    ########
-
-Modify `mario.c` in such a way that it does exactly that!
-
-<details><summary>Hint</summary><p>Notice how the number of dots needed on each line is the “opposite” of the number of that line’s hashes. For a pyramid of height 8, like the above, the first line has but 1 hash and thus 7 dots. The bottom line, meanwhile, has 8 hashes and thus 0 dots. Via what formula (or arithmetic, really) could you print that many dots?</p></details>
-
-### How to Test Your Code
-
-Does your code work as prescribed when you input
-
-- `-1` (or other negative numbers)?
-- `0`?
-- `1` through `8`?
-- `9` or other positive numbers?
-- letters or words?
-- no input at all, when you only hit Enter?
-
-## Removing the Dots
-
-All that remains now is a finishing flourish! Modify `mario.c` in such a way that it prints spaces instead of those dots!
-
-### How to Test Your Code
-
-Execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
-
-    check50 cs50/problems/2023/x/mario/less
+### Style
 
 Execute the below to evaluate the style of your code using `style50`.
 
     style50 mario.c
 
-<details><summary>Hint</summary><p>A space is just a press of your space bar, just as a period is just a press of its key! Just remember that <code class="language-plaintext highlighter-rouge">printf</code> requires that you surround both with double quotes!</p></details>
-
 ## How to Submit
 
 In your terminal, execute the below to submit your work.
 
-    submit50 cs50/problems/2023/x/mario/less
+    submit50 cs50/problems/2024/x/mario/less

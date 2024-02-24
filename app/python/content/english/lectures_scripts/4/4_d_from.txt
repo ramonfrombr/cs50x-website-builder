@@ -1,0 +1,23 @@
+All right, so I've got that now working. Could I have implemented this in a different way? Well, let me show you an alternative to actually using the import keyword alone and let me introduce the keyword from in Python. So from is a keyword in Python that you can use when importing functions from a module, but it allows you to be a little more specific than import alone. 
+
+So if I go back to my code here, it's worth noting that what technically I'm doing here by importing random is I'm technically importing everything that's in that module. So not just the function called random.choice but a few other functions as well. So instead of using this line of code at the top of my file, import random, which will technically give me access to all of the contents they're in, a downside of that is that I have to type in random.choice, random.this, random.that because all of the functions I'm calling have to be associated with the scope of that module. 
+
+Well, suppose that I just want to call the function as its name, choice. I can do that as well. Let me replace this first line here with from random import choice. And what this does effectively is it loads the function's name choice into my current namespace into the scope of the file I'm working in. 
+
+What that means is that I now no longer have to specify which choice function I mean. I can just say choice. And so it loads it into the local namespace that is into my local vocabulary, if you will, so I can just now say choice. This might be advantageous in what cases, do you think? 
+
+When might you want to import the name of the function explicitly like this as opposed to just saying random.choice-- random.choice throughout your code when calling a function? Any instincts here for this alternative import using from? 
+
+AUDIENCE: Hello, I'm Mohammed Omar from Egypt. And maybe if we have a variable that its name is basically like choice if I have a variable called the choice. So I need to differentiate which trays I choose. So I'm going to choose random data choice. 
+
+DAVID MALAN: Yeah, really good instincts. By using the first approach by just importing random, you're making sure that all of its contents are associated with or scoped to the random module so that you can have your own choice function. You can have your own choice variable. You can use the same names as all of the functions or variables that are stored inside of that file without them colliding, so to speak. And this is a good thing. 
+
+In older languages, it was the case that if you imported someone's library, you better hope that you're not using the same functions or variables as they are because you might in fact have some kind of conflict. Python and certain other languages allow you to scope the names of those functions and variables to the file or the module that they come from. So that's a good thing. 
+
+But honestly, this is such a short program. Or equivalently, maybe I'm using the choice function in so many places calling random.choice, random.choice, random.choice. It's just making my code longer and longer and longer. 
+
+Marginally so, but hey, just getting ugly and annoying, I can simply import choice and now tighten up my code a little bit. So as with so many decisions in the past, there's not necessarily one right approach or another. It depends. But I think for those very reasons, sometimes it's better to do what we did the first time, which is only import the module so as to retain the scope therein. 
+
+Well, let me propose that we transition to another function that comes with Python's random module. And that's this here from the documentation randint. It's a bit hard to say, but it implies get back a random int. And if you read the documentation, it's a random int that's between A and B inclusive. 
+
+So if you were to pass in 1 for A and 10 for B, you would get back a number between 1 and 10 inclusive, including the 1 and including the 10 potentially. Each with a 10% probability.

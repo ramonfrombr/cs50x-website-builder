@@ -1,0 +1,51 @@
+Bien. Sigamos y veamos un último problema para resolver, el de extraer información. En este punto, hemos validado la entrada del usuario verificando si cumple un cierto patrón. Hemos limpiado la entrada del usuario al verificar si coincide o no con un patrón, y si coincide, reorganizamos parte de la información del usuario para limpiar su entrada y estandarizar el formato en el que la almacenamos o imprimimos, en este caso.
+
+Hagamos un último ejemplo en el que estemos específicamente extrayendo información para responder una pregunta. Permítanme proponer esto. Cierro format.py y creo un nuevo archivo llamado twitter.py, con el objetivo de solicitar a los usuarios la URL de su perfil de Twitter y extraer, inferir a partir de esa URL, cuál es el nombre de usuario del usuario.
+
+¿Y por qué querríamos hacer esto? Bueno, en primer lugar, es posible que quieras que los usuarios puedan copiar y pegar fácilmente la URL de su propio perfil de Twitter en tu formulario, en tu aplicación, para que puedas averiguar cuál es su nombre de usuario. O es posible que tengas un formulario en el que le pidas al usuario su nombre de usuario de Twitter, y puesto que las personas no siempre prestan mucha atención, algunas personas escriben su nombre de usuario, otras escriben la URL completa o cualquier otra cosa.
+
+Sería bueno, ahora que eres un programador, ser más tolerante con diferentes tipos de entrada y asumir tú la responsabilidad de canonicar y estandarizar los datos, pero siendo flexible con los usuarios. Sin duda, proporcionaría una mejor experiencia para el usuario si me permites copiar y pegar o escribir lo que quiero, y tú lo limpias. Tú eres el programador, no yo. Sería una experiencia mejor, tal vez.
+
+Bien, permíteme hacer esto con twitter.py. Permíteme primero solicitar al usuario aquí un valor para una variable que llamaré url, y pedirles que ingresen la URL de su perfil de Twitter. Voy a eliminar cualquier espacio en blanco al principio o al final, por si acaso los usuarios presionan accidentalmente la barra espaciadora. Eso es lo mínimo que puedo hacer fácilmente.
+
+Pero ahora vamos a hacer esto. Supongamos que la dirección del usuario es la siguiente. Permíteme imprimir qué escribieron. Y permíteme borrar la pantalla y ejecutar twitter.py en Python. Voy a escribir, por ejemplo, https://twitter.com/davidjmalan, que es mi propio nombre de usuario de Twitter. Por ahora, simplemente vamos a imprimirlo en la pantalla para asegurarnos de que todavía no he cometido ningún error.
+
+Ok. He vuelto a imprimir la misma URL. Pero el objetivo aquí es extraer solo el nombre de usuario. Ahora, permíteme hacer una pregunta sencilla. Lógicamente, ¿qué necesito hacer para obtener el nombre de usuario del usuario?
+
+AUDIENCIA: Bueno, simplemente ignoramos lo que está antes del nombre de usuario y luego extraemos el nombre de usuario.
+
+DAVID MALAN: Perfecto. Sí, es tan simple como eso. Si sabes que el nombre de usuario está al final, simplemente ignoremos de alguna manera todo lo que está al principio. Bueno, ¿qué hay al principio?
+
+Bueno, es una URL. Así que probablemente necesitaremos ignorar "https://", "://", "twitter.com" y "/". Solo queremos descartarlo todo. ¿Por qué? Porque si es una URL, sabemos cómo funciona Twitter y que el nombre de usuario está al final.
+
+Entonces, usemos esa idea tan simple para obtener la información que queremos. Voy a intentar esto de algunas maneras diferentes. Permíteme volver a mi programa aquí. Y en lugar de simplemente imprimirlo, que era solo para ver qué estaba sucediendo, hagamos esto. Creemos una nueva variable llamada "username". Y llamemos a "url.replace". Resulta que si la URL es una cadena o str en Python, tiene varios métodos, como strip, split y otros, uno de los cuales se llama replace.
+
+Y replace hará exactamente eso. Le pasas dos argumentos, el primero de los cuales es, ¿qué quieres reemplazar? El segundo argumento es, ¿con qué quieres reemplazarlo? Si quiero deshacerme, como propuse, de todo lo que está antes del nombre de usuario, es decir, la URL de Twitter o el comienzo de la misma, digamos esto. Reemplaza "https://twitter.com/", comillas cerradas, eso es lo que quiero reemplazar.
+
+Y coma, segundo argumento, ¿con qué quieres reemplazarlo? Nada. Así que literalmente voy a pasar "comillas" en blanco para hacer efectivamente una búsqueda y reemplazo. Eso es lo que hace el método replace, al igual que puedes hacerlo en Microsoft Word o Google Docs. Esta es la manera del programador de hacer una búsqueda y reemplazo.
+
+Ahora, permíteme imprimir solo el nombre de usuario. Usaré una f-string de esta manera. Diré "username:", y luego entre llaves, "username", solo para formatearlo correctamente. Muy bien. Permíteme borrar la pantalla y ejecutar twitter.py en Python, Enter, URL. Aquí vamos. https://twitter.com/davidjmalan, Enter.
+
+Ok. Ahora hemos avanzado un poco. ¿Terminamos por hoy, verdad? Bueno, ¿qué no es óptimo en esto? ¿Alguien puede criticar o encontrar algún fallo en mi programa? Ahora funciona, pero es un poco frágil. Apuesto a que podríamos idear algunos escenarios en los que creo que funciona pero no lo hace.
+
+AUDIENCIA: Bueno, se me ocurren algunas ideas. Primero que nada, si no especificamos HTTPS, no funcionará. En segundo lugar, si tenemos una barra al final, tampoco funcionará. Si tenemos un signo de interrogación o algo después del signo de interrogación, tampoco funcionará.
+
+Hay muchos escenarios, de hecho.
+
+DAVID MALAN: Oh, Dios mío. Quiero decir, aquí estamos. Estaba fingiendo pensar que había terminado. Pero, Dios mío, Alex nos dio una lista interminable de problemas. Y solo para resumir, ¿qué pasa si no es HTTPS, sino HTTP? Un poco menos seguro, pero aún debería poder tolerarlo de forma programática.
+
+¿Y si no hay protocolo? ¿Y si el usuario solo escribió twitter.com/davidjmalan? Sería bueno tolerar eso en lugar de mostrar un error y hacerme escribir el protocolo. ¿Por qué? No es una buena experiencia para el usuario.
+
+¿Y si tiene una barra al final del nombre de usuario, o un signo de interrogación? Si piensas en las URL que has visto en la web, muy comúnmente contienen más información, especialmente si se han compartido en redes sociales. Podría haber parámetros HTTP, por así decirlo, solo cosas que no queremos. Podría haber un www.twitter.com, que tampoco espero, pero también funciona si accedes a esa URL.
+
+Entonces, hay tantas cosas que pueden salir mal. E incluso si volvemos a mi ejemplo antes mencionado, ¿qué pasa si ejecuto este programa y digo esto: "mi nombre de usuario es https://twitter.com/davidjmalan", Enter? Bueno, eso tampoco funcionó realmente; eliminó el... bien, en realidad... [se ríe] Bien, en realidad eso funcionó bastante bien.
+
+Pero el objetivo aquí es realmente obtener el nombre de usuario del usuario, no una oración en inglés que describa el nombre de usuario del usuario. No quiero palabras como "mi nombre de usuario es" como parte de mi entrada.
+
+Entonces, ¿cómo podemos mejorar esto y tal vez ir solucionando algunos de esos problemas uno por uno? Permíteme borrar la pantalla aquí. Volver al código. Y en lugar de simplemente reemplazarlo, hagamos algo diferente en su lugar.
+
+Voy a utilizar otra función llamada "removeprefix". Un prefijo es una cadena o una subcadena que se encuentra al comienzo de otra. Entonces, si remuevo el prefijo, no necesito un segundo argumento para esta función. Solo necesito uno. ¿Qué prefijo quieres remover?
+
+Entonces, esto al menos ahora solucionará el problema que acabo de describir de escribir una oración completa, donde la URL está ahí, pero no al principio, sino solo al final. Aquí, esto todavía no es correcto. Pero no creamos esta salida extraña que simplemente elimina la parte de la URL de la entrada: "mi nombre de usuario es https://twitter.com/davidjmalan". Hace un momento eliminó la URL y dejó solo "davidjmalan".
+
+Esto aún no es perfecto. Pero al menos ahora no elimina extrañamente la URL y luego deja el inglés. Simplemente lo deja tal como está. Tal vez podría manejar esto mejor, pero al menos lo elimina de la parte de la cadena que podría anticipar.

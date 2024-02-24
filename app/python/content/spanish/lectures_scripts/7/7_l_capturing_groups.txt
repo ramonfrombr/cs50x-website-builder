@@ -1,0 +1,53 @@
+Así que déjame continuar y hacer esto. Déjame entrar y dejar este código tal como está, pero ir al principio ahora e importar re para importar la biblioteca de expresiones regulares. Y ahora déjame seguir cambiando mi enfoque aquí. Voy a seguir adelante y hacer esto. Voy a usar la misma función llamada re.search y voy a buscar un patrón que creo que será apellido, coma, nombre. Así que permíteme usar mi nueva sintaxis de expresiones regulares y representar un patrón para algo como Malan, coma, espacio, David.
+
+¿Cómo puedo hacer esto? Bueno, dentro de mis comillas para re.search, voy a tener algo, así que punto + - lo siento. Voy a tener algo, así que punto +. Luego voy a tener una coma. Luego voy a tener un espacio. Luego voy a tener algo, así que punto +.
+
+Ahora voy a refinar esto de manera preventiva. Quiero que todo este patrón comience a coincidir al comienzo de la entrada del usuario. Así que voy a agregar el símbolo ^ de inmediato. Y quiero que se coincida también el final de la entrada del usuario, para que literalmente espere cualquier carácter una o más veces, luego una coma, luego un espacio, luego cualquier otro carácter una o más veces. Y eso es todo. Y voy a pasar la variable de nombre como antes.
+
+Ahora, cuando hemos usado re.search en el pasado, realmente lo usamos solo para responder una pregunta. ¿Coincide la entrada del usuario con el siguiente patrón o no, verdadero o falso, de manera efectiva? Pero re.search es en realidad más poderoso que eso. En realidad puedes obtener más información de vuelta.
+
+Y puedes hacer esto. Puedes especificar una variable y luego un operador de asignación, y obtener respuestas más precisas sobre lo que se ha encontrado al buscar. ¿Pero qué quieres obtener? Bueno, resulta que hay esta otra característica de las expresiones regulares que te permite usar paréntesis, no solo para agrupar cosas juntas, sino también para capturarlas.
+
+Resulta que cuando especificas paréntesis en una expresión regular, sin que lo supiéramos hasta ahora, todo dentro de los paréntesis te será devuelto como un valor de retorno de la función re.search. Esto te permitirá extraer cantidades específicas de información de la propia entrada del usuario.
+
+También puedes revertir este proceso utilizando la versión de no captura también. Puedes usar paréntesis y luego literalmente un signo de interrogación y dos puntos, y luego algunas otras cosas. Y eso dirá: no captures esto. Solo quiero agrupar cosas. Pero por ahora, vamos a usar solo los paréntesis mismos.
+
+Entonces, ¿cómo voy a hacer esto? Bueno, si quiero obtener el apellido y el nombre del usuario, creo que lo que quiero capturar es el punto + aquí y el punto + aquí. Así que intencionalmente he rodeado en paréntesis el punto + tanto a la izquierda como a la derecha de la coma, no porque los esté agrupando específicamente - no estoy agregando un signo de interrogación, no estoy agregando otro + o un * - sino que estoy usando paréntesis ahora para fines de captura.
+
+¿Por qué? Bueno, voy a hacer esto a continuación. Aún voy a hacer una pregunta booleana como "si hay coincidencias, entonces haz esto". Así que si las coincidencias no son efectivamente falsas, como ninguna, espero haber obtenido algunas coincidencias. Y ahora mira lo que puedo hacer. Puedo hacer que el valor de last, coma, first sea igual a cualquier coincidencia y obtener todos los grupos de coincidencias. Luego, sigo adelante y actualizo el nombre como antes con una cadena de formato y hago first y luego last entre llaves también, y luego al final, tal como antes, imprimo, por ejemplo, "hola", coma, "nombre".
+
+Entonces, el nuevo código ahora es todo lo resaltado aquí. Estoy usando re.search para buscar si el usuario escribió su nombre en el formato apellido, coma, nombre. Pero estoy usando re.search de manera más poderosa para capturar parte de la entrada del usuario. ¿Qué se va a capturar? Todo lo que he rodeado entre paréntesis se me devolverá como valores de retorno.
+
+¿Cómo puedes acceder a esos valores de retorno? Pides a la variable a la que los has asignado que te devuelva todos los grupos, todos los grupos de paréntesis que se capturaron. Así que déjame seguir adelante y hacer esto. Voy a seguir adelante ahora y ejecutar python de format.py, Enter. Y voy a escribir mi nombre como de costumbre.
+
+En este caso, no sucede nada con esta condición if. ¿Por qué? Porque no he escrito una coma, y por lo tanto esta búsqueda no encuentra una coma, por lo que no hay coincidencias. Así que simplemente imprimimos "hola, nombre" sin nada interesante o nuevo.
+
+Pero si ahora continúo, borro mi pantalla y ejecuto python de format.py y escribo Malan, coma, espacio, David, Enter, hemos reformateado mi nombre. Bueno, ¿cómo funcionó esto? Permíteme ser un poco más explícito ahora.
+
+Resulta que no tengo que decir solo matches.groups. Puedo obtener grupos específicos que quiero. Así que cambiemos un poco mi código. Permíteme continuar y hacer esto. Actualicemos el nombre a... en realidad, hagamos esto. Digamos que el apellido va a estar en las coincidencias, pero específicamente en el grupo 1. El nombre va a estar en las coincidencias, pero específicamente en el grupo 2.
+
+¿Por qué 1 y 2? Porque este es el primer conjunto de paréntesis a la izquierda de la coma. Este es el segundo conjunto de paréntesis a la derecha de la coma. Y según la entrada, este sería el apellido del usuario en este escenario, Malan. Este sería el primer nombre del usuario, David, en este escenario. Por eso uso el grupo 1 para el apellido y el grupo 2 para el primer nombre.
+
+Y ahora voy a seguir adelante y decir que el nombre es igual a una cadena de formato, nuevamente, primero y luego el apellido, listo. Y permíteme refinar esto un último paso antes de que tomemos preguntas. Realmente no necesito estas variables si las estoy usando inmediatamente. Vamos a simplificar esto aún más como hemos hecho en el pasado por una cuestión de diseño.
+
+Si quiero que el nombre sea la concatenación del primer nombre y el apellido de la persona, hagamos esto. matches.group 2 primero, más un espacio, más matches.group 1. Así que simplemente depende de mí de izquierda a derecha, este es el grupo 1, este es el grupo 2. Entonces el grupo 1 es el apellido, el grupo 2 es el primer nombre. Si quiero invertirlos y actualizar el valor del nombre, puedo obtener explícitamente el grupo 2 primero, concatenar usando +, un espacio único, y luego concatenar el grupo 1.
+
+Muy bien. Eso fue mucho. Permíteme hacer una pausa para ver si hay preguntas. La diferencia clave aquí es que todavía estamos usando re.search de la misma manera, pero ahora estoy usando su valor de retorno, no solo para responder una pregunta verdadero o falso, sino para obtener coincidencias específicas, cualquier cosa que haya capturado, por así decirlo, con paréntesis.
+
+AUDIENCIA: ¿Por qué aquí estamos usando 1 y 2 en lugar de 0 y 1 para capturar el primero?
+
+DAVID MALAN: Buena pregunta. Una buena observación. En casi todos los demás contextos, hemos comenzado a contar en 0 y 1 en lugar de 1 y 2. Resulta que hay algo más en la posición 0 cuando regresa de re.search relacionado con la cadena en sí. Así que según la documentación de esta función solo, 1 es el primer conjunto de paréntesis y 2 es el segundo conjunto, y así sucesivamente. Solo una convención diferente aquí. ¿Otras preguntas?
+
+AUDIENCIA: ¿Qué pasa si escribimos nada, como espacio en blanco, coma, espacio en blanco? ¿Cómo verificamos la verdad de la condición?
+
+DAVID MALAN: Antes de responder directamente, déjame simplemente ejecutar esto y asegurarme de que no he estropeado nada más. Permíteme ejecutar python de format.py. Permíteme escribir David, espacio, Malan, de la manera correcta. Permíteme ejecutarlo una vez más. Permíteme escribir Malan, coma, David, de la manera incorrecta que estamos corrigiendo. Y todo funciona bien.
+
+Pero creo que aún se romperá. Permíteme ejecutarlo por tercera vez con Malan, coma, David sin espacio. Y ahora está roto. ¿Por qué? Porque todavía estoy buscando coma espacio.
+
+Ahora, ¿cómo puedo solucionar eso? Una forma en que podría hacerlo es agregar un signo de interrogación aquí, que nuevamente, es cero o más del elemento anterior. Entonces, si tengo un espacio y luego un signo de interrogación literalmente, sin necesidad de paréntesis, puedo tolerar tanto Malan, coma, espacio, David como Malan, coma, David.
+
+Así que intentemos de nuevo. Antes, esto no funcionaba. Hagamos Malan, coma, David sin espacio. Ahora funciona correctamente. Por lo tanto, podemos tolerar diferentes cantidades de espacio en blanco si soy un poco más preciso con mi fórmula.
+
+Permíteme intentarlo una vez más. Permíteme presionar la barra espaciadora de manera extraña, pero posiblemente un par de veces demasiadas, por lo que ahora están realmente separados. Esto, nuevamente, no funcionará correctamente, porque consumirá todo ese espacio en blanco. Entonces ahora podría querer eliminar, a izquierda y derecha, cualquier espacio en blanco al principio del resultado. O lo que podría hacer aquí es decir esto. En lugar de cero o uno, podría usar un * aquí, así que espacio *. Y ahora, si ejecuto esto una vez más con Malan, coma, espacio, espacio, espacio, David, Enter, ahora hemos limpiado aún más las cosas.
+
+Así que puedes imaginar, dependiendo de qué tan desordenados sean los datos que estás limpiando, tus expresiones regulares pueden volverse cada vez más sofisticadas. Realmente depende de cuántos problemas queramos resolver a la vez.

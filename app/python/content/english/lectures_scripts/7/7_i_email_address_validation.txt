@@ -1,0 +1,15 @@
+All right. Let me propose that I rewind this in time to where we left off, which was here. 
+
+And let me propose that there are, indeed, still limitations of this solution, not just with the username, not just with the domain name. We're still being a little too restrictive. So would you like to see the official regular expression that at least browsers use nowadays whenever you type in an email address to a web form, and the web form, the browser, tells you yes or no, your email address is syntactically valid? Ready? Ready? 
+
+Here is-- and this isn't even officially the right regular expression. It's a simplified version that browsers use because it catches most mistakes but not all. Here we go. This is the regular expression for a valid email address, at least as browsers nowadays implement them. Now it's crazy cryptic at first glance. 
+
+But note-- and it's wrapping on to many lines, but it's just one pattern. But just notice the now-familiar symbols. There is the ^ symbol at the very top. There is the $ sign at the very end. There is a square bracket over here and then some of these ranges plus other characters. 
+
+Turns out you don't normally see these characters in email addresses. It looks like you're swearing at someone in their username. But they're valid characters. They're valid officially. That doesn't mean that Gmail is going to allow you to put $ signs and other punctuation in your username. But officially, some servers might allow that. 
+
+So if you really want to validate a user's email address, you would actually come up with or copy-paste something like this. But honestly, this looks so cryptic. And if you were to type it out manually, you are so likely to make a mistake. What's the better solution here instead? 
+
+This is where, per past weeks, libraries are your friend. Surely someone else on the internet, a programmer more experienced than you, even, has come up with code that validates email addresses properly, using this regular expression or even something more sophisticated than that. So generally, if the problem at hand is to validate input that is pretty conventional-- an email address, a URL, something where there's an official definition that's independent of you yourself-- find a popular library that you're comfortable using and use it in your code to validate email addresses. This is not a wheel, necessarily, that you yourself should invent. 
+
+We've used email addresses, though, to iteratively start from something simple, too simple, and build on top of that. So you could certainly imagine using regular expressions still to validate things that aren't email addresses but are data that are important to you. So we at least now have these building blocks. 

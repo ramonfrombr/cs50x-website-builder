@@ -1,0 +1,29 @@
+Pero ¿cómo se carga un módulo en tu propio programa para poder usar las funciones en ese módulo? Bueno, necesitamos una nueva palabra clave en Python y se llama import. La palabra clave import en Python te permite importar el contenido de las funciones de algún módulo en Python.
+
+Bueno, ¿cómo puedo utilizar esto en la práctica? Permíteme proponer que existe en ese módulo llamado random esta función, entre otras. Así que he copiado y pegado de la documentación este resumen de una función llamada Choice.
+
+Ahora, la función existe en el módulo random, por así decirlo, no un módulo al azar, sino el módulo random. Y generalmente la documentación lo describe completamente así. random.choice es cómo técnicamente llamarías a esta función, aunque veremos alternativas a eso.
+
+Entre paréntesis, hay un parámetro llamado S-E-Q para sequence. Y sequence generalmente significa una lista o algo que se parece a una lista si tienes una lista de números o cadenas o cualquier otra cosa. Y la documentación se expande. Bueno, ¿cómo puedo utilizar esta función para resolver, tal vez, un problema conocido?
+
+Permíteme abrir VS Code aquí. Y permíteme proponer que implementemos un programa que simule lanzar una moneda. Una moneda que en los Estados Unidos tiene caras o cruces, la idea es tomar una decisión con una probabilidad de 50/50. 50% de probabilidad de caras, 50% de probabilidad de cruces. O puedes usar algún otro mecanismo similar.
+
+Permíteme abrir un programa con código llamado generate.py porque quiero comenzar a generar un montón de información aleatoria. El primero de los cuales será simplemente lanzar una moneda. ¿Cómo utilizo esa función?
+
+Bueno, primero tengo que importar la biblioteca random. Por lo tanto, literalmente las primeras líneas de mi archivo deberían ser import random. Y eso me da acceso a todas las funciones en ese módulo específico. Ahora, supongamos que quiero lanzar una moneda. Bueno, puedo hacer random.choice según la documentación que mencioné antes. Y eso nuevamente toma una secuencia.
+
+¿Qué es una secuencia? Es una lista o algo similar a una lista. Y sabemos acerca de las listas. Hemos usado listas para iterar sobre números. Hemos usado listas para iterar sobre estudiantes en Hogwarts. Vamos ahora a iterar solo sobre una lista de dos lados de una moneda, "heads" o "tails".
+
+Ahora, podría llamarlos como quiera. Estas son mis cadenas. Solo quiero simular el lanzamiento de una moneda. Así que voy a decir en minúsculas, heads y tail. Pero nota la sintaxis. Tengo "heads" y "tails" entre comillas dobles. Eso es porque son cadenas. También podría usar comillas simples siempre y cuando sea consistente. Hay una coma entre ellos, lo que significa que la lista tiene dos elementos. Hay corchetes cuadrados a la derecha y a la izquierda, lo que indica que esta es realmente una lista. Esa es la sintaxis para definir una lista en Python.
+
+Y por último, hay algo más familiar. Hay paréntesis fuera de esos corchetes. Pero esos son solo los paréntesis que pertenecen a la función Choice y especifican dónde se pasa su parámetro. Pero nuevamente, a diferencia de funciones anteriores, tengo que especificar en qué módulo está esta función, al menos por ahora. Y hago random.choice para llamar a la función específica.
+
+Bueno, es una cosa lanzar una moneda eligiendo entre esos dos con una probabilidad del 50%. Y eso es lo que hace random.choice. Recibe una lista y devuelve uno de esos valores aleatoriamente con igual probabilidad. Como he pasado dos elementos, tengo un 50/50 de probabilidad. Si pasara tres elementos, sería un 33% de probabilidad para cada uno de esos elementos y así sucesivamente. Python hace las matemáticas por ti.
+
+Pero quiero almacenar el valor de esto en una variable. Entonces vamos a definir una variable llamada coin que sea igual al valor de retorno. Por lo tanto, esto es realmente como lanzar una moneda. Voy a almacenar en una variable llamada coin, sea cual sea ese valor, caras o cruces. Y ahora, solo para ver qué está sucediendo, vamos a imprimir el valor de esa cadena coin.
+
+Bueno, ahora voy a ejecutar este programa en mi ventana de terminal. Python generate.py, Enter. Y parece que el primer lanzamiento de moneda fue caras. Vamos a ejecutarlo de nuevo. Y parece que fue caras nuevamente. Tal vez quieras comentar en el chat aquí.
+
+Si lo ejecuto una tercera vez, ¿qué será esta vez? Si quieres escribir tus pensamientos en el chat, podrías pensar que hay un error aquí. Pero esto es probabilidad en acción. Si presiono Enter una tercera vez, ahora es cruces. Y nuevamente cruces y nuevamente cruces y nuevamente cruces y nuevamente cruces y nuevamente caras.
+
+Ahora, si lo hiciéramos un número infinito de veces, eventualmente resultaría ser un 50/50. Si solo lo hacemos unas pocas veces, puede que no resulte tan limpio. Pero así es como funcionan las probabilidades.

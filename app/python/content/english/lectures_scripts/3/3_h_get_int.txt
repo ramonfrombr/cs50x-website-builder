@@ -1,0 +1,55 @@
+Well, allow me to propose, too, now that we refine this further. I think we're at the point where it's pretty darn correct. But suppose now that I find myself today and tomorrow trying to get numbers from the user quite a bit. 
+
+It would be nice, as we've seen, to maybe just invent my own function, get int to get an integer from the user both today and tomorrow and beyond. And, heck, maybe I can even share that function with other people. If they want to write programs, they get integers from users. 
+
+So how might I go about doing this? Well, let me go ahead and propose that we do this. Let me get rid of the print line but keep most of my loop here. Let me define a function called get int that takes no arguments for now. And I'm going to go ahead and indent all of the code I already wrote underneath get int. 
+
+So now I have a function called get int that tries to do the following. Try to get in it from the user. If something goes wrong and there's a value error, yell at them with x is not an integer. Else, break. But it's not just breaking that I want to do here. 
+
+Now that I'm in a function, recall our discussion of return values. If you're inventing your own function whose purpose in life isn't just a print something on the screen like a side effect but is to hand back a value, to hand you back a value, like on that same post-it note from our discussion of functions, well, you need to return x explicitly. How do I now use this function? 
+
+Well, as soon as we start making our own functions, it tends to be convenient to define our own main function as well. That's the main part of our program. And I'm going to keep this simple. 
+
+I'm now going to say, x equals get int. And then on the next line, I'm going to do that print from before, quote unquote, "x is"-- in curly braces-- "x." And at the very bottom of my program recall, I'm going to call main, so that no matter what, I'm invoking my main function after everything's been defined. 
+
+Well, let's see how this works. Let me go ahead and run Python of number.py. Enter. Let's type in 50. And it seems to work as before. 
+
+Let's go ahead and run it again, typing in cat, C-A-T, this time. X is not an integer. And I'm being prompted. 
+
+Dog, and I'm being prompted. Bird, and I'm being prompted. Fine, fine, fine. 50. That's an int. And so it is printed. 
+
+So what's worth noting here-- well, I'm manifesting a couple of good properties here. One, I've kind of abstracted away this notion of getting an integer. And even though I just artificially hit Enter a whole bunch of times just to hide that function for now-- it needs to be there, but we don't need to see it at this point-- notice that now this entire program really boils down to just these three lines of code now. Why? Because I've abstracted away that whole process of getting an int from the user into this new function of my own called get int. 
+
+But can I improve upon this? Well, let me go and undo all of those blank lines and pull this up just so we can see more on the screen at once. Can I tighten up my implementation of get int? It is correct. 
+
+I claim this is correct. It's handling errors. And it's returning x. But I don't, strictly speaking, need to write the code as long. What else could I do? 
+
+Well, let me propose that if all you're doing on this line 13 is breaking and then immediately after that, per the indentation, you're executing return x on line 14, why are you wasting everyone's time? Once you know you're ready to return the value, you could just return x. 
+
+And so in my else, I could break out and return a value. So here, too, return is used to return values from functions. Break is used to break out of loops. But it turns out that return is sort of stronger than break. 
+
+It will not only break you out of a loop. It will also return a value for you. So it's doing two things for once, if you will. 
+
+But can I make this even more compact? If my goal is to just tighten the code up, even though it's already correct, can anyone think of a further refinement, whether you've programmed in Python before or not? Can I shorten this implementation further just a little bit, if only to decrease the probability that I've made a mistake by having fewer lines and just make it a little easier to read because it's shorter? Any suggestions for tightening up my implementation of get int? 
+
+AUDIENCE: You can just return the value on the try function, when you're trying. You take the input x and then return x. 
+
+DAVID MALAN: Good. We can just return x a little higher up. And let me correct folks as we go. It's not a try function. It would be a try statement, technically. 
+
+A function typically has a parentheses and another one. In this case, it's just a statement. But we can do exactly that. I don't technically need the else. 
+
+If I really want, I could do this. Right after line nine, I could return x here. Or recall our discussion of defining variables unnecessarily sometimes. Why define a variable here if you're immediately going to use it here and then never again? So we could avoid a new line here. And I could avoid even defining x explicitly. 
+
+I could just say something like this. I could return int, input, quote unquote, "what's x?" I can do it all at once. Now, which is better? I don't know. 
+
+I mean, again, this is where reasonable people might disagree. I'd argue that, on the one hand, we're tightening up the code. We're using fewer lines. It's easier to read, lower probability that I've made a mistake. 
+
+On the other hand, it's a little more complicated to understand, perhaps. It's a little less obvious where I'm returning from. So I think arguments can be made either way. 
+
+At the end of the day, what's important is that you've done this consciously. You've made a decision to do it this way or this way. And you can justify it in your mind-- not that your answer is, eh, it worked, so I left it alone. 
+
+Have a good reason. Come up with a good reason. And that will come with experience and practice. 
+
+Well, let me propose to you that we make one other refinement here. Suppose that you're finding your programs to be a little noisy. And it's a little obnoxious that you keep telling the user, x is not an integer. X is not an integer. X is not an integer. 
+
+What if you want to make things a little gentler and just prompt the user again with the same words, what's x? What is x? What's x? Again and again. Well, you can do that as well. 

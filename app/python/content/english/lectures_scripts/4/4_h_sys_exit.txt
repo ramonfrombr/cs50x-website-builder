@@ -1,0 +1,45 @@
+DAVID MALAN: All right. All right, well, let's turn our attention back now to this code and see if we can't refine it a bit more by adding in some additional functionality that we get with modules like the sys module. One of the things I don't love about this version of the code even though arguably it is now correct is that the essence of my program, which is just to print out the name tag, is relegated to this else clause. And that's fine. 
+
+Logically, it's correct, but generally speaking, there is something nice about keeping all of your error handling separate from the code that you really care about having all of these ifs, elifs, perhaps at the top of your code that are checking to make sure that all of the data's as expected. 
+
+But then it would be nice if only for design sake not to hide in this else statement the actual code that you care about. I would prefer, for instance, to do something logically like this. I could check for errors up top. And then down here, print the name tag. 
+
+It would be nice if those are distinct blocks of code all of which are here left aligned. But there's a problem with what I've just done here. Logically, what bug did I just introduce by getting rid of the else and introducing line 10 on its own with no indentation outside of the conditional? What bug have I just introduced? What mistake to be clear? 
+
+AUDIENCE: Name error. 
+
+DAVID MALAN: Ironically, it's a name error but not a name error exception. It's an error with my name, but I think you're frozen for me. It's going to raise an exception because even though I'm checking the length of sys.argv up top and even though I'm checking it again for being greater than 2, not just less than 2, but greater, I'm still then blindly and incorrectly assuming it's now going to exist. 
+
+So just to be clear, if I run Python of name.py and I don't type any argument-- I've got too few-- I think I'm going to see that I have too few, but I'm also going to see that same exception. At the very top of my terminal window's output, there's my error message, too few arguments. But again, on line 10, I blindly proceed to still index into my list at location1 which does not exist. 
+
+So it turns out there's a better way to handle errors like this, especially if you're writing a program in Python that's just meant to run briefly and then exit anyway. But maybe we could start to exit prematurely if the program itself just can't proceed. If the user has not given us the data we want, perhaps, we should just exit the program earlier than we might otherwise. 
+
+So let me go ahead and do this. Let me go ahead and remove my comments so as to focus only on the code here. And let me propose that instead of just printing, quote, unquote, "too" few arguments, I'm going to use one other function that comes with the sys module. I'm going to go ahead and call sys.exit. 
+
+And as the name suggests, it's going to do exactly that. With the system's help, it's going to exit my program then and there on line four. Why is that OK? Well, if you gave me too few arguments, I have nothing more to say to you, the user. I might as well exit a bit prematurely. And I can do this as well on line six. 
+
+Let's go ahead and not just print that, but sys.exit, quote, unquote, "too" many arguments. Print out that message and just exit right there. Now, I can trust that by the time I get to line eight, every error condition has been checked for. And so it's safe for me to assume that there is in fact an item at location1 in sys.argv. 
+
+So let me go ahead now and run this, Python of name.py, Enter, too few arguments. But I'm back at my prompt. Nothing more has happened. Let me run it again. Python of name.py David Malan with no quotes, Enter. Too many arguments is now printed here. Finally, Python of name.py just David, Enter. Hello, my name is David. 
+
+So we have then in sys two forms of functionality. Now, we have access to this variable, sys.argv, this argument vector, that gives me all of the words that were typed at the prompt, including the program's own file name. And it turns out if we read further in the documentation, there's an exit function that can take different types of input. But if I pass out a string like this, it will indeed print that string for me and then exit from my program then and there. 
+
+Questions now on exiting from programs like this. To be clear, all of this time once Python gets to the bottom of your file, it's going to exit anyway. So I'm using sys.exit now just to make sure that I exit earlier than otherwise. 
+
+AUDIENCE: My question is about the sys that arg-- argv. So is that capable of accepting or taking multiple elements at once? Let's say, for example, Python name.py, David Malan. I'm a male, 20 years old. And if let's say I only want to access your name, which is at the first index. And then your age is, say, at the sixth index. Can I say sys.argv1 and another one for six to access what I just want? Is that both for sys.argv? 
+
+DAVID MALAN: Short answer-- yes, I think if I understand your question correctly, whereby, you're proposing to have many words at the end of the command. And you want to access those individual words. Absolutely. At some point, it gets a little fragile, I would say, if you're typing so many words at the prompt that the order really matters. 
+
+And so it turns out there's a lot of programs. And there's functionality in Python that can allow you to provide those values, like name or age or any number of other fields in any order you want, but a pass in a bit more information textually that tells the program how you want to use it. 
+
+So in short, what you're describing is possible. And let me do a small incarnation of it as follows. Let me propose that we go back to my code here. And let's propose that we actually now want to support multiple values at the prompt. So there's going to be no such thing as too many arguments. Suppose that I want to generate name tags not just for David, but for David, for Carter, for Rongshin, for others in the group who all want their name tags as well. 
+
+So I'm going to go ahead and do this. I'm going to get rid of my elif condition because I don't want to limit the maximum number of words that are typed at the prompt anymore. I instead want to iterate over every name at the prompt. So I'm going to say this. For arginsys.argv, go ahead and print out this time, arg. 
+
+So what am I doing here? Well, even though the syntax is a little different, the idea's the same as before when we've had loop. I'm using a for loop to iterate over a list. The list in question here is sys.argv. Arg is a variable that I'm creating on the fly. The for loop is going to make sure that the first time through this loop, arg is set to the first word on the command line. 
+
+The second time through the loop, Python's going to make sure that arg is now set to the second thing on the command line and so forth. That's just how a for loop works. It updates the variable for us. I don't have to call it arg. I could call it name so long as I change it to name in both places. But arg is reasonable if I'm iterating over arguments more generally. 
+
+If I now run this program, though, unfortunately, there's a little bit of a bug. Even if I type in David and Carter and Rongshin, I'm not going to get just three name tags. In your mind, does anyone see the bug I'm about to trip over? It's not a huge deal if I've got enough name tags to go around. But I'm going to be wasting one because this is going to print not three, but four name tags, whereby, the first contains the name of the program itself. 
+
+Maybe not a big deal. Maybe that's the sticker we don't bother handing out, but it's wasteful. And it does look wrong.

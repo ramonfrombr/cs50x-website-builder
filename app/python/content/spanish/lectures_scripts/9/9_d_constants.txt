@@ -1,0 +1,35 @@
+Algunos lenguajes te permiten definir variables que son, por así decirlo, constantes. Es decir, una vez que has asignado un valor a ellas, no puedes cambiar el valor de esa variable. Y eso tiende a ser algo bueno porque te permite programar defensivamente. Justo en caso de que accidentalmente, o alguien más, accidentalmente intente modificar el valor de esa variable, si la has declarado en algún lenguaje como una constante, no se puede cambiar, o generalmente no se puede cambiar sin un gran esfuerzo.
+
+Desafortunadamente, en Python, nuevamente estamos en el sistema de honor aquí. Donde tenemos convenciones para indicar que algo debería ser tratado como si fuera una constante. Pero eso no se aplica realmente por el lenguaje.
+
+Por ejemplo, déjame volver aquí a VS Code. Y déjame crear un nuevo archivo, por ejemplo, llamado maullidos.py. Y veamos si no podemos implementar la idea de que un gato maúlle en la pantalla. Entonces haré el código de maullidos.py. Y en maullidos.py, permíteme seguir adelante e implementar un programa muy simple que solo tiene un gato maullando tres veces.
+
+¿Qué tal esto? Para i en el rango de tres, sigue adelante e imprime, entre comillas, "miau". Muy bien. Bueno, hemos visto en el pasado cómo podemos limpiar esto un poco. Por ejemplo, si en realidad no estoy usando i, podría cambiar el nombre de esa variable a guion bajo en estilo pythonico, aunque eso no tenga ningún efecto funcional aquí. Pero aquí tenemos este tres codificado arbitrariamente, es decir, escrito explícitamente en mi código. Y no es realmente un gran problema cuando tu código solo tiene dos líneas.
+
+Pero imagina que este es un programa mucho más grande con docenas o incluso cientos de líneas. E imagina que una de esas líneas tiene un tres en algún lugar. Nunca vas a encontrar ese tres muy fácilmente. Y será muy fácil pasarlo por alto por ti o por tus colegas u otros que hayas codificado algún valor mágico como un tres justo allí en tu código.
+
+Entonces tiende a ser una buena práctica, no solo en Python sino también en otros lenguajes, cada vez que tienes lo que es esencialmente una constante, como el número tres que no debería cambiar nunca, es al menos hacerlo evidente, mostrarlo en la parte superior de tu código, para que sea obvio cuáles son los valores constantes de tu código.
+
+Y con eso quiero decir esto. En la parte superior de este archivo, probablemente sería un poco más claro para los colegas, y francamente, para mí mañana después de haber olvidado lo que hice hoy, definir una variable como "maullidos" y asignarle el valor de tres.
+
+Y luego, en lugar de codificar el tres aquí o incluso más abajo en un programa mucho más grande, solo voy a pasar el valor de esa variable a mi bucle. Así que ahora es obvio para mí que "maullidos" es aparentemente el número de veces que debe maullar.
+
+Y si alguna vez quiero cambiarlo, el único código que tengo que cambiar está en la parte superior de mi archivo. No necesito buscar o descubrir qué se va a romper, qué necesito cambiar. Solo sé que puedo cambiar estas constantes en la parte superior.
+
+El problema es que Python no hace que las variables sean constantes. De hecho, es una convención en Python y en otros lenguajes al menos escribir en mayúscula las variables cuando quieres indicar al mundo que no debes tocar esto. Es constante. Pero literalmente no hay nada en mi código que me impida decir, ¿sabes qué? Hoy siento que son cuatro maullidos en lugar de tres. Eso funcionaría.
+
+Sin embargo, en otros lenguajes, típicamente hay una palabra clave o algún otro mecanismo sintáctico que te permitiría evitar que se ejecute la línea 3 en este momento. Así que cuando intentas ejecutar tu código, en realidad recibirías un mensaje de error diciendo explícitamente "no puedes hacer eso". Por lo tanto, Python, una vez más, se basa más en el sistema de honor cuando se trata de estas convenciones.
+
+Ahora, resulta que hay otros tipos de constantes, entre comillas, que Python generalmente manifiesta. Y de hecho, permíteme cambiar esto un poco. Permíteme eliminar esta versión de "maullidos". Y permíteme introducir, de nuevo, una clase de nuestra discusión de programación orientada a objetos, como una clase que representa a un gato, otra entidad del mundo real.
+
+Recuerda que dentro de las clases puedes tener no solo variables de instancia sino también variables de clase. Es decir, variables dentro de la clase que no están dentro de self, por así decirlo, pero son accesibles para todos los métodos dentro de esa clase. Aquí también hay una convención pero no está impuesta por Python de tener constantes de clase, en donde dentro de la clase puedes tener una variable que no se debe, no se, no se cambie. Pero solo quieres indicarlo visualmente mediante el uso de mayúsculas en su nombre.
+
+Por ejemplo, si el número predeterminado de maullidos para un gato debe ser tres, puedo simplemente dentro de mi clase, pero fuera de cualquiera de mis métodos definidos, crear una variable de clase en mayúsculas con ese mismo valor. Y luego, si quiero crear un método, como "maullar", por ejemplo, que como método de instancia puede tomar "self" como sabemos. Y luego, podría tener mi bucle aquí para guion bajo en el rango de y ahora necesito acceder a esto.
+
+La convención sería decir "gato.maullidos" para dejar claro que quiero la variable "maullidos" asociada con la clase llamada gato. Luego voy a imprimir uno de estos maullidos. Y ahora, al final de mi código, fuera de la clase, déjame hacer algo como esto. Permíteme instanciar un gato utilizando el constructor de gatos.
+
+Observa que esto es importante. De acuerdo con nuestra discusión de POO, la clase se escribe en mayúscula por convención. Pero la variable aquí está en minúscula. Y podría llamarla simplemente "C" o cualquier otra cosa. Pero me gusta más la simetría de llamarla "gatito" aquí y "gato grande", por así decirlo, aquí.
+
+Y ahora, si quiero que este gato en particular maúlle el número predeterminado de tres veces, solo puedo hacer "gato.maullar" como esto. Y ese método "maullar" va a, según la línea cinco, acceder a esa constante de clase. Pero nuevamente, es constante solo en el sentido de que no deberías tocar eso, no que en realidad vaya a ser impuesto por el lenguaje.
+
+Permíteme entonces ejecutar esto con Python de maullidos.py. Y ahí están, tres de nuestros maullidos, miau, miau.

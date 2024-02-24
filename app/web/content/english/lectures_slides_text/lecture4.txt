@@ -1,0 +1,1231 @@
+
+Slide [0]
+
+Web Programming 
+with Python and JavaScript
+
+Slide [1]
+
+SQL, Models, and Migrations
+
+Slide [2]
+
+Data
+
+Slide [3]
+
+origin
+destination
+duration
+New York
+London
+415
+Shanghai
+Paris
+760
+Istanbul
+Tokyo
+700
+New York
+Paris
+435
+Moscow
+Paris
+245
+Lima
+New York
+455
+
+Slide [4]
+
+SQL
+
+Slide [5]
+
+Database Management Systems
+• MySQL 
+• PostgreSQL 
+• SQLite 
+• ...
+
+Slide [6]
+
+SQLite Types
+•  TEXT 
+•  NUMERIC 
+•  INTEGER 
+•  REAL 
+•  BLOB
+
+Slide [7]
+
+MySQL Types
+• CHAR(size) 
+• VARCHAR(size) 
+• SMALLINT 
+• INT 
+• BIGINT 
+• FLOAT 
+• DOUBLE 
+• ...
+
+Slide [8]
+
+CREATE TABLE
+
+Slide [9]
+
+CREATE TABLE flights ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origin TEXT NOT NULL, 
+    destination TEXT NOT NULL, 
+    duration INTEGER NOT NULL 
+);
+
+Slide [10]
+
+CREATE TABLE flights ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origin TEXT NOT NULL, 
+    destination TEXT NOT NULL, 
+    duration INTEGER NOT NULL 
+);
+
+Slide [11]
+
+CREATE TABLE flights ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origin TEXT NOT NULL, 
+    destination TEXT NOT NULL, 
+    duration INTEGER NOT NULL 
+);
+
+Slide [12]
+
+CREATE TABLE flights ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origin TEXT NOT NULL, 
+    destination TEXT NOT NULL, 
+    duration INTEGER NOT NULL 
+);
+
+Slide [13]
+
+CREATE TABLE flights ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origin TEXT NOT NULL, 
+    destination TEXT NOT NULL, 
+    duration INTEGER NOT NULL 
+);
+
+Slide [14]
+
+CREATE TABLE flights ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origin TEXT NOT NULL, 
+    destination TEXT NOT NULL, 
+    duration INTEGER NOT NULL 
+);
+
+Slide [15]
+
+CREATE TABLE flights ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    origin TEXT NOT NULL, 
+    destination TEXT NOT NULL, 
+    duration INTEGER NOT NULL 
+);
+
+Slide [16]
+
+Constraints
+• CHECK 
+• DEFAULT 
+• NOT NULL 
+• PRIMARY KEY 
+• UNIQUE 
+• ...
+
+Slide [17]
+
+INSERT
+
+Slide [18]
+
+INSERT INTO flights 
+    (origin, destination, duration) 
+    VALUES ("New York", "London", 415);
+
+Slide [19]
+
+INSERT INTO flights 
+    (origin, destination, duration) 
+    VALUES ("New York", "London", 415);
+
+Slide [20]
+
+INSERT INTO flights 
+    (origin, destination, duration) 
+    VALUES ("New York", "London", 415);
+
+Slide [21]
+
+INSERT INTO flights 
+    (origin, destination, duration) 
+    VALUES ("New York", "London", 415);
+
+Slide [22]
+
+INSERT INTO flights 
+    (origin, destination, duration) 
+    VALUES ("New York", "London", 415);
+
+Slide [23]
+
+INSERT INTO flights 
+    (origin, destination, duration) 
+    VALUES ("New York", "London", 415);
+
+Slide [24]
+
+SELECT
+
+Slide [25]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights;
+
+Slide [26]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights;
+
+Slide [27]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT origin, destination FROM flights;
+
+Slide [28]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT origin, destination FROM flights;
+
+Slide [29]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE id = 3;
+
+Slide [30]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE id = 3;
+
+Slide [31]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE origin = "New York";
+
+Slide [32]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE origin = "New York";
+
+Slide [33]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE duration > 500;
+
+Slide [34]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE duration > 500;
+
+Slide [35]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE duration > 500 
+AND destination = "Paris";
+
+Slide [36]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE duration > 500 
+AND destination = "Paris";
+
+Slide [37]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE duration > 500 
+OR destination = "Paris";
+
+Slide [38]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE duration > 500 
+OR destination = "Paris";
+
+Slide [39]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE 
+origin IN ("New York", "Lima");
+
+Slide [40]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE 
+origin IN ("New York", "Lima");
+
+Slide [41]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE 
+origin LIKE "%a%";
+
+Slide [42]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+SELECT * FROM flights WHERE 
+origin LIKE "%a%";
+
+Slide [43]
+
+Functions
+• AVERAGE 
+• COUNT 
+• MAX 
+• MIN 
+• SUM 
+• ...
+
+Slide [44]
+
+UPDATE
+
+Slide [45]
+
+UPDATE flights 
+    SET duration = 430 
+    WHERE origin = "New York" 
+    AND destination = "London";
+
+Slide [46]
+
+UPDATE flights 
+    SET duration = 430 
+    WHERE origin = "New York" 
+    AND destination = "London";
+
+Slide [47]
+
+UPDATE flights 
+    SET duration = 430 
+    WHERE origin = "New York" 
+    AND destination = "London";
+
+Slide [48]
+
+UPDATE flights 
+    SET duration = 430 
+    WHERE origin = "New York" 
+    AND destination = "London";
+
+Slide [49]
+
+UPDATE flights 
+    SET duration = 430 
+    WHERE origin = "New York" 
+    AND destination = "London";
+
+Slide [50]
+
+UPDATE flights 
+    SET duration = 430 
+    WHERE origin = "New York" 
+    AND destination = "London";
+
+Slide [51]
+
+DELETE
+
+Slide [52]
+
+DELETE FROM flights WHERE destination = "Tokyo";
+
+Slide [53]
+
+DELETE FROM flights WHERE destination = "Tokyo";
+
+Slide [54]
+
+DELETE FROM flights WHERE destination = "Tokyo";
+
+Slide [55]
+
+DELETE FROM flights WHERE destination = "Tokyo";
+
+Slide [56]
+
+DELETE FROM flights WHERE destination = "Tokyo";
+
+Slide [57]
+
+Other Clauses
+• LIMIT 
+• ORDER BY 
+• GROUP BY 
+• HAVING 
+• ...
+
+Slide [58]
+
+Foreign Keys
+
+Slide [59]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+flights
+
+Slide [60]
+
+id
+origin
+origin_code destination destination_code
+duration
+1
+New York
+JFK
+London
+LHR
+415
+2
+Shanghai
+PVG
+Paris
+CDG
+760
+3
+Istanbul
+IST
+Tokyo
+NRT
+700
+4 New York
+JFK
+Paris
+CDG
+435
+5
+Moscow
+SVO
+Paris
+CDG
+245
+6
+Lima
+LIM
+New York
+JFK
+455
+flights
+
+Slide [61]
+
+id
+code
+city
+1
+JFK
+New York
+2
+PVG
+Shanghai
+3
+IST
+Istanbul
+4
+LHR
+London
+5
+SVO
+Moscow
+6
+LIM
+Lima
+7
+CDG
+Paris
+8
+NRT
+Tokyo
+airports
+
+Slide [62]
+
+id
+origin
+destination
+duration
+1
+New York
+London
+415
+2
+Shanghai
+Paris
+760
+3
+Istanbul
+Tokyo
+700
+4
+New York
+Paris
+435
+5
+Moscow
+Paris
+245
+6
+Lima
+New York
+455
+flights
+
+Slide [63]
+
+id
+origin_id
+destination_id
+duration
+1
+1
+4
+415
+2
+2
+7
+760
+3
+3
+8
+700
+4
+1
+7
+435
+5
+5
+7
+245
+6
+6
+1
+455
+flights
+
+Slide [64]
+
+id
+first
+last
+flight_id
+1
+Harry
+Potter
+1
+2
+Ron
+Weasley
+1
+3
+Hermione
+Granger
+2
+4
+Draco
+Malfoy
+4
+5
+Luna
+Lovegood
+6
+6
+Ginny
+Weasley
+6
+passengers
+
+Slide [65]
+
+id
+first
+last
+1
+Harry
+Potter
+2
+Ron
+Weasley
+3
+Hermione
+Granger
+4
+Draco
+Malfoy
+5
+Luna
+Lovegood
+6
+Ginny
+Weasley
+people
+
+Slide [66]
+
+person_id
+flight_id
+1
+1
+2
+1
+2
+4
+3
+2
+4
+4
+5
+6
+6
+6
+passengers
+
+Slide [67]
+
+JOIN
+
+Slide [68]
+
+first
+origin
+destination
+Harry
+New York
+London
+Ron
+New York
+London
+Hermione
+Shanghai
+Paris
+Draco
+New York
+Paris
+Luna
+Lima
+New York
+Ginny
+Lima
+New York
+SELECT first, origin, destination 
+FROM flights JOIN passengers 
+ON passengers.flight_id = flights.id;
+
+Slide [69]
+
+JOINs
+• JOIN / INNER JOIN 
+• LEFT OUTER JOIN 
+• RIGHT OUTER JOIN 
+• FULL OUTER JOIN
+
+Slide [70]
+
+CREATE INDEX
+
+Slide [71]
+
+CREATE INDEX name_index ON passengers (last);
+
+Slide [72]
+
+SQL Injection
+
+Slide [73]
+
+Username:
+Password:
+
+Slide [74]
+
+SELECT * FROM users 
+WHERE username = username AND password = password;
+
+Slide [75]
+
+Username:
+harry
+Password:
+12345
+
+Slide [76]
+
+SELECT * FROM users 
+WHERE username = username AND password = password;
+
+Slide [77]
+
+SELECT * FROM users 
+WHERE username = "harry" AND password = "12345";
+
+Slide [78]
+
+Username:
+hacker" --
+Password:
+
+Slide [79]
+
+SELECT * FROM users 
+WHERE username = username AND password = password;
+
+Slide [80]
+
+SELECT * FROM users 
+WHERE username = "hacker"--" AND password = "";
+
+Slide [81]
+
+SELECT * FROM users 
+WHERE username = "hacker"--" AND password = "";
+
+Slide [82]
+
+Race Conditions
+
+Slide [83]
+
+Models
+
+Slide [84]
+
+SQL, Models, and Migrations
+
+Slide [85]
+
+Web Programming 
+with Python and JavaScript

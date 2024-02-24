@@ -1,6 +1,7 @@
 menu = {
     "title": "Este é o CS50x",
     "intro": "O curso de Ciências da Computação da Universidade de Harvard",
+    "youtubeLink": "https://www.youtube.com/channel/UCJWJr7ZvX9QqyITKVA6-Kjw",
     "week": "Semana",
     "week2": "Vetores",
     "week3": "Algoritmos",
@@ -22,7 +23,8 @@ menu = {
     "adminer": "Navegador PostgreSQL",
     "sqlite_browser": "Navegador SQLite",
     "manual": "Manual do Programador",
-    "style": "Guia de Estilo"
+    "style": "Guia de Estilo",
+    "courses": "Courses"
 }
 
 week_page = {

@@ -1,0 +1,59 @@
+Bueno, resulta que las expresiones regulares también admiten esta sintaxis. Puedes usar corchetes dentro de tu patrón y dentro de esos corchetes incluir uno o más caracteres que deseas buscar específicamente. Alternativamente, puedes poner un símbolo de caret dentro de esos corchetes, lo cual lamentablemente en este contexto significa algo completamente diferente a "coincidir con el inicio de la cadena". Pero este sería el operador complemento dentro de los corchetes, lo cual significa "no puedes coincidir con ninguno de estos caracteres".
+
+Así que las cosas están a punto de verse aún más enigmáticas ahora. Pero eso es por qué nos estamos enfocando en expresiones regulares por sí mismas aquí. Si no quiero permitir ningún carácter, que es lo que representa un punto, puedo decir simplemente que solo quiero admitir A, o B, o C, o D, o E, o F, o Gs. Podría escribir aquí todo el abecedario más algunos números para incluir todas las letras que quiero permitir.
+
+Pero sinceramente, un poco más simple sería esto. Puedo usar un símbolo de ^ y luego un símbolo de @, lo cual tiene el efecto de decir que este es el conjunto de caracteres que tiene todo excepto un símbolo de @. Y puedo hacer lo mismo aquí. En lugar de un punto a la derecha del símbolo de @, puedo hacer corchete abierto ^, símbolo de @.
+
+Y debo admitir que las cosas están empezando a escalar rápidamente aquí, pero empezaré de izquierda a derecha. Este ^ fuera de los corchetes al principio de mi cadena, como antes, significa "coincidir con el inicio de la cadena". Y miremos más adelante. El signo de dólar ($) al final de la expresión regular significa "coincidir con el final de la cadena".
+
+Entonces, si podemos marcar mentalmente esos como sencillos, centrémonos ahora en todo lo demás en el medio. Bueno, aquí a la izquierda tenemos una nueva sintaxis: un corchete cuadrado, otro ^, un signo de @ y un corchete cerrado, y luego un +. El + significa lo mismo de siempre. Significa "uno o más de las cosas a la izquierda".
+
+¿Qué hay a la izquierda? Bueno, esta es la nueva sintaxis. Dentro de los corchetes cuadrados aquí, tengo un símbolo de ^ y luego un símbolo de @. Eso simplemente significa cualquier carácter excepto el símbolo de @. Es una sintaxis extraña, pero así es como podemos expresar esa idea simple: cualquier carácter en el teclado excepto el símbolo de @. Y bueno, incluso otros caracteres que no están físicamente en tu teclado pero que aún existen.
+
+Luego tenemos un símbolo de @ literal, luego tenemos otra de estas mismas cosas: corchete cuadrado, ^@ corchete cerrado, lo cual significa cualquier carácter excepto el símbolo de @, luego uno o más de esas cosas, seguido literalmente de un punto y edu. Así que ahora déjame hacerlo de nuevo. Vamos a ejecutar nuevamente `python validate.py` y probar mi propia dirección de correo electrónico para asegurarnos de que no he empeorado las cosas. Y estamos bien.
+
+Ahora déjame borrar la pantalla y ejecutar `python validate.py` nuevamente e ingresar `malan@@@harvard.edu`, cruzando los dedos esta vez. Y finalmente, esto ahora es inválido. ¿Por qué? Me permito tener un símbolo de @ en el medio de la entrada del usuario, pero todo a la izquierda según esta nueva sintaxis no puede ser un símbolo de @. Puede ser cualquier cosa menos una o más veces. Y todo a la derecha del símbolo de @ puede ser cualquier cosa excepto un símbolo de @ una o más veces seguido, por último, de un punto literal y edu.
+
+Entonces nuevamente, la nueva sintaxis es simplemente esta: los corchetes cuadrados te permiten especificar un conjunto de caracteres que se escriben literalmente en tu teclado: A, B, C, D, E, F o el complemento, lo opuesto, el símbolo ^, que significa "no" y luego los símbolos uno o más que deseas excluir. ¿Preguntas sobre esta sintaxis aquí?
+
+AUDIENCIA: Entonces, justo después del símbolo de @, ¿podemos usar las llaves m uno para indicar que solo podemos tener una repetición del símbolo de @?
+
+DAVID MALAN: Claro. Podríamos hacer esto. Déjame abrir VS Code. Y borra la forma actual de la expresión regular y volvamos a donde comenzamos, que era simplemente punto * @ y punto *. Absolutamente puedo hacer algo como esto y requerir que haya al menos uno de cualquier carácter aquí. Y luego podría hacer algo más para permitir cualquier otra cantidad también.
+
+Entonces, la sintaxis de las llaves rizadas, que vimos anteriormente en las diapositivas pero que aún no hemos usado, se puede usar para especificar un número específico de caracteres. Pero sinceramente, esto es más verbose de lo necesario. La mejor solución, argumentable o la más simple, al menos, es simplemente decir punto +. Pero allí también, otro ejemplo de cómo se puede resolver el mismo problema de varias formas.
+
+Volveré a donde estaba la expresión regular y responderé otras preguntas también. ¿Preguntas sobre los conjuntos de caracteres o sobre cómo complementar ese conjunto?
+
+AUDIENCIA: Entonces, ¿podemos usar esa misma sintaxis para indicar que no queremos un cierto carácter en toda la cadena?
+
+DAVID MALAN: Podrías. Será... Podrías usar absolutamente esta sintaxis para excluir un cierto carácter de toda la cadena. Pero sería un poco más difícil en este momento, porque todavía estamos requiriendo .edu al final. Pero sí, absolutamente. ¿Otras preguntas?
+
+AUDIENCIA: ¿Qué sucede si el usuario ingresa .edu al principio de la cadena?
+
+DAVID MALAN: Buena pregunta. ¿Qué sucede si el usuario escribe .edu al principio de la cadena? Bueno, déjame volver a VS Code aquí. Y tratemos de resolver esto de dos formas diferentes. Primero, veamos la expresión regular y veamos si podemos inferir si eso será tolerado. Bueno, según la expresión regular críptica actual, estoy diciendo que puedes tener cualquier carácter excepto el símbolo @. Entonces eso funcionaría, podría tener el punto para el .edu.
+
+Pero luego tengo que tener un símbolo @. Así que eso no funcionaría realmente, porque si simplemente escribo .edu, no pasaremos esa restricción. Ahora déjame probar esto ejecutando el programa. Escribiré simplemente literalmente .edu. Eso no funciona.
+
+Pero, pero, pero podría hacer esto, .edu@.edu. Eso, también, es inválido. Pero déjame hacer esto, .edu@algoalgo.edu. Eso pasa. Así que comienza a ponerse un poco extraño ahora. Tal vez sea válido, tal vez no. Pero creo que eventualmente seremos más precisos también. ¿Qué tal una pregunta más sobre esta expresión regular y la complementación de conjuntos?
+
+AUDIENCIA: ¿Podemos usar otro nombre de dominio en la entrada de la cadena?
+
+DAVID MALAN: ¿Puedes usar otro nombre de dominio? Absolutamente. Estoy usando el mío solo para demostración. Pero puedes usar absolutamente cualquier dominio o dominio de nivel superior. Y estoy usando .edu, que es muy centrado en Estados Unidos. Pero esto funcionaría exactamente igual para cualquier dominio de nivel superior.
+
+Muy bien. Déjame proponer ahora que mejoremos aún más esta expresión regular, porque si la vuelvo a mostrar en VS Code, verás que todavía soy un poco tolerante. Resulta que hay ciertos requisitos para el nombre de usuario y el nombre de dominio de alguien en una dirección de correo electrónico. Existe un estándar oficial en el mundo para lo que puede ser una dirección de correo electrónico y qué caracteres pueden contener.
+
+Y esto es demasiado permisivo con todos los caracteres del mundo excepto el símbolo @. Así que realmente estrechemos la definición de lo que vamos a tolerar en los nombres de usuario. Y las compañías como Gmail también podrían hacer esto. Supongamos que no es solo que quiero excluir el símbolo @. Supongamos que solo quiero permitir, digamos, caracteres que normalmente aparecen en palabras, como letras del abecedario, de la A a la Z, ya sea en mayúscula o minúscula, tal vez algunos números, e incluso un guión bajo también podría ser permitido.
+
+Bueno, podemos usar esta misma sintaxis de corchetes para especificar un conjunto de caracteres de la siguiente manera. Podría hacer abcdefghij... oh, Dios mío. Esto va a tomar para siempre. Tendré que escribir las 26 letras del abecedario, tanto en minúscula como en mayúscula. Así que dejemos de hacer eso.
+
+Ya hay una manera mejor. Si deseas especificar dentro de estos corchetes cuadrados un rango de letras, en realidad solo puedes hacer un guion. Si literalmente haces a-z en estos corchetes cuadrados, la computadora entenderá que quieres decir de la a a la z. No necesitas escribir las 26 letras del abecedario.
+
+Si deseas incluir letras mayúsculas también, simplemente haces lo mismo. Sin espacios, sin comas, simplemente sigues escribiendo de a a Z. Entonces tengo la pequeña a guión pequeña z, grande A guión grande Z. Sin espacios, sin comas, sin separadores. Simplemente especificas esos rangos. 
+
+Si además quiero números, podría hacer 01234... no, no es necesario escribir los 10 dígitos decimales. Puedes simplemente decir de 0 a 9 usando un guion también. Y si ahora quieres admitir también guiones bajos, que son bastante comunes en los nombres de usuario para las direcciones de correo electrónico, simplemente escribes un guión bajo al final.
+
+Observa que todos estos caracteres están dentro de corchetes, lo que nuevamente significa aquí hay un conjunto de caracteres que quiero permitir. No he usado un símbolo de ^ al principio de todo esto, porque no quiero complementarlo, sino aceptar solo estos caracteres.
+
+Voy a hacer lo mismo a la derecha. Si quiero requerir que el nombre de dominio también venga de este conjunto de caracteres, que admito que es un poco estrecho, pero por ahora es familiar, así que lo mantendremos simple, voy a pegar exactamente el mismo conjunto de caracteres allí a la derecha. Y así ahora es mucho más restrictivo. Ahora voy a ejecutar `python validate.py`. Voy a probar con mi propia dirección de correo electrónico y aún está bien.
+
+Voy a borrar la pantalla y ejecutarlo una vez más, esta vez tratando de romperlo. Intentaré escribir algo como, ¿qué tal, david_malan@harvard.edu?, Intro, pero eso también será válido. Pero si hago algo completamente incorrecto otra vez, como malan@@@harvard.edu, eso seguirá siendo inválido. ¿Por qué? Porque mi expresión regular actualmente solo permite un solo @ en el medio, porque todo a la izquierda debe ser alfanumérico, es decir, alfabético o numérico, o un guión bajo, lo mismo a la derecha, seguido de .edu.

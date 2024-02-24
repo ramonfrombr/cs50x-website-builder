@@ -6,6 +6,14 @@ from psets_routes_template import psets_routes_template
 from weeks_routes_template import weeks_routes_template
 from root_routes_template import root_routes_template
 from language_template import language_template
+from pathlib import Path
+from templates_folder_templates import blank_template, index_template, layout_template, menu_template
+from templates_folder_weeks_templates import weeks_layout_template, weeks_pset_item_macro_template, weeks_notes_item_macro_template
+from string import Template
+
+# Folder variations
+languages = ["english", "french", "spanish", "portuguese", "japanese", "chinese", "german", "italian", "korean"]
+content_folders = ["lectures_code", "notes", "psets", "psets_checks", "psets_code", "specifications"]
 
 if len(sys.argv) != 2:
   print("Usage: python course_folder_builder COURSE_NAME")
@@ -37,14 +45,148 @@ else:
       routes_file = open(f"{path}/routes.py", "a")
       routes_file.write(psets_routes_template.substitute(course=COURSE))
       routes_file.close()
+
     elif blueprint=="weeks":
       routes_file = open(f"{path}/routes.py", "a")
-      routes_file.write(weeks_routes_template)
+      routes_file.write(weeks_routes_template.substitute(course=COURSE))
       routes_file.close()
 
-  # Folder variations
-  languages = ["english", "french", "spanish", "portuguese"]
-  content_folders = ["lectures_code", "notes", "psets", "psets_checks", "psets_code", "specifications"]
+  def create_templates_folder_weeks(path):
+    Path(path).mkdir(parents=True, exist_ok=True)
+    Path(f"{path}/weeks").mkdir(parents=True, exist_ok=True)
+
+    weeks_layout = open(f"{path}/weeks/layout.html", "w")
+    weeks_layout.write(weeks_layout_template.substitute(course=COURSE))
+    weeks_layout.close()
+
+    weeks_pset_item_macro = open(f"{path}/weeks/pset_item_macro.html", "w")
+    weeks_pset_item_macro.write(weeks_pset_item_macro_template.substitute(course=COURSE))
+    weeks_pset_item_macro.close()
+    
+    weeks_notes_item_macro = open(f"{path}/weeks/notes_item_macro.html", "w")
+    weeks_notes_item_macro.write(weeks_notes_item_macro_template.substitute(course=COURSE))
+    weeks_notes_item_macro.close()
+
+  def create_templates_folder(path):
+    create_templates_folder_weeks(path)
+
+    # Components template folder
+    Path(f"{path}/components").mkdir(parents=True, exist_ok=True)
+    menu = open(f"{path}/components/menu.html", "w")
+    menu.write(menu_template.substitute(course=COURSE, course_first_letter=COURSE[0]))
+    menu.close()
+
+    # Language template folders
+    for language in languages:
+      Path(f"{path}/{language}").mkdir(parents=True, exist_ok=True)
+      Path(f"{path}/{language}/psets").mkdir(parents=True, exist_ok=True)
+
+    # Creates blank.html
+    blank = open(f"{path}/blank.html", "w")
+    blank.write(blank_template.substitute(course=COURSE))
+    blank.close()
+    # Creates layout.html
+    layout = open(f"{path}/layout.html", "w")
+    layout.write(layout_template.substitute(course=COURSE))
+    layout.close()
+    # Creates index.html
+    index = open(f"{path}/index.html", "w")
+    index.write(index_template.substitute(course=COURSE))
+    index.close()
+
+  def create_content_folders(content_folders, language_path):
+    for folder in content_folders:
+      folder_path = f"{language_path}/{folder}"
+      os.mkdir(folder_path)
+
+  def create_language_py_file(language_path):
+    language_file = open(f"{language_path}/language.py", "w")
+    language_file.write(language_template)
+    language_file.close()
+
+  def create_language_folders(content_path):
+    for language in languages:
+      language_path = f"{content_path}/{language}"
+      os.mkdir(language_path)
+      create_language_py_file(language_path)
+      create_content_folders(content_folders, language_path)
+
+  def create_notes_files(content_path):
+    for i in range(10):
+      note_path = f"{content_path}/english/notes/{i}.md"
+      note_file = open(note_path, "w")
+      note_file.close()
+
+  def create_psets_files(content_path):
+    pset_template = Template("""{% extends '${course}/layout.html' %} {% block content %} {% endblock %}""")
+    for i in range(10):
+      psets_path = f"{content_path}/english/psets/{i}.html"
+      psets_file = open(psets_path, "w")
+      psets_file.write(pset_template.substitute(course=COURSE))
+      psets_file.close()
+
+  def create_lectures_code_files(content_path):
+    for i in range(10):
+      lectures_code_path = f"{content_path}/english/lectures_code/src{i}"
+      os.mkdir(lectures_code_path)
+
+  def create_pages_file(content_path, page):
+    page_path = f"{content_path}/english/{page}.md"
+    page_file = open(page_path, "w")
+    page_file.close()
+
+  def import_menu_language():
+    menu_import_template = Template("""from .${course}.content.${language}.language import menu as menu_${language}_${course}\n""")
+
+    with open('app/__init__.py', 'r+') as f: #r+ does the work of rw
+      lines = f.readlines()
+      for i, line in enumerate(lines):
+        if "# import menus" in line:
+          for language in languages:
+            lines[i] = lines[i].lstrip() + menu_import_template.substitute(course=COURSE, language=language)
+      f.seek(0)
+      for line in lines:
+          f.write(line)
+
+  def configure_menu_language():
+    menu_config_template = Template("""        app.config["LANGUAGE_MENU_${course}"] = menu_${language}_${course}\n""")
+
+    with open('app/__init__.py', 'r+') as f: #r+ does the work of rw
+      lines = f.readlines()
+      for i, line in enumerate(lines):
+        for language in languages:
+          if f'# {language} config' in line:
+            lines[i] = "        " + lines[i].lstrip() + menu_config_template.substitute(course=COURSE, language=language) 
+      f.seek(0)
+      for line in lines:
+          f.write(line)
+
+  def register_blueprint():
+    blueprint_register_template = Template("""        from .${course} import ${course} as ${course}_bp\n        app.register_blueprint(${course}_bp, url_prefix='/${course}')""")
+    
+    with open('app/__init__.py', 'r+') as f: #r+ does the work of rw
+      lines = f.readlines()
+      for i, line in enumerate(lines):
+        if '# Blueprint register' in line:
+          lines[i] = "        " + lines[i].lstrip() + "\n" + blueprint_register_template.substitute(course=COURSE)
+      f.seek(0)
+      for line in lines:
+          f.write(line)
+
+  def add_course_link_to_menu():
+    course_link_template = Template("""    <li data-marker="*" class="small">
+        <span class="fa-li"><i class="fas fa-square"></i></span
+        ><a href="{{url_for('${course}.index')}}">CS50 ${course}</a>
+    </li>\n""")
+    
+    with open('app/templates/components/courses.html', 'r+') as f: #r+ does the work of rw
+      lines = f.readlines()
+      for i, line in enumerate(lines):
+        if '<!-- Additional Courses -->' in line:
+          lines[i] = course_link_template.substitute(course=COURSE) + "    " + lines[i].lstrip() 
+      f.seek(0)
+      for line in lines:
+          f.write(line)
 
   # Folder paths
   course_path = f"./app/{COURSE}"
@@ -52,58 +194,27 @@ else:
   psets_path = f"./app/{COURSE}/psets"
   weeks_path = f"./app/{COURSE}/weeks"
   content_path = f"./app/{COURSE}/content"
+  templates_path = f"./app/{COURSE}/templates/{COURSE}"
 
   # Blueprints
   create_root(course_path)
   create_blueprint(notes_path, "notes")
   create_blueprint(psets_path, "psets")
   create_blueprint(weeks_path, "weeks")
+  create_templates_folder(templates_path)
 
-  # Content folder
   os.mkdir(content_path)
-  for language in languages:
-    language_path = f"{content_path}/{language}"
-    os.mkdir(language_path)
 
-    language_file = open(f"{language_path}/language.py", "w")
-    language_file.write(language_template)
-    language_file.close()
-    
-    for folder in content_folders:
-      folder_path = f"{language_path}/{folder}"
-      os.mkdir(folder_path)
+  create_language_folders(content_path)
+  create_notes_files(content_path)
+  create_psets_files(content_path)
+  create_lectures_code_files(content_path)
 
-  # Created notes empty files
-  for i in range(10):
-    note_path = f"{content_path}/english/notes/{i}.md"
-    note_file = open(note_path, "w")
-    note_file.close()
-
-  # Creates lectures code empty folders
-  for i in range(10):
-    lectures_code_path = f"{content_path}/english/lectures_code/src{i}"
-    os.mkdir(lectures_code_path)
-
-  homepage_path = f"{content_path}/english/homepage.md"
-  homepage_path = open(homepage_path, "w")
-  homepage_path.close()
-
-  honesty_path = f"{content_path}/english/honesty.md"
-  honesty_path = open(honesty_path, "w")
-  honesty_path.close()
-
-  faqs_path = f"{content_path}/english/faqs.md"
-  faqs_path = open(faqs_path, "w")
-  faqs_path.close()
-
-  syllabus_path = f"{content_path}/english/syllabus.md"
-  syllabus_path = open(syllabus_path, "w")
-  syllabus_path.close()
-
-  staff_path = f"{content_path}/english/staff.md"
-  staff_path = open(staff_path, "w")
-  staff_path.close()
-
-  project_path = f"{content_path}/english/project.md"
-  project_path = open(project_path, "w")
-  project_path.close()
+  pages = ["certificate", "homepage", "project", "syllabus", "communities"]
+  for page in pages:
+    create_pages_file(content_path, page)
+  
+  import_menu_language()
+  configure_menu_language()
+  register_blueprint()
+  add_course_link_to_menu()

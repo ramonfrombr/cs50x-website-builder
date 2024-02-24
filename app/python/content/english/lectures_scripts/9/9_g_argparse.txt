@@ -1,0 +1,99 @@
+
+
+All right. Suppose we want to modify this meows program to actually take its input not from the input function in the blinking prompt but from the command line. Recall in our discussion of libraries, that you could use something like sys.argv to get at command line arguments that a human has provided when you're running your program. So why don't we whip up a version of meow that uses command line arguments instead of, again, input. 
+
+So I'm going to go ahead and delete what we've done here thus far. And let me propose that we import sys as we've done in the past. And let's do this. How about if the user does not type any command line arguments. Then my program will just meow once, just so that it does something visually interesting. Otherwise, let's also give the user an option to specify how many times I want the cat to meow. 
+
+So let's start simple. Let's first of all go ahead and do this. If the length of sys.argv equals equals one, that is the user only typed the name of the program and nothing else after the-- in their command, then let's go ahead and just print out one meow like this. 
+
+Else for now, let's go ahead and print out something like this. Else go ahead and print out, let's say, usage for the program, which will be usage of meows.py, just so that the user knows that the program itself is called meows.py. 
+
+Now let me go down to my terminal window and start to type Python of meows.py. And at this point, notice that the length of sys.argv should indeed be one. Why? Well, Python the name doesn't end up in sys.argv at all ever. But meows.py, the name of the file does. And it's going to go in sys.argv zero. But that's only one element. So the length of this thing is one. There's nothing more to the right. So when I hit Enter now we should see, indeed, one meow. 
+
+If I don't cooperate, suppose I do something like meows three Enter. Then I'm going to see a reminder that this is how you use the program. And this is a common convention to literally print out the word usage, a colon, then the name of the program, and maybe some explanation of how to use it. So I'm keeping it very simple. 
+
+But let's be a little fancier. What if I really wanted the user to type in maybe not three, but something more sophisticated. And in fact, when controlling programs from the command line, it's very common to provide what are often called switches or flags, whereby you pass in something like dash n, which semantically means this number of times, then often a space, and then something like the number three. This still allows me to do other things at the command line if I want. 
+
+But the fact that I've standardized on how I'm providing command line arguments to this program with dash n three is just a more reliable way now of my program knowing what does the three mean. It's a little less obvious if I just do meows.py space three. 
+
+Well, what does the three mean? At least with syntax like dash n three, especially if you've read the documentation for this program, ultimately, oh, dash n means number of times. Got it. It's a way of passing in two additional arguments but that have some relationship between them. 
+
+So how do I modify my program to understand dash n three? Well, if I'm using sys like this, I could do this. elif the length of sys.argv equals this time three. Because notice, there's one, two, three things at my prompt. 
+
+So sys.argv is zero, one, and two, three things total separated by spaces. If it equals three-- and let's be safe, and sys.argv bracket one equals equals dash n, then let's go ahead and do this. 
+
+Let's go ahead and convert sys.argv of two to an integer and assign it to a variable, for instance, called n. And then, let's go ahead and do this. For underscore in the range of n, let's go ahead and print out some of these meows. 
+
+Now, there's still an opportunity maybe to consolidate my print lines with meow. But for now, I'm going to keep these ideas separate. So I'm going to handle the default case with no arguments up here as before. 
+
+And now, more interestingly, I'm going to do this to be clear. I'm going to check if the user gave me three command line arguments, the name of the program, dash n, and a number. If indeed the second thing they gave me in sys.argv of 1 equals equals dash n, then I'm going to assume that the next thing, sys.argv of two is going to be an integer. And I'll convert it to such and store it in this variable n. 
+
+And now, just using a loop, I'm going to print out meow that many times. All right, so it's kind of a combination of our earlier focus on loops, our earlier focus on command line arguments, just creating a program that allow me to claim is representative of how a lot of command line programs work, even though we've typically not used many like this. But it's very common to configure a program, one, you're about to run it at the command line with something like these command line arguments like dash n or dash something else. 
+
+Now, I'm going to go ahead and hit Enter. And I think I should see, indeed, three meows. By contrast, if I do two at the end, I should see two meows. If I do one, I should see one meow. And frankly, if I just omit this altogether, I should see one meow as well, because that was my default case earlier. 
+
+And now, let me allow us to assume that this program eventually gets more complicated. Let's imagine a world where I don't want to support just dash n. Maybe I want to support dash a, and dash b, and dash c, and dash d, and a whole lot of others. Or heck, at that point, I should maybe give them words. So maybe it's a dash, dash, number. 
+
+It's indeed a convention in computing typically to use single dashes with a single letter, like n, but use double dashes if you're actually using a whole word like number. So the command line argument might be dash n, or maybe it's dash, dash number. But you can imagine just how complicated the code gets if now you want to support dash n, dash a, dash b, dash c, and so forth. You're going to have to be checking all over the place. 
+
+And what if they come in a different order? You're going to have to check is dash n first, or is it second, or is it third, or is it's fourth? I mean, this just becomes very painful very quickly just to do something relatively simple like allow the user to pass command line arguments into your program. 
+
+Well, this is why, as always, there exist libraries. And another library that comes with Python that's probably worth knowing something about is this one here called argparse. In fact, with a lot of the tools I myself or CS50's team writes in Python, we very frequently use argparse whenever they are more complicated than a lot of our class demos and a little more similar to this one where we want to allow the user to pass in configuration options at the command line. 
+
+And by supporting things like dash n, or dash a, or dash b, or dash c, argparse is a library that per its documentation just handles all of this parsing so to speak, this analysis of command line arguments for you automatically so you can focus on writing the interesting parts of your program, not the command line arguments part. 
+
+So how might we use this? Well, let me go back to VS Code here. Let me clear my terminal window. And let me propose that I rewrite this using not sys but actually using argparse. And I'm going to start a little simple and then build back up. 
+
+So let me throw all of this away for now and instead import argparse. Argparse stands for argument parser. To parse something means to read it, kind of pick it apart to analyze it. So this is indeed going to do just that for me. 
+
+Now, let me go ahead and do this. And for this library, it's helpful to know a little object-oriented programming like we all now do. I'm going to create a variable called parser. Though I could call it anything I want. I'm going to set it equal to the return value of argparse.ArgumentParser, with a capital A and a capital P. A constructor for a class called argument parser that comes with Python itself within this library here. 
+
+Now, I'm going to configure this argument parser to know about the specific command line arguments that I myself want to support in my program. So I'm going to do this, parser.add_argument. So that's apparently a method in the parser object. I'm going to add an argument of dash n. Easy enough. 
+
+Now I'm going to go ahead and actually parse the command line arguments. I'm going to do args, or I could call the variable anything I want, parser.parseargs. And by default, parseargs is going to automatically look at sys.argv for me. I don't need to import sys myself. I can leave the argument parser, its code to import sys, look at sys.argv, and figure out where dash n or anything else actually is. 
+
+And what's nice now, because this line of code here results in the parser having parsed all of the command line arguments, I now have this object in this variable called args inside of which are all of the values of those command line arguments, no matter what order they appeared in. Not such a big deal when I've only got one because it's only going to go in one place at the end. 
+
+But if I've got dash n, dash a, dash b, dash c, you could imagine them being in all different orders. They definitely don't have to be alphabetical. The user should be able to type them in any order they want. That's better for usability. Arg parser is going to figure all of that out for me. 
+
+And all I have to do now is this. If I want to iterate over that many numbers of arguments and that many meows rather, I can do this. For underscore in the range of the int conversion of args.n. So dot is the syntax we kept using to access things like properties inside of an object. And that's what args is. It's the object returned by the parse args function for me. I'm going to go ahead now and print out, quote unquote, meow this many times. 
+
+So it's not super simple. These are three new lines of code I need to write and rather understand. But it's already a little simpler and more compact than my if, and my elif, and my ors, and my ands, and all of that Boolean logic. It's handling a lot of this for me. 
+
+So if I didn't make any mistakes, let me run Python now of meows.py Enter. And I did make a mistake here. I did make a mistake. What's wrong here now? What's wrong? Well, I definitely didn't run it the way I intend. So dash n three Enter. 
+
+So it does work. But if I don't cooperate, this actually seems to be a worse version. If I don't pass in dash n and a number, it just errors with a type error. Int must be a string. None is what came back. So there's clearly an error here. But the library is more flexible. I can actually provide some documentation on how to use this thing. 
+
+So how do I know how to use this? Well, typically it's conventional in Python and in a lot of programming environments to run a program with a special argument, dash h or dash dash help. And almost always I will claim you'll then see some kind of usage information. 
+
+And indeed, that's what I'm looking at now. I just ran Python of meows.py space dash h. I'll do it again. Let me clear my screen and this time do dash dash help in English, Enter. And I see the same thing. It's not very useful at the moment. It just shows me what the usage is up here. 
+
+And this is kind of interesting. This is a standard syntax in computing. And we've kind of seen it in Python's documentation before. This just means that the program's name is, of course, meows.py. Square brackets as almost always in documentation means it's optional. 
+
+So I don't have to type dash h, but I can. I don't have to type dash n and another value, but I can. And then, down here is some explanation of these options, and more verbosely showing me that I can also do dash dash help and not just dash h. 
+
+But this is so generic. This has nothing to do with my program. This is not going to help my users when I actually release this software for the world. So let me go ahead and improve it. Let me add a description to my argument parser that the humans will see. Meow like a cat, quote unquote, is going to be the value of this named parameter called description. 
+
+And let me also add a help parameter to my dash n argument that just explains what dash n means, number of times to meow, quote unquote. I'm not going to change anything else. But I am going to go back to my terminal window and run Python of meow. I'm going to run Python of meows.py dash h, or equivalently dash dash help. 
+
+And now notice that this is a little more user friendly. If I scroll up, we still see the same usage. But there's a quick sentence in English of explanation that this program meows like a cat. And if I look at the options now, oh, that's what n means. It's the number of times to meow. And this capital N, a mental variable, if you will, is just indicating to me that I need to type a number by convention after the lower case dash n. 
+
+So it would be nice though, all that said, if my program still didn't just break when I run it without any command line arguments. Ideally, my program would handle this just like my manual version did when I used sys.argv myself. So we just need to add a little more functionality to this library. And if I read the documentation, I'll see that add argument takes yet another named argument. If you want, you can specify a default value for dash n, for instance, one. And I'll do that there. 
+
+And you can further specify that it's got to be an int. And what this will additionally allow me to do is if I tell arg parser to make sure that the value of dash n is an int, I don't need to do the conversion manually. I can just trust down on line seven that when I access the property called n inside of my args object, it's going to be automatically an int for me. 
+
+And again, this is the value of a library. Let it do all of the work for you so you can get back to focusing on the interesting project at hand, whatever problem it is you're trying to solve. In this case, granted, not that interesting, but meowing like a cat. 
+
+Let me go ahead now and run Python of meows.py and hit Enter. This time, no arguments. And now it meows. Why? Because I specified that if I don't, as a user, specify dash n, it's going to have a default value of one apparently. 
+
+And I don't have to convert that value from a str to an int because I told arg parser please just make this an int for me. Any questions now on argparse, or really this principle of just outsourcing the commodity stuff, the stuff that everyone's program eventually needs to do so that you can focus on the juicy part yourself. 
+
+STUDENT: What does args.n contain? 
+
+DAVID J. MALAN: What does args.n contain? It contains the integer that the human typed after a space after dash n. Good question. Other questions? 
+
+STUDENT: Yeah. When you specify the type for the argument, what happens if-- does that basically handle the exception if the user inputs a string in this case? 
+
+DAVID J. MALAN: A really good question. Suppose that the human does not type a number and therefore not an in. Well, let's see what happens. So Python of meows.py dash n dog, where dog is obviously not a number. Enter. 
+
+And voila, we see an automatically generated error message. A little cryptic, admittedly. But I'm seeing a reminder of what the usage is and a minor explanation of what is invalid about this. And again, this is what allows you, this is what allows me to focus on writing the actual code we care about and just letting the library automate some of this stuff for us. 

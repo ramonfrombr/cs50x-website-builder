@@ -35,7 +35,7 @@ Stephen G. Kochan
 Pearson Education, 2015
 ISBN 0-321-77641-0
 
-## Palestras
+## Aulas
 
 As palestras do curso introduzem os conceitos de cada semana.
 

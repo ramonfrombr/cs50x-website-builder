@@ -1,0 +1,11 @@
+SPEAKER 4: ¿Y si no usamos elif en absoluto? ¿Qué pasaría si escribiéramos el código solo con if?
+
+DAVID MALAN: Sí, esa es una buena pregunta, porque eso tendría un efecto no deseado aquí. Permíteme eliminar temporalmente la F y concentrarnos solo en las opciones A a D. Si volvemos al punto de partida de la historia de hoy, con las condiciones if, if, if, if, ahora nuestra astucia de usar trazos más amplios y no utilizar rangos superiores e inferiores va a ser una desventaja. Permíteme ejecutar el código de Python grade.py.
+
+Supongamos que mi puntaje es 95. Estoy muy emocionado. Quiero mi A, pero no. Obtuve un A, un B, un C y un D. Lógicamente, eso está rompiendo las cosas. Porque si no hacemos que estas condiciones sean mutuamente excluyentes, se realizarán todas esas preguntas y, por lo tanto, se responderán. E incluso si tu calificación es superior a 90, lógicamente también es superior a 80, superior a 70, superior a 60, y si lo hubiera dejado ahí, habría reprobado, también, con una F.
+
+Muy buena pregunta. ¿Otras preguntas aquí, sobre esta forma de lógica?
+
+SPEAKER 5: ¿Habría alguna forma mejor de simplificar incluso esta simple declaración, como tenías antes, con el elif?
+
+DAVID MALAN: Me gusta tu entusiasmo por simplificar las cosas aún más. Me voy a arriesgar aquí y decir que esto es lo mejor que se puede lograr, al menos utilizando solo declaraciones condicionales. Puedo, si mi mente divaga, pensar en una forma un poco más astuta de hacer esto, quizás con algo llamado bucle o con otra estructura de programación. Aún no hemos aprendido eso en nuestro vocabulario. Pero sí, hay absolutamente otras formas de hacerlo. Pero aún no, si queremos limitarnos solo a palabras como if, and, or, else, elif, and y cosas por el estilo.

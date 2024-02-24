@@ -1,0 +1,43 @@
+So ideally, what do we want to do? If at the moment we hit line 9, we have a list of all of these students, and inside of that list is one dictionary per student, and each of those dictionaries has two keys, name and house, wouldn't it be nice if there were way in code to tell Python, sort this list by looking at this key in each dictionary? Because that would give us the ability to sort either by name, or even by house, or even by any other field that we add to that file. 
+
+So it turns out, we can do this. We can tell the sorted function not just to reverse things or not. It takes another positional-- it takes another named parameter called key, where you can specify what key should be used in order to sort some list of dictionaries. 
+
+And I'm going to propose that we do this. I'm going to first define a function-- temporarily, for now-- called get_name. And this function's purpose in life, given a student, is to, quite simply, return the student's name from that particular dictionary. So if student is a dictionary, this is going to return literally the student's name, and that's it. That's the sole purpose of this function in life. 
+
+What do I now want to do? Well now that I have a function that, given a student, will return to me the student's name, I can do this. I can change sorted to say, use a key that's equal to whatever the return value of get_name is. And this now is a feature of Python. Python allows you to pass functions as arguments into other functions. 
+
+So get_name is a function. Sorted is a function. And I'm passing in get_name to sorted as the value of that key parameter. Now, why am I doing that? 
+
+Well, if you think of the get_name function, it's just a block of code that will get the name of a student. That's handy because that's the capability that sorted needs. When given a list of students, each of which is a dictionary, sorted needs to know, how do I get the name of the student? In order to do alphabetical sorting for you. 
+
+The authors of Python didn't know that we were going to be creating students here in this class, so they couldn't have anticipated writing code in advance that specifically sorts on a field called student, let alone called name, let alone house. So what did they do? They instead built into the sorted function this named parameter key that allows us, all these years later, to tell their function sorted how to sort this list of dictionaries. 
+
+So now watch what happens. If I run python of students.py and hit Enter, I now have a sorted list of output. Why? Because now that list of dictionaries has all been sorted by the student's name. 
+
+I can further do this. If, as before, we want to reverse the whole thing by saying reverse equals true, we can do that too. Let me rerun Python of students.py, and hit Enter. Now it's reversed. Now it's Ron, then Hermione, Harry, and Draco. 
+
+But we can do something different as well. What if I want to sort, for instance, by house name reversed? I could do this. I could change this function from get_name to get_house. I could change the implementation up here to be get_house. 
+
+And I can return not the student's name but the student's house. And so now notice, if I run python of students.py, Enter, notice now it is sorted by house in reverse order. Slytherin is first, and then Gryffindor. 
+
+If I get rid of the reverse but keep the get_house and rerun this program, now it's sorted by house. Gryffindor is first, and Slytherin is last. And the upside now of this is, because I'm using this list of dictionaries and keeping the students data together until the last minute when I'm finally doing the printing, I now have full control over the information itself, and I can sort by this or that. I don't have to construct those sentences in advance, like I rather hackishly did the first time. 
+
+All right, that was a lot. Let me pause here to see if there are questions. 
+
+AUDIENCE: So when we are sorting the files, every time, should we use the loops, or a text dictionary, or any kind of list? Can we sort by just sorting, not looping or any kind of stuff? 
+
+DAVID MALAN: A good question, and the short answer with Python alone, you're the programmer. You need to do the sorting. With libraries and other techniques, absolutely. 
+
+You can do more of this automatically because someone else has written that code. What we're doing at the moment is doing everything from scratch ourselves. But absolutely, with other functions or libraries, some of this could be made more easily done. Some of this could be made easier. Other questions on this technique here? 
+
+AUDIENCE: If equal to the return value of the function, can it be equal to just a variable or a value? 
+
+DAVID MALAN: Well, yes. It should equal a value. And I should clarify, actually, since this was not obvious. 
+
+So when you pass in a function like get_name or get_house to the sorted function as the value of key, that function is automatically called by the sorted function for you on each of the dictionaries in the list. And it uses the return value of get_name or get_house to decide what strings to actually use to compare in order to decide which is alphabetically correct. So this function, which you pass just by name, you do not pass in parentheses at the end, is called by the sorted function in order to figure out for you how to compare these same values. 
+
+AUDIENCE: How can we use nested dictionaries? I have read about nested dictionaries. What is the difference between nested dictionaries and the dictionary inside a list? I think it is that. 
+
+DAVID MALAN: Sure. So we are using a list of dictionaries. Why? Because each of those dictionaries represents a student. And a student has a name and a house, and we want to, I claim, maintain that association. And it's a list of students because we've got multiple students-- four, in this case. 
+
+You could create a structure that is a dictionary of dictionaries. But I would argue, it just doesn't solve a problem. I don't need a dictionary of dictionary. I need a list of key-value pairs right now. That's all. 

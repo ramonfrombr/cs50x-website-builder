@@ -1,0 +1,39 @@
+All right. So if we now have this ability to do things again and again in these loops, let's see if we can't solve some other problems via which to express ourselves cyclically, but get back some interesting answers as well. And let me propose, for instance, that we look a little more closely at these lists. 
+
+It turns out that in Python, and really, in programs in general, it's useful to have a list of values, because we're going to be able to work with more and more data, larger and larger data sets. So let me propose that we come back to VS Code here and let's do something that's perhaps a little familiar to some folks, the world of Hogwarts. 
+
+And let me go ahead and code up a file called Hogwarts, and let's see if we can't have a list of students at Hogwarts here. So I have a new tab called hogwarts.py. and let me go ahead and propose that I just define in this program a list of students whose names I know in advance. So I'm not going to get user input for now. I'm just going to know from the get-go that the three students I want to consider are these. 
+
+Our variable is going to be called students. It's going to equal, as I've done in the past, a square bracket, which means, hey, here comes a list. And those values are going to be Hermione in quotes, because it's a string; Harry in quotes, because it's a string; and then Ron in quotes, because it's a string as well. 
+
+So this is a list of length 3. It's similar in spirit to my list of length 3 earlier, but that had 3 ints, 0, 1, 2. Now I have a list of three strings instead. And this isn't very useful at the moment, but let me just do something as a check for myself. Let me print out each of these students. Well wait a minute, how do I print the contents of a list? 
+
+Well, in the past, when we've printed a variable, we've just printed out the name of the variable. But I don't want to print out all of Hermione and Harry and Ron all at once. Maybe I want to print out Hermione first, then Harry, then Ron. So I need a way to express more precisely which value do I want from this list? 
+
+And the way you do this in Python is you use square brackets in another way. If you have a variable-- in this case, called students, and you want to go inside of that variable and get a specific value-- that is to say, you want to index into the list, you use square brackets this way using numbers inside of the square brackets. 
+
+And here's where we see that it is useful to think and count in terms of 0 on up instead of 1 on up. These lists in Python are, shall we say, zero-indexed. The first item in a list is at location 0, the second item in a Python list is that location 1, and the third is that location 2. So you're always kind of off by one mentally, but you get used to it, if you've never programmed before, over time. 
+
+So let me print out all three students. So let me print out students bracket 0, then students bracket 1. Then lastly, let me print students bracket 2, and this is my third and final line. And of course, if I run this code, it probably does what you would guess. If I run Python of hogwarts.py, there's Hermione, Harry, and Ron each on their own lines there. 
+
+But there's got to be a better way, especially if I don't know in advance who's going to be in this list, if next year there's some new students at Hogwarts, we can use a loop to do something automatically without having to manually type out 0 and then 1 and 2. Well, here's another feature of Python. You can use a for loop not just to count from 0 to 1 to 2, you can use Python to just iterate over anything. Not just numbers, but strings. 
+
+So I could actually do this. For student in students, colon, and then indented underneath that, I can say print student. Now it doesn't matter if I have 3 students or 4 or 400, these two lines of code, this loop will print all of those students for me one at a time. So if I now run Python of hogwarts.py, there's the same list, but I don't need to know in advance how long that actual list is. 
+
+Now notice, I made a conscious decision here. I didn't call this variable underscore, because this time I'm using the variable. And while I could do this, now, no, no, no, no, your code is getting way too cryptic. If you're naming the variable underscore and you're using the variable underscore, now you're helping no one. Now you're confusing the reader, yourself down the line, you should call your variables what they are. 
+
+So a very appropriate name, though I'm sure you could come up with others, would be student, and here, you could say you would stay student as well. If you'd prefer to be more succinct, it's not unreasonable to do something succinct in a loop like this. For s in students, using maybe the same letter that the list itself begins with, but again, why bother? Python is meant to be more readable. If you have a list of students, iterate over them one student at a time. 
+
+Let me pause here to see if there's now questions about lists as I've now defined them, a list of strings in this case, or using a for loop now to iterate over and print each of those names. 
+
+AUDIENCE: Yeah. So is it not necessary to initiate student in this case? Or we can just declare a variable in the loop? 
+
+DAVID MALAN: Good question. You do not need to manually initialize it. Python takes care of initializing the student variable to Hermione first, then Harry second, then Ron third. Unlike other languages, you don't need to initialize it to something yourself, it just exists and it will work. Other questions on loops and lists in this way? 
+
+AUDIENCE: Since you describe break, so is there any concept of continuing so that we can skip a particular case in loops? 
+
+DAVID MALAN: Yes. You can continue using another syntax as well. We haven't shown that. For now we focused only on break. 
+
+AUDIENCE: OK. So can this for loop work with either hash tables or different kind of tables or arrays? 
+
+DAVID MALAN: Indeed. So we're getting ahead of ourselves there, but there are yet other types of data in Python, and indeed, you can use a for loop to iterate over those as well. Anything that is iterable, so to speak, is a piece of data that can be used with a loop like this. But more on those-- more on those soon. 

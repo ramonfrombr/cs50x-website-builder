@@ -1,0 +1,66 @@
+Slide [0]
+
+Programação Web
+com Python e JavaScript
+
+Slide [1]
+
+Python
+
+Slide [2]
+
+Olá, Mundo
+print("Olá, mundo!")
+
+Slide [3]
+
+Variáveis
+a = 28
+b = 1.5
+c = "Olá!"
+d = True
+e = None
+
+Slide [4]
+
+Tipos
+a = 28
+b = 1.5
+c = "Olá!"
+d = True
+e = None
+int
+float
+str
+bool
+NoneType
+
+Slide [5]
+
+Entrada
+nome = input("Nome: ")
+print(f"Olá, {nome}")
+
+Slide [6]
+
+Condições
+if x > 0:
+    print("x é positivo")
+elif x < 0:
+    print("x é negativo")
+else:
+    print("x é 0")
+
+Slide [7]
+
+Estruturas de Dados
+lista - sequência de valores mutáveis
+dicionário - coleção de pares chave-valor
+...
+conjunto - coleção de valores únicos
+tupla - sequência de valores imutáveis
+
+Slide [8]
+
+Programação Web
+com Python e JavaScript

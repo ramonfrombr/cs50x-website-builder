@@ -1,0 +1,396 @@
+
+[0]
+
+MVC
+
+[1]
+
+MVC
+• MVC is a programming paradigm that is very commonly-used 
+for web design.
+• It is used to abstract away certain details from the user that 
+are not necessary or are uninteresting for them to see, but that 
+are essential for your site to work properly.
+• The primary motivation for this is data security.
+
+[2]
+
+MVC
+• Model
+• This is where the important data for the site lives, and it may be 
+updated, referenced, or the like as part of the user experience.
+• View
+• These are the pages the user sees when they are interacting with 
+your site, usually based on interaction with the model.
+• Controller
+• This is where the so-called business logic of your site lives. Users may 
+submit information to the controller, which will then decide what to 
+present to the user.
+
+[3]
+
+MVC
+Model
+Controller
+View
+
+[4]
+
+MVC
+Model
+Controller
+View
+Submits
+
+[5]
+
+MVC
+Model
+Controller
+View
+Submits
+Queries
+
+[6]
+
+MVC
+Model
+Controller
+View
+Submits
+Queries
+Transmits
+
+[7]
+
+MVC
+Model
+Controller
+View
+Submits
+Queries
+Displays
+Transmits
+
+[8]
+
+MVC
+Model
+Controller
+View
+
+[9]
+
+MVC
+Model
+Controller
+View
+
+[10]
+
+MVC
+• Adhering to this paradigm means that you separate
+• the data required for your website 
+• from the logic (PHP) that implements your website’s functionality
+• from the simple aesthetics and page templates
+• This also means that you can make files you need in order to 
+run your sites but that will never be accessed by users (for 
+example, anything that you might require_once()) not 
+publicly accessible.
+• Ever received a “403 Forbidden” error?
+
+[11]
+
+MVC
+• To change the permissions of a file to make it accessible (or 
+not) to the public, you need to befriend a possibly-new Linux 
+command, chmod.
+
+[12]
+
+MVC
+• To change the permissions of a file to make it accessible (or 
+not) to the public, you need to befriend a possibly-new Linux 
+command, chmod.
+chmod <permissions> <file(s)>
+
+[13]
+
+MVC
+• To change the permissions of a file to make it accessible (or 
+not) to the public, you need to befriend a possibly-new Linux 
+command, chmod.
+chmod 600 helpers.php
+
+[14]
+
+MVC
+• To change the permissions of a file to make it accessible (or 
+not) to the public, you need to befriend a possibly-new Linux 
+command, chmod.
+chmod a+x includes/
+
+[15]
+
+MVC
+• The so-called octal numbers permissions scheme assigns 
+permissions to three categories of users simultaneously.
+chmod 711 file
+• This would, for example, assign you the right to read, write, 
+and execute the file, and would allow others (specifically, your 
+group and the world) to only execute the file.
+
+[16]
+
+MVC
+• The so-called octal numbers permissions scheme assigns 
+permissions to three categories of users simultaneously.
+chmod 711 file
+• This would, for example, assign you the right to read, write, 
+and execute the file, and would allow others (specifically, your 
+group and the world) to only execute the file.
+
+[17]
+
+MVC
+Octal #
+Read (r)
+Write (w)
+Execute (x)
+0
+NO
+NO
+NO
+1
+NO
+NO
+YES
+2
+NO
+YES
+NO
+3
+NO
+YES
+YES
+4
+YES
+NO
+NO
+5
+YES
+NO
+YES
+6
+YES
+YES
+NO
+7
+YES
+YES
+YES
+
+[18]
+
+MVC
+Octal #
+Read (r)
+Write (w)
+Execute (x)
+0
+NO
+NO
+NO
+1
+NO
+NO
+YES
+2
+NO
+YES
+NO
+3
+NO
+YES
+YES
+4
+YES
+NO
+NO
+5
+YES
+NO
+YES
+6
+YES
+YES
+NO
+7
+YES
+YES
+YES
+
+[19]
+
+MVC
+Octal #
+Read (r)
+Write (w)
+Execute (x)
+0
+0
+0
+0
+1
+0
+0
+1
+2
+0
+1
+0
+3
+0
+1
+1
+4
+1
+0
+0
+5
+1
+0
+1
+6
+1
+1
+0
+7
+1
+1
+1
+
+[20]
+
+MVC
+• The so-called symbolic permissions scheme also can assign 
+permissions to three categories of users simultaneously, but is 
+typically best used to apply (or remove) a position across the 
+board.
+chmod a+x file
+• This would, for example, add (or maintain) the right to execute 
+the file to all three categories.
+
+[21]
+
+MVC
+• The so-called symbolic permissions scheme also can assign 
+permissions to three categories of users simultaneously, but is 
+typically best used to apply (or remove) a position across the 
+board.
+chmod a+x file
+• This would, for example, add (or maintain) the right to execute
+the file to all three categories.
+
+[22]
+
+MVC
+Reference
+Class
+a
+all
+g
+group
+o
+others
+u
+user
+Mode
+Description
+r
+read access
+w
+write access
+x
+execute access
+Operation
+Description
++
+add perm
+-
+remove perm
+=
+exactly this perm
+
+[23]
+
+MVC
+• To check the permissions of a file, you can run the ls
+command with which you’re probably quite familiar, with a 
+small tweak, adding the -l flag.
+username@ide50:~/workspace $ ls -l
+
+[24]
+
+MVC
+• To check the permissions of a file, you can run the ls
+command with which you’re probably quite familiar, with a 
+small tweak, adding the -l flag.
+username@ide50:~/workspace $ ls -l
+total 8
+drwx-w---- 2 ubuntu ubuntu 4096 Oct 30 00:58 php/
+drwx-w---- 3 ubuntu ubuntu 4096 Oct 30 00:55 php-webdev/
+-rw------- 1 ubuntu ubuntu
+28 Oct 30 01:01 test.php
+
+[25]
+
+MVC
+• To check the permissions of a file, you can run the ls
+command with which you’re probably quite familiar, with a 
+small tweak, adding the -l flag.
+username@ide50:~/workspace $ ls -l
+total 8
+drwx-w---- 2 ubuntu ubuntu 4096 Oct 30 00:58 php/
+drwx-w---- 3 ubuntu ubuntu 4096 Oct 30 00:55 php-webdev/
+-rw------- 1 ubuntu ubuntu
+28 Oct 30 01:01 test.php
+
+[26]
+
+MVC
+• To check the permissions of a file, you can run the ls
+command with which you’re probably quite familiar, with a 
+small tweak, adding the -l flag.
+username@ide50:~/workspace $ ls -l
+total 8
+drwx-w---- 2 ubuntu ubuntu 4096 Oct 30 00:58 php/
+drwx-w---- 3 ubuntu ubuntu 4096 Oct 30 00:55 php-webdev/
+-rw------- 1 ubuntu ubuntu
+28 Oct 30 01:01 test.php
+
+[27]
+
+MVC
+• To check the permissions of a file, you can run the ls
+command with which you’re probably quite familiar, with a 
+small tweak, adding the -l flag.
+username@ide50:~/workspace $ ls -l
+total 8
+drwx-w---- 2 ubuntu ubuntu 4096 Oct 30 00:58 php/
+drwx-w---- 3 ubuntu ubuntu 4096 Oct 30 00:55 php-webdev/
+-rw------- 1 ubuntu ubuntu
+28 Oct 30 01:01 test.php
+
+[28]
+
+MVC
+• To check the permissions of a file, you can run the ls
+command with which you’re probably quite familiar, with a 
+small tweak, adding the -l flag.
+username@ide50:~/workspace $ ls -l
+total 8
+drwx-w---- 2 ubuntu ubuntu 4096 Oct 30 00:58 php/
+drwx-w---- 3 ubuntu ubuntu 4096 Oct 30 00:55 php-webdev/
+-rw------- 1 ubuntu ubuntu
+28 Oct 30 01:01 test.php

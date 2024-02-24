@@ -2,9 +2,9 @@
 
 ## Lâmpadas Não-Tão-Quebradas
 
-Durante a palestra, você pode ter percebido o que parecia ser um "bug" no palco da frente, onde algumas das lâmpadas sempre parecem estar apagadas:
+Durante a aula, você pode ter percebido o que parecia ser um "bug" no palco da frente, onde algumas das lâmpadas sempre parecem estar apagadas:
 
-![Captura de tela da palestra da semana 2 com uma sequência de lâmpadas](https://cs50.harvard.edu/x/2023/psets/2/bulbs/binary_bulbs.jpg)
+![Captura de tela da aula da semana 2 com uma sequência de lâmpadas](https://cs50.harvard.edu/x/2023/psets/2/bulbs/binary_bulbs.jpg)
 
 Cada sequência de lâmpadas codifica uma mensagem em _binário_, a linguagem que os computadores "falam". Vamos escrever um programa para criar nossas próprias mensagens secretas, talvez que possamos até mesmo pôr em um palco!
 

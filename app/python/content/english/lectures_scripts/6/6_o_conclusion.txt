@@ -1,0 +1,3 @@
+So now we've seen not only that we can read and write files, be it textually. We can read and now write files that are binary zeros and ones. We've just scratched the surface. This is using the library called pillow. But ultimately, this is going to give us the ability to read and write files however we want. 
+
+So we've now seen that via File I/O, we can manipulate not just textual files, be it TXT files, or CSVs, but even binary files as well. In this case, they happen to be images. But if we dived in deeper, we could explore audio, and video, and so much more all by way of these simple primitives, this ability, somehow, to read and write files. That's it for now. We'll see you next time. 

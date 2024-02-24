@@ -1,0 +1,63 @@
+Well, let me propose that we refine this just a little bit further as well and consider how we might improve this example a little bit more. It's a little unfriendly of me to be rejecting the user's input after they fail to provide an integer and just quitting the program, really, right? It'd be more user friendly if I just prompt or reprompt the user again and again. 
+
+And in the chat, if you could, what's the feature of Python that you can use if you want to do something again and again and again until such time as the user cooperates and gives you what you're looking for, like a number? So yeah, loop, loop, loop. So a loop is something that happens again and again and again. 
+
+And maybe we can use that same mechanism, a loop, in order to prompt the user for x. And if they don't give us a number, prompt them again. And if they don't, prompt them again and again and again. We don't need to just quit out of the program. 
+
+So, quickly-- so let me propose this. Let me propose here that I improve this code by deliberately doing this. Let me induce a infinite loop at the very top of my code with while true. Recall that the wild keyword induces a loop, a cycle that behaves like this. And it asks a question, a Boolean expression that needs to evaluate either to true or false. 
+
+Well, if I want this thing to loop forever, at least initially, we'll just say while true because true is true. So this has the effect of doing something no matter what forever unless we break out of it early. Now I'm going to go ahead and do this. 
+
+I'm going to go ahead and move my try except code indented underneath this loop so that I'm trying to get an x. If I have a value error instead, I print out x is not an integer. But this time, what do I want to do if the user does try and succeed in giving me a number? 
+
+Well, I can do this. I can just break out of my code here. And down here now, I can use that same line of code from before, an F-string that says x is, and then in curly braces, x again. So what's going on here? I think this code now, because I've added the loop, is going to have the effect of trying at least once, maybe a second time, maybe a third time maybe 500 times until the user finally gives me what I want, which is an integer. 
+
+And once they do, once there's no value error happening, then I break out of the loop. And line nine executes as I would hope. So let me go ahead and try executing this version-- Python of number.py, Enter. What's x? Let me go ahead and type in the easy thing first-- 50. X is 50. 
+
+What just happened in terms of the control flow of this program, the flow of my logic? Well, I first found myself on line one inside of a loop. Hopefully, I'll get out of this loop. What did I then do? On lines two and three, I tried to get input from the user and convert it to an int. 
+
+Well, I was a nice guy this time. And I typed in 50, which looks like and is a number. So the int function converted it just fine and stored it from right to left in x. Except value error? There is no value error because if I typed in a number, there's nothing exceptional happening. 
+
+This is a boring, good execution of my program. So what happens? I break out of the loop. So, again, the else clause is associated with the try not with the except. 
+
+And once I'm out of the loop, of course, I'm just printing out what x is. Well, let's try the other scenario that might happen. Python of number.py, Enter. What's x? Let's try cat or any other word. Enter. 
+
+Ah, this is now a new feature. I'm being informed what I did wrong. X is not an integer. So I'm getting some useful user feedback. But notice, again, I'm prompted, what's x? 
+
+Well, let me try typing in dog. X is not an integer. What's x? Let me try bird. Enter. 
+
+X is not an integer. What's x? And suffice it to say, this will happen now forever if I'm in an infinite loop until I try and succeed, at which point I break out. So let's try again. 
+
+50, Enter. Now I'm out of the loop. And I'm printing out what x actually is. All right, let me pause here and see if there are any questions. The logic is almost the same. But what is different now is I'm in a loop. And I'm using the keyword break in Python to deliberately break out of the loop when I'm ready to, once the user has cooperated. 
+
+AUDIENCE: Do we really need to break? Can't we just print? Or what keeps us from just printing? 
+
+DAVID MALAN: Good question. So let me try that. Couldn't I just print? Well, let's see what happens if I do that. 
+
+Let me move this print line at the end into my loop here, thereby shortening the program. And, in general, that's been a good thing. Python of number.py, Enter. Let me go ahead and type in 50. 
+
+OK, x is 50. What's x? OK, maybe it's 49. X is 49. OK, maybe 48. 
+
+Unfortunately, I think-- you're laughing. You see it. I never break out of the loop, which maybe that's a feature. Maybe you want this to be your program. But I didn't. 
+
+I'd eventually like this game to stop. So I need to break out in that way. But I can do it a little differently. And let me propose that we modify this a little bit. 
+
+But, first, any other questions on this syntax here? Let me rewind to the prior version. 
+
+AUDIENCE: Hi, can I use a break [INAUDIBLE] except and else? For example, in another print, may you use printing the else, you can use prints together with break or something like this? 
+
+DAVID MALAN: So you can use break inside of loops to break out of loops. And you can use it inside of a conditional, like an if, an elif, or an else. You can do it inside of a try, except, else statement to. Any time you're in a loop that you want to break out of, you can use this keyword, break. 
+
+I'm using it in the context of exceptions. But it's not restricted to that. And let me show you, too. It doesn't even have to be in the else. If I wanted to, I could actually do this. 
+
+I could get rid of my else. And I could go back to line three, add another line that's indented, line four, and break out here. Now, why is this logically OK? Well, consider what I'm now trying to do. 
+
+I'm trying to execute line three and converting the user's input to an int. And I'm trying to store the result from right to left in x. If something goes wrong, the code we've already seen is immediately going to jump to line five and then six to handle the exception. 
+
+But if nothing goes wrong, my code presumably should just keep on executing line by line. So I could technically logically put the break here. And watch what happens when I run this version. Python of number.py, 50, Enter, it worked. I broke out of the loop. 
+
+Now, which way is better? Honestly, I think it could go either way at this point. This program is so relatively short that even though I'm trying to do two things now, one of which, the break, is not going to fail. You either break or you don't. 
+
+There's no piece of data from the user that's going to influence that. We don't strictly need to have those two lines of code there. But it's only two lines. So I think it's OK. 
+
+And if you recall our discussion in the past, not just of correctness-- does the code work as it should?-- but design, I think you could argue it either way. If you prefer the readability of this and the fact that you don't have an else, that's fine. If, though, you prefer to minimize just how many lines of code you're trying to execute in case something goes wrong, the else is a reasonable approach too. 

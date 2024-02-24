@@ -1,0 +1,25 @@
+
+
+So let's now change students.csv to contain not students' houses at Hogwarts, but their homes where they grew up. So Draco, for instance, grew up in Malfoy Manor. Ron grew up in The Burrow. Harry grew up in Number Four, Privet Drive. And according to the internet, no one knows where Hermione grew up. 
+
+The movies apparently took certain liberties with where she grew up. So for this purpose, we're actually going to remove Hermione because it is unknown exactly where she was born. So we still have some three students. But if anyone can spot the potential problem now, how might this be a bad thing? Well, let's go and try and run our own code here. 
+
+Let me go back to students.py here. And let me propose that I just change my semantics because I'm now not thinking about Hogwarts houses but the students' own homes. So I'm just going to change some variables. 
+
+I'm going to change this house to a home, this house to a home, as well as this one here. I'm still going to sort the students by name, but I'm going to say that they're not in a house, but rather, from a home. So I've just changed the names of my variables and my grammar in English here, ultimately, to print out that, for instance, Harry is from Number Four, Privet Drive, and so forth. 
+
+But let's see what happens here when I run Python of this version of students.py, having changed students.csv to contain those homes and not houses. Enter. Huh, our first value error, like the program just doesn't work. What might explain this value error? The explanation of which rather cryptically is, too many values to unpack. And the line in question is this one involving split. How did, all of a sudden, after all of these successful runs of this program, did line 5 suddenly now break? 
+
+AUDIENCE: In the line in students.csv, you have three values. There's a line that you have three values and in students. 
+
+DAVID MALAN: Yeah, I spent a lot of time trying to figure out where every student should be from so that we could create this problem for us. And wonderfully, like, the first sentence of the book is Number Four, Privet Drive. And so the fact that address has a comma in it is problematic. Why? Because you and I decided sometime ago to just standardize on commas-- CSV, Comma-Separated Values-- to denote the-- we standardized on commas in order to delineate one value from another. 
+
+And if we have commas grammatically in the student's home, we're clearly confusing it as this special symbol. And the split function is now, for just Harry, trying to split it into three values, not just two. And that's why there's too many values to unpack because we're only trying to assign two variables, name and house. 
+
+Now, what could we do here? Well, we could just change our approach, for instance. One paradigm that is not uncommon is to use something a little less common, like a vertical bar. So I could go in and change all of my commas to vertical bars. That, too, could eventually come back to bite us in that if my file eventually has vertical bars somewhere, it might still break. So maybe that's not the best approach. 
+
+I could maybe do something like this. I could escape the data, as I've done in the past. And maybe I could put quotes around any English string that itself contains a comma. And that's fine. I could do that, but then my code, students.py, is going to have to change too because I can't just naively split on a comma now. 
+
+I'm going to have to be smarter about it. I'm going to have to take into account split only on the commas that are not inside of quotes. And oh, it's getting complicated fast. 
+
+And at this point, you need to take a step back and consider, you know what, if we're having this problem, odds are, many other people before us have had this same problem. It is incredibly common to store data in files. It is incredibly common to use CSV files specifically. And so you know what. Why don't we see if there's a library in Python that exists to read and/or write CSV files? Rather than reinvent the wheel, so to speak, let's see if we can write better code by standing on the shoulders of others who have come before us-- programmers passed-- and actually use their code to do the reading and writing of CSVs, so we can focus on the part of our problem that you and I care about. 

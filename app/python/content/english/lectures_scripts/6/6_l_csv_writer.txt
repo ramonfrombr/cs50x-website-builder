@@ -1,0 +1,14 @@
+
+Well, let me propose that, besides reading CSVs, let's at least take a peek at how we might write a CSV too. If you're writing a program in which you want to store not just students' names, but maybe their homes as well in a file, how can we keep adding to this file? Let me go ahead and delete the contents of students.csv and just re-add a single simple row, name, comma, home, so as to anticipate inserting more names and homes into this file. And then let me go to students.py, and let me just start fresh so as to write out data this time. 
+
+I'm still going to go ahead and Import CSV. I'm going to go ahead now and prompt the user for their name-- so input, quote/unquote, What's your name? And I'm going to go ahead and prompt the user for their home-- so home equals input, quote/unquote, Where's your home? 
+
+Now I'm going to go ahead and open the file, but this time for writing instead of reading, as follows-- with open, quote/unquote, students.csv. I'm going to open it in append mode so that I keep adding more and more students and homes to the file, rather than just overwriting the entire file itself. And I'm going to use a variable name of file. 
+
+I'm then going to go ahead and give myself a variable called writer, and I'm going to set it equal to the return value of another function in the CSV module called csv.writer. And that writer function takes as its sole argument the file variable there. Now I'm going to go ahead and just do this. I'm going to say, writer.writerow, and I'm going to pass into writerow the line that I want to write to the file specifically as a list. So I'm going to give this a list of name, comma, home, which, of course, are the contents of those variables. 
+
+Now I'm going to go ahead and save the file. I'm going to go ahead and rerun python of students.py, hit Enter. And what's your name? Well, let me go ahead and type in Harry as my name and Number Four, comma, Privet Drive, Enter. Now notice, that input itself did have a comma. And so if I go to my CSV file now, notice that it's automatically been quoted for me so that subsequent reads from this file don't confuse that comma with the actual comma between Harry and his home. 
+
+Well, let me go ahead and run it a couple of more times. Let me go ahead and rerun python of students.py. Let me go ahead and input this time Ron and his home as The Burrow. Let's go back to students.csv to see what it looks like. Now we see Ron, comma, The Burrow has been added automatically to the file. 
+
+And let's do one more-- python of students.py, Enter. Let's go ahead and give Draco's name and his home, which would be Malfoy Manor, Enter. And if we go back to students.csv, now, we see that Draco is in the file itself. And the library took care of not only writing each of those rows, per the function's name. It also handled the escaping, so to speak, of any strings that themselves contained a comma, like Harry's own home. 

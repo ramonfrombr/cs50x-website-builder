@@ -1,0 +1,25 @@
+We've seen in Python that Python has stirs or strings, ints or integers, floats or floating point values, all of which are different types of data in Python. Python also has a fourth data type called bool for a Boolean value. And even though this is just adding to our list, the nice thing about bools is that they can only be true or false. An int can be any number of an infinite possible values. A bool can only be true or false. 
+
+And it must be capital T and capital F if you're writing itself. So if I go back now to my code, and I consider exactly what I want to return here. Well, if n % two equals equals zero, that is, if n divided by two has a remainder of zero, well, I think it's even, to, Elena, your definition. So let's return true, capital T. else, if it doesn't have a remainder of zero, I'm pretty sure, mathematically, it's got to have a remainder of one. 
+
+But it doesn't matter. I know it's not even, so I'm going to return false. And we return false, instead capital F. And now that we've defined both main and is even, and I'm calling main at the bottom, I think I've got this right. Python of parity.py, Enter. What's x? Let's try something simple, like two. And it's even. Let's do it again. What's x? How about four? Even. Once more, what's x? How about three? And it's odd. 
+
+Now, what have I done here? I've just made the point that if I want to create my own function called "is even," that answers this question for me, that I can now use, in this program, and heck, maybe future programs that I write, I now have a function that no one gave me, I gave myself, that I can use and reuse. And I can even, perhaps, share it with others. I'm using that function now on line three, just to make a decision. I'm using a conditional up there. 
+
+And my Boolean expression, something that's true or false, is going to be not something explicit, like x less than y, or y greater than x, or the like. It's going to be a function call. I'm using a function as my Boolean expression. But that's OK because I know, because I wrote it, that that function "is even" returns true or it returns false. And that's all I need in a conditional to make a decision to print even or print odd. 
+
+So let me pause here to see if there's any questions now on how I've implemented "is even," using this bool. 
+
+SPEAKER 6: Hello, hi David. First of all, thank you for this wonderful class the day before yesterday and today, sir. I have just one query, based on the background of Java. There, when we used to pass the argument, we can also pass the address of the variables. So is there any sort of this concept in Python? 
+
+DAVID MALAN: Short answer, no. Those who are unfamiliar with Java or other languages, or C, or C++, there's generally ways to pass values in different mechanisms that allow you, or disallow you, to change them. In Python, no. Everything we're going to see is actually, in fact, an object. But more on that down the line. How about time for one more question here on these bools and these "is evens." 
+
+SPEAKER 7: So I actually had a question about defining a function, if that's OK. 
+
+DAVID MALAN: Sure. 
+
+SPEAKER 7: So if you define one, within your code, like you made it up, are you allowed to use the dot operator like we did name dot strip, and use it like that? 
+
+DAVID MALAN: Good question. If you've created your own function, can you use other functions, like dot strip, or dot title, or dot capitalize, that we've seen in the past? You can use those on strings. Those functions come with strings. You can't necessarily use them on your own functions, unless your function returns a string, for the examples you gave. I'm returning a bool. Bools have no notion of white space to the left or the right. You can't call strip, you can't call capitalize. 
+
+But if you were writing a different function that returns a string, absolutely. You could use those functions, as well.

@@ -1,0 +1,13 @@
+Permítanme proponer que sigamos adelante aún más para limpiar esto aún más, utilizando una característica que es relativamente nueva en Python en sí mismo. Es muy común cuando se utilizan expresiones regulares hacer exactamente lo que he hecho aquí: llamar a una función como re.search con paréntesis de captura adentro, de modo que obtenga un valor de retorno que estoy llamando matches, podrías llamarlo de otra manera, pero por defecto lo llamo matches. Y luego, fíjense en la siguiente línea, estoy diciendo "si matches".
+
+¿No sería bueno si pudiera simplificar aún más las cosas y hacer todo esto en la misma línea? Bueno, hasta cierto punto puedes. Permítanme hacer esto. Voy a eliminar este if. Y solo voy a intentar decir algo como esto. Si matches equals re.search y luego dos puntos, así combino mi condición if en una sola línea en lugar de en dos.
+
+En C, o C++, o Java, en realidad harías algo como esto, rodeando todo con paréntesis, a veces con conjuntos dobles para suprimir cualquier advertencia, si quieres hacer dos cosas al mismo tiempo. Si deseas no solo asignar el valor de retorno de re.search a una variable llamada matches, sino también hacer una pregunta booleana, ¿es esto efectivamente verdadero o falso?
+
+Eso es lo que estaba haciendo hace un momento. Permítanme deshacer esto. Hace un momento, estaba obteniendo el valor de retorno y asignándolo a matches, y luego estaba formulando la pregunta. Bueno, resulta que esta necesidad de tener dos líneas de código presuntamente molestaba a la gente durante mucho tiempo en Python. Y ahora puedes combinar estas dos líneas de código en una sola.
+
+Pero necesitas un nuevo operador. No puedes simplemente decir "si matches equals re.search" y luego dos puntos al final. En cambio, debes hacer esto. Debes hacer dos puntos igual si y solo si deseas asignar algo de derecha a izquierda y deseas hacer una pregunta if o elif en la misma línea.
+
+Esto se conoce afectuosamente, como pueden ver aquí, como el operador morsa. Y es nuevo en Python en los últimos años. Y te permite tanto asignar un valor de derecha a izquierda, como hacer una pregunta booleana al respecto, como estoy haciendo con el if o, equivalentemente, el elif. ¿Alguien sabe por qué se llama el operador morsa? Si lo ves de esta manera, tal vez, si estás familiarizado con las morsas, se parece un poco a una morsa.
+
+Así que un pequeño detalle pero una característica relativamente nueva de Python que, sinceramente, probablemente seguirás viendo en línea, en el código fuente, en los libros de texto y demás, cada vez más ahora que existe. No cambia la lógica en absoluto. Si ejecuto python de format.py y escribo Malan, coma, espacio, David, aún arregla las cosas, pero ha ajustado un poco más mi código.

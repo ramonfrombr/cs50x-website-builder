@@ -1,0 +1,14 @@
+
+Well, allow me to propose that we forge ahead further just to clean this up even more so, using a feature that's actually relatively new to Python itself. It is very common when using regular expressions to do exactly what I've done here-- to call a function like re.search with capturing parentheses inside, such that you get back a return value that I'm calling matches-- you could call it something else, but I'm calling it by default matches. And then notice on the next line, I'm saying "if matches." 
+
+Wouldn't it be nice if I could just tighten things up further and do these all on the same line? Well, you can sort of. Let me go ahead and do this. Let me get rid of this if. And let me just try to say something like this. If matches equals re.search and then colon-- so combining my if condition into just one line instead of those two. 
+
+In C, or C++, or Java, you would actually do something like this, surrounding the whole thing with parentheses, sometimes double sets to suppress any warnings, if you want to do two things at once. If you want to not only assign the return value of re.search to a variable called matches, but you want to subsequently ask a Boolean question, is this effectively true or false. 
+
+That's what I was doing a moment ago. Let me undo this. A moment ago, I was getting back the return value and assigning it to matches, and then I was asking the question. Well, it turns out this need to have two lines of code presumably rubbed people wrong for too long in Python. And so you can now combine these two kinds of lines into one. 
+
+But you need a new operator. You cannot just say, "if matches equals re.search" and then in a colon at the end. You instead need to do this. You need to do colon equals if and only if you want to assign something from right to left and you want to ask an if or an elif question on the same line. 
+
+This is affectionately known, as can see here, as the walrus operator. And it's new to Python in recent years. And it both allows you to assign a value as I'm doing from right to left, and ask a Boolean question about it, like I'm doing with the if or equivalently elif. Does anyone know why this is called the walrus operator? If you kind of look at it like this, perhaps, if you're familiar with walruses, it kind of sort of looks like a walrus. 
+
+So a minor detail but a relatively new feature of Python that honestly, you'll probably continue to see online, and in source code, and in textbooks, and so forth, increasingly so now that it does exist. It does not change the logic at all. If I run python of format.py and type Malan, comma, space, David, it still fixes things, but it's tightened up my code just a bit more. 

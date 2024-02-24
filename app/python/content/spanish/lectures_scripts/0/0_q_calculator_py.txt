@@ -1,0 +1,16 @@
+Permíteme continuar y abrir VS Code de nuevo, y voy a minimizar mi ventana de terminal, y voy a crear un nuevo archivo llamado Calculator.py. Para hacer eso, puedo escribir Code aquí abajo, seguido del nombre del archivo que quiero crear, .py, y luego presionar Enter. Esto me dará una nueva pestaña en la parte superior. Ya cerré Hello.py. Ahora estoy en Calculator.py. Vamos a crear una calculadora simple que haga algunas sumas por mí. Pero lo voy a hacer en un archivo para que podamos iterar en esto y hacer cambios para mejorarlo o empeorarlo con el tiempo.
+
+
+Voy a declarar un par de variables. Voy a hacer lo usual en matemáticas y llamar a mi primera variable x, mi segunda variable y, y luego voy a crear una tercera variable z = x + y. Luego, voy a imprimir z. Este programa, admitamos que no es muy emocionante o interesante, de hecho, es un poco menos interesante que imprimir cosas en la pantalla como antes con strings, pero lo desarrollaremos y veremos qué otras características existen en Python que podemos aprovechar. Entonces, con suerte, si Python sabe de matemáticas tanto como yo, cuando ejecute Python de Calculator.py, debería ver que 1 + 2 = efectivamente 3. Bueno, no es tan sorprendente ni interesante. Y honestamente, este no es el programa más útil porque siempre calculará 1 + 2 = 3. Al menos hagamos que este programa sea un poco más interactivo, ¿de acuerdo?
+
+
+Ya sabemos de ejemplos anteriores cómo obtener datos del usuario. Vamos a utilizar nuevamente esa función de entrada. Y hagamos lo siguiente, al inicio de mi código, cambiemos x para que no sea siempre el número 1, cambiémoslo para que sea el valor de retorno de la pregunta al usuario por x. Puedo usar cualquier idioma en inglés o humano que quiera aquí. Voy a decir, ¿qué es x? Tal como pregunté antes, ¿cuál es tu nombre? Haré lo mismo para y. Usaré Input de nuevo, pero esta vez cambiaré la pregunta a, ¿qué es y?
+
+
+Está bien, en este punto, creo que voy a dejar el resto del código igual. Z = x + y, y luego imprimo z, pero lo bueno ahora es que creo que tengo una bonita calculadora interactiva. Ya no hará siempre 1 + 2. Hará lo que sea que el usuario escriba + lo que sea que el usuario escriba. Así que vamos a probar esto. Ejecutaré ese programa. Está bien, vamos a hacerlo. 1 será x, 2 será y, y por supuesto, todos de acuerdo, 1 + 2 = tr... bueno. ¿Qué está pasando ahí? O tu clase de matemáticas te engañó o yo te engañé. ¿Por qué no llamamos a alguien aquí para ver si no pueden ayudarnos a razonar qué está mal, cuál es el error? Anjali, si no me equivoco.
+
+
+AUDIENCIA: Creo que el problema es que está concatenando strings porque estás usando el operador + en lugar de sumar.
+
+
+DAVID MALAN: Perfecto. Así es, tu intuición es perfecta. Hemos visto que el + se utiliza de manera un poco diferente en el contexto de los strings porque los concatena, es decir, une los dos strings, y eso parece ser lo que está sucediendo aquí, aunque el usuario haya escrito un número. Pero lo interesante aquí es que, cuando obtienes una entrada del usuario, porque están usando un teclado en su Mac o PC, o su teléfono, siempre será texto. Podría parecer un número, pero por defecto viene del teclado como string, es decir, como texto. Entonces, ¿cómo resolvemos esto si al final no deseamos tratar esas entradas como strings, sino como números reales?

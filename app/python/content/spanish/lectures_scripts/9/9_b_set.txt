@@ -1,0 +1,45 @@
+Por ejemplo, entre los diversos tipos de datos de Python, hay otro que aún no hemos tenido la ocasión de usar, es decir, un conjunto.
+
+En matemáticas, un conjunto es típicamente una colección de valores en la que no hay duplicados. Por lo tanto, no es exactamente una lista. Es un poco más especial que eso, ya que de alguna manera se eliminan automáticamente los duplicados. Resulta que en Python, este es un tipo de datos real que tú mismo puedes usar en tu código. Y a través de la documentación aquí, es posible que puedas deducir que es un problema útil si quieres eliminar automáticamente los duplicados.
+
+Así que déjame ir ahora a VS Code. Déjame mostrarte un archivo que creé con anticipación, llamado houses.py. Y en houses.py, ya he creado una gran lista de estudiantes, dentro de la cual hay una serie de diccionarios, cada uno de los cuales representa el nombre y la casa de un estudiante.
+
+Ahora, este es un diccionario bastante grande. Y, por lo tanto, se presta a la iteración sobre el mismo. Y supongamos que el objetivo aquí era bastante simple: averiguar cuáles son las casas únicas en Hogwarts en el mundo de Harry Potter.
+
+Sería agradable, tal vez, no tener que conocer estos detalles o buscarlos en línea. Aquí tenemos un conjunto de estudiantes, aunque no sea exhaustivo, con todas las casas. Pero entre estos estudiantes, ¿cuáles son las casas únicas en las que viven?
+
+Bueno, ciertamente, como humano, podría echar un vistazo y decirte que son, bueno, Gryffindor, Slytherin y Ravenclaw. Pero, ¿cómo podemos hacerlo programáticamente para estos estudiantes también? Bueno, vamos a intentar un enfoque primero.
+
+Voy a entrar en houses.py. Y propongo que primero creemos una lista vacía llamada casas en la que acumularé cada una de las casas de manera única. Por lo tanto, cada vez que iteremos a través de esta lista de diccionarios, solo agregaré una casa a esta lista si no la he visto antes.
+
+¿Cómo expreso eso? Bueno, voy a iterar sobre todos los estudiantes con for student in students, como hemos hecho en el pasado.
+
+Y ahora te hago una pregunta. Si la casa actual del estudiante - y observa que estoy accediendo al estudiante actual porque sé que es un objeto de diccionario o dict, y si la casa de ese estudiante no está en mi lista de casas, entonces, con sangría, voy a decir casas.append, porque nuevamente, casas es una lista. Y voy a añadir esa casa en particular a la lista.
+
+Luego, en la parte inferior aquí, voy a hacer algo interesante y decir, para cada una de las casas que he acumulado, podría decir simplemente casas. Pero si digo casas, ¿cuál sería el punto de acumularlas todas a la vez? Podría hacer todo esto dentro de un bucle. Por lo menos, vamos a ordenar esas casas con sorted, que va a ordenar las cadenas alfabéticamente.
+
+Y vayamos allí e imprimamos cada una de las casas. Ahora, veamos mi ventana de la terminal y ejecutemos Python de houses.py y presionemos Enter. Y ahí lo tenemos. Gryffindor, Ravenclaw, Slytherin en orden alfabético, aunque en la lista de diccionarios aquí arriba, técnicamente el orden en el que vimos esto fue Gryffindor, Gryffindor, Gryffindor, Slytherin, Ravenclaw. Así que parece que mi código las ha ordenado correctamente.
+
+Esto está perfectamente bien y es una forma de resolver este problema. Pero resulta que podríamos usar más cosas que están incorporadas en el lenguaje Python para resolver este problema por nosotros mismos. Aquí estoy reinventando la rueda, en realidad la noción de un conjunto en el que los duplicados se eliminan automáticamente para mí.
+
+Así que déjame borrar mi ventana de la terminal y tal vez cambiar el tipo de objeto que estoy usando aquí. En lugar de una lista, que también podría escribirse así para crear una lista vacía, voy a crear un conjunto vacío, donde llamo a una función llamada set que me devolverá un objeto en Python que representa esta noción de un conjunto en el que los duplicados se eliminan automáticamente.
+
+Y ahora, puedo simplificar mi código. Porque no tengo que usar esta condición if yo mismo. Creo que puedo hacer algo como esto. Dentro de mi bucle, voy a hacer houses.add. Así que no es append para un conjunto, es append para una lista. Pero es add para un conjunto según la documentación.
+
+Luego, voy a añadir la casa actual de este estudiante. Y ahora, creo que el resto de mi código puede ser el mismo. Simplemente confío en la documentación del conjunto en Python para que filtre los duplicados por mí.
+
+Y puedo simplemente añadir, añadir, añadir, añadir todas estas casas al conjunto y cualquier duplicado que ya esté presente desaparecerá. Ejecutemos Python de houses.py y presionemos Enter. Y voilà, estamos de vuelta en el negocio con solo esas tres también.
+
+Permítanme hacer una pausa aquí para ver si hay alguna pregunta sobre el uso de un conjunto, que es simplemente otro tipo de datos que está disponible para ti, otra clase en el mundo de Python a la que puedes recurrir cuando resuelvas un problema como este.
+
+ESTUDIANTE: ¿Cómo podemos encontrar un elemento en un conjunto, por ejemplo, encontrar Gryffindor en ese conjunto?
+
+DAVID J. MALAN: ¿Cómo se encuentra un elemento en un conjunto? Puedes usar una sintaxis muy similar a la que hemos usado para una lista antes. Puedes usar una sintaxis como if Gryffindor in houses entonces, y puedes responder una pregunta en esa línea. Por lo tanto, puedes usar in y not in y funciones similares también. ¿Otras preguntas sobre conjuntos?
+
+ESTUDIANTE: ¿Qué sucede si tienes un nombre de casa similar? Digamos que en lugar de Slytherin, es tal vez una O en lugar de una I. ¿El bucle recorrerá cada una de esas letras en el nombre de la casa?
+
+DAVID J. MALAN: Compararía las cadenas. Por lo tanto, si Slytherin aparece más de una vez pero está ligeramente mal escrito o capitalizado, si te entendí correctamente, aparecerían como cadenas distintas. Por lo tanto, obtendrías ambas versiones de Slytherin en el resultado.
+
+Sin embargo, hemos visto en el pasado cómo podemos limpiar los datos de los usuarios si realmente pueden estar desordenados. Podríamos forzar todo a mayúsculas, o todo a minúsculas, o podríamos usar la función capitalize incorporada en las cadenas, o el título que manejaría parte de la limpieza para nosotros.
+
+En este caso, como los datos no provienen de humanos que utilizan la función de entrada, escribí el código de antemano, es más seguro asumir que las casas son correctas. Pero ese es absolutamente un riesgo si proviene de usuarios.

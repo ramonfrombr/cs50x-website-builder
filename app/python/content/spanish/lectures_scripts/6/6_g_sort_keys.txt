@@ -1,0 +1,43 @@
+Entonces, idealmente, ¿qué queremos hacer? Si en el momento en que llegamos a la línea 9, tenemos una lista de todos estos estudiantes, y dentro de esa lista hay un diccionario por estudiante, y cada uno de esos diccionarios tiene dos claves, nombre y casa, ¿no sería genial si hubiera una manera en el código de decirle a Python, ordene esta lista mirando esta clave en cada diccionario? Porque eso nos daría la capacidad de ordenar tanto por nombre, como por casa, o incluso por cualquier otro campo que añadamos a ese archivo.
+
+Resulta que sí podemos hacer esto. Podemos decirle a la función sorted no solo que invierta las cosas o no. Toma otro parámetro llamado key, donde puedes especificar qué clave se debe utilizar para ordenar alguna lista de diccionarios.
+
+Y voy a proponer que hagamos esto. Primero voy a definir una función, temporalmente por ahora, llamada get_name. Y el propósito de esta función en la vida, dado un estudiante, es, simplemente, devolver el nombre del estudiante de ese diccionario en particular. Entonces, si el estudiante es un diccionario, esto va a devolver literalmente el nombre del estudiante, y eso es todo. Ese es el único propósito de esta función en la vida.
+
+¿Qué quiero hacer ahora? Bueno, ahora que tengo una función que, dado un estudiante, me devolverá el nombre del estudiante, puedo hacer esto. Puedo cambiar sorted y decir, usa una clave que sea igual al valor de retorno de get_name. Y esto ahora es una característica de Python. Python te permite pasar funciones como argumentos a otras funciones.
+
+Entonces, get_name es una función. Sorted es una función. Y estoy pasando get_name a sorted como el valor de ese parámetro clave. Ahora, ¿por qué estoy haciendo esto?
+
+Bueno, si piensas en la función get_name, es solo un bloque de código que obtendrá el nombre de un estudiante. Eso es práctico porque esa es la capacidad que sorted necesita. Cuando se le da una lista de estudiantes, cada uno de los cuales es un diccionario, sorted necesita saber, ¿cómo obtengo el nombre del estudiante? Para hacer la ordenación alfabética.
+
+Los autores de Python no sabían que íbamos a estar creando estudiantes aquí en esta clase, por lo que no pudieron anticipar escribir código de antemano que ordene específicamente por un campo llamado estudiante, y mucho menos llamado nombre, y mucho menos casa. Entonces, ¿qué hicieron? En cambio, incluyeron en la función sorted este parámetro llamado clave que nos permite, muchos años después, decirle a su función sorted cómo ordenar esta lista de diccionarios.
+
+Así que ahora mira lo que sucede. Si ejecuto el comando python students.py y presiono Enter, ahora tengo una lista ordenada de resultados. ¿Por qué? Porque ahora esa lista de diccionarios ha sido ordenada por el nombre del estudiante.
+
+También puedo hacer esto. Si, como antes, queremos invertir todo diciendo reverse igual a true (verdadero), también podemos hacerlo. Permíteme ejecutar nuevamente el comando python students.py y presionar Enter. Ahora está invertida. Ahora es Ron, luego Hermione, Harry y Draco.
+
+Pero también podemos hacer algo diferente. ¿Qué pasa si quiero ordenar, por ejemplo, por el nombre de la casa al revés? Podría hacer esto. Podría cambiar esta función de get_name a get_house. Podría cambiar la implementación aquí arriba para que sea get_house.
+
+Y puedo devolver no el nombre del estudiante sino la casa del estudiante. Y ahora observa, si ejecuto el comando python students.py, Enter, observa que ahora está ordenado por casa en orden inverso. Slytherin viene primero, y luego Gryffindor.
+
+Si elimino el reverse pero mantengo el get_house y vuelvo a ejecutar este programa, ahora está ordenado por casa. Gryffindor viene primero, y Slytherin viene después. Y la ventaja ahora de esto es que, como estoy usando esta lista de diccionarios y mantengo los datos de los estudiantes juntos hasta el último momento cuando finalmente los imprimo, ahora tengo control total sobre la información en sí misma, y puedo ordenar por esto o aquello. No tengo que construir esas frases de antemano, como lo hice de manera bastante improvisada la primera vez.
+
+Muy bien, eso fue mucho. Permítanme hacer una pausa aquí para ver si hay preguntas.
+
+AUDIENCIA: Entonces, cuando estamos ordenando los archivos, ¿siempre debemos usar los bucles, o un diccionario de texto, o algún tipo de lista? ¿Podemos ordenar simplemente ordenando, sin necesidad de bucles o cualquier otra cosa?
+
+DAVID MALAN: Una buena pregunta, y la respuesta corta con Python solo, eres tú, el programador. Necesitas hacer la ordenación. Con bibliotecas y otras técnicas, absolutamente.
+
+Puedes hacer más de esto automáticamente porque alguien más ha escrito ese código. Lo que estamos haciendo en este momento es hacer todo desde cero nosotros mismos. Pero absolutamente, con otras funciones o bibliotecas, algunas de estas cosas podrían hacerse más fácilmente. ¿Alguna otra pregunta sobre esta técnica aquí?
+
+AUDIENCIA: Si es igual al valor de retorno de la función, ¿puede ser igual solo a una variable o un valor?
+
+DAVID MALAN: Bueno, sí. Debería ser igual a un valor. Y debo aclarar, de hecho, ya que esto no fue obvio.
+
+Cuando pasas una función como get_name o get_house a la función sorted como valor de key, esa función se llama automáticamente por la función sorted por ti en cada uno de los diccionarios de la lista. Y utiliza el valor de retorno de get_name o get_house para decidir qué cadenas realmente usar para comparar y decidir cuál es correcto alfabéticamente. Esta función, que pasas solo por nombre, no pasas paréntesis al final, es llamada por la función sorted para descubrir cómo comparar estos mismos valores.
+
+AUDIENCIA: ¿Cómo podemos usar diccionarios anidados? He leído acerca de diccionarios anidados. ¿Cuál es la diferencia entre diccionarios anidados y el diccionario dentro de una lista? Creo que es eso.
+
+DAVID MALAN: Claro. Estamos usando una lista de diccionarios. ¿Por qué? Porque cada uno de esos diccionarios representa a un estudiante. Y un estudiante tiene un nombre y una casa, y queremos, afirmo, mantener esa asociación. Y es una lista de estudiantes porque tenemos varios estudiantes, cuatro en este caso.
+
+Podrías crear una estructura que es un diccionario de diccionarios. Pero yo argumentaría que simplemente no resuelve un problema. No necesito un diccionario de diccionarios. Necesito una lista de pares clave-valor en este momento. Eso es todo.

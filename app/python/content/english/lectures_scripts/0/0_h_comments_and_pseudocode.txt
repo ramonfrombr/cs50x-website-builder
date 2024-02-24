@@ -1,0 +1,28 @@
+But let me take a step back now and perhaps introduce a couple of other concepts with which we should be familiar, which is as our programs get longer and they're no longer just one line or two or even three, eventually our programs are going to become dozens of lines, maybe even hundreds of lines long. Let's set the stage for success moving forward. 
+
+It turns out that Python and a lot of programming languages also support something called comments. Comments are notes to yourself in your code and you include comments by way of a special symbol-- in Python it's going to be the hash symbol, typically-- and that allows you to write the equivalent of a note to yourself but in a way that's not going to break your code. The computer actually ignores your comment. It's just there for you, it's just there for your teacher, it's just there for your colleague with whom you're sharing ultimately that code. 
+
+So if I go back to VS Code here and I just want to add some comments to this program to explain to my teacher, to myself, to my colleagues what this program is doing, well, let's go ahead and do that. I'm going to go at the very top of my program and on line 1 now I'm going to move that original line of code down a bit, I'm going to add a hash, and I'm going to say something like this, ask user for their name. Now, I don't have to use that language. I don't have to use that text. I could use any human language whatsoever. It doesn't have to be English. But I'm going to now, below that, just say something like this-- say Hello to user. 
+
+And you'll notice that VS Code by default is kind of graying out my comments. They're no longer blue, there's no red, there's no color in them. And that's just because they're notes to myself and the computer ultimately is going to ignore them. But what we have now is two comments-- ask user for their name and then a second comment, say Hello to user. And I've just kind of commented each chunk of code, like each line or lines plural of code, that are doing something noteworthy. Why? Well, tomorrow morning when I wake up having slept for quite some time, forgotten what it is I did the previous day, it's convenient with comments to just see in English or your own human language what it is this program is doing so that you don't have to read the code itself and, better yet, if there's maybe a mistake down the road, you can read what your intention was and then you can look at the code and figure out if your code is now doing what you intended. 
+
+So this isn't really necessary for a program this small. It's pretty obvious with just one or two or three lines what the program is doing. It's just as fast to read the code than the comments, but getting into this habit is generally a good thing-- to comment your code every one or a few lines so as to remind yourself and others what it is your intent and your code is doing. What's nice about comments too is this-- comments can also serve to be sort of a to-do list for yourself. 
+
+There's this notion in programming of pseudocode. Pseudocode isn't a formal thing. It's not one specific language. It's just using English or your own human language to express your thoughts succinctly, methodically, algorithmically, so to speak. But pseudocode, therefore, because it's not Python and it's not necessarily English, it just kind of allows you to outline your program even in advance. So for instance, if I wasn't sure today how I wanted to go about writing this program but I didn't know what I wanted to do, I could have started today by just writing this in Hello.py. No code, I could have written just a couple of comments to myself-- Step 1, ask user for their name. Step 2, say Hello to user. 
+
+Then once I've outlined my program in pseudocode, then I can go in there and say, all right, how do I ask the user for their name? Well, I can do input "what's your name" question? And then on the left here, I can maybe put a variable and assign it to that. OK, how do I say Hello to the user? Well, I know I can use print to say things on the screen. Let me say hello, and let me-- OK, let me now print the person's name. 
+
+So again, pseudocode is a nice way of structuring your to-do list, especially if you have no idea how to write the code, because it breaks a bigger program down into small bite-sized tasks. All right, let me pause here to see if there are now any questions on comments, pseudocode, return values, or variables. Any questions we can clear up here? 
+
+AUDIENCE: Yeah, my question is does the function input work for any type of information, or only for words? 
+
+DAVID MALAN: Yeah, really good question. So according to its documentation, and we'll look more at formal documentation soon, input is going to expect what's called a string, that is a sequence of text, be it in English or any other human language. But it's indeed going to be expecting text with which to prompt the user. A good question. How about another question from the group, if we could? 
+
+AUDIENCE: I wanted to ask how would I make a several line comment? 
+
+DAVID MALAN: Oh, how do you do many lines of comments, if I'm hearing you correctly? 
+
+AUDIENCE: Yes. 
+
+DAVID MALAN: Sure. You would just keep doing them like this. You just prefix each of the lines with a hash symbol, like I'm doing here. There is another technique for doing multi-line comments in Python that actually tend to have special meaning. You can do three double quotes like this and then anything in between here is a comment. That's another technique. Or you can use single quotes as well. But more on those, I think, another time. 
+

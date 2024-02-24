@@ -1,0 +1,39 @@
+So let me propose that we go ahead here and close validate.py. And let's go ahead and create a new program altogether called format.py, the goal of which is to reformat the user's input in the format we expect. I'm going to go ahead and run code of format.py. And let's suppose that the data we're going to reformat is the user's name-- so not email address but name this time. 
+
+And we're going to hope that they type in their name properly, like David Malan. But some users might be in the habit, for whatever reason, of typing their name backwards, if you will, with a comma, such as Malan comma David instead. Now, it's fine because both are clearly as readable to the human. But if you want to standardize how those names are stored in your system, perhaps a database, or CSV file, or something else, it would be nice to at least standardize or canonicalize the format in which you're storing your data, so that if you print out the user's name it's always the same format, David Malan, and there's no commas or backwardness to it. 
+
+So let's go ahead and do something familiar. Let's go ahead and give myself a variable called name and set it equal to the return value of input, asking the user, as we've done many times, "what's your name," question mark. I'm going to go ahead and proactively at least clean up some messiness, as we keep doing here, by just stripping off any leading or trailing whitespace. Just in case the user accidentally hits the spacebar, we don't want that ultimately in our data set. 
+
+And now let me go ahead and do this as we've done before. Let me just go ahead quickly and print out, just to make sure I'm off to the right start, "hello," and then in curly braces name, so making an fstring to format "hello," comma, "name." 
+
+Now let me go ahead and clear my screen and run python of format.py. Let me behave and type in my name as I normally would, David, space, Malan, Enter. And I think the output looks pretty good. It looks as expected grammatically. 
+
+Let me now go ahead, though, and play this game again. But this time, maybe because I'm not thinking, or I'm just in the habit of doing last name comma first, I do Malan, comma, David, and hit Enter. All right. Well, this now is weird. 
+
+Even though the program is just spitting out exactly what I typed in, arguably this is not close to correct, at least grammatically. It should really say "hello, David Malan." Now, maybe I could have some if conditions and I could just reject the user's input if they type a comma or get their names backwards somehow. 
+
+But that's going to be too little too late if the user has already submitted a form online, and I already have the data, and now I need to go in and clean it up. And it's not going to be fun to go through manually in Google Spreadsheets, or Apple Numbers, or Microsoft Excel and manually fix a lot of people's names to get rid of the commas and move the first name before the last, as is conventional in the US. 
+
+So let's do this. It could be a little fragile, but let's start to express ourselves a little programmatically here and ask this. If there is a comma in the person's name, which is Pythonic-- I'm just asking the question, is this shorter string in this longer string?-- then let me go ahead and do this. Let me go ahead and grab that name in the variable, split on not just the comma but the space after, assuming the human typed in a space after their name. 
+
+And let me go ahead and store the result of that splitting of Malan, comma, David into two variables. Let's do last, comma, first, again unpacking the sequence of values that comes back. Now let me go ahead and reformat the name. So I'm going to forcibly change the user's name to be as I expect. 
+
+So name is actually going to be this format string-- first name then last name, both in curly braces but formatted together with a single space, so that I'm overwriting the user's input and updating my name variable accordingly. For the moment, to be clear, this program is interactive. Like, the users, like me, are typing their name into the program. 
+
+But imagine the data already is in a CSV file. It came in from some process like a Google Form or something else online. You could imagine writing code similar to this, but that maybe goes and reads that file into memory first. Maybe it's a CSV via CSV Reader or DictReader, and then iterating over each of those names. But we'll keep it simple and just do one name at a time. 
+
+But now what's kind of interesting here is if I go back to my terminal window and clear it, and run python of format.py, and hit Enter, I'm going to type in David, space, Malan as before. And I think we're still good. But I'm also going to go ahead and do this-- python of format.py Malan, comma, David, with a space in between, crossing my fingers and hit Enter, and voila. That now has been fixed. 
+
+Such a simple thing to be sure. But it is so commonly necessary to clean up users input. Here we see at least one way to do so pretty easily. Now, to be fair, there's some problems here. And in fact, can someone imagine a scenario in which this code really doesn't fix the user's input? What could still go wrong even with this fix in my code? Any thoughts? 
+
+AUDIENCE: If they typed in their name comma and then [INAUDIBLE]. 
+
+DAVID MALAN: Oh, and then something else. Yeah. So let me try this, for instance. Let me go ahead and run a program. And I am the only David Malan that I know. But suppose I were, let's say, junior like this. And it's common, in English at least, to sometimes put a comma there. You don't necessarily need the comma, but I'm one of those people who uses a comma. 
+
+That's now really, really broken. So I've broken some assumption there. And so that could certainly go wrong here. What else? Well, let me go ahead and run this again. And if I did Malan, comma, David, no space, because I'm being a little sloppy, I'm not paying attention, which is going to happen when you have lots of users ultimately, well, this really broke now. 
+
+Notice I have a ValueError, an actual exception. Why? Well, because split is supposed to be splitting the string into two strings by looking for the comma and a space. But if there is no comma and space, it can't split it into two things. And the fact that I have two variables on the left, but I'm only getting back one thing on the right, means that I can't do this code quite as this. 
+
+So it's fragile to be sure. But wouldn't it be nice if we could at least improve it? For instance, we now know some regular expressions syntax. What if I at least wanted to make this space optional? Well, I could use my newfound regular expression syntax and put a question mark, Question mark means zero or one of the things to the left. 
+
+What's the thing to the left? It's literally a space. I don't even need parentheses if there's just one thing there. So that would be the start of a pattern that says, I must have a comma, and then I may or may not have a space, zero or one spaces thereafter. Unfortunately, the version of split that's built into the str variable, as in this case, doesn't support regular expressions. If we want our regular expressions, we need to go use that library here. 

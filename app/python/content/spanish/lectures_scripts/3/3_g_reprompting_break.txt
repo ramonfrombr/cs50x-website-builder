@@ -1,0 +1,63 @@
+Bueno, permíteme proponer que afinemos un poco más y consideremos cómo podríamos mejorar un poco más este ejemplo. Es un poco antipático de mi parte rechazar la entrada del usuario después de que no proporcionen un número entero y simplemente salir del programa, ¿verdad? Sería más amigable para el usuario si simplemente le solicito o le vuelvo a solicitar la entrada una y otra vez.
+
+Y en el chat, si pudieras, ¿cuál es la característica de Python que puedes usar si quieres hacer algo una y otra vez hasta que el usuario coopere y te dé lo que estás buscando, como un número? Sí, bucle, bucle, bucle. Un bucle es algo que ocurre una y otra vez.
+
+Y tal vez podamos usar ese mismo mecanismo, un bucle, para solicitar al usuario el valor de x. Y si no nos dan un número, solicitarlo nuevamente. Y si no, solicitarlo una y otra vez. No necesitamos simplemente salir del programa.
+
+Entonces, rápidamente... permíteme proponer esto. Permíteme proponer aquí que mejore este código al hacer deliberadamente esto. Voy a inducir un bucle infinito al comienzo de mi código con "while true". Recuerda que la palabra clave "while" induce un bucle, un ciclo que se comporta de esta manera. Y hace una pregunta, una expresión booleana que debe evaluar a verdadero o falso.
+
+Bueno, si quiero que esto se repita para siempre, al menos inicialmente, simplemente diré "while true" porque true es verdadero. Esto tiene el efecto de hacer algo sin importar qué para siempre, a menos que salgamos de ello temprano. Ahora voy a hacer esto.
+
+Voy a colocar mi código "try except" sangrado debajo de este bucle para intentar obtener un valor para x. Si obtengo un "value error" en su lugar, imprimiré "x no es un número entero". Pero esta vez, ¿qué quiero hacer si el usuario intenta y tiene éxito al darme un número?
+
+Bueno, puedo hacer esto. Puedo simplemente salir de mi código aquí. Y aquí abajo ahora, puedo usar la misma línea de código de antes, una cadena formateada que dice "x es", y luego entre llaves, x de nuevo. Entonces, ¿qué está pasando aquí? Creo que este código ahora, porque he añadido el bucle, va a tener el efecto de intentar al menos una vez, tal vez una segunda vez, tal vez una tercera vez, tal vez 500 veces hasta que el usuario finalmente me dé lo que quiero, que es un número entero.
+
+Y una vez que lo hagan, una vez que no haya ningún "value error" ocurriendo, entonces salgo del bucle. Y la línea 9 se ejecuta como espero. Así que vamos a intentar ejecutar esta versión... Python de "number.py", Enter. ¿Cuál es x? Permíteme escribir lo fácil primero... 50. X es 50.
+
+¿Qué acaba de suceder en términos del flujo de control de este programa, el flujo de mi lógica? Bueno, primero me encontré en la línea 1 dentro de un bucle. Con suerte, saldré de este bucle. ¿Qué hice entonces? En las líneas 2 y 3, intenté obtener la entrada del usuario y convertirla en un entero.
+
+Bueno, fui amable esta vez. Y escribí 50, que parece y es un número. Entonces, la función "int" lo convirtió sin problemas y lo almacenó de derecha a izquierda en x. ¿Excepto error de valor? No hay ningún error de valor porque si escribí un número, no hay nada excepcional ocurriendo.
+
+Esta es una ejecución aburrida y correcta de mi programa. Entonces, ¿qué sucede? Salgo del bucle. Entonces, nuevamente, la cláusula else está asociada con el "try", no con el "except".
+
+Y una vez que salgo del bucle, por supuesto, simplemente imprimo lo que x es. Bueno, intentemos el otro escenario que podría suceder. Python de "number.py", Enter. ¿Cuál es x? Intentemos "cat" o cualquier otra palabra. Enter.
+
+Ah, esta es ahora una nueva característica. Me están informando lo que hice mal. X no es un número entero. Así que estoy obteniendo una retroalimentación útil del usuario. Pero nota nuevamente, estoy siendo preguntado, ¿cuál es x?
+
+Bueno, intentemos escribir "dog". X no es un número entero. ¿Cuál es x? Intentemos "bird". Enter.
+
+X no es un número entero. ¿Cuál es x? Y basta decir, esto sucederá ahora para siempre si estoy en un bucle infinito hasta que intente y tenga éxito, momento en el cual salgo. Así que vamos a intentarlo de nuevo.
+
+50, Enter. Ahora he salido del bucle. Y estoy imprimiendo lo que x realmente es. Muy bien, detengámonos aquí y veamos si hay alguna pregunta. La lógica es casi la misma. Pero lo que es diferente ahora es que estoy en un bucle. Y estoy usando la palabra clave "break" en Python para salir deliberadamente del bucle cuando esté listo, una vez que el usuario haya cooperado.
+
+AUDIENCIA: ¿Realmente necesitamos hacer un "break"? ¿No podemos simplemente imprimir? ¿O qué nos impide simplemente imprimir?
+
+DAVID MALAN: Buena pregunta. Así que permíteme intentar eso. ¿No podría simplemente imprimir? Bueno, veamos qué sucede si hago eso.
+
+Permíteme mover esta línea de impresión al final dentro de mi bucle aquí, acortando así el programa. Y, en general, eso ha sido algo bueno. Python de "number.py", Enter. Permíteme escribir 50.
+
+Vale, x es 50. ¿Cuál es x? Vale, tal vez sea 49. X es 49. Vale, tal vez 48.
+
+Desafortunadamente, creo... te estás riendo. Lo ves. Nunca salgo del bucle, lo cual tal vez es una característica. Tal vez quieras que este sea tu programa, pero yo no lo quiero.
+
+Eventualmente me gustaría que este juego se detenga. Así que necesito salir de ese modo. Pero puedo hacerlo un poco diferente. Y permíteme proponer que lo modifiquemos un poco.
+
+Pero, primero, ¿hay otras preguntas sobre esta sintaxis? Permíteme volver a la versión anterior.
+
+AUDIENCIA: Hola, ¿puedo usar "break" junto con "except" y "else"? Por ejemplo, en otra impresión, ¿puedes usar imprimir con "else" y usar imprimir junto con "break" o algo así?
+
+DAVID MALAN: Puedes usar "break" dentro de bucles para salir de ellos. Y puedes usarlo dentro de una condicional, como un "if", "elif" o "else". También puedes usarlo dentro de un "try", "except", "else". Cada vez que estás en un bucle del que quieres salir, puedes usar esta palabra clave, "break".
+
+Lo estoy usando en el contexto de las excepciones, pero no está restringido a eso. Y déjame mostrarte también. Ni siquiera tiene que estar en el "else". Si quisiera, en realidad podría hacer esto.
+
+Podría deshacerme de mi "else". Y podría volver a la línea tres, agregar otra línea sangrada, línea cuatro, y salir aquí. Ahora, ¿por qué esto es lógicamente correcto? Bueno, considera lo que estoy tratando de hacer ahora.
+
+Estoy tratando de ejecutar la línea tres y convertir la entrada del usuario en un entero. Y estoy tratando de guardar el resultado de derecha a izquierda en x. Si algo sale mal, el código que ya hemos visto saltará inmediatamente a la línea cinco y luego a la seis para manejar la excepción.
+
+Pero si nada sale mal, mi código presumiblemente debería seguir ejecutándose línea por línea. Así que técnicamente podría poner el "break" aquí. Y observa qué sucede cuando ejecuto esta versión. Python de "number.py", 50, Enter, funcionó. Salí del bucle.
+
+Ahora, ¿cuál es la mejor opción? Honestamente, creo que se puede hacer de ambas formas en este punto. Este programa es relativamente corto y aunque estoy tratando de hacer dos cosas ahora, una de las cuales, el "break", no va a fallar. O rompes o no rompes.
+
+No hay ningún dato del usuario que vaya a influir en eso. No necesitamos estrictamente tener esas dos líneas de código allí. Pero son solo dos líneas. Así que creo que está bien.
+
+Y si recuerdas nuestra discusión en el pasado, no solo de la corrección, ¿funciona el código como debería?, sino también del diseño, creo que se podría argumentar de cualquier manera. Si prefieres la legibilidad de esto y el hecho de que no tienes un "else", está bien. Si, sin embargo, prefieres minimizar la cantidad de líneas de código que estás tratando de ejecutar en caso de que algo salga mal, el "else" también es un enfoque razonable.

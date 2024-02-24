@@ -1,0 +1,60 @@
+{% extends 'python/layout.html' %} {% block content %}
+<h1 id="problem-set-2">Conjunto de Problemas 2</h1>
+
+<h2 id="what-to-do">O que Fazer</h2>
+
+<ol>
+  <li>
+    Faça login em <a href="https://cs50.dev/">cs50.dev</a>, que é uma versão
+    baseada em nuvem do Visual Studio Code (VS Code) que fornece a você seu
+    próprio "codespace" com tudo o que você precisa para o curso pré-instalado.
+    Não é necessário baixar e instalar o VS Code ou o Python em seu próprio Mac
+    ou PC!
+  </li>
+  <li>
+    Execute
+    <code class="language-plaintext highlighter-rouge">update50</code> na janela
+    do terminal do seu codespace para garantir que seu codespace esteja
+    atualizado; se solicitado, clique em <strong>Reconstruir agora</strong>.
+  </li>
+  <li>
+    Envie todos os problemas abaixo:
+    <ul>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.camel') }}">CamelCase</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.coke') }}"
+          >Máquina de Refrigerantes</a
+        >
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.twttr') }}"
+          >Apenas configurando meu twttr</a
+        >
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.plates') }}"
+          >Placas de Identificação Personalizadas</a
+        >
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.nutrition') }}"
+          >Informações Nutricionais</a
+        >
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="when-to-do-it">Quando Fazer</h2>
+
+<p>
+  Até
+  <a
+    data-local="2024-12-31T23:59:00-05:00"
+    href="https://time.cs50.io/20241231T235900-0500"
+    >2024-12-31T23:59:00-05:00</a
+  >.
+</p>
+{% endblock %}

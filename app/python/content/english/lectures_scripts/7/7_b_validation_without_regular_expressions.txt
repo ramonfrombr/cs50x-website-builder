@@ -1,0 +1,52 @@
+
+Before, though, we use these regular expressions, let me propose that we solve a few problems using just some simpler syntax and see what kind of limitations we run up against. Let me propose that I open up VS Code here, and let me create a file called validate.py, the goal at hand being to validate, how about just that, a user's email address. They've come to your app, they've come to your website, they type in their email address, and we want to say yes or no, this email address looks valid. 
+
+All right. Let me go ahead and type code of validate.py to create a new tab here. And then within this tab, let me go ahead and start writing some code, how about, that keeps things simple initially. First, let me go ahead and prompt the user for their email address. And I'll store the return value of input in a variable called email, asking them "what's your email?" question mark. 
+
+I'm going to go ahead and preemptively at least clean up the user's input a little bit by minimally just calling strip at the end of my call to input, because recall that input returns a string or a str. strs come with some built-in methods or functions, one of which is strip, which has the effect of stripping off any leading whitespace to the left or any trailing whitespace to the right. So that's just going to go ahead and at least avoid the human having accidentally typed in a space character. We're going to throw it away just in case. 
+
+Now I'm going to do something simple. For a user's input to be an email address, I think we can all agree that it's got a minimal we have an @ sign somewhere in it. So let's start simple. If the user has typed in something with an @ sign, let's very generously just say, OK, valid, looks like an email address. And if we're missing that @ sign, let's say invalid, because clearly it's not an email address. It's not going to be the best version of my code yet, but we'll start simple. 
+
+So I'm going to ask the question, if there is an @ symbol in the user's email address, go ahead and print out, for instance, quote, unquote, "valid." Else, if there's not, now I'm pretty confident that the email address is, in fact, invalid. 
+
+Now, what is this code doing? Well, if @ sign in email is a Pythonic way of asking is this string quote, unquote "@" in this other string email, no matter where it is-- at the beginning, the middle, or the end. It's going to automatically search through the entire string for you automatically. I could do this more verbosely. 
+
+And I could use a for loop or a while loop and look at every character in the user's email address, looking to see if it's an @ sign. But this is one of the things that's nice about Python. You can do more with less. So just by saying if "@" quote, unquote in email, we're achieving that same result. We're going to get back true if it's somewhere in there, thus valid, or false if it is not. 
+
+Well, let me go ahead now and run this program in my terminal window with python of validate.py. And I'm going to go ahead and give it my email address-- malan@harvard.edu, Enter. And indeed, it's valid. Looks valid, is valid. 
+
+But of course, this program is technically broken. It's buggy. What would be an example input, if someone might like to volunteer an answer here, that would be considered valid but you and I know it really isn't valid? 
+
+AUDIENCE: Yeah, thank you. Well, for instance, you can type just two signs and that's it, and it'll still be valid-- still be valid according to your program, but missing something. 
+
+DAVID MALAN: Exactly. We've set a very low bar here. In fact, if I go ahead and rerun python of validate.py, and I'll just type in one @ sign, that's it-- no username, no domain name, this doesn't really look like an email address. But unfortunately, my code thinks it, in fact, is, because it's obviously just looking for an @ sign alone. 
+
+Well, how could we improve this? Well, minimally an email address, I think, tends to have, though this is not actually a requirement, tends to have an @ sign and a single dot at least, maybe somewhere in the domain name-- so malan@harvard.edu. So let's check for that dot as well. But again, strictly speaking it doesn't even have to be that case. But I'm going for my own email address, at least for now, as our test case. 
+
+So let me go ahead and change my code now and say, not only if @ is in email, but also dot is in email as well. So I'm asking now two questions. I have two Boolean expressions-- if @ in email, and I'm anding them together logically-- this is a logical and, so to speak. So if it's the case that @ is in email and dot is in email, OK, now I'm going to go ahead and say valid. 
+
+All right. This would still seem to work for my email address. Let me go ahead and run python validate.py, malan@harvard.edu, Enter, and that, of course, is valid is expected. But here, too, we can be a little adversarial and type in something nonsensical like "@." and unfortunately, that, too, is going to be mistaken as valid, even though there's still no username, domain name, or anything like that. 
+
+So I think we need to be a little more methodical here. In fact, notice that if I do this like this, the @ sign can be anywhere, and the dot can be anywhere. But if I'm assuming the user is going to have a traditional domain name like harvard.edu or gmail.com, I really want to look for the dot in the domain name only, not necessarily just the username. 
+
+So let me go ahead and do this. Let me go ahead and introduce a bit more logic here, and instead do this. Let me go ahead and do email.split of quote, unquote @ sign. So email, again, is a string or a str. strs come with methods, not just strip but also another one called split that, as the name implies, will split one str into multiple ones if you give it a character or more to split on. 
+
+So this is hopefully going to return to me two parts from a traditional email address, the username and the domain name. And it turns out I can unpack that sequence of responses by doing this-- username comma domain equals this. I could store it in a list or some other structure, but if I already know in advance what kinds of values I'm expecting, a username and hopefully a domain, I'm going to go ahead and do it like this instead and just define two variables at once on one line of code. 
+
+And now I'm going to be a little more precise. If username-- if username, then I'm going to go ahead and say, print "valid." Else, I'm going to go ahead and say print "invalid." Now, this isn't good enough. But I'm at least checking for the presence of a username now. And you might not have seen this before, but if you simply ask a question like "if username," and username is a string, well, username-- "if username" is going to give me a true answer if username is anything except none or quote, unquote "nothing." 
+
+So there's a truthy value here, whereby if username has at least one character, that's going to be considered true. But if username has no characters, it's going to be considered a false value effectively. But this isn't good enough. I don't want to just check for username. I want to also check that it's the case that dot is in the domain name as well. 
+
+So notice here there's a bit of potential confusion with the English language. Here, I seem to be saying "if username and dot in domain," as though I'm asking the question, "if the username and the dot are in the domain," but that's not what this means. These are two separate Boolean expressions-- "if username," and separately, "if dot in domain." And if I parenthesis this, we could make that even more clear by putting parentheses there, parentheses here. So just to be clear, it's really two Boolean expressions that we're anding together, not one longer English-like sentence. 
+
+Now, if I go ahead and run this, python validate.py Enter, I'll do my own email address again, malan@harvard.edu, and that's valid. And it looks like I could tolerate something like this. If I do malan@, just say, harvard, I think at the moment this is going to be invalid. Now, maybe the top-level domain harvard exists. But at the moment, it looks like we're looking for something more. We're looking for a top-level domain too, like .edu. For now, we'll just consider this to be invalid. 
+
+But it's not just that we want to do-- it's not just that we want to check for the presence of a username and the presence of a dot. Let's be more specific. Let's start to now narrow the scope of this program, not just to be about generic emails more generally, but about edu addresses, so specifically for someone in a US university, for instance, whose email address tends to end with .edu. I can be a little more precise. And you might recall this function already. Instead of just saying, is there a dot somewhere in domain, let me instead say, and the domain ends with quote, unquote ".edu." 
+
+Now we're being even more precise. We want there to be minimally a username that's not empty-- it's not just quote, unquote "nothing"-- and we want the domain name to actually end with .edu. Let me go ahead and run python of validate.py. And just to make sure I haven't made things even worse, let me at least test my own email address, which does seem to be valid. 
+
+Now, it seems that I minimally need to provide a username, because we definitely do have that check in place. So I'm going to go ahead and say malan. And now I'm going to go ahead and say @. And it looks like I could be a little malicious here, just say malan@.edu, as though minimally meeting the requirements of this pattern. And that, of course, is considered valid, but I'm pretty sure there's no one at malan@.edu. We need to have some domain name in there. So we're still not being quite as generous. 
+
+Now, we could absolutely continue to iterate on this program, and we could add some more Boolean expressions. We could maybe use some other Python methods for checking more precisely is there something to the left of the dot, to the right of the dot. We could use split multiple times. 
+
+But honestly, this just escalates quickly. Like, you end up having to write a lot of code just to express something that's relatively simple in spirit-- just format this like an email address.

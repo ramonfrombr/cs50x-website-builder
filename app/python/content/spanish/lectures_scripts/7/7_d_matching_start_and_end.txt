@@ -1,0 +1,37 @@
+Entonces, ¿cómo puedo ser más preciso? Bueno, permítanme proponer que también introduzcamos algunos símbolos más. Resulta que en el contexto de una expresión regular, puedes usar el símbolo de "^", el pequeño símbolo triangular, para representar que quieres que este patrón coincida específicamente con el inicio de la cadena, no en cualquier lugar, sino solo al inicio de la cadena del usuario. Por otro lado, puedes usar el signo "$" en tu expresión regular para indicar que deseas que coincida con el final de la cadena, o técnicamente justo antes del salto de línea al final de la cadena.
+
+Pero, para todos los fines y propósitos, considera que "^" significa "inicio de la cadena" y "$" significa "fin de la cadena". Es extraño que uno sea un símbolo de "^" y el otro sea un signo "$". No son realmente cosas que yo consideraría opuestas, como un paréntesis o algo así. Pero esos son los símbolos que el mundo eligió hace muchos años.
+
+Entonces volvamos ahora a VS Code. Y agreguemos esta funcionalidad a mi código aquí. Especifiquemos que sí, quiero buscar este patrón, pero quiero que la entrada del usuario comience con este patrón y termine con este patrón. Aunque parezca aún más críptico, coloqué un símbolo de "^" aquí al principio y un signo "$" aquí al final. Esto no significa que quiero que el usuario escriba un símbolo de "^" o un signo "$". Esta es una simbología especial que indica a re.search que solo debe buscar una coincidencia exacta con este patrón.
+
+Entonces, si ahora vuelvo a mi ventana de terminal, y dejaré el resultado anterior en la pantalla, escribiré exactamente lo mismo. "Mi dirección de correo electrónico malan@harvard.edu", Enter - lo siento, punto. Y ahora presionaré Enter. Ahora eso se considera inválido. Pero borraré la pantalla. Y solo para asegurarme de que no haya causado problemas, escribiré solo mi dirección de correo electrónico, y eso también es válido.
+
+¿Alguna pregunta sobre esta versión de mi expresión regular, que, vale la pena mencionar, se especifica aún más precisamente que quiero que coincida al inicio y al final? ¿Alguna pregunta sobre esta expresión?
+
+AUDIENCIA: Bien. Tienes una barra y ".edu", luego el signo "$". Pero el punto es uno de los caracteres de la expresión regular, ¿verdad?
+
+DAVID MALAN: Normalmente sí. Pero esta barra invertida que deliberadamente pongo antes de este punto aquí es un carácter de escape. Es una forma de decirle a re.search que no quiero ningún carácter allí, literalmente quiero un punto allí. Y es la única forma en que puedes distinguir uno del otro.
+
+Si eliminara esa barra, eso significaría que la dirección de correo electrónico solo tendría que terminar con cualquier caracter, luego una E, luego una D, luego una U. No quiero eso. Quiero literalmente un punto, luego una E, luego una D, luego una U.
+
+En realidad, esta es una convención común en programación y tecnología en general. Si tú y yo decidimos una convención en la que usamos algún carácter del teclado para significar algo especial, inevitablemente creamos un problema futuro cuando queremos usar literalmente ese mismo carácter. Y la solución general a ese problema es de alguna manera escapar al carácter para que quede claro para la computadora que no es ese símbolo especial, sino que es literalmente el símbolo que ve.
+
+AUDIENCIA: ¿Entonces ni siquiera sabemos que... no necesitamos otra barra antes del signo "$"?
+
+DAVID MALAN: No. Porque en este caso, el signo "$" significa algo especial. Según esta tabla aquí, el signo "$" por sí mismo no significa dólares estadounidenses o moneda. Literalmente significa "coincidir con el final de la cadena". Sin embargo, si quisiera que el usuario tecleara literalmente el signo "$" al final de su entrada, la solución sería la misma. Pondría una barra invertida antes del signo "$", lo que significa que mi dirección de correo electrónico tendría que ser algo como malan@harvard.edu signo "$", lo cual obviamente tampoco es correcto.
+
+Entonces, la barra invertida te permite decirle a la computadora que no trate esos símbolos de manera especial, como si tuvieran un significado especial, sino que los trate literalmente en su lugar. ¿Cómo te parece una pregunta más sobre expresiones regulares?
+
+AUDIENCIA: Dijiste que uno representa hacerlo "uno o más veces", luego dijiste que uno era para hacerlo "uno sin nada".
+
+DAVID MALAN: Claro.
+
+AUDIENCIA: Entonces, ¿por qué agregar el signo "+"?
+
+DAVID MALAN: Permíteme volver en el tiempo. Creo que te estás refiriendo a una de nuestras versiones anteriores que inicialmente se veía así, lo que significaba cero o más caracteres, luego un "@" y luego cero o más caracteres diferentes. Luego evolucionamos para que sea esto, un punto más en ambos lados, lo que significa uno o más caracteres a la izquierda, luego un "@" y luego uno o más caracteres a la derecha. Y si estoy interpretando tu pregunta correctamente, uno de los puntos que mencioné anteriormente fue que si no usaras el signo "+" o olvidaras que existe, podrías lograr el mismo resultado exactamente con dos puntos y un "*", porque el primer punto significa cualquier carácter, debe estar allí, el segundo punto "*" significa cero o más otros caracteres y lo mismo a la derecha.
+
+Entonces es solo otra forma de expresar la misma idea. "Uno o más" se puede representar como esto con punto punto "*", o puedes simplemente usar la sintaxis más práctica de punto "+", que significa lo mismo. Está bien. Me atrevería a decir que todavía hay algunos problemas con la expresión regular en esta forma actual, porque aunque ahora estamos buscando el nombre de usuario al inicio de la cadena del usuario y buscamos la ".edu" literalmente al final de la cadena del usuario, esos puntos son un poco demasiado amplios en este momento.
+
+Se me permite escribir más de un signo "@". ¿Por qué? Porque "@" es un carácter y el punto significa cualquier carácter. Entonces, honestamente, puedo tener la cantidad de signos "@" que desee en este momento.
+
+Por ejemplo, si ejecuto python validate.py, malan@harvard.edu aún funciona como se esperaba. Pero si también ejecuto python validate.py e incorrectamente escribo malan@@@harvard.edu, debería ser inválido, pero se considera válido en cambio. Así que creo que debemos ser un poco más restrictivos cuando se trata de ese punto. Y no podemos simplemente decir, "oh, cualquier carácter antiguo está bien". Necesitamos ser más específicos.

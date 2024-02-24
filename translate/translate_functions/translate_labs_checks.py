@@ -1,9 +1,9 @@
 from .translate import translate
-import os
-from translate_types import TypeCourse
-from constants import LABS_CHECKS
+from translate_types import TypeCourse, TypeLanguage
 from get_files import get_files
+from constants import ContentTypes
 
-def translate_labs_checks(course, language):
-    checks = get_files(course, LABS_CHECKS)
-    translate(course, checks, LABS_CHECKS, language, "py", "Python code")
+
+def translate_labs_checks(course: TypeCourse, language: TypeLanguage):
+    checks = get_files(course, ContentTypes.LABS_CHECKS)
+    translate(course, checks, ContentTypes.LABS_CHECKS, language, "py", "Python code")

@@ -1,0 +1,37 @@
+Bueno, resulta que hay otra forma en la que podríamos implementar este mismo programa sin tener que preocuparnos por ese orden una y otra vez, simplemente pasando una lista. Resulta que, si llevamos un registro de cuál es el nombre y cuál es el hogar, podríamos usar algo como un diccionario para asociar esas claves con esos valores. Así que permítanme retroceder y eliminar a estos estudiantes del archivo, dejando solo la fila del encabezado nuevamente: nombre, coma, hogar.
+
+Y permítanme ir a students.py. Y esta vez, en lugar de usar CSV writer, voy a usar csv.DictWriter, que es un escritor de diccionarios, que va a abrir el archivo de la misma manera. Pero en lugar de escribir una fila como una lista de nombre, coma, hogar, ahora voy a hacer lo siguiente. Primero voy a crear un diccionario real, cuya primera clave es nombre, dos puntos, y luego el valor será el nombre que se haya ingresado.
+
+Y voy a pasar una clave de hogar, entre comillas, y el valor, por supuesto, será el hogar que se haya ingresado. Pero con DictWriter, necesito darle una pista sobre el orden en el que se encuentran esas columnas al escribirlo, para que posteriormente puedan leerse, incluso si esos ordenamientos cambian. Así que voy a pasar fieldnames, que es un segundo argumento para DictWriter, igualado a una lista de las columnas reales que sé que están en este archivo, que, por supuesto, son nombre, coma, hogar. Estas veces, entre comillas porque son, de hecho, los nombres de cadena de las columnas, por así decirlo, que pretendo escribir en ese archivo.
+
+Bien, ahora permítanme ir a mi ventana de terminal, ejecutar python students.py. Esta vez, escribiré nuevamente el nombre de Harry. Luego, escribiré "Number Four, comma, Privet Drive", y presionaré Enter.
+
+Volviendo a students.csv, y voilà, Harry está de vuelta en el archivo, y está correctamente escapado o citado. Estoy seguro de que si hacemos esto de nuevo con Ron y The Burrow, y lo ejecutamos una tercera vez con Draco y Malfoy Manor, presionando Enter. 
+
+Volviendo a students.csv, a través de este escritor de diccionarios, ahora tenemos a los tres estudiantes también. Mientras que con CSV writer, la responsabilidad recae en nosotros de pasar una lista de todos los valores que queremos poner de izquierda a derecha, con un escritor de diccionarios, técnicamente pueden estar en cualquier orden en el diccionario. De hecho, podría haberlo hecho correctamente pasando hogar seguido de nombre.
+
+Pero es un diccionario. Y en este caso, el orden no importa siempre y cuando la clave esté ahí y el valor esté ahí. Y porque he pasado fieldnames como el segundo argumento a DictWriter, asegura que la biblioteca sepa exactamente qué columna contiene nombre u hogar, respectivamente. ¿Hay alguna pregunta sobre la lectura de diccionarios, la escritura de diccionarios o los CSV en general?
+
+AUDIENCIA: ¿En alguna situación específica, debo usar comillas simples o comillas dobles? Porque después de imprimir, usamos comillas simples para representar la clave del diccionario. Pero después de la lectura o escritura, usamos comillas dobles.
+
+DAVID MALAN: Es una buena pregunta. En Python, generalmente puedes usar comillas dobles o comillas simples. Y no importa.
+
+Solo debes ser autoconsistente para que tu código tenga una apariencia uniforme en todo. A veces, sin embargo, es necesario alternar. Si ya estás usando comillas dobles, como lo hice anteriormente para una cadena larga f, pero dentro de esa cadena f, estaba interpolando los valores de algunas variables usando llaves, y esas variables eran diccionarios.
+
+Y para indexar en un diccionario, usas corchetes y luego comillas. Pero si ya estás usando comillas dobles aquí, generalmente deberías usar comillas simples aquí, o viceversa. Pero por lo demás, tengo la costumbre de usar comillas dobles en todas partes. Otros tienen la costumbre de usar comillas simples en todas partes. Solo importa a veces si uno puede confundirse con el otro. ¿Hay alguna pregunta más sobre la escritura o lectura de diccionarios?
+
+AUDIENCIA: Sí, mi pregunta es, ¿podemos usar varios archivos CSV en cualquier programa?
+
+DAVID MALAN: Absolutamente. Puedes usar tantos archivos CSV como desees. Es solo uno de los formatos que puedes usar para guardar datos. ¿Hay alguna otra pregunta sobre CSVs o E/S de archivos?
+
+AUDIENCIA: Gracias por responder mi pregunta. Entonces, cuando estás leyendo del archivo como un diccionario, tenías los campos llamados. Cuando estás leyendo, ¿no podrías simplemente llamar a la fila? En la versión anterior del archivo students.py, cuando lees cada fila, estabas dividiendo los campos por nombre. Sí, cuando estás agregando a la lista de estudiantes, ¿no podrías simplemente llamar a row y reader, students.append row, en lugar de nombrar cada campo?
+
+DAVID MALAN: ¡Oh, muy astuto! La respuesta corta es sí, en la medida en que DictReader devuelva un diccionario a la vez, cuando lo recorres, row ya será un diccionario. Así que sí, en realidad podrías hacer esto. Y el efecto sería realmente el mismo en este caso. Buena observación. ¿Tienen una pregunta más sobre los CSV?
+
+AUDIENCIA: Sí, al leer CSVs en mi trabajo anterior con datos, muchas cosas pueden salir mal. No sé si es una pregunta justa que puedes responder en unas pocas oraciones. ¿Existen mejores prácticas para verificar que no se hayan producido errores?
+
+DAVID MALAN: Es una pregunta muy buena. Y diría que, en general, si estás usando código para generar los CSV y leer los CSV, y estás utilizando una buena biblioteca, teóricamente no debería haber problemas. Debería ser 100% correcto si las bibliotecas son 100% correctas.
+
+Tú y yo tendemos a ser el problema. Cuando permites que un humano toque el CSV, o cuando Excel, Apple Numbers u otras herramientas están involucradas y pueden no estar alineadas con las expectativas de tu código, entonces, sí, las cosas pueden fallar. A veces, honestamente, la solución es arreglos manuales.
+
+Ingresas y arreglas el CSV, o tienes mucha verificación de errores, o usas mucho try, except para tolerar errores en los datos. Pero en general, diría que si estás usando CSV o cualquier formato de archivo internamente en un programa tanto para leer como para escribirlo, no deberías tener preocupaciones al respecto. Tú y yo, los humanos, somos el problema, en general, y no los programadores, los usuarios de esos archivos, en su lugar.

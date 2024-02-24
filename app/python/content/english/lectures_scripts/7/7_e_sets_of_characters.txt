@@ -1,0 +1,61 @@
+
+
+Well, it turns out that regular expressions also support this syntax. You can use square brackets inside of your pattern, and inside of those square brackets include one or more characters that you want to look for specifically. Alternatively, you can inside of those square brackets put a caret symbol, which unfortunately in this context, means something completely different from "match the start of the string." But this would be the complement operator inside of the square brackets, which means "you cannot match any of these characters." 
+
+So things are about to look even more cryptic now. But that's why we're focusing on regular expressions on their own here. If I don't want to allow any character, which is what a dot is, let me go ahead and I could just say, well, I only want to support A, or Bs, or Cs, or Ds, or Es, or Fs, or Gs. I could type in the whole alphabet here plus some numbers to actually include all of the letters that I do want to allow. 
+
+But honestly, a little simpler would be this. I could use a ^ symbol and then an @ sign, which has the effect of saying, this is the set of characters that has everything except an @ sign. And I can do the same thing over here. Instead of a dot to the right of the @ sign, I can do open bracket ^, @ sign. 
+
+And I admit, things are starting to escalate quickly here, but let's start from the left and go to the right. This ^ outside of the square brackets at the very start of my string, as before, means "match from the start of the string." And let's jump ahead. The $ sign all the way at the end of the regular expression means "match at the end of the string." 
+
+So if we can mentally tick those off as straightforward, let's now focus on everything else in the middle. Well, to the left here we have new syntax-- a square bracket, another ^, an @ sign, and a closed square bracket, and then a +. The + means the same thing as always. It means "one or more of the things to the left." 
+
+What is the thing to the left? Well, this is the new syntax. Inside of square brackets here, I have a ^ symbol and then an @ sign. That just means any character except an @ sign. It's a weird syntax, but this is how we can express that simple idea-- any character on the keyboard except for an @ sign. And heck, even other characters that aren't physically on your keyboard but that nonetheless exist. 
+
+Then we have a literal @ sign, then we have another one of these same things-- square bracket, ^@ closed bracket, which means any character except an @ sign, then one or more of those things, followed by literally a period edu. So now let me go ahead and do this again. Let me rerun python of validate.py and test my own email address to make sure I've not made things worse. And we're good. 
+
+Now let me go ahead and clear my screen and run python of validate.py again and do malan@@@harvard.edu, crossing my fingers this time. And finally, this now is invalid. Why? I'm allowing myself to have one @ sign in the middle of the user's input, but everything to the left per this new syntax cannot be an @ sign. It can be anything but one or more times. And everything to the right of the @ sign can be anything but an @ sign one or more times followed by, lastly, a literal .edu. 
+
+So again, the new syntax is quite simply this-- square brackets allow you to specify a set of characters that you literally type out at your keyboard-- A, B, C, D, E, F, or the complement, the opposite, the ^ symbol, which means "not," and then the one or more symbols you want to exclude. Questions now on this syntax here? 
+
+AUDIENCE: So right after @ sign, can we use the curly brackets m one so that we can only have one repetition of the @ symbol? 
+
+DAVID MALAN: Absolutely. So we could do this. Let me go ahead and pull up VS Code. And let me delete the current form of a regular expression and go back to where we began, which was just dot * @ and dot *. I could absolutely do something like this and require that I want at least one of any character here. And then I could do something more to have any more as well. 
+
+So the curly brace syntax, which we saw on the slide earlier but didn't yet use, absolutely can be used to specify a specific number of characters. But honestly, this is more verbose than is necessary. The best solution, arguably, or the simplest, at least, ultimately, is just to say dot +. But there, too, another example of how you can solve the same problem multiple ways. 
+
+Let me go back to where the regular expression just was and take other questions as well. Questions on the sets of characters or complementing that set? 
+
+AUDIENCE: So can you use that same syntax to say that you don't want a certain character throughout the whole string? 
+
+DAVID MALAN: You could. It's going to be-- you could absolutely use the same character to exclude-- you could absolutely use this syntax to exclude a certain character from the entire string. But it would be a little harder right now, because we're still requiring .edu the end. But yes, absolutely. Other questions? 
+
+AUDIENCE: What happens if the user inputs .edu in the beginning of the string? 
+
+DAVID MALAN: A good question. What happens if the user types in .edu at the beginning of the string? Well, let me go back to VS Code here. And let's try to solve this in two different ways. First, let's look at the regular expression and see if we can infer if that's going to be tolerated. Well, according to the current cryptic regular expression, I'm saying that you can have any character except the @ sign. So that would work I. Could have the dot for the .edu. 
+
+But then I have to have an @ sign. So that wouldn't really work, because if I'm just typing in .edu, we're not going to pass that constraint. So now let me try this by running the program. Let me type in just literally .edu. That doesn't work. 
+
+But, but, but I could do this, .edu@.edu. That, too, is invalid. But let me do this, .edu@something.edu. That passes. So it's starting to get a little weird now. Maybe it's valid, maybe it's not. But I think we'll eventually be more precise, too. How about one more question on this regular expression and these complementing of sets? 
+
+AUDIENCE: Can we use another domain name, the string input? 
+
+DAVID MALAN: Can you use another domain name? Absolutely. I'm using my own just for the sake of demonstration. But you could absolutely use any domain or top-level domain. And I'm using .edu, which is very US centric. But this would absolutely work exactly the same for any top-level domain. 
+
+All right. Let me go ahead now and propose that we improve this regular expression further, because if I pull it up again in VS Code here, you'll see that I'm being a little too tolerant still. It turns out that there are certain requirements for someone's username and domain name in an email address. There is an official standard in the world for what an email address can be and what characters can be in it. 
+
+And this is way too accommodating of all the characters in the world except for the @ symbol. So let's actually narrow the definition of what we're going to tolerate in usernames. And companies like Gmail could certainly do this as well. Suppose that it's not just that I want to exclude @ sign. Suppose that I only want to allow for, say, characters that normally appear in words, like letters of the alphabet, A through z, be it uppercase or lowercase, maybe some numbers, and heck, maybe even an underscore could be allowed, too. 
+
+Well, we can use this same square bracket syntax to specify a set of characters as follows. I could do abcdefghij-- oh, my god. This is going to take forever. I'm going to have to type out all 26 letters of the alphabet, both lowercase and uppercase. So let me stop doing that. 
+
+There's a better way already. If you want to specify within these square brackets a range of letters, you can actually just do a hyphen. If you literally do a-z in these square brackets, the computer is going to know you mean a through z. You do not need to type 26 letters of the alphabet. 
+
+If you want to include uppercase letters as well, you just do the same. No spaces, no commas, you literally just keep typing a through capital Z. So I have little a hyphen little z, big A hyphen big Z. No spaces, no commas, no separators. You just keep specifying those ranges. 
+
+If I additionally want numbers, I could do 01234-- nope. You don't need to type in all 10 decimal digits. You can just say 0 through 9 using a hyphen as well. And if you now want to support underscores as well, which is pretty common in usernames for email addresses, you can literally just type an underscore at the end. 
+
+Notice that all of these characters are inside of square brackets, which just again, means here is a set of characters that I want to allow. I have not used a ^ symbol at the beginning of this whole thing, because I don't want to complement it-- complement it with an E, not compliment it with an I-- I don't want to complement it by making it the opposite. I literally want to accept only these characters. 
+
+I'm going to go ahead and do the same thing on the right. If I want to require that the domain name similarly come from this set of characters, which admittedly is a little too narrow, but it's familiar for now so we'll keep it simple, I'm going to go ahead and paste that exact same set of characters over there to the right. And so now, it's much more restrictive. Now I'm going to go ahead and run python of validate.py. I'm going to test my own email address, and we're still good. 
+
+I'm going to clear my screen and run it once more, this time trying to break it. Let me go ahead and do something like, how about, david_malan@harvard.edu, Enter, but that, too, is going to be valid. But if I do something completely wrong again, like malan@@@harvard.edu, that's still going to be invalid. Why? Because my regular expression currently only allows for a single @ in the middle, because everything to the left must be alphanumeric-- alphabetical or numeric-- or an underscore, the same thing to the right, followed by the .edu. 

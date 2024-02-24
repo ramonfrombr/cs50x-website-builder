@@ -1,0 +1,705 @@
+
+Slide [0]
+
+Web Programming 
+with Python and JavaScript
+
+Slide [1]
+
+Scalability and Security
+
+Slide [2]
+
+Scalability
+
+Slide [3]
+
+Server
+
+Slide [4]
+
+Server
+
+Slide [5]
+
+Servers
+• Cloud 
+• On Premise
+
+Slide [6]
+
+Benchmarking
+
+Slide [7]
+
+Vertical Scaling
+
+Slide [8]
+
+Server
+
+Slide [9]
+
+Server
+
+Slide [10]
+
+Horizontal Scaling
+
+Slide [11]
+
+Server
+Server
+
+Slide [12]
+
+Server
+Server
+
+Slide [13]
+
+Server
+Server
+Load Balancer
+
+Slide [14]
+
+Load Balancing
+
+Slide [15]
+
+Load Balancing Methods
+• Random Choice 
+• Round Robin 
+• Fewest Connections 
+• ...
+
+Slide [16]
+
+Session-Aware Load Balancing
+• Sticky Sessions 
+• Sessions in Database 
+• Client-Side Sessions 
+• ...
+
+Slide [17]
+
+Autoscaling
+
+Slide [18]
+
+Server
+Server
+Load Balancer
+
+Slide [19]
+
+Server
+Load Balancer
+Server
+Server
+
+Slide [20]
+
+Server
+Load Balancer
+Server
+Server
+Server
+
+Slide [21]
+
+Server
+Load Balancer
+Server
+Server
+Server
+
+Slide [22]
+
+Server
+Server
+Server
+Server
+Load Balancer
+
+Slide [23]
+
+Scaling Databases
+
+Slide [24]
+
+Server
+Server
+Load Balancer
+
+Slide [25]
+
+Server
+Server
+Load Balancer
+Database
+
+Slide [26]
+
+Database Partitioning
+
+Slide [27]
+
+id
+origin
+origin_code destination destination_code duration
+1
+New York
+JFK
+London
+LHR
+415
+2
+Shanghai
+PVG
+Paris
+CDG
+760
+3
+Istanbul
+IST
+Tokyo
+NRT
+700
+4 New York
+JFK
+Paris
+CDG
+435
+5
+Moscow
+SVO
+Paris
+CDG
+245
+6
+Lima
+LIM
+New York
+JFK
+455
+flights
+
+Slide [28]
+
+id
+code
+city
+1
+JFK
+New York
+2
+PVG
+Shanghai
+3
+IST
+Istanbul
+4
+LHR
+London
+5
+SVO
+Moscow
+6
+LIM
+Lima
+7
+CDG
+Paris
+8
+NRT
+Tokyo
+airports
+
+Slide [29]
+
+id
+origin_id
+destination_id
+duration
+1
+1
+4
+415
+2
+2
+7
+760
+3
+3
+8
+700
+4
+1
+7
+435
+5
+5
+7
+245
+6
+6
+1
+455
+flights
+
+Slide [30]
+
+flights
+flights_domestic
+flights_international
+
+Slide [31]
+
+Database Replication
+
+Slide [32]
+
+Database Replication
+• Single-Primary Replication 
+• Multi-Primary Replication
+
+Slide [33]
+
+Single-Primary Replication
+Database
+Database
+Database
+update
+update
+write
+read
+read
+read
+
+Slide [34]
+
+Multi-Primary Replication
+Database
+Database
+Database
+write
+read
+update
+update
+update
+write
+read
+write
+read
+
+Slide [35]
+
+Caching
+
+Slide [36]
+
+Client-Side Caching
+
+Slide [37]
+
+Cache-Control: max-age=86400 
+
+Slide [38]
+
+Cache-Control: max-age=86400 
+ETag: "7477656E74796569676874"
+
+Slide [39]
+
+Server-Side Caching
+
+Slide [40]
+
+Server
+Server
+Load Balancer
+Database
+Cache
+
+Slide [41]
+
+Django Cache Framework
+• Per-View Caching 
+• Template Fragment Caching 
+• Low-Level Cache API
+
+Slide [42]
+
+Security
+
+Slide [43]
+
+Topics
+• HTML and CSS 
+• Git 
+• Python 
+• Django 
+• SQL 
+• JavaScript 
+• User Interfaces 
+• Testing and CI/CD
+
+Slide [44]
+
+Git
+
+Slide [45]
+
+Open-Source Software
+
+Slide [46]
+
+first 
+commit
+
+Slide [47]
+
+first 
+commit
+credentials 
+exposed
+
+Slide [48]
+
+first 
+commit
+credentials 
+removed
+credentials 
+exposed
+
+Slide [49]
+
+HTML
+
+Slide [50]
+
+<a href="url1"> 
+    url2 
+</a>
+
+Slide [51]
+
+Django
+
+Slide [52]
+
+HTTP and HTTPS
+
+Slide [53]
+
+
+Slide [54]
+
+Secret-Key Cryptography
+
+Slide [55]
+
+Key
+Plaintext
+Key
+Ciphertext
+Ciphertext
+
+Slide [56]
+
+Key
+Plaintext
+Key
+Ciphertext
+Ciphertext
+Plaintext
+
+Slide [57]
+
+Public-Key Cryptography
+
+Slide [58]
+
+Public Key
+Private Key
+
+Slide [59]
+
+Public Key
+Plaintext
+Private Key
+
+Slide [60]
+
+Public Key
+Plaintext
+Private Key
+Ciphertext
+Ciphertext
+
+Slide [61]
+
+Public Key
+Plaintext
+Private Key
+Ciphertext
+Ciphertext
+Plaintext
+
+Slide [62]
+
+SQL
+
+Slide [63]
+
+id
+username
+password
+1
+harry
+hello
+2
+ron
+password
+3
+hermione
+12345
+4
+ginny
+abcdef
+5
+luna
+qwerty
+users
+
+Slide [64]
+
+id
+username
+password
+1
+harry
+48c8e8c3f9e80b68ac67304c7c510e9fcb
+2
+ron
+6024aba15e3f9be95e3c9e6d3bf261d78e
+3
+hermione
+90112701066c0a536f2f6b2761e5edb09e
+4
+ginny
+b053b7574c8a25751e2a896377e5d477c5
+5
+luna
+a4048eaaee50680532845b2025996b44a9
+users
+
+Slide [65]
+
+
+Slide [66]
+
+
+Slide [67]
+
+
+Slide [68]
+
+SQL Injection
+
+Slide [69]
+
+Username:
+Password:
+
+Slide [70]
+
+SELECT * FROM users 
+WHERE username = username AND password = password;
+
+Slide [71]
+
+Username:
+harry
+Password:
+12345
+
+Slide [72]
+
+SELECT * FROM users 
+WHERE username = username AND password = password;
+
+Slide [73]
+
+SELECT * FROM users 
+WHERE username = "harry" AND password = "12345";
+
+Slide [74]
+
+Username:
+hacker" --
+Password:
+
+Slide [75]
+
+SELECT * FROM users 
+WHERE username = username AND password = password;
+
+Slide [76]
+
+SELECT * FROM users 
+WHERE username = "hacker"--" AND password = "";
+
+Slide [77]
+
+SELECT * FROM users 
+WHERE username = "hacker"--" AND password = "";
+
+Slide [78]
+
+APIs
+
+Slide [79]
+
+API Keys
+• Rate Limiting 
+• Route Authentication
+
+Slide [80]
+
+Cross-Site Scripting
+
+Slide [81]
+
+Cross-Site Request Forgery
+
+Slide [82]
+
+<body> 
+    <a href="http://yourbank.com/transfer?to=brian&amt=2800"> 
+        Click Here! 
+    </a> 
+</body>
+
+Slide [83]
+
+<body> 
+    <img src="http://yourbank.com/transfer?to=brian&amt=2800"> 
+</body>
+
+Slide [84]
+
+<body> 
+    <form action="https://yourbank.com/transfer"  
+          method="post"> 
+        <input type="hidden" name="to" value="brian"> 
+        <input type="hidden" name="amt" value="2800"> 
+        <input type="submit" value="Click Here!"> 
+    </form> 
+</body>
+
+Slide [85]
+
+<body onload="document.forms[0].submit()"> 
+    <form action="https://yourbank.com/transfer"  
+          method="post"> 
+        <input type="hidden" name="to" value="brian"> 
+        <input type="hidden" name="amt" value="2800"> 
+        <input type="submit" value="Click Here!"> 
+    </form> 
+</body>
+
+Slide [86]
+
+<form action="/transfer" method="post"> 
+    {% csrf_token %} 
+    <input name="to" value="brian"> 
+    <input name="amt" value="2800"> 
+    <input type="submit" value="Transfer"> 
+</form>
+
+Slide [87]
+
+Web Programming
+
+Slide [88]
+
+What's next?
+
+Slide [89]
+
+Other Web Frameworks
+• Server-Side 
+• Express.js 
+• Ruby on Rails 
+• ... 
+• Client-Side 
+• AngularJS 
+• React 
+• Vue.js 
+• ...
+
+Slide [90]
+
+Deploying Websites
+• Amazon Web Services 
+• GitHub Pages 
+• Google Cloud 
+• Heroku 
+• Microsoft Azure 
+• ...
+
+Slide [91]
+
+Web Programming
+
+Slide [92]
+
+HTML and CSS
+HTML
+
+Slide [93]
+
+Git
+
+Slide [94]
+
+Python
+
+Slide [95]
+
+Django
+
+Slide [96]
+
+SQL, Models, 
+and Migrations
+
+Slide [97]
+
+JavaScript
+
+Slide [98]
+
+User Interfaces
+
+Slide [99]
+
+Testing and CI/CD
+
+Slide [100]
+
+Scalability 
+and Security
+Server
+Load Balancer
+Server
+Server
+
+Slide [101]
+
+Web Programming 
+with Python and JavaScript

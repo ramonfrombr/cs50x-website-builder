@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <title>Contagem</title>
+        <script>
+            let contador = 0;
+            function contar() {
+                contador++;
+
+                if (contador % 10 === 0) {
+                    alert(`A contagem agora é ${contador}`);
+                }
+
+                document.querySelector("h1").innerHTML = contador;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>0</h1>
+        <button onclick="contar()">Contar</button>
+    </body>
+</html>

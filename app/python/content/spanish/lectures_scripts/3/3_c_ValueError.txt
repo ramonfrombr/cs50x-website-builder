@@ -1,0 +1,41 @@
+Entonces, por ejemplo, volvamos aquí a VS Code. Y permítanme proponer que echemos un vistazo a un archivo nuevo todos juntos. Voy a cerrar hello.py. Y voy a escribir un código en un archivo llamado number.py. Así que juguemos un poco con los números en Python.
+
+Y lo primero que voy a hacer aquí en number.py, después de abrir esta nueva pestaña, es que pienso ir y escribir -escribir un programa relativamente simple que tal vez solicite al usuario un número entero, como x, y luego simplemente imprima lo que es x. Así que vamos a empezar por lo básico, pero, de nuevo, al empezar por lo básico, seremos capaces de ver realmente dónde he hecho algo mal.
+
+Bueno, aquí vamos. Voy a decir que una variable llamada x va a recibir el valor del valor de retorno de input, entre comillas, "¿qué es x?" Y voy a incluir un espacio para mover el cursor un poco. Y luego, en última instancia, voy a seguir adelante y -espera un momento. Si quiero obtener un entero del usuario, recuerden que necesito hacer algo proactivamente.
+
+Necesito convertir esa entrada a un entero usando la función int en Python. Así que ahora estoy pasando el valor de retorno de input como argumento a int. Y eso almacenará en x, en última instancia, un entero, no una cadena que parezca un entero. Bien, ahora voy a seguir adelante e imprimir simplemente lo que esto es.
+
+Voy a seguir adelante e imprimir, entre comillas, "x es x". Pero no quiero decir literalmente x es x. Quiero insertar el valor de x. Así que tal vez la forma más fácil de hacerlo es ponerlo entre llaves.
+
+Y luego, si estoy usando estas llaves y quiero que Python interpole el valor de esa variable, es decir, que sustituya lo que realmente es x entre esas llaves, recuerden que necesito usar una cadena de formato o una cadena F, arreglando todo esto con una F. Ahora que he hecho eso, vamos a ver qué ocurre. Voy a seguir adelante en mi ventana de terminal y ejecutar Python de number.py.
+
+Presiono Enter. Y hasta ahora, todo va bien. Todo está bien y se solicita x. Voy a seguir adelante e ingresar un número como 50. Bien, parece que funciona. El programa parece estar correcto.
+
+¿O no? ¿Qué podría salir mal en este programa, aunque nada haya salido mal? Pero si lo ejecuto una y otra vez, durante la ejecución de mi programa, ¿qué podría salir mal todavía, especialmente si no soy yo el humano que interactúa con él, sino algún otro humano? ¿Hay voluntarios aquí para esto?
+
+¿Qué podría salir mal? Y de qué manera este programa no es realmente correcto, aunque a primera vista lo parezca.
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Entonces, no estoy llamando un entero. Todavía tengo problemas para escucharte. Pero creo que lo que escuché es que si lo que el usuario escribe no es, de hecho, un entero, no puedo simplemente convertirlo ciegamente en un entero. Si no estoy poniendo demasiadas palabras en tu boca, creo que debería ser un poco defensivo aquí. Y veamos si puedo simular exactamente el problema que podría salir mal aquí.
+
+Entonces, voy a seguir adelante y ejecutar, de nuevo, Python de number.py. Voy a intentar otro número. De hecho, al probar tu código, generalmente es una buena idea probar con casos extremos, tal vez números que no sean tan simples como 49 o 51. Elije algunos números que podrían ser un poco más interesantes, aunque sea matemáticamente, como cero.
+
+Bien, cero parece funcionar. Mi código sigue mostrando que x es cero. ¿Cuál podría ser otro caso extremo a considerar? Bueno, voy a seguir adelante e intentar un número negativo. Eso, también, es bastante diferente en espíritu de negativo.
+
+¿Menos 1? OK, eso también funciona. Bueno, déjenme intentarlo una vez más. He probado números positivos, números negativos, 0. Déjenme intentar algo como un gato. Entonces, literalmente, C-A-T, escribir una cadena que ni siquiera parece un número.
+
+Y sin embargo, veamos ahora qué sucede cuando presiono Enter. Bueno, veamos ahora que tenemos otro tipo de error. No es un error de sintaxis, porque no cometí un error tipográfico. No olvidé algún pedazo de sintaxis. De hecho, ahora tengo un error con uno de mis valores.
+
+Y es un valor que ni siquiera anticipé. El humano, yo, en este caso lo escribió mucho después de que escribí el código. Entonces, ¿a qué se refiere esto? Un error de valor. Veamos cuál es la explicación.
+
+Valor literal no válido para int en base 10, entre comillas, "gato". Ahora, esto también es un tanto complicado. Y, desafortunadamente, en Python y en muchos lenguajes de programación, los mensajes de error están escritos para programadores bastante experimentados. Y, por supuesto, cuando estás aprendiendo a programar por primera vez, puede que no estés tan familiarizado con el lenguaje de programación, y mucho menos con los mensajes de error.
+
+Pero veamos si no podemos obtener alguna idea. Así que valor literal no válido. Bueno, de nuevo, un literal es simplemente algo que se ha escrito, parece, para int. ¿Qué es exactamente int?
+
+Bueno, int es la función que estoy utilizando para convertir la entrada del usuario a un entero correspondiente. Base 10, eso se refiere al sistema decimal, que es el valor predeterminado que Python está utilizando. Y parece que, al final del día, lo que a Python realmente no le gusta es que le pasé el gato, entre comillas, "a la función int".
+
+Entonces, ¿cómo soluciono realmente este problema? Bueno, podría simplemente agregar instrucciones en mi programa. Tal vez podría agregar una línea de impresión que le diga al usuario más explícitamente que asegúrese de escribir un entero, o, por favor, no escriba gato. Por supuesto, el usuario todavía podría no obedecer. Es posible que no esté leyendo las instrucciones. Así que probablemente esa tampoco sea una estrategia efectiva.
+
+Lo que realmente queremos hacer es escribir nuestro código teniendo en cuenta el manejo de errores. Queremos escribir líneas de código que no solo logren los problemas que nos importan, sino que también manejen errores que puedan ocurrir inesperadamente. Y, en general, al programar, programemos de manera defensiva. Supongamos que los usuarios no van a prestar atención o, peor aún, son maliciosos. Están tratando de estropear nuestro programa. Así que queremos manejar tantos errores como podamos.

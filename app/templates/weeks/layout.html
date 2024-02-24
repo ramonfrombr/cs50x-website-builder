@@ -1,13 +1,12 @@
-{% extends 'layout.html' %} {% block conteudo %} {% from
+{% extends 'layout.html' %} {% block content %} {% from
 "weeks/pset_item_macro.html" import pset_item with context %} {% from
-"weeks/notes_item_macro.html" import notes_item with context %} {% from
-"weeks/lab_item_macro.html" import lab_item with context %} {% if week.name ==
-'Cybersecurity' %}
+"weeks/notes_item_macro.html" import notes_item with context %} {% if week.name
+== 'Cybersecurity' %}
 <h1>{{week.name}}</h1>
 {% else %}
 <h1>
-  {{week_page.week}} {{week.number}}
-  <small class="text-muted">{{week.name}}</small>
+    {{week_page.week}} {{week.number}}
+    <small class="text-muted">{{week.name}}</small>
 </h1>
 {% endif %}
 
@@ -16,75 +15,85 @@
 -->
 
 <ul>
-  <li data-marker="-">
-    {{week_page.lecture}}
-    <ul>
-      <li data-marker="*">
-        <a href="{{week.study_guide}}">{{week_page.study_guide}}</a>
-      </li>
-      <li data-marker="*">
-        <a href="{{week.lecture_url}}">{{week_page.video}}</a>
-      </li>
-      {% if week.name == 'Cybersecurity' %}
-      <li data-marker="*">
-        <a href="{{url_for('cs50x.notes.cybersecurity')}}"
-          >{{week_page.notes}}</a
-        >
-      </li>
-      {% else %} {{ notes_item(title=week_page.notes, number=week.number) }} {%
-      endif %}
-
-      <li data-marker="-">
-        {{week_page.source_code}}
+    <li data-marker="-">
+        {{week_page.lecture}}
         <ul>
-          {% if week.name=="Scratch" %}
-          <li data-marker="*">
-            <a target="_blank" href="https://scratch.mit.edu/studios/27380633"
-              >Scratch Studio</a
-            >
-          </li>
-          {% else %}
-          <li data-marker="*">
-            <a target="_blank" href="{{week.pdf_code_link}}">PDF</a>
-          </li>
-          <li data-marker="*">
-            <a target="_blank" href="{{week.zip_code_link}}">Zip</a>
-          </li>
-          {% endif %}
-        </ul>
-      </li>
+            <li data-marker="*">
+                <a href="{{week.study_guide}}">{{week_page.study_guide}}</a>
+            </li>
+            <li data-marker="*">
+                <a href="{{week.lecture_url}}">{{week_page.video}}</a>
+            </li>
+            {% if week.name == 'Cybersecurity' %}
+            <li data-marker="*">
+                <a href="{{url_for('cs50x.notes.cybersecurity')}}"
+                    >{{week_page.notes}}</a
+                >
+            </li>
+            {% else %} {{ notes_item(title=week_page.notes, number=week.number)
+            }} {% endif %}
 
-      <li data-marker="-">
-        {{week_page.slides}}
-        <ul>
-          <li data-marker="*">
-            <a target="_blank" href="{{week.google_slides_link}}"
-              >Google Slides</a
-            >
-          </li>
-          <li data-marker="*">
-            <a target="_blank" href="{{week.pdf_slides_link}}">PDF</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+            <li data-marker="-">
+                {{week_page.source_code}}
+                <ul>
+                    {% if week.name=="Scratch" %}
+                    <li data-marker="*">
+                        <a
+                            target="_blank"
+                            href="https://scratch.mit.edu/studios/27380633"
+                            >Scratch Studio</a
+                        >
+                    </li>
+                    {% else %}
+                    <li data-marker="*">
+                        <a target="_blank" href="{{week.pdf_code_link}}">PDF</a>
+                    </li>
+                    <li data-marker="*">
+                        <a target="_blank" href="{{week.zip_code_link}}">Zip</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </li>
 
-  {% if week.shorts %}
-  <li data-marker="-">
-    {{week_page.shorts}}
-    <ol>
-      {% for short in week.shorts %} {% if week.shorts[short].link %}
-      <li>
-        <a target="_blank" href="{{week.shorts[short].link}}"
-          >{{week.shorts[short].name}}</a
+            <li data-marker="-">
+                {{week_page.slides}}
+                <ul>
+                    <li data-marker="*">
+                        <a target="_blank" href="{{week.google_slides_link}}"
+                            >Google Slides</a
+                        >
+                    </li>
+                    <li data-marker="*">
+                        <a target="_blank" href="{{week.pdf_slides_link}}"
+                            >PDF</a
+                        >
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    {% if week.shorts %}
+    <li data-marker="-">
+        {{week_page.shorts}}
+        <ol>
+            {% for short in week.shorts %} {% if week.shorts[short].link %}
+            <li>
+                <a target="_blank" href="{{week.shorts[short].link}}"
+                    >{{week.shorts[short].name}}</a
+                >
+            </li>
+            {% endif %} {% endfor %}
+        </ol>
+    </li>
+    {% endif %} {% if week.number == 10 %}
+    <li data-marker="*">
+        <a target="_blank" href="{{ url_for('cs50x.project') }}"
+            >{{week_page.final_project}}</a
         >
-      </li>
-      {% endif %} {% endfor %}
-    </ol>
-  </li>
-  {% endif %} {{ lab_item(title=week_page.lab, number=week.number) }} {{
-  pset_item(title=week_page.problem_set, number=week.number) }}
+    </li>
+    {% else %} {{ pset_item(title=week_page.problem_set, number=week.number) }}
+    {% endif %}
 </ul>
 
 {% endblock %}

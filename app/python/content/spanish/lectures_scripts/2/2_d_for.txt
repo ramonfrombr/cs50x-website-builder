@@ -1,0 +1,61 @@
+Bueno, déjenme seguir adelante, si me permiten, y proponer que hagamos una transición a otro enfoque de tipos de bucles usando otra palabra clave aquí, es decir, un bucle for. Y esta es una palabra que existe en otros idiomas, pero no necesariamente tiene tantas características como otros idiomas podrían usarla. Pero hay un tipo diferente de bucle, no es un bucle while, sino un bucle for.
+
+Y un bucle for nos va a permitir expresarnos de manera un poco diferente, pero para hacerlo, propongo que la forma más fácil sea si introducimos otra idea en Python, que es la de una lista. Y aquí, también, sin juegos de palabras, estamos agregando a la lista de tipos de datos que Python admite.
+
+Hemos visto strs o cadenas. Ints o enteros. Floats o valores de punto flotante. Bools o expresiones booleanas. Python también tiene listas, que es otro tipo de datos, pero maravillosamente, esta es probablemente bastante familiar. Una lista de cosas en el mundo real es una lista de cosas en Python. Es una forma de contener múltiples valores en el mismo lugar, todo en la misma variable.
+
+Entonces, ¿qué quiero decir con esto? Bueno, permítanme proponer que volvamos a nuestro VS Code aquí y comencemos de nuevo con mi código aquí y no usemos un bucle while en absoluto, sino que usemos esta nueva palabra clave for. La forma en que funciona el bucle for es que te permite iterar sobre una lista de elementos.
+
+¿Cómo se vería esto? Podría verse así, por ejemplo, for i y la siguiente lista de elementos: 0, 1, 2. Este es mi punto de partida y en cada iteración de este bucle, es decir, en cada ejecución de este bucle una y otra vez, quiero imprimir "meow". Ahora, admitiré que me gusta el aspecto de este código aunque haya alguna sintaxis nueva aquí, porque es más corto que el bucle while.
+
+El bucle while tenía varias líneas hace un momento y dependía completamente de mí decidir qué es i. Tengo que verificar una condición, tengo que incrementar o decrementar i. Estaba haciendo mucho trabajo, relativamente hablando, para hacer que esa cosa gire, para hacer que ese bucle funcione. Era muy mecánico en cierto sentido. Puedes imaginar en tu mente cómo se mueven los engranajes mientras todas estas variables están cambiando y se hacen estas preguntas.
+
+Un bucle for simplifica todo eso y simplemente dice: si quieres una variable como i, un número, y sabes de antemano cuántas veces quieres que se ejecute este bucle, tres veces, simplemente especifica qué quieres que i tome como valores explícitamente.
+
+En este bucle, i se inicializará automáticamente en Python como 0, luego se imprimirá "meow". Luego, Python actualizará automáticamente i para que sea igual a 1, luego se imprimirá "meow". Luego, Python actualizará automáticamente i para que sea 2 y se imprimirá "meow". Y como eso es todo para los valores en esa lista, Python se detendrá y solo hará "meow" un total de tres veces.
+
+¿Qué es la lista? La lista en este programa es exactamente eso, 0, coma, 1, coma, 2 y nota los corchetes. No son paréntesis, son corchetes que representan una lista. Eso es cómo visualmente, como programador, eso es cómo Python sabe como lenguaje que pretendes que sea una lista.
+
+Permítanme seguir adelante y ejecutar este Python de cat.py y funciona de la misma manera. Pero solo son dos líneas. Es bastante legible una vez que te familiarizas con esa construcción, pero conforme a mi punto constante de que la corrección no es necesariamente igual al diseño, ¿en qué sentido este programa puede estar mal diseñado?
+
+Parece funcionar. Hace "meow" tres veces, pero ¿por qué podría no ser la mejor manera de resolver este problema? Incluso si nunca has programado antes, nuevamente, piensa en casos límite, cosas que pueden o no pueden suceder. Piensa en casos extremos que realmente ponen a prueba la calidad de este código.
+
+AUDIENCIA: Bien. Creo que porque decimos 0, 1, 2 tres veces. Y luego, si quieres decir un millón, dices 1, 2, 3.
+
+DAVID MALAN: Sí, exactamente. Y eso es a lo que me refiero sobre pensar en los casos extremos. Si estás tratando de decidir si tu propio código es bueno o si el código de otra persona es bueno, podría parecerlo a simple vista, pero piensa en el extremo. Bueno, ¿y si no son tres cosas, son un millón de cosas? Quiero decir, ¿realmente vas a escribir del 0 al millón o del 0 al 999,999?
+
+No, no vas a escribir tantos números en la pantalla, tiene que haber una mejor manera. Entonces hagamos la mejor manera desde el principio en lugar de hacer algo mal. Y la forma en que podemos resolver este problema para mejorar el diseño es no especificar manualmente la lista de valores, usar una función, la función de otra persona que viene con Python y que te devuelve la lista que quieres.
+
+Y la forma más fácil de hacer esto en Python es usar una función llamada range que devuelve un rango de valores. Espera al menos un argumento de entrada, y ese número va a ser la cantidad de valores que quieres recibir. Esos valores comenzarán en 0 e irán hasta 1, hasta 2, y así sucesivamente, pero llegarán hasta, pero no a través del número que especifiques.
+
+Entonces, al especificar range 3, esencialmente te están devolviendo 1, 2, 3 valores. Y de forma predeterminada, esos valores son 0, 1 y 2, eso es todo. Pero lo brillante de esto es que ahora, siguiendo el punto de Hope, si quiero que el gato haga "meow" un millón de veces, quiero decir, ese es un gato enojado, ahora puedo hacer un millón simplemente escribiendo un millón. No tengo que escribir literalmente 0, coma, 1, coma, 2, coma, 3, coma, 4, hasta 999,999, solo hago esto. Así que esa tiene que ser una mejor manera a largo plazo.
+
+Entonces, ese es en efecto un cambio que podemos hacer aquí, todavía usando un bucle for, pero ahora usando esta función range. Y solo para mostrarte algo más que es propio de Python, esto no es estrictamente necesario, pero es comúnmente hecho. Podemos hacer una mejora menor aquí, incluso si solo estamos haciendo "meow" tres veces. Y nota que aunque estoy definiendo una variable i, nunca la estoy usando.
+
+Y es necesario en cierto sentido, porque Python, presumiblemente, tiene que usar algo para contar. Tiene que saber sobre qué está iterando. Pero hay una convención en Python que si necesitas una variable, solo porque la función de programación lo requiere para hacer algún tipo de conteo o actualización automática, pero a ti, el humano, no te importa su valor, una mejora propia de Python aquí sería nombrar esa variable con un guion bajo.
+
+Solo porque no es requerido, no cambia la corrección del programa, pero te señala a ti mismo más tarde, señala a colegas o profesores que están viendo tu código, también, que sí, es una variable, pero no te importa su nombre porque no la estás usando después, solo es necesario para usar esta función, este bucle en este caso aquí. Así que solo una mejora menor o cambio allí.
+
+Pero para realmente intrigarte sobre lo que es posible en Python, llevemos esto un paso más allá. Entonces, si realmente queremos seguir el estilo Python, esto, si ya has programado antes, te va a sorprender, por así decirlo, si hago lo siguiente: print, paréntesis de apertura, comillas "meow" multiplicado por 3. Tienes que ser un poco friki para pensar que esto está bien, pero esto está un poco bien.
+
+Entonces, literalmente puedes imprimir lo que quieras, multiplicarlo por el número de veces que quieras y obtendrás exactamente ese resultado. Ahora he cometido un error aquí. Veamos qué hace esto. No es tan bonito como podría parecer este código a algunos de ustedes, o a mí. Déjenme ejecutar Python de cat.py, Enter. OK, es como un gato realmente hambriento o algo así. Está maullando muy rápido.
+
+Pero puedo arreglar esto, apuesto. Pensemos en algunos de los bloques de construcción básicos que hemos discutido. El problema es claramente que literalmente "meow, meow, meow" se está repitiendo tres veces, pero no es tan bonito como quiero que sea. Quiero que sea "meow, meow, meow" en líneas separadas. ¿Cuál podría ser una posible solución aquí y aún así usar este operador de multiplicación?
+
+Y piensen bien. Hemos usado el signo más para concatenar cadenas. Aparentemente, se puede usar la multiplicación para concatenar cadenas, pero más de una vez, una y otra vez. ¿Cómo podría arreglar esto sin recurrir a mi bucle for o mi bucle while y aún así usar la multiplicación de esta manera?
+
+AUDIENCIA: Podemos usar la secuencia de escape que sería una barra invertida, n.
+
+DAVID MALAN: Asombroso. Sí. Piensa en la barra invertida n, que es la forma en que tú, como programador, puedes expresar un salto de línea en el código. Y creo que si sigo tu consejo y pongo una barra invertida dentro de mis comillas, para que al final de cada M-E-O-W haya un salto de línea, veamos cómo se ve esto. Permítanme borrar mi pantalla y ejecutar Python de cat.py. OK, muy cerca. Me gusta esto.
+
+Permítanme pedirle opinión a otra persona. La única cosa que no me gusta y sé que estoy siendo muy quisquilloso ahora es que es "meow, meow, meow" en líneas separadas, pero hay una línea en blanco extra que estéticamente simplemente no me gusta.
+
+AUDIENCIA: Creo que podemos hacer que n sea igual a punto y coma, no igual, como una barra invertida n.
+
+DAVID MALAN: Sí. Aquí, también, como todas estas cosas que hemos visto en las últimas semanas, se están uniendo. Recuerden que la función print te permite controlar cuál es el final de la línea. De forma predeterminada, es la barra invertida n en sí. Es por eso que al final de esta impresión, el cursor se está moviendo nuevamente a la siguiente línea. Bueno, necesitamos anular eso.
+
+Entonces, déjenme ir a mi código aquí y cambiemos esto por coma n igual a comillas-vacío para que ya no sea la barra invertida n predeterminada, sino que ahora simplemente no haya nada. Eso debería eliminar, entonces, esa línea en blanco adicional. Así que permítanme ejecutar esto una última vez aquí, Python de cat.py, Enter, y ahí lo tenemos.
+
+Así que ahora, al menos en cuanto a la programación se refiere, es genial que pueda resumir esto en una línea corta y expresar todo de una vez. Ahora, para ser justos, es un poco menos legible. Ahora tengo barra invertida n, tengo veces 3, tengo n igual a comillas-vacío. Entonces no tienes que hacer las cosas de esta manera. Mi enfoque anterior con un bucle for está perfectamente bien. Mi enfoque anterior con un bucle while está perfectamente bien, y en cierto sentido, está perfectamente bien diseñado.
+
+Pero esta es simplemente otra forma de hacerlo, pero no es algo bueno si tú o tu profesor, tu colega, tu amigo van a tener problemas para leer tu propio código. Pero esta es una característica de Python que algunos lenguajes, de hecho, no tienen.

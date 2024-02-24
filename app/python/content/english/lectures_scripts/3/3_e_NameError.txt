@@ -1,0 +1,23 @@
+And what does this name error mean? Well, just as a value error refers to that-- the value of some variable, the value that someone has typed in is incorrect-- name error tends to refer to your code, like you're doing something with the name of a variable that you shouldn't. And why might that be? 
+
+Well, let me turn our attention back to the code here and consider, what is it complaining about? Well, the name errors what I see down here. And it's telling me, name, quote unquote, "x is not defined." And notice if I look further here, it is mentioning line six. So I know the problem is with my code on line six. 
+
+And that worked a moment ago. And I'm defining x on line two. But let me ask the group here, why does x, in fact, exist online six? Why is it not defined, even though I'm pretty sure I was intending to define it on line two? 
+
+AUDIENCE: Maybe the scope of the variable is between the [INAUDIBLE]. 
+
+DAVID MALAN: So, good terminology. Scope refers to the portion of code in which a variable exists. That, too, though isn't quite right in Python. That would be true in C, C++, and Java, where indentation or curly braces tend to define the scope of a variable. But, again, here in general-- and this worked a moment ago. X exists once it's defined on line two because, remember, I printed out x is 50 a little bit ago. 
+
+Let's try one more hypothesis here. One more hand? Why is x somehow still not defined? 
+
+AUDIENCE: Yeah, so is it because it's local variable, meaning that it doesn't define outside of the scope because what people have mentioned. It prompts the input in try, right? The outside of it is undefined. 
+
+DAVID MALAN: So still good instincts. And good terminology, too. There's this notion of local variables, which tend to exist inside of functions, for instance, global variables, which tend to exist in entire files. In this case, too, though, that's not quite the case. What's happening here boils down to order of operations. Let me come back to the code here and recall that any time we've discussed the assignment operator, the single equal sign, that copies a value from the right to the left. But consider for a moment at what point something is going wrong. 
+
+Well, the input function is probably working just fine because we've used that a lot now to get users' input. It always returns a string or a stir in Python. But what could be going wrong? Well, if I'm passing that string to the int function as its argument, it's probably the int's function that's erroring. 
+
+And, indeed, if you think back earlier when we had the value error, it was, in fact, the int function that did not like, quote unquote, "cat" as input. So this is all to say that this portion of my code highlighted now to the right of the equal sign, that's the code that's creating a problem. That's the code that was creating a value error. 
+
+And in this case, we're catching the value error. But because the value error is happening on the right of the equal sign, there's no value being copied to the left. The error is interrupting that whole process. So even though we see x equals dot dot dot on line two, the portion of that line to the left of the equal sign isn't getting evaluated, ultimately, because the value error is happening too soon. 
+
+And so when we finally get down to line six, even though it looked like I was defining on line two-- and I would have defined x on line two if all had gone well-- we didn't get to the part where the value is copied from right to left because the value error happened first. So this code is just incorrect now.

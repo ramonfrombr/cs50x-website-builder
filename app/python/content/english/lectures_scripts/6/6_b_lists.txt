@@ -1,0 +1,27 @@
+
+
+Well, to do this, let me propose that we first consider a familiar data structure, a familiar type of variable that we've seen before, that of a list. And using lists, we've been able to store more than one piece of information in the past. Using one variable, we typically store one value. 
+
+But if that variable is a list, we can store multiple values. Unfortunately, lists are stored in the computer's memory. And so once your program exits, even the contents of those disappear. But let's at least give ourselves a starting point. 
+
+So I'm over here in VS Code. And I'm going to go ahead and create a simple program using code of names.py, a program that just collects people's names, students' names, if you will. And I'm going to do it super simply initially in a manner consistent with what we've done in the past to get user input and print it back out. I'm going to say something like this, name equals input, quote/unquote, what's your name? 
+
+Thereby storing in a variable called name the return value of input, as always. And as always, I'm going to go ahead and very simply print out a nice f string that says, hello, comma, and then, in curly braces, name to print out Hello, David, hello, world, whoever happens to be using the program. Let me go ahead and run this just to remind myself what I should expect. And if I run python of names.py and hit Enter, type in my name like David, of course, I now see Hello, comma, David. 
+
+Suppose, though, that we wanted to add support not just for one name, but multiple names-- maybe three names for the sake of discussion so that we can begin to accumulate some amount of information in the program, such that it's really going to be a downside if we keep throwing it away once the program exits. Well, let me go back into names.py up here at top. Let me proactively give myself a variable, this time called names, plural. And set it equal to an empty list. Recall that the square bracket notation, especially if nothing's inside of it, just means, give me an empty list that we can add things to over time. 
+
+Well, what do we want to add to it? Well, let's add three names, each from the user. And let me say something like this, for underscore in range of 3, let me go ahead and prompt the user with the input function and getting their name in this variable. And then using list syntax, I can say, names.append name to that list. And now I have, in that list, that given name-- 1, 2, 3 of them. 
+
+Other points to note is, I could use a variable here, like i, which is conventional. But if I'm not actually using i explicitly on any subsequent lines, I might as well just use underscore, which is a Pythonic convention. And actually, if I want to clean this up a little bit right now, notice that my name variable doesn't really need to exist because I'm assigning it a value and then immediately appending it. 
+
+Well, I could tighten this up further by just getting rid of that variable altogether and just appending immediately the return value of input. I think we could go both ways in terms of design here. On the one hand, it's a pretty short line, and it's readable. On the other hand, if I were to eventually change this phrase to be not what's your name but something longer, we might want to break it out again into two lines. But for now, I think it's pretty readable. 
+
+Now later in the program, let's just go ahead and print out those same names, but let's sort them alphabetically so that it makes sense to be gathering them all together, then sorting them, and printing them. So how can I do that? Well, in Python, the simplest way to sort a list in a loop is probably to do something like this. For name in names-- but wait. 
+
+Let's sort the names first. Recall that there's a function called sorted which will return a sorted version of that list. Now let's go ahead and print out an f string that says, again, hello, bracket, name, close quotes. 
+
+All right, let me go ahead and run this. So Python of names.py, and let me go ahead and type in a few names this time. How about Hermione? How about Harry? How about Ron? And notice that they're not quite in alphabetical order. But when I hit Enter and that loop kicks in, it's going to print out, hello, Harry, hello, Hermione, hello, Ron, in sorted order. But of course, now, if I run this program again, all of the names are lost. 
+
+And if this is a bigger program than this, that might actually be pretty painful to have to re-input the same information again, and again, and again. Wouldn't it be nice, like most any program today on a phone, or a laptop, or desktop, or cloud to be able to save this information somehow instead? And that's where File I/O comes in. And that's where files come in. They are a way of storing information persistently on your own phone, or Mac, or PC, or some cloud server's disk so that they're there when you come back and run the program again. 
+
+So how can we go about saving all three of these names on in a file as opposed to having to type them again and again? Let me go ahead and simplify this file and, again, give myself just a single variable called name, and set the return value of input equal to that variable. So what's your name, as before, quote/unquote. And now let me go ahead, and let me do something more with this value. Instead of just adding it to a list or printing it immediately out, let's save the value of the person's name that's just been typed in to a file. Well, how do we go about doing that? 

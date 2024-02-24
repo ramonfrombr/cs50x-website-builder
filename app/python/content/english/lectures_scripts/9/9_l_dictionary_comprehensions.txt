@@ -1,0 +1,46 @@
+
+Well, let me propose too that we equip you with one other tool for your toolkit, namely dictionary comprehensions as well. And admittedly, the syntax is starting to get even weirder. But as you get more comfortable with all of these primitives and others, these are just tools that you can optionally but perhaps powerfully use to solve future problems down the road. 
+
+And with a dictionary comprehension, we have the ability to create on the fly a dictionary with keys and some values without having to do it old-school by creating an empty dictionary, and creating a for loop, and iterating over that loop, and inserting more and more keys and values into the dictionary. We can rather do it all at once. 
+
+So in fact, let me go back to VS Code here. And let me propose now that I do this. Let me go ahead and initially do it the old-fashioned way here as follows. 
+
+Let me go ahead and simplify and get rid of the houses all together so that we can focus for now just on a list of students' names. I'm going to go ahead and run students. I'm going to go ahead and write students equals quote unquote Hermione, quote unquote Harry, and we'll keep it even shorter this time, quote unquote Ron, only those three students in Gryffindor. 
+
+I'm going to now proactively as we've done in the past give myself an empty list, so that I have something to accumulate some answers to this problem in. And now, I'm going to do something like this. For students and students, so I can iterate over each of them, 
+
+Let's go ahead and with the Gryffindors list append to it the name of the student. So quote unquote name and then student, which is indeed their name from that list. And now, let's go ahead and just put these students all in Gryffindor. I know these three students are in Gryffindor. So suppose that the problem at hand is that I want to build up a list of dictionaries that only contains the Gryffindor students. 
+
+So it's sort of a step back from the previous version where I already had the names and the houses. For now, just assume that the problem is I have all of their names, but I don't yet have the student dictionaries themselves. So I'm rebuilding that same structure that I previously took for granted. 
+
+Now, let's go ahead and just for the sake of discussion just print out these Gryffindors so we can see what we've built. If I run Python of Gryffindors.py in my prompt, I see a bit of a cryptic syntax. But again, look for our little hints. I've got a square bracket at the end and a square bracket at the beginning. And that indicates, as always, this is a list. 
+
+I then have a whole bunch of curly braces with a whole bunch of quoted keys. They happen to be single quotes by convention when using print on a dictionary. But that's just a visual indicator that that is my key. 
+
+And the first value thereof is Hermione. Second key is a house. This value thereof is Gryffindor. Then there's a comma, which separates one dict object from the next. And if we look past Harry and Gryffindor, there's a second comma which separates Harry and Gryffindor from Ron and Gryffindor as well. 
+
+So in short, here is some code whereby I fairly manually built up with a for loop in an otherwise initially empty list the same data structure as before minus Draco just for Gryffindor students. But here's where, again, with dictionary comprehensions or really list comprehensions first, can we do this a little more succinctly? 
+
+Let me clear my terminal window. Let's get rid of this initially empty list and this for loop that appends, appends, appends to it. And let's just do this. A Gryffindors variable will equal the following list comprehension. 
+
+Inside of that list, I want a dictionary structured with someone's name and their name. Someone's house and only for now Gryffindor. And that's it. But I want one of these dict objects here in these curly braces for each student in students. 
+
+So here too, inside of my list comprehension with my square brackets, I want an object as indicate-- I want a dictionary as indicated by the curly braces. I want each of those dictionaries to have two keys-- name and house respectively, the values thereof are the student's name from earlier here and Gryffindor only. Which students do I want to create those dict objects from? Well, for student in students. 
+
+So again, on the left I have what I want in the final list. And on the right, I have a loop, and this time, no conditional. I want all of these students in Gryffindor as their house. 
+
+Now, let's print this again, Python of Gryffindors.py and hit Enter. And now, we have the exact same output. So instead of three lines it's just one. It's a little more cryptic to read at first glance. But once familiar with list comprehensions and this sort of syntax, it's just another way of solving that same problem. 
+
+What if I want to change this and simplify? What if I don't want a list of dictionaries, which I now have. Again, per the square brackets I have a list of three dict objects here. What if I just want one bigger dictionary inside of which is a key like Hermione colon Gryffindor, Harry colon Gryffindor, Ron colon Gryffindor. I don't need a list. I don't need separate objects per student. 
+
+I just want instead one big dictionary where the keys are the students' names and the values of their house. And I'm assuming for now no one's going to have the same first name in this world. 
+
+Well, I can do this. Let me get rid of this here and not create a list comprehension, but again, this thing known as a dictionary comprehension. And the visual indicator or difference here is that instead of being square brackets on the very outside, this time it's going to be curly braces instead. 
+
+So inside of these curly braces, what do I want every key to be? I want every key to be the student's name. I want every value for now to be Gryffindor. And I want to do this for each student in students. 
+
+And now, things are getting really interesting. And this is another manifestation of Python in some views being very readable from left to right. Absolutely takes practice and comfort. But this is creating a variable called Gryffindor which is going to be a dictionary per these curly braces. 
+
+Every key is going to be the name of some student. Every value is going to be Gryffindor. What names of what students? Well, this dictionary comprehension will be constructed from the list of students one at a time. 
+
+So when I print this now, the syntax will look a little different because it's not a list of dictionary objects. It's just one bigger dictionary object itself. But now printing Gryffindors gives me Hermione colon Gryffindor, Harry colon Gryffindor, and Ron colon Gryffindor as well. Any questions now on what we've called dictionary comprehensions as well? Any questions on here? No? 

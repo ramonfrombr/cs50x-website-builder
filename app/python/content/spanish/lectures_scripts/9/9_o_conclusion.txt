@@ -1,0 +1,41 @@
+Muy bien. Mientras estas ovejas continúan volando por la pantalla, déjenme ahora interrumpir esto, como quizás hayas tenido que hacerlo en el pasado con bucles infinitos en tu propio código. Aunque esto no es infinito, es simplemente muy largo; la combinación de teclas Control + C interrumpirá ese programa, devolviéndome el control de mi computadora.
+
+Bueno, aquí estamos al final de la Introducción a la Programación con Python de CS50. Y si hoy en particular, de todos los días, se sintió como una escalada muy rápida, debes darte cuenta de que realmente estas son solo herramientas adicionales, tal vez opcionales, que puedes agregar a todas las lecciones aprendidas anteriormente. De manera que, al salir de este curso y abordar otros cursos o proyectos propios, tendrás aún más un modelo mental y más herramientas para resolver esos mismos problemas.
+
+Si reflexionamos ahora sobre unas pocas semanas atrás, probablemente fue enfocándonos en las funciones y variables cuando comenzaste a tener dificultades. Pero ahora, en retrospectiva, si miras hacia atrás esos problemas y los conjuntos de problemas, es probable que esos mismos problemas te resulten muy fáciles ahora. Los condicionales fueron el siguiente paso en la clase, en los cuales te dimos la capacidad de hacer preguntas y obtener respuestas, y por lo tanto, hacer cosas condicionalmente en tu código.
+
+Hoy cerramos el círculo. Y puedes ver que ahora puedes utilizar esos mismos tipos de condicionales para hacer cosas más sofisticadas con comprensión de listas y comprensión de diccionarios, y cosas similares. Los bucles, por supuesto, han estado omnipresentes durante semanas, incluyendo hoy, mientras construimos esas mismas estructuras.
+
+Y por supuesto, algo puede salir mal. Y las excepciones y el manejo de excepciones fueron nuestro mecanismo para no solo capturar errores en el código, sino también generar tus propias excepciones. De manera que si estás sentando las bases para escribir código para otras personas, como en forma de bibliotecas, también puedes hacerlo.
+
+Las bibliotecas, por supuesto, son algo que no solo puedes usar, sino que ahora puedes escribir por tu cuenta, ya sea un pequeño módulo o un paquete completo de código que deseas compartir con otros en todo el mundo. Y aún mejor, puedes escribir pruebas para tu propio código, para tus bibliotecas y incluso para el código de otras personas. De manera que en última instancia, puedes estar aún más seguro de que no solo tu código es correcto hoy. Pero si haces un cambio en tu código mañana, no habrás roto nada, al menos según tus pruebas si continúan pasando.
+
+La E/S de archivos, por otro lado, fue una forma de almacenar datos no solo en la memoria de la computadora como todas estas ovejas, sino también almacenar cosas de forma persistente a largo plazo en el disco, ya sea en formato CSV o algo más como un archivo binario, como una imagen.
+
+Con las expresiones regulares, tenías la capacidad de expresar patrones y validar datos o extraer datos de la información. Esto es aún más técnicamente útil hoy en día, cuando gran parte del mundo está intentando analizar y procesar datos a gran escala, algunos de los cuales pueden ser bastante desordenados desde el principio.
+
+Y luego, por supuesto, lo más reciente, la programación orientada a objetos, una oportunidad para resolver los mismos tipos de problemas pero con una perspectiva ligeramente diferente, una forma de encapsular y representar entidades del mundo real, esta vez en código.
+
+Y hoy, por supuesto, et cetera, con tantas otras herramientas que puedes agregar y que no necesariamente se engloban en ninguno de esos paraguas anteriores, pero son funciones útiles y tipos de datos y técnicas que simplemente debes tener en tu arsenal, nuevamente, como otros mecanismos para resolver problemas también.
+
+No solo para poner a todos a dormir, pero pensé que otra forma de terminar podría ser un poco más vocal, tratando de escribir un último programa juntos, utilizando una biblioteca que hemos visto anteriormente, así como otra más. Me he permitido instalar una biblioteca de texto a voz en mi computadora aquí. Y voy a seguir adelante, quizás, y abrir un nuevo archivo aquí llamado "say.py" en VS Code.
+
+Y voy avanzar aquí e importar a nuestro propio amigo, importar "cowsay". Y voy a importar esta nueva biblioteca aquí, importar "pyttsx3", la biblioteca de texto a voz de Python. Y ahora, según su documentación, que leí de antemano, voy a seguir adelante y crear una variable aquí, "engine" (motor), igual a "pyttsx3.init" para inicializar esa biblioteca de texto a voz.
+
+Luego le preguntaré al usuario, bueno, ¿qué quiero escuchar que se pronuncie? Y podría hacer algo como esto. Una variable llamada "this" (esto) igual al valor de retorno de "input". "¿Qué es esto?" será mi simple pregunta. Y esta vez lo mantendré como una cadena de texto.
+
+Hemos visto cómo usar "cowsay". Podemos hacer "cowsay.cow(this)". Resulta que esta nueva biblioteca me permite usar su propio motor para pronunciar esto también. Pero en última instancia, tendría que ejecutar "engine.runAndWait", solo en caso de que sea una frase o una oración larga que se deba decir.
+
+Pero eso es todo. En solo ocho líneas de código, no solo aparentemente voy a tener una vaca que aparezca en la pantalla para concluír, sino también un texto sintetizado.
+
+Entonces, en última instancia, esperamos con este curso que no solo hayas aprendido Python, que no solo hayas aprendido a programar, sino que también hayas aprendido a resolver problemas y, en última instancia, a enseñarte a ti mismo nuevos lenguajes. Curiosamente, yo mismo aprendí Python hace solo unos años.
+
+Y aunque ciertamente seguí alguna documentación formal y recursos en línea, en su mayoría aprendí lo que sé ahora e incluso lo que tuve que aprender nuevamente para hoy, simplemente haciendo muchas preguntas, ya sea a Google o a amigos que conocen más este lenguaje que yo.
+
+Y así, teniendo ese instinto, teniendo ese vocabulario [INAUDIBLE] para hacer preguntas a otros, para buscar respuestas a preguntas, ahora tienes absolutamente suficiente base en Python y programación para ir por tu cuenta. Entonces, definitivamente puedes, y se te anima, a tomar otros cursos en Python y programación específicamente.
+
+Pero mejor aún, lo más rápido posible, es encontrar un proyecto que personalmente te interese y que use Python o algún otro lenguaje. Porque al menos desde mi experiencia, tiendo a aprender mejor y espero que tú también lo hagas al aplicar realmente estas habilidades. No a problemas en el aula, sino realmente a problemas del mundo real.
+
+Permíteme con todo lo dicho mirar mi ventana de terminal completa. Ejecutar "Python say.py", cruzar los dedos una última vez con la esperanza de no haber cometido ningún error o haber encontrado errores. Y aquí vamos. "Python say.py" me pregunta, ¿qué es esto? Qué tal si terminamos con esta nota aquí.
+
+COMPUTADORA: Esto fue CS50.

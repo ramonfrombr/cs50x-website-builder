@@ -6,9 +6,9 @@ Introdução aos empreendimentos intelectuais da ciência da computação e à a
 
 Espera-se que você:
 
-- envie dez conjuntos de problemas,
-- envie nove laboratórios e
-- envie um projeto final.
+-   envie dez conjuntos de problemas,
+-   envie nove laboratórios e
+-   envie um projeto final.
 
 ## Certificados
 
@@ -20,24 +20,24 @@ Os problemas são avaliados ao longo dos eixos de correção (como determinado p
 
 Não há livros obrigatórios ou recomendados para este curso. No entanto, você pode achar os livros abaixo interessantes. Tenha em mente que recursos gratuitos, se não superiores, podem ser encontrados no site do curso.
 
-*Hacker's Delight, Segunda Edição*
+_Hacker's Delight, Segunda Edição_
 Henry S. Warren Jr.
 Pearson Education, 2013
 ISBN 0-321-84268-5
 
-*Como os Computadores Funcionam, Décima Edição*
+_Como os Computadores Funcionam, Décima Edição_
 Ron White
 Que Publishing, 2014
 ISBN 0-7897-4984-X
 
-*Programando em C, Quarta Edição*
+_Programando em C, Quarta Edição_
 Stephen G. Kochan
 Pearson Education, 2015
 ISBN 0-321-77641-0
 
-## Palestras
+## Aulas
 
-As palestras do curso introduzem os conceitos de cada semana.
+As aulas do curso introduzem os conceitos de cada semana.
 
 ## Passo a passo
 
@@ -62,4 +62,3 @@ O CS50x não tem prazo para o projeto final. Você pode trabalhar nele e enviá-
 ## Honestidade Acadêmica
 
 Consulte a Política de [Honestidade Acadêmica](/2023/honestidade) para obter diretrizes.
-

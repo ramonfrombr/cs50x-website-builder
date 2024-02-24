@@ -1,0 +1,42 @@
+{% macro notes_item(number, title) %} {% if number == 0 %}
+<li data-marker="*">
+  <a href="{{ url_for('web.notes.notes0') }}">{{title}} </a>
+</li>
+{% elif week.number == 1 %}
+<li data-marker="*">
+  <a href="{{ url_for('web.notes.notes1') }}">{{title}} </a>
+</li>
+{% elif week.number == 2 %}
+<li data-marker="*">
+  <a href="{{ url_for('web.notes.notes2') }}">{{title}} </a>
+</li>
+{% elif week.number == 3 %}
+<li data-marker="*">
+  <a href="{{ url_for('web.notes.notes3') }}">{{title}} </a>
+</li>
+{% elif week.number == 4 %}
+<li data-marker="*">
+  <a href="{{ url_for('web.notes.notes4') }}">{{title}} </a>
+</li>
+{% elif week.number == 5 %}
+<li data-marker="*">
+  <a href="{{ url_for('web.notes.notes5') }}">{{title}} </a>
+</li>
+{% elif week.number == 6 %}
+<li data-marker="*">
+  <a href="{{ url_for('web.notes.notes6') }}">{{title}} </a>
+</li>
+{% elif week.number == 7 %}
+<li data-marker="*">
+  <a href="{{ url_for('web.notes.notes7') }}">{{title}} </a>
+</li>
+{% elif week.number == 8 %}
+<li data-marker="*">
+  <a href="{{ url_for('web.notes.notes8') }}">{{title}} </a>
+</li>
+{% elif week.number == 9 %}
+<li data-marker="*">
+  <a href="{{ url_for('web.notes.notes9') }}">{{title}} </a>
+</li>
+
+{% endif %} {% endmacro %}

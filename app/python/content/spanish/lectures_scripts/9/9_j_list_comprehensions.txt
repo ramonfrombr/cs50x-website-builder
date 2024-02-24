@@ -1,0 +1,41 @@
+Resulta que hay otra forma de resolver este problema de una manera aún más pythonica, o al menos bastante común. Y eso es usando una característica conocida como comprensión de listas.
+
+Y es una frase grande, por así decirlo. Pero se refiere a la capacidad en Python de construir muy fácilmente una lista sobre la marcha sin usar un bucle, sin llamar a append una y otra vez, sino hacer todo en una sola línea, atrevería decir elegante.
+
+Entonces, ¿cómo puedo utilizar esta noción de una comprensión de listas? Bueno, déjame hacer esto. En yell.py, en VS Code aquí, déjame cambiar mi enfoque de la siguiente manera. En lugar de usar map, que está perfectamente bien y es correcto de esta manera, déjame mostrarte esta otra forma también. Una comprensión de listas es la oportunidad de crear una lista como esta, usando corchetes cuadrados como estos.
+
+Pero dentro de esos corchetes cuadrados escribir una expresión de Python que, en efecto, va a generar dinámicamente una nueva lista para ti usando alguna lógica que has escrito. Y el enfoque que podría tomar aquí es este. Si quiero almacenar en esta lista la versión en mayúsculas de cada palabra en esa lista de palabras, puedo hacer esto: palabra.upper() para palabra in palabras.
+
+Ahora, esto es mucho. Pero me atrevería a decir que a los programadores de Python les encanta esta capacidad de poder definir sobre la marcha una lista dentro de la cual hay cualquier número de valores que normalmente, al menos como lo hemos hecho, se construirían con un bucle y nuevamente llamando a append y append y append. Pero eso generalmente toma dos, tres, cuatro o más líneas.
+
+Esta comprensión de lista que he resaltado aquí ahora es una forma alternativa de crear exactamente lo mismo: una lista dentro de la cual hay un montón de palabras en mayúsculas. ¿Qué palabras? Cada palabra de la lista de palabras que se pasó a yell es lo que termina en esta lista.
+
+¿Preguntas sobre esta sintaxis aquí? Definitivamente requiere un poco de acostumbrarse. Porque tienes este valor a la izquierda, esta llamada de función aquí. Tienes este bucle dentro de los corchetes cuadrados. Pero si te acostumbras a leer el código de esta manera de izquierda a derecha, esto significa dame la versión en mayúsculas de la palabra para cada palabra en mi lista de palabras. ¿Preguntas aquí sobre las comprensiones de listas?
+
+ESTUDIANTE: Hola. ¿Podemos utilizar condicionales también, como if else, o combinar if, elif, else?
+
+DAVID J. MALAN: En efecto, se puede. Y volvamos sobre eso, cuando veamos una oportunidad de hacer cosas condicionalmente. Pero por ahora, solo estoy convirtiendo en mayúsculas cada palabra de la lista. Buena pregunta. ¿Otras preguntas?
+
+ESTUDIANTE: Sí. ¿Esto es programación funcional? O sea, esta cosa en particular, ¿estamos usando words.upper para una palabra en palabras?
+
+DAVID J. MALAN: No necesariamente. Yo diría que esto es más una característica de Python.
+
+ESTUDIANTE: Vale.
+
+DAVID J. MALAN: Sí. Map fue una encarnación muy específica de esto, nuestro uso de Lambda y pasándolo como atributo clave a la función sort, la función sorted, hace un tiempo fue un ejemplo. Y estamos a punto de ver otro.
+
+Incluso podemos usar estas comprensiones de listas para filtrar valores dentro o fuera de nuestra lista resultante. De hecho, en VS Code aquí, déjame cerrar yell.py y cerrar mi ventana de terminal. Y voy a crear un nuevo programa aquí cuyo propósito en la vida quizás sea tomar una misma lista de estudiantes como antes pero más corta, y solo filtrar a todos los estudiantes de Gryffindor.
+
+Así que voy a crear un archivo llamado Gryffindors.py. Voy a copiar y pegar desde antes mi lista de estudiantes, al menos Hermione, Harry, Ron y Draco desde el principio aquí, solo para poder enfocarme en un estudiante que no es de Slytherin.
+
+Y lo que voy a hacer aquí ahora, si quiero filtrar solo a los estudiantes de Gryffindor, déjame hacer esto. Voy a crear otra variable llamada Gryffindors, que va a ser igual a la siguiente lista. Y esto va a ser un poco más largo. Así que voy a mover proactivamente mis corchetes cuadrados a dos líneas separadas. Y voy a crear ahora una comprensión de lista.
+
+Quiero hacer esto. Quiero que esta nueva lista llamada Gryffindors contenga el nombre de cada estudiante para cada estudiante en la lista de estudiantes. Pero, pero, pero, si el hogar del estudiante es igual a Gryffindor entre comillas. Por lo tanto, esto es casi idéntico en espíritu a lo que acabo de hacer antes para crear una comprensión de lista de cada una de las palabras pasadas a mi función yell. Pero aquí, lo estoy haciendo condicionalmente.
+
+Y así, estoy tomando un poco de inspiración de nuestro enfoque en bucles, tomando algo de inspiración de nuestro enfoque en condicionales, combinando eso en esta misma notación de corchetes cuadrados. Entonces, lo que Gryffindors es en última instancia, son cero o más nombres de estudiantes. Y los nombres que se incluyen son el resultado de iterar sobre cada uno de esos estudiantes y solo incluir en el resultado final a los estudiantes cuya casa resulta ser Gryffindor.
+
+Entonces, cuando ejecuto esto con Python de Gryffindors.py y presiono Enter, verás, eh, en realidad no sucedió nada aquí. Bueno, eso se debe a que no terminé el programa. Déjame terminar el programa con esto. ¿Qué tal si para cada Gryffindor en Gryffindors en plural, y mejor aún, para que tenga sentido que hice todo este trabajo de antemano, déjame ordenar todos esos nombres con nuestra familiar función sorted.
+
+Vamos ahora a imprimir cada uno de estos Gryffindors. Así que ahora, ten en cuenta, si estás familiarizado con los libros y las películas, sabrás que solo tres de estos cuatro estudiantes están en Gryffindor. Y si ejecuto Python de Gryffindor.py, ahí vemos a Harry, Hermione y Ron, pero ahora también en orden ordenado.
+
+Así que esa es solo una forma en la que podemos resolver este mismo problema utilizando no solo una comprensión de lista, sino una comprensión de lista que tiene esta condición. Pero también hay otras formas de resolver este mismo problema. Y volvemos a algunas características funcionales de Python.

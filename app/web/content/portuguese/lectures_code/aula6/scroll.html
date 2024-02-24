@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <title>Rolagem</title>
+        <script>
+            window.onscroll = () => {
+                if (
+                    window.innerHeight + window.scrollY >=
+                    document.body.offsetHeight
+                ) {
+                    document.querySelector("body").style.background = "green";
+                } else {
+                    document.querySelector("body").style.background = "white";
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        ...
+        <p>99</p>
+        <p>100</p>
+    </body>
+</html>

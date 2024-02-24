@@ -1,0 +1,225 @@
+
+[0]
+
+Introduction to
+Programming with Python
+Et Cetera
+
+[1]
+
+docs.python.org
+
+[2]
+
+docs.python.org/3/tutorial/ 
+
+[3]
+
+docs.python.org/3/library/ 
+
+[4]
+
+docs.python.org/3/reference/ 
+
+[5]
+
+docs.python.org/3/howto/ 
+
+[6]
+
+set
+
+[7]
+
+docs.python.org/3/library/stdtypes.html#set 
+
+[8]
+
+global
+
+[9]
+
+constants
+
+[10]
+
+type hints
+
+[11]
+
+docs.python.org/3/library/typing.html 
+
+[12]
+
+mypy
+
+[13]
+
+pip install mypy
+
+[14]
+
+mypy.readthedocs.io
+
+[15]
+
+docstrings
+
+[16]
+
+peps.python.org/pep-0257/ 
+
+[17]
+
+argparse
+
+[18]
+
+docs.python.org/3/library/argparse.html 
+
+[19]
+
+unpacking
+
+[20]
+
+*args, **kwargs
+
+[21]
+
+docs.python.org/3/library/functions.html#print 
+
+[22]
+
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
+
+[23]
+
+map
+
+[24]
+
+docs.python.org/3/library/functions.html#map 
+
+[25]
+
+map(function, iterable, ...)
+
+[26]
+
+list comprehensions
+
+[27]
+
+filter
+
+[28]
+
+docs.python.org/3/library/functions.html#filter 
+
+[29]
+
+filter(function, iterable)
+
+[30]
+
+dictionary comprehensions
+
+[31]
+
+enumerate
+
+[32]
+
+docs.python.org/3/library/functions.html#enumerate 
+
+[33]
+
+enumerate(iterable, start=0)
+
+[34]
+
+generators
+
+[35]
+
+docs.python.org/3/howto/functional.html#generators 
+
+[36]
+
+yield
+
+[37]
+
+iterators
+
+[38]
+
+docs.python.org/3/howto/functional.html#iterators 
+
+[39]
+
+Introduction to
+Programming with Python
+Functions, Variables
+
+[40]
+
+Introduction to
+Programming with Python
+Conditionals
+
+[41]
+
+Introduction to
+Programming with Python
+Loops
+
+[42]
+
+Introduction to
+Programming with Python
+Exceptions
+
+[43]
+
+Introduction to
+Programming with Python
+Libraries
+
+[44]
+
+Introduction to
+Programming with Python
+Unit Tests
+
+[45]
+
+Introduction to
+Programming with Python
+File I/O
+
+[46]
+
+Introduction to
+Programming with Python
+Regular Expressions
+
+[47]
+
+Introduction to
+Programming with Python
+Object-Oriented Programming
+
+[48]
+
+Introduction to
+Programming with Python
+Et Cetera
+
+[49]
+
+Introduction to
+Programming with Python
+David J. Malan
+malan@harvard.edu

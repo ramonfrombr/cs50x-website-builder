@@ -1,0 +1,45 @@
+Well, let's now go back, and I'll propose that this code is now working correctly, but we can design it a little bit better. It turns out that it's all too easy when writing code to sometimes forget to close files. And sometimes, this isn't necessarily a big deal. 
+
+But sometimes, it can create problems. Files could get corrupted or accidentally deleted or the like, depending on what happens in your code. So it turns out that you don't strictly need to call close on the file yourself if you take another approach instead. More Pythonic when manipulating files is to do this, to introduce this other keyword called, quite simply, with that allows you to specify that, in this context, I want you to open and automatically close some file. 
+
+So how do we use with? It simply looks like this. Let me go back to my code here. I've gotten rid of the close line. 
+
+And I'm now just going to say this instead. Instead of saying, file equals open, I'm going to say, with open, then the same arguments as before, and somewhat curiously, I'm going to put the variable at the end of the line. Why? That's just the way this is done. 
+
+You say, with, you call the function in question, and then you say as and specify the name of the variable that should be assigned the return value of open. Then I'm going to go ahead and indent the line underneath so that the line of code that's writing the name is now in the context of this with statement, which just ensures that, automatically, if I had more code in this file down below no longer indented, the file would be automatically closed as soon as line 4 is done executing. So it doesn't change what has just happened, but it does automate the process of at least closing things for us just to ensure I don't forget and so that something doesn't go wrong. 
+
+But suppose, now, that I wanted to read these names from the file. All I've done thus far is write code that writes names to the file. But let's assume, now, that we have all of these names in the file. 
+
+And heck, let's go ahead and add one more. Let me go ahead and run this one more time-- python of names.py. And let's add in Draco to the mix. So now that we have all four of these names here, how might we want to read them back? 
+
+Well, let me propose that we go into names.py now, or we could create another program altogether. But I'm going to keep reusing the same name just to keep us focused on this. And now I'm going to write code that reads an existing file with Hermione, Harry, Ron, and Draco together. 
+
+And how do I do this? Well, it's similar in spirit. I'm going to start this time with with open, and then the first argument is going to be the name of the file that I want to open, as before. And I'm going to open it, this time, in read mode-- quote/unquote, r. And to read a file just means to load it, not to save it. And I'm going to name the return value file. 
+
+And now I'm going to do this. And there's a number of ways I can do this, but one way to read all of the lines from the file at once would be this. Let me declare a variable called lines. 
+
+Let me access that file and call a function or a method that comes with it called readlines. So if you read the documentation on File I/O in Python, you'll see that open files come with a special method whose purpose in life is to read all the lines from the file and return them to me as a list. So what this line 2 is doing is it's reading all of the lines from that file, storing them in a variable called lines. 
+
+Now, suppose I want to iterate over all of those lines and print out each of those names. For line in lines, this is just a standard for loop in Python. Lines as a list. Line is the variable that will be automatically set to each of those lines. Let me go ahead and print out something like, oh, hello, comma, and then I'll print out the line itself. 
+
+All right, so let me go to my terminal window, run python of names.py now-- I have not deleted names.txt, so it still contains all four of those names-- and hit Enter, and OK, it's not bad, but it's a little ugly here. What's going on? When I ran names.py, it's saying Hello to Hermione, to Harry, to Ron, to Draco. But there's these gaps now between the lines. What explains that symptom? If nothing else, it just looks ugly. 
+
+AUDIENCE: It happens because in the text file, we have new line symbols in between those names, and the print always adds another new line at the end. So you use the same symbol twice. 
+
+DAVID MALAN: Perfect. And here's a good example of a bug, a mistake in a program. But if you just think about those first principles, like, how do each of the lines of code work that I'm using? You should be able to reason, exactly as Ripal there to say that, all right, well, one of those new lines is coming from the file after each name. And then, of course, print, all of these weeks later, is still giving us for free that extra new line. 
+
+So there's a couple possible solutions. I could certainly do this, which we've done in the past, and pass in a named argument to print, like end="". And that's fine. I would argue a little better than that might actually be to do this, to strip off of the end of the line the actual new line itself so that print is handling the printing of everything, the person's name as well as the new line. 
+
+But you're just stripping off what is really just an implementation detail in the file. We chose to use new lines in my text file to separate one name from another. So arguably, it should be a little cleaner in terms of design to strip that off and then let print print out what is really just now a name. But that's ultimately a design decision. The effect is going to be exactly the same. 
+
+Well, if I'm going to open this file and read all the lines and then iterate over all of those lines and print them each out, I could actually combine this into one thing because, right now, I'm doing twice as much work. I'm reading all of the lines, then I'm iterating over all of the lines just to print out each of them. Well, in Python, with files, you can actually do this. I'm going to erase almost all of these lines now, keeping only with statement at top. And inside of this with statement, I'm going to say this, for line in file, go ahead and print out, quote/unquote, hello, comma, and then line.rstrip. 
+
+So I'm going to take the approach of stripping off the end of the line. But notice how elegant this is, so to speak. I've opened the file in line 1. And if I want to iterate over every line in the file, I don't have to very explicitly read all the lines, then iterate over all of the lines. I can combine this into one thought. 
+
+In Python, you can simply say, for line in file, and that's going to have the effect of giving you a for loop that iterates over every line in the file, one at a time, and on each iteration, updating the value of this variable line to be Hermione, then Harry, then Ron, then Draco. So this, again, is one of the appealing aspects of Python is that it reads rather like English-- for line in file, print this. It's a little more compact when written this way. 
+
+Well, what if, though, I don't want quite this behavior? Because notice now, if I run python of names.py, it's correct. I'm seeing each of the names and each of the hellos, and there's no extra spaces in between. But just to be difficult, I'd really like us to be sorting these hellos. Really, I'd like to see Draco first, then Harry, then Hermione, then Ron, no matter what order they appear in the file. 
+
+So I could go in, of course, to the file and manually change the file. But if that file is changing over time based on who is typing their name into the program, that's not really a good solution. In code, I should be able to load the file, no matter what it looks like, and just sort it all at once. Now, here is a reason to not do what I've just done. 
+
+I can't iterate over each line in the file and print it out but sort everything in advance. Logically, if I'm looking at each line one at a time and printing it out, it's too late to sort. I really need to read all of the lines first without printing them, sort them, then print them. So we have to take a step back in order to add now this new feature. So how can I do this? 

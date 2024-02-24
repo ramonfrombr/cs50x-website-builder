@@ -1,0 +1,77 @@
+ 
+
+Allow me, then, to propose, as we wrap up these loops, that we solve just a few final problems that will perhaps evoke fond memories of yesteryear, at least for me, wherein one of my favorite games growing up was this one here on the original Nintendo. And this is a two-dimensional world where the characters move up, down, and right, not so much to the left, in jumping over pyramids and obstructions like these. 
+
+And allow me to propose that we use this just for inspiration, not to do something that's quite as colorful or graphical as this, but just to focus on, for instance, this barrier in the middle of the world here that Mario or Luigi had to jump over. And so this here seems to be like three bricks stepped on top of one another. And we won't do things quite graphically, but let's just implement a very simple Python-based version of this textually using maybe just hashes for bricks. 
+
+Because there's a pattern here, one on top of the other, and I bet we can solve this in any number of ways. Well, let me switch back over to VS Code here and let me propose that we create a program called mario.py using code in the terminal window. And then up here, let me start by implementing that same picture as simply as I can, printing out just literally the hash, and then the hash, and then a third final hash. 
+
+This is going to be a very textual approximation of it, but I think if I run Python mario.py, I've got a very simple version of that same column of bricks, so to speak. But you can imagine that certainly in a game where maybe these columns get higher or lower, it would be nice to write code that's actually a little more dynamic than that and doesn't just use print, print, print, which is literally copy and paste, it would seem. 
+
+So let me at least adopt some of today's lessons learned and instead do something like this. For underscore in range of 3, let's now print out just one of these at a time. But the fact that I've now used a 3 to range means if I want to change it to something bigger or smaller, I change it in one place not in three or more places. And this code, too, of course, if I got it right, is just going to print out the exact same thing. So we're iterating here. 
+
+But let's see if we can't now integrate our discussion of writing functions of our own to begin writing something a little more dynamic and solving more complicated problems ultimately. One of the nice things about functions is that they allow us to not just write code that we can use and reuse, they allow us to create abstractions, if you will. An abstraction is a simplification of a potentially more complicated idea. 
+
+And we've seen this a few times over the course of the weeks. For instance, we had a function called hello, which, granted, didn't do all that much, it just printed hello. But it allowed me to think about the function as exactly what it does, not generically printing something, but literally saying hello. I've been able to get a number using something similar by defining my own function like get number. 
+
+Well let me go ahead and, for instance, assume for the moment that I've had the forethought to, in my function main, use a function called print column. That seems as good a name as any to use a function that prints a column of bricks. 
+
+Well, how can I go about now implementing this abstraction, this simple idea of print column with actual code? Well, we've seen before with def, we can do just that. Let me define a function called print column. Let me accept as its input, generically speaking, a parameter called height. I could call it n or h, but it would be a little more explicit now with height just so I remind myself what it's doing. 
+
+And now I think I can just borrow some of that same code from before. For underscore n range of height, go ahead and print out a single hash. And then at the end of this whole program, let's just call main. 
+
+So I've kind of complicated the code. It doesn't do anything more just yet, but it's setting me up for solving what I think are going to be more sophisticated problems. If I run Python of mario.py, we're back where we began. But I now have a function, an abstraction, print column, that's going to allow me to think about printing some chunk of the world of Mario at a time. 
+
+And I can do this in different ways, too. Notice that if I really want, I could do something like this. I could implement now print column in different ways, especially if I am using print column all over my code, or maybe still, a colleague of mine, a friend, someone else on the internet is using my print column function. 
+
+What's also nice about functions you've written is you can change the underlying implementation details of them, but so long as you don't change the name of the function or its parameters or what it returns, if anything no one else knows the difference. You can change the internal implementation as much as you want if you want to improve it or make fixes over time. 
+
+So for instance, another way we could implement print column, recall, would be something like this. A bit clever with one hash and then a new line, and then maybe we could do multiplication of strings, and then end this line with quote-unquote. Again, it's OK if you're not comfortable with this syntax. This was a more clever approach we saw in the past. But if I run Python of mario.py here, I'll still see a column of three. But what's important here is that main does not need to know that the underlying implementation of print column has changed. 
+
+Well, let's transition to a different dimension, if you will, and rather than print out just these vertical bricks, let's fast forward in the game to this part of the world here. At some part, Mario encounters these bricks in the sky, that if he jumps up underneath, they become coins. And so he gains to his score. 
+
+But let's go ahead and focus only on those coins, and let me propose that we print out, oh, just these four question marks here. And let me go back to VS Code here. And let me propose that within VS Code here, just like before, we try to abstract this away. So let me go ahead and get rid of this version, because we're now going horizontal instead of vertical with our output. And let me just say, well, print row four times. Let me just abstract away the problem at hand. I don't know yet how I'm going to print those four question marks, but let's call it print row 4, and I'll assume I'll now solve this problem. 
+
+Let's now go down that rabbit hole of solving the problem. Define a function called print row. It's going to take a width instead of a height, because it's horizontal instead of vertical. And how can I do this? Well now, we have an opportunity to do string multiplication even more elegantly. I can say quote-unquote, question mark, times width. 
+
+And this is a very pretty Pythonic way of printing what could otherwise be a loop, and that's fine, but this is going to go ahead and print those question marks for me. Let's do Python of mario.py, Enter, and now I've got four question marks. It's not nearly as pretty as the more graphical version, but it is at least a building block toward having now a reusable function like print row. 
+
+And why am I doing all this? Like why are we over engineering the solution to these problems by having print column and print row? Well, it's a useful problem-solving technique. As soon as your world does not look one-dimensional like this or with the column version, but what about this? Later in Super Mario Brothers does Mario have to jump down into this world where there's a lot of these underworld barriers. 
+
+And this one here, for instance, looks like a square. It's two-dimensional there's a height and a width to it. And that is to say there's a bunch of different ways we could implement this thing if, maybe for discussion, it's like a 3-by-3 grid, a 3-by-3 square of sorts. 
+
+Well, how can we go about solving this here problem? Well, let me propose we come back to VS Code and let me propose that we think about this in a couple of different ways. I could do this like this. If I know where I'm going, maybe I'm a seasoned programmer, let me go ahead and do this. Let me print out a square, the width, and the height of which is 3. That's an abstraction. I'm just taking for granted for a moment that there is already a function called print square that's going to be with 3 and height 3 as well. 
+
+But someone's got to implement this, and at the moment, there's only me at the keyboard, so let's go ahead and implement that square. Let me go ahead and define a function called print square that takes in a specific size, both for height and for width. And here's where we have an opportunity to use some of those loops. And we can use those loops in a way we haven't yet. 
+
+If I want to print out all of these rows, but also, all of these columns, I now have to think not just cyclically like a loop allows, but I need to think two-dimensionally. And if you're familiar with like an old school typewriter or even a printer nowadays, it generally prints from top to bottom. So even if you have multiple columns, you print out one line at a time, and while you're on that line, the printer or the typewriter prints from left to right. 
+
+And that's the mental model to have with your black and white terminal window. All of the output for every example thus far starts at the top and goes down to the bottom. From top to bottom, left to right. So we have to generate our output, our square in that same way. So let me propose that we do this. Let me propose that we know we need to iterate this many times, 3 or more generally size. 
+
+So let me do this. For i in the range of size, what do I need to do three times? Well, I want to print out what? 1, 2, 3 rows of bricks. But within each row of bricks, what do I want to print? 1, 2, 3 bricks specifically. So if we go back to our diagram here and I stipulate that it's indeed meant to be a 3-by-3 square, 3 wide and 3 tall, what did I want to do to print the first row? I want to print brick brick, brick. What do I want to print on the second row? brick, brick, brick. And the third row, brick, brick, brick. 
+
+So I'm doing three things three times. There's a lot of printing that must happen. So let me go back to my code here and let me propose now that we think of this outer loop that I've just started as representing each of our rows. For i in range of size is going to ensure, no matter what I do next, that I can print out 1, 2, 3 rows, or more generally, size, where size could be 3, but it could be smaller or larger. 
+
+What do I want to do on each of the rows? Well, just like an old school typewriter or printer, on each row, I want to print out brick, brick, brick; brick, brick, brick; brick, brick, brick. Well, that sounds like a cycle, some kind of loop. So maybe I can have inside of one loop another loop. I don't want to use i again because I don't want to use the same variable and mess up my counting. So I'm going to by convention use j. Very common to use i and then j-- maybe k, but after that, you shouldn't keep nesting inside of each other. 
+
+Let me go ahead and say for j in range of size 2, because it's a square, and then each of these rows, let me print out a single hash, but no new line, but after each row, let me print only a new line. So there's a lot going on here, especially if you've never touched Python, let alone loops, but notice what I've done here, too, and I'll add some comments for clarity. For each row in square, for each brick in row, print brick. 
+
+And here is where comments, and more generally, pseudocode can really help explain to yourself and to others what your lines of code are doing. On line 8, I'm iterating from i equals 0 on up to size. So 0, 1, 2. On line 11, I'm doing the exact same thing, but using j from 0, 1, 2. But that's good, because i represents how each of my rows. And while I'm on each of those rows, inside of this outer loop, I'm going to do brick, brick, brick; 1, 2, 3; 1, 2, 3; 1, 2, 3. But I don't want my cursor to keep moving to the next line while I'm on a row, so I'm just overriding that line ending. 
+
+But let me ask you a question of the group now, why on line 16 do I have a print here all by itself? Why do I have a print all by itself? Notice that it's below the inner loop, but inside of the outer loop, so to speak. What is that loop on line 16 doing ultimately? 
+
+AUDIENCE: Every time you finish a line, you have to add a new line at the end of it. So print, it prints a new line. 
+
+DAVID MALAN: Perfect. I don't want a new line after every brick. I only want to do that at the end of the row, and that's why my comments now are perhaps enlightening. Notice that this loop here is just iterating for each brick in the row. Once I'm done with that inner loop, so to speak, once I'm done with these highlighted lines here, to Evelyn's point, I need to print out one blank new line. 
+
+And we've not done this before, but when you call print with no arguments, all you get is that automatic line ending, the backslash n where the cursor moves to the next line. So if I now go back to my terminal window and run mario.py, I think I should get a 3-by-3 square. And it doesn't quite look like a square on my screen because these hashes are a little taller than they are wide, but it is, in fact, 3-by-3. 
+
+But let me propose, as we've always done here, how we might tighten up this code further. Just for clarity's sake, let me get rid of my comments for a moment just so we can see how many lines of code we have total. And let me propose that we maybe do this. Let me propose that, you know what, this inner loop, especially if you're having trouble wrapping your mind around one loop inside of another loop, you don't strictly need it. What if we do this trick again? 
+
+What if we print out inside of the outer and only loop each of those hashes times the number of times we want them? We draw inspiration from an earlier approach and we run Python now of mario.py, same result, but now, print square is really nice and compact. It has one explicit loop, and it's still printing out using string multiplication all of the hashes at once on that row. 
+
+If you like abstraction and you'd like to wrap your mind more around what the code is doing, well, let's do this. If you're not quite clear on what's going on, let's propose that you implement a function called print row, passing in size. And let me propose that this print row function, it simply take in that width and print out the individual hash times that many times. 
+
+In other words, here's an opportunity for abstraction, whereby, well, what does it mean to print a row? Well, when you're implementing print square, I don't really care what it means to print a row, I just need to know that someone's taking care of printing the row. You can pass the buck to another function altogether. 
+
+And how does print row work? Well, it could use a for loop, it could use this string multiplication trick. This is a way to take a larger program-- and this is probably the most complicated one we've looked at thus far-- and to decompose it into these smaller components, that once assembled, achieve your final idea. 

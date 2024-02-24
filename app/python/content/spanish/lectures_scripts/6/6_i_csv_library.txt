@@ -1,0 +1,23 @@
+Entonces, ahora cambiemos students.csv para que no contenga las casas de los estudiantes en Hogwarts, sino las casas donde crecieron. Así, por ejemplo, Draco creció en la Mansión Malfoy. Ron creció en La Madriguera. Harry creció en el número cuatro de Privet Drive. Y según internet, nadie sabe dónde creció Hermione.
+
+Al parecer, las películas tomaron ciertas libertades con respecto a dónde creció ella. Por lo tanto, para este propósito, vamos a eliminar a Hermione porque no se sabe exactamente dónde nació. Así que todavía tenemos tres estudiantes. Pero si alguien puede detectar ahora el posible problema, ¿cómo podría ser esto algo malo? Bueno, vamos a probar nuestro propio código aquí.
+
+Voy a volver a students.py aquí. Y propongo que cambie mi semántica porque ahora no estoy pensando en las casas de Hogwarts, sino en los hogares de los estudiantes. Así que voy a cambiar algunas variables.
+
+Voy a cambiar esta casa por un hogar, esta casa por un hogar, así como esta también. Todavía voy a ordenar a los estudiantes por nombre, pero voy a decir que no están en una casa, sino que son de un hogar. Así que simplemente he cambiado los nombres de mis variables y mi gramática en inglés aquí, en última instancia, para imprimir que, por ejemplo, Harry es del número cuatro de Privet Drive, y así sucesivamente.
+
+Pero veamos qué sucede aquí cuando ejecuto esta versión de students.py en Python, después de haber cambiado students.csv para contener esos hogares y no casas. Enter. Vaya, el primer error de valor, como si el programa simplemente no funcionara. ¿Qué podría explicar este error de valor? La explicación de forma bastante críptica es "demasiados valores para desempacar". Y la línea en cuestión es esta que involucra split. ¿Cómo es que, de repente, después de todas estas ejecuciones exitosas del programa, la línea 5 ahora se rompió?
+
+AUDIENCIA: En la línea de students.csv, tienes tres valores. Hay una línea en la que tienes tres valores y en students.
+
+DAVID MALAN: Sí, pasé mucho tiempo tratando de averiguar de dónde debía ser cada estudiante para poder crear este problema para nosotros. Y maravillosamente, la primera frase del libro es "Número cuatro, Privet Drive". Y el hecho de que la dirección tenga una coma resulta problemático. ¿Por qué? Porque tú y yo decidimos hace algún tiempo estandarizar en comas - CSV, Valores Separados por Comas - para denotar, estandarizamos en comas para denotar un valor de otro.
+
+Y si tenemos comas gramaticalmente en el hogar del estudiante, claramente estamos confundiéndolo como este símbolo especial. Y la función split ahora está, solo para Harry, tratando de dividirlo en tres valores, no solo en dos. Y es por eso que hay demasiados valores para desempacar, porque solo estamos tratando de asignar dos variables, nombre y casa.
+
+Ahora, ¿qué podríamos hacer aquí? Bueno, podríamos simplemente cambiar nuestro enfoque, por ejemplo. Un paradigma que no es infrecuente es usar algo un poco menos común, como una barra vertical. Así que podría entrar y cambiar todas mis comas por barras verticales. Eso, también, podría eventualmente causarnos problemas, porque si mi archivo finalmente tiene barras verticales en algún lugar, aún podría romperse. Así que tal vez esa no sea la mejor opción.
+
+Podría hacer algo como esto. Podría escapar los datos, como he hecho en el pasado. Y tal vez podría poner comillas alrededor de cualquier cadena en inglés que contenga una coma. Y eso está bien. Podría hacer eso, pero luego mi código, students.py, también tendrá que cambiar porque ya no puedo simplemente dividir ingenuamente por una coma.
+
+Tendré que ser más inteligente al respecto. Tendré que tener en cuenta solo las comas que no estén dentro de comillas. Y, oh, se está complicando rápidamente.
+
+Y en este punto, necesitas dar un paso atrás y considerar, sabes qué, si tenemos este problema, lo más probable es que muchas otras personas antes que nosotros hayan tenido este mismo problema. Es increíblemente común almacenar datos en archivos. Es increíblemente común usar archivos CSV específicamente. Entonces, sabes qué. ¿Por qué no ver si hay una biblioteca en Python que exista para leer y/o escribir archivos CSV? En lugar de reinventar la rueda, por así decirlo, veamos si podemos escribir un código mejor aprovechando el trabajo de otros que nos han precedido, los programadores pasados, y realmente usar su código para hacer la lectura y escritura de CSVs, para que podamos centrarnos en la parte de nuestro problema que a ti y a mí nos importa.

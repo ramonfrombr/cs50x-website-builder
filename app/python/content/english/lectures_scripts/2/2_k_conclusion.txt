@@ -1,0 +1,3 @@
+Seeing no questions, that's the end of our look at loops in Python, this ability to do things cyclically again and again, and when we combine those with conditionals, this ability to ask and answer questions and combine them with our functions and variables, we really now have most of the building blocks we need to solve much larger, much more interesting, much more personal questions. 
+
+So in the weeks to come, we'll start to see exactly what could go wrong, though, when we do so, but we'll introduce you to all the more tools via which you can troubleshoot those same problems. 

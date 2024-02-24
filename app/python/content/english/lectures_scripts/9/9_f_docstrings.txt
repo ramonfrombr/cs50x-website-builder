@@ -1,0 +1,44 @@
+
+All right. Let me propose that we transition to another feature of Python that's worth knowing, especially since it's one that you'll see in the wild when you see code or libraries that other folks have written, namely something known as a doc string or document strings. It turns out in the world of Python there is a standardized way per another pep, Python Enhancement Proposal, this one 257, that essentially standardizes how you should document your functions among other aspects of your code. 
+
+And so, for instance, let me go back to my meows.py file here. And let me propose that we now start documenting this code too so that I know what the meow function does. And in fact, the standard way of doing this using doc string notation would be as follows. To comment this function, not above it, as you might be in the habit of doing with code in general, but actually inside of it. 
+
+But instead of commenting it like this with the usual hash comment sign, like meow n times, it turns out that when you're formally docking-- when you're formally documenting a function like meow in this case, you don't use regular inline comments, so to speak. You use this syntax instead. 
+
+You use triple quotation marks, either double or single. Then you write out your comment, meow n times. And then you write the same again at the end. So either three double quotes at the start and the end or three single quotes at the start and the end. 
+
+And Python has built into it certain tools and certain assumptions that if it detects that there is a comment using this doc string format triple quotes on the left and the right, it will assume that that's indeed the documentation for that function. And it turns out in the Python ecosystem, there's a lot of tools that you can then use to analyze your code automatically, extract all of these document strings for you, and even generate web pages or PDFs of documentation for your own function. 
+
+So there's these conventions via which if you adhere to them you can start documenting your code as for other people by generating automatically the documentation from your own code without writing something up from scratch manually. 
+
+Now, it turns out if your function does take arguments and perhaps does a bit more, there are multiple conventions for how you can document for the human programmers that might be using your function, whether it's you, or a colleague, or someone else on the internet, to actually use these docs strings to standardize the information therein. So you might see this instead. 
+
+Using these same triple quotes above and below now, you might see your one-sentence explanation of the function, meows-- meow n times. Sometimes depending on the style and use, it might actually still be on the first line but with a blank line below it. But I'll keep everything uniformly indented. 
+
+And this is a convention used by some popular Python documentation tools as well. You would say syntax like this-- param n colon, and then a description of what n is, number of times to meow. Then colon type n colon int, which just indicates that the type of n is an integer. Then, if this function could actually raise an exception, you can document that too. 
+
+And actually, it's not really-- well, it's arguably my mistake here. If n comes in as an argument and is not, in fact, an int, maybe it's a float, or a string, or something else, the multiplication sign here is not going to work. It's not going to multiply the string. It's going to trigger what I know from experience to be a type error. 
+
+So I'm going to go ahead and proactively say in my own documentation that this function, technically, if you use it wrong could raise a type error, even though I'm hinting up here with this annotation that you should pass in an int. Again, Python doesn't enforce that. So if you pass in a float, this might, in fact, raise this function a type error. And so, that might happen if n is not an int. 
+
+And then, lastly, I might say for clarity's sake for other programmers, this function returns a string of n meows, one per line. And the return type of that value, r type, is going to be str. 
+
+Now, all of this syntax here as I've used it is not Python per se. This is a convention known as restructured text, which is a form of markdown-like language that's used for documentation, for websites, for blogs, and even more. But it's one of the popular conventions within the world of Python to document your own functions. 
+
+So this does not have anything to do fundamentally with type hints. Type hints are a feature of Python. What I'm doing here is just adhering to a third party convention of putting in between a Python doc string from the start to the end a certain standard format so that these third party tools can analyze my code for me top to bottom, left to right, and ideally generate documentation for me. 
+
+It can generate a PDF, a web page, or something else, so that I or my colleagues don't need to not just only write code but also manually create documentation for our code. We can keep everything together and use tools to generate the same for us. Any questions now on these doc strings, which again are a convention of documenting your own code often following some standard syntax? 
+
+STUDENT: Yeah. So when you say you would document it and put it in a PDF, is the purpose of doing this to publish it and share your function so other users can use it? 
+
+DAVID J. MALAN: Absolutely. In the past, when we have installed some third party libraries, for instance, cowsay a few weeks back. Recall that I showed you what functions it had. But if you read the documentation, you might actually see that it was documented for us by the author of that program. 
+
+Now, I don't believe they were using this particular syntax. But it was definitely useful for you and me to be able to read some web page or PDF telling us how to use the library rather than wasting time reading through someone else's code and trying to infer what functions exist and how to use them. It just tends to be much more developer-friendly to have proper documentation for our own code or libraries as well. Other questions? 
+
+STUDENT: Yeah. When with doc strings, when it's used to generate a PDF or whatever, does it include any of the code? So if you're referencing in your comment, if you're referencing the code in the comment itself and might not make sense without seeing the code. Does it-- do these include it? 
+
+DAVID J. MALAN: Short answer, you can do that. Not in the convention I'm using here. But there's actually a clever way to write in your doc strings sample inputs to your functions and sample outputs for your functions. 
+
+And if you use a different tool that we've not discussed, that tool will run your code using those sample inputs. It will check that your outputs match your sample outputs. And if not, the program will yell at you saying, you've got a bug somewhere. So this is just another way where you can use doc strings to not only document but even catch errors in your code. 
+
+This has been a lot. And there's a bit more to go. Why don't we go ahead here and take a five-minute break. And when we resume, we'll take a look at yet another feature of Python, yet another library to write code faster. 

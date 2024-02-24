@@ -1,0 +1,133 @@
+
+
+
+
+It turns out that Python is a dynamically typed language. That is to say, it's not strongly typed. Whereby when you want an int, you have to tell the program that you are using an int. You don't have to tell the program that you are using a str, or a float, or a set, or anything else. 
+
+Generally speaking, to date, you and I, when we're creating variables, we just give a variable a name. We frequently assign it using in the equal sign some other value. And honestly, Python just kind of dynamically figures out what type of variable it is. If it's, quote unquote Hello, world, the variable is going to be a str. If it's 50, the integer the variable is going to be an int. 
+
+Now, in other languages, including C, and C++, and Java, and others, it's sometimes necessary for the programmer to specify what types of variables you want something to be. The upside of that is that it helps you detect bugs more readily. 
+
+Because if you intend for a variable to store a string or an integer, but you accidentally store an integer or a string, the opposite, or something else altogether, your language can detect that kind of mistake for you. When you go, for instance, to run the program, it can say, no, you've made a mistake. And you can fix that before your actual users detect as much. 
+
+In Python too here, it's again, more of a friendly environment where you can provide hints to Python itself as to what type a variable should be. But the language itself does not strongly enforce these. Rather, you can use a tool that will tell you whether or not you're using a variable correctly. 
+
+But it's typically a tool you would run as the programmer before you actually release your code to the world. Or if you have some kind of automated process, you can run this kind of tool just like you could reformat or link to your code with some other program before you actually release it to the world. 
+
+So how might we go about using these so-called type hints? Well, they're documented in the usual place in Python's own documentation. And it turns out there's a program that's pretty popular for checking whether or not your code is adhering to your own type hints. 
+
+And that program here is called mypy. And it's just one of several. But this one is particularly popular and can be easily installed in the usual way with pip install mypy. And its own documentation is at this URL here. But we'll use it quite simply to check whether or not our variables are indeed using the right types. 
+
+So how can we go about doing this? All right, let me go back here to VS Code, clear my terminal window, and in fact erase meows.py as it currently was. And let's implement a different version of meows that quite simply has a function called meow that does the actual meowing on the screen. 
+
+And then, I'm just going to go ahead and call that function down toward the bottom. I'm not going to bother with a main function just for simplicity so that we can focus as always only on what's new. 
+
+So here we are defining a function called meow. It's going to take a number of times to meow, for instance n for number. And inside of this function, I'm going to do my usual for underscore in the range of n go ahead and print, quote unquote, meow. 
+
+So based on our earlier code, I think this is correct. I've not bothered defining the variable as i. I'm instead using the underscore because I'm not using it anywhere. But I think I now have a working function whose purpose in life is to meow zero, or one, or two, or three, or more times. 
+
+Well, let's use this function, again, not bothering with main. I'm just going to keep my function at the very top because there's only one. And I'm going to write my code here on line six. So I'm going to give myself-- I'm going to ask the user for a number. And I'm going to go ahead and prompt them in the usual way for that number of times to meow. And now, I'm going to go ahead and call meow on that number. 
+
+Now, some of you might see what I've already done wrong. But perhaps I myself don't. So let me go into my terminal window and run Python of meows.py, the goal being to prompt me. This seems to be working. I'm going to type in three. And I would expect now the meow function to print out meow three times. Enter. 
+
+But no. There's some kind of type error here. str object cannot be interpreted as an integer. Why might that be? Why might that be? 
+
+STUDENT: Because the input function returns a string instead of an integer. 
+
+DAVID J. MALAN: Exactly. The input function returns a string or a str, not an int. So in the past, of course, our solution to this problem has just been to convert the string to an int by using the int function. But now, let me start programming more defensively so that honestly, I don't even find myself in this situation at all. 
+
+Let me go ahead and do this. Let me add what's called a type hint to my function that explicitly specifies for meow what type of variable should be passed in. 
+
+I'm going to go ahead now and change the very first line of my code and my function to specify that n colon should be an int and this is a type hint, the fact that I've added a colon, a space, and the word int is not creating another int or anything like that. It's just a hint, an annotation, so to speak to Python, that this variable on the left called n should be an int. 
+
+Now, unfortunately, Python itself doesn't care. Because again, these type hints are not enforced by the language. And that's by design. The language itself and the community prefers that Python be dynamically typed, not so strongly typed as to require these things to be true. But if I run meows.py, type in three again, the same error is there. 
+
+But let me go about trying this mypy program, an example of a program that understands type hints. And if I run it proactively myself can find bugs like this in my code before I, or worse, a user, actually runs and encounters something cryptic like this type error here. 
+
+Let me clear my terminal window and this time run mypy space meows.py. So I'm going to run mypy on my program, but I'm not running Python itself. When I hit Enter, we'll see this. All right. We see now that mypy found apparently an error on line seven. Error, argument one to meow has incompatible type str expected int. So it's still an error message. 
+
+But mypy is not a program that my users would use. This is a program that you and I as programmers would use. And because we have run this code now before we, for instance, released this program to the world, I can now see even before the code is called or run, oh, I seem to be using my argument to meow wrong. I had better fix this somehow. 
+
+Well, I can actually go about in hints adding type hints even to my own variables here so as to catch this another way too. If I know on line six that I'm creating already a variable called number, and I know already that I'm assigning equal to the return value of input, I could give mypy and tools like it another hint and say, you know what? This variable called number should also be an int. 
+
+That is to say, if I now start getting into the habit of annotating all of my variables and arguments to functions, maybe mypy can actually help me find things quite quickly as well before I get to the point of running Python itself. 
+
+Let's go ahead and try this again. Mypy of meows.py and hit Enter. And this time, notice that mypy actually found the mistake a little more quickly. Notice this time it found on line six that, error, incompatible types and assignment expression has type str, variable has type int. 
+
+So before I even got to the point of calling meow, line six, via this type hint, when used and analyzed by mypy has helped me find, oh, wait a minute. I shouldn't be assigning the return value of input to my variable called number in the first place. Why? Mypy has just pointed out to me that one returns a str. I'm expecting an int. Let me fix this now instead. 
+
+So let me clear my terminal window. And now, let me do what most of you were probably thinking I should have done in the first place after all of these weeks. But now, let me go ahead and convert the return value of input to an integer. For today's purposes, I'm not going to try to catch any exceptions or the like. We're just going to assume that the user types this in properly. 
+
+And now, let me go ahead and run mypy of meows.py, having not only added to type hints to my argument, to my function, to my variable down here on line six. And I've also now fixed the problem itself. Let me go ahead and run mypy. And success, no issues found in one source file. 
+
+Now, it's more reasonable for me to go and run something like Python of meows and just trust that when I type in three, at least I'm not going to get a type error. That is, I didn't mess up as a programmer with respect to the types of my variables. 
+
+Why? Because when I wrote the code in the first place, I provided these annotations, these hints that inform tools like mypy that my intention had better line up with what the actual code does. Let me pause here and see if there's now any questions on type hints or mypy. 
+
+STUDENT: Is it common or how common is it for those to be used? Or is it just that it's more used in more complex code where it's more difficult to ensure that you're actually using the correct type in the way that you're using the variables? 
+
+DAVID J. MALAN: It's a good question. And it's rather a matter of opinion. Python was designed to be a little more versatile and flexible when it comes to some of these details, partly for writeability, to make it easier and faster to write code, partly for performance so that the program like Python doesn't have to bother checking these kinds of details, we can just get right into the code. 
+
+The reality, though, is that strong type checks do tend to be a good thing for the correctness of your code. Why? Because programs like mypy can find, before your code is even run, if there's already known to be an error. And it tends to be good for defensive programming. 
+
+So the situation essentially is that within the Python ecosystem, you can annotate your types in this way. You can use tools to use those type hints. But to date, Python itself does not enforce or expect to enforce these conventions. 
+
+In larger code bases, in professional code bases, commercial code bases, probably depending on the project manager or depending on the engineering team they may very well want themselves to be using type hints. Why? If it just decreases the probability of bugs. 
+
+In fact, let me propose now that I-- imagine a situation where instead of expecting that meow prints meow, meow, meow some number of times, suppose that I accidentally assume that the meow function just returns meow some number of times. 
+
+We saw, for instance when focusing on unit tests that it tends to be a good thing to have functions that return values, be it an int or a string, rather than just having some side effect like printing things out themselves. 
+
+So perhaps I'm still in that mindset. And I've just assumed mistakenly for the moment that meow returns a value, like meow, or meow meow, or meow meow meow, a big string of some number of meows, rather than just printing it itself, as it clearly does at the moment on line three. 
+
+And therefore, suppose that I accidentally did something like this. Rather than just getting the number and passing it to meow, suppose I did this. Suppose I declared a number of-- a new variable called meows, the type of which I think should be str. 
+
+And suppose, again, I assume accidentally that meow returns to me a string of those meows so that I myself can then print them later. This would be a little more conducive, arguably, to testing my meow function. Why? Because I could expect that it's returning meow, or meow meow, or meow meow meow, separated by new lines, returning a str that I could then assert equals what I expect it to be in something like a unit test. I'm not going to bother writing any unit tests now. 
+
+But let's just suppose that's the mindset I'm now in. And so, on line seven I'm assuming that I want to assign the return value of meow to a new variable called meows which I've annotated with this type hint as being a str, just so we can see another variable. This one is not an int but a str instead. 
+
+Well, let me go ahead and run this code now, Python of meows.py, Enter, typing in three. And you'll see a curious bug. Meow meow meow none. Well, why is that? Well, it turns out at the moment, my meow function only has a side effect. It just prints out meow some number of times. It doesn't explicitly return a value as it would if there were literally the return keyword there. 
+
+By default then, when a function in Python does not explicitly return a value, its implicit return value is in effect none. And so, what we're seeing here is this-- on line eight, because I'm assigning the return value of meow, which is none, to my meows variable, line three is what's still printing meow meow meow. 
+
+And line eight is what's now incorrectly printing none. Because I accidentally thought that meow returns a value, but it doesn't. So its return value is effectively none. So I'm printing very weirdly the word none at the bottom. 
+
+So how could I go about catching this kind of mistake too? I might make this mistake. But maybe with less frequency if I'm in the habit of annotating my code with this new feature called type hints. 
+
+What you can do here is this. Let me clear my terminal window to get rid of that artifact. And up here, let me additionally specify with some funny looking syntax that my meow function actually by design returns none. So you literally use this arrow notation. 
+
+In Python when hinting what the return value of a function is, you would do this. After the parentheses, a space, a hyphen, a greater than symbol, like an arrow, and then another space, and then the type of the return value. For now, it's indeed going to-- [SWALLOWS] excuse me, return none. But now, at least I can catch it like this. 
+
+If I now run not Python but mypy on my code, which would be a habit I'm now getting into if using type hints. Check that I'm using all of my types correctly before I even run my program. We'll see that now mypy has found online seven that meow, quote unquote, does not return a value. 
+
+And mypy knows that because I have proactively annotated my meow function as having none as its return value. So now, mypy can detect that. I should now realize, oh, wait a minute. I'm being foolish here. Meow clearly does not return a value. I should not be treating it like it does on line seven. Let me go about actually fixing this now. 
+
+So how do I go about fixing this? Well, let's practice what we preached in our focus on unit tests, having a function like meow not have side effects like printing itself. But let's have it return the actual string. And I can actually do this kind of cleanly. Let me clear my error message in my terminal window here. Let me get rid of the loop here. 
+
+Let me say this time that OK, fine, meow is going to return a value, an actual str or string. So I've changed none to str. And now, I can implement this in any number of ways, maybe even using a loop. But recall that we have this syntax in Python, which will, I think, solve this problem for us. If I want to return a string of n meows, what I can actually do, recall, is this. Return quote unquote meow, backslash n, times that number n. 
+
+So it's kind of a clever one-liner, avoids the need for a for loop or something more involved than that, to just say, multiply meow backslash n against itself three times, or n times, in this case, in general, so that I get back a big string of zero meows, one, two, three, or many more meows instead. 
+
+I think now my code on line six is actually correct. Now I've changed meow to behave the way I was pretending to assume it always worked. So I'm storing in meows plural a variable that's of type str. Because now, meow does have a return value of type str itself per this type hint as well. 
+
+All right. Let me go ahead now and print meows. But because each of my meows comes with a trailing new line, the backslash n, I'm going to proactively fix what would be a minor aesthetic bug. And I'm just going to avoid outputting an extra new line at the end of those three. 
+
+So if I run Python of meows.py now, type in three, there's my meow meow meow. And now, no mention of none. Questions now on type hints, and these annotations in mypy, and using them to defensively write code that just decreases hopefully the probability of your own bugs? 
+
+STUDENT: Is the return three set have double quotes that have meow slash n, why the program don't take it as a [? string? ?] 
+
+DAVID J. MALAN: Why does the program not take it as a-- as strange? 
+
+STUDENT: [INAUDIBLE], yeah. 
+
+DAVID J. MALAN: So recall that early on in the class we looked at plus as a concatenation operator that allows you to join a string on the left and the right. Multiplication is also an overloaded operator for strings. Whereby if you have a string on the left and an int on the right, it will multiply the string, so to speak, by concatenating or joining that many meows all together. 
+
+So this is a feature of object-oriented programming and an operator overloading as we saw it in the past. Other questions on type hints or mypy. 
+
+STUDENT: Can we not typecast this data type of this variable number? 
+
+DAVID J. MALAN: No. You still-- and let me correct the terminology. It wouldn't be called typecasting in this context because it's not like C or C++ where there's an equivalence between these types. You're technically converting on line five a str to an int. You do still have to do this. 
+
+Because mypy, for instance, would yell at you if you were trying to assign a str on the right to an int on the left. You must still use the int function. Int itself is still a function. It's not a type hint. But the word int is being used in another way now in these type hints. 
+
+So this int is still a function call as it always has been. This syntax on the left is another use of the keyword int but in the form of these type hints. So you still have to do the conversion yourself. 

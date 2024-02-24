@@ -1,0 +1,125 @@
+Well, how can I go about doing this? Well, it turns out that in the world of regular expressions, whether in Python or a lot of other languages as well, there are certain symbols that you can use to define patterns. At the moment, I've just used literal raw text. 
+
+If I go back to my code here, this technically qualifies as a regular expression. I've passed in a quoted string inside of which is an @ sign. Now, that's not a very interesting pattern. It's just an @ sign. But it turns out that once you have access to regular expressions or a library that offers that feature, you can more powerfully express yourself as follows. 
+
+Let me reveal that the pattern that you pass to re.search can take a whole bunch of special symbols. And here's just some of them. In the examples we're about to see, in the patterns we're about to define, here are the special symbols. You can use a single period, a dot, to just represent any character except a newline, a blank line. 
+
+So that is to say, if I don't really care what letters of the alphabet are in the user's username, I just want there to be one or more characters in the user's name, dot allows me to express A through z, uppercase and lowercase, and a bunch of other letters as well. 
+
+* is going to mean-- a single asterisk-- zero or more repetitions. So if I say something *, that means that I'm willing to accept either zero repetitions, that is, nothing at all, or more repetitions-- 1, or 2, or 3, or 300. 
+
+If you see a plus in my pattern, so that's going to mean one or more repetitions. That is to say, there's got to be at least one character there, one symbol, and then there's optionally more after that. And then you can say zero or one repetition. You can use a single question mark after a symbol, and that will say, I want zero of this character or one, but that's all I'll expect. 
+
+And then lastly, there's going to be a way to specify a specific number of symbols. If you use these curly braces and a number, represented here symbolically as m, you can specify that you want m repetitions, be it 1, or 2, or 3, or 300. You can specify the number of repetitions yourself. And if you want a range of repetitions, like you want this few characters or this many characters, you can use curly braces and two numbers inside, called here m and n, which would be a range of m through n repetitions. 
+
+Now, what does all of this mean? Well, let me go back to VS Code here, and let me propose that we iterate on this solution further. It's not sufficient to just check for the @ sign. We know that already. We minimally want something to the left and to the right. 
+
+So how can I represent that? I don't really care what the user's username is, or what letters of the alphabet are in it, be it malan or anyone else's. So what I'm going to do to the left of this equal sign is I'm going to use a single period-- the dot that, again, indicates any character except for a newline. 
+
+But I don't just want a single character. Otherwise, the person's username could only a at such and such, or b at such and such. I want it to be multiple such characters. So I'm going to initially use a *. So dot * means give me something to the left, and I'm going to do another one, dot * something to the right. 
+
+Now, this isn't perfect, but it's at least a step forward. Because now what I'm going to go ahead and do is this. I'm going to rerun python of validate.py. And I'm going to keep testing my own email address just to make sure I haven't made things worse. And that's now OK. 
+
+I'm now going to go ahead and type in some other input, like how about just malan@ with no domain name whatsoever. And you would think this is going to be invalid. But, but, but it's still considered valid. But why is that? 
+
+If I go back to this chart, why is malan@ with no domain now considered valid? What's my mistake here by having used .*@.* as my regular expression or regex? 
+
+AUDIENCE: Because you're using the * instead of the plus sign. 
+
+DAVID MALAN: Exactly. The *, again, means zero or more repetitions. So re.search is perfectly happy to accept nothing after the @ sign, because that would be zero repetitions. So I think I minimally need to evolve this and go back to my code here. 
+
+And let me go ahead and change this from dot * to dot +. And let me change the ending from dot * to dot + so that now when I run my code here-- let me go ahead and run python of validate.py. I'm going to test my email address as always. Still working. 
+
+Now let me go ahead and type in that same thing from before that was accidentally considered valid. Now I hit Enter, finally it's invalid. So now we're making some progress on being a little more precise as to what it is we're doing. 
+
+Now, I'll note here, like with almost everything in programming, Python included, there's often multiple ways to solve the same problem. And does anyone see a way in my code here that I can make a slight tweak if I forgot that the plus operator exists and go back to using a *? If I allowed you only to use dots and only stars, could you recreate the notion of plus? 
+
+AUDIENCE: Yes. Use another dot, dot dot *. 
+
+DAVID MALAN: Yeah. Because if a dot means any character, we'll just use a dot. And then when you want to say "or more," use another dot and then the *. So equivalent to dot + would have been dot dot *, because the first dot means any character, and the second pair of characters, dot *, means zero or more other characters. 
+
+And to be clear, it doesn't have to be the same character. Just by doing dot or dot * does not mean your whole username needs to be a, or aa, or aaa, or aaaa. It can vary with each symbol. It just means zero or more of any character back to back. 
+
+So I could do this on both the left and the right. Which one is better? You know, it depends. I think an argument could be made that this is even more clear, because it's obvious now that there's a dot, which means any character, and then there's the dot *. 
+
+But if you're in the habit of doing this frequently, one of the reasons things like the plus exist is just to consolidate your code into something a little more succinct. And if you're familiar with seeing the plus now, maybe this is more readable to you. So again, just like with Python more generally, you're going to often see different ways to express the same patterns, and reasonable people might agree or disagree as to which way is better than another. 
+
+Well, let me propose to you that we can think about both of these models a little more graphically. If this looks a little cryptic to you, let me go ahead and rewind to the previous incarnation of this regular expression, which was just a single dot *. 
+
+This regular expression, .*@.* means what again? It means zero or more characters followed by a literal @ sign followed by zero or more other characters. Now when you pass this pattern in as an argument to re.search, it's going to read it from left to right and then use it to try to match against the input, email, in this case, that the user typed in. 
+
+Now, how is the computer, how is re.search going to keep track of whether or not the user's email matches this pattern? Well, it turns out that it's going to be using a machine of sorts implemented in software known as a finite state machine, or more formally, a nondeterministic finite automaton. 
+
+And the way it works, if we depict this graphically, is as follows. The re.search function starts over here in a so-called start state. That's the sort of condition in which it begins. And then it's going to read the user's email address from left to right. And it's going to decide whether or not to stay in this first state or transition to the next state. 
+
+So for instance, in this first state, as the user is reading my email address, malan@harvard.edu, it's going to follow this curved edge up and around to itself, a reflexive edge. And it's labeled dot, because dot, again, just means any character. So as the function is reading my email address, malan@harvard.edu, from left to right, it's going to follow these transitions as follows, M-A-L-A-N. 
+
+And then it's hopefully going to follow this transition to the second state, because there's a literal @ sign both in this machine as well as in my email address. Then it's going to try to read the rest of my address, H-A-R-V-A-R-D dot E-D-U, and that's it. 
+
+And then the computer is going to check. Did it end up in an accept state, a final state, that's actually depicted here pictorially a little differently with double circles, one inside of the other? And that just means that if the computer finds itself in that second accept state after having read all of the user's input, it is, indeed, a valid email address. If by some chance, the machine somehow ended up stuck in that first state, which does not have double circles and is therefore not an accept state, the computer would conclude this is an invalid email address instead. 
+
+By contrast, if we go back to my other your version of the code where I instead had dot plus on both the left and the right, recall that re.search is going to use one of these state machines in order to decide from left to right whether or not to accept the user's input, like malan@harvard.edu. Can we get from the start state, so to speak, to an accept state to decide, yep, this was, in fact, meeting the pattern? 
+
+Well, let's propose that this nondeterministic finite automaton looked like this instead. We're going to start as before in the leftmost start state, and we're going to necessarily consume one character per this first edge, which is labeled with a dot to indicate that we can consume any one character, like the m in malan@harvard.edu. Then we can spend some time consuming more characters before the @ sign, so the A-L-A-N. 
+
+Then we can consume the @ sign. Then we can consume at least one more character, because recall that the regex has dot plus this time. And then we can consume even more characters if we want. So if we first consume the H in harvard.edu, then leaves the A-R-V-A-R-D, and then dot E-D-U. 
+
+And now here, too, we're at the end of the story, but we're in an accept state, because that circle at the end has two circles total, which means that if the computer, if this function, finds itself in that accept state after reading the entirety of the user's input, it is, too, in fact, a valid email address. If by contrast, we had gotten stuck in one of those other states, unable to follow a transition, one of those edges, and therefore unable to make progress in the user's input from left to right, then we would have to conclude that email address is, in fact, invalid. 
+
+Well, how can we go upon approving this code further? Let me propose now that we check not only for a username and also something after the username, like a domain name, but minimally require that the string ends with .edu as well. Well, I think I could do this fairly straightforward. Not only do I want there to be something after the @ sign, like the domain like Harvard, I want the whole thing to end with .edu. 
+
+But there's a little bit of danger here. What have I done wrong by implementing my regular expression now in this way, by using .+@.+.edu? What could go wrong with this version? 
+
+AUDIENCE: The dot is-- the dot means something else in this context, where it means three or more repetitions of a character, which is why it will interpret it [INAUDIBLE]. 
+
+DAVID MALAN: Exactly. Even though I mean for it to mean literally .edu, a period, and then .edu, unfortunately in the world of regular expressions, dot means any character, which means that this string could technically end in aedu, or bedu, or cedu, and so forth, but that's not, in fact, that I want. 
+
+So any instincts now as to how I could fix this problem? And let me demonstrate the problem more clearly. Let me go ahead and run this code here. Let me go ahead and type in malan@harvard.edu. And as always, this does, in fact, work. 
+
+But watch what happens here. Let me go ahead and do malan@harvard and then-- malan@harvard?edu, Enter, that, too, is valid. So I could put any character there and it's still going to be accepted. But I don't want ?edu. I want .edu literally. 
+
+Any instincts, then, for how we can solve this problem here? How can I get this new function, re.search, and a regular expression more generally, to literally mean a dot, might you think? 
+
+AUDIENCE: You can use the escape character, the backslash? 
+
+DAVID MALAN: Indeed. The so-called escape character, which we've seen before outside of the context of regular expressions when we talked about newlines. Backslash n was a way of telling the computer I want a newline, but without actually literally hitting Enter and moving the cursor yourself. And you don't want a literal n on the screen. So backslash n was a way to escape n and convey that you want a newline. 
+
+It turns out regular expressions use a similar technique to solve this problem here. In fact, let me go into my regular expression. And before that final dot, let me put a single backslash. In the world of regular expressions, this is a so-called special sequence. And it indicates, per this backslash and a single dot, that I literally want to match on a dot. It's not that I want to match on any character and then edu. I want to match on a dot, or a period, edu. 
+
+But we don't want Python to misinterpret this backslash as beginning an escape sequence, something special like backslash n, which even though we as the programmer might type two characters backslash n, it really is interpreted by Python as a single newline. We don't want any kind of misinterpretation like that here. 
+
+So it turns out there's one other thing we should do for regular expressions like this that have a backslash used in this way. I want to specify to Python that I want this string, this regular expression in double quotes, to be treated as a raw string, literally putting an r at the beginning of the string to indicate to Python that you should not try to interpret any backslashes in the usual way. I want to literally pass the backslash and the dot and the edu into this particular function, search, in this case. 
+
+So it's similar in spirit to using that f at the beginning of a format string, which, of course, tells Python to format the string in a certain way, plugging in variables that might be between curly braces. But in this case, r indicates a raw string that I want passed in exactly as is. Now, it's only strictly necessary if you are, in fact, using backslashes to indicate that you want some special sequence, like backslash dot. But in general, it's probably a good habit to get into to just use raw strings for all of your regular expressions so that if you eventually go back in, make a change, make an addition, you don't accidentally introduce a backslash and then forget that that might have some special or misinterpreted meaning. 
+
+Well, let me go ahead and try this new regular expression. I'll clear my terminal window, run python of validate-- run python of validate.py. And then I'll type in my email address correctly, malan@harvard.edu. And that's, fortunately, still valid. 
+
+Let me clear my screen and run it one more time, python of validate.py. And this time, let's mistype it as malan@harvard?edu, whereby there's obviously not a dot there, but there is some other single character that last time was misinterpreted as valid. But this time, now that I've improved my regular expression, it's discovered as, indeed, invalid. 
+
+Any questions now on this technique for matching something to the left of the @ sign, something to the right, and now ending with .edu explicitly? 
+
+AUDIENCE: What happens when user inserts multiple @ signs? 
+
+DAVID MALAN: A good question. And you kind of called me out here. Well, when in doubt, let's try. Let me go ahead and do python of validate.py, malan@@@harvard.edu, which also is incorrect, unfortunately, my code thinks it's valid. So another problem to solve, but a shortcoming for now. 
+
+Other questions on these regular expressions thus far? 
+
+AUDIENCE: Can you use curly brackets m instead of backslash? 
+
+DAVID MALAN: Can you use curly brackets instead of backslash? Not in this case. If you want a literal dot, backslash dot is the way to do it literally. How about one other question on regular expressions? 
+
+AUDIENCE: Is this the same thing that Google Forms uses in order to categorize data in, let's say, some-- if you've got multiple people sending in requests about some feedback? Do they categorize the data that they get using this particular regular expression thing? 
+
+DAVID MALAN: Indeed. If you've ever used Google Forms to not just submit it but to create a Google Form, one of the menu options is for response validation, in English at least. And what that allows you to do is specify that the user has to input an email address, or a URL, or a string of some length. 
+
+But there's an even more powerful feature that some of you may not have ever noticed. And indeed, if you'd like to open up Google Forms, create a new form temporarily, and poke around, you will actually see, in English at least, quote, unquote "regular expression" mentioned as one of the mechanisms you can use to validate your users' input into your Google Form. 
+
+So in fact, after today you can start avoiding the specific dropdowns of like email address, or URL, or the like, and you can express your own patterns precisely as well. Regular expressions can even be used in VS Code itself. If you go and find, or do a find and replace in VS Code, you can, of course, just type in words, like you could into Microsoft Word or Google Docs. You can also type, if you check the right box, regular expressions and start searching for patterns, not literally specific values. 
+
+Well, let me propose that we now enhance this implementation further by introducing a few other symbols, because right now with my code, I keep saying that I want my email address to end with .edu and start with a username, but I'm being a little too generous. This does, in fact, work as expected for my own email address, malan@harvard.edu. But what if I type in a sentence like, "my email address is malan@harvard.edu," and suppose I've typed that into the program or I've typed that into a Google Form? Is this going to be considered valid or invalid? 
+
+Well, let's consider. It's got @ sign, so we're good there. It's got one or more characters to the left of the @ sign. It's got one or more characters to the right of the @ sign. It's got a literal .edu somewhere in there to the right of the @ sign. And granted, there's more stuff to the right. There's literally this period at the end of my English sentence. 
+
+But that's OK, because at the moment, my regular expression is not so precise as to say, the pattern must start with the username and end with the .edu. Technically, it's left unsaid what more can be to the left and what more can be to the right. So when I hit Enter now, you'll see that that whole sentence in English is valid, and that's obviously not what you want. 
+
+In fact, consider the case of using Google Forms or Office 365 to collect data from users. If you don't validate your input, your users might very well type in a full sentence or something else with a typographical error, not an actual email. So if you're just trying to copy all of the results that have been typed into your form so you can paste them into Gmail or some email program, it's going to break, because you're going to accidentally pay something like a whole English sentence into the program instead of just an email address, which is what your mailer expects. 

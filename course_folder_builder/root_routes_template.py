@@ -47,6 +47,13 @@ project_urls = {
   "spanish": "proyecto"
 }
 
+communities_urls = {
+  "english": "communities",
+  "portuguese": "comunidades",
+  "french": "communauté",
+  "spanish": "comunidades"
+}                               
+
 @bp.route('/')
 @bp.route('/index.html')
 def index():
@@ -55,7 +62,7 @@ def index():
         markdown_text = f.read()
 
     return render_template(
-        'index.html',
+        '${course}/index.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -63,11 +70,11 @@ def index():
 @bp.route(f'/{honesty_urls[os.environ["COURSE_LANGUAGE"]]}.html')
 def honesty():
         
-    with open(f"app/${course}/content/{os.environ['COURSE_LANGUAGE']}/honesty.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/honesty.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -75,11 +82,11 @@ def honesty():
 @bp.route(f'/{faqs_urls[os.environ["COURSE_LANGUAGE"]]}.html')
 def faqs():
         
-    with open(f"app/${course}/content/{os.environ['COURSE_LANGUAGE']}/faqs.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/faqs.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -91,7 +98,7 @@ def certificate():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -103,18 +110,18 @@ def syllabus():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
 @bp.route(f'/{staff_urls[os.environ["COURSE_LANGUAGE"]]}')
 @bp.route(f'/{staff_urls[os.environ["COURSE_LANGUAGE"]]}.html')
 def staff():
-    with open(f"app/${course}/content/{os.environ['COURSE_LANGUAGE']}/staff.md", "r") as f:
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/staff.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 
@@ -125,7 +132,18 @@ def project():
         markdown_text = f.read()
 
     return render_template(
-        'blank.html',
+        '${course}/blank.html',
+        markdown_text=marko.convert(markdown_text)
+    )
+                                
+@bp.route(f'/{communities_urls[os.environ["COURSE_LANGUAGE"]]}')
+@bp.route(f'/{communities_urls[os.environ["COURSE_LANGUAGE"]]}.html')
+def communities():
+    with open(f"app/${course}/content/{os.environ['COURSE_LANGUAGE']}/communities.md", "r") as f:
+        markdown_text = f.read()
+
+    return render_template(
+        '${course}/blank.html',
         markdown_text=marko.convert(markdown_text)
     )
 """)

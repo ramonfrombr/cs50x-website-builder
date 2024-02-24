@@ -1,0 +1,61 @@
+Bueno, ¿qué más podríamos hacer aquí? Resulta que las expresiones regulares nos permiten expresar patrones de manera mucho más precisa. Podríamos pasar todo el día utilizando diferentes funciones de Python como removeprefix, remove, strip, entre otras, y, de alguna manera, llegar a la solución correcta. Pero una expresión regular te permite expresar estos tipos de patrones y objetivos de manera más concisa, aunque admitamos que de manera más críptica.
+
+Hemos visto que los paréntesis, que no solo se utilizan para agrupar símbolos como conjuntos, sino también para capturar información, son una herramienta muy potente en nuestra caja de herramientas. Así que permíteme hacer esto. Voy a empezar desde cero importando la biblioteca re como antes, al principio de mi programa. Todavía voy a obtener la URL del usuario a través de la misma línea de código. Pero ahora también vamos a usar otra función.
+
+Resulta que no solo existe re.search, re.match o re.fullmatch. También existe re.sub en la biblioteca de expresiones regulares, donde "sub" significa "sustituir". Y toma más argumentos, pero son bastante sencillos. El primer argumento de re.sub es el patrón, la expresión regular que deseas buscar.
+
+Luego tienes una cadena de reemplazo, ¿con qué quieres reemplazar ese patrón? Y ¿dónde quieres hacer todo eso? Bueno, pasas la cadena en la que deseas hacer la sustitución. Luego hay algunos otros argumentos a los que no me voy a referir por ahora.
+
+Entre ellos se encuentran las mismas banderas y también un contador, que indica cuántas veces quieres realizar la búsqueda y el reemplazo. ¿Quieres hacerlo en todas, solo en una o así sucesivamente? Puedes tener un mayor control allí, al igual que en Google Docs o Microsoft Word.
+
+Bien, volvamos a mi código y hagamos esto. En lugar de usar re.search, voy a utilizar re.sub para sustituir. Voy a pasar la siguiente expresión regular: "https://twitter.com/" y luego voy a cerrar mi comilla. ¿Y ahora qué quiero reemplazar con eso?
+
+Bueno, al igual que antes con la función de reemplazo de cadenas simple, quiero reemplazarlo por nada, simplemente eliminarlo por completo. Pero, ¿qué cadena quiero pasar para hacer esto? La URL del usuario. Ahora déjame asignar el valor de retorno de re.sub a una variable llamada username.
+
+Entonces, el propósito de re.sub es, una vez más, sustituir algún valor por alguna expresión regular un cierto número de veces. Es esencialmente encontrar y reemplazar utilizando expresiones regulares. Y te devuelve la cadena resultante una vez que hayas realizado todas esas sustituciones.
+
+Ahora, la última línea de mi código puede ser igual que antes, imprimiré, y usaré un fstring, username, dos puntos y luego, entre llaves, username. Así que puedo imprimir literalmente eso. Muy bien. Probemos esto y veamos qué sucede. Limpiaré mi ventana de terminal, ejecutaré python de twitter.py.
+
+Y aquí vamos, https://twitter.com/davidjmalan. Cruzaré los dedos y presionaré Enter. Bien, ahora estamos en marcha. Pero aún es un poco frágil. Así que permítanme preguntar al grupo, ¿qué problema debería resolver a continuación? Ya se han mencionado antes, pero seamos más claros. ¿Cuáles son uno o más problemas que aún quedan?
+
+AUDIENCIA: Los protocolos y el prefijo de dominio [INAUDIBLE].
+
+DAVID MALAN: Bien. Los protocolos, como HTTP versus HTTPS. Quizás el subdominio www, ¿debería estar presente o no? Y también hay algunos otros errores aquí. Permítanme quedarme con el grupo. ¿Cuáles son las otras deficiencias de esta solución actual?
+
+AUDIENCIA: Si usamos una frase como lo hiciste antes, vamos a tener el mismo problema, porque no se tiene en cuenta la primera parte del texto de ejemplo.
+
+DAVID MALAN: Muy bien. Todavía podría permitir algunas palabras en inglés antes de la URL porque no usé mi símbolo ^. Así que corregiré eso. ¿Y alguna observación final sobre las deficiencias aquí?
+
+AUDIENCIA: Bueno, podría ser HTTP, o podría haber menos de dos barras.
+
+DAVID MALAN: OK. Podría ser HTTP. Y creo que eso también se mencionó en términos de protocolo. Podría haber menos de dos barras. No me preocuparé por eso. Si el usuario me da menos de dos, eso realmente es un error del usuario.
+
+Y puedo ser tolerante al respecto, pero saben qué, en ese punto está bien reprenderlos con un mensaje de error que diga "corrijan su entrada". De lo contrario, podríamos pasar todo el día tratando de manejar todas las posibles faltas de ortografía. Por ahora, creo que en aras de la usabilidad, o experiencia del usuario, UX, al menos deberíamos ser tolerantes con todas las posibles entradas válidas o razonables, si lo prefieren.
+
+Entonces, permítanme ir aquí y comenzar a resolver estos problemas. ¿Cuáles son algunos problemas que podemos resolver? Permítanme proponer que primero abordemos el problema de la coincidencia desde el principio de la cadena. Así que agregaré el símbolo ^ al principio.
+
+Y agregaré un signo $ al final, ¿verdad? Porque no quiero que se coincida hasta el final, ya que quiero tolerar un nombre de usuario allí. Así que creo que solo queremos el símbolo ^ allí.
+
+Hay un error sutil que aún no se ha mencionado. Y permítanme destacarlo para ver si lo notan ahora. Es un poco sutil aquí en mi pantalla. He resaltado en azul un último error aquí, tal vez algunas sonrisas en la pantalla, ¿no? ¿Puedo tener una mano levantada aquí? ¿Por qué estoy resaltando el punto en twitter.com, a pesar de que definitivamente debería estar allí?
+
+AUDIENCIA: Porque el punto sin una barra invertida significa cualquier carácter excepto un salto de línea.
+
+DAVID MALAN: Sí, exactamente. Significa cualquier carácter. Por lo tanto, podría escribir algo como twitter?com, o cualquiercosa twitter com, y eso sería tolerado. No es realmente tan malo, porque ¿por qué el usuario haría eso? Pero si quiero ser correcto y quiero poder probar mi propio código correctamente, realmente debería tener este detalle correcto.
+
+Así que eso también es fácil de corregir, pero es un error común. Cada vez que escribas expresiones regulares que involucren símbolos especiales, como puntos en una URL o nombre de dominio, un signo $ en algo que involucra moneda, recuerda que es posible que debas escaparlo con una barra invertida como aquí.
+
+Muy bien. Permítanme preguntar al grupo sobre el protocolo específicamente. HTTPS es algo bueno en el mundo. Significa seguro. Se está utilizando cifrado. Así que en general, a uno le gustaría ver HTTPS.
+
+Pero aún así, ves a personas escribiendo o pegando HTTP. ¿Cuál sería la solución más simple aquí para tolerar, como se ha propuesto, tanto HTTP como HTTPS? Propongo que podría hacer esto. Podría hacer HTTP barra vertical o HTTPS, que, nuevamente, significa A o B. Pero creo que puedo ser más inteligente que eso. Puedo mantener mi código un poco más conciso.
+
+¿Alguna recomendación aquí para tolerar HTTP o HTTPS?
+
+AUDIENCIA: Podríamos intentar poner un signo de interrogación después de la S.
+
+DAVID MALAN: Perfecto. Simplemente usar un signo de interrogación. Ambas opciones serían viables. Si quieres ser super explícito en tu código, está bien. Usa paréntesis y di HTTP o HTTPS, para que tú, el lector, tu jefe, tu profesor, sepan exactamente lo que estás haciendo. Pero si sigues tomando el enfoque más verboso todo el tiempo, es posible que en realidad sea menos legible, sobre todo cuando tus expresiones regulares son muy grandes en lugar de ser pequeñas.
+
+Así que ahorremos espacio donde podamos. Y argumentaría que esto es bastante razonable, siempre y cuando estés acostumbrado a leer expresiones regulares y sepas que el signo de interrogación no significa un signo de interrogación literal, sino cero o uno de lo que haya antes. Creo que hemos hecho opcional la "S" de manera efectiva.
+
+¿Qué más puedo hacer? Supongamos que queremos tolerar el www punto, que puede o no estar presente, pero funcionará si se coloca en un navegador. Podría hacer esto: www punto, espera, necesito una barra invertida allí para no repetir el mismo error que antes. Pero esto tampoco está bien, porque quiero tolerar que esté o no esté. Y ahora acabo de requerir que esté ahí.
+
+¿Cómo hago que el www sea opcional, para enfatizar esto?

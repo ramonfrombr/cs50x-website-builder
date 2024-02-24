@@ -1,27 +1,60 @@
-Filter
-======
+# Filter
 
-Implement a program that applies filters to BMPs, per the below.
+![Harvard Yard with edge detection](yard-edges.bmp)
 
-    $ ./filter -r IMAGE.bmp REFLECTED.bmp
-    
-
-where `IMAGE.bmp` is the name of an image file and `REFLECTED.bmp` is the name given to an output image file, now reflected.
-
-Background
-----------
-
-### Bitmaps
+## Problem to Solve
 
 Perhaps the simplest way to represent an image is with a grid of pixels (i.e., dots), each of which can be of a different color. For black-and-white images, we thus need 1 bit per pixel, as 0 could represent black and 1 could represent white, as in the below.
 
-![a simple bitmap](https://cs50.harvard.edu/x/2023/psets/4/filter/more/bitmap.png)
+![a simple bitmap](bitmap.png)
 
 In this sense, then, is an image just a bitmap (i.e., a map of bits). For more colorful images, you simply need more bits per pixel. A file format (like [BMP](https://en.wikipedia.org/wiki/BMP_file_format), [JPEG](https://en.wikipedia.org/wiki/JPEG), or [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics)) that supports “24-bit color” uses 24 bits per pixel. (BMP actually supports 1-, 4-, 8-, 16-, 24-, and 32-bit color.)
 
 A 24-bit BMP uses 8 bits to signify the amount of red in a pixel’s color, 8 bits to signify the amount of green in a pixel’s color, and 8 bits to signify the amount of blue in a pixel’s color. If you’ve ever heard of RGB color, well, there you have it: red, green, blue.
 
-If the R, G, and B values of some pixel in a BMP are, say, `0xff`, `0x00`, and `0x00` in hexadecimal, that pixel is purely red, as `0xff` (otherwise known as `255` in decimal) implies “a lot of red,” while `0x00` and `0x00` imply “no green” and “no blue,” respectively.
+If the R, G, and B values of some pixel in a BMP are, say, `0xff`, `0x00`, and `0x00` in hexadecimal, that pixel is purely red, as `0xff` (otherwise known as `255` in decimal) implies “a lot of red,” while `0x00` and `0x00` imply “no green” and “no blue,” respectively. In this problem, you’ll manipulate these R, G, and B values of individual pixels, ultimately creating your very own image filters.
+
+In a file called `helpers.c` in a folder called `filter-more`, write a program to apply filters to BMPs.
+
+## Demo
+
+## Distribution Code
+
+For this problem, you’ll extend the functionality of code provided to you by CS50’s staff.
+
+Download the distribution code
+
+Log into [cs50.dev](https://cs50.dev/), click on your terminal window, and execute `cd` by itself. You should find that your terminal window’s prompt resembles the below:
+
+    $
+
+Next execute
+
+    wget https://cdn.cs50.net/2023/fall/psets/4/filter-more.zip
+
+in order to download a ZIP called `filter-more.zip` into your codespace.
+
+Then execute
+
+    unzip filter-more.zip
+
+to create a folder called `filter-more`. You no longer need the ZIP file, so you can execute
+
+    rm filter-more.zip
+
+and respond with “y” followed by Enter at the prompt to remove the ZIP file you downloaded.
+
+Now type
+
+    cd filter-more
+
+followed by Enter to move yourself into (i.e., open) that directory. Your prompt should now resemble the below.
+
+    filter-more/ $
+
+Execute `ls` by itself, and you should see a few files: `bmp.h`, `filter.c`, `helpers.h`, `helpers.c`, and `Makefile`. You should also see a folder called `images` with four BMP files. If you run into any trouble, follow these same steps again and see if you can determine where you went wrong!
+
+## Background
 
 ### A Bit(map) More Technical
 
@@ -29,7 +62,7 @@ Recall that a file is just a sequence of bits, arranged in some fashion. A 24-bi
 
 The first of these headers, called `BITMAPFILEHEADER`, is 14 bytes long. (Recall that 1 byte equals 8 bits.) The second of these headers, called `BITMAPINFOHEADER`, is 40 bytes long. Immediately following these headers is the actual bitmap: an array of bytes, triples of which represent a pixel’s color. However, BMP stores these triples backwards (i.e., as BGR), with 8 bits for blue, followed by 8 bits for green, followed by 8 bits for red. (Some BMPs also store the entire bitmap backwards, with an image’s top row at the end of the BMP file. But we’ve stored this problem set’s BMPs as described herein, with each bitmap’s top row first and bottom row last.) In other words, were we to convert the 1-bit smiley above to a 24-bit smiley, substituting red for black, a 24-bit BMP would store this bitmap as follows, where `0000ff` signifies red and `ffffff` signifies white; we’ve highlighted in red all instances of `0000ff`.
 
-![red smile](https://cs50.harvard.edu/x/2023/psets/4/filter/more/red_smile.png)
+![red smile](red_smile.png)
 
 Because we’ve presented these bits from left to right, top to bottom, in 8 columns, you can actually see the red smiley if you take a step back.
 
@@ -65,7 +98,7 @@ There are a number of ways to create the effect of blurring or softening an imag
 
 Consider the following grid of pixels, where we’ve numbered each pixel.
 
-![a grid of pixels](https://cs50.harvard.edu/x/2023/psets/4/filter/more/grid.png)
+![a grid of pixels](grid.png)
 
 The new value of each pixel would be the average of the values of all of the pixels that are within 1 row and column of the original pixel (forming a 3x3 box). For example, each of the color values for pixel 6 would be obtained by averaging the original color values of pixels 1, 2, 3, 5, 6, 7, 9, 10, and 11 (note that pixel 6 itself is included in the average). Likewise, the color values for pixel 11 would be be obtained by averaging the color values of pixels 6, 7, 8, 10, 11, 12, 14, 15 and 16.
 
@@ -77,7 +110,7 @@ In artificial intelligence algorithms for image processing, it is often useful t
 
 Like image blurring, edge detection also works by taking each pixel, and modifying it based on the 3x3 grid of pixels that surrounds that pixel. But instead of just taking the average of the nine pixels, the Sobel operator computes the new value of each pixel by taking a weighted sum of the values for the surrounding pixels. And since edges between objects could take place in both a vertical and a horizontal direction, you’ll actually compute two weighted sums: one for detecting edges in the x direction, and one for detecting edges in the y direction. In particular, you’ll use the following two “kernels”:
 
-![Sobel kernels](https://cs50.harvard.edu/x/2023/psets/4/filter/more/sobel.png)
+![Sobel kernels](sobel.png)
 
 How to interpret these kernels? In short, for each of the three color values for each pixel, we’ll compute two values `Gx` and `Gy`. To compute `Gx` for the red channel value of a pixel, for instance, we’ll take the original red values for the nine pixels that form a 3x3 box around the pixel, multiply them each by the corresponding value in the `Gx` kernel, and take the sum of the resulting values.
 
@@ -87,47 +120,18 @@ Using these kernels, we can generate a `Gx` and `Gy` value for each of the red, 
 
 And what about handling pixels at the edge, or in the corner of the image? There are many ways to handle pixels at the edge, but for the purposes of this problem, we’ll ask you to treat the image as if there was a 1 pixel solid black border around the edge of the image: therefore, trying to access a pixel past the edge of the image should be treated as a solid black pixel (values of 0 for each of red, green, and blue). This will effectively ignore those pixels from our calculations of `Gx` and `Gy`.
 
-Getting Started
----------------
+## Specification
 
-Log into [code.cs50.io](https://code.cs50.io/), click on your terminal window, and execute `cd` by itself. You should find that your terminal window’s prompt resembles the below:
+Implement the functions in `helpers.c` such that a user can apply grayscale, reflection, blur, or edge detection filters to their images.
 
-    $
-    
+-   The function `grayscale` should take an image and turn it into a black-and-white version of the same image.
+-   The `reflect` function should take an image and reflect it horizontally.
+-   The `blur` function should take an image and turn it into a box-blurred version of the same image.
+-   The `edges` function should take an image and highlight the edges between objects, according to the Sobel operator.
 
-Next execute
+You should not modify any of the function signatures, nor should you modify any other files other than `helpers.c`.
 
-    wget https://cdn.cs50.net/2022/fall/psets/4/filter-more.zip
-    
-
-in order to download a ZIP called `filter-more.zip` into your codespace.
-
-Then execute
-
-    unzip filter-more.zip
-    
-
-to create a folder called `filter-more`. You no longer need the ZIP file, so you can execute
-
-    rm filter-more.zip
-    
-
-and respond with “y” followed by Enter at the prompt to remove the ZIP file you downloaded.
-
-Now type
-
-    cd filter-more
-    
-
-followed by Enter to move yourself into (i.e., open) that directory. Your prompt should now resemble the below.
-
-    filter-more/ $
-    
-
-Execute `ls` by itself, and you should see a few files: `bmp.h`, `filter.c`, `helpers.h`, `helpers.c`, and `Makefile`. You should also see a folder called `images` with four BMP files. If you run into any trouble, follow these same steps again and see if you can determine where you went wrong!
-
-Understanding
--------------
+## Understanding
 
 Let’s now take a look at some of the files provided to you as distribution code to get an understanding for what’s inside of them.
 
@@ -172,75 +176,33 @@ Finally, let’s look at `Makefile`. This file specifies what should happen when
 Try compiling `filter` for yourself by going to your terminal and running
 
     $ make filter
-    
 
 Then, you can run the program by running:
 
     $ ./filter -g images/yard.bmp out.bmp
-    
 
 which takes the image at `images/yard.bmp`, and generates a new image called `out.bmp` after running the pixels through the `grayscale` function. `grayscale` doesn’t do anything just yet, though, so the output image should look the same as the original yard.
 
-Specification
--------------
+## Hints
 
-Implement the functions in `helpers.c` such that a user can apply grayscale, reflection, blur, or edge detection filters to their images.
+-   The values of a pixel’s `rgbtRed`, `rgbtGreen`, and `rgbtBlue` components are all integers, so be sure to round any floating-point numbers to the nearest integer when assigning them to a pixel value!
 
-*   The function `grayscale` should take an image and turn it into a black-and-white version of the same image.
-*   The `reflect` function should take an image and reflect it horizontally.
-*   The `blur` function should take an image and turn it into a box-blurred version of the same image.
-*   The `edges` function should take an image and highlight the edges between objects, according to the Sobel operator.
-
-You should not modify any of the function signatures, nor should you modify any other files other than `helpers.c`.
-
-Walkthrough
------------
+## Walkthrough
 
 **Please note that there are 5 videos in this playlist.**
 
-<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/vsOsctDernw?modestbranding=0&amp;rel=0&amp;showinfo=1&amp;list=PLhQjrBD2T382OwvMbZuaMGtD9wZkhnhYj"></iframe></div>
-
-Usage
------
-
-Your program should behave per the examples below. `INFILE.bmp` is the name of the input image and `OUTFILE.bmp` is the name of the resulting image after a filter has been applied.
-
-```
-$ ./filter -g INFILE.bmp OUTFILE.bmp
-```
-```
-$ ./filter -r INFILE.bmp OUTFILE.bmp
-```
-```
-$ ./filter -b INFILE.bmp OUTFILE.bmp
-```
-```
-$ ./filter -e INFILE.bmp OUTFILE.bmp
-``` 
-
-Hints
------
-
-*   The values of a pixel’s `rgbtRed`, `rgbtGreen`, and `rgbtBlue` components are all integers, so be sure to round any floating-point numbers to the nearest integer when assigning them to a pixel value!
-
-Testing
--------
+## How to Test
 
 Be sure to test all of your filters on the sample bitmap files provided!
 
-Execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
+### Correctness
 
-    check50 cs50/problems/2023/x/filter/more
-    
+    check50 cs50/problems/2024/x/filter/more
 
-Execute the below to evaluate the style of your code using `style50`.
+### Style
 
     style50 helpers.c
-    
 
-How to Submit
--------------
+## How to Submit
 
-In your terminal, execute the below to submit your work.
-
-    submit50 cs50/problems/2023/x/filter/more
+    submit50 cs50/problems/2024/x/filter/more

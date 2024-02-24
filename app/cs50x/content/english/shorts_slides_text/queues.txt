@@ -1,0 +1,541 @@
+
+[0]
+
+Queues
+
+[1]
+
+Queues
+• A queue is a special type of structure that can be used to maintain 
+data in an organized way.
+• This data structure is commonly implemented in one of two ways: 
+as an array or as a linked list.
+• In either case, the important rule is that when data is added to the 
+queue, it is tacked onto the end, and so if an element needs to be 
+removed, the element at the front is the only element that can 
+legally be removed.
+• First in, first out (FIFO)
+
+[2]
+
+Queues
+• There are only two operations that may legally be performed 
+on a queue.
+• Enqueue: Add a new element to the end of the queue.
+• Dequeue: Remove the oldest element from the front of the queue.
+
+[3]
+
+Queues
+• Array-based implementation
+typedef struct _queue
+{
+VALUE array[CAPACITY];
+int front;
+int size;
+}
+queue;
+
+[4]
+
+Queues
+• Array-based implementation
+typedef struct _queue
+{
+VALUE array[CAPACITY];
+int front;
+int size;
+}
+queue;
+
+[5]
+
+Queues
+• Array-based implementation
+typedef struct _queue
+{
+VALUE array[CAPACITY];
+int front;
+int size;
+}
+queue;
+
+[6]
+
+Queues
+• Array-based implementation
+typedef struct _queue
+{
+VALUE array[CAPACITY];
+int front;
+int size;
+}
+queue;
+
+[7]
+
+Queues
+• Array-based implementation
+typedef struct _queue
+{
+VALUE array[CAPACITY];
+int front;
+int size;
+}
+queue;
+
+[8]
+
+Queues
+• Array-based implementation
+queue q;
+
+[9]
+
+Queues
+• Array-based implementation
+queue q;
+q
+
+[10]
+
+Queues
+• Array-based implementation
+queue q;
+q.front = 0;
+q.size = 0;
+q
+
+[11]
+
+Queues
+• Array-based implementation
+queue q;
+q.front = 0;
+q.size = 0;
+0
+0
+q
+
+[12]
+
+Queues
+• Array-based implementation
+• Enqueue: Add a new element to the end of the queue.
+In the general case, enqueue() needs to:
+• Accept a pointer to the queue.
+• Accept data of type VALUE to be added to the queue.
+• Add that data to the queue at the end of the queue.
+• Change the size of the queue.
+
+[13]
+
+Queues
+• Array-based implementation
+void enqueue(queue* q, VALUE data);
+0
+0
+q
+
+[14]
+
+Queues
+• Array-based implementation
+enqueue(&q, 28);
+0
+0
+q
+
+[15]
+
+Queues
+• Array-based implementation
+enqueue(&q, 28);
+28
+0
+0
+q
+
+[16]
+
+Queues
+• Array-based implementation
+enqueue(&q, 28);
+28
+0
+1
+q
+
+[17]
+
+Queues
+• Array-based implementation
+enqueue(&q, 33);
+28
+0
+1
+q
+
+[18]
+
+Queues
+• Array-based implementation
+enqueue(&q, 33);
+28 33
+0
+1
+q
+
+[19]
+
+Queues
+• Array-based implementation
+enqueue(&q, 33);
+28 33
+0
+2
+q
+
+[20]
+
+Queues
+• Array-based implementation
+enqueue(&q, 19);
+28 33
+0
+2
+q
+
+[21]
+
+Queues
+• Array-based implementation
+enqueue(&q, 19);
+28 33 19
+0
+2
+q
+
+[22]
+
+Queues
+• Array-based implementation
+enqueue(&q, 19);
+28 33 19
+0
+3
+q
+
+[23]
+
+Queues
+• Array-based implementation
+• Dequeue: Remove the most recent element from the front of the 
+queue.
+In the general case, dequeue() needs to:
+• Accept a pointer to the queue.
+• Change the location of the front of the queue.
+• Decrease the size of the queue.
+• Return the value that was removed from the queue.
+
+[24]
+
+Queues
+• Array-based implementation
+VALUE dequeue(queue* q);
+28 33 19
+0
+3
+q
+
+[25]
+
+Queues
+• Array-based implementation
+int x = dequeue(&q);
+28 33 19
+0
+3
+q
+
+[26]
+
+Queues
+• Array-based implementation
+int x = dequeue(&q);
+33 19
+0
+3
+q
+28
+x
+
+[27]
+
+Queues
+• Array-based implementation
+int x = dequeue(&q);
+28 33 19
+0
+3
+q
+28
+x
+
+[28]
+
+Queues
+• Array-based implementation
+int x = dequeue(&q);
+28 33 19
+1
+2
+q
+28
+x
+
+[29]
+
+Queues
+• Array-based implementation
+int x = dequeue(&q);
+28 33 19
+1
+2
+q
+28
+x
+
+[30]
+
+Queues
+• Array-based implementation
+int x = dequeue(&q);
+28 33 19
+1
+2
+q
+33
+x
+
+[31]
+
+Queues
+• Array-based implementation
+int x = dequeue(&q);
+28 33 19
+2
+1
+q
+33
+x
+
+[32]
+
+Queues
+• Array-based implementation
+enqueue(&q, 40);
+28 33 19
+2
+1
+q
+
+[33]
+
+Queues
+• Array-based implementation
+enqueue(&q, 40);
+28 33 19 40
+2
+1
+q
+
+[34]
+
+Queues
+• Array-based implementation
+enqueue(&q, 40);
+28 33 19 40
+2
+2
+q
+
+[35]
+
+Queues
+• Linked list-based implementation
+typedef struct _queue
+{
+VALUE val;
+struct _queue *prev;
+struct _queue *next;
+}
+queue;
+
+[36]
+
+Queues
+• Just make sure to always maintain pointers to the head and tail 
+of the linked list! (probably global)
+• To enqueue:
+• Dynamically allocate a new node;
+• Set its next pointer to NULL, set its prev pointer to the tail;
+• Set the tail’s next pointer to the new node;
+• Move the tail pointer to the newly-created node.
+
+[37]
+
+Queues
+enqueue(tail, 10);
+12
+15
+9
+13
+head
+tail
+
+[38]
+
+Queues
+enqueue(tail, 10);
+12
+15
+9
+13
+head
+tail
+new
+
+[39]
+
+Queues
+enqueue(tail, 10);
+12
+15
+9
+13
+10
+head
+tail
+new
+
+[40]
+
+Queues
+enqueue(tail, 10);
+12
+15
+9
+13
+10
+head
+tail
+new
+
+[41]
+
+Queues
+enqueue(tail, 10);
+12
+15
+9
+13
+10
+head
+tail
+new
+
+[42]
+
+Queues
+enqueue(tail, 10);
+12
+15
+9
+13
+10
+head
+tail new
+
+[43]
+
+Queues
+• To dequeue:
+• Traverse the linked list to its second element (if it exists);
+• Free the head of the list;
+• Move the head pointer to the (former) second element;
+• Make that node’s prev pointer point to NULL.
+
+[44]
+
+Queues
+dequeue(head);
+12
+15
+9
+13
+10
+head
+tail
+
+[45]
+
+Queues
+dequeue(head);
+12
+15
+9
+13
+10
+head
+tail
+trav
+
+[46]
+
+Queues
+dequeue(head);
+12
+15
+9
+13
+10
+head
+tail
+trav
+
+[47]
+
+Queues
+dequeue(head);
+15
+9
+13
+10
+head
+tail
+trav
+
+[48]
+
+Queues
+dequeue(head);
+15
+9
+13
+10
+head
+tail
+trav
+
+[49]
+
+Queues
+dequeue(head);
+15
+9
+13
+10
+head
+tail
+trav

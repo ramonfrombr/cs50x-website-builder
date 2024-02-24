@@ -1,0 +1,15 @@
+Bueno, permítanme hacer una pausa aquí y ver si hay alguna pregunta ahora sobre Python en sí mismo, escribir o incluso ejecutar los programas más simples.
+
+AUDIENCIA: ¿Puedo escribir código dentro de un procesador de texto o, por ejemplo, Microsoft Excel? ¿Y cuál es la barrera para hacer eso?
+
+Una pregunta muy buena, y permítanme decirles muy explícitamente a todo internet que no deben escribir código con Microsoft Word. Mencioné esto solo porque es una herramienta a través de la cual se puede escribir texto y el código que, en última instancia, es solo texto. Pero no es la herramienta adecuada para el trabajo. No necesitamos negrita, subrayado, párrafos, y cosas por el estilo. Generalmente queremos algo mucho más simple que Microsoft Word o Google Docs. Por lo tanto, VS Code es un ejemplo de un editor de texto de propósito general. Su propósito en la vida es permitir que tú, el humano, edites texto. En la actualidad, estos editores de texto vienen con muchas más características. De hecho, notarás que incluso en mi código aquí, a pesar de que es solo una línea, tiene un poco de color. La palabra "print" para mí aparece en azul. Los paréntesis son negros. Y veremos que a medida que escribamos más líneas de código, más y más líneas tendrán varios colores.
+
+Ahora eso es solo una característica de un editor de texto. También veremos que tiene características como esta ventana de terminal incorporada. Tendrá una herramienta incorporada para depurar o encontrar problemas con el código. Y es solo una herramienta muy popular en la actualidad, pero hay muchas otras disponibles. Puedes usarlas para este curso y más allá. Simplemente sucede que usamos esta en gran medida también porque puedes usar VS Code de forma gratuita en la nube.
+
+¿Cómo acerca de otra pregunta aquí sobre programar con Python, "hola, mundo" o la sintaxis en general?
+
+AUDIENCIA: Es posible ejecutar el programa sin la ventana de terminal?
+
+Así que en este entorno, como he configurado mi computadora, solo puedo ejecutar estos programas de Python a través de la ventana de terminal. Eso es bueno para mí, el programador, o la persona que intenta aprender a programar, pero no es muy útil si quieres distribuir este software y que otras personas usen tu código real. Absolutamente puedes escribir programas y permitir que otras personas los usen, no a través de una interfaz de línea de comandos, sino a través de una interfaz gráfica de usuario, también llamado de GUI. Este es solo un mecanismo y quizás, creo, el mejor con el que empezar a escribir código porque eventualmente nos dará mucho más control.
+
+Permítanme avanzar aquí, pero por favor, siéntanse libres de hacer preguntas en el camino, incluso a través del chat.

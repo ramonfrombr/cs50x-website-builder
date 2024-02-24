@@ -1,0 +1,42 @@
+
+And it turns out that if you want to handle an exception in Python but you want to pass on doing anything with it-- so you want to catch it, but you essentially want to ignore it. You don't want to print anything. You don't want to quit the program. You just want to silently ignore it, like if you're talking in a room full of people and it's your turn to talk and you're just like, pass. 
+
+They're still calling on you. But you're not doing or saying anything more. Well, we can add this keyword to our code here. Let me go back to my program here. And instead of printing out again and again, x is not an integer, I could just do this. 
+
+I could pass on handling the error further. I'm still catching it. So the user is not going to see a scary message even mentioning value error. My code is catching it. 
+
+But I'm passing on saying anything about it. I'm going to stay in the loop. I'm going to stay in the loop and keep prompting and reprompting the user so now the effect looks a little something like this. Python of number.py. Let's type in cat. What's x again? 
+
+Let's type in dog. What's x again? Type in bird. So it's just a little, maybe, more user friendly and that you're just reminding the user what you want. 
+
+Maybe it's worse. Maybe it would be helpful to tell the user why you're prompting them again and again. It's not obvious. So it could go both ways. 
+
+But, again, it's just another mechanism, now, for handling these errors. We use the except keyword to catch a specific error. But we don't have to handle it more than that. We can just pass on doing something further. 
+
+Let me pause here and see if there's any questions now on try, accept, else, or pass? 
+
+AUDIENCE: OK, yeah. No. I was just kind of curious, I guess, about the idea of when you were inventing with the get int function, for example. Because I'm noticing, obviously, going through it with the whole logic and breakdown of the entire function, while true, do this. But I'm just kind of curious in elaborating with the indentations for the code more. 
+
+DAVID MALAN: Yeah. So the invitation is deliberate logically. Some languages don't require as rigorous indentation. You can use curly braces or other symbology to make clear what is associated with what. In general, any time you indent something in Python on this line-- rather, anytime you write a code a line of code in Python that's here and the lines below it are somehow indented, that means that those lines are somehow associated with that first line. And, presumably, those indented lines should only be executed if the first line told the computer to do so. 
+
+So, concretely, what does this mean? On line six here, we're defining a function called get in that takes no arguments, colon. Everything that's indented by at least four spaces hereafter is part of that function. Why? That's just the design of the Python language. 
+
+Frankly, I think the designers got tired of seeing really ugly code in languages like C and C++ and Java that don't necessarily enforce indentation to this extent. So now it's baked into the language. And my chronology might be a little off there. But there's been many languages that are looser than Python when it comes to indentation. 
+
+The indentation is meaningful on line seven too. Notice that because the while true is indented by four spaces. That just means it's part of the get int function. But notice below the while true statement, there is eight, there's 12, there's eight, there's 12 spaces here. And I'm just quickly counting the dots. 
+
+That means that all of the lines I've just highlighted are inside of that while loop. While true means to execute lines eight through 11, potentially, again and again and again. And now, lastly, on line eight, because we have try and indented below it is line nine, that just means that what you should try is what's on line nine. 
+
+And similarly, on line 10, below it, we have indented line 11. You should only pass when there is an exception of a value error. So the indentation just means what is associated with what. And once you get comfortable with that, you'll see that the indentation alone helps explain the logic of your program. 
+
+And it has a wonderful side effect that for yourself the next morning, for your colleagues, your family, your friends, your teachers, your code is much more readable as a result. It's not one big mess of a blob of text. Other questions now on try, except, else, or pass? 
+
+AUDIENCE: Yeah, thanks. Two question. Question one-- once you say pass, can the caller still learn anything about this era through a system variable or whatever? And question two-- problem set zero referenced some string methods, including is numeric-- is it any different to [INAUDIBLE]? 
+
+DAVID MALAN: Good question. So on the first question, if I'm handling the error in this way, the caller is not going to know anything about it. That's the point of my handling it, so that main or other callers don't know that anything technically went wrong. 
+
+On the second question, is numeric is another function that you can call that can look at a string and determine is this, in fact, a number. I could use a mechanism like that. I could use a conditional. 
+
+If this looks like a number, then pass it to the int function. And go ahead and convert it to an integer. That's totally fine. I would generally say that the Pythonic way of doing things is often, for better or for worse, to try things, hope they work. But if they don't, handle the exception. 
+
+So other languages are more in favor of checking if, if, if, if, elif, else, and all of these conditionals. Python tends to be a little more of the mindset, eh, try it. But just make sure you're handling the error. So this would be the Pythonic way of doing it. Your way, though-- checking with the conditional, is it a number first?-- is totally reasonable too, if you want to go that way.

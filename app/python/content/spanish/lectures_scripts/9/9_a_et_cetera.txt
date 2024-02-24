@@ -1,0 +1,7 @@
+[MÚSICA] DAVID J. MALAN: Muy bien. Esto es la Introducción a la Programación con Python de CS50. Me llamo David Malan. Y a lo largo de estas últimas semanas nos hemos centrado en funciones y variables al principio, luego en condicionales, ciclos, excepciones, un poco de bibliotecas, diseño de pruebas unitarias, expresiones regulares, programación orientada a objetos y muchas otras cosas más.
+
+Y de hecho, es precisamente en eso en lo que nos enfocamos hoy, en todo lo que se puede hacer con Python y la programación en general más allá de algunos de esos conceptos fundamentales también. De hecho, si comienzas a hojear la documentación de Python y todas sus formas, a las que siempre se puede acceder en docs.python.org, verás documentación adicional sobre el propio tutorial y biblioteca de Python, su referencia, sus instrucciones.
+
+Y entre todos esos diferentes documentos, así como otros en línea, verás que hay algunos detalles que no tocamos del todo. Y de hecho, aunque tematizamos estas últimas semanas alrededor de temas bastante amplios y esenciales para resolver problemas típicos en Python, resulta que hay muchas otras características también que no necesariamente comentamos, que no encajaban dentro de esos conceptos generales o que podrían haber sido un poco demasiado si los hubiéramos visto muy pronto en el curso.
+
+Por lo tanto, en esta última clase de hoy, nos enfocaremos realmente en todo lo que se puede hacer con Python y esperamos despertar tu interés para que sigas aprendiendo por tu cuenta todo lo demás.

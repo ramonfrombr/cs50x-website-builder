@@ -1,0 +1,45 @@
+Bueno, ahora volvamos atrás, y propondré que este código ahora funciona correctamente, pero podemos diseñarlo un poco mejor. Resulta que es muy fácil olvidar cerrar archivos al escribir código. Y a veces, esto no es necesariamente un gran problema. 
+
+Pero a veces, puede crear problemas. Los archivos podrían corromperse o borrarse accidentalmente, dependiendo de lo que suceda en tu código. Resulta que no es estrictamente necesario llamar al método close en el archivo tú mismo si usas otro enfoque en su lugar. Lo más "Pythonic" al manipular archivos es hacer esto, introducir esta otra palabra clave llamada, simplemente, with, que te permite especificar que, en este contexto, quiero que abras y cierres automáticamente algún archivo. 
+
+Entonces, ¿cómo usamos el with? Simplemente se ve así. Permíteme volver a mi código aquí. Me deshice de la línea close. 
+
+Y ahora voy a decir esto en su lugar. En lugar de decir file = open, voy a decir, with open, luego los mismos argumentos que antes, y algo curiosamente, voy a poner la variable al final de la línea. ¿Por qué? Así es como se hace. 
+
+Dices "with", llamas a la función en cuestión y luego dices "as" y especificas el nombre de la variable a la que se asignará el valor de retorno de open. Luego, voy a sangrar la línea debajo para que la línea de código que escribe el nombre ahora esté en el contexto de esta declaración with, lo que garantiza que, automáticamente, si tengo más código en este archivo más abajo, sin sangría, el archivo se cerrará automáticamente tan pronto como se complete la línea 4. Entonces esto no cambia lo que acaba de suceder, pero automatiza el proceso de al menos cerrar las cosas para asegurarme de no olvidarlo y para que nada salga mal. 
+
+Pero supongamos, ahora, que quiero leer estos nombres del archivo. Hasta ahora solo he escrito código que escribe nombres en el archivo. Pero supongamos, ahora, que tenemos todos estos nombres en el archivo. 
+
+Y vamos a agregar uno más. Déjame ejecutar esto una vez más: python names.py. Y agreguemos a Draco a la mezcla. Ahora que tenemos los cuatro nombres aquí, ¿cómo podemos leerlos nuevamente? 
+
+Bueno, propongo que entremos en names.py ahora, o podríamos crear otro programa por completo. Pero voy a seguir usando el mismo nombre solo para mantenernos enfocados en esto. Y ahora voy a escribir código que lee un archivo existente con Hermione, Harry, Ron y Draco juntos. 
+
+¿Y cómo hago esto? Bueno, es similar en espíritu. Voy a empezar esta vez con with open, con el primer argumento como el nombre del archivo que quiero abrir, como antes. Y lo voy a abrir, esta vez, en modo de lectura, comillas/entrecomillado, r. Y voy a asignar el valor de retorno a la variable file. 
+
+Y ahora voy a hacer esto. Hay varias formas de hacer esto, pero una forma de leer todas las líneas del archivo de una vez sería esta. Voy a declarar una variable llamada "lines". 
+
+Voy a acceder a ese archivo y llamar a una función o un método que viene con él llamado "readlines". Así que si lees la documentación sobre E/S de archivos en Python, verás que los archivos abiertos vienen con un método especial cuyo propósito en la vida es leer todas las líneas del archivo y devolvérmelas como una lista. Entonces, lo que hace esta línea 2 es leer todas las líneas de ese archivo y almacenarlas en una variable llamada "lines". 
+
+Ahora, supongamos que quiero iterar sobre todas esas líneas e imprimir cada uno de esos nombres. Para línea en líneas, esto es solo un bucle for estándar en Python. Líneas es una lista y la variable "línea" se establecerá automáticamente en cada una de esas líneas. Permíteme imprimir algo como, oh, hola, coma, y luego imprimir la línea misma. 
+
+Bien, así que voy a mi ventana de terminal, ejecuto python names.py ahora, no eliminé names.txt, así que todavía contiene los cuatro nombres, y presiono Enter, y OK, no está mal, pero es un poco feo aquí. ¿Qué está pasando? Cuando ejecuté names.py, dice Hola a Hermione, a Harry, a Ron, a Draco. Pero ahora hay estos espacios en blanco entre las líneas. ¿Qué explica ese síntoma? Si nada más, simplemente se ve feo. 
+
+AUDIENCIA: Sucede porque en el archivo de texto, tenemos símbolos de salto de línea entre esos nombres, y print siempre agrega otro salto de línea al final. Así que estás usando el mismo símbolo dos veces. 
+
+DAVID MALAN: Perfecto. Y aquí tienes un buen ejemplo de un error, un error en un programa. Pero si simplemente piensas en esos primeros principios, como, ¿cómo funciona cada una de las líneas de código que estoy usando? Deberías poder razonar, exactamente como Ripal allí, para decir que, bueno, una de esas nuevas líneas proviene del archivo después de cada nombre. Y luego, por supuesto, print, todas estas semanas después, todavía nos está dando gratis ese espacio extra de nueva línea. 
+
+Entonces hay un par de soluciones posibles. Ciertamente podría hacer esto, que hemos hecho en el pasado, y pasar un argumento con nombre a print, como "end=''" (sin nada). Y eso está bien. Yo argumentaría que algo mejor que eso podría ser hacer esto, eliminar el salto de línea de la línea final para que print maneje la impresión de todo, el nombre de la persona y el salto de línea. 
+
+Pero estás eliminando lo que realmente es solo un detalle de implementación en el archivo. Elegimos usar saltos de línea en mi archivo de texto para separar un nombre de otro. Así que se podría argumentar que sería un poco más limpio en términos de diseño quitar eso y dejar que print imprima lo que ahora es solo un nombre. Pero eso, en última instancia, es una decisión de diseño. El efecto va a ser exactamente el mismo. 
+
+Bueno, si voy a abrir este archivo y leer todas las líneas y luego iterar sobre todas esas líneas e imprimirlas todas, en realidad podría combinar esto en una sola cosa porque, en este momento, estoy haciendo el doble de trabajo. Estoy leyendo todas las líneas y luego iterando sobre todas las líneas solo para imprimir cada una de ellas. Bueno, en Python, con archivos, puedes hacer esto. Voy a borrar casi todas estas líneas ahora, dejando solo la declaración with al principio. Y dentro de esta declaración with, voy a decir esto, para línea en archivo, ve y imprime, entrecomillado, hola, coma, y luego línea.rstrip. 
+
+Entonces, voy a tomar el enfoque de eliminar el final de la línea. Pero fíjate qué elegante es, por así decirlo. He abierto el archivo en la línea 1. Y si quiero iterar sobre cada línea del archivo, no tengo que leer muy explícitamente todas las líneas y luego iterar sobre todas las líneas. Puedo combinar esto en un solo pensamiento. 
+
+En Python, simplemente puedes decir, para línea en archivo, y eso tendrá el efecto de darte un bucle for que itera sobre cada línea del archivo, una a la vez, y en cada iteración, actualiza el valor de esta variable línea a Hermione, luego Harry, luego Ron, luego Draco. Entonces, esto, de nuevo, es uno de los aspectos atractivos de Python, es que se lee bastante como inglés: para línea en archivo, imprime esto. Es un poco más compacto cuando se escribe de esta manera. 
+
+Bueno, ¿qué pasa si no quiero exactamente este comportamiento? Porque ahora mismo, si ejecuto python names.py, es correcto. Estoy viendo cada uno de los nombres y cada uno de los "hola", y no hay espacios adicionales entre ellos. Pero para ser difícil, realmente me gustaría que ordenáramos estos "hola". Realmente me gustaría ver a Draco primero, luego Harry, luego Hermione, luego Ron, sin importar el orden en que aparecen en el archivo. 
+
+Entonces podría ir, por supuesto, al archivo y cambiarlo manualmente. Pero si ese archivo está cambiando con el tiempo en función de quién está escribiendo su nombre en el programa, eso no es realmente una buena solución. En el código, debería poder cargar el archivo, sin importar cómo se vea, y simplemente ordenarlo todo de una vez. Ahora, aquí hay una razón para no hacer lo que acabamos de hacer. 
+
+No puedo iterar sobre cada línea en el archivo e imprimirlo pero ordenar todo de antemano. Lógicamente, si estoy mirando cada línea una a la vez e imprimiéndola, es demasiado tarde para ordenar. Realmente necesito leer todas las líneas primero sin imprimirlas, ordenarlas y luego imprimirlas. Así que tenemos que retroceder un paso para agregar esta nueva característica. Entonces, ¿cómo puedo hacer esto?

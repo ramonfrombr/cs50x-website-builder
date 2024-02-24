@@ -1,0 +1,33 @@
+Resulta que si quieres manejar una excepción en Python pero no quieres hacer nada al respecto, es decir, quieres capturarla pero esencialmente ignorarla. No quieres imprimir nada. No quieres cerrar el programa. Simplemente quieres ignorarla en silencio, como si estuvieras hablando en una habitación llena de gente y fuera tu turno de hablar y simplemente dices "paso".
+
+Todavía te están llamando. Pero no estás haciendo ni diciendo nada más. Bueno, podemos agregar esta palabra clave a nuestro código aquí. Déjame volver a mi programa aquí. En lugar de imprimir una y otra vez "x no es un número entero", podría hacer esto.
+
+Podría pasar por alto el manejo del error más adelante. Todavía lo estoy capturando. Entonces el usuario no verá un mensaje aterrador que mencione el error de valor. Mi código lo está capturando.
+
+Pero estoy pasando por alto decir algo al respecto. Voy a quedarme en el bucle. Voy a seguir solicitando y volviendo a solicitar al usuario, así que ahora el efecto se ve un poco así. Python de number.py. Escribamos "gato". ¿Qué es x de nuevo?
+
+Escribamos "perro". ¿Qué es x de nuevo? Escribamos "pájaro". Por lo tanto, es un poco más amigable para el usuario, ya que solo estás recordándole al usuario lo que quieres.
+
+Tal vez sea peor. Tal vez sería útil decirle al usuario por qué le estás pidiendo una y otra vez. No es obvio. Por lo tanto, puede ir en ambas direcciones.
+
+Pero, de nuevo, es solo otro mecanismo, ahora, para manejar estos errores. Usamos la palabra clave except para capturar un error específico. Pero no es necesario manejarlo más que eso. Simplemente podemos pasar y hacer algo más.
+
+Permítanme hacer una pausa aquí y ver si hay alguna pregunta sobre try, accept, else o pass.
+
+AUDIENCIA: OK, sí. No. Solo tenía curiosidad, supongo, acerca de la idea de cuando estabas experimentando con la función "get int", por ejemplo. Porque estoy notando, obviamente, pasando por todo esto con toda la lógica y descomposición de la función completa, mientras sea verdadero, haz esto. Pero solo estoy curioso de elaborar más con las sangrías del código.
+
+DAVID MALAN: Sí. La sangría es intencionalmente lógica. Algunos lenguajes no requieren una sangría tan rigurosa. Puedes usar llaves o otros símbolos para dejar claro qué está asociado con qué. En general, cada vez que sangres algo en Python en esta línea, es decir, cada vez que escribas una línea de código en Python que esté aquí y las líneas siguientes estén de alguna manera sangradas, eso significa que esas líneas están asociadas de alguna forma con la primera línea. Y, presumiblemente, esas líneas sangradas solo se ejecutarán si la primera línea le dijo a la computadora que lo hiciera.
+
+Entonces, concretamente, ¿qué significa esto? En la línea seis aquí, estamos definiendo una función llamada "get int" que no toma argumentos, dos puntos. Todo lo que está sangrado al menos por cuatro espacios a partir de ahí forma parte de esa función. ¿Por qué? Esa es solo la estructura del lenguaje Python.
+
+Sinceramente, creo que los diseñadores se cansaron de ver código realmente feo en lenguajes como C y C++ y Java que no necesariamente obligan a una sangría en esta medida. Así que ahora está integrado en el lenguaje. Y puede que mi cronología no sea del todo precisa allí. Pero ha habido muchos lenguajes más flexibles que Python en cuanto a sangría.
+
+La sangría también es significativa en la línea siete. Observa que dado que "while true" está sangrado por cuatro espacios, eso significa que es parte de la función "get int". Pero observa debajo de la sentencia "while true", hay ocho, hay 12, hay ocho, hay 12 espacios aquí. Y estoy contando rápidamente los puntos.
+
+Eso significa que todas las líneas que acabo de resaltar están dentro de ese bucle while. "While true" significa ejecutar las líneas ocho a once, potencialmente, una y otra vez. Y por último, en la línea ocho, porque tenemos "try" y sangrado debajo de él está la línea nueve, eso simplemente significa que lo que debes intentar es lo que está en la línea nueve.
+
+Y de manera similar, en la línea diez, debajo de ella, tenemos sangrada la línea once. Solo deberías pasar cuando haya una excepción de error de valor. Entonces, la sangría simplemente significa qué está asociado con qué. Y una vez que te sientas cómodo con eso, verás que solo la sangría ayuda a explicar la lógica de tu programa.
+
+Y tiene un efecto secundario maravilloso de hacer que tu código sea mucho más legible para ti al día siguiente, para tus colegas, tu familia, tus amigos, tus profesores. No es una gran masa de texto confuso. ¿Alguna otra pregunta ahora sobre try, except, else o pass?
+
+AUDIENCIA: Sí, gracias. Dos preguntas. Pregunta uno: una vez que dices "pass", ¿el llamador aún puede aprender algo sobre este error a través de una variable del sistema o algo similar? Y pregunta dos: el "problem set zero" hacía referencia a algunos métodos de cadena, incluyendo "isnumeric", ¿es diferente a "?

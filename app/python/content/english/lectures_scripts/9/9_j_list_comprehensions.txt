@@ -1,0 +1,44 @@
+
+
+
+So it turns out there's another way we can solve this problem in a way that's even more Pythonic, or at least quite common. And that's using a feature known as a list comprehension. 
+
+And it's a big phrase, if you will. But it refers to the ability in Python for you to very easily construct a list on the fly without using a loop, without calling append and append, but to do everything in one, daresay, elegant one-liner. 
+
+So how can I go about using this notion of a list comprehension? Well, let me go ahead and do this. In yell.py, in VS Code here, let me go ahead and change my approach as follows. Instead of using map, which is perfectly fine and correct in this way, let me just show you this other way as well. A list comprehension is the opportunity to create a list like this, using square brackets like this. 
+
+But inside of those square brackets to write a Python expression, that in effect is going to dynamically generate a brand new list for you using some logic you've written. And the approach I might take here is this. If I want to store in this list the uppercase version of every word in that words list, I can do this-- word.upper for word in words. 
+
+Now, this is a mouthful. But I dare say Python programmers love this capability of being able to define on the fly a list inside of which is any number of values that you would ordinarily, at least as we've done it, construct with a loop and again calling append, and append, and append. But that usually takes two, three, four or more lines. 
+
+This list comprehension that I've highlighted here is now an alternative way to create the exact same thing-- a list inside of which are a whole bunch of uppercased words. Which words? For each word in the words list that was passed into yell is what ends up in this list. 
+
+Questions on this syntax here? It definitely takes a little bit of getting used to. Because you've got this value on the left, this function call here. You've got this loop inside of the square brackets. But if you become accustomed to reading the code in this way from left to right, this means give me the uppercase version of the word for each word in my words list. Questions here on list comprehensions? 
+
+STUDENT: Hi. Can you do conditionals also, like if else, or combine if, elif, else? 
+
+DAVID J. MALAN: Indeed, you can. And let me come back to that, where we'll see an opportunity to do things conditionally. But for now, I'm just uppercasing every word in the list. Good question. Other questions? 
+
+STUDENT: Yeah. Is this functional programming? Or I mean, this particular thing, we are using words.upper for a word in words? 
+
+DAVID J. MALAN: Not necessarily. This is more of a feature of Python, I would say. 
+
+STUDENT: OK. 
+
+DAVID J. MALAN: Yeah. Map was one very specific incarnation of thereof our use of Lambda and passing it in as a key attribute to the sort function, sorted function a while back was an example. And we're about to see one other. 
+
+So we can even use these list comprehension to filter values in or out of our resulting list. So in fact, in VS Code here, let me close yell.py and close my terminal window. And let me create a new program here whose purpose in life maybe is to take a same list of students as before with a shorter version thereof, and just filter out all of the students in Gryffindor. 
+
+So let me go ahead and create a file called Gryffindors.py. I'm going to go ahead and copy paste from before really my list of students, at least Hermione, Harry, Ron, and Draco from the start here, just so that I can focus on one student who happens not to be from Slytherin. 
+
+And what I'm going to do here now, if I want to filter out only the Gryffindor students, let me go ahead and do this. Let me create another variable called Gryffindors, which is going to equal the following list. And this is going to be a bit of a longer line. So I'm going to proactively move my square brackets onto two separate lines. And I'm going to create now a list comprehension. 
+
+I want to do this. I want this new list called Gryffindors to contain every student's name for each student in the student's list. But, but, but, if the student's house equals equals quote unquote Gryffindor. So this is nearly identical in spirit to what I just did earlier to create a list comprehension out of each of the words passed to my yell function. But here, I'm doing so conditionally. 
+
+And so, I'm borrowing inspiration from our focus on loops, borrowing some inspiration from our focus on conditionals, combining that into this same square bracket notation. So that what Gryffindors ultimately is, is zero or more students' names. And the names that are included are the result of iterating over each of those students and only including in the final result the students whose house happens to be Gryffindor. 
+
+So when I go ahead and run this with Python of Gryffindors.py and hit Enter, you'll see, huh, nothing actually happened here. Well, that's because I didn't finish the program. Let me go ahead and actually finish the program with this. How about for each Gryffindor in Gryffindors plural-- and better yet, so that it's sensible that I did all of this work in advance, let me go ahead and sort all of those names with our familiar sorted function. 
+
+Let's go ahead now and print out each of these Gryffindors. So now, notice, if familiar with the books and the movies, you'll know that only three of these four students are actually in Gryffindor. And if I run Python of Gryffindor.py, there we see Harry, Hermione, and Ron, but now in sorted order as well. 
+
+So that's just one way we can solve this same problem using not just a list comprehension but a list comprehension that has this conditional therein. But there's yet other ways to solve this same problem too. And we come back to some functional features of Python.

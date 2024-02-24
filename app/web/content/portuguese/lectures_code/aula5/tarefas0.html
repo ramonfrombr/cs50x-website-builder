@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector("form").onsubmit = () => {
+                    // Criar novo item para lista
+                    const li = document.createElement("li");
+                    li.innerHTML = document.querySelector("#tarefa").value;
+
+                    // Adicionar novo item à lista de tarefas
+                    document.querySelector("#tarefas").append(li);
+
+                    // Limpar campo de entrada
+                    document.querySelector("#tarefa").value = "";
+
+                    // Impedir envio do formulário
+                    return false;
+                };
+            });
+        </script>
+        <title>Tarefas</title>
+    </head>
+    <body>
+        <h1>Tarefas</h1>
+        <ul id="tarefas"></ul>
+        <form>
+            <input
+                id="tarefa"
+                autocomplete="off"
+                autofocus
+                placeholder="Nova Tarefa"
+                type="text"
+            />
+            <input type="submit" />
+        </form>
+    </body>
+</html>

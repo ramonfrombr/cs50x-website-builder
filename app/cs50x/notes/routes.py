@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import render_template
 from . import notes_bp as bp
 import os
 import marko
@@ -113,11 +113,10 @@ def notes9():
         markdown_text=marko.convert(markdown_text)
     )
 
-@bp.route('/cybersecurity')
-@bp.route('/cybersecurity.html')
-def cybersecurity():
-    
-    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/notes/cybersecurity.md", "r") as f:
+@bp.route('/10')
+@bp.route('/10.html')
+def notes10():
+    with open(f"app/cs50x/content/{os.environ['COURSE_LANGUAGE']}/notes/10.md", "r") as f:
         markdown_text = f.read()
 
     return render_template(

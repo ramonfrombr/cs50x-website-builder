@@ -1,0 +1,55 @@
+Bueno, permítame proponer, también, ahora que refinemos esto aún más. Creo que estamos en el punto donde es bastante correcto. Pero supongamos ahora que me encuentro hoy y mañana intentando obtener números del usuario bastante seguido.
+
+Sería bueno, como hemos visto, inventar mi propia función, "get int" para obtener un entero del usuario tanto hoy como mañana y en el futuro. Y, demonios, tal vez incluso pueda compartir esa función con otras personas. Si quieren escribir programas, obtienen enteros de los usuarios.
+
+Entonces, ¿cómo puedo hacer esto? Bueno, déjame proponer que hagamos esto. Déjame eliminar la línea de impresión pero mantener la mayoría de mi bucle aquí. Déjame definir una función llamada "get int" que no tome argumentos por ahora. Y voy a ir y sangrar todo el código que ya escribí debajo de "get int".
+
+Así que ahora tengo una función llamada "get int" que intenta hacer lo siguiente. Intentar obtener un entero del usuario. Si algo sale mal y hay un error de valor, gritarles con "x no es un entero". De lo contrario, romper. Pero no es solo romper lo que quiero hacer aquí.
+
+Ahora que estoy en una función, recuerda nuestra discusión sobre los valores de retorno. Si estás inventando tu propia función cuyo propósito en la vida no es solo imprimir algo en la pantalla como un efecto secundario, sino devolver un valor, para devolverte un valor, como en esa misma nota adhesiva de nuestra discusión sobre funciones, bueno, necesitas devolver explícitamente x. ¿Cómo uso esta función ahora?
+
+Bueno, tan pronto como empezamos a hacer nuestras propias funciones, tiende a ser conveniente definir nuestra propia función principal también. Esa es la parte principal de nuestro programa. Y voy a mantener esto simple.
+
+Ahora voy a decir, x es igual a "get int". Y luego, en la siguiente línea, voy a hacer esa impresión de antes, comillas dobles, "x es" - entre llaves - "x". Y en la parte inferior de mi programa, recuerda, voy a llamar a "main", para que pase lo que pase, invoque mi función principal después de que todo haya sido definido.
+
+Bueno, veamos cómo funciona esto. Déjame ir y ejecutar Python de number.py. Presionar Enter. Escribir 50. Y parece que funciona como antes.
+
+Vamos a ejecutarlo nuevamente, escribiendo gato, C-A-T, esta vez. X no es un entero. Y se me está pidiendo de nuevo.
+
+Perro, y se me está pidiendo de nuevo. Pájaro, y se me está pidiendo de nuevo. Bueno, bien, bien. 50. Eso es un entero. Y se imprime.
+
+Entonces, ¿qué vale la pena destacar aquí? Bueno, estoy manifestando un par de buenas propiedades aquí. Uno, he abstraído esta noción de obtener un entero. Y aunque solo golpeé artificialmente Enter muchas veces solo para ocultar esa función por ahora: necesita estar ahí, pero no necesitamos verla en este momento; note que ahora todo este programa realmente se reduce a solo estas tres líneas de código. ¿Por qué? Porque he abstraído todo ese proceso de obtener un entero del usuario en esta nueva función propia llamada "get int".
+
+¿Pero puedo mejorar esto? Bueno, déjame deshacer todas esas líneas en blanco y subir esto solo para que podamos ver más en la pantalla a la vez. ¿Puedo mejorar mi implementación de "get int"? Es correcto.
+
+Afirmo que esto es correcto. Está manejando errores y devuelve x. Pero no necesito, estrictamente hablando, escribir el código tan largo. ¿Qué más podría hacer?
+
+Bueno, permítame proponer que si todo lo que estás haciendo en esta línea 13 es romper y luego inmediatamente después, de acuerdo con la sangría, estás ejecutando "return x" en la línea 14, ¿por qué estás desperdiciando el tiempo de todos? Una vez que sepas que estás listo para devolver el valor, simplemente puedes devolver x.
+
+Y así en mi else, podría salir y devolver un valor. Entonces, aquí también, "return" se usa para devolver valores de las funciones. "Break" se usa para salir de los bucles. Pero resulta que "return" es algo más fuerte que "break".
+
+No solo te sacará de un bucle, también te devolverá un valor. Por lo tanto, está haciendo dos cosas a la vez, si quieres.
+
+¿Pero puedo hacer esto aún más compacto? Si mi objetivo es simplemente ajustar el código, aunque ya esté correcto, ¿alguien puede pensar en un refinamiento adicional, ya sea que haya programado en Python antes o no? ¿Puedo acortar esta implementación aún más solo un poco, aunque sea para disminuir la probabilidad de que haya cometido un error al tener menos líneas y hacer que sea un poco más fácil de leer porque es más corto? ¿Alguna sugerencia para mejorar mi implementación de "get int"?
+
+AUDIENCIA: Puedes simplemente devolver el valor en el bloque try, cuando lo estás intentando. Tomas la entrada x y luego devuelves x.
+
+DAVID MALAN: Bien. Simplemente podemos devolver x un poco más arriba. Y permítanme corregir a medida que avanzamos. No es una "función de try", técnicamente hablando. Sería una "sentencia de try", técnicamente.
+
+Una función generalmente tiene un paréntesis y otro. En este caso, es solo una sentencia. Pero podemos hacer exactamente eso. Técnicamente no necesito el else.
+
+Si realmente quiero, podría hacer esto. Justo después de la línea nueve, podría devolver x aquí. O recuerden nuestra discusión sobre definir variables innecesariamente a veces. ¿Por qué definir una variable aquí si la vas a usar de inmediato aquí y luego nunca más? Así que podríamos evitar una nueva línea aquí. Y podría evitar incluso definir x explícitamente.
+
+Podría simplemente decir algo así. Podría devolver "int, input", escribir entre comillas, "¿cuál es x?" Puedo hacerlo todo de una vez. Ahora, ¿cuál es mejor? No lo sé.
+
+Quiero decir, nuevamente, aquí es donde las personas razonables pueden estar en desacuerdo. Argumentaría que, por un lado, estamos ajustando el código, usando menos líneas. Es más fácil de leer, menor probabilidad de que haya cometido un error.
+
+Por otro lado, es un poco más complicado de entender, quizás. Es un poco menos obvio desde dónde estoy devolviendo. Así que creo que se pueden dar argumentos en ambos sentidos.
+
+Al final del día, lo importante es que hayas hecho esto conscientemente. Has tomado la decisión de hacerlo de esta manera o de esta manera. Y puedes justificarlo en tu mente; no es que tu respuesta sea, eh, funcionó, así que lo dejé tal como estaba.
+
+Ten una buena razón. Encuentra una buena razón. Y eso vendrá con experiencia y práctica.
+
+Bueno, permítame proponerles que hagamos otra mejora aquí. Supongamos que encuentras que tus programas son un poco ruidosos. Y es un poco molesto que sigas diciendo al usuario, x no es un entero. x no es un entero. x no es un entero.
+
+¿Qué tal si quieres que las cosas sean un poco más suaves y solo incites al usuario nuevamente con las mismas palabras, ¿cuál es x? ¿Cuál es x? ¿Cuál es x? Una vez más. Bueno, también puedes hacer eso.

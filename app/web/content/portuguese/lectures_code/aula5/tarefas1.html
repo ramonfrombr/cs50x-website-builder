@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Por padrão, o botão de envio está desabilitado
+                document.querySelector("#enviar").disabled = true;
+
+                // Habilitar o botão apenas se houver texto no campo de entrada
+                document.querySelector("#tarefa").onkeyup = () => {
+                    document.querySelector("#enviar").disabled = false;
+                };
+
+                document.querySelector("form").onsubmit = () => {
+                    // Criar novo item para a lista
+                    const li = document.createElement("li");
+                    li.innerHTML = document.querySelector("#tarefa").value;
+
+                    // Adicionar novo item à lista de tarefas
+                    document.querySelector("#tarefas").append(li);
+
+                    // Limpar o campo de entrada e desabilitar o botão novamente
+                    document.querySelector("#tarefa").value = "";
+                    document.querySelector("#enviar").disabled = true;
+
+                    // Impedir o envio do formulário
+                    return false;
+                };
+            });
+        </script>
+        <title>Tarefas</title>
+    </head>
+    <body>
+        <h1>Tarefas</h1>
+        <ul id="tarefas"></ul>
+        <form>
+            <input
+                id="tarefa"
+                autocomplete="off"
+                autofocus
+                placeholder="Nova Tarefa"
+                type="text"
+            />
+            <input id="enviar" type="submit" />
+        </form>
+    </body>
+</html>

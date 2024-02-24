@@ -1,0 +1,100 @@
+
+Allow us to equip you with one final tool for your tool kit, namely this ability to generate values in Python from functions. This is not a problem that we've necessarily encountered before. But it turns out, if you're writing a function that reads or generates lots of data, your function, your program, your computer might very well run out of memory. And your program might not be able to run any further. 
+
+But it turns out there's a solution to this problem that's something you might have in your back pocket, particularly if after this course you start crunching quite a few numbers and analyzing all the more data. In fact, let's go back to VS Code here. And let's go ahead and create a program that's perhaps timely at this time of day, particularly depending on your time zone, you might be feeling all the more sleepy. 
+
+But here in the US, it's quite common to be lulled to sleep when you're struggling otherwise by counting sheep in your head. And typically, as depicted in cartoons, you might see in your mind's eye one sheep jumping over a fence, and then two, and then three sheep, and then four. And then, eventually, you presumably get so bored counting these sheep you actually do fall asleep. 
+
+So in VS Code here, let's create a program called sleep.py that allows me to print out some number of sheep as though I'm counting them in my mind's eye. And via this program, let's do this. Let's prompt the user for a variable n, setting it equal to the integer conversion of the return value of input, asking the user what's n? For how many sheep do they want to try counting? 
+
+And then, let's do a familiar for loop here. And we'll start counting from zero as always. So we'll first have zero sheep, then one sheep, then two sheep, and so on for i in the range of that value n. Go ahead and print out. 
+
+And I'll paste here an emoji representing a sheep times i. So the first iteration I'll see zero sheep. The second iteration you'll see one, and then two, and then however many specified by n ultimately minus one. 
+
+Let's go down into my terminal window here and run Python of sleep.py. And I should see, indeed, after typing in, say, three for my value of n, zero sheep, then one sheep, then two sheep, and so forth. 
+
+And if I make my terminal window even bigger here, we can, of course, do many more than this, typing in, for instance, 10. And you'll see that we get more and more sheep as time passes, presumably becoming all the more tedious to envision in my mind's eye. 
+
+So let's now go ahead and practice what we've been preaching when it comes to the design of this program and see if and when we actually run into a problem. Let me go ahead here now and put all of this in a main function by defining main up here as always. Let me go ahead and indent all of this code here. And then, let me just do this conditionally as always, if the name of this file equals equals quote unquote main, let's go ahead and call main. 
+
+Let's make sure I didn't break anything just yet, even though functionally this should be nearly the same. And if I type in three, I still have zero, then one, then two sheep on the screen. 
+
+But we've been in the habit of course of creating helper functions for ourselves. That is, factoring our code in a way that allows us to abstract away certain functionality, like generating some number of sheep into separate functions. So that, one, they're indeed abstracted. 
+
+And we no longer have to think about how they're implemented. And we can even reuse them in projects as in libraries. But we've also been in the habit too of now testing those functions as with unit tests. 
+
+So I probably shouldn't keep all of my logic anyway in main. And let's factor some of this out. Wouldn't it be nice if I could, for instance, just call a sheep function as by taking this line of code here. And instead of just printing it here, let's print out the return value of a new function called sheep that tells the function how many sheep to print, i in this case. 
+
+Let's go down as always and create another function here called sheep. The sheep function now will take a parameter n that specifies how many sheep do you want to return. And so, that we can test this as with a unit test, though we won't do that here, let me go ahead and not print the number of sheep as via a side effect. But let me go ahead and return one of those sheep times n so that the user gets back a whole string of sheep that's the appropriate number to print. 
+
+So here too functionally, I don't think we've changed anything too fundamentally. Python of sleep.py typing three still gives us zero, then one, and then two sheep. But now, we at least have a framework for focusing on the implementation of this sheep function. 
+
+But it's a little inelegant now that it's still up to the main function to do this iteration. We've seen in the past way back in week zero, wouldn't it be nice to define a function that actually handles the process of returning the entire string that we want rather than just one row of sheep at a time. 
+
+Well, I think we can do this. Why don't I go ahead and change sheep as follows. Let me go ahead here and first create a flock of sheep that's initially empty using an empty list. Then for i in the range of n, let's go ahead and append to that flock, for instance, one sheep times i, so that I keep adding to this list zero sheep, then one sheep, then two sheep, then three, and so forth. 
+
+And then, ultimately, I'm going to return the whole flock of sheep at once. So this is going to return the equivalent of all of those strings of sheep so that, ah, main can handle the printing thereof. 
+
+So back up here in main, let's do this. How about for each sheep, I'll call it s since sheep is both singular and plural, for s in sheep of n, which again returns to me a list of all of the sheep, the whole flock, let's just print out each sheep, s, one at a time. 
+
+So, so far so good here, I think. Let me go ahead and run Python of sleep.py and hit Enter. What's n three. And that's still seems to work just fine. 
+
+But let me get a little creative here and see not just three sheep on my screen but maybe 10 rows of sheep. And that too seems to work fine. Let me get a little more adventurous and type in maybe 100 sheep. And it's starting to look ugly, to be fair, but they're all printing out pretty fast. 
+
+Let me go ahead and try again with maybe 1,000 sheep on the screen. And they flew by pretty fast. It's still pretty messy. But they're all there. We could count them all up. 
+
+How about not just 1,000 but 10,000 sheep? Well, that too seems OK. It's taking like 10 times as long. And that's why you see this flickering on the screen. All of the sheep are still printing. But, but, but, it's a lot of data being printed. 
+
+If I hang in there a little longer, hopefully we'll see all 10,000 sheep coming to pass. This is here in the video where we will speed up time, a real online. Oh my God. This is a lot of sheep. 
+
+There we go. OK. And now all of my sheep have been printed. So it seems to be working just fine. Well, let me just be even more adventurous and, OK, let me try my luck. Let me try, how about one million sheep this time and hit Enter? 
+
+Ha. Something's no longer working. While we wait for a spoiler here, does anyone have any intuition for why my program suddenly stopped printing sheep? What is going wrong in this version, wherein I'm generating this really big flock of sheep? 
+
+STUDENT: We might have run out of memory or computation power. 
+
+DAVID J. MALAN: Yeah. So maybe we're actually pushing the limits of my Mac, my PCs, my cloud server's memory or CPU, the brains of the computer's capabilities because it's just trying to generate massive, massive, massive lists of sheep, one million of those rows of sheep, each of which has a huge number of sheep. And it seems that my computer here is honestly just really struggling. 
+
+And this is really unfortunate now. Because it would seem that even though this program clearly works pretty well for 1,000 sheep, 10,000 sheep, once you cross some threshold, it just stops working altogether. Or it just takes way too long for the program to be useful anymore. 
+
+But this seems a little silly, because theoretically, I should absolutely be able to print all of these same sheep if I just printed one right away, then print two right away, then print three, then four, then five. 
+
+It seems that the essence of this problem, if I go back to my code, is that per my best practices that I'm trying to practice what I'm preaching, it seems that the fundamental problem is that I've modularized my code by creating this helper function called sheep, whose purpose in life is to do all of the generation of sheep and then return all of them at once. 
+
+Wouldn't it be better-- and I can actually hear my fan turning on now even just trying to generate these sheep-- wouldn't it be better then to just print the sheep one, two, three, four at a time? Well, we could do that. 
+
+But that's really a step backwards. That rather contradicts all of the lessons learned of the past few weeks. Where generally not putting everything in main is a good thing. Generally having an additional function that you can then test separately with unit tests is a good thing. Do we really need to give up all of those best practices just to print out some sheep and here fall asleep? 
+
+Well, it turns out there's a solution to this problem, and namely in the form of these generators in Python. You can define a function as a generator, whereby it can still generate a massive amount of data for your users. But you can have it return just a little bit of that data at a time. And you yourself can implement the code in almost the same way. But you don't have to worry about too much getting returned all at once. 
+
+These two, like all features of Python, are documented in the official documentation therein. But what you'll find, ultimately, that it all boils down to this keyword here, yield. Up until now, when we've been making functions, we have been defining functions that return values, if at all, using the keyword return. And indeed, if we go back to our code here, that's exactly what I've been waiting for. I've been waiting to return the whole flock at once. 
+
+Unfortunately, if you wait too long, and here we have it, my program was quote unquote killed. That is to say, my computer got so fed up with how much memory and CPU it was trying to use it just said, nope, you're not going to run at all. And that's unfortunate. Now my program no longer works for large numbers of sleeps-- sheeps, which is not good if I'm really having trouble falling asleep some night. 
+
+So how can I use yield to solve this problem instead? Well, let me do this. Instead of building up this massive list of sheep in this big list called flock, let's just do this instead. Let me go ahead and simplify this whole function as follows, whereby I iterate for i in the range of n. And then on each iteration, in the past I might have been inclined to use return and return something like one sheep times i. 
+
+But this won't work here. Because if you want a million sheep and you start a for loop saying for i in the range of a million, you're going to return accidentally zero sheep right away. And then this function is essentially useless. You shouldn't return a value in the middle of a loop like this because you're not going to get to any of these subsequent iterations of the loop. It's going to iterate once, and boom, you return. 
+
+But thanks to this other keyword in Python called yield, you can tell Python to effectively return just one value at a time from this loop. So if I go back to this version of my code here. And I say not return but yield, this is like saying return one value at a time, return one value at a time, return one value at a time. The for loop will keep working and I will keep counting from zero, to one, to two, all the way up toward one million. 
+
+But each time, the function is just going to hand you back a little piece of data. It's going to generate, so to speak, just a little bit of that data, not all of the data at once. And that's good. Because my computer has a decent amount of RAM, certainly enough to fit one row of sheep. It just doesn't have enough memory to fit, apparently, one million rows of so many sheep. 
+
+So now, if I go to my terminal window and run Python of sleep.py and hit Enter, what's n? Three would still work-- zero, then one, and then two. Let me go ahead and increase the size of this here and run Python of sleep.py. Let's try one million as before and hit Enter. And now I immediately see results. 
+
+I don't think we'll wait for all of these sheep to be printed, because then we will literally all be asleep. But what you'll notice happening now is the program is not hanging, so to speak. It's not waiting, and waiting, and thinking, and thinking, and trying to generate the entire flock at once. It's just generating one row of sheep at a time. 
+
+And it's flickering on the screen because there are so many of them. And that's all thanks to yield. It's generating a little bit of data at a time, not all at once. Any questions now on this feature called generators? Any questions at all? 
+
+To add one more piece of terminology to the mix, just so you've heard it. This same feature here is returning what we'll technically now call an iterator. Yield is returning an iterator that allows your own code, your own for loop in main to iterate over these generated values one at a time. 
+
+STUDENT: How does this yield actually works under the hood? I mean, is it using multithreading? 
+
+DAVID J. MALAN: You can think of the implementation as being asynchronous in this sense. Whereby the function is returning a value immediately and then subsequently giving you back another one as well. Underneath the hood, what's really happening is the generator is just retaining state for you. It does not going to run the entire loop from top to bottom and then return a value. It's going to do one iteration and yield a result. 
+
+And the Python for you is going to suspend the function, if you will, but remember on what iteration it was. So the next time you iterate over it, as is going to happen again and again in this for loop in main, you get back another value again and again. 
+
+So yield returns, indeed, this thing called an iterator. And that iterator can be stepped over as in a loop one element at a time. But the language, Python handles all of that for you so that you don't need to do all of the underlying plumbing yourself. How about time for one other question on these generators and integrators as our sheep continue to fly by? 
+
+STUDENT: So if every iteration, the program will return the memory to the system so the program will not crash? 
+
+DAVID J. MALAN: Correct. On each iteration, it's only returning the one string of sheep that's appropriate for the current value of i. It is not trying to return all million rows of the same. And therefore, it uses really one millionth the amount of memory, although that's a bit of an oversimplification. 

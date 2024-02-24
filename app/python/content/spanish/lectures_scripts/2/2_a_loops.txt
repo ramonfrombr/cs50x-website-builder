@@ -1,0 +1,2 @@
+[MÚSICA SONANDO]
+DAVID MALAN: Muy bien. Este es CS50: Introducción a la Programación con Python. Mi nombre es David Malan y esta semana nos enfocaremos en los bucles, esta habilidad en Python y en muchos otros lenguajes de programación de hacer algo una y otra vez, un ciclo de algún tipo. Y veamos si podemos comenzar motivando exactamente por qué tenemos esta capacidad de hacer cosas de forma cíclica utilizando estos bucles.

@@ -1,0 +1,35 @@
+So how do I go about solving something like this? Well, it turns out that there's another feature of the try and accept syntax that Python supports, which is that it also supports the keyword else. Now, we've seen else before. If you think back to our discussion of conditionals, we saw if. We saw elif. We saw else, which was kind of this catchall, what you should do in the event that nothing else is relevant. 
+
+That's kind of the same intuition here for the try-except feature of Python. What you can do is this. You can try to do the following, as I've done, except if this goes wrong. But if nothing goes wrong, else go ahead and do this. 
+
+So this is one way I can solve this same problem now. No matter what now, Python is going to try to execute line two. If something goes wrong, it's going to execute lines three and four to handle that value error. 
+
+However, if you try and this code succeeds, then there is no exception to handle. So you're then going to execute this line here. So it's a little confusing, perhaps, in that we're now using else both for conditionals-- if, elif, elif, elif, else. 
+
+And we're also using else with these try-except blocks. But that's OK. That's part of the language. That's one of the features. 
+
+So now if I rerun this code in my terminal window, Python of number.py-- let's do something correct, like 50-- I see that x is 50. So line one is executed. We're trying to do the following. 
+
+Line two is executed because the conversion happened successfully and the number 50 gets copied from right to left. The exception does not happen. So we ignore lines three and four. We jump immediately to line five and six, which prints out the result. 
+
+By contrast, though-- let's do this one last time. Python of number.py-- let's type in cat or, again, any other word and hit Enter now. We don't see what x is. Rather, we see, quote unquote, "x is not an integer," which is what's being handled in my except clause. 
+
+All right, let me pause here because that's a lot of new syntax, and see here if there's any questions on try, on except, on else, name error, or value error. 
+
+AUDIENCE: Can you please repeat the try function? 
+
+DAVID MALAN: Repeat the name error? What's the problem with the name error? 
+
+AUDIENCE: Yes. Yes. 
+
+DAVID MALAN: Yes. So let's just rewind a couple of lines here before I fix this problem by now getting rid of the else. A moment ago, we had code that looked like this, whereby I was getting a name error, Python of number.py, Enter, typing in cat, that looked like this, where name x is not defined. And the problem was on line six, according to this output in Python. 
+
+Well, let's think about this now deductively. Let's try a different approach. On line six, I'm seeing an error that name x is not defined. OK, Python's already telling me x does not exist at that point. So how could that possibly be? 
+
+Well, where should x be defined? Well, presumably, x is defined on line two, up here. So what could go wrong? Well, if the user has inputted something that doesn't look like a number, like the word cat, passing cat, the return value of input, as the argument to int to convert the word to an int makes no sense. 
+
+You can't convert a cat, C-A-T, to an integer at all. So the int function is raising a value error at that point. And the error is being handled with this code here. 
+
+But notice this line six is not indented. It's left aligned with the rest of my code, which means no matter what, line six is going to execute. It's going to execute whether I typed in 50 or I typed in cat. 
+
+But if I typed in cat, again, x never gets a value. So it's not defined here on line six. So when I introduced, finally, the else statement, that makes sure that these things are mutually exclusive. I only execute the else if I tried and succeeded up above. 

@@ -1,0 +1,1 @@
+Si viste nuestro vídeo de introducción a Internet, dejé un poco en el aire al hablar sobre el Internet y cómo es un sistema de protocolos. Bueno, hablemos del primero de esos protocolos que realmente comprenden el Internet.

@@ -1,0 +1,86 @@
+Slide [0]
+
+Programação Web 
+com Python e JavaScript
+
+Slide [1]
+
+Testes e CI/CD
+
+Slide [2]
+
+Testes
+
+Slide [3]
+
+assert
+
+Slide [4]
+
+unittest
+
+Slide [5]
+
+Métodos do unittest
+•assertEqual 
+•assertNotEqual 
+•assertTrue 
+•assertFalse 
+•assertIn 
+•assertNotIn 
+•...
+
+Slide [6]
+
+Testes do Django
+
+Slide [7]
+
+Testes do Navegador
+
+Slide [8]
+
+CI/CD
+
+Slide [9]
+
+CI/CD
+• Integração Contínua 
+• Muitas mesclagens à ramificação principal 
+• Testes unitários automatizados 
+• Entrega Contínua 
+• Ciclos de lançamento curtos
+
+Slide [10]
+
+GitHub Actions
+
+Slide [11]
+
+YAML
+
+Slide [12]
+
+chave1: valor1 
+chave2: valor2 
+chave3: 
+    - item1 
+    - item2 
+    - item3
+
+Slide [13]
+
+Docker
+
+Slide [14]
+
+Fonte: h*ps://docs.docker.com
+
+Slide [15]
+
+Testes e CI/CD
+
+Slide [16]
+
+Programação Web 
+com Python e JavaScript

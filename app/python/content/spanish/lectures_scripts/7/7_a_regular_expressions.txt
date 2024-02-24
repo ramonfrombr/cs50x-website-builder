@@ -1,0 +1,5 @@
+[TUNING DE LA ORQUESTA] [REPRODUCCIÓN DE MÚSICA]
+
+DAVID MALAN: Muy bien. Este es "CS50's Introduction to Programming with Python" (Introducción a la programación con Python de CS50). Mi nombre es David Malan y esta es nuestra semana sobre expresiones regulares. Entonces, una expresión regular, también conocida como regex, es simplemente un patrón. Y de hecho, es bastante común en programación querer utilizar patrones para encontrar alguna coincidencia en algún tipo de datos, a menudo la entrada de un usuario.
+
+Por ejemplo, si el usuario escribe una dirección de correo electrónico, ya sea en tu programa, en un sitio web o en una aplicación en tu teléfono, idealmente querrías validar que efectivamente ingresaron una dirección de correo electrónico y no algo completamente diferente. Así que usando expresiones regulares, podremos tener la capacidad de definir patrones en nuestro código para compararlos con los datos que estamos recibiendo de otra persona, ya sea solo para validarlos o incluso para limpiar una gran cantidad de datos que pueden estar desordenados porque también provienen de nosotros los humanos.

@@ -1,0 +1,3 @@
+Al no haber preguntas, este es el final de nuestro vistazo a los bucles en Python, esta habilidad de hacer cosas de manera cíclica una y otra vez, y cuando combinamos eso con los condicionales, esta habilidad de hacer y responder preguntas y combinarlos con nuestras funciones y variables, realmente ahora tenemos la mayoría de los bloques de construcción que necesitamos para resolver preguntas mucho más grandes, mucho más interesantes, mucho más personales.
+
+Entonces, en las próximas semanas, empezaremos a ver exactamente qué podría salir mal, aunque, al hacerlo, te presentaremos todas las herramientas adicionales a través de las cuales puedes solucionar esos mismos problemas.

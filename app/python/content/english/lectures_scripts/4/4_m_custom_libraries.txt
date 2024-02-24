@@ -1,0 +1,38 @@
+
+Well, allow me to transition us back now to one final capability of Python which is that you yourselves have the ability to make your own libraries. Up until now, we've been writing all of our functions in our one file, Hello py and everything since. And now that we've introduced modules in Python, random and statistics, we can import those that come with Python. But that's other people's code as well. 
+
+And we've now used pip, this package manager to install third-party packages as well in the system and using other people's code still. But to come full circle, what if you yourself find yourself implementing the same kinds of functions again and again, or you find yourself opening up old programs, copying and pasting code you wrote into new programs because you have the same problem yet again? 
+
+A good practice would be to somehow bundle up that code you keep reusing and make your own Python module or package. You can keep it local on your own Mac or PC or cloud server. Or you can go through the steps of actually bundling it up, making it free and open source, and putting it on something like py, pi for others to use as well? 
+
+OK, I'm going to go ahead and run code of sayings.py to create a brand new file called sayings.py which is going to be my own sayings module. I'm going to define a couple of simple functions in there. I'm going to define a Hello function that's going to take a name parameter as input. And that function is simply going to print out an F string that contains hello, comma, and then in curly braces, whatever that person's name actually is. 
+
+Then I'm going to go ahead and define one other function, a goodbye function, that has def, goodbye, also takes a name as its input. And then that prints out by contrast and F string that says goodbye, comma, and then in curly braces, name. And now, just for good measure just so I can be sure that these functions are working as expected, I'm going to go ahead and define a main function in here too just for the purposes of testing. 
+
+And I'm going to go ahead and define a main function that simply does a couple of tests. For instance, it calls Hello of, quote, unquote, "world" shall we say? And then it's going to call good bye of, quote, unquote, "world" as well. And hopefully what I'll see on the screen then is Hello world and Goodbye world when I run this program. Of course, as always, I need to explicitly tell Python to call that function. So I'm going to call main at the very bottom of this file. 
+
+All right, let's try it out. Python of sayings.py, Enter. And indeed, I see Hello world and Goodbye world. And so I think it's reasonable for me to assume that these functions, albeit simple, are pretty correct at this point. But now, suppose that I want to use these functions as though I've indeed created my own library, my own Python module and that makes available a Hello function for me or anyone else who wants to use it or a Goodbye function as well. 
+
+Well, let me go ahead and open up again say.py but start fresh. And rather than have the cow say anything, let me go ahead and have my own library do the talking. So I'm going to go ahead and as before, import sys so that I have access to command line arguments. And from my own module called sayings, I'm going to import Hello. 
+
+So because I created a file called sayings.py, I can say from sayings. And it's inferred by Python that I mean sayings.py, at least in this current directory. But I specifically ain't going to import just one of the functions for now, namely Hello. 
+
+And now, I can do something like this. If the user obliges by giving me two command line arguments, which I can check by just checking the length of sys.argv, I'm going to then go ahead and call this new Hello function passing as its input, sys.argvbracket1, which should hopefully be the person's name which I'm going to expect them to type at the prompt. 
+
+So here we go. I'm going to go down to my terminal window, run Python of say.py and my own name because I want my own name to end up in the command line arguments and therefore, be part of the Hello so when I hit Enter in just a moment, I should hopefully see Hello, comma, David. 
+
+So here we go, Enter. And huh, I see Hello world, Goodbye world. And then I see Hello, David. So why is this happening? Well, it turns out even though I've done everything according to our own past practice, it's not really the right way to go about calling main after all. If I'm blindly calling main here at the bottom of my file, that means whenever this file is loaded by Python, main is going to get called. 
+
+And unfortunately, that's true even if I'm importing this file or just a function from this file as I am here in my say.py program. This is to say on line three here, when I say from sayings, import Hello, this effectively tells Python to go find that module, sayings.py, read it from top to bottom, left to right, and then import specifically the Hello function. 
+
+Unfortunately by the time Python has read the file from top to bottom, left to right, that last line of code recall is to call main. Main gets called no matter what. So really, the right way to go about using a main function, which does solve that problem of ensuring that we can order our functions however we want, and all the functions will be defined at the time they're invoked, I shouldn't be unconditionally calling main at the bottom of this or really any of my programs. 
+
+I should instead use this technique. I should say if__name__=="__main__", then and only then should you actually call main. Well, it turns out that this variable is a special symbol in Python, __name__. And notice that VS Code because of its font isn't quite showing those two underscores. But they're indeed there to the left and the right. 
+
+This is a special variable whose value is automatically set by Python to be, quote, unquote, "main" when you run a file from the command line as by running Python of sayings.py. So watch what happens now with this additional conditional in sayings.py. If I run Python of sayings.py, it still works as before because name will be automatically set to __main__ when I run this file using Python of sayings.py. 
+
+But notice this. Name is not going to be set to, quote, unquote, "main." It's going to be set to something else, technically the name of the module when I instead import the file like I do here. So this highlighted line of code even though it will cause Python to go find sayings.py, read it from top to bottom, left to right, it's going to ignore the call to main this time because it's wrapped in that conditional. 
+
+In this case, when I'm importing a file and not running it directly at the command line, main will not get called by definition of that names value. So let me go ahead and try this. Instead of running Python of sayings.py, which is the module, which contains that conditional main, let me go ahead here, run Python of say.py, which is the program here before me that imports Hello from sayings. But because of that conditional, it's not going to say Hello to anyone else except me in this case. 
+
+All right, we're here at the end of our week. It's only appropriate, I think, to import something other than Hello. Why don't I go ahead and import not Hello, but Goodbye from here. Let me go ahead and call Goodbye instead of Hello. And this time when I run Python of say.py, I'm not going to type my own name. Allow me if I may to type in the whole world so that our final sentiment today is Goodbye world. Indeed, that's it for this week. We will see you next time. 

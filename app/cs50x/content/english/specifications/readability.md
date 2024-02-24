@@ -1,54 +1,18 @@
 # Readability
 
-For this problem, you’ll implement a program that calculates the approximate grade level needed to comprehend some text, per the below.
+![Charlotte's Web Cover](charlottes_web.jpg)
 
-    $ ./readability
-    Text: Congratulations! Today is your day. You're off to Great Places! You're off and away!
-    Grade 3
-
-## Getting Started
-
-Open [VS Code](https://code.cs50.io/).
-
-Start by clicking inside your terminal window, then execute `cd` by itself. You should find that its “prompt” resembles the below.
-
-    $
-
-Click inside of that terminal window and then execute
-
-    wget https://cdn.cs50.net/2022/fall/psets/2/readability.zip
-
-followed by Enter in order to download a ZIP called `readability.zip` in your codespace. Take care not to overlook the space between `wget` and the following URL, or any other character for that matter!
-
-Now execute
-
-    unzip readability.zip
-
-to create a folder called `readability`. You no longer need the ZIP file, so you can execute
-
-    rm readability.zip
-
-and respond with “y” followed by Enter at the prompt to remove the ZIP file you downloaded.
-
-Now type
-
-    cd readability
-
-followed by Enter to move yourself into (i.e., open) that directory. Your prompt should now resemble the below.
-
-    readability/ $
-
-If all was successful, you should execute
-
-    ls
-
-and see a file named `readability.c`. Executing `code readability.c` should open the file where you will type your code for this problem set. If not, retrace your steps and see if you can determine where you went wrong!
-
-## Background
+## Problem to Solve
 
 According to [Scholastic](https://www.scholastic.com/teachers/teaching-tools/collections/guided-reading-book-lists-for-every-level.html), E.B. White’s _Charlotte’s Web_ is between a second- and fourth-grade reading level, and Lois Lowry’s _The Giver_ is between an eighth- and twelfth-grade reading level. What does it mean, though, for a book to be at a particular reading level?
 
 Well, in many cases, a human expert might read a book and make a decision on the grade (i.e., year in school) for which they think the book is most appropriate. But an algorithm could likely figure that out too!
+
+In a file called `readability.c` in a folder called `readability`, you’ll implement a program that calculates the approximate grade level needed to comprehend some text. Your program should print as output “Grade X” where “X” is the grade level computed, rounded to the nearest integer. If the grade level is 16 or higher (equivalent to or greater than a senior undergraduate reading level), your program should output “Grade 16+” instead of giving the exact index number. If the grade level is less than 1, your program should output “Before Grade 1”.
+
+## Demo
+
+## Background
 
 So what sorts of traits are characteristic of higher reading levels? Well, longer words probably correlate with higher reading levels. Likewise, longer sentences probably correlate with higher reading levels, too.
 
@@ -58,151 +22,245 @@ A number of “readability tests” have been developed over the years that defi
 
 where `L` is the average number of letters per 100 words in the text, and `S` is the average number of sentences per 100 words in the text.
 
-Let’s write a program called `readability` that takes a text and determines its reading level. For example, if user types in a line of text from Dr. Seuss, the program should behave as follows:
+## Advice
 
-    $ ./readability
-    Text: Congratulations! Today is your day. You're off to Great Places! You're off and away!
-    Grade 3
+Write some code that you know will compile
 
-The text the user inputted has 65 letters, 4 sentences, and 14 words. 65 letters per 14 words is an average of about 464.29 letters per 100 words (because 65 / 14 \* 100 = 464.29). And 4 sentences per 14 words is an average of about 28.57 sentences per 100 words (because 4 / 14 \* 100 = 28.57). Plugged into the Coleman-Liau formula, and rounded to the nearest integer, we get an answer of 3 (because 0.0588 \* 464.29 - 0.296 \* 28.57 - 15.8 = 3): so this passage is at a third-grade reading level.
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <math.h>
+    #include <stdio.h>
+    #include <string.h>
 
-Let’s try another one:
+    int main(void)
+    {
 
-    $ ./readability
-    Text: Harry Potter was a highly unusual boy in many ways. For one thing, he hated the summer holidays more than any other time of year. For another, he really wanted to do his homework, but was forced to do it in secret, in the dead of the night. And he also happened to be a wizard.
-    Grade 5
+    }
 
-This text has 214 letters, 4 sentences, and 56 words. That comes out to about 382.14 letters per 100 words, and 7.14 sentences per 100 words. Plugged into the Coleman-Liau formula, we get a fifth-grade reading level.
+Notice that you’ve now included a few header files that will give you access to functions which might help you solve this problem.
 
-As the average number of letters and words per sentence increases, the Coleman-Liau index gives the text a higher reading level. If you were to take this paragraph, for instance, which has longer words and sentences than either of the prior two examples, the formula would give the text an twelfth-grade reading level.
+Write some pseudocode before writing more code
 
-    $ ./readability
-    Text: As the average number of letters and words per sentence increases, the Coleman-Liau index gives the text a higher reading level. If you were to take this paragraph, for instance, which has longer words and sentences than either of the prior two examples, the formula would give the text an twelfth-grade reading level.
-    Grade 12
+If unsure how to solve the problem itself, break it down into smaller problems that you can probably solve first. For instance, this problem is really only a handful of problems:
 
-<details><summary>Watch a Recording</summary><script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-2YTPtsNbRP2p4bD4drEjHaoRj" src="https://asciinema.org/a/2YTPtsNbRP2p4bD4drEjHaoRj.js"></script></details>
+1.  Prompt the user for some text
+2.  Count the number of letters, words, and sentences in the text
+3.  Compute the Coleman-Liau index
+4.  Print the grade level
 
-## Specification
+Let’s write some pseudcode as comments to remind you to do just that:
 
-Design and implement a program, `readability`, that computes the Coleman-Liau index of text.
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <math.h>
+    #include <stdio.h>
+    #include <string.h>
 
-- Implement your program in a file called `readability.c` in a directory called `readability`.
-- Your program must prompt the user for a `string` of text using `get_string`.
-- Your program should count the number of letters, words, and sentences in the text. You may assume that a letter is any lowercase character from `a` to `z` or any uppercase character from `A` to `Z`, any sequence of characters separated by spaces should count as a word, and that any occurrence of a period, exclamation point, or question mark indicates the end of a sentence.
-- Your program should print as output `"Grade X"` where `X` is the grade level computed by the Coleman-Liau formula, rounded to the nearest integer.
-- If the resulting index number is 16 or higher (equivalent to or greater than a senior undergraduate reading level), your program should output `"Grade 16+"` instead of giving the exact index number. If the index number is less than 1, your program should output `"Before Grade 1"`.
+    int main(void)
+    {
+        // Prompt the user for some text
 
-### Getting User Input
+        // Count the number of letters, words, and sentences in the text
 
-Let’s first write some C code that just gets some text input from the user, and prints it back out. Specifically, implement in `readability.c` a `main` function that prompts the user with `"Text: "` using `get_string` and then prints that same text using `printf`. And remember, as you work through this program, that if you make use of any library functions, be sure to `#include` any corresponding header files.
+        // Compute the Coleman-Liau index
 
-The program should behave per the below.
+        // Print the grade level
+    }
 
-    $ ./readability
-    Text: In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
-    In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
+Convert the pseudocode to code
 
-### Letters
+First, consider how you might prompt the user for some text. Recall that `get_string`, a function in the CS50 library, can prompt the user for a string.
 
-Now that you’ve collected input from the user, let’s begin to analyze that input by first counting the number of letters in the text. Consider letters to be uppercase or lowercase alphabetical character, not punctuation, digits, or other symbols.
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <math.h>
+    #include <stdio.h>
+    #include <string.h>
 
-Add to `readability.c`, below `main`, a function called `count_letters` that takes one argument, a `string` of text, and that returns an `int`, the number of letters in that text. Be sure to add the function’s prototype, too, atop your file, so that `main` knows how to call it. Odds are the prototype should resemble the below:
+    int main(void)
+    {
+        // Prompt the user for some text
+        string text = get_string("Text: ");
 
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">count_letters</span><span class="p">(</span><span class="n">string</span> <span class="n">text</span><span class="p">)</span>
-</code></pre></div></div>
+        // Count the number of letters, words, and sentences in the text
 
-Then call that function in `main` so that, instead of printing out the text itself, your program now prints the number of letters in the text.
+        // Compute the Coleman-Liau index
 
-The program should now behave per the below.
+        // Print the grade level
+    }
 
-    $ ./readability
-    Text: Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, "and what is the use of a book," thought Alice "without pictures or conversation?"
-    235 letters
+Now that you’ve collected input from the user, you can begin to analyze that input. First, try to count the number of letters in the text. Consider letters to be uppercase or lowercase alphabetical character, not punctuation, digits, or other symbols.
 
-<details><summary>Hint</summary><p>Declared in <code class="language-plaintext highlighter-rouge">ctype.h</code> is a function that you might find helpful, per <a href="https://manual.cs50.io/">manual.cs50.io</a>. If you use it, be sure to include that header file atop your own code!</p></details>
+One way to approach this problem is to create a function called `count_letters` that takes a string, `text`, as input, and then returns the number of letters in that text as an `int`.
 
-### Words
+    int count_letters(string text)
+    {
+        // Return the number of letters in text
+    }
 
-The Coleman-Liau index cares not only about the number of letters but also about the number of words in a sentence. For the purpose of this problem, we’ll consider any sequence of characters separated by a space to be a word (so a hyphenated word like `"sister-in-law"` should be considered one word, not three).
+You’ll need to write your own code to count the number of letters in the text. But someone more experienced than you may have already written a function to determine if a character is alphabetical. This is a good opportunity to use the [CS50 manual](https://manual.cs50.io/), a collection of explanations of common functions in the C Standard Library.
 
-Add to `readability.c`, below `main`, a function called `count_words` that takes one argument, a `string` of text, and that returns an `int`, the number of words in that text. Be sure to add the function’s prototype, too, atop your file, so that `main` knows how to call it. (We leave its prototype to you!)
+You can integrate `count_letters` into the code you’ve already written, as follows.
 
-Then call that function in `main` so that your program also prints the number of words in the text.
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <math.h>
+    #include <stdio.h>
+    #include <string.h>
 
-You may assume that a sentence:
+    int count_letters(string text);
 
-- will contain at least one word;
-- will not start or end with a space; and
-- will not have multiple spaces in a row.
+    int main(void)
+    {
+        // Prompt the user for some text
+        string text = get_string("Text: ");
 
-You are, of course, welcome to attempt a solution that will tolerate multiple spaces between words or indeed, no words!
+        // Count the number of letters, words, and sentences in the text
+        int letters = count_letters(text);
 
-The program should now behave per the below.
+        // Compute the Coleman-Liau index
 
-    $ ./readability
-    Text: It was a bright cold day in April, and the clocks were striking thirteen. Winston Smith, his chin nuzzled into his breast in an effort to escape the vile wind, slipped quickly through the glass doors of Victory Mansions, though not quickly enough to prevent a swirl of gritty dust from entering along with him.
-    250 letters
-    55 words
+        // Print the grade level
+    }
 
-### Sentences
+    int count_letters(string text)
+    {
+        // Return the number of letters in text
+    }
 
-The last piece of information that the Coleman-Liau formula cares about, in addition to the number of letters and words, is the number of sentences. Determining the number of sentences can be surprisingly trickly. You might first imagine that a sentence is just any sequence of characters that ends with a period, but of course sentences could end with an exclamation point or a question mark as well. But of course, not all periods necessarily mean the sentence is over. For instance, consider the sentence below.
+Next, write a function to count words.
 
-    Mr. and Mrs. Dursley, of number four Privet Drive, were proud to say that they were perfectly normal, thank you very much.
+    int count_words(string text)
+    {
+        // Return the number of words in text
+    }
 
-This is just a single sentence, but there are three periods! For this problem, we’ll ask you to ignore that subtlety: you should consider any sequence of characters that ends with a `.` or a `!` or a `?` to be a sentence (so for the above “sentence”, you should count it as three sentences). In practice, sentence boundary detection needs to be a little more intelligent to handle these cases, but we’ll not worry about that for now.
+For the purpose of this problem, we’ll consider any sequence of characters separated by a space to be a word (so a hyphenated word like “sister-in-law” should be considered one word, not three). You may assume that a sentence:
 
-Add to `readability.c`, below `main`, a function called `count_sentences` that takes one argument, a `string` of text, and that returns an `int`, the number of sentences in that text. Be sure to add the function’s prototype, too, atop your file, so that `main` knows how to call it. (We again leave its prototype to you!)
+-   will contain at least one word;
+-   will not start or end with a space; and
+-   will not have multiple spaces in a row.
 
-Then call that function in `main` so that your program also prints the number of sentences in the text.
+Under those assumptions, you might be able to find a relationship between the number words and the number of spaces. You are, of course, welcome to attempt a solution that will tolerate multiple spaces between words or indeed, no words!
 
-The program should now behave per the below.
+You can now integrate `count_words` into your program as follows:
 
-    $ ./readability
-    Text: When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow. When it healed, and Jem's fears of never being able to play football were assuaged, he was seldom self-conscious about his injury. His left arm was somewhat shorter than his right; when he stood or walked, the back of his hand was at right angles to his body, his thumb parallel to his thigh.
-    295 letters
-    70 words
-    3 sentences
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <math.h>
+    #include <stdio.h>
+    #include <string.h>
 
-### Putting it All Together
+    int count_letters(string text);
+    int count_words(string text);
 
-Now it’s time to put all the pieces together! Recall that the Coleman-Liau index is computed using the formula:
+    int main(void)
+    {
+        // Prompt the user for some text
+        string text = get_string("Text: ");
 
-    index = 0.0588 * L - 0.296 * S - 15.8
+        // Count the number of letters, words, and sentences in the text
+        int letters = count_letters(text);
+        int words = count_words(text);
 
-where `L` is the average number of letters per 100 words in the text, and `S` is the average number of sentences per 100 words in the text.
+        // Compute the Coleman-Liau index
 
-Modify `main` in `readability.c` so that instead of outputting the number of letters, words, and sentences, it instead outputs (only) the grade level as defined by the Coleman-Liau index (e.g. `"Grade 2"` or `"Grade 8" or the like`). Be sure to round the resulting index number to the nearest `int`!
+        // Print the grade level
+    }
 
-<details><summary>Hints</summary><ul>
-  <li data-marker="*">Recall that <code class="language-plaintext highlighter-rouge">round</code> is declared in <code class="language-plaintext highlighter-rouge">math.h</code>, per <a href="https://manual.cs50.io/">manual.cs50.io</a>!</li>
-  <li data-marker="*">Recall that, when dividing values of type <code class="language-plaintext highlighter-rouge">int</code> in C, the result will also be an <code class="language-plaintext highlighter-rouge">int</code>, with any remainder (i.e., digits after the decimal point) discarded. Put another way, the result will be “truncated.” You might want to cast your one or more values to <code class="language-plaintext highlighter-rouge">float</code> before performing division when calculating <code class="language-plaintext highlighter-rouge">L</code> and <code class="language-plaintext highlighter-rouge">S</code>!</li>
-</ul></details>
+    int count_letters(string text)
+    {
+        // Return the number of letters in text
+    }
 
-If the resulting index number is 16 or higher (equivalent to or greater than a senior undergraduate reading level), your program should output `"Grade 16+"` instead of outputting an exact index number. If the index number is less than 1, your program should output `"Before Grade 1"`.
+    int count_words(string text)
+    {
+        // Return the number of words in text
+    }
+
+Finally, write a function to count sentences. You can consider any sequence of characters that ends with a `.` or a `!` or a `?` to be a sentence.
+
+    int count_sentences(string text)
+    {
+        // Return the number of sentences in text
+    }
+
+You can integrate `count_sentences` into your program as follows:
+
+    #include <ctype.h>
+    #include <cs50.h>
+    #include <math.h>
+    #include <stdio.h>
+    #include <string.h>
+
+    int count_letters(string text);
+    int count_words(string text);
+    int count_sentences(string text);
+
+    int main(void)
+    {
+        // Prompt the user for some text
+        string text = get_string("Text: ");
+
+        // Count the number of letters, words, and sentences in the text
+        int letters = count_letters(text);
+        int words = count_words(text);
+        int sentences = count_sentences(text);
+
+        // Compute the Coleman-Liau index
+
+        // Print the grade level
+    }
+
+    int count_letters(string text)
+    {
+        // Return the number of letters in text
+    }
+
+    int count_words(string text)
+    {
+        // Return the number of words in text
+    }
+
+    int count_sentences(string text)
+    {
+        // Return the number of sentences in text
+    }
+
+Finally, compute the Coleman-Liau index and print the resulting grade level.
+
+-   Recall that the Coleman-Liau index is computed using `index = 0.0588 * L - 0.296 * S - 15.8`
+-   `L` is the average number of letters per 100 words in the text: that is, the number of letters divided by the number of words, all multiplied by 100.
+-   `S` is the average number of sentences per 100 words in the text: that is, the number of sentences divided by the number of words, all multiplied by 100.
+-   You’ll want to round the result to the nearest whole number, so recall that `round` is declared in `math.h`, per [manual.cs50.io](https://manual.cs50.io/).
+-   Recall that, when dividing values of type `int` in C, the result will also be an `int`, with any remainder (i.e., digits after the decimal point) discarded. Put another way, the result will be “truncated.” You might want to cast your one or more values to `float` before performing division when calculating `L` and `S`!
+
+If the resulting index number is 16 or higher (equivalent to or greater than a senior undergraduate reading level), your program should output “Grade 16+” instead of outputting an exact index number. If the index number is less than 1, your program should output “Before Grade 1”.
 
 ## Walkthrough
 
-<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/AOVyZEh9zgE?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
-
-## How to Test Your Code
+## How to Test
 
 Try running your program on the following texts, to ensure you see the specified grade level. Be sure to copy only the text, no extra spaces.
 
-- `One fish. Two fish. Red fish. Blue fish.` (Before Grade 1)
-- `Would you like them here or there? I would not like them here or there. I would not like them anywhere.` (Grade 2)
-- `Congratulations! Today is your day. You're off to Great Places! You're off and away!` (Grade 3)
-- `Harry Potter was a highly unusual boy in many ways. For one thing, he hated the summer holidays more than any other time of year. For another, he really wanted to do his homework, but was forced to do it in secret, in the dead of the night. And he also happened to be a wizard.` (Grade 5)
-- `In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.` (Grade 7)
-- `Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, "and what is the use of a book," thought Alice "without pictures or conversation?"` (Grade 8)
-- `When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow. When it healed, and Jem's fears of never being able to play football were assuaged, he was seldom self-conscious about his injury. His left arm was somewhat shorter than his right; when he stood or walked, the back of his hand was at right angles to his body, his thumb parallel to his thigh.` (Grade 8)
-- `There are more things in Heaven and Earth, Horatio, than are dreamt of in your philosophy.` (Grade 9)
-- `It was a bright cold day in April, and the clocks were striking thirteen. Winston Smith, his chin nuzzled into his breast in an effort to escape the vile wind, slipped quickly through the glass doors of Victory Mansions, though not quickly enough to prevent a swirl of gritty dust from entering along with him.` (Grade 10)
-- `A large class of computational problems involve the determination of properties of graphs, digraphs, integers, arrays of integers, finite families of finite sets, boolean formulas and elements of other countable domains.` (Grade 16+)
+-   `One fish. Two fish. Red fish. Blue fish.` (Before Grade 1)
+-   `Would you like them here or there? I would not like them here or there. I would not like them anywhere.` (Grade 2)
+-   `Congratulations! Today is your day. You're off to Great Places! You're off and away!` (Grade 3)
+-   `Harry Potter was a highly unusual boy in many ways. For one thing, he hated the summer holidays more than any other time of year. For another, he really wanted to do his homework, but was forced to do it in secret, in the dead of the night. And he also happened to be a wizard.` (Grade 5)
+-   `In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.` (Grade 7)
+-   `Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, "and what is the use of a book," thought Alice "without pictures or conversation?"` (Grade 8)
+-   `When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow. When it healed, and Jem's fears of never being able to play football were assuaged, he was seldom self-conscious about his injury. His left arm was somewhat shorter than his right; when he stood or walked, the back of his hand was at right angles to his body, his thumb parallel to his thigh.` (Grade 8)
+-   `There are more things in Heaven and Earth, Horatio, than are dreamt of in your philosophy.` (Grade 9)
+-   `It was a bright cold day in April, and the clocks were striking thirteen. Winston Smith, his chin nuzzled into his breast in an effort to escape the vile wind, slipped quickly through the glass doors of Victory Mansions, though not quickly enough to prevent a swirl of gritty dust from entering along with him.` (Grade 10)
+-   `A large class of computational problems involve the determination of properties of graphs, digraphs, integers, arrays of integers, finite families of finite sets, boolean formulas and elements of other countable domains.` (Grade 16+)
 
-Execute the below to evaluate the correctness of your code further using `check50`. But be sure to compile and test it yourself as well!
+### Correctness
 
-    check50 cs50/problems/2023/x/readability
+In your terminal, execute the below to check your work’s correctness.
+
+    check50 cs50/problems/2024/x/readability
+
+### Style
 
 Execute the below to evaluate the style of your code using `style50`.
 
@@ -212,4 +270,4 @@ Execute the below to evaluate the style of your code using `style50`.
 
 In your terminal, execute the below to submit your work.
 
-    submit50 cs50/problems/2023/x/readability
+    submit50 cs50/problems/2024/x/readability

@@ -1,0 +1,61 @@
+Entonces las personas han resuelto este problema. Si tienes el hábito de probar mucho tu código, o lo deseas, si tengo el hábito de querer probar mucho mi código, si todos los demás en el mundo real tienen este hábito de querer probar su código, ¿por qué no creamos herramientas que hagan esto un poco más fácil? Y de hecho, hay un mecanismo para hacer esto, donde podemos usar una herramienta llamada pytest.
+
+Entonces, pytest es un programa de terceros que se puede descargar e instalar y automatizará la prueba de tu código, siempre y cuando escribas las pruebas. Pero lo bueno de esta biblioteca y otras similares es que adoptan algunas convenciones para que no tengas que escribir tantas líneas de código manualmente. Algunas de estas tareas las hacen automáticamente por ti.
+
+Ahora bien, esta es una biblioteca de terceros. Hay otras bibliotecas para pruebas unitarias de Python en sí. Estamos proponiendo que hoy miremos pytest porque en realidad es un poco más simple que los frameworks de pruebas unitarias que vienen con Python. ¿Y qué queremos decir con pruebas unitarias? Las pruebas unitarias son simplemente una forma formal de describir las pruebas de las unidades individuales de un programa. ¿Qué son esas unidades individuales? Por lo general, son funciones. Por lo tanto, las pruebas unitarias son pruebas típicamente para las funciones que has escrito.
+
+Ahora, ¿qué significa esto en la práctica? Permíteme volver a mi VS Code y proponer simplificar significativamente mi calculadora de pruebas. Voy a eliminar todas estas pruebas, que acumulaban alrededor de 31 líneas de código. Y veamos si podemos resumir las pruebas a su esencia, usando pytest.
+
+Desde mi mismo programa de calculadora, todavía importo "square". Todavía necesito esa línea de código para poder probar esa función específica. Ahora voy a definir una función, como lo hice antes, de la siguiente manera. Voy a definir una función llamada "test_square", nuevamente por convención, "test_" y el nombre de la función que deseas probar, aunque no tiene que ser así. Y ahora voy a hacer algunas afirmaciones.
+
+Afirmaré que el cuadrado de 2 debería ser igual a 4. Afirmaré que el cuadrado de 3 debería ser igual a 9. Afirmaré que el cuadrado de -2 debería ser igual a 4. Y afirmaré que el cuadrado de -3 debería ser igual a 9. Y por último, por ahora, afirmaré que el cuadrado de 0 debería ser igual a 0.
+
+Sigo usando la palabra clave "assert", como introduje anteriormente. Y aunque fue un poco tedioso escribir eso, ahora solo son ocho líneas de código. Y son tan fáciles de escribir. No se trata de "try", "except" y todas estas cosas. ¿No sería bueno si alguien más se encargara de "try", "except", la impresión y todo el proceso estándar de ejecutar estas pruebas? Y ahí es donde, de hecho, entra en juego pytest.
+
+Según la documentación de pytest, que se puede instalar con "pip install pytest", que hemos usado para instalar otras bibliotecas en el pasado, puedes consultar la documentación aquí para ver todas sus formas de uso. Pero afortunadamente, pytest es bastante amigable para el usuario, en comparación con otros frameworks de pruebas, y nos permite sumergirnos directamente ejecutando pytest en el código que hemos escrito.
+
+Entonces, si vuelvo a VS Code y miro mi "test_calculator.py", que, por cierto, ya no tiene una función principal, no tiene una condición, no tiene try, except, ni impresiones. Solo tiene mis pocas afirmaciones. pytest y otras bibliotecas similares automatizarán el proceso de ejecutar estas pruebas por mí e informarán en la pantalla si alguna de esas pruebas falló.
+
+Entonces, voy a hacer esto. Voy a aumentar el tamaño de mi ventana de terminal por un momento, solo para que podamos ver más en la pantalla. Y no voy a ejecutar Python, como he estado haciendo. Voy a ejecutar pytest, que es esta herramienta de terceros para ejecutar pruebas en tu código. Voy a ejecutar pytest en "test_calculator", el mismo archivo. Cruzo los dedos como siempre y presiono Enter, y veremos que algo ha fallado.
+
+Admito que, aunque creo que encontrarás que pytest es relativamente fácil de usar, su salida, al menos a primera vista, no es necesariamente muy amigable para el usuario. Entonces, ¿qué estamos viendo aquí? Observa en la parte superior de la ventana el comando que ejecuté después de mi indicador. Justo debajo de eso hay una sola F en rojo, que significa "fail" (fallar), no es muy alentador. Me esforcé mucho aquí, pero mi calificación en este programa es "fail".
+
+Pero veamos exactamente qué pasó. Si observo este fragmento aquí bajo "failures" (fallas), verás que la función de prueba "test_square" es la que falló. Tiene sentido, porque es la única que escribí. Y aquí verás una salida un tanto arcaica describiendo cuál fue el error. Entonces, lo que estás viendo aquí es la primera línea de salida que dice que es igual a 4, lo cual está bien. No hay ningún mensaje de error en rojo debajo de eso, por lo que esa afirmación está bien.
+
+Pero esta línea de código aquí "assert square of 3 equals equals 9", pytest no le gustó esa afirmación porque no resultó ser verdadera. De hecho, según la "E" en rojo al inicio de esta línea, estás intentando afirmar que 6 es igual a 9. Ahora, ¿de dónde salió el 6? Espera un momento, si mi prueba involucra esto, observa que donde 6 es igual al cuadrado de 3, esto significa que porque he llamado a square, pasando un valor de 3, resulta que el valor de retorno es 6. Y por supuesto, matemáticamente, 6 no es igual a 9. Por eso esto está fallando.
+
+Ahora, pytest no es tan amigable para el usuario como para decirte exactamente por qué está ahí el error o cómo solucionarlo. Esto es realmente solo una pista de lo que debe estar mal. Lo que estás viendo aquí es una pista de que la primera prueba pasó, porque no hay ningún error en rojo debajo de esa línea de código, pero esta prueba falló. De alguna manera, tu función square está devolviendo 6 cuando pasas 3 en lugar de 9.
+
+En este punto, debes poner tu sombrero de detective, volver a tu código real y pensar en cómo en la línea 7 de mi función square está devolviendo 6 en lugar de 9. Y en este punto, lo más probable es que te des cuenta del error, una bombilla se encenderá proverbialmente sobre tu cabeza y verás que estás usando la suma en lugar de la multiplicación.
+
+Pero lo que pytest ha hecho por nosotros es automatizar el proceso de señalar al menos ese error. Y ahora, si arreglo esto, deja que lo haga, la bombilla se ha encendido. Cambio el signo "+" por un "*" (multiplicación). Ahora voy a borrar la pantalla y no voy a ejecutar Python, sino pytest de "test_calculator.py", cruzo los dedos nuevamente. Y ahora está en verde. Y solo veo un punto, lo que indica que mi única prueba ha pasado. Todo bien, 100% de éxito en mis pruebas ahora después de solucionar ese error. Permíteme hacer una pausa aquí y ver si hay alguna pregunta.
+
+INTERLOCUTOR 3: Entonces, mi pregunta es, ¿qué sucede si, en lugar de eso, ya que estamos tomando la entrada del usuario, el usuario es algo malicioso y escribe una cadena en lugar de un número, o tal vez escribe un flotante u otro tipo de dato?
+
+DAVID MALAN: Sí, ¿qué pasa si el usuario, como hemos visto en ejemplos anteriores, escribe "cat", en lugar de un número, cuando esperamos un entero? ¿Cómo probamos algo así? En este momento, admito que no estoy probando la entrada del usuario. Si volvemos a mi código aquí, verás que mi función "calculator", por supuesto, tiene la función "square" que seguimos probando una y otra vez.
+
+Pero observa que toda la entrada del usuario se encuentra actualmente en mi función principal. Y admito que, por ahora, no estoy probando mi función principal. Por lo tanto, podría haber uno de esos errores. Y de hecho, lo habría, porque si el usuario escribe una cadena, como "cat", en lugar de un entero, como 2 o 3, entonces la línea dos provocará una excepción de "value error". Ya hemos visto eso antes.
+
+Entonces, cuando se trata de probar tu código, esta es una buena razón para tener múltiples funciones en tu programa. En lugar de poner toda tu lógica solo en el archivo mismo, en lugar de poner toda la lógica solo en el inicio, en realidad es bueno, en realidad es una práctica muy útil, dividir tus ideas en funciones más pequeñas que a su vez son probables.
+
+¿Y qué quiero decir aquí? "Square" es perfectamente examinable. ¿Por qué? Porque toma como entrada un parámetro llamado "n" y devuelve como salida un entero, que será el cuadrado de "n", con suerte. Tiene una entrada bien definida y una salida bien definida. Por lo tanto, está totalmente bajo tu control en tu programa de prueba pasar esos valores.
+
+Ahora bien, si quieres probar si "square" se comporta correctamente cuando se pasa algo como una cadena, como por ejemplo "cat", definitivamente podríamos hacer algo como esto: afirmar que el cuadrado de "cat" no será igual a algo. En realidad, utilizando una sintaxis diferente, puedes afirmar que se levantará una excepción específica.
+
+Entonces, si en realidad vamos a volver a nuestra función square, mejorarla y deliberadamente generaremos una excepción, también podemos probar eso. Pero por ahora, estoy deliberadamente probando solo la función square. No estoy probando la entrada específica del usuario. Pero ese es otro problema que debe resolverse. ¿Alguna otra pregunta ahora sobre las pruebas unitarias?
+
+INTERLOCUTOR 4: ¿Usas "unit test" para probar el código en CS50?
+
+DAVID MALAN: Check 50 es similar en espíritu. Check 50 es una herramienta que nosotros, CS50, creamos que es esencialmente algo similar a pytest para evaluar el código de los estudiantes. Es similar en espíritu, pero piensa en Check 50 como una alternativa a pytest, si quieres. Pero funciona de manera un poco diferente. Pero misma idea, pytest y las pruebas unitarias en general son una técnica independiente de CS50 y algo que puedes y debes hacer en tu propio código, tanto dentro como fuera de esta clase. ¿Hay otra pregunta sobre las pruebas unitarias?
+
+INTERLOCUTOR 5: Mi pregunta es, en lugar de escribir cuatro veces, por ejemplo, como un cuadrado de 2 elevado al cuadrado de 4, en lugar de eso, ¿podemos escribir "equals" en corchetes cuadrados los números que queremos, en lugar de escribir cuatro líneas?
+
+DAVID MALAN: Una muy buena pregunta, absolutamente. En este momento, si volvemos a "test_calculator.py", en realidad es bastante manual. Me tomó un tiempo decir y escribir esas varias líneas, y podrías imaginar escribir algún tipo de bucle para simplemente afirmar en un bucle que esto es igual a aquello, que esto es igual a aquello y así sucesivamente, usando una lista o tal vez un diccionario u otra estructura similar.
+
+Entonces, sí, absolutamente puedes automatizar algunas de estas pruebas sin hacer lo mismo una y otra vez. Aún puedes usar toda la sintaxis de Python para hacer bucles. Pero en general, tus pruebas deben ser bastante simples. Y de hecho, permíteme proponer que mejoremos aún más este diseño, porque en este momento, cuando ejecuto todas estas pruebas con mi función con errores, observa la salida que obtuve.
+
+Permíteme reintroducir el mismo error cambiando mi multiplicación por una suma. Vamos a aumentar el tamaño de la ventana de mi terminal nuevamente. Y voy a ejecutar pytest nuevamente de "test_calculator.py". Esta es la versión de mi código ahora que tiene el error nuevamente. Así que voy a ver ese gran fracaso masivo y me mostrará esa falla.
+
+Pero esto no es tan útil como podría ser porque tengo todas esas otras pruebas en mi código. Recuerda que tenía, ¿qué?, una, dos, tres, cuatro, cinco pruebas separadas y solo estoy viendo la salida de la primera. Ahora, ¿por qué es eso? Si volvemos a mi código aquí, verás que la primera afirmación que falla, es decir, esta aquí, que el cuadrado de 3 es igual a 9, las otras pruebas ni siquiera se están ejecutando.
+
+Y eso no es un gran problema en el sentido de que mi código tiene errores, por lo que una o más de ellas probablemente fallarán de todos modos, pero ¿no sería agradable saber cuáles van a fallar? Y de hecho, es ideal ejecutar tantas pruebas al mismo tiempo como sea posible para tener tantas pistas como sea posible para encontrar tu error.

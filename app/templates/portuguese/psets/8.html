@@ -1,18 +1,19 @@
-{% extends 'layout.html' %} {% block conteudo %}
+{% extends 'layout.html' %} {% block content %}
 <h1 id="problem-set-8">Lista de Exercícios 8</h1>
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
     A colaboração em exercícios não é permitida, exceto na medida em que você
-    possa pedir ajuda a colegas de classe e outras pessoas, desde que essa ajuda não se resuma
-    a outra pessoa fazer o trabalho por você, de acordo com a política do curso sobre
+    possa pedir ajuda a colegas de classe e outras pessoas, desde que essa ajuda
+    não se resuma a outra pessoa fazer o trabalho por você, de acordo com a
+    política do curso sobre
     <a href="{{url_for('cs50x.honesty')}}">honestidade acadêmica</a>.
   </p>
 
   <p>
-    A equipe realiza auditorias aleatórias das submissões do CS50x. Os alunos que forem
-    encontrados em violação desta política serão removidos do curso. Alunos que
-    já concluíram o CS50x, se encontrados em violação, terão seu
+    A equipe realiza auditorias aleatórias das submissões do CS50x. Os alunos
+    que forem encontrados em violação desta política serão removidos do curso.
+    Alunos que já concluíram o CS50x, se encontrados em violação, terão seu
     Certificado CS50 revogado permanentemente.
   </p>
 </div>
@@ -29,14 +30,18 @@
 
 <ol>
   <li>
-    Faça login em <a href="https://code.cs50.io">code.cs50.io</a> usando sua conta do GitHub
+    Faça login em <a href="https://code.cs50.io">code.cs50.io</a> usando sua
+    conta do GitHub
   </li>
   <li>
-    Execute <code class="language-plaintext highlighter-rouge">update50</code> na
-    janela do terminal do seu ambiente de código para garantir que seu ambiente esteja atualizado e,
-    quando solicitado, clique em <strong>Rebuild now</strong>
+    Execute
+    <code class="language-plaintext highlighter-rouge">update50</code> na janela
+    do terminal do seu ambiente de código para garantir que seu ambiente esteja
+    atualizado e, quando solicitado, clique em <strong>Rebuild now</strong>
   </li>
-  <li>Envie <a href="{{url_for('cs50x.psets.homepage')}}">Página Inicial</a></li>
+  <li>
+    Envie <a href="{{url_for('cs50x.psets.homepage')}}">Página Inicial</a>
+  </li>
 </ol>
 
 <h2 id="when-to-do-it">Quando fazer</h2>
@@ -50,5 +55,4 @@
   >.
 </p>
 
-{% endblock %}
-'
+{% endblock %} '

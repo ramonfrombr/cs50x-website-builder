@@ -1,0 +1,13 @@
+
+
+SPEAKER 4: What if we don't use elif at all? What if we write the code in if? 
+
+DAVID MALAN: Yeah, so that's a good question, because it's actually going to have an unintended effect here. Let me get rid of the F temporarily, and just focus on A through D. If we revert to where we began today's story, with conditionals, saying if, if, if, if, now our cleverness here of using broader strokes and not using an upper and lower bound ranges is going to come back to be a downside. Let me go ahead and run Python of grade.py. 
+
+And suppose my score is 95. I am so darn excited. I want my A, but nope. I just got an A, a B, a C, and a D. So logically, that's broken things. Because if you don't make these conditions mutually exclusive, every one of those questions is going to get asked, and therefore answered. And even if your grade is above a 90, it's also, logically, above an 80, above a 70, above a 60, and if I'd kept it in there, I would have failed, as well, with an F. 
+
+Really good question. Other questions here, on this form of logic? 
+
+SPEAKER 5: Would there be any better way to clean up even just this simple statement, like we had before, the previous one that you had with the elif? 
+
+DAVID MALAN: I like your enthusiasm for simplifying things further. I'm going to go out on a limb here and say this is about as good as it gets, at least using only conditional statements. I can, if my mind wanders, think of a slightly more clever way to do this, maybe with something called a loop, or another programming construct. We don't have that yet in our vocabulary. But yes, there's absolutely other ways to do it. But I think not yet if we want to restrict ourselves to just words like if, and or, and else, and elif, and and, and the like. 

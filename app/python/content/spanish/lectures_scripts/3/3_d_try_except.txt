@@ -1,0 +1,43 @@
+Ahora, ¿cómo hacemos eso en Python? Bueno, resulta que si deseas capturar un error de valor u otros tipos de errores, aunque no un error de sintaxis, Python tiene esta palabra clave llamada try. Y es bastante apropiado su nombre.
+
+Si quieres intentar hacer algo en Python, literalmente puedes usar esta palabra clave. Y puedes verificar si ha ocurrido algo excepcional, algo erróneo. Entonces, utilizando tanto try como esta otra palabra clave, except, ¿puedo intentar hacer algo excepto si algo sale mal? Puedo hacer algo más en su lugar.
+
+Entonces, consideremos, ¿cómo puedo intentar convertir la entrada del usuario en un entero excepto si algo sale mal? Bueno, volvamos a mi código aquí. Y propongo ahora modificar este ejemplo de la siguiente manera.
+
+Déjame adelantar, encima de mi primera línea de código, escribo literalmente "try" y dos puntos, diciéndole a Python, intenta hacer lo siguiente. Voy a poner mi código existente y modificarlo añadiendo un salto de línea más abajo que diga literalmente "except Value Error". Y observe que es importante que haya puesto en mayúscula la V y la E. Estos símbolos distinguen entre mayúsculas y minúsculas.
+
+Y esta es una oportunidad, después de estos dos puntos, de decirle a Python qué quiero hacer en casos excepcionales, cuando el número o la entrada del usuario no sea, de hecho, un número. Y voy a decir algo simple, como imprimir, entre comillas, "x no es un entero". Al menos le diré al usuario aproximadamente cuál es el problema real.
+
+Observa otro detalle. La indentación es importante. Debido a que tengo el try en la línea uno y he indentado las líneas dos y tres, esas son las dos líneas de código que estoy intentando, excepto si veo un error de valor, la línea cinco, que será lo que se ejecute en casos de esos errores porque está indentado.
+
+Volvamos ahora a mi ventana de terminal y ejecutemos Python del número.py, Enter. Y vamos a escribir de nuevo. Parece seguir funcionando bien. Y, por supuesto, estoy intentando y teniendo éxito. Permíteme intentarlo una vez más, esta vez, sin embargo, con la palabra cat o realmente cualquier cosa que no sea un número decimal.
+
+Y ahora verás de forma mucho más clara "x no es un entero". No estoy viendo un mensaje de error aterrador del que yo, como usuario, no tenga idea de cómo manejar. Ahora tú, el programador, has anticipado que algo excepcional puede ocurrir. Y has manejado el error correctamente para el usuario, dándole un mensaje de error apropiado en su lugar. Permíteme hacer una pausa aquí y ver si hay alguna pregunta sobre lo que acabamos de hacer al introducir try y except para manejar este error de valor.
+
+AUDIENCIA: ¿El error de valor es el único tipo de error que se puede capturar? ¿O hay otros tipos?
+
+DAVID MALAN: ¿El error de valor es lo único que puedes atrapar? También hay otros errores. Y veremos algunos de ellos hoy. Y hay muchos, muchos más, sinceramente, que si continúas programando en Python, los verás mucho durante las próximas semanas, meses o años. Pero la técnica para manejarlos será en gran medida la misma. ¿Alguna otra pregunta sobre try, except o estas excepciones en general?
+
+AUDIENCIA: Sí, señor. En realidad, para usar el bloque except, ¿es necesario saber el tipo de error, verdad? [INAUDIBLE] ¿qué sucede si no puedes anticipar este tipo particular de error?
+
+DAVID MALAN: Una muy buena pregunta. Estoy siendo muy bueno atrapando, por así decirlo, el error mismo que podría ocurrir. No sé cuándo podría ocurrir porque dependerá del usuario. Pero sé qué tipo de error ocurrirá desde la función entero. Hay una forma en Python en la que puedes decir, excepto si algo sale mal. Y puedes omitir literalmente el error de valor y capturar todo.
+
+El problema con eso es que a veces oculta otros errores en tu código porque no necesariamente sabes qué está saliendo mal. Y si no sabes qué está saliendo mal, ¿cómo puedes manejarlo correctamente? Es una mala práctica. Y dicho de otra manera, es algo perezoso hacer eso, simplemente decir, atrapa todo y lo manejaré aquí.
+
+Entonces, una práctica mucho mejor sería averiguar qué tipos de errores podrían ocurrir e incluir menciones explícitas de ellos, como he hecho. Ahora, dicho eso, si lees la documentación oficial de Python, como eventualmente lo harás, no es muy buena al decirte proactivamente qué tipos de errores se pueden generar de esta manera. Así que es un poco un consejo contradictorio.
+
+Deberías hacerlo de esta manera. Pero no siempre es obvio qué debes verificar. Pero te vuelves mejor con la práctica. Y algunas veces, la documentación sí especifica qué podría salir mal.
+
+Volvamos la atención ahora a esto y señalemos que aunque este es un mejor código, es más correcto en el sentido de que no estoy dejando que el usuario vea un mensaje de error predeterminado realmente feo de Python que la mayoría de las personas no sabrían qué hacer con él, al menos estoy manejándolo de manera más elegante. Y estoy imprimiendo "x no es un entero", por lo que al menos es más instructivo.
+
+Pero esta no necesariamente es la mejor forma de implementar este código. ¿Por qué? Bueno, aquí también estoy siendo un poco perezoso. Observa que estoy intentando hacer no solo una línea de código sino dos líneas de código. Y esto no es un gran problema porque solo estamos hablando de dos líneas de código.
+
+Pero en aras de predicar las mejores prácticas, realmente solo deberías intentar hacer la mínima cantidad de trabajo necesaria que pueda generar una excepción, que pueda fallar de alguna manera. Estoy bastante seguro de que llamar a imprimir aquí no va a generar un error de valor. Ya sea que x sea un entero, una cadena, un flotante o cualquier otra cosa, la función de formato de cadena de Python lo imprimirá sin problemas.
+
+Entonces, realmente, lo que voy a hacer es esto. Voy a mover esta línea tres hasta el final de mi código. Ya no necesito indentarla. Simplemente la ejecutaré al final de mi archivo aquí.
+
+Desafortunadamente, al hacer esto, he hecho algo bueno al intentar hacer solo la cantidad mínima de trabajo necesaria que podría generar la excepción de error de valor. Pero temo que he introducido un nuevo error. Bueno, veamos. ¿Qué es ahora incorrecto?
+
+Permíteme ejecutar Python del número.py, Enter nuevamente. Permíteme hacerlo correctamente con 50. Y todo parece estar bien. Pero, nuevamente, probemos esos casos especiales, los ceros, los números negativos o, en este caso, la palabra cat.
+
+Permíteme escribir C-A-T nuevamente. Enter. Ahora tengo un error de nombre. Ahora es otro tipo de error en mi código que he introducido aquí.

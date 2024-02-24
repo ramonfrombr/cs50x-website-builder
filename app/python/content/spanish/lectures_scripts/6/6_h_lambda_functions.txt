@@ -1,0 +1,25 @@
+Así que permíteme proponer, si volvemos a students.py aquí, y volvemos al enfoque en el que tenemos get_name como la función, que se usa y se define aquí, y esa función devuelve el nombre del estudiante, lo que queda claro es que la función sorted usará el valor de la clave - get_name, en este caso - llamando a esa función en cada diccionario de la lista que se supone que debe ordenar. Y esa función, get_name, devuelve la cadena que sorted realmente usará para decidir si las cosas van en este orden, de izquierda a derecha, o en este orden, de derecha a izquierda. Alfabéticamente ordena estas cosas basándose en ese valor de retorno.
+
+Así que observa que no estoy llamando a la función get_name aquí con paréntesis. La estoy pasando solo por su nombre para que la función sorted pueda llamar a esa función get_name por mí.
+
+Ahora, resulta que, como siempre, si estás definiendo algo, ya sea una variable o, en este caso, una función, y luego lo usas inmediatamente pero nunca, una vez más, necesitas el nombre de esa función, como get_name, en realidad podemos simplificar aún más este código. Puedo deshacerme por completo de la función get_name, al igual que podría deshacerme de una variable que no sea estrictamente necesaria.
+
+En lugar de pasar key, el nombre de una función, puedo pasar en su lugar lo que se llama una función lambda, que es una función anónima, una función que simplemente no tiene nombre. ¿Por qué? Porque no necesitas darle un nombre si solo la vas a llamar en un lugar. Y la sintaxis para esto en Python es un poco extraña. Pero si escribo key equals literalmente la palabra lambda, luego algo como student, que es el nombre del parámetro que espero que esta función tome, y luego ni siquiera escribo la tecla de retorno. En cambio, simplemente digo student, corchete, nombre.
+
+Entonces, ¿qué estoy haciendo aquí en mi código? Este código que he resaltado aquí es equivalente a la función get_name que implementamos hace un momento. La sintaxis es sin duda un poco diferente. No uso def.
+
+Ni siquiera le di un nombre, como get_name. En su lugar, estoy usando esta otra palabra clave en Python llamada lambda, que dice, oye, Python, aquí viene una función, pero no tiene nombre. Es anónima.
+
+Esa función toma un parámetro. Podría llamarlo como quiera. Lo llamo student. ¿Por qué? Porque esta función que se pasa como clave se llama en cada uno de los estudiantes de esa lista, en cada uno de los diccionarios de esa lista.
+
+¿Qué quiero que devuelva esta función anónima? Bueno, dado un estudiante, quiero acceder a ese diccionario e ingresar a su nombre para que finalmente se devuelva la cadena Hermione, Harry, Ron y Draco. Y eso es lo que la función sorted usa para decidir cómo ordenar esos diccionarios más grandes que tienen otras claves, como casa, también.
+
+Entonces, si ahora vuelvo a mi ventana de terminal y ejecuto python de students.py, parece funcionar de la misma manera, pero es probablemente un diseño un poco mejor porque no desperdicié líneas de código definiendo alguna otra función, llamándola en un y solo un lugar. Lo he hecho todo como de un solo aliento, por así decirlo. Muy bien, permíteme hacer una pausa aquí para ver si hay alguna pregunta específicamente sobre lambda, o funciones anónimas, y la simplificación del código.
+
+AUDIENCIA: Tengo una pregunta, como si podríamos definir lambda dos veces.
+
+DAVID MALAN: Sí, puedes usar lambda dos veces. Puedes crear tantas funciones anónimas como desees. Y generalmente las usas en contextos como este, donde quieres pasar a alguna otra función una función que en sí misma no necesita un nombre. Así que absolutamente puedes usarlo en más de un lugar. Solo tengo un caso de uso para ello. ¿Cómo otra pregunta sobre lambda o funciones anónimas específicamente?
+
+AUDIENCIA: ¿Qué sucede si nuestra lambda toma más de una línea, por ejemplo?
+
+DAVID MALAN: Claro, si tu función lambda tiene varios parámetros, está bien. Simplemente puedes especificar comas seguidas de los nombres de esos parámetros, quizás x e y o algo así, después del nombre student. Por lo tanto, aquí también, lambda se ve un poco diferente a def en el sentido de que no tienes paréntesis, no tienes la palabra clave def, no tienes un nombre de función. Pero al final, logran el mismo efecto. Crean una función de forma anónima y te permiten pasarla, por ejemplo, como algún valor aquí.

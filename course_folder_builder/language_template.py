@@ -4,17 +4,16 @@ class IMenu(TypedDict):
     title: str
     intro: str
     week: str
+    week0: str
+    week1: str
     week2: str
     week3: str
     week4: str
     week5: str
-    seminars: str
-    project: str
-    honesty: str
-    certificate: str
-    faqs: str
-    gradebook: str
-    staff: str
+    week6: str
+    week7: str
+    week8: str
+    week9: str
 
 class IWeekPage(TypedDict):
     week: str
@@ -48,6 +47,8 @@ menu: IMenu = {
     "title": "",
     "intro": "",
     "week": "",
+    "week0": "",
+    "week1": "",
     "week2": "",
     "week3": "",
     "week4": "",
@@ -56,13 +57,6 @@ menu: IMenu = {
     "week7": "",
     "week8": "",
     "week9": "",
-    "seminars": "",
-    "project": "",
-    "honesty": "",
-    "certificate": "",
-    "faqs": "",
-    "gradebook": "",
-    "staff": "",
 }
 
 week_page: IWeekPage = {

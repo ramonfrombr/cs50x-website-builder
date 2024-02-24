@@ -1,0 +1,23 @@
+Bueno, así que ahora tengo eso funcionando. ¿Podría haberlo implementado de una manera diferente? Bueno, déjame mostrarte una alternativa para usar únicamente la palabra clave import y permíteme presentarte la palabra clave from en Python. Entonces from es una palabra clave en Python que puedes usar al importar funciones de un módulo, pero te permite ser un poco más específico que solo con import.
+
+Entonces, si vuelvo a mi código aquí, vale la pena señalar que técnicamente lo que estoy haciendo aquí al importar random es que técnicamente estoy importando todo lo que está en ese módulo. No solo la función llamada random.choice, sino también algunas otras funciones. En lugar de usar esta línea de código al principio de mi archivo, import random, que técnicamente me dará acceso a todo su contenido, una desventaja de eso es que tengo que escribir random.choice, random.estos, random.eso porque todas las funciones que estoy llamando deben estar asociadas al alcance de ese módulo.
+
+Supongamos que solo quiero llamar a la función por su nombre, choice. También puedo hacer eso. Permíteme reemplazar esta primera línea aquí con from random import choice. Y lo que esto hace efectivamente es cargar el nombre de la función choice en mi espacio de nombres actual, en el alcance del archivo en el que estoy trabajando.
+
+Lo que eso significa es que ahora ya no tengo que especificar a qué función choice me refiero. Puedo simplemente decir choice. Y así lo carga en el espacio de nombres local, en mi vocabulario local, por así decirlo, por lo que ahora simplemente puedo decir choice. ¿En qué casos crees que esto podría ser ventajoso?
+
+¿Cuándo podrías querer importar el nombre de la función explícitamente de esta manera en lugar de simplemente decir random.choice - random.choice en todo tu código al llamar a una función? ¿Algún instinto aquí sobre esta importación alternativa usando from?
+
+AUDIENCIA: Hola, soy Mohammed Omar de Egipto. Y tal vez si tenemos una variable que se llama básicamente choice, si tengo una variable llamada choice. Entonces necesito diferenciar cuál choice elijo. Entonces voy a elegir la elección aleatoria de datos.
+
+DAVID MALAN: Sí, muy buen instinto. Al usar el primer enfoque al importar random, te aseguras de que todos sus contenidos estén asociados o limitados al módulo random para que puedas tener tu propia función choice. Puedes tener tu propia variable choice. Puedes usar los mismos nombres que todas las funciones o variables que están almacenadas dentro de ese archivo sin que colisionen, por así decirlo. Y esto es algo bueno.
+
+En lenguajes antiguos, sucedía que si importabas la biblioteca de alguien, más te valdría no usar las mismas funciones o variables que ellos porque podrías tener algún tipo de conflicto. Python y ciertos otros lenguajes te permiten delimitar los nombres de esas funciones y variables al archivo o al módulo del que provienen. Así que eso es algo bueno.
+
+Pero honestamente, este es un programa tan corto. O de manera equivalente, tal vez esté usando la función choice en tantos lugares llamando a random.choice, random.choice, random.choice. Solo hace que mi código sea más largo y largo y largo.
+
+Marginalmente, pero bueno, se vuelve feo y molesto, simplemente puedo importar choice y ahora simplificar un poco mi código. Como con tantas decisiones en el pasado, no hay necesariamente un enfoque correcto o incorrecto. Depende. Pero creo que por esas mismas razones, a veces es mejor hacer lo que hicimos la primera vez, que es importar solo el módulo para así retener el alcance en él.
+
+Bueno, permíteme proponer que pasemos a otra función que viene con el módulo random de Python. Y eso es esto aquí de la documentación randint. Es un poco difícil de decir, pero implica obtener un entero aleatorio. Y si lees la documentación, es un entero aleatorio que está entre A y B inclusive.
+
+Entonces, si pasas 1 como A y 10 como B, obtendrás un número entre 1 y 10 inclusive, incluyendo el 1 e incluyendo el 10 potencialmente. Cada uno con una probabilidad del 10%.

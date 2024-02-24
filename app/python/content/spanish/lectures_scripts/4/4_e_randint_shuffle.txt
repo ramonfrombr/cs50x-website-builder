@@ -1,0 +1,35 @@
+Entonces, ¿cómo puedo usar un programa como este? Bueno, permíteme volver a generar el archivo .py. Y ¿por qué no intentamos generar un número aleatorio entre 1 y 10?
+
+Es posible que hagas esto con frecuencia en el mundo real. Cuando solo quieres que alguien elija un número aleatorio, se lo dices en la respuesta humana. Hagamos que la computadora haga lo mismo aquí. Permíteme borrar mis dos líneas de código al final pero mantener mi importación de random.
+
+Y vamos a definir una variable esta vez llamada "number", estableciéndola igual al valor de retorno de random.randint y pasando A, un valor de 1 y B, un valor de 10. Y ahora, vamos a imprimir el número. Voy a ir a mi ventana de la terminal y ejecutar Python generate.py y presionar Enter.
+
+4. Un Python generate.py y presionar Enter. 8, de nuevo, 9, de nuevo, 7, de nuevo, 10, de nuevo, 2, de nuevo. Y podemos hacer esto todo el día. Y si sumamos todos esos, deberían terminar con una probabilidad del 10% cada uno.
+
+Ahora, ¿cómo podrías usar esta información? Bueno, tal vez estemos jugando un juego de adivinanzas. O tal vez estamos tratando de aleatorizar el comportamiento de algún personaje en el juego. Puedes imaginarte usar bloques de construcción muy simples como este para animar un poco tu programa haciéndolo menos predecible porque estás eligiendo estos valores aparentemente al azar. Y estás recurriendo a Python para hacer realmente la generación de estos números utilizando sus propios algoritmos y matemáticas.
+
+Bueno, ¿qué más podríamos hacer aquí? Permíteme proponer que introduzcamos otra función que proviene de esta biblioteca random. Otro que no necesitas implementar tú mismo, shuffle. Si lees la documentación para shuffle en el mismo módulo random, verás que toma una lista, por ejemplo, de valores y los mezcla. Los randomiza como un mazo de cartas.
+
+Aquí, puedes mezclarlos para colocarlos en un orden aparentemente aleatorio. ¿Cómo uso esto basándome en el nombre de esta función? Bueno, permíteme proponer que volvamos a VS Code aquí. Y permíteme hacer lo siguiente. Debido a que necesito mezclar algo como un mazo de cartas, permíteme importar no solo random. Pero permíteme darme una variable llamada "cards" que va a ser de tipo lista. Y solo para tener algo para mezclar, no necesito las 52 cartas de un mazo típico.
+
+Voy a mezclar solo tres cartas. Un Jack, una Reina y un Rey. Podría llamar a esas cadenas como quiera, pero solo quería una lista de algunos valores para mezclarlos. Es decir, randomizar el orden allí. Bueno, ¿cómo funciona ahora? Si lees la documentación de random.shuffle, verás que mezcla el argumento en su lugar.
+
+Es decir, a diferencia de muchas de las funciones que hemos visto. No te devuelve un valor que contiene las cartas mezcladas en este caso. En realidad, mezcla la lista que se le da. Entonces, lo que esto significa para mi código es que necesito hacer algo como esto: random.shuffle y pasar la variable que contiene esas cartas.
+
+Y luego, en una línea final aquí, ¿cómo podríamos imprimir las cartas? Bueno, podría hacer esto y decir imprime card. Pero si hago eso, en realidad veré la sintaxis de Python para las listas. Y se formateará a su manera usando comas y demás. Quiero imprimir estas cartas una a una solo porque creo que se verá un poco mejor, así que podemos usar parte de nuestra sintaxis de bucles y decir algo como esto: para cada carta en cards, avanza e imprime la carta actual.
+
+Entonces, ¿qué está pasando ahora aquí? En la línea tres, estoy definiendo una lista de tres cartas en este orden: Jack, Reina, Rey. Luego, estoy mezclando esas mismas cartas en la línea cuatro. Y luego, en la línea cinco, uso un bucle for para cada una de las cartas de esa lista, imprimiéndola una a una y porque estoy usando la impresión, una línea a la vez.
+
+Bueno, veamos los resultados. Aquí abajo en mi ventana de la terminal, voy a ejecutar Python generate.py y presionar Enter. Reina, Rey, Jack, aparentemente mezclados porque ese no es el orden que definí anteriormente. Hagámoslo de nuevo. Reina, Rey, Jack. Hmm, bien, eso resulta ser lo mismo. Pero veamos. Esto podría ser solo mala suerte.
+
+Ahí vamos. Jack, Reina, Rey. No parece estar mezclado, pero al menos estamos obteniendo ordenaciones diferentes ahora. Nuevamente, Jack, Reina, Rey. Hmm, no tan bueno. Jack, Reina, Rey. No tan bueno. A este alguien probablemente quieras jugarle con cartas. Reina, Jack, Rey, ahí vamos.
+
+Pero por supuesto, solo tenemos tres cartas aquí. Así que no hay tantas permutaciones que podríamos ver. Y si hacemos esto con el tiempo, veremos todas ellas. Pero si tuviéramos, por supuesto, 13 o 52 cartas, veríamos muchas más permutaciones en su lugar.
+
+Entonces, ahora tenemos estas tres formas de generar información aleatoria. Uno, una simple moneda al aire si quieres comenzar algún tipo de evento deportivo. Dos, elige un número entre 1 y 10 si quieres decidir algo basado en eso. Y ahora, usando shuffle, incluso podemos tomar una lista de cosas y mezclarlas para obtener algún tipo de comportamiento aleatorio. Bueno, permíteme hacer una pausa aquí y ver si hay alguna pregunta sobre random, sobre módulos o cualquiera de estas tres funciones.
+
+AUDIENCIA: Sí, ¿podemos aumentar o disminuir la probabilidad de las cartas si queremos? Por ejemplo, si son tres. ¿Hay un 33% de probabilidad para cada una B? Entonces, ¿hay alguna forma de aumentar o disminuir la probabilidad?
+
+DAVID MALAN: ¿Puedes establecer estas probabilidades no usando estas mismas funciones? Absolutamente puedes implementar tus propias funciones o usar funciones más sofisticadas que existen en esta biblioteca y otras para tener un control más preciso.
+
+Estas están diseñadas para ser funciones muy fáciles de usar y simples, especialmente las que hemos visto, que te dan igual probabilidad para todas ellas. Pero absolutamente podrías sesgar las cosas, aunque esperemos que si estás creando un juego de apuestas o similar, no estés haciendo algunas cartas más probables que otras.

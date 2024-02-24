@@ -1,0 +1,270 @@
+
+[0]
+
+Selection Sort
+
+[1]
+
+Selection Sort
+• In selection sort, the idea of the algorithm is to find the 
+smallest unsorted element and add it to the end of the 
+sorted list.
+In pseudocode:
+• Repeat until no unsorted elements remain:
+• Search the unsorted part of the data to find the smallest value
+• Swap the smallest found value with the first element of the unsorted part
+
+[2]
+
+Selection Sort
+5
+2
+1
+3
+6
+4
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[3]
+
+Selection Sort
+5
+2
+1
+3
+6
+4
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[4]
+
+Selection Sort
+1
+2
+5
+3
+6
+4
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[5]
+
+Selection Sort
+1
+2
+5
+3
+6
+4
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[6]
+
+Selection Sort
+1
+2
+5
+3
+6
+4
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[7]
+
+Selection Sort
+1
+2
+5
+3
+6
+4
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[8]
+
+Selection Sort
+1
+2
+5
+3
+6
+4
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[9]
+
+Selection Sort
+1
+2
+3
+5
+6
+4
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[10]
+
+Selection Sort
+1
+2
+3
+5
+6
+4
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[11]
+
+Selection Sort
+1
+2
+3
+5
+6
+4
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[12]
+
+Selection Sort
+1
+2
+3
+4
+6
+5
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[13]
+
+Selection Sort
+1
+2
+3
+4
+6
+5
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[14]
+
+Selection Sort
+1
+2
+3
+4
+6
+5
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[15]
+
+Selection Sort
+1
+2
+3
+4
+5
+6
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[16]
+
+Selection Sort
+1
+2
+3
+4
+5
+6
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[17]
+
+Selection Sort
+1
+2
+3
+4
+5
+6
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[18]
+
+Selection Sort
+1
+2
+3
+4
+5
+6
+In pseudocode:
+Repeat until no unsorted elements remain:
+Search the unsorted part of the data to find the smallest value
+Swap the smallest found value with the first element of the unsorted part
+
+[19]
+
+Selection Sort
+• Worst-case scenario: We have to iterate over each of the n
+elements of the array (to find the smallest unsorted 
+element) and we must repeat this process n times, since only 
+one element gets sorted on each pass.
+• Best-case scenario: Exactly the same! There’s no way to 
+guarantee the array is sorted until we go through this 
+process for all the elements.
+
+[20]
+
+Selection Sort
+O(n2)
+Ω(n2)

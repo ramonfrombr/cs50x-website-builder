@@ -1,0 +1,986 @@
+
+[0]
+
+Hash Tables
+
+[1]
+
+Hash Tables
+• Hash tables combine the random access ability of an array with 
+the dynamism of a linked list.
+• This means (assuming we define our hash table well):
+• Insertion can start to tend toward q(1)
+• Deletion can start to tend toward q(1)
+• Lookup can start to tend toward q(1)
+• We’re gaining the advantages of both types of data structure, 
+while mitigating the disadvantages.
+
+[2]
+
+Hash Tables
+• To get this performance upgrade, we create a new structure 
+whereby when we insert data into the structure, the data itself 
+gives us a clue about where we will find the data, should we 
+need to later look it up.
+• The trade off is that hash tables are not great at ordering or 
+sorting data, but if we don’t care about that, then we’re good 
+to go!
+
+[3]
+
+Hash Tables
+• A hash table amounts to a combination of two things with 
+which we’re quite familiar.
+• First, a hash function, which returns an nonnegative integer value 
+called a hash code.
+• Second, an array capable of storing data of the type we wish to place 
+into the data structure.
+• The idea is that we run our data through the hash function, 
+and then store the data in the element of the array 
+represented by the returned hash code.
+
+[4]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+string hashtable[10];
+
+[5]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+int x = hash(“John”);
+
+[6]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+int x = hash(“John”);
+// x is now 4
+
+[7]
+
+Hash Tables
+0
+1
+2
+3
+4
+“John”
+5
+6
+7
+8
+9
+int x = hash(“John”);
+// x is now 4
+hashtable[x] = “John”;
+
+[8]
+
+Hash Tables
+0
+1
+2
+3
+4
+“John”
+5
+6
+7
+8
+9
+int y = hash(“Paul”);
+
+[9]
+
+Hash Tables
+0
+1
+2
+3
+4
+“John”
+5
+6
+7
+8
+9
+int y = hash(“Paul”);
+// y is now 6
+
+[10]
+
+Hash Tables
+0
+1
+2
+3
+4
+“John”
+5
+6
+“Paul”
+7
+8
+9
+int y = hash(“Paul”);
+// y is now 6
+hashtable[y] = “Paul”;
+
+[11]
+
+Hash Tables
+• How to define a hash function? Really no limit to the number 
+of possible hash functions.
+• A good hash function should:
+• Use only the data being hashed
+• Use all of the data being hashed
+• Be deterministic
+• Uniformly distribute data
+• Generate very different hash codes for very similar data
+
+[12]
+
+Hash Tables
+unsigned int hash(char* str)
+{
+int sum = 0;
+for (int j = 0; str[j] != ‘\0’; j++)
+{
+sum += str[j];
+}
+return sum % HASH_MAX;
+}
+
+[13]
+
+Hash Tables
+unsigned int hash(char* str)
+{
+int sum = 0;
+for (int j = 0; str[j] != ‘\0’; j++)
+{
+sum += str[j];
+}
+return sum % HASH_MAX;
+}
+
+[14]
+
+Hash Tables
+unsigned int hash(char* str)
+{
+int sum = 0;
+for (int j = 0; str[j] != ‘\0’; j++)
+{
+sum += str[j];
+}
+return sum % HASH_MAX;
+}
+
+[15]
+
+Hash Tables
+unsigned int hash(char* str)
+{
+int sum = 0;
+for (int j = 0; str[j] != ‘\0’; j++)
+{
+sum += str[j];
+}
+return sum % HASH_MAX;
+}
+
+[16]
+
+Hash Tables
+unsigned int hash(char* str)
+{
+int sum = 0;
+for (int j = 0; str[j] != ‘\0’; j++)
+{
+sum += str[j];
+}
+return sum % HASH_MAX;
+}
+
+[17]
+
+Hash Tables
+0
+1
+2
+3
+4
+“John”
+5
+6
+“Paul”
+7
+8
+9
+
+[18]
+
+Hash Tables
+0
+1
+2
+3
+4
+“John”
+5
+6
+“Paul”
+7
+8
+9
+int z = hash(“Ringo”);
+// z is now 6
+
+[19]
+
+Hash Tables
+• A collision occurs when two pieces of data, when run through 
+the hash function, yield the same hash code.
+• Presumably we want to store both pieces of data in the hash 
+table, so we shouldn’t simply overwrite the data that 
+happened to be placed in there first.
+• We need to find a way to get both elements into the hash table 
+while trying to preserve quick insertion and lookup.
+
+[20]
+
+Hash Tables
+• Resolving collisions: Linear probing
+• In this method, if we have a collision, we try to place the data 
+in the next consecutive element in the array (wrapping around 
+to the beginning if necessary) until we find a vacancy.
+• That way, if we don’t find what we’re looking for in the first 
+location, at least hopefully the element is somewhere nearby.
+
+[21]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Bart”); returns 6
+
+[22]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Bart”); returns 6
+
+[23]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+“Bart”
+7
+8
+9
+hash(“Bart”); returns 6
+
+[24]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+“Bart”
+7
+8
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+
+[25]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+“Bart”
+7
+8
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+
+[26]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+“Bart”
+7
+8
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+
+[27]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+
+[28]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+
+[29]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+
+[30]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+
+[31]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+“Homer”
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+
+[32]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+“Homer”
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+hash(“Maggie”); returns 3
+
+[33]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+“Homer”
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+hash(“Maggie”); returns 3
+
+[34]
+
+Hash Tables
+0
+1
+2
+3
+“Maggie”
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+“Homer”
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+hash(“Maggie”); returns 3
+
+[35]
+
+Hash Tables
+0
+1
+2
+3
+“Maggie”
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+“Homer”
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+hash(“Maggie”); returns 3
+hash(“Marge”); returns 6
+
+[36]
+
+Hash Tables
+0
+1
+2
+3
+“Maggie”
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+“Homer”
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+hash(“Maggie”); returns 3
+hash(“Marge”); returns 6
+
+[37]
+
+Hash Tables
+0
+1
+2
+3
+“Maggie”
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+“Homer”
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+hash(“Maggie”); returns 3
+hash(“Marge”); returns 6
+
+[38]
+
+Hash Tables
+0
+1
+2
+3
+“Maggie”
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+“Homer”
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+hash(“Maggie”); returns 3
+hash(“Marge”); returns 6
+
+[39]
+
+Hash Tables
+0
+1
+2
+3
+“Maggie”
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+“Homer”
+9
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+hash(“Maggie”); returns 3
+hash(“Marge”); returns 6
+
+[40]
+
+Hash Tables
+0
+1
+2
+3
+“Maggie”
+4
+5
+6
+“Bart”
+7
+“Lisa”
+8
+“Homer”
+9
+“Marge”
+hash(“Bart”); returns 6
+hash(“Lisa”); returns 6
+hash(“Homer”); returns 7
+hash(“Maggie”); returns 3
+hash(“Marge”); returns 6
+
+[41]
+
+Hash Tables
+• Resolving collisions: Linear probing
+• Linear probing is subject to a problem called clustering. Once 
+there’s a miss, two adjacent cells will contain data, making it 
+more likely in the future that the cluster will grow.
+• Even if we switch to another probing technique, we’re still 
+limited. We can only store as much data as we have locations 
+in our array.
+
+[42]
+
+Hash Tables
+• Resolving collisions: Chaining
+• Let’s start to pull it all together.
+• What if instead of each element of the array holding just one 
+piece of data, it held multiple pieces of data?
+• If each element of the array is a pointer to the head of a linked 
+list, then multiple pieces of data can yield the same hash code 
+and we’ll be able to store it all!
+
+[43]
+
+Hash Tables
+• Resolving collisions: Chaining
+• We’ve eliminated clustering.
+• We know from experience with linked lists that insertion (and 
+creation, if necessary) into a linked list is an O(1) operation.
+• For lookup, we only need to search through what is hopefully a 
+small list, since we’re distributing what would otherwise be 
+one huge list across n lists.
+
+[44]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+string hashtable[10];
+
+[45]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+string hashtable[10];
+
+[46]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+node* hashtable[10];
+
+[47]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Joey”); returns 6
+
+[48]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Joey”); returns 6
+“Joey”
+
+[49]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Joey”); returns 6
+“Joey”
+
+[50]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Ross”); returns 2
+“Joey”
+
+[51]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Ross”); returns 2
+“Ross”
+“Joey”
+
+[52]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Ross”); returns 2
+“Ross”
+“Joey”
+
+[53]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Rachel”); returns 4
+“Ross”
+“Joey”
+
+[54]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Rachel”); returns 4
+“Ross”
+“Rachel”
+“Joey”
+
+[55]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Rachel”); returns 4
+“Ross”
+“Rachel”
+“Joey”
+
+[56]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Phoebe”); returns 6
+“Ross”
+“Rachel”
+“Joey”
+
+[57]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Phoebe”); returns 6
+“Ross”
+“Rachel”
+“Joey”
+“Phoebe”
+
+[58]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Phoebe”); returns 6
+“Ross”
+“Rachel”
+“Joey”
+“Phoebe”
+
+[59]
+
+Hash Tables
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+hash(“Phoebe”); returns 6
+“Ross”
+“Rachel”
+“Joey”
+“Phoebe”

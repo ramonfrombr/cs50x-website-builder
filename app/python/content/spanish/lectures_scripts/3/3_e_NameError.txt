@@ -1,0 +1,23 @@
+¿Y qué significa este error de nombre? Bueno, al igual que un error de valor se refiere al valor de alguna variable, el valor que alguien ha ingresado es incorrecto, el error de nombre tiende a referirse a tu código, como si estuvieras haciendo algo con el nombre de una variable que no deberías. ¿Y por qué podría ser eso?
+
+Bueno, volvamos nuestra atención al código aquí y consideremos, ¿por qué se queja? Bueno, los errores de nombre es lo que veo aquí abajo. Y me está diciendo lo siguiente: nombre, entre comillas, "x no está definido". Y si observo más adelante, menciona la línea seis. Entonces sé que el problema está en mi código en la línea seis.
+
+Y eso funcionaba hace un momento. Y estoy definiendo x en la línea dos. Pero permítanme preguntar aquí al grupo, ¿por qué x, de hecho, no existe en la línea seis? ¿Por qué no está definido, aunque estoy bastante seguro de que tenía la intención de definirlo en la línea dos?
+
+AUDIENCIA: Tal vez el alcance de la variable esté entre los [ININTELGIBLE].
+
+DAVID MALAN: Buena terminología. El alcance se refiere a la porción de código en la que una variable existe. Eso también es cierto en C, C++ y Java, donde la indentación o las llaves generalmente definen el alcance de una variable. Pero, nuevamente, aquí, en general... y esto funcionaba hace un momento. X existe una vez que se define en la línea dos porque, recuerden, imprimí "x is 50" un poco antes.
+
+Intentemos otra hipótesis aquí. ¿Alguna otra pregunta? ¿Por qué x de alguna manera aún no está definido?
+
+AUDIENCIA: Sí, ¿es porque es una variable local, lo que significa que no se define fuera del alcance porque lo que la gente ha mencionado? Pide la entrada en try, ¿verdad? Lo que está afuera no está definido.
+
+DAVID MALAN: Aún buenos instintos. Y también una buena terminología. Existe esta noción de variables locales, que tienden a existir dentro de las funciones, por ejemplo, variables globales, que tienden a existir en archivos enteros. En este caso, también, eso no es del todo cierto. Lo que está sucediendo aquí se reduce al orden de las operaciones. Permítanme regresar al código aquí y recordar que cada vez que hemos discutido el operador de asignación, el signo igual, copia un valor de la derecha a la izquierda. Pero consideren por un momento en qué punto algo está saliendo mal.
+
+Bueno, la función de entrada probablemente funcione bien porque la hemos usado mucho para obtener la entrada de los usuarios. Siempre devuelve una cadena o un "string" en Python. Pero, ¿qué podría estar saliendo mal? Bueno, si estoy pasando esa cadena como argumento de la función int, probablemente sea la función int la que está generando el error.
+
+Y, de hecho, si recuerdan, cuando tuvimos el error de valor, era, de hecho, la función int la que no le gustó, entre comillas, "gato" como entrada. Así que todo esto significa que esta porción de mi código, resaltada ahora a la derecha del signo igual, es el código que está causando un problema. Es el código que estaba generando un error de valor.
+
+Y en este caso, estamos capturando el error de valor. Pero debido a que el error de valor ocurre a la derecha del signo igual, no se copia ningún valor a la izquierda. El error interrumpe todo el proceso. Entonces, aunque veamos "x = ..." en la línea dos, la porción de esa línea a la izquierda del signo igual no se evalúa, en última instancia, porque el error de valor ocurre demasiado pronto.
+
+Y así, cuando finalmente llegamos a la línea seis, aunque parecía que estaba definiendo en la línea dos, y habría definido x en la línea dos si todo hubiera salido bien, no llegamos a la parte donde se copia el valor de derecha a izquierda porque el error de valor ocurrió primero. Así que este código simplemente es incorrecto ahora.

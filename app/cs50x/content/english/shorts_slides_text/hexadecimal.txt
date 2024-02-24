@@ -1,0 +1,360 @@
+
+[0]
+
+Hexadecimal
+
+[1]
+
+Hexadecimal
+• Most Western cultures use the decimal system, aka base-10, to 
+represent numeric data.
+• As we know, computers use the binary system, aka base-2, to 
+represent numeric (and indeed all data).
+0  1  2  3  4  5  6  7  8  9
+0  1
+
+[2]
+
+Hexadecimal
+• As computer scientists, it’s useful to be able to express data 
+the same way the computer does. 
+• The problem, of course, is that trying to parse a huge chain of 
+0s and 1s can be quite difficult.
+
+[3]
+
+Hexadecimal
+• The hexadecimal system, aka base-16, is a much more concise 
+way to express the data on a computer’s system.
+• Hexadecimal makes this mapping easy because a group of four 
+binary digits (bits) is able has 16 different combinations, and 
+each of those combinations maps to a single hexadecimal digit.
+0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+
+[4]
+
+Hexadecimal
+• The hexadecimal system, aka base-16, is a much more concise 
+way to express the data on a computer’s system.
+• Hexadecimal makes this mapping easy because a group of four 
+binary digits (bits) is able has 16 different combinations, and 
+each of those combinations maps to a single hexadecimal digit.
+0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
+
+[5]
+
+Hexadecimal
+Decimal
+Binary
+Hexadecimal
+Decimal
+Binary
+Hexadecimal
+0
+0000
+0
+8
+1000
+8
+1
+0001
+1
+9
+1001
+9
+2
+0010
+2
+10
+1010
+A
+3
+0011
+3
+11
+1011
+B
+4
+0100
+4
+12
+1100
+C
+5
+0101
+5
+13
+1101
+D
+6
+0110
+6
+14
+1110
+E
+7
+0111
+7
+15
+1111
+F
+
+[6]
+
+Hexadecimal
+Decimal
+Binary
+Hexadecimal
+Decimal
+Binary
+Hexadecimal
+0
+0000
+0x0
+8
+1000
+0x8
+1
+0001
+0x1
+9
+1001
+0x9
+2
+0010
+0x2
+10
+1010
+0xA
+3
+0011
+0x3
+11
+1011
+0xB
+4
+0100
+0x4
+12
+1100
+0xC
+5
+0101
+0x5
+13
+1101
+0xD
+6
+0110
+0x6
+14
+1110
+0xE
+7
+0111
+0x7
+15
+1111
+0xF
+
+[7]
+
+Hexadecimal
+• Just like binary has place values (1, 2, 4, 8…) and decimal does 
+too (1, 10, 100, 1000…), so does hexadecimal.
+
+[8]
+
+Hexadecimal
+• Just like binary has place values (1, 2, 4, 8…) and decimal does 
+too (1, 10, 100, 1000…), so does hexadecimal.
+162
+161
+160
+3
+9
+7
+
+[9]
+
+Hexadecimal
+• Just like binary has place values (1, 2, 4, 8…) and decimal does 
+too (1, 10, 100, 1000…), so does hexadecimal.
+162
+161
+160
+3
+9
+7
+0x
+
+[10]
+
+Hexadecimal
+• Just like binary has place values (1, 2, 4, 8…) and decimal does 
+too (1, 10, 100, 1000…), so does hexadecimal.
+256
+16
+1
+3
+9
+7
+0x
+
+[11]
+
+Hexadecimal
+• Just like binary has place values (1, 2, 4, 8…) and decimal does 
+too (1, 10, 100, 1000…), so does hexadecimal.
+162
+161
+160
+3
+9
+7
+0x
+
+[12]
+
+Hexadecimal
+• Just like binary has place values (1, 2, 4, 8…) and decimal does 
+too (1, 10, 100, 1000…), so does hexadecimal.
+162
+161
+160
+A
+D
+C
+0x
+
+[13]
+
+Hexadecimal
+• To convert a binary number to hexadecimal, group four binary 
+digits (bits) together from right to left.
+• Pad the leftmost group with extra 0 bits at the front if necessary.
+• Then use the chart a few slides back or your memory to 
+convert those bits to something a bit more concise.
+
+[14]
+
+Hexadecimal
+01000110101000101011100100111101
+
+[15]
+
+Hexadecimal
+01000110101000101011100100111101
+0100 0110 1010 0010 1011 1001 0011 1101
+
+[16]
+
+Hexadecimal
+01000110101000101011100100111101
+0100 0110 1010 0010 1011 1001 0011 1101
+
+[17]
+
+Hexadecimal
+01000110101000101011100100111101
+0100 0110 1010 0010 1011 1001 0011 1101
+13
+
+[18]
+
+Hexadecimal
+01000110101000101011100100111101
+0100 0110 1010 0010 1011 1001 0011 1101
+D
+
+[19]
+
+Hexadecimal
+01000110101000101011100100111101
+0100 0110 1010 0010 1011 1001 0011 1101
+3
+D
+
+[20]
+
+Hexadecimal
+01000110101000101011100100111101
+0100 0110 1010 0010 1011 1001 0011 1101
+9
+3
+D
+
+[21]
+
+Hexadecimal
+01000110101000101011100100111101
+0100 0110 1010 0010 1011 1001 0011 1101
+B
+9
+3
+D
+
+[22]
+
+Hexadecimal
+01000110101000101011100100111101
+0100 0110 1010 0010 1011 1001 0011 1101
+2
+B
+9
+3
+D
+
+[23]
+
+Hexadecimal
+01000110101000101011100100111101
+0100 0110 1010 0010 1011 1001 0011 1101
+A
+2
+B
+9
+3
+D
+
+[24]
+
+Hexadecimal
+01000110101000101011100100111101
+0100 0110 1010 0010 1011 1001 0011 1101
+6
+A
+2
+B
+9
+3
+D
+
+[25]
+
+Hexadecimal
+01000110101000101011100100111101
+0100 0110 1010 0010 1011 1001 0011 1101
+4
+6
+A
+2
+B
+9
+3
+D
+
+[26]
+
+Hexadecimal
+01000110101000101011100100111101
+0x46A2B93D
+0100 0110 1010 0010 1011 1001 0011 1101
+4
+6
+A
+2
+B
+9
+3
+D

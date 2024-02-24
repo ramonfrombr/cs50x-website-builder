@@ -1,0 +1,38 @@
+
+So how can I be more precise? Well, let me propose we introduce a few more symbols as well. It turns out in the context of a regular expression, one of these patterns, you can use the caret symbol, the little triangular mark, to represent that you want this pattern to match the start of the string specifically-- not anywhere but the start of the user's string. By contrast, you can use a $ sign in your regular expression to say that you want to match the end of the string, or technically just before the newline at the end of the string. 
+
+But for all intents and purposes, think of caret as meaning "start of the string" and $ sign as meaning "end of the string." It is a weird thing that one is a caret and one is $ sign. These are not really things that I think of as opposites, like a parentheses or something like that. But those are the symbols the world chose many years ago. 
+
+So let me go back to VS Code now. And let me add this feature to my code here. Let me specify that yes, I do want to search for this pattern, but I want the user's input to start with this pattern and end with this pattern. So even though it's going to start looking even more cryptic, I put a caret symbol here at the beginning, and I put a $ sign here at the end. That does not mean I want the user to type a caret symbol or a $ sign. This is special symbology that indicates to re.search that it should only look for now an exact match against this pattern. 
+
+So if I now go back to my terminal window-- and I'll leave the previous result on the screen-- let me type the exact same thing. "My email address malan@harvard.edu," Enter-- sorry, period. And now I'm going to go ahead and hit Enter. Now that's considered invalid. But let me clear the screen. And just to make sure I didn't break things, let me type in just my email address, and that, too, is valid. 
+
+Any questions now on this version of my regular expression, which, note, goes further to specify even more precisely that I want it to match at the start and the end? Any questions on this one here? 
+
+AUDIENCE: OK. You have slash, and .edu, then the $ sign. But the dot is one of the regular expression, right? 
+
+DAVID MALAN: It normally is. But this backslash that I deliberately put before this period here is an escape character. It is a way of telling re.search that I don't want any character there, I literally want a period there. And it's the only way you can distinguish one from the other. 
+
+If I got rid of that slash, this would mean that the email address just has to end with any character, then an E, then a D, than a U. I don't want that. I want literally a period, then the E, then the D, then the U. 
+
+This is actually common convention in programming and technology in general. If you and I decide on a convention, whereby we're using some character on the keyboard to mean something special, invariably we create a future problem for ourself when we want to literally use that same character. And so the solution in general to that problem is to somehow escape the character so that it's clear to the computer that it's not that special symbol, it's literally the symbol it sees. 
+
+AUDIENCE: So we don't even know the-- we don't need another slash before the $ sign? 
+
+DAVID MALAN: No. Because in this case, $ sign means something special. Per this chart here, $ sign by itself does not mean US dollars or currency. It literally means "match the end of the string." If, however, I wanted the user to literally type in $ sign at the end of their input, the solution would be the same. I would put a backslash before the $ sign, which means my email address would have to be something like malan@harvard.edu $ sign, which is obviously not correct too. 
+
+So backslash is just allow you to tell the computer to not treat those symbols specially, likes meaning something special, but to treat them literally instead. How about one other question here on regular expressions? 
+
+AUDIENCE: You said one represents to make it one plus, then you said one was to make it one with nothing. 
+
+DAVID MALAN: Sure. 
+
+AUDIENCE: So why would you add the plus? 
+
+DAVID MALAN: Let me rewind in time. I think what you're referring to was one of our earlier versions that initially looked like this, which just meant zero or more characters, than an @ sign, then zero or more other characters. We then evolved to that to be this, dot plus on both sides, which means one or more characters on the left, then an @ sign, then one or more characters on the right. And if I'm interpreting your question correctly, one of the points I made earlier was that if you didn't use plus or forgot that it exists, you could equivalently achieve the exact same result with two dots and a *, because the first dot means any character-- it's got to be there-- the second dot * means zero or more other characters, and same on the right. 
+
+So it's just another way of expressing the same idea. "One or more" can be represented like this with dot dot *, or you can just use the handier syntax of dot +, which means the same thing. All right. So I daresay there's still some problems with the regular expression in this current form, because even though now we're starting to look for the user name at the beginning of the string from the user, and we're looking for the .edu literally at the end of the string from the user, those dots are a little too encompassing right now. 
+
+I'm allowed to type in more than the single @ sign. Why? Because @ is a character, and dot means any character. So honestly, I can have as many @ signs in this thing at the moment as I want. 
+
+For instance, if I run python of validate.py, malan@harvard.edu, still works as expected. But if I also run python of validate.py and incorrectly do malan@@@harvard.edu, should be invalid, but it's considered valid instead. So I think we need to be a little more restrictive when it comes to that dot. And we can't just say, oh, any old character there is fine. We need to be more specific. 

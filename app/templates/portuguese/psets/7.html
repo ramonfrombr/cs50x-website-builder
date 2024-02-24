@@ -1,20 +1,21 @@
-{% extends 'layout.html' %} {% block conteudo %}
+{% extends 'layout.html' %} {% block content %}
 
 <h1 id="problem-set-7">Conjunto de Problemas 7</h1>
 
 <div class="alert" data-alert="warning" role="alert">
   <p>
-    A colaboração nos conjuntos de problemas não é permitida, exceto na medida em que você
-    pode pedir ajuda a colegas de classe e outros, desde que essa ajuda não se reduza a
-    outra pessoa fazendo seu trabalho por você, de acordo com a política do curso sobre
+    A colaboração nos conjuntos de problemas não é permitida, exceto na medida
+    em que você pode pedir ajuda a colegas de classe e outros, desde que essa
+    ajuda não se reduza a outra pessoa fazendo seu trabalho por você, de acordo
+    com a política do curso sobre
     <a href="{{url_for('cs50x.honesty')}}">honestidade acadêmica</a>.
   </p>
 
   <p>
-    A equipe do curso faz auditorias aleatórias das submissões do CS50x. Alunos que forem
-    identificados em violação a esta política serão removidos do curso. Alunos que já
-    tenham concluído o CS50x, se identificados em violação, terão seu Certificado CS50
-    revogado permanentemente.
+    A equipe do curso faz auditorias aleatórias das submissões do CS50x. Alunos
+    que forem identificados em violação a esta política serão removidos do
+    curso. Alunos que já tenham concluído o CS50x, se identificados em violação,
+    terão seu Certificado CS50 revogado permanentemente.
   </p>
 </div>
 
@@ -30,12 +31,15 @@
 
 <ol>
   <li>
-    Faça login em <a href="https://code.cs50.io">code.cs50.io</a> usando sua conta do GitHub
+    Faça login em <a href="https://code.cs50.io">code.cs50.io</a> usando sua
+    conta do GitHub
   </li>
   <li>
-    Execute <code class="language-plaintext highlighter-rouge">update50</code> na
-    janela do terminal do seu espaço de código para garantir que seu espaço de código esteja atualizado e,
-    quando solicitado, clique em <strong>Rebuild now</strong>
+    Execute
+    <code class="language-plaintext highlighter-rouge">update50</code> na janela
+    do terminal do seu espaço de código para garantir que seu espaço de código
+    esteja atualizado e, quando solicitado, clique em
+    <strong>Rebuild now</strong>
   </li>
   <li>Envie <a href="{{url_for('cs50x.psets.movies')}}">Filmes</a></li>
   <li>Envie <a href="{{url_for('cs50x.psets.fiftyville')}}">Fiftyville</a></li>
@@ -56,10 +60,9 @@
 
 <ul>
   <li data-marker="*">
-    Visite <a href="https://www.w3schools.com/sql/">w3schools.com/sql</a> para um
-    guia prático!
+    Visite <a href="https://www.w3schools.com/sql/">w3schools.com/sql</a> para
+    um guia prático!
   </li>
 </ul>
 
-{% endblock %}
-'
+{% endblock %} '

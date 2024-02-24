@@ -1,0 +1,43 @@
+Además de funciones como map, también existe esta llamada filter que se puede usar para lograr el mismo efecto, pero con un enfoque más funcional, si se quiere.
+
+Permítanme volver a VS Code aquí. Y con el mismo ejemplo, hagamos esto. Dejemos la lista original de antes, incluido Draco, que en realidad no es de Gryffindor. Y permítanme definir temporalmente una función llamada is Gryffindor que tome como valor algo como un estudiante S.
+
+Y luego, hagamos esto. Adelante y digamos si la casa de s igual igual a Gryffindor, entonces adelante y devuelve true. De lo contrario, adelante y devuelve false. Ahora, hemos visto antes condicionales como este que son un poco innecesariamente verbosos. No necesito tener un condicional si ya estoy haciendo una pregunta booleana aquí arriba.
+
+Entonces, en realidad puedo ajustar esto como hemos hecho en el pasado y simplemente devolver ¿la casa del estudiante es igual igual a Gryffindor? Es cierto, o no lo es en su falso. No necesito devolver explícitamente true o false. Puedo devolver solo el valor de ese booleano.
+
+Adelante y hagamos esto ahora. Voy a crear, como antes, una variable llamada Gryffindors, una lista de todos mis estudiantes de Gryffindor que es igual a, esta vez, el resultado de llamar a filter. Filter toma al menos dos argumentos aquí, uno de los cuales es el nombre de una función para llamar es Gryffindor. Y voy a aplicar esa función a cada uno de los elementos de esta secuencia aquí.
+
+Entonces, similar en espíritu a map, estoy pasando una función que se aplicará a cada uno de los elementos de la secuencia. Pero map devuelve un valor por cada elemento de la secuencia. Así es como obligamos a que todas las palabras estén en mayúsculas.
+
+Pero si quiero incluir condicionalmente a un estudiante en mi lista resultante de Gryffindors, puedo usar filter en su lugar. Filter espera que su primera función no sea algo como str.upper, sino una función que devuelva verdadero o falso. Dime si debo incluir o no incluir al estudiante actual en la lista final.
+
+Y la pregunta que se hace es si viven en Gryffindor. Estamos revisando la clave house del diccionario para obtener esa respuesta. Y así, en última instancia, creo que nos quedaremos con algo bastante similar. Para Gryffindor en la versión ordenada - hagamos para Gryffindor en Gryffindors, luego imprimamos el nombre actual de los estudiantes de Gryffindor.
+
+Aún no estará ordenado. Pero cuando ejecute esta versión de Python de Gryffindors.py y presione Enter, volvemos a los negocios. No está ordenado. Pero tenemos a Hermione, Harry y Ron, pero no a Draco.
+
+Y si recuerdan de hace algunas semanas, si queremos incluso una lista de diccionarios, todavía podemos hacerlo. Puedo llamar a sorted en Gryffindors con el plural. Y puedo pasar una clave. Y esa clave puede tener una función anónima, alias una función Lambda, que toma un estudiante como entrada, lo llamo s, y luego devuelve el valor del nombre de s, si mi objetivo es ordenar por los propios nombres de los estudiantes.
+
+Si ahora ejecuto Python de Gryffindors.py, veo la misma lista de estudiantes. Pero esta vez, está ordenada. Así que aquí hemos visto dos enfoques para este problema particular de los estudiantes de Gryffindor. Podemos usar algo como una comprensión de lista y dentro de esa comprensión de lista hacer un poco de filtración, incluyendo una condición if como hice.
+
+O podemos tomar un enfoque más funcional simplemente usando esta función filter, pasando la función que quiero que tome estas decisiones por mí, y luego incluir solo aquellos para quienes se devuelve verdadero. ¿Algún pregunta sobre alguno de estos dos enfoques?
+
+ESTUDIANTE: Sí. Solo tenía una pregunta, si escribimos un código como en la versión anterior, donde todo está en una sola línea, ¿no tendría un problema con eso en cuanto al estilo del código, porque es menos legible?
+
+DAVID J. MALAN: Entonces, ¿una herramienta como black tendría un problema con el estilo de este código?
+
+ESTUDIANTE: El anterior, donde todo estaba en una sola línea.
+
+DAVID J. MALAN: Oh, una buena pregunta. ¿Tenía Black un problema con este código? Bueno, permítanme retroceder a esa versión, que usaba la comprensión de lista un poco más larga, que se veía así, si retrocedemos lo suficiente, dame unos cuantos deshacer más, que se veía así en última instancia. Permítanme ejecutar Black en Gryffindors.py.
+
+Y verán que lo reformateó ligeramente. Pero lo arreglé de antemano. Si lo hubiera hecho y lo hubiera hecho en una sola línea, pero sabía que a Black no le gustaría eso, lo habría arreglado por mí. Así que lo arreglé de antemano antes de escribir el código yo mismo. ¿Cómo sobre tiempo para otra pregunta sobre Gryffindors.py y este enfoque de usar una comprensión de lista o filter?
+
+ESTUDIANTE: Sí. Cuando usas filter, en lugar de llamar a la función is Gryffindor, ¿puedes usarla directamente allí dentro de filter?
+
+DAVID J. MALAN: ¿Puedes usar la función is Gryffindor? Entonces, no quieres llamarla así. Porque no quieres llamarla entonces. Quieres que filter llame a la función por ti, si eso es lo que quieres decir. Así que lo paso solo por su nombre.
+
+ESTUDIANTE: No, me refiero si puedes escribir el return como house igual igual Gryffindor dentro de [INAUDIBLE].
+
+DAVID J. MALAN: Sí, en efecto. De hecho, recuerda que de hecho usamos estas funciones Lambda hace mucho tiempo cuando queríamos pasar una función rápida y sucia de forma anónima para permitir que sorted filtre por una clave diferente de un diccionario. Podemos hacer eso aquí.
+
+En realidad, puedo tomar la esencia de esta función is Gryffindor. Puedo cambiar el nombre de esta función en mi llamada de filter para que sea otra función Lambda, pasando un argumento como s, y devolviendo exactamente eso. Ahora puedo eliminar por completo mi función is Gryffindor. Y ahora, cuando ejecute Python de Gryffindors.py, sigo obteniendo la misma respuesta. Y no me he molestado en definir una función solo para usarla en un único lugar.

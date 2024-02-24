@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <title>Minha Página Web!</title>
+    </head>
+    <body>
+        <form>
+            <div>
+                <input name="name" type="text" placeholder="Nome" />
+                <input name="password" type="password" placeholder="Senha" />
+            </div>
+
+            <div>
+                Cor favorita?
+                <input name="color" type="radio" value="red" /> Vermelho
+                <input name="color" type="radio" value="green" /> Verde
+                <input name="color" type="radio" value="blue" /> Azul
+                <input name="color" type="radio" value="other" /> Outra
+            </div>
+
+            <div>
+                <input name="country" list="countries" placeholder="País" />
+                <datalist id="countries">
+                    <option value="Afeganistão"></option>
+                    <option value="Albânia"></option>
+                    <option value="Argélia">
+                        <!-- Rest of the country list omitted for brevity -->
+                    </option>
+
+                    <option value="Zâmbia"></option>
+                    <option value="Zimbábue"></option>
+                </datalist>
+            </div>
+        </form>
+    </body>
+</html>

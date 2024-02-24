@@ -1,0 +1,76 @@
+{% extends 'python/layout.html' %} {% block content %}
+<h1 id="problem-set-0">Conjunto de Problemas 0</h1>
+
+<h2 id="what-to-do">Qué hacer</h2>
+
+<ol>
+  <li>
+    Envía
+    <a href="https://forms.cs50.io/27a35e60-490a-4e42-8574-6b55154ae760"
+      >este formulario</a
+    >.
+  </li>
+  <li>
+    Visita
+    <a href="https://submit.cs50.io/invites/579861a2825849178cd11315c055bc49"
+      >este enlace</a
+    >, inicia sesión con tu cuenta de GitHub y haz clic en
+    <strong>Autorizar CS50</strong>.
+  </li>
+  <li>
+    Marca la casilla indicando que deseas conceder acceso al personal del curso a
+    tu envío, y haz clic en <strong>Unirse al curso</strong>.
+  </li>
+  <li>
+    Inicia sesión en <a href="https://cs50.dev/">cs50.dev</a>, que es una versión basada en la nube
+    de Visual Studio Code (VS Code) que te proporciona tu propio
+    "espacio de código" con todo lo necesario para el curso ya instalado. No
+    es necesario descargar ni instalar VS Code o Python en tu propio Mac o PC. Si aún no
+    estás familiarizado, asegúrate de ver el
+    <a href="../../shorts/visual_studio_code_for_cs50/"
+      >Video Corto de Visual Studio Code para CS50</a
+    >
+    para obtener una descripción completa.
+  </li>
+  <li>
+    Una vez que se haya cargado tu espacio de código, cierra cualquier pestaña de <strong>Bienvenida</strong>
+    que se haya abierto por defecto
+  </li>
+  <li>
+    Ejecuta
+    <code class="language-plaintext highlighter-rouge">update50</code> en la ventana terminal de tu
+    espacio de código para asegurarte de que está actualizado; si se solicita, haz clic en <strong>Reconstruir ahora</strong>.
+  </li>
+  <li>
+    Envía todos los problemas a continuación:
+    <ul>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.indoor') }}">Voz Interior</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.playback') }}">Velocidad de Reproducción</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.faces') }}">Creando Rostros</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.einstein') }}">Einstein</a>
+      </li>
+      <li data-marker="*">
+        <a href="{{ url_for('python.psets.tip') }}">Calculadora de Propinas</a>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="when-to-do-it">Cuándo hacerlo</h2>
+
+<p>
+  Antes de
+  <a
+    data-local="2024-12-31T23:59:00-05:00"
+    href="https://time.cs50.io/20241231T235900-0500"
+    >2024-12-31T23:59:00-05:00</a
+  >.
+</p>
+{% endblock %}

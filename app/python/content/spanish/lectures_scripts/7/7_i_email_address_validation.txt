@@ -1,0 +1,15 @@
+De acuerdo. Permíteme proponer que retroceda en el tiempo hasta donde lo dejamos, que fue aquí.
+
+Y permíteme proponer que hay, de hecho, limitaciones en esta solución, no solo con el nombre de usuario, no solo con el nombre de dominio. Aún estamos siendo demasiado restrictivos. ¿Te gustaría ver la expresión regular oficial que al menos los navegadores utilizan hoy en día cuando escribes una dirección de correo electrónico en un formulario web, y el formulario web, el navegador, te dice si tu dirección de correo electrónico es válida sintácticamente o no? ¿Listo? ¿Listo?
+
+Aquí está, y ni siquiera es oficialmente la expresión regular correcta. Es una versión simplificada que los navegadores usan porque captura la mayoría de los errores pero no todos. Aquí vamos. Esta es la expresión regular para una dirección de correo electrónico válida, al menos como los navegadores la implementan hoy en día. Ahora, a simple vista, parece algo loco y críptico.
+
+Pero nota, y se está envolviendo en muchas líneas, pero es solo un patrón. Pero solo fíjate en los símbolos ya conocidos. Hay el símbolo ^ en la parte superior. Hay el signo $ al final. Hay un corchete cuadrado aquí y luego algunos de estos rangos más otros caracteres.
+
+Resulta que normalmente no ves estos caracteres en las direcciones de correo electrónico. Parece que le estás diciendo groserías a alguien en su nombre de usuario. Pero son caracteres válidos. Son válidos oficialmente. Eso no significa que Gmail te permita poner signos de dólar y otros signos de puntuación en tu nombre de usuario. Pero oficialmente, algunos servidores podrían permitirlo.
+
+Entonces, si realmente quieres validar la dirección de correo electrónico de un usuario, deberías idear o copiar y pegar algo así. Pero honestamente, esto se ve tan críptico. Y si lo escribieras manualmente, es muy probable que cometas un error. ¿Cuál es la mejor solución aquí en su lugar?
+
+Aquí es donde, como ya mencionamos en semanas anteriores, las bibliotecas son tus amigas. Seguramente alguien más en internet, incluso un programador más experimentado que tú, ha creado código que valida direcciones de correo electrónico correctamente, utilizando esta expresión regular o incluso algo más sofisticado que eso. Entonces, en general, si el problema en cuestión es validar una entrada que es bastante convencional, como una dirección de correo electrónico, una URL, algo donde hay una definición oficial que es independiente de ti mismo, busca una biblioteca popular con la que te sientas cómodo y úsala en tu código para validar direcciones de correo electrónico. Esto no es una rueda que debas inventar tú mismo necesariamente.
+
+Sin embargo, hemos utilizado direcciones de correo electrónico para empezar de manera iterativa desde algo simple, demasiado simple, y construir encima de eso. Por lo tanto, ciertamente podrías imaginar utilizar expresiones regulares todavía para validar cosas que no son direcciones de correo electrónico pero que son datos importantes para ti. Por lo menos ahora tenemos estos bloques de construcción.
