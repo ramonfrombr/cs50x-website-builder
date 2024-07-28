@@ -1,11 +1,12 @@
 from . import cs50x2024 as bp
 from flask import render_template
 import marko
+import os
 
 @bp.route('/')
 @bp.route('/index.html')
 def index():
-    with open("app/cs50x2024/content/english/homepage.md", "r") as f:
+    with open(f"app/cs50x2024/content/{os.environ['COURSE_LANGUAGE']}/homepage.md", "r") as f:
         markdown_text = f.read()
     
     return render_template(
