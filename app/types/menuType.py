@@ -1,5 +1,6 @@
 from typing import TypedDict
 
+
 class MenuType(TypedDict):
     title: str
     intro: str
@@ -11,6 +12,7 @@ class MenuType(TypedDict):
     gradebook: str
     staff: str
 
+
 class MenuCS50xType(MenuType):
     final_project: str
     office_hours: str
@@ -20,4 +22,3 @@ class MenuCS50xType(MenuType):
     manual: str
     style: str
     python_documentation: str
-

@@ -2,6 +2,7 @@ from flask import Flask
 import os
 from .config import EnglishConfig, SpanishConfig
 
+
 def create_app():
     app = Flask(__name__)
 
