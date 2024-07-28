@@ -1,3 +1,26 @@
-<aside>
-    <header><h1>{{config['TITLE']}}</h1></header>
+<aside class="col-md" style="background-color: {{config['BACKGROUND_COLOR']}}">
+  <header>
+    <h1>{{config['TITLE']}}</h1>
+
+    <p>
+      {{config['INTRO']}} <br />
+      2024
+    </p>
+  </header>
+
+  <button
+    class="btn btn-sm collapsed d-md-none"
+    aria-controls="nav"
+    aria-expanded="false"
+    data-target="aside &gt; nav"
+    data-toggle="collapse"
+  >
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr />
+
+    <p>Hello world</p>
+  </nav>
 </aside>
