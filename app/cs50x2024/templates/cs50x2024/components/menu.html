@@ -1,26 +1,125 @@
 <aside class="col-md" style="background-color: {{config['BACKGROUND_COLOR']}}">
   <header>
-    <h1>{{config['TITLE']}}</h1>
+    <h1>
+      <a href="">{{config['TITLE']}}</a>
+    </h1>
 
     <p>
-      {{config['INTRO']}} <br />
+      <a target="_blank" href="">{{config['INTRO']}}</a>
+      <br/>
       2024
     </p>
   </header>
 
-  <button
-    class="btn btn-sm collapsed d-md-none"
-    aria-controls="nav"
-    aria-expanded="false"
-    data-target="aside &gt; nav"
-    data-toggle="collapse"
-  >
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
     Menu
   </button>
 
   <nav class="collapse d-md-block" id="nav">
-    <hr />
+    <hr/>
 
-    <p>Hello world</p>
+    <ul>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          2</a>
+        {{config['MENU_CS50X_2024'].week2}}
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          3</a>
+        {{config['MENU_CS50X_2024'].week3}}
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          4</a>
+        {{config['MENU_CS50X_2024'].week4}}
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          5</a>
+        {{config['MENU_CS50X_2024'].week5}}
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          6.5</a>
+        {{config['MENU_CS50X_2024'].week6_5}}
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].week}}
+          10</a>
+        {{config['MENU_CS50X_2024'].week10}}
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].final_project}}</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].honesty}}</a>
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].certificate}}</a>
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].faqs}}</a>
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].gradebook}}</a>
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].staff}}</a>
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].syllabus}}</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].manual}}</a>
+      </li>
+      <li>
+        <a href="">{{config['MENU_CS50X_2024'].style}}</a>
+      </li>
+    </ul>
   </nav>
 </aside>

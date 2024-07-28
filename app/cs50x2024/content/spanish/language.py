@@ -18,4 +18,10 @@ menu: MenuCS50xType = {
     "manual": "Manual del Programador",
     "style": "Guía de Estilo",
     "python_documentation": "Documentación de Python",
+    "week2": "Arreglos",
+    "week3": "Algoritmos",
+    "week4": "Memoria",
+    "week5": "Estructuras de Datos",
+    "week6_5": "Inteligencia Artificial",
+    "week10": "Ciberseguridad",
 }

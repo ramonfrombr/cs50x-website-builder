@@ -22,3 +22,9 @@ class MenuCS50xType(MenuType):
     manual: str
     style: str
     python_documentation: str
+    week2: str
+    week3: str
+    week4: str
+    week5: str
+    week6_5: str
+    week10: str
