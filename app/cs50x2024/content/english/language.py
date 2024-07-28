@@ -1,4 +1,4 @@
-from ....types import MenuCS50xType
+from ....types import MenuCS50xType, PagesUrlsType
 
 
 menu: MenuCS50xType = {
@@ -25,4 +25,14 @@ menu: MenuCS50xType = {
     "week5": "Data Structures",
     "week6_5": "Artificial Intelligence",
     "week10": "Cybersecurity",
+}
+
+pages_url: PagesUrlsType = {
+    "project": "project",
+    "honesty": "honesty",
+    "certificate": "certificate",
+    "faqs": "faqs",
+    "staff": "staff",
+    "syllabus": "syllabus",
+    "style": "style"
 }
