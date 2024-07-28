@@ -9,11 +9,11 @@
     <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
   </head>
-  <body style="background-color: {{config['BACKGROUND_COLOR']}}">
+  <body>
     <div class="container-fluid">
       <div class="row">
         {% include 'cs50x2024/components/menu.html' %}
-        <main class="col-md">
+        <main class="col-md markdown-body">
           {% block content %} {% endblock %}
         </main>
       </div>
