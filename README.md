@@ -58,3 +58,11 @@ To run tests for a specific language, execute the command below, where `<LANGUAG
 ```
 export COURSE_LANGUAGE=<LANGUAGE> && pytest tests --capture=no
 ```
+
+## Python Type Checking
+
+To check typings in the `app` package, use the `mypy` library as follows:
+
+```
+mypy app
+```
