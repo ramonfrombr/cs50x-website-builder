@@ -1,0 +1,5 @@
+# Certificado de CS50
+
+Si envías y recibes una calificación de al menos 70% en cada uno de los problemas, ejercicios de laboratorio y proyecto final de este curso, será elegible para un [Certificado CS50](https://cs50.harvard.edu/certificates) gratis como el que aparece abajo. Para un [certificado verificado](https://www.edx.org/verified-certificate) de edX, regístrate en [cs50.edx.org](https://cs50.edx.org/). Revisa las [Preguntas Frecuentes](../faqs/) para información adicional y si tu pregunta no aparece ahí, por favor envía un correo a [certificates@cs50.harvard.edu](mailto:certificates@cs50.harvard.edu) y haremos lo posible por ayudar.
+
+[![Certificado de CS50](https://cs50.harvard.edu/certificates/20f627af-99e6-4f7b-ac0c-ce19076f2aac.png)](https://cs50.harvard.edu/certificates/20f627af-99e6-4f7b-ac0c-ce19076f2aac)
