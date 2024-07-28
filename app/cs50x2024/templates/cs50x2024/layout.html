@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{config['TITLE']}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css')}}">
+
   </head>
   <body style="background-color: {{config['BACKGROUND_COLOR']}}">
-    {% block content %} {% endblock %}
+    <div class="container-fluid">
+      <div class="row">
+        {% include 'cs50x2024/components/menu.html' %}
+        <main class="col-md">
+          {% block content %} {% endblock %}
+        </main>
+      </div>
+    </div>
   </body>
 </html>
