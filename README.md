@@ -44,3 +44,17 @@ Define Flask debug tool as true, to display helpful debug messages.
 ```
 export FLASK_DEBUG=1
 ```
+
+## Running Tests
+
+To run tests for all languages (Portuguese, Spanish, French):
+
+```
+for language in english spanish; do export COURSE_LANGUAGE=$language; pytest tests --capture=no; done
+```
+
+To run tests for a specific language, execute the command below, where `<LANGUAGE>` is the language you want to test for:
+
+```
+export COURSE_LANGUAGE=<LANGUAGE> && pytest tests --capture=no
+```
