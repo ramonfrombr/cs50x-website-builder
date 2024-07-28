@@ -14,15 +14,56 @@ pages_files.sort()
 
 language = "spanish"
 
-for file in pages_files:
-    source_text = open(f"./app/cs50x2024/content/english/{file}").read()
+single_pages = list(
+    filter(lambda f: 'project' not in f and 'style' not in f and 'faqs' not in f, pages_files))
 
-    prompt = prompt_template.substitute(text=source_text, language=language)
 
-    try:
-        response = model.generate_content(prompt)
-        destination_file = open(
-            f"./app/cs50x2024/content/{language}/{file}", "w")
-        destination_file.write(response.text)
-    except:
-        print("Error: ", file)
+def translate_single_pages(pages):
+    for file in pages:
+        source_text = open(f"./app/cs50x2024/content/english/{file}").read()
+
+        prompt = prompt_template.substitute(
+            text=source_text, language=language)
+
+        try:
+            response = model.generate_content(prompt)
+            destination_file = open(
+                f"./app/cs50x2024/content/{language}/{file}", "w")
+            destination_file.write(response.text)
+        except:
+            print("Error: ", file)
+
+
+def translate_page_by_sections(files, page):
+
+    destination_file = open(
+        f"./app/cs50x2024/content/{language}/{page}.md", "w")
+
+    for file in files:
+        source_text = open(f"./app/cs50x2024/content/english/{file}").read()
+
+        prompt = prompt_template.substitute(
+            text=source_text, language=language)
+
+        try:
+            response = model.generate_content(prompt)
+            destination_file = open(
+                f"./app/cs50x2024/content/{language}/{page}.md", "a")
+            destination_file.write(response.text + "\n\n")
+        except:
+            print("Error: ", file)
+
+
+final_project_files = list(filter(lambda f: 'project' in f, pages_files))
+final_project_files_sections = final_project_files[1:]
+
+style_guide_files = list(filter(lambda f: 'style' in f, pages_files))
+style_guide_files_sections = style_guide_files[1:]
+
+faqs_files = list(filter(lambda f: 'faqs' in f, pages_files))
+faqs_files_sections = faqs_files[1:]
+
+# translate_page_by_sections(final_project_files_sections, "project")
+# translate_page_by_sections(style_guide_files_sections, "style")
+translate_page_by_sections(faqs_files_sections, "faqs")
+# translate_single_pages(single_pages)
