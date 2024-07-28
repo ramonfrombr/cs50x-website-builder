@@ -14,7 +14,7 @@ But it can be used to translate the course to any language!
 
 - Flask
 - pytest
-- marko
+- markdown
 - Better Jinja (VSCode Extension): It prevents Jinja templates from formatting incorrectly.
 
 # Development Setup

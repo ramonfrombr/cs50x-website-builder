@@ -10,7 +10,7 @@ menu: MenuCS50xType = {
     "faqs": "Preguntas Frecuentes",
     "gradebook": "Libro de Calificaciones",
     "staff": "Equipo",
-    "final_project": "Proyecto Final",
+    "project": "Proyecto Final",
     "office_hours": "Horario de Consultas",
     "seminars": "Seminarios",
     "sections": "Revisiones",

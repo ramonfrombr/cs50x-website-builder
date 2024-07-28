@@ -11,7 +11,7 @@ menu: MenuCS50xType = {
     "faqs": "FAQS",
     "gradebook": "Gradebook",
     "staff": "Staff",
-    "final_project": "Final Project",
+    "project": "Final Project",
     "office_hours": "Office Hours",
     "seminars": "Seminars",
     "sections": "Sections",

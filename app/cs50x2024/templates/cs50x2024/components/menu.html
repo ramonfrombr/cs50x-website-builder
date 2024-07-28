@@ -85,7 +85,7 @@
 
     <ul>
       <li>
-        <a href="">{{config['MENU_CS50X_2024'].final_project}}</a>
+        <a href="{{ url_for('cs50x2024.project') }}">{{config['MENU_CS50X_2024'].project}}</a>
       </li>
     </ul>
 
@@ -93,22 +93,22 @@
 
     <ul>
       <li>
-        <a href="">{{config['MENU_CS50X_2024'].honesty}}</a>
+        <a href="{{ url_for('cs50x2024.honesty') }}">{{config['MENU_CS50X_2024'].honesty}}</a>
       </li>
       <li>
-        <a href="">{{config['MENU_CS50X_2024'].certificate}}</a>
+        <a href="{{ url_for('cs50x2024.certificate') }}">{{config['MENU_CS50X_2024'].certificate}}</a>
       </li>
       <li>
-        <a href="">{{config['MENU_CS50X_2024'].faqs}}</a>
+        <a href="{{ url_for('cs50x2024.faqs') }}">{{config['MENU_CS50X_2024'].faqs}}</a>
       </li>
       <li>
-        <a href="">{{config['MENU_CS50X_2024'].gradebook}}</a>
+        <a href="https://cs50.me/cs50x">{{config['MENU_CS50X_2024'].gradebook}}</a>
       </li>
       <li>
-        <a href="">{{config['MENU_CS50X_2024'].staff}}</a>
+        <a href="{{ url_for('cs50x2024.staff') }}">{{config['MENU_CS50X_2024'].staff}}</a>
       </li>
       <li>
-        <a href="">{{config['MENU_CS50X_2024'].syllabus}}</a>
+        <a href="{{ url_for('cs50x2024.syllabus') }}">{{config['MENU_CS50X_2024'].syllabus}}</a>
       </li>
     </ul>
     <hr/>
@@ -118,7 +118,7 @@
         <a href="">{{config['MENU_CS50X_2024'].manual}}</a>
       </li>
       <li>
-        <a href="">{{config['MENU_CS50X_2024'].style}}</a>
+        <a href="{{ url_for('cs50x2024.style') }}">{{config['MENU_CS50X_2024'].style}}</a>
       </li>
     </ul>
   </nav>

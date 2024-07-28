@@ -14,7 +14,7 @@ class MenuType(TypedDict):
 
 
 class MenuCS50xType(MenuType):
-    final_project: str
+    project: str
     office_hours: str
     seminars: str
     sections: str
