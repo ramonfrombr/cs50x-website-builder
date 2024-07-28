@@ -93,3 +93,16 @@ def project():
         markdown_text=markdown.markdown(
             markdown_text, extensions=['tables'], tab_length=2)
     )
+
+
+@bp.route('/style')
+@bp.route('/style.html')
+def style():
+    with open(f"app/cs50x2024/content/{os.environ['COURSE_LANGUAGE']}/style.md", "r") as f:
+        markdown_text = f.read()
+
+    return render_template(
+        'cs50x2024/index.html',
+        markdown_text=markdown.markdown(
+            markdown_text, extensions=['tables'], tab_length=2)
+    )
