@@ -63,7 +63,7 @@ style_guide_files_sections = style_guide_files[1:]
 faqs_files = list(filter(lambda f: 'faqs' in f, pages_files))
 faqs_files_sections = faqs_files[1:]
 
-# translate_page_by_sections(final_project_files_sections, "project")
-# translate_page_by_sections(style_guide_files_sections, "style")
+translate_page_by_sections(final_project_files_sections, "project")
+translate_page_by_sections(style_guide_files_sections, "style")
 translate_page_by_sections(faqs_files_sections, "faqs")
-# translate_single_pages(single_pages)
+translate_single_pages(single_pages)

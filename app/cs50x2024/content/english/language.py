@@ -25,6 +25,7 @@ menu: MenuCS50xType = {
     "week5": "Data Structures",
     "week6_5": "Artificial Intelligence",
     "week10": "Cybersecurity",
+    "weeks": "Weeks"
 }
 
 pages_url: PagesUrlsType = {
@@ -34,5 +35,6 @@ pages_url: PagesUrlsType = {
     "faqs": "faqs",
     "staff": "staff",
     "syllabus": "syllabus",
-    "style": "style"
+    "style": "style",
+    "weeks": "weeks"
 }

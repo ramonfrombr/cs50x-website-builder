@@ -9,3 +9,4 @@ class PagesUrlsType(TypedDict):
     staff: str
     syllabus: str
     style: str
+    weeks: str

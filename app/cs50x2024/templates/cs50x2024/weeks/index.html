@@ -1,0 +1,44 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+
+  <h1>{{config['MENU_CS50X_2024']['weeks']}}</h1>
+
+  <ol start="0">
+    <li>
+      <a href="">Scratch</a>
+    </li>
+    <li>
+      <a href="">C</a>
+    </li>
+    <li>
+      <a href="">{{config['MENU_CS50X_2024']['week2']}}</a>
+    </li>
+    <li>
+      <a href="">{{config['MENU_CS50X_2024']['week3']}}</a>
+    </li>
+    <li>
+      <a href="">{{config['MENU_CS50X_2024']['week4']}}</a>
+    </li>
+    <li>
+      <a href="">{{config['MENU_CS50X_2024']['week5']}}</a>
+    </li>
+    <li>
+      <a href="">Python</a>
+    </li>
+
+    <li>
+      <a href="">SQL</a>
+    </li>
+    <li>
+      <a href="">HTML, CSS, JavaScript</a>
+    </li>
+    <li>
+      <a href="">Flask</a>
+    </li>
+
+    <li>
+      <a href="">{{config['MENU_CS50X_2024']['week10']}}</a>
+    </li>
+  </ol>
+
+{% endblock %}
