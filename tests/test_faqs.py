@@ -1,5 +1,6 @@
 def test_faqs(client):
-    response = client.get('/2024/faqs.html')
+    response = client.get(
+        f"/2024/{client.application.config['PAGES_URLS']['faqs']}.html")
     assert '12' in response.get_data(as_text=True)
     assert 'CS50 AP' in response.get_data(as_text=True)
     assert 'edX' in response.get_data(as_text=True)

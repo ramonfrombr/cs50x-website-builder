@@ -28,3 +28,4 @@ class MenuCS50xType(MenuType):
     week5: str
     week6_5: str
     week10: str
+    weeks: str
