@@ -16,3 +16,4 @@ class WeekPageType(TypedDict):
     practice_problems: str
     problem_set: str
     study_guide: str
+    project: str

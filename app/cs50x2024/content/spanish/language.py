@@ -53,6 +53,7 @@ week_page: WeekPageType = {
     "practice_problems": "Problemas de Práctica",
     "problem_set": "Conjunto de Problemas",
     "study_guide": "Guía de Estudio",
+    "project": "Proyecto Final",
 }
 
 
