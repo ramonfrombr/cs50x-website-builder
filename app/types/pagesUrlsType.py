@@ -10,3 +10,4 @@ class PagesUrlsType(TypedDict):
     syllabus: str
     style: str
     weeks: str
+    notes: str

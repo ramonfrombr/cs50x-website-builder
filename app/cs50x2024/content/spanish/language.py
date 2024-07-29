@@ -35,7 +35,8 @@ pages_url: PagesUrlsType = {
     "staff": "personal",
     "syllabus": "plan_de_estudios",
     "style": "estilo",
-    "weeks": "semanas"
+    "weeks": "semanas",
+    "notes": "notas"
 }
 
 week_page: WeekPageType = {
