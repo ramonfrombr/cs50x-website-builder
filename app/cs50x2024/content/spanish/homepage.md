@@ -15,10 +15,10 @@ Incluso si no eres un estudiante de Harvard, puedes "tomar" este curso gratis a 
 
 <pre class="mermaid" style="background-color: white">
     flowchart TD
-        A[Watch Lecture] --> |recomendado|B[Watch Section]
+        A[Mirar la Lección] --> |recomendado|B[Mirar la Revisión]
         A --> D
-        B --> |recomendado|C[Watch Shorts]
-        B --> D[Submit Problem Set]
+        B --> |recomendado|C[Mirar los Cortos]
+        B --> D[Enviar la Lista de Problemas]
         C --> D
 </pre>
 

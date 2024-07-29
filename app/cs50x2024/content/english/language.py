@@ -36,7 +36,8 @@ pages_url: PagesUrlsType = {
     "staff": "staff",
     "syllabus": "syllabus",
     "style": "style",
-    "weeks": "weeks"
+    "weeks": "weeks",
+    "notes": "notes"
 }
 
 week_page: WeekPageType = {
