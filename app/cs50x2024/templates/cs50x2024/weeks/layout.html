@@ -18,9 +18,7 @@
         <li data-marker="*">
           <a href="">{{week_page.video}}</a>
         </li>
-        <li data-marker="*">
-          <a href="">{{week_page.notes}}</a>
-        </li>
+        {{ notes_item(title=week_page.notes, number=week.number) }}
 
         <li data-marker="-">
           {{week_page.source_code}}
