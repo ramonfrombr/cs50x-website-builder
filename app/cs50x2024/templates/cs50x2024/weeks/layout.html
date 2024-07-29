@@ -1,0 +1,82 @@
+{% extends 'cs50x2024/layout.html' %}
+{% from 'cs50x2024/weeks/pset_item_macro.html' import pset_item with context %}
+{% from 'cs50x2024/weeks/notes_item_macro.html' import notes_item with context %}
+
+{% block content %}
+  <h1>{{ week_page.week }}
+    {{ week.number }}
+    <small class="text-muted">{{ week.name }}</small>
+  </h1>
+
+  <ul>
+    <li data-marker="-">
+      {{week_page.lecture}}
+      <ul>
+        <li data-marker="*">
+          <a href="">{{week_page.study_guide}}</a>
+        </li>
+        <li data-marker="*">
+          <a href="">{{week_page.video}}</a>
+        </li>
+        <li data-marker="*">
+          <a href="">{{week_page.notes}}</a>
+        </li>
+
+        <li data-marker="-">
+          {{week_page.source_code}}
+          <ul>
+            {% if week.name=="Scratch"%}
+              <li data-marker="*">
+                <a href="">Scratch Studio</a>
+              </li>
+            {% else %}
+              <li data-marker="*">
+                <a href="">PDF</a>
+              </li>
+
+              <li data-marker="*">
+                <a href="">Zip</a>
+              </li>
+            {% endif %}
+          </ul>
+        </li>
+
+        <li data-marker="-">
+          {{week_page.slides}}
+          <ul>
+            <li data-marker="*">
+              <a href="">Google Slides</a>
+            </li>
+            <li>
+              <a href="">PDF</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    {% if week.shorts %}
+      <li data-marker="-">
+        {{week_page.shorts}}
+        <ol>
+          {% for short in week.shorts %}
+            {% if week
+              .shorts[short]
+              .link %}
+              <li>
+                <a href="">{{week.shorts[short].name}}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ol>
+      </li>
+    {% endif %}
+    {% if week.number == 10 %}
+      <li data-marker="*">
+        <a href="">{{week_page.final_project}}</a>
+      </li>
+    {% else %}
+      {{ pset_item(title=week_page.problem_set, number=week.number) }}
+      {% endif%}
+    </ul>
+  {% endblock %}
