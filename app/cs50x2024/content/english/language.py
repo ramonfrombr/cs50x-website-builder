@@ -1,5 +1,4 @@
-from ....types import MenuCS50xType, PagesUrlsType, WeekPageType, Week0Type, WeekAfter0Type
-
+from ....types import MenuCS50xType, PagesUrlsType, WeekPageType, Week0Type, WeekAfter0Type, CS50x2024PsetUrlsType
 
 menu: MenuCS50xType = {
     "title": "This is CS50x",
@@ -37,7 +36,45 @@ pages_url: PagesUrlsType = {
     "syllabus": "syllabus",
     "style": "style",
     "weeks": "weeks",
-    "notes": "notes"
+    "notes": "notes",
+    "psets": "psets"
+}
+
+psets_urls: CS50x2024PsetUrlsType = {
+    "world": "world",
+    "me": "me",
+    "mario_less": "mario/less",
+    "mario_more": "mario/more",
+    "cash": "cash",
+    "credit": "credit",
+    "scrabble": "scrabble",
+    "readability": "readability",
+    "caesar": "caesar",
+    "substitution": "substitution",
+    "sort": "sort",
+    "plurality": "plurality",
+    "runoff": "runoff",
+    "tideman": "tideman",
+    "volume": "volume",
+    "filter_less": "filter/less",
+    "filter_more": "filter/more",
+    "recover": "recover",
+    "inheritance": "inheritance",
+    "speller": "speller",
+    "python_hello": "hello",
+    "python_mario_less": "mario/less",
+    "python_mario_more": "mario/more",
+    "python_cash": "cash",
+    "python_credit": "credit",
+    "python_readability": "readability",
+    "dna": "dna",
+    "songs": "songs",
+    "movies": "movies",
+    "fiftyville": "fiftyville",
+    "trivia": "trivia",
+    "homepage": "homepage",
+    "birthdays": "birthdays",
+    "finance": "finance",
 }
 
 week_page: WeekPageType = {
