@@ -44,7 +44,7 @@ def translate_page_by_sections(files, page):
             print("Error type: ", error)
 
 
-for i in range(9, 10):
+for i in range(0, 10):
     sections = None
     if i == 1:
         sections = list(
