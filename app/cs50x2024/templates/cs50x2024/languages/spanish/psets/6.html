@@ -1,0 +1,86 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+<h1 id="problem-set-6">Serie de problemas 6</h1>
+
+<div class="alert alert-warning" data-alert="warning" role="alert">
+<p>No se permiten colaboraciones en las series de problemas excepto hasta el punto en que se puede pedir ayuda a compañeros de clase u otros siempre que esa ayuda no se reduzca a que otro haga su trabajo por usted, según la política del curso sobre
+<a href="{{ url_for('cs50x2024.honesty') }}">honestidad académica</a>.</p>
+
+<p>El personal lleva a cabo auditorías aleatorias de las entregas a CS50x. Los estudiantes que infrinjan esta política serán expulsados del curso. Los estudiantes que ya hayan completado CS50x, si se descubre que han infringido la política, tendrán su Certificado CS50 revocado permanentemente.</p>
+</div>
+
+<h2 id="what-to-do">Qué hacer</h2>
+
+<ol>
+<li>Iniciar sesión en
+<a href="https://cs50.dev">cs50.dev</a>
+usando su cuenta de GitHub</li>
+<li>Ejecutar
+<code class="language-plaintext highlighter-rouge">update50</code>
+en la ventana terminal de su espacio de trabajo para asegurarse de que su espacio de trabajo está actualizado.</li>
+<li>Entregar
+<a href="{{ url_for('cs50x2024.psets.pset6.python_hello') }}">Hello</a>
+en Python</li>
+<li>Entregar uno de los siguientes:
+<ul>
+<li data-marker="*">
+<a href="{{ url_for('cs50x2024.psets.pset6.python_mario_less') }}">esta versión de Mario</a>
+en Python, si se siente menos seguro</li>
+<li data-marker="*">
+<a href="{{ url_for('cs50x2024.psets.pset6.python_mario_more') }}">esta versión de Mario</a>
+en Python, si se siente más seguro</li>
+</ul>
+</li>
+<li>Entregar uno de los siguientes:
+<ul>
+<li data-marker="*">
+<a href="{{ url_for('cs50x2024.psets.pset6.python_cash') }}">Cash</a>
+en Python, si se siente menos seguro</li>
+<li data-marker="*">
+<a href="{{ url_for('cs50x2024.psets.pset6.python_credit') }}">Credit</a>
+en Python, si se siente más seguro</li>
+</ul>
+</li>
+<li>Entregar
+<a href="{{ url_for('cs50x2024.psets.pset6.python_readability') }}">Readability</a>
+en Python</li>
+<li>Entregar
+<a href="{{ url_for('cs50x2024.psets.pset6.dna') }}">DNA</a>
+en Python</li>
+</ol>
+
+<p>Si entrega ambas versiones de Mario, registraremos la calificación más alta de las dos. Si entrega tanto Cash como Credit, registraremos la calificación más alta de las dos.</p>
+
+<h2 id="when-to-do-it">Cuándo hacerlo</h2>
+
+<p>Hasta
+<a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+<h2 id="advice">Consejo</h2>
+
+<ul>
+<li data-marker="*">Pruebe alguno de los programas de David de
+<a href="{{ url_for('cs50x2024.weeks.week6') }}">Semana 6</a>.</li>
+</ul>
+
+<h2 id="academic-honesty">Honestidad académica</h2>
+
+<ul>
+<li data-marker="*">Para Hello, Mario, Cash, Credit y Readability, es
+<strong>razonable</strong>
+mirar sus propias implementaciones en C y las implementaciones de otros
+<em>en C</em>.</li>
+<li data-marker="*">No es
+<strong>razonable</strong>
+mirar las implementaciones de otros de lo mismo
+<em>en Python</em>.</li>
+<li data-marker="*">En la medida en que el objetivo de estos problemas es enseñarle cómo autoaprender un nuevo lenguaje, tenga en cuenta que estos actos no solo son
+<strong>razonables</strong>, según el plan de estudios, sino que también se fomentan con ese fin:
+<ul>
+<li data-marker="*">Incorporar algunas líneas de código que encuentre en línea o en otro lugar en su propio código, siempre que esas líneas no sean en sí mismas soluciones a problemas asignados y que cite los orígenes de las líneas.</li>
+<li data-marker="*">Recurrir a la web o a otros lugares para obtener instrucciones más allá de las propias del curso, para referencias y para soluciones a dificultades técnicas, pero no para soluciones directas a problemas de la serie de problemas o su propio proyecto final.</li>
+</ul>
+</li>
+</ul>
+
+{% endblock %}

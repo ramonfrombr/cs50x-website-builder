@@ -1,0 +1,47 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-7">Problem Set 7</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>Collaboration on problem sets is not permitted except to the extent that you may ask classmates and others for help so long as that help does not reduce to another doing your work for you, per the course’s policy on
+      <a href="{{ url_for('cs50x2024.honesty') }}">academic honesty</a>.</p>
+
+    <p>The staff conducts random audits of submissions to CS50x. Students found to be in violation of this policy will be removed from the course. Students who have already completed CS50x, if found to be in violation, will have their CS50 Certificate permanently revoked.</p>
+  </div>
+
+  <h2 id="what-to-do">What to Do</h2>
+
+  <ol>
+    <li>Log into
+      <a href="https://cs50.dev">cs50.dev</a>
+      using your GitHub account</li>
+    <li>Run
+      <code class="language-plaintext highlighter-rouge">update50</code>
+      in your codespace’s terminal window to ensure your codespace is up-to-date and, when prompted, click
+      <strong>Rebuild now</strong>
+    </li>
+    <li>Submit
+      <a href="{{ url_for('cs50x2024.psets.pset7.songs') }}">Songs</a>
+    </li>
+    <li>Submit
+      <a href="{{ url_for('cs50x2024.psets.pset7.movies') }}">Movies</a>
+    </li>
+    <li>Submit
+      <a href="{{ url_for('cs50x2024.psets.pset7.fiftyville') }}">Fiftyville</a>
+    </li>
+  </ol>
+
+  <h2 id="when-to-do-it">When to Do It</h2>
+
+  <p>By
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+  <h2 id="advice">Advice</h2>
+
+  <ul>
+    <li data-marker="*">Head to
+      <a href="https://www.w3schools.com/sql/">w3schools.com/sql</a>
+      for a handy reference!</li>
+  </ul>
+
+{% endblock %}

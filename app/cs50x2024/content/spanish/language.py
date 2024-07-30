@@ -1,4 +1,4 @@
-from ....types import MenuCS50xType, PagesUrlsType, WeekPageType, Week0Type, WeekAfter0Type
+from ....types import MenuCS50xType, PagesUrlsType, WeekPageType, Week0Type, WeekAfter0Type, CS50x2024PsetUrlsType
 
 menu: MenuCS50xType = {
     "title": "Este es CS50x",
@@ -36,7 +36,45 @@ pages_url: PagesUrlsType = {
     "syllabus": "plan_de_estudios",
     "style": "estilo",
     "weeks": "semanas",
-    "notes": "notas"
+    "notes": "notas",
+    "psets": "problemas"
+}
+
+psets_urls: CS50x2024PsetUrlsType = {
+    "world": "mundo",
+    "me": "yo",
+    "mario_less": "mario/menos",
+    "mario_more": "mario/mas",
+    "cash": "efectivo",
+    "credit": "credito",
+    "scrabble": "scrabble",
+    "readability": "legibilidad",
+    "caesar": "cesar",
+    "substitution": "sustitucion",
+    "sort": "ordenar",
+    "plurality": "pluralidad",
+    "runoff": "segunda_vuelta",
+    "tideman": "tideman",
+    "volume": "volumen",
+    "filter_less": "filtro/menos",
+    "filter_more": "filtro/mas",
+    "recover": "recuperar",
+    "inheritance": "herencia",
+    "speller": "corrector",
+    "python_hello": "hola",
+    "python_mario_less": "mario/menos",
+    "python_mario_more": "mario/mas",
+    "python_cash": "efectivo",
+    "python_credit": "credito",
+    "python_readability": "legibilidad",
+    "dna": "dna",
+    "songs": "canciones",
+    "movies": "peliculas",
+    "fiftyville": "fiftyville",
+    "trivia": "trivia",
+    "homepage": "pagina_principal",
+    "birthdays": "cumpleanos",
+    "finance": "finanzas"
 }
 
 week_page: WeekPageType = {
@@ -56,7 +94,6 @@ week_page: WeekPageType = {
     "study_guide": "Guía de Estudio",
     "project": "Proyecto Final",
 }
-
 
 week_0: Week0Type = {
     "name": "Scratch",
