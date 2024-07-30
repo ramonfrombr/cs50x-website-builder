@@ -1,0 +1,47 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-7">Serie de problemas 7</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>No se permite la colaboración en las series de problemas, excepto en la medida en que puedas pedir ayuda a compañeros de clase y otros siempre y cuando esa ayuda no se reduzca a que otro haga tu trabajo por ti, según la política del curso sobre
+      <a href="{{ url_for('cs50x2024.honesty') }}">honestidad académica</a>.</p>
+
+    <p>El personal lleva a cabo auditorías aleatorias de las presentaciones de CS50x. Los estudiantes que infrinjan esta política serán expulsados del curso. Los estudiantes que ya hayan completado CS50x, si se descubre que infringen la política, se les revocará permanentemente su certificado de CS50.</p>
+  </div>
+
+  <h2 id="what-to-do">Qué hacer</h2>
+
+  <ol>
+    <li>Inicia sesión en
+      <a href="https://cs50.dev">cs50.dev</a>
+      con tu cuenta de GitHub</li>
+    <li>Ejecuta
+      <code class="language-plaintext highlighter-rouge">update50</code>
+      en la ventana de terminal de tu codespace para asegurarte de que tu codespace esté actualizado y, cuando se te indique, haz clic en
+      <strong>Reconstruir ahora</strong>
+    </li>
+    <li>Envía
+      <a href="{{ url_for('cs50x2024.psets.pset7.songs') }}">Canciones</a>
+    </li>
+    <li>Envía
+      <a href="{{ url_for('cs50x2024.psets.pset7.movies') }}">Películas</a>
+    </li>
+    <li>Envía
+      <a href="{{ url_for('cs50x2024.psets.pset7.fiftyville') }}">Fiftyville</a>
+    </li>
+  </ol>
+
+  <h2 id="when-to-do-it">Cuándo hacerlo</h2>
+
+  <p>Antes de las
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+  <h2 id="advice">Consejos</h2>
+
+  <ul>
+    <li data-marker="*">Dirígete a
+      <a href="https://www.w3schools.com/sql/">w3schools.com/sql</a>
+      para obtener una práctica referencia.</li>
+  </ul>
+
+{% endblock %}

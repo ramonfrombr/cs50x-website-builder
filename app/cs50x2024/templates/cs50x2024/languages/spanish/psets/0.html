@@ -1,0 +1,34 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+
+  <h1 id="problem-set-0">Tarea 0</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>No se permite la colaboración en las tareas, excepto en la medida en que puedas pedir ayuda a compañeros de clase y a otros, siempre que esa ayuda no se reduzca a que otros hagan tu trabajo por ti, según la política del curso sobre
+      <a href="{{ url_for('cs50x2024.honesty') }}">honestidad académica</a>.</p>
+
+    <p>El personal realiza auditorías aleatorias de las entregas de CS50x. Los estudiantes que infrinjan esta política serán eliminados del curso. A los estudiantes que ya hayan completado CS50x, si se descubre que infringen la norma, se les revocará permanentemente su certificado CS50.</p>
+  </div>
+
+  <h2 id="what-to-do">Qué hacer</h2>
+
+  <ol>
+    <li>Descarga e instala la última versión de
+      <a href="https://www.google.com/chrome/">Chrome</a>, si aún no lo tienes.</li>
+    <li>Envía
+      <a href="{{ url_for('cs50x2024.psets.pset0.scratch') }}">Comenzar desde cero</a>.</li>
+  </ol>
+
+  <h2 id="when-to-do-it">Cuándo hacerlo</h2>
+
+  <p>Antes de
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+  <h2 id="advice">Consejo</h2>
+
+  <p>Estos son
+    <a href="https://scratch.mit.edu/studios/30233348/">ejemplos de David</a>
+    de la clase, ¡por si quieres repasarlos! Para ver el código fuente de cada uno, haz clic en
+    <strong>Ver dentro</strong>.</p>
+
+{% endblock %}

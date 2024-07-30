@@ -1,0 +1,36 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-9">Conjunto de problemas 9</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>La colaboración en conjuntos de problemas no está permitida, excepto en la medida en que pueda pedir ayuda a compañeros de clase y otras personas, siempre y cuando esa ayuda no se reduzca a que otro realice su trabajo por usted, según la política del curso sobre
+      <a href="{{ url_for('cs50x2024.honesty') }}">honestidad académica</a>.</p>
+
+    <p>El personal realiza auditorías aleatorias de envíos a CS50x. Los estudiantes que se descubra que violan esta política serán expulsados ​​del curso. Los estudiantes que ya hayan completado CS50x, si se descubre que violan, tendrán su certificado CS50 revocado permanentemente.</p>
+  </div>
+
+  <h2 id="what-to-do">Qué hacer</h2>
+
+  <ol>
+    <li>Inicie sesión en
+      <a href="https://cs50.dev">cs50.dev</a>
+      usando su cuenta de GitHub</li>
+    <li>Ejecute
+      <code class="language-plaintext highlighter-rouge">update50</code>
+      en la ventana de terminal de su espacio de código para asegurarse de que su espacio de código esté actualizado y, cuando se le solicite, haga clic en
+      <strong>Reconstruir ahora</strong>
+    </li>
+    <li>Envíe
+      <a href="{{ url_for('cs50x2024.psets.pset9.birthdays') }}">Cumpleaños</a>
+    </li>
+    <li>Envíe
+      <a href="{{ url_for('cs50x2024.psets.pset9.finance') }}">Finanzas</a>
+    </li>
+  </ol>
+
+  <h2 id="when-to-do-it">Cuándo hacerlo</h2>
+
+  <p>Antes del
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+{% endblock %}

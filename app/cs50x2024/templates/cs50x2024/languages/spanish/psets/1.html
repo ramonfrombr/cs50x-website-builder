@@ -1,0 +1,82 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-1">Tarea 1</h1>
+
+  <h2 id="what-to-do">Qué hacer</h2>
+
+  <ol>
+    <li>Inicia sesión en
+      <a href="https://submit.cs50.io">submit.cs50.io</a>
+      con tu cuenta de GitHub y haz clic en
+      <strong>Autorizar cs50</strong>, luego cierra la pestaña.</li>
+    <li>Inicia sesión en
+      <a href="https://cs50.dev/">cs50.dev</a>
+      con tu cuenta de GitHub para acceder a tu propio “espacio de código”.</li>
+    <li>Una vez que se haya cargado tu espacio de código, cierra cualquier pestaña
+      <strong>Bienvenida</strong>
+      que se haya abierto de forma predeterminada.</li>
+    <li>Ejecuta
+      <code class="language-plaintext highlighter-rouge">update50</code>
+      en la ventana del terminal de tu espacio de código para asegurarte de que esté actualizado y, si se te solicita, haz clic en
+      <strong>Reconstruir ahora</strong>.</li>
+    <li>Completa
+      <a href="{{ url_for('cs50x2024.psets.pset1.world') }}">Hola Mundo</a>.</li>
+    <li>Envía
+      <a href="{{ url_for('cs50x2024.psets.pset1.me') }}">Hola, Soy Yo</a>.</li>
+    <li>Envía uno de:
+      <ul>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset1.mario_less') }}">esta versión de mario</a>, si te sientes menos cómodo</li>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset1.mario_more') }}">esta versión de mario</a>, si te sientem más cómodo</li>
+      </ul>
+    </li>
+    <li>Envía uno de:
+      <ul>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset1.cash') }}">Efectivo</a>, si te sientes menos cómodo</li>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset1.credit') }}">Crédito</a>, si te sientes más cómodo</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p>Si envías ambas versiones de Mario, registraremos la mayor de tus dos calificaciones. Si envías tanto Efectivo como Crédito, registraremos la mayor de tus dos calificaciones.</p>
+
+  <h2 id="when-to-do-it">Cuándo hacerlo</h2>
+
+  <p>Antes de
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+  <h2 id="advice">Consejos</h2>
+
+  <ul>
+    <li data-marker="*">Prueba cualquiera de los programas de David de la clase a través del
+      código fuente de la
+      <a href="{{ url_for('cs50x2024.weeks.week1') }}">Semana 1</a>.</li>
+    <li data-marker="*">Consulta la
+      <a href="{{ url_for('cs50x2024.style') }}">guía de estilo de CS50 para C</a>
+      de CS50 para obtener consejos sobre cómo mejorar el estilo de tu código.</li>
+    <li data-marker="*">Si ves algún error al compilar tu código con
+      <code class="language-plaintext highlighter-rouge">make</code>, céntrate primero en corregir el primer error que veas, desplazando hacia arriba según sea necesario. Si no estás seguro de lo que significa, intenta preguntarle a
+      <code class="language-plaintext highlighter-rouge">help50</code>
+      para obtener ayuda. Por ejemplo, si intentas compilar
+      <code class="language-plaintext highlighter-rouge">hello</code>, y
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>make hello
+</code></pre>
+        </div>
+      </div>
+      <p>produce errores, intenta ejecutar</p>
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>help50 make hello
+</code></pre>
+        </div>
+      </div>
+      <p>en su lugar!</p>
+    </li>
+  </ul>
+
+{% endblock %}
