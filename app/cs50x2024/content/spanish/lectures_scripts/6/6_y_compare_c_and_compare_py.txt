@@ -1,0 +1,13 @@
+Muy bien. Unos pocos ejemplos finales antes de hacer las cosas más reales. Recordarán de la semana 4, la última semana anterior que veremos, teníamos algunos problemas que encontramos, por ejemplo, al comparar cadenas.
+
+Esto fue hace un par de semanas. Pero recuerden que este ejemplo fue problemático inicialmente porque no podían comparar s igual igual t. Tuvieron que usar stir compare. ¿Por qué no pudieron simplemente decir si s igual igual t para comparar dos cadenas y ver? Sip.
+
+AUDIENCIA: Podríamos [INAUDIBLE].
+
+DAVID MALAN: Exacto. Eran punteros a caracteres o direcciones de cadenas. Y estarían comparando las direcciones de esas cadenas que podrían parecer iguales pero que están almacenadas en diferentes ubicaciones.
+
+En Python, ese matiz ya no existe. Si en Python quieren comparar dos cadenas, Dios mío, simplemente comparen esas dos cadenas así. Déjenme llamar a esto compare.py. Permítanme continuar e importar get_string de la biblioteca cs50.
+
+Permítanme continuar y obtener dos cadenas del usuario. Por ejemplo, s y t, arbitrariamente como antes. get_string. Aquí vamos. Cita, sin cita t. Y luego, si quieren verificar si s es igual a t, simplemente hagan la pregunta y digan "Igual" si es así. De lo contrario, continúen y digan "Diferente".
+
+Ahora, si ejecuto este programa como compare.py, Python de compare.py, permítanme continuar y escribir, digamos, mi nombre aquí y luego mi nombre nuevamente. Técnicamente en C, s y t se almacenaron en diferentes ubicaciones. Y en Python, técnicamente también lo están. No importa. El operador igual igual en Python va a comparar literalmente lo que pretendían.

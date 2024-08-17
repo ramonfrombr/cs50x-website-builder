@@ -1,0 +1,41 @@
+So let's see that. If we were to write a program using these four names, let me go ahead and with that up really quickly here. I'm going to create a file called names dot c, and I'm going to go ahead and do include standard Io dot h. Then I'm going to go ahead and do int main void. Inside of here, I'm going to give myself four strings, using my new array syntax, as before. So I could call this name one, name two, name three, name four, but I'm not going to repeat that bad habit. I'm going to give myself a name-- a variable called names, plural, and store four strings in it, as follows. 
+
+Let's give Emma the first spot there. Let's give Rodrigo the second spot there. I'm using all caps just because we've seen some of those Ascii codes before, but I could use lowercase as well. Let's add Brian. And then I'll go ahead and add myself lastly. So the array is of size four, but I count from zero on up through C. And now just for demonstration's sake, let's go ahead and print out, say, Emma's name. So if I want to print out Emma's name, the type of variable in which she is stored, is what? What is the type that I want to print? String. So that's percent s, just like last week. And I'm going to head and put a backslash n. And if I want to print Emma's name, what do I type here to plug into that placeholder? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Names brackets zero. It's a little bad that I'm hard coding it here, but again, I'm just demonstrating how this all works for now. Let me go ahead and save that. Let me do make names. Bit of an error here. What did I do wrong? Oh my god, all of this is wrong. Does anyone see it yet? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Yeah, I forgot the CS50 library. So even though I'm not using get string, I am using string, so I do need the CS50 library up here. So let me go ahead and clear that. Make names. OK better. Dot slash names, and I should just see Emma's name. But watch this, what I can do too. I know that Emma's name is a string, and I now know that a string is an array of characters, so I can also do this. Let me go ahead and print out one, two, three, four characters, and then a new line. And the characters I'm going to print out are going to be Emma's names, first character, Emma's names, second character, Emma's names, third character, and Emma's names, fourth character. 
+
+So you can have what's essentially a two-dimensional array, where you have two sets of square brackets. The first one indexes me into the array of names. And to index into an array means go to a certain location in an array. So names, bracket zero, so to speak. This part here means go get Emma's name from the array of four names. This square bracket after says within that string, treat it as an array of characters and get the zeroth character, the first character, which is hopefully e and an m and an m and then a. 
+
+So I'm going to go ahead and save this file now. Make names again. It compiled, dot slash names, and voila, Emma, Emma, I see twice. Now, I'm never again going to print any string like this. This is just ridiculous, plus I had to know in advance how long her name is. However, it is equivalent to printing the string itself. It's just C and printf knows when you use percent s and you pass on the name of a variable, all printf is probably doing under the hood is some kind of loop and it's iterating over your string from the first character and it's checking, is this the null character? If not, print it. Is this the null character? If not, print it. If this is the null character-- is this the null character? If not, print it. And that's how we get, E-M-M-A stop, because printf, in this line 12, presumably noticed, oh, wait a minute, the fifth byte in Emma's names zero array is backslash zero, or all eight bits as zero. Yeah? 
+
+AUDIENCE: That's just part of [INAUDIBLE] 
+
+DAVID MALAN: That is all part of the underneath the hood stuff of printf and it's what humans decided decades ago with C how strings would work. They could have come up with a different system, but this is the system that they decided to use. Other questions? Yeah? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: I didn't go further. So I deliberately did not touch bracket four, even though it's there. But I can try to print this. Let's see. So let me go ahead and change this program real quick. I'm going to go ahead and print out percent C a fifth time. And let's go ahead and see if we can see Emma's null terminating character at location four, which is her fifth location, so after the E-M-M-A. Let me save that. Make names, dot slash names, Emma Emma. So I don't see it there. But you know what? Let me try changing this last one just for kicks to percent i. 
+
+And again, this is where printf is your friend. You can use it powerfully to see what's going on. Or we could whip out debug 50. Let me go ahead and make names, dot slash names. And voila, there's the zero. I'm printing it literally as an int just to see it. I would never do this in the real world. But it's indeed there. And now, this doesn't often work, but just for kicks-- I'm getting a little crazy-- suppose that I want to look well past Emma's name to like location 400, like let's start poking around in the computer's memory, one of those other boxes. Make names, dot slash names. OK, there's a negative three down there as well, or technically a hyphen and then a three. 
+
+So we'll come back to this in a couple of weeks' time. We can actually start hacking around and looking around my computer's memory at any location, because it's just numbers of boxes on the screen. Yeah? 
+
+AUDIENCE: Is there any limit to the length of the string? 
+
+DAVID MALAN: Is there any limit to the length of the string? Short answer-- yes, the amount of memory that the computer has. So like 2 billion 4 billion-- it's long. 
+
+AUDIENCE: What happens if try to type in [INAUDIBLE] 
+
+DAVID MALAN: Really good question. What happens if you try to type that in hypothetically? It depends on the function you use. Let me come back to that in like two weeks time. Get string will not crash. Other C functions will crash, if you give them more input than they expect, and we'll come back to the reasons why. 
+
+So what's actually going on underneath this hood, then, if we have these four names-- Emma, Rodrigo, Brian, and David. Well, if we consider our memory again, we know that Emma's up at this first location, E-M-M-A, followed by this null terminating character. But if the second name we stored in a variable was Rodrigo, turns out he's going to end up sort of back to back with that memory as well. And again, it's wrapping only because this is an artist's rendition of what memory looks like. There's no notion of left, right, up, or down in RAM. But he is R-O-D-R-I-G-O, and his null terminating character there. Brian might end up there. I might end up after it. And this is what's really going on underneath the hood of your computer. 
+
+Each of these values isn't technically a character. It's technically a number. And frankly, it's not even a number. It's eight bits at a time. But again, we don't have to worry about that level of detail now that we're operating at this level of abstraction. And I put up the wrong code a moment ago. This is the code that I actually implemented using an array from the get go, as opposed to an actual-- as opposed to four separate variables. So just to highlight, then, what's going on, per the example I just did with printing out Emma's characters, if this is a variable called names, and there's four names in it, zero, one, two, three, you can think of every character as being kind of addressable using square bracket notation. 
+
+The first set of square brackets picks the name in question. The second set of square brackets picks the character within the name. So e is the first character, so that's zero. m is the next one, so that's one. m is the third, so that's two. a Is the fourth, and so that's three. And then with Rodrigo, he's at names one, and his r is in brackets zero. So again, we're really getting into the weeds. And this is not what programming ultimately is, but this is just to say, there's no magic when you use printf and get string and get int, and so forth. All that's going on underneath the hood is manipulation of values like these. 

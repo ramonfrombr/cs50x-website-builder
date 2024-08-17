@@ -1,0 +1,23 @@
+Mais laissez-moi vous donner un dernier exemple qui motivera les exercices de la semaine prochaine. Donc je vais aller de l'avant maintenant et écrire un dernier programme, dont le but dans la vie est de détecter cela. J'ai ici une image de Brian [RIRES] en format JPEG. Et un chat en format GIF (qui ne fonctionne pas dans l'IDE mais laissez-moi le télécharger localement) qui ressemble à ceci. C'était ce gars il y a quelques semaines. Mais les deux sont dans un format différent : l'un est au format GIF, l'un au format JPEG, qui si vous êtes familier avec les formats de fichiers, sont juste différents types d'images.
+
+Laissez-moi écrire un bout de programme qui s'appelle JPEG point c. Et son but n'est que de vérifier si un fichier passé par son nom en ligne de commande est un JPEG ou non. Je vais inclure standard I/ O point h. Je vais appeler ma fonction int main, mais pas vide. Cette fois je vais utiliser int argc, comme la semaine dernière, et string argv parenthèse ouverte (parenthèse ouverte, parenthèse fermée).
+
+Mais vous savez quoi ? Nous n'avons plus besoins de String. C'est en fait ce que vous avez tapé un peu inconsciemment la semaine dernière lorsque vous utilisiez les arguments de ligne de commande, ou il y a quelques semaines.
+
+Je vais faire une vérification d'erreur rapide. Si argc n'est pas égal à 2, j'arrête. Je veux que l'utilisateur tape, et pas simplement le nom du programme, mais un autre mot. Je veux ensuite ouvrir le fichier tapé par l'utilisateur à l'invite (ce qui, je le dis, sera le deuxième mot tapé), argv 1. Et je veux le lire cette fois, pas l'ajouter ligne par ligne, je veux juste le lire du début. Et le mot-clé pour cela est R.
+
+Et je vais faire un petit contrôle d'erreur. Si fichier égal égal null (nous n'avons jamais vu ça avant), mais si fopen, si malloc, si GetString retournent des erreurs, ils retournent la valeur spéciale null. Mais pour l'instant, laissez-moi dire que quelque chose a mal tourné. Je vais retourner 1. Mais nous n'allons pas trop nous en soucier pour l'instant.
+
+Donc à ce stade, j'ai ouvert le fichier. Je me suis assuré que l'utilisateur a lancé le programme avec deux mots à l'invite, c'est là que notre argc intervient. Allons-y maintenant. Je vais me donner un tableau de 3 octets. Et je vais utiliser la fonction fread (nous la verrons davantage dans le devoir). Donc c'est expressément rapide. Je passe cet argument, le tableau, le nombre d'octets que je veux lire, combien de fois je veux lire ces octets, et ensuite le fichier dans lequel je veux lire ces octets.
+
+C'était une bouffée d'air. Mais ensemble, ces deux lignes de code lisent 3 octets du fichier. Elles lisent juste les 24 premiers bits, ou 3 octets (chacun fait 8 bits) du fichier. Et pourquoi je fais ça ? Eh bien, il se trouve que si les octets sont 0xFF, 0xD8, 0xXXFF.
+
+Donc encore une fois, revenons au hexadécimal, il s'avère que dans la documentation du format d'image JPEG, les 3 premiers octets de n'importe quel JPEG au monde (n'importe quelle photographie prise avec votre appareil photo) commencent par FF, puis D8, puis FF. C'est ce qu'on appelle un nombre magique que les concepteurs du format JPEG ont décidé d'utiliser comme un indice au début du fichier indiquant que voici une image JPEG.
+
+Alors, comment je fais ça ? C'est plutôt simple, si l'octet 0 est égal à 0xFF (je peux littéralement taper l'hexadécimal en C), ou octet, plutôt, et si l'octet 1 est égal à 0xD8, et si l'octet 2 égale 0xFF, alors il s'agit probablement d'un JPEG. Il y a quelques conditions. Nous les explorerons dans le devoir. Donc je vais simplement dire que c'est peut-être un JPEG. Mais si ce n'est pas vrai, je vais dire avec certitude que non, ce n'est pas un JPEG si ces 3 premiers octets ne correspondent pas.
+
+Et pour des raisons obscures, je dois techniquement en faire ce qu'on appelle un entier non signé, ce qui signifie que c'est un nombre de 0 à 255, au lieu de -128 à 127. Mais laissez-moi passer outre, pour que nous puissions avoir ce code correct maintenant.
+
+Je vais lancer JPEG et ça va lamentablement échouer. Qu'est-ce que j'ai fait de mal ? fopen est le nom de cette fonction (désolé), faisons un JPEG, bien. Maintenant je vais lancer JPEG sur mon image Brian, qui se trouve dans mon répertoire source sur le site du cours. C'est peut-être un JPEG.
+
+Et je vais ensuite faire un JPEG sur source pour chat point GIF, qui n'est pas un GIF, ce qui veut dire qu'une fois que vous êtes capable d'exprimer des pointeurs, nous avons maintenant les capacités de programmation, non seulement d'écrire des fichiers, mais aussi de les lire.

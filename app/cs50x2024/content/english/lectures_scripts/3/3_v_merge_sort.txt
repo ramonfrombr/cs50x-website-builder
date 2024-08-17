@@ -1,0 +1,69 @@
+So let's now use this to solve a problem of sorting. It turns out there's an algorithm out there called merge sort. And it's representative of sorts that are actually better than bubble sort and better than selection sort fundamentally. In terms of big O notation, we can do better. n squared does not have to be our fate. 
+
+After all, so many things in our life are sorted. Your contacts in your phone, maybe your friends on Facebook or Instagram, or any application using the cloud typically sorts data in some way. It would be a shame if it's super slow to sort, as we saw already, with n squared. 
+
+So merge sort works as follows. This is pseudocode for an algorithm called merge sort that if you hand it an array of numbers or names or anything, it acts as follows. If there's only one item you're handed in your array, well, just return. There's nothing to sort. So that's our base case. That's the sort of stupid case where you have to hard code, that is literally write out, if this situation happens, do this. 
+
+And the case is if you just hand me a list with one thing, it's obviously sorted, by definition, because nothing can possibly be out of order. Things get more interesting otherwise. Merge sort says, just like that Mario example, you know what? If you want me to sort this whole list, I'm going to tell you sort the left half, then sort the right half, and then merge those lists together, such that you weave them together in such a way that the merged list is sorted as well. 
+
+So merge sort is three steps, sort left half, sort right half, merge those two sorted halves. And this is the-- we were chatting earlier about an apt metaphor here. This is kind of a roller-coaster-type ride, where you got to hold on. You've got to focus. It's OK if it doesn't all work out for the best the first time around. But each step will be important here in the metaphor of the fire hose as well. 
+
+So here is a list of unsorted numbers. The goal at hand is to sort them faster than bubble sort and selection sort can. So merge sort tells me what? Sort left half, sort right half, merge. That is it for merge sort. That's the magic. Just like Mario says, print a pyramid of height h minus 1, print the base, done. That's the essence of this recursive algorithm, left half, right half, merge. 
+
+So what's the left half? It's these four elements here. Let me go ahead now and sort those four elements. How do I saw a list of four elements? Merge sort them, right? Sort the left half, then sort the right half, then merge them together. So you're kind of like kicking the can. Like, I've done no work. You're just telling me to go sort something [? else. ?] But OK, let me follow those directions. 
+
+Let me sort the left half, 7, 4. How do I saw a list of size 2? 
+
+AUDIENCE: Swap. 
+
+SPEAKER 1: Not swapping yet. 
+
+AUDIENCE: [INAUDIBLE] 
+
+SPEAKER 1: Merge sort-- the left half, then the right half, then merge them together. So again, it's kind of crazy talk because we've not done any actual work yet. And I claim we're sorting. But let's see what happens. 
+
+Here's the left half. How do I sort a list of size 1? Done. That's the return. That's the base case to make sure I don't do this forever. What came next? I just sorted the left half. What was the second step? Sort the right half. 
+
+How do I sort this? Done. Now it gets interesting. What was the third step? 
+
+AUDIENCE: Merge. 
+
+SPEAKER 1: Merge two lists of size 1. So now I need some extra space. So I'm going to give myself an extra row, some extra memory, if you will, in the computer. 4 obviously comes first. 7 obviously comes next. That's the merge step. That's what I mean by merge, take the smallest element from whichever list, and then follow it by the smallest element in the other list. 
+
+This now is a sorted list of size 2. So if you rewind in your mind, what was the second step now? That was sort left half. Sort right half, right? So you really have to kind of rewind in the story, like, 30-plus seconds ago. 
+
+How do you sort the right half? Well, you sort the left half, done, right half, done. Here's the magic, merge. How do I merge these two lists? 2 comes first. 5 comes next. I have just sorted the right half of this list. So I sorted left half, sorted right half. What's the third step? 
+
+AUDIENCE: Merge. 
+
+SPEAKER 1: Merge. So how do I do that? Well, I look at the two lists. And how do I merge these together [? interleaving ?] them in the right order? 2 comes first, then 4, then 5, then 7. So now I have sorted the left half of the original list. So what was step two originally? Sort the right half. 
+
+So sort the right half means sort the left half. And then sort the left half of that, done, right half of that, done. Merge makes it interesting, 3 and then 6. I've now sorted the left half of four numbers. 
+
+What comes next? Sort of right half, so 8 in 1. Sort the left half of that, done, right half of that, done. Now merge those two together, 1 and 8. I've now sorted the right half of the four elements. What's the third step? Merge. 
+
+So it's left half, right half, merge, again and again. So right half, left half, let's merge them, 1, 3, 6, 8. And now if you rewind, like, two minutes, this is the right half of the whole list. So what's step three? Merge. So let's give ourselves a little more memory and merge these two, 1, 2, 3, 4, 5, 6, 7, 8. And my god, it's merged in the end. 
+
+Now, that was a lot of steps. But it turns out it was far fewer than the number of steps we were used to thus far. In fact, if you consider what really happened, after all of those verbal gymnastics, what I really did was I took a list of size 8 and broke it down at some point into eight lists of size 1. And that's when there was no interesting work to be done. We just returned. 
+
+But I did that so that I could then compose four lists of size 2 along the way. And I did that so I could compose two lists of size 4. And I did that so that I could aggregate everything together and get one list of size 8. 
+
+So notice the pattern here. If you go bottom up, even, here's one list. I divide it in half. I divided those halves in half. I divided those halves in halves. So what function or mathematics have we use to describe any process thus far since week 0, where we're doing something halves at a time? 
+
+AUDIENCE: Logarithm. 
+
+SPEAKER 1: Logarithm. So any time you see in CS50 and really in algorithms is more generally a process that is dividing and dividing and dividing again and again, there's a logarithm involved there. And indeed, the number of times that you can chop up a list of size 8 into eight lists of size 1 is, by definition, log base 2 of n or just, again, with a wave of the hand, log n, which is to say like the height of this picture, if you will, is log n. But again, we don't have to worry too much about numbers. 
+
+But every time we did that dividing into smaller lists, we merged, right? That was the third and most important step. And every time we merged, we combined 4 elements plus 4 elements or 2 plus 2 plus 2 plus 2 elements or 1 plus 1 plus 1, 8 elements individually. So we touched all n elements. 
+
+So this picture, if you will, is, like, 8 numbers wide. And I-- or n numbers wide, if we generalize as n. And it's log n rows tall, if you will, because that's how many times you can divide things again and again. So what is the running time intuitively, perhaps, of merge sort? It's actually n times log n because you've got n numbers that need to be merged again and again and again. But how many times did I say again? Log n times, because that's the number of times you can have things again and again and again. 
+
+And if you do the math, log base 2 of 8, which is the total number of elements, indeed is 1, 2, 3. So math works out. But it's OK if you think about it more intuitively. So this is perhaps the bigger leap of faith, to just believe that, indeed, that is how that math works out. But it turns out that what this means is the algorithm itself is fundamentally faster. 
+
+So if we consider our little chart from before, where bubble sort and selection sort were way up here at the top-- and frankly, you can have even slower algorithms than that, especially if the problems are even more difficult to solve. Now we can add to the list merge sort there at n log n. It's in between. Why? Because, again, even if you're not 100% comfortable with what log in is, notice that here's n. Here's n squared. 
+
+So n times a slightly smaller value is in between, or n log n. And we'll see in a moment what this actually means or feels like. What about omega? In the best case with merge sort, how much time does it take? Well, it, too, does not have that optimization that bubble sort had, which is, well, if you do no swaps, just quit. It does the same thing always, sort the left half, sort the right half, merge, even if it's a bit unnecessary. 
+
+So it turns out that the omega notation for merge sort is also n log n. The newer version of bubble sort, recall, we could get as good as n steps if we stop after seeing no swaps. So merge sort, it's a trade-off, right? In the worst case, much faster, I claim. It's not n squared. It's n log n. But in the best case, you might waste a little bit of time. 
+
+And again, that's thematic in computer science more generally. You're not going to get anything for free. If you want to improve your upper bound, you might have to sacrifice your lower bound as well.

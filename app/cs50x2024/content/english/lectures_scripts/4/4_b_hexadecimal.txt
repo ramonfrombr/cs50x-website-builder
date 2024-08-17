@@ -1,0 +1,55 @@
+[MUSIC PLAYING] DAVID J. MALAN: All right, this is CS50 And this is the day we take off the proverbial training wheels, namely the CS50 library. You'll recall last week as we focused on algorithms, we started focusing on lots of comparisons and lots of swapping. And we did that fairly algorithmically, fairly conceptually last week. but today we're going to focus on actually doing that a little more mechanically, a little more methodically. And I thought this would be easier to take the training wheels off, hopefully not a metaphor for today. OK. 
+
+So [CHUCKLE] what we'll do first though, is learn how to count in a slightly different way. You'll recall in Week 0 we did this already whereby we introduced not only the human decimal system-- with which everyone's familiar --but also binary. It turns out there's other base systems where you don't just use powers of 10 or 2, you use other base systems entirely as well. 
+
+And this is useful because today when we focus really on the computer's memory, and later today on files-- the actual creation of and editing of files, like images you might have on your own phones or computers --it turns out it's very useful to be able to address the memory inside of our computers or phones-- that is assign a number, a unique identifier, to every byte so that we can just talk about where things are in memory. 
+
+Now you might think we would do 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, but it turns out that's not actually human convention. There's nothing wrong with this. It's correct but you're about to see today a slightly different syntax where we do count from 0 to 1, to 2, to 3, to 4, to 5, to 6, to 7, to 8, to 9, but in the world of not decimal, not binary, but hexadecimal-- hex meaning 16. Can you actually count higher than nine? 
+
+There is the letter A, B, C, D, E and F. Why? While using these individual alphabetical letters, can you effectively count not only from 0 through 9-- using single digits --but also 10, 11, 12, 13, 14, 15-- F, representing 15. 
+
+And so I introduce this because we'll see this pattern throughout today and throughout the coming weeks programs where the computer will just very conventionally display to you numbers not in decimal, not in binary, but sometimes in hexadecimal. But we'll see why that is in just a moment. 
+
+Indeed, in binary we had the digits 0 and 1, decimal we had 0 through 9, in hexadecimal-- to recap --we have 0 through F, where again, F is 15. So how does this actually work? 
+
+Just a quick whirlwind tour, this was our notation in binary. And I had eight 0 bits here, bit meaning binary digit. And based on the columns there, we had powers of 2, or if we multiplied that out, the ones place over there, the 128's place over here. This of course, if you do the math, is what number in decimal? 
+
+So just 0-- right --if you multiply the columns by the numbers they're in. But what about this? If I change all those 0s to 1s, what was the highest we could count in binary if we had eight bits? 
+
+AUDIENCE: 255 
+
+DAVID J. MALAN: Yeah, 255 was the highest we can count. You might say 256 but again, if you start counting at 0, you sort of spend one of those numbers as the 0. So 255 is the highest you can count with eight bits. And we could do the math if we cared. 128 times 1 plus 64 times 1, and so forth. But let me just stipulate, that's indeed 255. 
+
+In decimal, and indeed in decimal, we would represent the columns as powers of 10 or ones place, ten place, hundreds place, and so forth. So that's all Week 0 stuff. It turns out, though, that there's another way of representing 255 in decimal using hexadecimal, except now instead of powers of 2 or powers of 10, we're just going to use powers of 16. 
+
+And it turns out this is convenient for reasons related to computing. So the rightmost column will be our 16th to the zeroth or the ones place. The second column will be our 16s place. And remember, F, individually represents 15 in decimal. So we can count quite similarly. 
+
+So this in hexadecimal would just be 0. 16 times 0, plus 1 times 0, is of course 0. This of course, easy one, is what number? 
+
+AUDIENCE: 1 
+
+DAVID J. MALAN: 1 in decimal. This is going to be 2, 3, 4, 5, 6, 7, 8, 9. And whereas in the decimal role would you want to say 10-- or 1, 0 --here we can actually count a little higher to A, B, C, D, E, F-- and that represents 15. Why? 16 times 0, plus 1 times F-- which again, F is 15. So 1 times F-- or 15-- gives you 15. 
+
+Now how do you count as high as 16? Well, you can probably envision it already, right? You kind of carry the 1 just like in decimal and binary. So in hexadecimal, 1, 0 is the number 16. And here's where you just have to be careful. You shouldn't say 10 anymore. That's a decimal number. This is 1, 0 in hexadecimal. 
+
+But we can count higher. If this is 16, this is 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31. And once you need 32, that's going to require another digit, if you will. So very low level. And none of us really on staff sort of think in hexadecimal, you'll just see things in hexadecimal. And all this is to say is that it can be converted back to the more familiar decimal or any other system as well. 
+
+Higher than that we would go 2, 0, which of course, is 16 times 2-- which is 32 --plus 0. So it turns out that if you have four 1s and four 1s that it can be represented as FF, you've actually seen FF and probably 00 and other alphabetical characters before. 
+
+How many of you have ever done web design using HTML, CSS? So like at least a third or so of the class. And for those unfamiliar, we'll get to that if you want to pursue that track later in the semester but recall RGB from Week 0. Red, green, blue refers to how computers can represent the colors of every pixel using some amount of red, some amount of green, some amount of blue. 
+
+Well it turns out it's just human convention to describe the amounts of red, green, and blue in a color in terms of hexadecimal digits-- where this means give me no red, no green, no blue. And if you think back to Week 0 that's actually going to give us black. If you have none of those three colors, it's just the absence of those colors and you get black. 
+
+If however, you have FF-- which is what? --255 amount of red, that's a lot of red, and 0 green, 0 blue. So if a computer were to represent a pixel on your screen as red it would store FF0000. That is a lot of red, no green, no blue. 
+
+Meanwhile, if you had this representation, this is why this is green. This would be blue. And if you combine all three colors a lot-- a lot of red, lot of green, lot of blue --this is how a computer would represent white. And so we'll come back to this later on in game development, and web development, and mobile-- if of interest-- but notice that this is just a common convention as well. 
+
+So if we reconsider what our memory looks like, it's just this big grid of bytes. And we might describe the top one is 0 and the bottom one in this case as 1F. And we can just keep counting. However, at first glance it might be a little ambiguous. Am I looking at decimal? Am I looking at hexadecimal? Am I looking at something else altogether? 
+
+So humans years ago decided that just to avoid ambiguity, if you are using hexadecimal, the human convention is to prefix every digit on the screen with 0x, just arbitrarily. The 0x means nothing mathematically. It just means here comes a hexadecimal value. So you can disambiguate it from something like decimal itself. Whew. OK. 
+
+That was a mouthful. And that's it for base systems. There's no more something decimals here on out this term. Slight white lie, there's something called octal but we probably won't look at that. 
+
+Are there any questions at all? No, all right. 
+
+So how can we actually use this information? Well let's now see some examples of what's going on truly inside of your computer's memory. And we'll see where hexadecimal is germane and how we can now start manipulating things more carefully inside of the computer's memory.

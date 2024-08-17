@@ -1,0 +1,19 @@
+So what's nice about Valgrind is this. Let me go ahead and rerun Valgrind after compiling this memory program-- whoops --in my source directory. Let me go ahead and make memory. All right. 
+
+It compiled OK. Valgrind dot slash memory-- and unfortunately, we're going to see some crazy arcane error messages for a moment. But let's see what it says. Notice here, invalid write of size 4-- that sounds bad --and 40 bytes in one blocks are-- OK, they didn't really add an if condition in Valgrind. --40 bytes in 1 blocks-- plural --are definitely lost. 
+
+So let's fix the second of those first. Why am I leaking 40 bytes exactly? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID J. MALAN: I'm never freeing it. So I think I can get away with just doing this here, just free the memory after I'm done using it-- even though I'm not really using it for anything purposeful here. 
+
+So let me try this again. Make memory, now let me do Valgrind dot slash memory. And-- OK, better. I don't see 40 bytes lost anymore. So that's good. But I do still have this issue. 
+
+But here's where it's sometimes useful to understand the various data types and their sizes. Invalid write of size 4. Writing in a program just means changing a value. And it mentioned line 8 here. In what sense is this an invalid write of size 4? Well, how big is an int? Four bytes. 
+
+You're trying to change it arbitrarily to 0. But I could have made that 50 or any other number. But I'm trying to touch an int that should not be within the memory I have allocated for myself. I asked for 40 bytes, or 10 ints, but again, because arrays are zero indexed, this is like going one beyond the boundary. 
+
+So let me fix this and just arbitrarily say, let's go touch that part of it. Let me go here and do make memory. Let me go ahead and do Valgrind dot slash memory. And now, arcane output aside, notice that that error message went away too. 
+
+So this will be helpful over the coming couple of weeks as we continue to use C to implement a number of programs that now start to manipulate memory. It's just a tool that helps you spot errors that certainly, your TF might otherwise, or that might be causing your program to crash, or to freeze, or to segfault-- if you've seen that yourselves before.

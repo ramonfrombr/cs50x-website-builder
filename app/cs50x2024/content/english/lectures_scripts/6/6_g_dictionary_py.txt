@@ -1,0 +1,25 @@
+But wait. There's more. What about Pset5? Pset5, recall, you implemented a hash table. And indeed, you decided how to implement the underlying link list and the array and so forth. Well, you know what? Let me go ahead and create another file, this time, in Python-- wasn't allowed two weeks ago, but is allowed now. 
+
+And I'm going to go ahead and implement this how? Well, I had a few different data structures to choose from in Python-- dict for dictionary and list and range and so forth and then also set. And I could use dict or dictionary. But I'm actually going to set, because what really is a dictionary? It's a set of unique words. So I'm going to use something called sets. 
+
+So I'm going to go ahead and give myself a variable called words. And I'm going to initialize it to an empty set, if you will, just a container that can grow to fit values. But just in case I screw up and put duplicates in there, that's OK. The set is going to get rid of them for me. 
+
+And then, recall for-- or sorry-- for this program, not speller.py, but rather dictionary.py to correspond with dictionary.c, we had a few functions. Now, in Python, the way you implement a function is not by saying int main void or something like that. You, instead, more simply say def for define and then the name of the function you want, like check, and then the inputs to that function, like word. 
+
+And I'll come back to this. And I'm just going to say TODO for a moment, because I'm going to go ahead and predefine my other functions, like load, took a dictionary file name as input. So I'm going to go ahead and come back and do that. I, then, had a size function-- took no inputs. I'm going to go ahead and do that. And then, down here, I had an unload function. So I'm going to go ahead and come back and do that. 
+
+So how do I now implement each of these functions? Well, let's start with load. After all, if I'm handed the dictionary, first thing I wanted to do in Pset4-- or Pset5-- was load it into memory. Well, it turns out in Python, you can do something like this-- file=open(dictionay), which is so close to C. But it's open instead of fopen. And I'm going to open it in read mode. So so far, this actually looks quite like the C version. 
+
+But now, if I want to iterate over every word in the file, it turns out I can use a for loop, because a for loop in Python is way more powerful than a for loop in C. I can literally say for line in file. And then, here, I can go ahead and add to my set of words, which is in this variable called words, literally using a function called add that particular line-- that is, the word from the file. 
+
+And then, you know, after that, file.close is how I'm going to close it. And then, all seems well. I'm going to go ahead and return True. Now, there's one bug here at the moment. Every line in the dictionary actually ended with what character technically, even though you don't see it, per se? 
+
+AUDIENCE: A new line. 
+
+DAVID MALAN: A new line, right? Every word in the file ended with a backslash n, even though when you open the file, we humans don't see it. But it is there. So that's OK. If you want to go ahead and strip off the trailing new line, so to speak, at the end of every line, you can just go to the line of the current file-- say rstrip, where rstrip means reverse strip. So remove from the end of the string what character? Backslash n-- and that's going to now look at the line, chopp off the backslash n, and pass as input to this add function the word from the dictionary. 
+
+All right. What remains? Well, up here, how do I check the dictionary? Well, it turns out in Python, you can use conditions even more powerfully than in C. And if you want to know if a word is in a variable, like a word is in a set called words, we'll just ask the question, if word in words, you know what? Go ahead and return true. Else, go ahead and return false, although slight bug-- we also had to deal with capitalization in Pset5, right? The user's input from the file, the text, might be uppercase or lowercase. 
+
+No big deal-- you want to lowercase a word? You don't have to do it character by character. Just call word, which is the word you're looking for, dot, which means go inside of it, just like a struct in C. And here, call a function that's built into that string called lower. 
+
+All right. Well, I'm getting a little bored with implementing this. So let's finish this up. Let me go ahead. And how do I check how many words are in my dictionary? Well, just ask what the length is of that set. And how do you go about in free-- how do you go about freeing all of the memory used by your program in Python? How do you go about undoing the effects? Well, you don't. It's done for you. So we'll just return true. So this, then, is-- I'm sad to say-- I mean, excited to say-- is the entirety of Pset5 implemented in Python.

@@ -1,0 +1,7 @@
+Très bien, alors, quel serait l'idéal, en fait ? Chaque fois que nous parlons du temps d'exécution, c'est comme si nous voulions être tout en bas de cette liste et pas en haut. n carré était lent. Big O de 1 est un temps constant. C'est rapide. 
+
+Ne serait-il pas intéressant qu'au fil de cette histoire, nous trouvions réellement une structure de données qui nous donne un temps constant ? Genre, mon Dieu, si on pouvait juste insérer quelque chose dans une structure de données en une étape et trouver quelque chose dans une structure de données en une étape, c'est un peu le Saint Graal, pour ainsi dire, parce que tu n'as pas à te soucier du big O de n ou du big O de log n. Tu sautes tout de suite à la valeur que tu veux. 
+
+Eh bien, il s'avère qu'en théorie, il y a quelque chose qui te permet d'y parvenir, appelé table de hachage. Mais la façon dont tu implémentes ça n'est pas forcément évidente. Et ça demande une certaine expertise. 
+
+Et en effet, dans le problème 5, l'un des objectifs est d'implémenter exactement cette notion de table de hachage qui te permet de vérifier l'orthographe d'un document super rapidement. Un traitement de texte serait tellement lent si, à chaque fois que tu souhaites vérifier l'orthographe d'un mot, tu devais effectuer une recherche linéaire ou même rythmique plus longue dans un gros fichier dictionnaire. La vérification de l'orthographe d'un fichier pourrait prendre énormément de temps. Mais en utilisant une table de hachage, on peut probablement faire beaucoup mieux.

@@ -1,0 +1,13 @@
+Très bien. Revenons à là où nous en étions lors de la semaine 2, où nous avions commencé à introduire des tableaux que nous allons maintenant appeler des listes. Je vais diviser ma fenêtre une nouvelle fois. Je vais ouvrir l'exemple scores2.c de la semaine 2, qui ressemblait à quelque chose comme ça. Donc, cela fait un moment. Mais nous avions vu cet exemple il y a un moment, qui initialise simplement un tableau avec trois valeurs : 72, 73, 33 ; puis qui calcule la moyenne à l'aide d'un petit calcul arithmétique en dessous. C'était donc il y a un moment, mais tout ceci en était l'essentiel.
+
+Je vais créer un fichier appelé scores.py à droite en Python. Et je vais me donner un tableau que j'appellerai maintenant une liste. Et c'est une liste dans le sens où, comme une liste chaînée, elle peut croître et diminuer automatiquement, donc plus besoin d'alloc ou de realloc.
+
+Donc, en fait, si je veux ajouter quelque chose à cette liste, je peux littéralement dire scores, qui est le nom de la variable, y pénétrer comme dans une structure en C et utiliser une fonction, désormais également appelée méthode contenue dans une structure, et ajouter une valeur comme 72. Je peux ensuite refaire la même chose et ajouter 73. Et je peux recommencer et ajouter 33.
+
+Et maintenant, je peux faire une moyenne et l'imprimer. Disons moyenne, comme avant. Et il s'avère que Python a des fonctions sophistiquées qui sont utiles ici. Je peux prendre la somme de tous ces scores et la diviser par la longueur de cette liste, ce qui me donnera, je l'espère, le nombre total : la somme totale des scores divisée par le nombre total de scores et l'obtention d'une moyenne : python scores.py. Oh, non, j'ai oublié quoi ?
+
+PUBLIC : f.
+
+DAVID MALAN : Juste le f pour une fstring. Très bien. Alors je vais le relancer. Et voilà : il semble qu'avec ces trois valeurs, la moyenne est de 59,33333 par exemple. Et si je commençais à fouiller un peu plus, nous verrions vraiment l'imprécision. Et nous commençons déjà à le voir à l'écran ici.
+
+Bon, je vais rendre cela plus succinct. Je n'ai pas besoin d'utiliser append, append, append. En Python, je peux simplement dire : scores 72, 73, 33, ce qui n'est pas différent de la notation des accolades que vous avez peut-être déjà vue dans C. Mais elle est un peu plus courante ici en Python. Donc, cela aussi va fonctionner exactement de la même manière, le fait étant que les listes peuvent croître et diminuer. Si vous voulez une liste, utilisez-la simplement. Vous n'avez plus à réfléchir autant à l'utilisation de ce type de structure.

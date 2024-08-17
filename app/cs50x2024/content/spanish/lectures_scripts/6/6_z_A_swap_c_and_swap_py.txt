@@ -1,0 +1,9 @@
+Muy bien. ¿Qué pasa con esto? Esto fue doloroso y provocó toda la exploración por la madriguera del conejo de punteros y direcciones y similares. Supón que solo quieres intercambiar dos valores, x e y, inicializados hace un par de semanas a 1 y 2.
+
+Dios mío, los aros por los que tuvimos que pasar en C solo para intercambiar dos valores. Es de esperar que al final, hayas entendido por qué había este problema fundamental. Y eso, de nuevo, tuvo que ver con la memoria, mover cosas y copiar.
+
+Pero en Python, ¿adivina qué? Déjame seguir adelante en Python y llamar a un programa swap.py. Y déjame seguir adelante y darme dos variables. Eso por sí solo ya es más rápido porque no tienes que preocuparte por los tipos de datos o los punto y coma.
+
+Déjame continuar y solo declarar que x es x, y, es y, solo para que podamos ver cuáles son estos valores. Sin embargo, podría utilizar debug50. También puedes depurar programas Python en el IDE.
+
+Voy a hacer esto dos veces, recuerda, el objetivo ahora es intercambiar dos valores. Entonces, si quiero intercambiar x e y, ¿adivina qué? En Python, no es gran cosa. Intercambio. Muy bien. Python. swap.py. oh Dios mío. Lo obtienes gratis con el lenguaje.

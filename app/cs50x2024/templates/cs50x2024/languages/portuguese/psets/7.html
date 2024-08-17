@@ -1,0 +1,47 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-7">Problem Set 7</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>A colaboração em problem sets não é permitida, exceto na medida em que você possa pedir ajuda a colegas e terceiros, desde que essa ajuda não se reduza a outra pessoa fazendo seu trabalho por você, conforme a política do curso em
+      <a href="{{ url_for('cs50x2024.honesty') }}">honestidade acadêmica</a>.</p>
+
+    <p>A equipe realiza auditorias aleatórias de envios para o CS50x. Os alunos considerados violadores desta política serão removidos do curso. Os alunos que já concluíram o CS50x, se considerados violadores, terão seu Certificado do CS50 permanentemente revogado.</p>
+  </div>
+
+  <h2 id="what-to-do">O que fazer</h2>
+
+  <ol>
+    <li>Faça login em
+      <a href="https://cs50.dev">cs50.dev</a>
+      usando sua conta do GitHub</li>
+    <li>Execute
+      <code class="language-plaintext highlighter-rouge">update50</code>
+      na janela de terminal do seu codespace para garantir que seu codespace esteja atualizado e, quando solicitado, clique
+      <strong>Reconstruir agora</strong>
+    </li>
+    <li>Envie
+      <a href="{{ url_for('cs50x2024.psets.pset7.songs') }}">Songs</a>
+    </li>
+    <li>Envie
+      <a href="{{ url_for('cs50x2024.psets.pset7.movies') }}">Movies</a>
+    </li>
+    <li>Envie
+      <a href="{{ url_for('cs50x2024.psets.pset7.fiftyville') }}">Fiftyville</a>
+    </li>
+  </ol>
+
+  <h2 id="when-to-do-it">Quando fazer</h2>
+
+  <p>Até
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+  <h2 id="advice">Dicas</h2>
+
+  <ul>
+    <li data-marker="*">Vá para
+      <a href="https://www.w3schools.com/sql/">w3schools.com/sql</a>
+      para uma referência útil!</li>
+  </ul>
+
+{% endblock %}

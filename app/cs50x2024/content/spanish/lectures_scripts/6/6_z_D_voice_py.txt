@@ -1,0 +1,37 @@
+Muy bien. Ahora hagamos algo más divertido. Ahora que tenemos Python, resulta que podemos hacer cosas más interesantes. Y resulta que puedes hacerlas incluso en tu propia Mac o PC. He estado usando el IDE todo este tiempo.
+
+Pero Python es incluso más fácil que C para ponerlo a funcionar en tu propia Mac o PC. Y así, de hecho, antes de la clase, descargué literalmente un programa llamado Python, lo instalé en mi Mac y puedes hacerlo también en una PC, lo que me permite en mi propia Mac usar algo como esta ventana de terminal para ejecutar programas de Python en mi propia Mac sin que el IDE se interponga.
+
+Lo que esto significa en particular es que puedo utilizar hardware en mi propia Mac o PC. Por ejemplo, como el micrófono incorporado. Así que déjame seguir adelante y hacer un programa aquí que se llamará, por ejemplo, voz. Déjame abrir voice.py.
+
+Voy a utilizar un programa de edición de texto diferente. No es el IDE, pero me permitirá escribir código. Y déjame seguir adelante y hacer esto. Déjame seguir adelante y obtener información del usuario sin siquiera usar la biblioteca CS50.
+
+Pero solo voy a pedirle al humano que diga algo backslash n. Y luego voy a forzar la entrada del usuario a minúsculas solo para hacer mi vida un poco más fácil.
+
+Y ahora voy a hacer algunas preguntas. Si la palabra hola está en las palabras del usuario, bueno, déjame seguir adelante y saludarte también. Eso es lindo. elif, por ejemplo, cómo estás en palabras. Déjame seguir adelante y decir algo como, imprimir, por ejemplo, estoy bien. Gracias.
+
+elif, ¿qué tal adiós en palabras? Déjame seguir adelante e imprimirte adiós a ti también. Aunque ciertamente podría decir casi cualquier cosa que quisiera aquí. de lo contrario, no sé qué está pasando, así que solo voy a decir eh.
+
+Entonces, ¿cuál es la esencia de este programa? ¿Qué he hecho? Es como, una especie de, definitivamente un tramo, pero los comienzos de la inteligencia artificial, por así decirlo. Es un programa que está interactuando conmigo. Y mucho antes, algunos de los primeros programas en IA eran solo basados en texto como este.
+
+La inteligencia artificial es esencialmente como crear un humano que es consciente y que en realidad puede responder y reaccionar a un humano como si ellos mismos también fueran humanos. Así que déjame seguir adelante y ejecutar esto. Python voice.py como si estuviera hablando con él y dijera, hola.
+
+Eso es gramaticalmente incorrecto, pero no nos importará. Hola a ti también. ¿Cómo estás? Estoy bien, gracias, es algo genial. Adiós. Adiós a ti también.
+
+Ahora, ¿por qué funcionó eso? Solo estoy usando pythons en el operador, buscando las palabras del usuario que son solo cadenas que se han escrito mediante la función de entrada. Y nuevamente, la función de entrada es casi lo mismo que get string, pero es la que viene con Python. Y solo estoy haciendo if else, if else, if else, if else, imprimiendo cosas.
+
+Pero resulta que con Python, y honestamente, con otros idiomas, pero especialmente con Python, es fácil hacer cosas aún más elegantes. Déjame seguir adelante y no obtener las palabras del humano desde el teclado, pero déjame importar el reconocimiento de voz, que es una biblioteca que he instalado en mi computadora con anticipación.
+
+Y déjame seguir adelante y cambiar esto un poco. Déjame seguir adelante y decir algo como esto. Recognizer obtiene speech recognition.recognizer. Y literalmente no sabía lo que estaba haciendo. Simplemente estaba siguiendo las instrucciones cuando descargué la biblioteca inicialmente.
+
+Pero aprendí que puedo decir reconocimiento de voz.micrófono como fuente. Impresión. Ahora sigamos adelante y digamos algo al humano para que proporcione información. Entonces déjame obtener algo de audio del. Usuario recognizer.escuchar esa fuente que es el micrófono.
+
+Y luego aquí abajo diré, el reconocimiento de voz de Google piensa cosas que dijiste. Y luego escriba recognizer.recognize Google audio.
+
+Así que está bien si no entendemos todas y cada una de las líneas. No lo hice anoche cuando estaba experimentando con este ejemplo. Sin embargo, la clave es que he importado una biblioteca muy poderosa que es de código abierto y de libre acceso. Resulta que habla con la infraestructura de back-end de Google donde implementan una serie de funciones de inteligencia artificial.
+
+Y si no lo arruiné, veamos cómo funciona este. Python de voices.py. Hola Mundo. ¿Cómo estás? Adiós Mundo. OK. Bastante, bastante asombroso.
+
+[APLAUSOS]
+
+Gracias.

@@ -1,0 +1,33 @@
+So my god, now we have two bad solutions to a problem. Can we do better? Well, let me propose we revisit bubble sort. Bubble sort, again, just has you swap adjacent elements again and again and again and again until you're all sorted. But when might you want to stop going back and forth the list? Like, when might Bonnie have wanted to say, ooh, that's enough work, I'm done? 
+
+If she walks through the list looking at every person, i and i plus 1 next to each other, when might she conclude that she's done doing that work of sorting? Yeah? 
+
+AUDIENCE: [INAUDIBLE] 
+
+SPEAKER 1: Yeah, if there was a question she asked, or if there was a pass she made walking through the volunteers and didn't have to do any work. She doesn't have to keep doing work again and again just because the algorithm said to repeat it n minus 1 times. We kind of want to have a condition in here, or some way of short circuiting the algorithm, so that we stop once we're really just wasting our time. 
+
+And bubble sort lends itself to that because we can tweak our wording of our pseudocode as follows, repeat until no swaps. So again, it's opportune that these numbers are already sorted. Let's try bubble sort on it. So Bonnie probably would have said, compare 1 and 2. They're not out of order. So we don't have to swap. 
+
+2 and 3, 3 and 4, 4 and 5, 5 and 6, 6 and 7, 7 and 8, she obviously did no swaps. It would be stupid for her to go again just because the algorithm said do this n minus 1 times because she's going to get no, no, no, no, again and again as her answer. So by saying repeat until no swaps, she can abort this algorithm early and then have taken how many steps in this best case? 
+
+AUDIENCE: [INAUDIBLE] 
+
+SPEAKER 1: Yeah, technically n minus 1, right? Because if this is n elements, or 8, you can compare seven pairs, 1, 2, 3, 4, 5, 6, 7, so n minus 1. So she could, in the best case, then, have a lower bound on running time for selection sort-- of bubble sort no longer of n squared, but now n. So it would seem that with a bit more cleverness we can actually benefit in terms of the running time of these algorithms. 
+
+Well, let's see if we can't see these from a slightly different perspective now by doing this visualization. I'm going to go ahead and open up a graphical visualization of each of these algorithms in turn. So what you have here is an array of numbers, each of which is represented by a vertical bar. Short bar is small number, like 0, 1, 2. Tall bar is big number, like 99 or 100 or anything in between. 
+
+This is a visualization tool online. And we'll link this on the course's website so that we can try these algorithms. So let's try bubble sort, for instance. I'm going to start it kind of slow. But you can see highlighted in pink two elements being compared side by side, i and i plus 1 being swapped if they're out of order. So this is the graphical version of what Bonnie's instructions were to our volunteers. 
+
+And now notice, bubble sort gets its name because notice what's happening to apparently the biggest element. It's sort of bubbling its way up all the way to the end. Smaller elements are making progress. Like a 15 and a 12 just moved a little bit to the left. But they're not done. They're not in their right places yet. But the big elements are starting to bubble all the way to the right. 
+
+Now, this gets a little tedious pretty quickly. So I'm going to go ahead and speed up the animation speed. And if we watch it now-- same algorithm, it's just running faster-- you can really see that the larger elements are accumulating at the right-hand side. So this is identical to our eight volunteers. It's just each human now is represented by a bar. And you can really see the larger numbers bubbling their way up to the top. 
+
+But you can see perhaps more visually there's a lot of work here. Bonnie was uttering a lot of sentences. She was doing a lot of back and forth, because, just as this pink bar suggests, it's going back and forth and back and forth, doing a lot of work again and again and again. And let's see. It's going to start to speed up now because we're nearing the latter half of it. 
+
+But as you can see, ultimately, this is kind of what n squared feels like, right? I'm kind of out of words again. And I could say some more things. But it's really just stalling because the algorithm's kind of slow. n squared is not a good upper bound on running time, especially when your [? elements ?] are randomly sorted. 
+
+So let's try another one. Let's do, in this case, selection sort. So I'm going to re-randomize the numbers just as we started and now do selection sort. And I'm starting at the faster speed. And it's working a little differently. Notice that the pink line is sweeping from left to right, looking for the smallest element. And when it finds it, it highlights the little bar, and it moves it all the way in place to the left. 
+
+So whereas bubble [? sort's ?] large elements bubbled up to the right, selection sort is much more emphatically grabbing the smallest element and putting it into its place one after the other. So this has a different feel. But here, too, I'm going to have to ad lib quite a bit because it's taking a while. And you can see the pink bars are really going back and forth and back and forth, doing quite a bit of work, quite a bit of work, quite a bit of work. And now finally, it's done. 
+
+So in a bit, we'll take a look at fundamentally faster solutions and see why n squared actually is small. But first let's take our five-minute break with mini cupcakes outside.

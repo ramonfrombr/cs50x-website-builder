@@ -1,0 +1,55 @@
+Mettons donc tout cela en contexte. Laissez-moi passer à l'IDE CS50, que vous pouvez continuer à utiliser pour Python. Laissez-moi aller de l'avant et créer un nouveau fichier appelé, par exemple, hello.py. Donc au lieu de hello.c, j'utiliserai hello.py -- py étant la convention pour les programmes basés sur Python.
+
+Et vous savez quoi ? Si je veux afficher "hello world", je vais simplement aller de l'avant et dire print("hello, world"). Je vais aller de l'avant et sauvegarder mon fichier. Et puis, dans ma fenêtre de terminal, il n'est pas nécessaire de compiler. Je peux maintenant exécuter le programme appelé Python, qui porte le même nom que le langage lui-même. Et je vais aller de l'avant et exécuter le fichier appelé hello.py comme entrée dans ce programme. Et le tour est joué, mon tout premier programme en Python. Pas d'accolades, pas de int, pas de main, pas de void, pas d'include -- vous pouvez simplement commencer à faire du vrai travail.
+
+Mais pour accomplir un vrai travail plus intéressant, commençons à préparer les choses là où nous nous sommes arrêtés lorsqu'il y avait des comparaisons entre Scratch et C, en faisant la même chose, à nouveau, cette fois entre Scratch et C, mais maintenant Python aussi. Ainsi, dans le monde de Scratch, si vous vouliez dire "hello, world", vous utilisiez ce bloc violet, une fonction, comme on l'appelait à l'époque. Et nous l'avons traduit il y a quelques semaines maintenant en code C correspondant -- printf("hello,world").
+
+Et il y avait quelques nuances et des choses à éviter. C'est printf. Ce n'est pas print. Vous avez la barre oblique inverse n et le point-virgule. Aujourd'hui, en Python, si vous voulez atteindre ce même objectif, comme je viens de le faire dans l'IDE, vous pouvez le simplifier à cela. Donc pour être très clair, qu'est-ce qui a changé de C à Python ? De quoi n'avez-vous plus à vous soucier en Python -- quelques observations ? Ouais.
+
+PUBLIC : Des points-virgules.
+
+DAVID MALAN : Plus de points-virgules -- ils ont officiellement disparu. D'autres commentaires ?
+
+PUBLIC : Plus de nouvelles lignes.
+
+DAVID MALAN : Plus de nouvelles lignes -- print vous en donnera en fait une si vous appelez simplement print. Laissez-moi aller voir par ici.
+
+PUBLIC : Print au lieu de printf.
+
+DAVID MALAN : Et c'est print au lieu de printf et -- cela va mal se terminer aujourd'hui, parce que mon bras va finir par lâcher. Y a-t-il d'autres différences qui sautent aux yeux ? Peut-être ?
+
+PUBLIC : Plus d'E/S standard.
+
+DAVID MALAN : Plus d'E/S standard -- donc il n'y a rien de la surcharge dont nous avons besoin. Je ne vais pas vous donner une balle anti-stress pour ça non plus, juste parce que ce n'était pas dans la diapositive précédente pour C. Mais en effet, il n'y a pas de surcharge nécessaire, les includes et ainsi de suite, juste pour faire du vrai travail.
+
+PUBLIC : Plus de barre oblique inverse [INAUDIBLE].
+
+DAVID MALAN : Oh, ça a déjà été pris. Alors je suis désolé. La balle anti-stress est à nouveau distribuée. Ouais.
+
+PUBLIC : Aucun %s.
+
+DAVID MALAN : Aucun %s, mais pas de peur germaine, parce que je ne branche encore rien. Alors, en fait, laissez-moi passer à autre chose, parce que je suis à peu près sûr qu'il n'y a pas d'autres différences ou balles anti-stress pour celle-ci. Jetons donc un coup d'œil, cependant, à une variante de ceci, où nous voulions faire quelque chose de plus intéressant que simplement imprimer statiquement -- c'est-à-dire codé en dur -- la même chose encore et encore -- hello, world -- quelque chose comme ça. Et maintenant, je reviendrai vers vous dans un instant.
+
+Si vous souhaitez obtenir la saisie des utilisateurs, dans Scratch, nous utilisons ce bloc Demander. Cela nous a donné accès à une valeur de retour spéciale ou à une variable appelée answer. Et puis, nous pourrions utiliser "join" et utiliser de manière créative le bloc Dire pour concaténer ou joindre ces deux valeurs. En C, cela s'est terminé par ceci, où vous déclarez une variable sur la gauche. Vous lui attribuez la valeur de retour sur la droite, comme avec la première ligne ici.
+
+Et puis, vous allez de l'avant et imprimez non seulement hello. Mais hello, %s, qui a ensuite branché cette valeur. En Python, vous pouvez atteindre le même objectif. Mais cela va être un peu plus simple. Nous pouvons maintenant le faire avec juste cela. Alors, qu'est-ce qui a clairement disparu de l'écran ? De quoi n'avons-nous plus à nous soucier en Python ? Ouais.
+
+PUBLIC : Eh bien, vous pourriez simplement faire plus d'answer au lieu de, par exemple, devoir le faire avec une virgule et le %s answer.
+
+DAVID MALAN : Exactement. Il n'y a donc pas de %s. Nous utilisons simplement cet opérateur de virgule, qui est nouveau en Python. Ceci est maintenant appelé l'opérateur de concaténation. Et si vous avez étudié Java ou quelques autres langages, vous savez que cela va joindre la chaîne de gauche à la chaîne de droite. Nous pouvons donc en quelque sorte construire cette phrase que nous voulons. Et parce que vous avez appelé le %s plus tôt --
+
+PUBLIC : Oh.
+
+DAVID MALAN : -- laissez-moi être juste là. Ouais.
+
+PUBLIC : Nous n'avons pas eu à identifier answer comme une chaîne.
+
+DAVID MALAN : Bien. Nous n'avons pas à identifier answer, qui est en effet notre variable comme une chaîne, car même si Python verra des types de données -- et il sait de quel type de valeur vous stockez -- vous n'êtes pas obligé, pédant comme le programmeur, de dire à l'ordinateur. L'ordinateur peut le comprendre à partir du contexte. D'autres distinctions ?
+
+PUBLIC : Pas de points-virgules.
+
+DAVID MALAN : Non, non, les points-virgules aussi, et j'espérais que personne ne lèverait la main de plus loin. Mais nous y voilà. Oh.
+
+[RIRES]
+
+OK. Ma faute. Bon. Bon. Bon. OK. Donc il y a quelques différences, mais en bref, c'est en effet plus simple cette fois. En effet, je n'ai pas besoin du % -- ni de la barre oblique inverse n, car je vais l'obtenir gratuitement. Alors parcourons rapidement quelques autres comparaisons, pas seulement sur la chaîne ici ou ici, mais en utilisant maintenant une approche différente.

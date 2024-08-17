@@ -1,0 +1,69 @@
+[1]
+
+Ciclos
+● Los ciclos permiten a tus programas ejecutar líneas de código repetidamente, eliminando la necesidad de copiar y pegar o repetir líneas de código.
+● C ofrece algunas formas distintas de implementar ciclos en tus programas, algunas de las cuales probablemente parecen familiares de Scratch.
+
+[2]
+
+Ciclos
+while (cierto)
+{
+}
+• Esto es lo que llamamos un ciclo infinito. Las líneas de código entre llaves se ejecutarán repetidamente de arriba hacia abajo, hasta y a menos que salgamos de él (como con una declaración break;) o matemos nuestro programa.
+
+[3]
+
+Ciclos
+while (boolean-expr)
+{
+}
+• Si boolean-expr evalúa a verdadero, todas las líneas de código entre llaves se ejecutarán repetidamente, en orden de arriba hacia abajo, hasta que boolean-expr evalúe a falso.
+• Algo confuso es que el comportamiento del bloque de Scratch es inverso, pero es el análogo más cercano.
+
+[4]
+
+Ciclos
+do 
+{
+}
+while (boolean-expr);
+• Este ciclo ejecutará todas las líneas de código entre llaves una vez y luego, si boolean-expr evalúa a verdadero, volverá y repetirá ese proceso hasta que boolean-expr evalúe a falso.
+
+[5]
+
+Ciclos
+for (int i = 0; i < 10; i++)
+{
+}
+• Sintácticamente poco atractivo, pero los ciclos for se utilizan para repetir el cuerpo de un ciclo un número específico de veces, en este ejemplo 10.
+• El proceso llevado a cabo en un ciclo for :
+• Se establece la(s) variable(s) del contador (aquí, i)
+• Se verifica la expresión booleana.
+• Si evalúa a verdadero, se ejecuta el cuerpo del ciclo.
+• Si evalúa a falso, el cuerpo del ciclo no se ejecuta.
+• La variable del contador se incrementa y luego se verifica nuevamente la expresión booleana, etc.
+
+[6]
+
+Ciclos
+for (start; expr; increment)
+{
+}
+• Sintácticamente poco atractivo, pero los ciclos for se utilizan para repetir el cuerpo de un ciclo un número específico de veces, en este ejemplo 10.
+• El proceso llevado a cabo en un ciclo for :
+• Se ejecutan las declaraciones en inicio.
+• Se verifica expr.
+• Si evalúa a verdadero, se ejecuta el cuerpo del ciclo.
+• Si evalúa a falso, el cuerpo del ciclo no se ejecuta.
+• Se ejecutan las declaraciones en incremento, y luego se vuelve a verificar expr, etc.
+
+[7]
+
+Ciclos
+while
+● Se utiliza cuando quieres que un ciclo se repita un número desconocido de veces, y posiblemente ninguna.
+do-while
+● Se utiliza cuando quieres que un ciclo se repita un número desconocido de veces, pero al menos una vez.
+for
+● Se utiliza cuando quieres que un ciclo se repita un número discreto de veces, aunque es posible que no conozcas el número en el momento en que se compila el programa.

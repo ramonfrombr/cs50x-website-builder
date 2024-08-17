@@ -1,0 +1,76 @@
+[1]
+
+CSS
+• CSS (Cascading Style Sheets) es otro lenguaje que utilizamos para construir sitios web.
+• Si el HTML se utiliza para organizar el contenido que pretendemos mostrar en nuestras páginas, CSS es la herramienta que utilizamos para personalizar el aspecto de nuestro sitio web.
+• Al igual que el HTML, el CSS no es un lenguaje de programación; carece de lógica. En cambio, es un lenguaje de estilo y su sintaxis describe cómo se deben modificar ciertos atributos de los elementos del HTML.
+
+[6]
+
+CSS
+• Una hoja de estilo se construye identificando un selector (en el último ejemplo, el cuerpo) y luego una llave que se abre para indicar el inicio de la hoja de estilo para ese selector.
+• Entre la llave abierta, se coloca una lista de pares clave-valor de propiedades de estilo y valores de esas propiedades; cada declaración termina con un punto y coma.
+• Luego, una llave que se cierra termina la hoja de estilo.
+
+[7]
+
+CSS
+• Propiedades comunes de CSS
+• borde: color de estilo ancho
+• Aplica un borde con el color, ancho y estilo especificados (por ejemplo, puntos, guiones, sólidos, relieves…).
+• color de fondo: [palabra clave | #<6 dígitos hex] >
+• Establece el color de fondo. Algunos colores están predefinidos en CSS.
+• color: [palabra clave | #<6 dígitos hex>]
+• Establece el color de primer plano (generalmente texto).
+
+[8]
+
+CSS
+• Propiedades comunes de CSS
+• tamaño de fuente: [tamaño absoluto | tamaño relativo]
+• Se pueden utilizar palabras clave (xx-pequeño, mediano…), puntos fijos (10pt, 12pt…), porcentajes (80%, 120%) o como base el tamaño de fuente más reciente (más pequeño, más grande).
+• familia de fuentes: [nombre de fuente | nombre genérico]
+• Ciertas fuentes "seguras para la web" están predefinidas en CSS.
+• alineación de texto: [izquierda | derecha | centro | justificar]
+• Para mostrar el texto.
+
+[9]
+
+CSS
+• Los selectores no tienen que aplicarse únicamente a las categorías de etiquetas HTML. También existen selectores de ID y selectores de clase.
+• Un selector de etiqueta se aplicará a todos los elementos con una etiqueta HTML determinada.
+h2
+{
+familia de fuentes: times;
+color: #fefefe;
+}
+
+[10]
+
+CSS
+• Los selectores no tienen que aplicarse únicamente a las categorías de etiquetas HTML. También existen selectores de ID y selectores de clase.
+• Un selector de ID se aplicará únicamente a una etiqueta HTML con un identificador único.
+#único
+{
+borde: 4px punteado azul;
+alineación del texto: derecha;
+}
+
+[11]
+
+CSS
+• Los selectores no tienen que aplicarse únicamente a las categorías de etiquetas HTML. También existen selectores de ID y selectores de clase.
+• Un selector de clase se aplicará únicamente a aquellas etiquetas HTML a las que se les haya asignado atributos de "clase" idénticos.
+.estudiantes
+{
+color de fondo: amarillo;
+opacidad: 0.7;
+}
+
+[12]
+
+CSS
+• Las hojas de estilo se pueden escribir directamente en el HTML.
+• Colócalas dentro de etiquetas <style> en el encabezado de la página.
+• Las hojas de estilo también se pueden escribir como archivos CSS separados y luego vincularlas al documento.
+• Utiliza etiquetas <link> en el encabezado de la página para realizar esto.

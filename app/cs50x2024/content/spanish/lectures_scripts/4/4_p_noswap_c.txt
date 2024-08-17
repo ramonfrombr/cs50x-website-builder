@@ -1,0 +1,47 @@
+Así que basta con decir, que esa es la manera correcta de intercambiar dos valores. Pero el detalle clave ahí era que Farrah tenía acceso a una variable temporal. Y entonces uno pensaría que esta idea, tan simple como es en realidad, se traduciría bastante naturalmente a código también. Pero resulta que ese no es necesariamente el caso.
+
+Entonces, resulta que si quisiéramos intercambiar dos variables, podrías implementar una función llamada swap y simplemente tomar dos enteros, a y b, cuyo objetivo es hacer el intercambio. El púrpura se vuelve verde, el verde se vuelve púrpura, así como a se convierte en b, b se convierte en a. Y uno pensaría que solo necesitamos una variable temporal dentro de ese código para que eso suceda.
+
+Así que yo diría que el equivalente a lo que Farrah hizo en persona, en código en C, podría verse así. Dame una variable temporal llamada temp-- o lo que quieras-- guárdala en ella, a-- así como ella guardó primero uno de los colores en el vaso temporal, púrpura --luego continúa y cambia el valor de a para que sea igual al valor de b-- porque ya guardaste una copia de a en una variable temporal --luego, finalmente, guarda en b lo que está en temp. Así que ese es el código equivalente de lo que Farrah hizo usando estos líquidos de colores.
+
+Desafortunadamente, no es tan simple como parece. Voy a seguir adelante y abrir, por ejemplo, un programa que escribí con antelación aquí también, llamado-- intencionalmente --no swap. Aunque te gustaría pensar que hace exactamente eso.
+
+Así que nota que en este código tenemos-- incluyendo el punto I/O estándar h-- tenemos un prototipo para la función que acabo de proponer que hagamos, swap, que toma dos enteros a y b. Aquí está mi función principal. Y voy a inicializar arbitrariamente x en 1 e y en 2, tal como inicialicé un vaso en púrpura y un vaso en verde. Entonces, solo para que podamos ver lo que está pasando dentro de nuestro código, solo imprimiré x es tal y tal, y es tal y tal-- imprimiendo x e y-- luego voy a llamar a la función de intercambio, intercambiando x e y. Y luego voy a imprimir literalmente la misma frase. Pero espero que diga lo contrario la segunda vez si x e y realmente se han intercambiado.
+
+Entonces, ¿cómo implemento el intercambio? Bueno, parecería ser, con este mismo código, usando una variable temporal-- o vaso temporal, tal como lo hizo Farrah para los dos líquidos. Desafortunadamente, cuando continúo y ejecuto este programa, no intercambio-- y su nombre por sí solo es un pequeño spoiler-- si continúo y ejecuto el punto slash sin intercambio con x e y codificados a 1 y 2 respectivamente, verás que se ejecuta, y dice, x es 1, y es 2, x es 1, y es 2, por lo tanto, claramente falla al intercambiar.
+
+Pero si estás de acuerdo conmigo, esto se siente como si fuera correcto. No recibí ningún error del compilador. Sin embargo, esta línea de código, que utiliza swap, parece no tener ningún efecto. Entonces, ¿cuál podría ser la intuición o la corazonada para explicar por qué este programa de hecho no se intercambia?
+
+AUDIENCIA: Entonces, cuando toma el [INAUDIBLE] en el-- cuando toma el [INAUDIBLE] una variable completamente nueva que [INAUDIBLE].
+
+DAVID J. MALAN: Sí, exactamente. Cuando pasas entradas a una función, estás pasando efectivamente copias de tus propios valores a esa función. Y entonces, cuando tienes dos variables, x e y-- inicializadas en 1 y 2-- sí, las estás pasando como entrada para intercambiar. Pero el intercambio no está recibiendo realmente x e y, está recibiendo copias de x e y. Y según su prototipo, las llama ay b, respectivamente.
+
+Así que resulta que esta función de intercambio realmente funciona. Intercambia ay b. Pero no intercambia x e y porque son copias. Ahora bien, esto parece especialmente preocupante ahora en la medida en que no puedo implementar una función llamada swap que pueda incluso implementar ordenaciones de burbujas o ordenaciones de selección. Y francamente, es posible que te hayas encontrado con esto tú mismo si intentas implementar esto para uno de tus algoritmos de votación. Si necesitas hacer un intercambio, si tienes una función auxiliar, es posible que hayas tenido que pensarlo de una manera algo diferente.
+
+Entonces, ¿cuál es la explicación para todo esto? Bueno, esta versión de intercambio en realidad no funciona porque nuevamente, si volvemos a los primeros principios, vamos dentro de la memoria de la computadora y consideramos que nuestra memoria es solo una cuadrícula de bytes, de arriba a abajo, de izquierda a derecha. ¿Qué es lo que realmente está pasando?
+
+Bueno, resulta que todo este tiempo que hemos estado usando C, mi computadora no solo está poniendo cosas arbitrariamente en la memoria aquí, aquí, aquí. De hecho, utiliza la memoria de tu computadora de forma metódica. Ciertos tipos de datos van aquí abajo. Ciertos tipos de datos suben aquí, y así sucesivamente.
+
+Entonces, ¿cuál es esa metodología? Bueno, si lo consideramos simplemente de forma abstracta como un gran rectángulo, resulta que si esta es la memoria de tu computadora, en la parte superior, conceptualmente, van todos los 0 y 1 que Clang compiló para ti. El llamado código de máquina, se carga literalmente en la memoria RAM de tu computadora cuando ejecutas el punto slash o algo, o en un Mac o PC, cuando haces doble clic en un icono, esos 0 y 1-- el código compilado-- se cargan en la memoria de tu computadora aquí arriba-- digamos-- y podría ocupar tanto espacio para un programa pequeño, tanto espacio para un programa grande.
+
+Debajo de eso, si tu programa utiliza alguna variable global u otro tipo de datos, estos irán justo debajo, por así decirlo, del código de máquina en la memoria de la computadora. ¿Por qué? Simplemente porque los humanos necesitaban decidir al momento de implementar compiladores dónde poner cosas en la memoria de la computadora.
+
+Debajo de eso hay una porción especial de memoria llamada montón. Y Valgrind se encargó de mostrarlo-- un avance de esta palabra hace un momento. El montón es una gran porción de memoria de la que puedes asignar memoria. Y de hecho, si llamas a malloc-- como lo hice una vez antes-- esa memoria vendrá de esta región de la memoria de la computadora, debajo de las variables globales, debajo del código de máquina, porque ahí es donde Clang y los diseñadores de compiladores decidieron extraer memoria.
+
+Así que cada vez que llamas a malloc, estás asignando más y más bytes para que los use tu programa. Y ese montón crece, conceptualmente, hacia abajo. Cuanta más memoria uses, más abajo, abajo, abajo, estará en esta representación artística.
+
+Sin embargo, hay una porción diferente de memoria aquí abajo que se utiliza para un propósito muy diferente. Cada vez que llamas a una función en tu programa, resulta que las variables locales de esa función terminan yendo al final de la memoria de tu computadora en lo que se llama una pila. Así que si tienes main, la función predeterminada, y tiene uno o más argumentos, o una o más variables locales, esas variables simplemente van aquí abajo, conceptualmente, en la memoria. Y si llamas a una función como swap, o cualquier otra cosa, simplemente sigue usando más y más memoria por encima de eso.
+
+Entonces, el montón es de donde malloc te obtiene bytes. Y la pila es donde van tus variables locales cuando se llaman a las funciones, de abajo hacia arriba.
+
+Así que veamos esto en acción aquí. Si consideramos la pila sola en el contexto del intercambio de variables sin éxito, ¿qué es lo que realmente está pasando con un código como este? Bueno, en la parte inferior de mi memoria cuando llamo a main, se me da-- por naturaleza de cómo funcionan los programas en C cuando se compilan-- una porción de memoria llamada marco, un marco de pila. Y este es solo un número de bytes que almacena quizás argv, argc, almacena x e y, mis variables locales.
+
+Cualquier variable que tenga en main se almacena en esta porción de memoria aquí. Si main llama a una función, como esta función de intercambio, esa función obtiene su propio marco de memoria, su propia porción de memoria, que conceptualmente está sobre el main. Entonces, el intercambio tiene dos variables-- correcto-- dos argumentos, correcto, a y b. Y también tenía otra variable.
+
+AUDIENCIA: Temp.
+
+DAVID J. MALAN: Temp. Entonces esos tres valores van a estar en este marco de memoria. X e y están en la parte inferior, a, b y temp están arriba en ella.
+
+Así que centrémonos realmente en esto. Si nos enfocamos en main, cuando mi programa se ejecuta por primera vez, tengo dos variables, x e y. Y las inicializo a 1 y 2, respectivamente. Entonces se llama a la función de intercambio. Así que se usa otro marco en la pila, la computadora me asigna solo otro montón de bytes. Y el intercambio tiene tres variables, a, b y temp. Las dos primeras fueron sus entradas, sus argumentos, la tercera de las cuales fue una variable temporal explícita que le di.
+
+Con esas líneas de código de antes inicialicé a y b a 1 y 2, respectivamente. Y fíjate, son literalmente idénticos a x e y, pero copias de x e y. Y luego, si consideramos el código, ¿qué sucede después? Bueno, a temp se le asigna a. Entonces, ¿temp debería tomar

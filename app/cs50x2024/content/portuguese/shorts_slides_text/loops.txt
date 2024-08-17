@@ -1,0 +1,69 @@
+[1]
+
+Laços
+● Laços permitem que seus programas executem linhas de código repetidamente, o que evita a necessidade de copiar e colar ou de outra forma repetir linhas de código.
+● C oferece algumas maneiras diferentes de implementar laços em seus programas, algumas das quais provavelmente parecem familiares a partir do Scratch.
+
+[2]
+
+Laços
+while (true)
+{
+}
+• Isso é o que chamamos de laço infinito. As linhas de código entre as chaves serão executadas repetidamente de cima para baixo, até e a menos que saiamos dele (como com uma instrução break; ) ou matemos nosso programa.
+
+[3]
+
+Laços
+while (boolean-expr)
+{
+}
+• Se a boolean-expr for avaliada como verdadeira, todas as linhas de código entre as chaves serão executadas repetidamente, na ordem de cima para baixo, até que a expressão booleana seja avaliada como falsa.
+• Um tanto confuso, o comportamento do bloco Scratch é invertido, mas é o análogo mais próximo.
+
+[4]
+
+Laços
+do 
+{
+}
+while (boolean-expr);
+• Este laço executará todas as linhas de código entre as chaves uma vez e, em seguida, se a expressão booleana for avaliada como verdadeira, voltará e repetirá esse processo até que a expressão booleana seja avaliada como falsa.
+
+[5]
+
+Laços
+for (int i = 0; i < 10; i++)
+{
+}
+• Sintaticamente pouco atraente, mas os laços for são usados para repetir o corpo de um laço um número especificado de vezes, neste exemplo 10.
+• O processo realizado em um laço for é:
+• A(s) variável(eis) do contador (aqui, i) é definida
+• A expressão booleana é verificada. 
+• Se ela for avaliada como verdadeira, o corpo do laço é executado. 
+• Se ela for avaliada como falsa, o corpo do laço não é executado.
+• A variável do contador é incrementada e, em seguida, a expressão booleana é verificada novamente etc.
+
+[6]
+
+Laços
+for (start; expr; increment)
+{
+}
+• Sintaticamente pouco atraente, mas os laços for são usados para repetir o corpo de um laço um número especificado de vezes, neste exemplo 10.
+• O processo realizado em um laço for é:
+• A(s) instrução(ões) em start é(são) executada(s)
+• A expr é verificada. 
+• Se ela for avaliada como verdadeira, o corpo do laço é executado. 
+• Se ela for avaliada como falsa, o corpo do laço não é executado.
+• A(s) instrução(ões) em increment é(são) executada(s) e, em seguida, a expr é verificada novamente etc.
+
+[7]
+
+Laços
+while
+● Use quando quiser um laço que repita um número desconhecido de vezes e, possivelmente, nunca.
+do-while
+● Use quando quiser um laço que repita um número desconhecido de vezes, mas pelo menos uma vez.
+for
+● Use quando quiser um laço que repita um número discreto de vezes, embora você possa não saber o número no momento em que o programa for compilado.

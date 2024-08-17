@@ -1,0 +1,23 @@
+So let's see this in context. So let's go back to Mario, where this is a slightly different pyramid that we've seen before. Notice that it's left aligned, and it goes downward to the right. Let's, in fact, get rid of the ground and just focus only on the pyramid. How could I go about writing code that implements this type of Mario pyramid? 
+
+Well, let me go ahead and create a new file called Mario.c. Or actually, no, let's be even more specific this time. Let's call this iteration.c to make clear that this is an iterative program. And let me go ahead and include cs50.h. And let me include standard io.h. And let me go ahead then and do int main void. And in here, let me go ahead and just get the height of the pyramid from the user, using our old friend get int. 
+
+I'm not going to bother, for today, doing a do while and making sure the human cooperates. They need to just behave and give us a positive integer here. And then I'm going to go ahead and just draw a pyramid of that height by using a function that doesn't exist yet but that's going to be called draw. 
+
+I'm going to implement this function draw as follows, void draw, because it doesn't need to return a value, per our discussion last week. It's just going to print something. But it is going to take input, like a number n. Or rather, let's call it H for Height. That represents the height of the pyramid to draw. 
+
+And how do I draw a pyramid that looks like this? Well, again, use some intuition, as you might have four problem set 1, even though the pyramid there was a little trickier. On the first row, I want to print one brick. On the second row, I want to print two bricks. On the third row, three, fourth row, four. So it turns out this is an easier pyramid than the one we had you do for problem set 1. Sorry. 
+
+So for int, i gets 0. i is less than-- actually, you know what? Let me make it a little clearer and more mapping to my verbal pseudocode. Let's initialize i to 1 for the first row. Let's do this so long as i is less than or equal to the height. And let's do i plus plus. So this is the same thing as starting from 0 but just, surprise-- [LAUGHS] so I actually didn't make that mistake, if you didn't see it. 
+
+So I'm going to go ahead and say for in i gets 1 to represent my first row. i is less than or equal to height, i plus plus. This is identical, again, to starting from 0, but it's just nice to start counting from 1 sometimes, as in this case, for the first row. And then anytime you want to do something two dimensional, like in Mario, odds are, if you're like me, you probably had an inner nested loop, maybe calling it j, and doing j is less than or equal to i and then j plus plus. And I'll run this so that it's clear what I'm doing. 
+
+But inside this nested loop, I'm just going to print one brick. And then down here, I'm going to print my new line backslash n. So again, it's a simple draw function. And now because it's at the bottom of my file, I need to put its prototype up here, one of the few times copy and paste is reasonable, I would say. 
+
+So let me make iteration, compiles OK, dot slash iteration. And now I'm asked for the height. Let's go ahead do a pyramid of size 4. And voila, it seems to work. And let me do it once more. I'll try, for instance, a pyramid of height 3. That works. And let me go ahead and do a pyramid of size 5. So it seems to work. 
+
+And this is a very reasonable, very correct approach to implementing that Mario pyramid using iteration, that is to say, using loops, in this case, two loops. But you know what's interesting about this Mario pyramid, as well as some of the others we've seen, is there's this common structure, right? And if we look at the pyramid in isolation, what is the definition of a pyramid of height 4? Well, arguably, it's a pyramid of height 3 plus 1 additional row. 
+
+What's the definition of a pyramid of height 3? Well, it's a pyramid of height 2 plus 1 additional row. What's the definition of a pyramid of high 2? It's a pyramid of height 1 with an additional row. That's a recursive definition of just a physical object or a virtual object, whereby you can describe the structure of something in terms of itself. 
+
+Now, at some point, I need a special case, at least one height. What is a pyramid of height 0? Nothing, right? Return or exit or quit, whatever the right verbiage is for the algorithm. So long as you have a so-called base case, where you manually say, oh, in that specific case, just don't do anything, and you don't recursively call yourself again and again, we can use this principle of code calling itself.

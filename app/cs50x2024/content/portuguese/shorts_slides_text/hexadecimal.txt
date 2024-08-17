@@ -1,0 +1,32 @@
+[1]
+
+Hexadecimal (Hexadecimal)
+• A maioria das culturas ocidentais usa o sistema decimal, também conhecido como base-10, para representar dados numéricos.
+• Como sabemos, os computadores usam o sistema binário, também conhecido como base-2, para representar dados numéricos (e todos os dados de fato).
+0  1  2  3  4  5  6  7  8  9
+0  1
+
+[2]
+
+Hexadecimal (Hexadecimal)
+• Como cientistas da computação, é útil ser capaz de expressar dados da mesma forma que o computador.
+• O problema, é claro, é que tentar analisar uma longa sequência de 0s e 1s pode ser muito difícil.
+
+[3]
+
+Hexadecimal (Hexadecimal)
+• O sistema hexadecimal, também conhecido como base-16, é uma forma muito mais concisa de expressar os dados no sistema de um computador.
+• O hexadecimal torna esse mapeamento fácil porque um grupo de quatro dígitos binários (bits) tem 16 combinações diferentes, e cada uma dessas combinações mapeia para um único dígito hexadecimal.
+0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+
+[7]
+
+Hexadecimal (Hexadecimal)
+• Assim como o binário tem valores de posição (1, 2, 4, 8…), o decimal também tem (1, 10, 100, 1000…), o mesmo ocorre com o hexadecimal.
+
+[13]
+
+Hexadecimal (Hexadecimal)
+• Para converter um número binário em hexadecimal, agrupe quatro dígitos binários (bits) juntos da direita para a esquerda.
+• Preencha o grupo mais à esquerda com bits 0 extras na frente, se necessário.
+• Em seguida, use o gráfico alguns slides atrás ou sua memória para converter esses bits em algo um pouco mais conciso.

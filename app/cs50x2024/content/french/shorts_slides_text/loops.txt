@@ -1,0 +1,68 @@
+[1]
+
+Boucles
+● Les boucles permettent à vos programmes d’exécuter des lignes de code de manière répétée, vous évitant de devoir copier et coller ou de répéter les lignes de code d’une autre manière.
+● C propose différentes manières d’implémenter des boucles dans vos programmes, dont certaines vous semblent probablement familières dans Scratch.
+
+[2]
+
+Boucles
+while (true)
+{
+}
+• C’est ce que nous appelons une boucle infinie. Les lignes de code entre les accolades s’exécutent de manière répétée de haut en bas jusqu’à ce que nous en sortions (comme avec une instruction break ;) ou que nous arrêtions notre programme d’une autre manière.
+
+[3]
+
+Boucles
+while (boolean-expr)
+{
+}
+• Si boolean-expr est évalué à true, toutes les lignes de code entre les accolades s’exécutent de manière répétée, de haut en bas, jusqu’à ce que boolean-expr soit évalué à false.
+• De manière quelque peu déroutante, le comportement du bloc Scratch est inversé, mais c’est l’analogie la plus proche.
+
+[4]
+
+Boucles
+do {
+}
+while (boolean-expr) ;
+• Cette boucle exécute toutes les lignes de code entre les accolades une fois, puis, si boolean-expr est évalué à true, elle revient en arrière et répète ce processus jusqu’à ce que boolean-expr soit évalué à false.
+
+[5]
+
+Boucles
+for (int i = 0 ; i < 10 ; i++)
+{
+}
+• Syntaxiquement peu attrayant, mais les boucles for sont utilisées pour répéter le corps d’une boucle un nombre spécifié de fois, dans cet exemple 10.
+• Voici le processus entrepris dans une boucle for : 
+• La ou les variables de compteur (ici, i) sont définies.
+• L’expression booléenne est vérifiée.
+• Si elle est évaluée à true, le corps de la boucle s’exécute.
+• Si elle est évaluée à false, le corps de la boucle ne s’exécute pas.
+• La variable de compteur est incrémentée, puis l’expression booléenne est de nouveau vérifiée, etc.
+
+[6]
+
+Boucles
+for (start ; expr ; increment)
+{
+}
+• Syntaxiquement peu attrayant, mais les boucles for sont utilisées pour répéter le corps d’une boucle un nombre spécifié de fois, dans cet exemple 10.
+• Voici le processus entrepris dans une boucle for : 
+• L’instruction ou les instructions dans start sont exécutées.
+• expr est vérifié.
+• Si elle est évaluée à true, le corps de la boucle s’exécute.
+• Si elle est évaluée à false, le corps de la boucle ne s’exécute pas.
+• L’instruction ou les instructions dans increment sont exécutées, puis expr est de nouveau vérifié, etc.
+
+[7]
+
+Boucles
+while
+● À utiliser lorsque vous souhaitez qu’une boucle se répète un nombre inconnu de fois, et peut-être pas du tout.
+do-while
+● À utiliser lorsque vous souhaitez qu’une boucle se répète un nombre inconnu de fois, mais au moins une fois.
+for
+● À utiliser lorsque vous souhaitez qu’une boucle se répète un nombre discret de fois, bien que vous puissiez ne pas connaître ce nombre au moment où le programme est compilé.

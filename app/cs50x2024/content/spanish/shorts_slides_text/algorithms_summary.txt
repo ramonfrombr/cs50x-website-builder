@@ -1,0 +1,41 @@
+[0]
+
+Resumen de algoritmos
+
+[1]
+
+Resumen de algoritmos
+• Existen muchos tipos diferentes de algoritmos de búsqueda y ordenamiento, y solo veremos los más superficiales en CS50.
+• Veamos si podemos condensar cada algoritmo a sus elementos esenciales, para que recuerdes la información más importante sobre cada uno.
+
+[7]
+
+Resumen de algoritmos
+Nombre del algoritmo
+Concepto básico
+O
+Ω
+Ordenamiento por selección
+Encuentra el elemento más pequeño sin ordenar en una matriz e intercámbialo con el primer elemento sin ordenar de esa matriz.
+n2
+n2
+Ordenamiento por burbujas
+Intercambia pares adyacentes de elementos si están fuera de orden, lo que efectivamente "hace burbujear" elementos más grandes hacia la derecha y elementos más pequeños hacia la izquierda.
+n2
+n
+Ordenamiento por inserción
+Avanza una vez a través de la matriz de izquierda a derecha, cambiando elementos según sea necesario para insertar cada elemento en su lugar correcto.
+n2
+n
+Ordenamiento por mezcla
+Divide la matriz completa en submatrices y luego vuelve a fusionar esas submatrices en el orden correcto.
+n log n
+n log n
+Búsqueda lineal
+Recorre la matriz de izquierda a derecha, intentando encontrar el elemento de destino.
+n
+1
+Búsqueda binaria
+Dada una matriz ordenada, divide y vence eliminando sistemáticamente la mitad de los elementos restantes en la búsqueda del elemento de destino.
+log n
+1

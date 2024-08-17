@@ -1,0 +1,100 @@
+[1]
+Tipos de dados e variáveis
+● Diferentemente de várias linguagens de programação modernas, C requer que você especifique o tipo de dados de toda variável que você criar, na primeira vez que você usa essa variável.
+● Vamos dar uma olhada em alguns dos tipos de dados que vêm com C e nos tipos de dados que nós também fornecemos para você em CS50.
+
+[2]
+Tipos de dados e variáveis
+● int
+● O tipo de dados int é usado para variáveis que armazenarão números inteiros.
+● Números inteiros sempre ocupam 4 bytes de memória (32 bits). Isso significa que o intervalo de valores que eles podem armazenar é necessariamente limitado a 32 bits de informação.
+Intervalo de inteiros
+-231
+0                                                              231-1
+
+[3]
+Tipos de dados e variáveis
+● unsigned int
+● unsigned é um qualificador que pode ser aplicado a certos tipos (incluindo int), que efetivamente duplica o intervalo positivo de variáveis desse tipo, às custas de não permitir nenhum valor negativo.
+● Você ocasionalmente precisará usar variáveis unsigned em CS50.
+Intervalo de números inteiros não assinados
+0                                                                231
+232-1
+
+[4]
+Tipos de dados e variáveis
+● char
+● O tipo de dados char é usado para variáveis que armazenarão caracteres únicos.
+● Caracteres sempre ocupam 1 byte de memória (8 bits). Isso significa que o intervalo de valores que eles podem armazenar é necessariamente limitado a 8 bits de informação.
+● Graças a ASCII, desenvolvemos um mapeamento de caracteres como A, B, C, etc... para valores numéricos no lado positivo deste intervalo.
+Intervalo de caracteres
+-128                                                              0                                                           
+127
+
+[5]
+Tipos de dados e variáveis
+● float
+● O tipo de dados float é usado para variáveis que armazenarão valores de ponto flutuante, também conhecidos como números reais.
+● Valores de ponto flutuante sempre ocupam 4 bytes de memória (32 bits).
+● É um pouco complicado descrever o intervalo de um float, mas basta dizer que com 32 bits de precisão, alguns dos quais podem ser usados para uma parte inteira, somos limitados em quão precisos podemos ser.
+
+[6]
+Tipos de dados e variáveis
+● double
+● O tipo de dados double é usado para variáveis que armazenarão valores de ponto flutuante, também conhecidos como números reais.
+● A diferença é que os duplos têm precisão dupla. Eles sempre ocupam 8 bytes de memória (64 bits).
+● Com 32 bits adicionais de precisão em relação a float, os duplos permitem que especifiquemos números reais muito mais precisos.
+
+[7]
+Tipos de dados e variáveis
+● void
+● É um tipo, mas não um tipo de dados.
+● Funções podem ter um tipo de retorno void, o que significa que não retornam um valor.
+● A lista de parâmetros da função também pode ser void. Isso simplesmente significa que a função não recebe parâmetros.
+● Por enquanto, pense em void mais como um espaço reservado para "nada". É mais complexo que isso, mas isso deve ser suficiente para a maior parte do curso.
+
+[8]
+Tipos de dados e variáveis
+● Esses são os cinco tipos primários que você encontrará em C.
+● Em CS50, também fornecemos a você dois tipos adicionais que provavelmente serão úteis.
+
+[9]
+Tipos de dados e variáveis
+● bool
+● O tipo de dados bool é usado para variáveis que armazenarão um valor booleano. Mais precisamente, elas são capazes de armazenar apenas um de dois valores: true (verdadeiro) e false (falso).
+● Certifique-se de #include <cs50.h> no topo do seu programa se desejar usar o tipo bool.
+
+[10]
+Tipos de dados e variáveis
+● string
+● O tipo de dados string é usado para variáveis que armazenarão uma série de caracteres, que os programadores normalmente chamam de string.
+● Strings incluem coisas como palavras, frases, parágrafos e assim por diante.
+● Certifique-se de #include <cs50.h> no topo do seu programa se desejar usar o tipo string.
+
+[11]
+Tipos de dados e variáveis
+● Mais tarde no curso, também encontraremos estruturas (structs) e tipos definidos (typedefs) que proporcionam grande flexibilidade na criação de tipos de dados necessários para seus programas.
+● Agora, vamos discutir como criar, manipular e trabalhar com variáveis usando esses tipos de dados.
+
+[12]
+Tipos de dados e variáveis
+● Criando uma variável
+● Para trazer uma variável à existência, você precisa apenas especificar o tipo de dados da variável e dar a ela um nome.
+int número;
+char letra;
+● Se você deseja criar várias variáveis do mesmo tipo, especifica o nome do tipo uma vez e, em seguida, lista quantas variáveis desse tipo desejar.
+int altura, largura;
+float sqrt2, sqrt3, pi;
+● Em geral, é uma boa prática declarar variáveis somente quando você precisar delas.
+
+[13]
+Tipos de dados e variáveis
+● Usando uma variável
+● Depois que uma variável foi declarada, não é mais necessário especificar o tipo dessa variável. (Na verdade, fazê-lo tem algumas consequências não intencionais!)
+int número;        // declaração
+número = 17;       // atribuição
+char letra;       // declaração
+letra = ‘H’;      // atribuição
+● Se você estiver declarando e definindo o valor de uma variável (às vezes chamado de inicialização) simultaneamente, você pode consolidar isso em uma etapa.
+int número = 17;   // inicialização
+char letra = ‘H’; // inicialização

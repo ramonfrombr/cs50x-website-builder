@@ -1,0 +1,7 @@
+Donc, une chaîne de caractères est un type de données dans la bibliothèque CS50 qui est, pour les besoins d'aujourd'hui, un tableau de caractères. Et nous verrons bientôt que c'est aussi un petit mensonge, mais nous verrons pourquoi bientôt. Si je déclare une chaîne de caractères en C, je peux faire quelque chose comme ceci. Chaîne s égale guillemets salut, cette fois en guillemets doubles, et non pas simples, car il y a trois caractères et pas juste un seul. Donc en mémoire, ça ressemblera à peu près à ça. Si la variable s'appelle s, elle aura h i et un point d'exclamation. Et pour faire simple, j'appellerai la première boîte s et je supposerai que nous pouvons aller partout ailleurs.
+
+Mais il s'avère que les chaînes sont un peu spéciales, car contrairement à un caractère, qui est un octet, contrairement à un int, qui est quatre octets, contrairement à un long, qui est huit octets, quelle doit être la longueur d'une chaîne ?
+
+ASSISTANCE : [INAUDIBLE]
+
+DAVID MALAN : Oui, je veux dire autant de caractères que nécessaire, car si je veux stocker H-I, j'ai besoin -- H-I point d'exclamation, j'ai besoin que les chaînes aient au moins trois octets, il semblerait -- pour mon prénom David, au moins cinq octets, pour D-A-V-I-D -- Brian, aussi, et des prénoms beaucoup plus longs dans la salle. Les chaînes ne peuvent donc pas avoir une longueur prédéfinie, c'est pourquoi j'ai mis un point d'interrogation au tableau avant lorsque j'ai résumé les tailles de ces types.

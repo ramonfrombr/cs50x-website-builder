@@ -1,0 +1,63 @@
+Una tabla hash es una combinación de una matriz y listas enlazadas dentro de ella. Por lo tanto, voy a seguir adelante y, solo por conveniencia, dibujaré mi matriz esta vez verticalmente en lugar de horizontalmente. Pero es lo mismo. Y de todos modos, es solo la interpretación de un artista.
+
+Y supongamos que el objetivo en cuestión es llevar un registro eficiente de, por ejemplo, placas de identificación. Quizá estemos organizando un gran evento. Hemos hecho algunas placas de identificación por adelantado, lo cual ciertamente hemos hecho. Y queremos que la gente pueda recoger estas placas de identificación de manera súper eficiente.
+
+Sería realmente molesto y bastante tonto si hiciéramos una gran pila de placas de identificación, incluso si está en orden alfabético, de la A a la Z, y luego hiciéramos que todos en la sala se alinearan y revisaran todas las malditas placas de identificación buscando su nombre. Ese no es un sistema muy eficiente. Afortunadamente, nos hemos preparado con algunos cubos, todos los cuales están etiquetados, porque ¿no sería agradable que si estás buscando tu placa de identificación, no tuvieras que revisar toda la maldita lista de placas de identificación o pila?
+
+En realidad, solo tienes que ir a tu cubo. Y pasas instantáneamente a tu nombre, donde se supone que eres la única persona con un nombre que comienza con alguna letra. Y luego puedes simplemente estirarte y alcanzarlo.
+
+Bueno, ¿cómo implementamos esto conceptualmente? Bueno, es muy común con una tabla hash si las entradas son cosas como palabras o nombres para mirar los caracteres en esas palabras para decidir dónde colocar esos nombres o esas placas de identificación, si lo deseas.
+
+Así que aquí tienes una matriz de tamaño 26, de 0 a 25. Pero, sabes qué, es conveniente pensar en esta matriz como si estuviera indexada desde la A hasta la Z. Por lo tanto, sigue siendo de 26 cubetas, pero esta matriz en realidad es solo de tamaño 26, de 0 a 25 en última instancia.
+
+Y suponga que el objetivo en cuestión ahora es seguir adelante y almacenar estas placas de identificación por adelantado. Entonces, esto es lo que el personal y yo haríamos por adelantado. Y, Brian, si no te importa ayudar con esto. El objetivo en cuestión es simplemente preparar las placas de identificación para que los estudiantes puedan recogerlas.
+
+Entonces, ¿dónde quiero seguir adelante y poner la primera? Así que Albus es el primero cuya placa de identificación hicimos. Voy a seguir adelante, saltar inmediatamente al cubo 0 y poner el nombre de Albus allí mismo en un paso.
+
+Mientras tanto, tengo a Zacharias, y aunque me lleva un montón de pasos ir hasta aquí, si esta es una matriz, tengo acceso aleatorio, como humano, y por lo tanto, puedo poner a Zacharias allí inmediatamente, al instante. Es un poco laborioso para mis pies, pero una computadora podría simplemente saltar a 0 o 25 o cualquier cosa intermedia.
+
+Bien, entonces Hermione, quizá notas el patrón, así que Hermione va a ser H, o lo que es 7, que va a estar aquí. Ginny es 6, que está aquí. Ron es 17, que está aquí. Así que piensa que cada uno de mis múltiples pasos en realidad requieren un paso. Fred va a ir aquí.
+
+Como nota al margen, el personal y yo hablamos esta mañana sobre cómo probablemente deberíamos haber puesto los cubos más juntos. Pero está bien.
+
+Severus irá aquí. Petunia va a ir aquí. Draco está muy lejos, pero no importa, tiempo constante, corchete 3. James está en el corchete 9. Cedric está en el corchete 2. Quizá juega esta parte a velocidad 2x. Luna está en el cubo 11. Neville en el cubo 13. Kingsley en el cubo 10. Kingsley, ahí vamos. Minerva en el cubo 12.
+
+Vernon, irónicamente, en realidad no necesitamos tantos nombres para aclarar el punto que estamos tratando de exponer. Pero Vernon, nos dejamos llevar un poco con los nombres que reconocimos.
+
+Y ahora, la lista está bastante llena. Muy bien, así que eso son un montón de nombres. Llené la mayoría de los cubos con una placa de identificación. Pero, ¿por qué estoy sin aliento? Pero lo que es realmente conveniente ahora es que si Cedric, Albus, Draco, Fred o Ginny entran en la sala, pueden indexar instantáneamente, aleatoriamente, su bolsillo, obtener su placa de identificación e irse. Nada lineal. No tienen que hojear toda la pila de placas de identificación con la que en realidad comencé la historia.
+
+Pero hay un problema por delante. Hasta ahora, pedimos las placas de identificación deliberadamente de tal manera que no nos creamos un problema. Pero entre los personajes más famosos de los que aún no hemos tenido noticias está Harry. Así que la placa de identificación de Harry todavía está aquí. ¿Dónde va esto?
+
+Bueno, Harry va a entrar en el cubo 7. Pero espera un minuto, ya hay alguien allí. ¿Entonces que hago?
+
+Si solo estuviera usando una matriz, Harry estaría fuera de suerte. Como Hermione ya está en esa ubicación en la matriz. Y tendríamos que decidir, o Hermione va allí o Harry, pero no podemos simplemente ponerlos a ambos.
+
+Pero si implementamos esta nueva estructura de datos llamada tabla hash usando una matriz que conceptualmente es vertical pero que horizontalmente es una lista enlazada, ¿sabes qué?, eso está bien. Simplemente vamos a seguir adelante y vincular a Hermione y a Harry juntos. Entonces, sí, ambos o uno de ellos necesitarán al menos dos pasos para encontrar su placa de identificación. Pero no tomará un Big O de n pasos para encontrar su placa de identificación, al menos si solo hay dos en esta cubeta.
+
+Muy bien, Hagrid, maldita sea, él entró también por la puerta. Así que ahora esa lista enlazada se está haciendo un poco más larga. Ahora tenemos una cadena, por así decirlo, una lista enlazada de tamaño 3.
+
+Sirius irá aquí en el cubo 18. Pero Severus también ya está allí. Qué incómodo. Remus es 17. Remus irá y se unirá a Ron allí. George irá al cubo 6, que está aquí. Lily también va a chocar, por así decirlo, con Luna.
+
+Y esto es una colisión en la informática. Cada vez que tienes un valor que estás tratando de poner en un lugar pero ya hay algo allí, necesitas resolver la colisión de alguna manera. Por eso propongo que en realidad los vinculemos juntos. O como estamos haciendo aquí, bucketizar valores en informática conceptualmente significa poner el valor en un cubo, o físicamente como lo hemos hecho aquí.
+
+Finalmente, Lucius también irá al cubo 11. Y por último, Lavender entra en ese mismo cubo. Uff. Gracias a Brian por ayudar a coreografiar eso.
+
+Entonces, esta estructura que estás viendo es lo que se llama una tabla hash. Es una matriz en la que indexas usando lo que se llama una función hash. Una función hash es como cualquier función que hemos visto hasta ahora, cualquier programa que hemos visto hasta ahora, algo que toma una entrada y produce una salida. Entonces, si consideramos nuestra imagen original del Week 0 de lo que es la informática por sí sola cuando se trata de resolver problemas, la función hash para el propósito de hoy es solo esta función, este proceso, este algoritmo intermedio que decide, dada una placa de identificación, en qué cubeta colocar esa placa de identificación.
+
+Y, obviamente, en el mundo real, ¿qué algoritmo estaba usando para dividir en cubetas una placa de identificación al leer el nombre?
+
+AUDIENCIA: Primeras letras.
+
+DAVID MALAN: Mirar la primera letra. ¿Por qué? Es simple. Es bastante eficiente. Significa que puedo almacenar una matriz relativamente pequeña de tamaño 26 y simplemente colocar las placas de identificación allí de inmediato.
+
+Entonces, en este caso, podríamos haber introducido Albus en esa función hash. Y podría devolver 0, que representa la A, si estamos indexando 0 en la matriz. O para alguien como Zacharias, podríamos obtener 25 solo porque la primera letra de su nombre es z.
+
+Pero esto es un tanto simplista, ¿verdad? Y hemos visto un problema. ¿Cuál es el problema con solo mirar, por supuesto, la primera letra del nombre de los usuarios? ¿Qué problema surgió? Sí.
+
+AUDIENCIA: Podría haber más de un nombre con la primera letra.
+
+DAVID MALAN: Podría haber más de un nombre con la primera letra. Y ya sabes, en los casos extremos, los informáticos y los ingenieros de software a menudo piensan en el extremo. ¿Cuál es el caso límite? ¿Qué podría salir mal? ¿Qué pasa si por casualidad hay muchos personajes en este universo cuyos nombres empiezan por h o l, y quizás todos sus nombres empiezan por h o l?
+
+No importa cuán elegante sea su tabla hash, es bastante estúpida si todas las placas de identificación están apiladas en un cubo. Entonces, en ese sentido, una tabla hash, aunque parezca bastante eficiente, en el peor de los casos, el Big O de n, cuando se trata de insertar y buscar, porque simplemente podrías tener mala suerte y obtener una gran pila de nombres que por naturaleza de la clase, todos comienzan con la misma letra.
+
+Entonces, ¿cómo podemos mitigar esto? ¿Cómo podríamos mitigar esto? Bueno, sabes qué, en lugar de mirar ingenuamente solo el nombre, aprovechemos algunas probabilidades aquí. ¿Por qué no miramos no solo la primera letra, sino quizás las dos primeras letras?

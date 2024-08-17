@@ -1,0 +1,44 @@
+[1]
+
+Pilas (estructura de datos)
+• Una pila es un tipo especial de estructura que puede usarse para mantener datos de forma organizada.
+• Esta estructura de datos generalmente se implementa en una de estas dos formas: como una matriz o como una lista enlazada.
+• En cualquier caso, la regla importante es que cuando los datos se agreguen a la pila, queden "en la parte superior" y, por lo tanto, si es necesario eliminar un elemento, el elemento agregado más recientemente es el único elemento que se puede eliminar legalmente.
+• Último en entrar, primero en salir (LIFO)
+
+[2]
+
+Pilas (estructura de datos)
+• Solo hay dos operaciones que pueden realizarse legalmente en una pila.
+• push: agrega un nuevo elemento arriba de la pila.
+• pop: quita el elemento agregado más recientemente arriba de la pila.
+
+[11]
+
+Pilas (estructura de datos)
+• Implementación basada en matriz
+• push: agrega un nuevo elemento arriba de la pila. En el caso general, se necesita push():
+• Aceptar un puntero a la pila.
+• Aceptar datos del tipo VALOR para agregar a la pila.
+• Agregar los datos a la pila arriba de la pila.
+• Cambiar la ubicación de la parte superior de la pila.
+
+[22]
+
+Pilas (estructura de datos)
+• Implementación basada en matriz
+• pop: quitar el elemento más reciente de arriba de la pila. En el caso general, se necesita pop():
+• Aceptar un puntero a la pila.
+• Cambiar la ubicación de la parte superior de la pila.
+• Devolver el valor que se quitó de la pila.
+
+[35]
+
+Pilas (estructura de datos)
+• ¡Solo asegúrate de siempre mantener un puntero al encabezado de la lista enlazada!
+• Para hacer push, asigna dinámicamente un nuevo nodo, configura su siguiente puntero para que apunte al encabezado actual de la lista y luego mueve el puntero del encabezado al nodo recién creado.
+
+[41]
+
+Pilas (estructura de datos)
+• Para hacer pop, recorre la lista enlazada hasta su segundo elemento (si existe), libera el encabezado de la lista y luego mueve el puntero del encabezado al (antiguo) segundo elemento.

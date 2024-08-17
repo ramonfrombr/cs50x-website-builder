@@ -1,0 +1,53 @@
+All right, well, what if I want to do one further thing and combine these two ideas into one final program, namely that of a phone book? So let me go ahead and close these files. Let me go ahead and give myself a new file. 
+
+I'll call it phonebook.c. And let's actually integrate all of these building blocks as follows, cs50.h again. I'm going to go ahead and include standard io.h. I'm going to go ahead and include string.h just as before. And now I'm going to do int main void. 
+
+And now I want to implement the idea of searching a phone book, just like in week 0, but now doing it in C. So let's keep it simple. And we'll have just four names in this phone book, so string names 4 equals. And I'm going to use my same new trick just to save myself some lines of code, Emma, Rodrigo, and then, quote unquote, "Brian," quote unquote, "myself." 
+
+But then our numbers. So how should we store phone number, would you propose, what data type? 
+
+AUDIENCE: [INAUDIBLE] 
+
+SPEAKER 1: Sorry? 
+
+AUDIENCE: String. 
+
+SPEAKER 1: String? Why string? I feel like phone numbers are numbers and strings-- 
+
+AUDIENCE: Maybe if you store it as a [INAUDIBLE] or an integer, then it's implied that you need to do much [INAUDIBLE]. You don't have [INAUDIBLE] the [INAUDIBLE], like, [? add ?] [INAUDIBLE] number a dash or something. It would be really hard to manipulate an integer. 
+
+SPEAKER 1: Exactly. So to summarize if a phone number has dashes in it or parentheses or maybe plus signs abroad, those are characters. Those aren't numbers. So they won't fit in ints or in longs. So even though we call it a phone number, now that you're a programmer, it's not really a number so much as a string that looks like a number. 
+
+So string is probably the better bet here. And if you consider, too, in certain geographies, you sometimes have to dial 0 to dial someone's number if it's local. But if it's a 0, it's going to get dropped mathematically because leading zeros don't matter. So again, modeling things that look like numbers but really aren't as integers is probably the wrong call. 
+
+So let's indeed do string numbers. And I'll give myself four numbers here. And let's do 617 555 how about, 0100. We'll do 617 555 just like in the movies, 0101. Let me fix that. Then we'll do 617 555 [? 0102. ?] And then lastly my number, which shall be-- whoops-- which shall be 617 555 0103. 
+
+And I'm doing a same kind of trick, but this is giving me now two arrays, one called names, one called numbers. Here we go, for int i gets 0, i less than 4 i plus plus, so same quick loop as before. I'm going to go ahead and compare now. I'm searching for Emma. And specifically now I'm searching for her number not just her name. So I want to print out her number this time not just found or not found. 
+
+So as before, I can say if comparing the two strings at names bracket i and, quote unquote, "Emma" equals equals 0, I know that I found Emma. And if I want to go ahead and print out Emma's phone number, what should I do here? It's not names. It's not numbers. What should go between the quotes? 
+
+AUDIENCE: [INAUDIBLE]. 
+
+SPEAKER 1: Yeah, so [? %s, ?] remember, just our familiar place holder for strings. And then here not names because I know I'm looking for Emma. Here I want to go ahead and put number. So it's a separate array, but it's at the same location, bracket 1. Let me go ahead and save that. 
+
+And down here, I'm going to go ahead and say printf not found, if we don't find Emma, even though we surely will in this case. And I'm going to learn my lesson. I'm going to return 0 for success and return 1 for failure in this case. Let me save the file, scroll my terminal window up a little bit, do make phone book Enter, compiles OK dot slash phone book. And what should I see when I run the program now? 
+
+AUDIENCE: [INAUDIBLE] 
+
+SPEAKER 1: 617 555 0100, hopefully. So this code is correct. And this is an opportunity now for us to criticize it, though, along a different line. This is correct. I've got two arrays, both of size 4, one with names, one with numbers, code finds Emma, prints her number, returns 0. I seem to have done everything correctly. 
+
+But does anything rub you the wrong way perhaps about the design of this code? Could we do better? Is there's something that's a little arbitrary, a little contrived, a little dangerous about this code? Any glimpses? Yeah, over here? 
+
+AUDIENCE: [INAUDIBLE]. 
+
+SPEAKER 1: Sorry, a little louder. 
+
+AUDIENCE: [INAUDIBLE] [? two ?] [? single digit ?] [? on both sides ?] [INAUDIBLE]. 
+
+SPEAKER 1: So we could use a two-dimensional array to store data like this. I would propose it's not strictly necessary, and it might make things a little more complicated, but a reasonable alternative as well. Other thoughts? 
+
+AUDIENCE: [INAUDIBLE] Emma's number [INAUDIBLE]. 
+
+SPEAKER 1: Yeah, it's assuming that Emma's number is the first one. And that seems reasonable, right? Emma's name is first. So presumably her number's first. Rodrigo's name is second. So presumably his number is second. And that might be true. 
+
+But frankly, that's the concern, this sort of honor system that I promised to keep the names in the right order, and I promise to keep the numbers in the right order, when really, that is just sort of an unspoken agreement between me and myself, or if I'm working with colleagues or classmates, that we all just agree to keep those things in sync. And that's dangerous, right? If you had more numbers than four, you could imagine things very quickly getting slightly out of order. Or god forbid, you sort the names alphabetically, how do you go about sorting the numbers as well and keeping things together?

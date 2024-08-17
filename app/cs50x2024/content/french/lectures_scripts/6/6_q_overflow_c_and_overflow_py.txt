@@ -1,0 +1,21 @@
+D'accord. Quelques autres exemples, et nous finirons par élaborer des exemples plus puissants que nous pouvons réaliser même après seulement deux heures de programmation en Python. Tout d'abord, laissez-moi ouvrir overflow.c, dont vous vous rappelez peut-être que c'était un problème il y a quelques semaines, car dès que je doublais et doublais et doublais un entier en C et que je l'imprimais, qu'est-ce qui se passait finalement ?
+
+PUBLIC : [INAUDIBLE]
+
+DAVID MALAN : Un léger indice dans le nom du fichier.
+
+PUBLIC : Il débordait.
+
+DAVID MALAN : Il débordait, n'est-ce pas ? Et il tournait, pour ainsi dire, jusqu'à 0, parce que tous les bits finissaient par rouler ; vous portiez trop de uns. Et voilà, vous n'aviez plus que des zéros. Python est en fait plutôt cool. Laissez-moi ouvrir un fichier ici appelé overflow.py et implémenter cette même idée cette fois en Python.
+
+Laissez-moi enregistrer cela sous le nom overflow.py, ce qui pourrait maintenant être un peu impropre. Je vais foncer et le faire. i est initialement égal à 1. Tant que c'est vrai, faites ce qui suit pour toujours. Allez-y et imprimez i. Et puis, vous savez quoi ? Laissez-moi aller de l'avant et dormir pendant une seconde, puis allez-y et multipliez i par 2, ce que je peux aussi écrire plus succinctement sous la forme i star equals 2, donc presque identique à C, sauf qu'il n'y a pas de point-virgule ici.
+
+Cependant, le sommeil ne vient pas automatiquement. Il s'avère que le sommeil se trouve dans une bibliothèque appelée time. Je vais donc devoir importer la fonction sleep, pour ainsi dire, en utilisant cette ligne en haut. Laissez-moi aller de l'avant et l'exécuter en tant que Python of overflow.py. Laissez-moi augmenter la taille de cette fenêtre ici et exécuter cela.
+
+D'accord. Je suis un peu impatient. Cela semble un peu lent. En Python, vous pouvez dormir pendant des fractions de phrases ; des bêtises ; des fractions de secondes. Alors laissez-moi faire ça plus vite.
+
+PUBLIC : [INAUDIBLE]
+
+DAVID MALAN : D'accord. Maintenant, je ne compte pas. Mais je suis presque sûr qu'il s'agit de plus de 4 milliards, ce qui, vous vous en souvenez, était la borne supérieure lors de la dernière itération. Et en fait, même si Internet est un peu lent ici ; c'est pourquoi il ne le produit pas à une vitesse ultra rapide ; ce sont de très grands nombres. Et étonnamment en Python, en effet, c'est idéal pour la science des données, l'analytique, etc. Les entiers n'ont pas de limites supérieures.
+
+Vous ne pouvez pas faire déborder un entier. Il grandira, grandira et grandira jusqu'à ce que, franchement, il s'empare de votre ordinateur. Mais il n'y a pas de limite fixe, comme c'était le cas en C, ce qui est merveilleux. Inconvénient, cependant, si Python flotte, toujours imprécis ; il existe donc des bibliothèques. Il existe cependant du code que d'autres personnes ont écrit pour atténuer ce problème également en Python.

@@ -1,0 +1,55 @@
+Así que pongámoslo en contexto. Permítanme ir al IDE CS50, que también es útil para Python. Permítanme ir y crear un nuevo archivo llamado, por ejemplo, hello.py. Por lo tanto, en lugar de hello.c, utilizaré hello.py (py es la convención para los programas basados en Python).
+
+¿Y sabe qué? Si quiero imprimir "hola mundo", simplemente voy a seguir adelante y diré print("hola, mundo"). Seguiré adelante y guardaré mi archivo. Y luego, en mi ventana de terminal, no hay necesidad de compilar. Ahora puedo ejecutar el programa llamado Python, que recibe el mismo nombre que el propio lenguaje. Y voy a seguir adelante y ejecutaré el archivo llamado hello.py como entrada en ese programa. Y voilà, mi primer programa en Python. Sin corchetes, sin int, sin main, sin void, sin include: puede comenzar a hacer un trabajo real.
+
+Pero para hacer un trabajo real más emocionante, empecemos a arrancar cosas desde donde lo dejamos cuando las comparaciones entre Scratch y C, haciendo lo mismo, nuevamente, esta vez entre Scratch y C, pero ahora también Python. Entonces, en el mundo de Scratch, si quería decir "hola, mundo", usaría este bloque púrpura, una función, como se llamaba en ese momento. Y traducimos eso hace unas semanas al código C correspondiente: printf("hola, mundo").
+
+Y hubo algunos matices y cosas que se dejaron de lado. Es printf. No es print. Tienes la barra invertida n y el punto y coma. Hoy, en Python, si desea lograr ese mismo objetivo, como acabo de hacer en el IDE, puede simplificarlo a solo eso. Entonces, para ser muy claro, ¿qué ha cambiado de C a Python? ¿De qué ya no necesita preocuparse en Python?, ¿algunas observaciones? Sí.
+
+AUDIENCIA: Puntos y comas.
+
+DAVID MALAN: No más puntos y comas: desaparecieron oficialmente. ¿Otros comentarios?
+
+AUDIENCIA: No más nuevas líneas.
+
+DAVID MALAN: No más nuevas líneas: en realidad, print le dará una si simplemente llama a print. Déjame ir aquí.
+
+AUDIENCIA: Imprima en lugar de printf.
+
+DAVID MALAN: Y es print en lugar de printf y, esto va a terminar mal hoy, porque mi brazo eventualmente fallará. ¿Hay alguna otra diferencia que resalte? ¿Quizás?
+
+AUDIENCIA: No más E/S estándar.
+
+DAVID MALAN: No más E/S estándar, por lo que no hay nada de la sobrecarga que necesitamos. Sin embargo, no le daré una pelota antiestrés, aunque solo sea porque no estaba en la diapositiva anterior para C. Pero, de hecho, no se necesita sobrecarga, las inclusiones, etc., solo para hacer un trabajo real.
+
+AUDIENCIA: No hay barra invertida [INAUDIBLE].
+
+DAVID MALAN: Oh, eso ya estaba tomado. Así que lo siento. La pelota antiestrés se vuelve a repartir. Sí.
+
+AUDIENCIA: No más %s.
+
+DAVID MALAN: No más %s, pero no como un miedo relevante, porque todavía no conecto nada. Entonces, de hecho, permítanme continuar, porque estoy bastante seguro de que no hay otras diferencias o pelotas antiestrés para esta. Sin embargo, echemos un vistazo a una variante de esto, donde queríamos hacer algo más interesante que simplemente imprimir estáticamente, es decir, codificado de forma rígida, lo mismo una y otra vez: hola, mundo, algo como esto. Y ahora, volveré contigo en un momento.
+
+Si desea obtener la información de los usuarios, en Scratch, usamos este bloque de Pregunta. Eso nos dio acceso a un valor de retorno especial o una variable llamada respuesta. Y luego, podríamos usar "unir" y utilizar creativamente el bloque Decir para concatenar o unir esos dos valores. En C, esto terminó siendo esto, donde declara una variable a la izquierda. Le asigna el valor de retorno a la derecha, como en la primera línea allí.
+
+Y luego, continúa e imprime no solo hola. Pero hola, %s, que luego conecta ese valor. En Python, puede lograr el mismo objetivo. Pero será un poco más simple. Ahora podemos hacerlo solo con esto. Entonces, ¿qué ha desaparecido claramente de la pantalla? ¿De qué ya no necesitamos preocuparnos en Python? Sí.
+
+AUDIENCIA: Bueno, solo podía sumar respuesta en lugar de, por ejemplo, tener que hacerlo con una coma y la respuesta %s.
+
+DAVID MALAN: Exactamente. Así que no hay %s. Simplemente estamos usando este operador de coma, que es nuevo en Python. En realidad, ahora se llama operador de concatenación. Y si ha estudiado Java o algunos otros lenguajes, sabe que esto unirá la cadena de la izquierda con la cadena de la derecha. Entonces podemos construir esta frase que queremos. Y como mencionaste el %s antes...
+
+AUDIENCIA: ¡Oh!
+
+DAVID MALAN: ...permítanme ser justos ahí. Sí.
+
+AUDIENCIA: No tuvimos que identificar la respuesta como una cadena.
+
+DAVID MALAN: Bien. No tenemos que identificar la respuesta, que es, de hecho, nuestra variable como una cadena, porque aunque Python verá que tiene tipos de datos, y sabe qué tipo de valor está almacenando, como programador no tiene que ser tan detallista con la computadora. La computadora puede resolverlo desde el contexto. ¿Alguna otra distinción?
+
+AUDIENCIA: No hay puntos y comas.
+
+DAVID MALAN: No, no, puntos y comas, también, y esperaba que nadie levantara la mano desde más lejos. Pero aquí vamos. Oh.
+
+[RISAS]
+
+De acuerdo. Mi culpa. Bien. Bien. Bien. De acuerdo. Entonces, hay algunas diferencias, pero lo más importante es que, de hecho, es más simple esta vez. De hecho, tampoco necesito el %: la barra invertida n, porque lo obtendré gratis. Así que veamos también algunas otras comparaciones, no solo con la cadena aquí o aquí, sino ahora usando un enfoque diferente.

@@ -1,0 +1,33 @@
+Très bien. Passons donc de ça à quelque chose de plus familier, si vous le voulez bien. Rappelez-vous que nous avons parlé des strings depuis un certain temps. Et en fait, la plupart des programmes intéressants que nous avons écrits jusqu'à présent impliquent peut-être une entrée humaine et une forme de texte que vous manipulez ensuite. Mais nous avons dit dans la semaine 1 que les strings étaient un peu un mensonge. Je veux dire, ce sont les roulettes d'entraînement que j'avais promis que nous commencerions à enlever aujourd'hui. Considérons donc ce qu'est réellement une string dans ce nouveau contexte.
+
+Donc si nous avons une string comme EMMA ici, déclarée dans une variable appelée s, et entre guillemets, EMMA en majuscules, comme nous l'avons fait à plusieurs reprises maintenant. À quoi cela ressemble-t-il réellement à l'intérieur de l'ordinateur ? Eh bien, quelque part dans la mémoire de mon ordinateur, il y a quatre, non, cinq octets, qui stockent E-M-M-A, et puis en plus, ce caractère nul de terminaison qui délimite où se trouve la fin de la string. Il s'agit simplement de huit bits 0 individuels. C'est donc là que EMMA pourrait être représentée dans la mémoire de l'ordinateur.
+
+Mais rappelez-vous que la variable en question était s. C'était ma string. Et c'est pourquoi, au cours des dernières semaines, chaque fois que vous vouliez manipuler une string, vous utilisiez son nom, comme s. Et vous pouvez accéder aux crochets 0, crochets 1, crochets 2, crochets 3, pour obtenir les caractères individuels de cette string comme EMMA, E-M-M-A, respectivement.
+
+Mais bien sûr, c'est le cas, surtout d'après la révélation d'aujourd'hui, que vraiment, tous ces octets ont leurs propres adresses. D'accord ? Nous n'allons pas nous soucier de ce que sont ces adresses après cette semaine, mais elles existent certainement. Par exemple, E pourrait être à 0x123. M pourrait être à 0x124-- 1 octet de distance --0x125, 0x126, 0x127. Ils sont délibérément à 1 octet de distance parce que rappelez-vous qu'une string est définie par des caractères dos à dos.
+
+Disons donc, pour les besoins de la discussion, que le nom EMMA en mémoire commence à 0x123. Eh bien, qu'est-ce que c'est vraiment que cette variable s ? Eh bien, j'ose dire que s n'est en réalité qu'un pointeur. D'accord ? Cela peut être une variable, représentée ici comme avant, appelée s. Et elle stocke la valeur 0x123. Pourquoi ? C'est là que commence le nom d'Emma.
+
+Mais bien sûr, nous n'avons pas vraiment à nous soucier de ce niveau de précision, les nombres réels. Dessinons-le simplement comme une image. s est, si vous voulez, un pointeur vers le nom réel d'Emma en mémoire, qui pourrait être ici. Il pourrait être par ici. Il pourrait être par là, selon l'endroit où il s'est retrouvé par hasard dans la mémoire de l'ordinateur. Mais cette flèche suggère simplement que s pointe vers Emma, spécifiquement vers la première lettre de son nom.
+
+Mais cela suffit cependant, n'est-ce pas ? Parce que comment-- si s stocke le début du nom d'Emma, 0x123. Et c'est en effet là où se trouve le E, mais nous dessinons simplement cela avec une flèche. Comment l'ordinateur sait-il où se termine le nom d'Emma si tout ce dont il se souvient techniquement, c'est le début ?
+
+L'AUDITOIRE : Le caractère nul de terminaison.
+
+DAVID J. MALAN : Le caractère nul de terminaison. Et nous avons stipulé il y a quelques semaines que c'était important. Mais maintenant c'est d'autant plus important parce qu'il s'avère que s, cette chose que nous appelions une string, n'est pas familière avec MMA ou le terminateur nul. Tout ce que s pointe techniquement, à partir d'aujourd'hui, est la première lettre de son nom, qui se trouve dans cette histoire à 0x123. Mais l'ordinateur est suffisamment intelligent pour savoir que si vous le pointez simplement vers la première lettre d'une string, il peut déterminer où la string se termine en cherchant simplement-- comme avec une boucle-- ce caractère nul de terminaison.
+
+Cela revient donc à dire qu'en fin de compte, il n'y a rien de tel qu'une string. Et nous verrons si cela crée un effet retentissant. Il n'y a rien de tel qu'une string. C'était un petit mensonge que nous avons commencé à raconter dans la semaine 1 juste pour pouvoir faire un travail intéressant et réel, en manipulant du texte. Mais comme quoi une string est-elle probablement implémentée, diriez-vous ?
+
+L'AUDITOIRE : Un tableau de caractères.
+
+DAVID J. MALAN : Un tableau de caractères, oui. Mais c'était la définition de la semaine 1. Qu'est-ce qu'une string doit techniquement être maintenant, à partir d'aujourd'hui ?
+
+L'AUDITOIRE : [INAUDIBLE]
+
+DAVID J. MALAN : Désolé, par ici.
+
+L'AUDITOIRE : Un pointeur.
+
+DAVID J. MALAN : Un pointeur. D'accord ? s, la variable dans laquelle je stockais le nom d'Emma, semblerait manifester un modèle comme celui que nous avons vu avec les chiffres il y a un instant, le chiffre 50. s semble stocker l'adresse du premier caractère de cette séquence de caractères. Et il semblerait donc s'agir d'une string.
+
+Eh bien, comment connectons-nous réellement ces points ? Eh bien, supposons que nous ayons à nouveau cette ligne de code où nous avions int n equals 50. Et puis nous avions cette autre ligne de code où nous disions, allez-y et créez une variable appelée p et stockez-y l'adresse de n. C'est là que nous nous sommes arrêtés plus tôt. Mais il s'avère que cette chose ici est notre type de données de la semaine 1. Cette chose ici, int star, est un nouveau type de données à partir d'aujourd'hui. La variable stocke, non pas un int, mais l'adresse d'un int. Il s'avère que quelque chose comme cette ligne de code, avec le nom d'Emma, est synonyme de char star. D'accord ?

@@ -1,0 +1,25 @@
+Ahora permítanme brindarles un último ejemplo, porque hay un tipo de poder que ahora obtenemos cuando tenemos la capacidad de hablar en términos de direcciones de memoria. Voy a seguir adelante y crearé un programa aquí, similar al de la semana pasada, llamado phone book.C, cuyo propósito será almacenar información en un archivo por primera vez. Voy a utilizar la biblioteca CS50 solo para volver a colocar las ruedas de entrenamiento brevemente para que pueda obtener información del humano fácilmente.
+
+Pero avanzaré y utilizaré la biblioteca de cadenas y la E/S estándar, int main vacío. Y voy a seguir adelante y realizaré lo siguiente. Voy a seguir adelante y abriré un archivo llamado file, utilizando una nueva función llamada fopen, phone book.CSV, a.
+
+¿Qué está pasando aquí? Bueno, descubrí que ahora que conocemos los punteros, o que estamos empezando a familiarizarnos con ellos en las próximas semanas, noto que puedo usar un nuevo tipo de dato, está extrañamente en mayúsculas, todas en mayúsculas, ARCHIVO. Pero puedo decir, dame un puntero a un archivo y llámalo archivo en minúsculas. Por lo tanto, esta es solo una variable llamada FILE, que efectivamente, para los propósitos de hoy, almacenará el contenido de un archivo para mí. Técnicamente no está haciendo eso, pero es un modelo mental razonable por ahora.
+
+fopen toma, como primer argumento, el nombre del archivo que quieres abrir. Y el segundo argumento es r o w o a: r, para leer w, para escribir, a, para agregar, solo para seguir agregando a un archivo.
+
+El objetivo es escribir un programa de directorio telefónico que me permita escribir el nombre y el número de una persona y simplemente seguir agregándolo a un archivo de texto, como una base de datos que puedo almacenar si quiero hacer un seguimiento de los números de teléfono de las personas. fopen, por definición, devolverá un puntero a ese archivo.
+
+Así que déjenme seguir ahora y hacer lo siguiente. Primero, me voy a dar un nombre, aunque realmente no necesito usar string per se. Usaré char star name. Pero utilizaré getString solo para ahorrarme problemas aquí, preguntándole su nombre a la persona. Luego le preguntaré su número usando getString también. Pero nuevamente, podría usar scanf si lo deseo. Pero requerirá más verificación de errores hoy.
+
+Y ahora voy a seguir adelante y hacer esto. Resulta que además de la función printf, hay otra función llamada fprintf, que significa archivo printf. Puedes imprimir literalmente en un archivo. Así que voy a seguir adelante aquí y ahora imprimiré en este archivo, imprimiré una cadena y una coma, y otra cadena, y luego una nueva línea. Y seguiré adelante e imprimiré el nombre de alguien y luego su número. Y luego aquí abajo cerraré el archivo.
+
+Hay varias líneas nuevas, pero esta en resumen, la comentaré: abrir archivo, obtener cadenas del usuario, imprimir (es decir, escribir) cadenas en el archivo y luego cerrar archivo. Entonces, nuevas funciones pero bastante sencillas al menos, conceptualmente, diría yo. Son términos de lo que está sucediendo a pesar de que la sintaxis es un poco extraña.
+
+Pero elegí deliberadamente este nombre de archivo, phone book.CSV. ¿Alguien sabe qué es un CSV? Sí, variables separadas por comas. Es como un formato de hoja de cálculo muy simple que puedes abrir en Excel o Apple Numbers u otras herramientas así. Así que realmente puedo crear mis propios archivos CSV como este.
+
+Déjenme seguir adelante y crear la agenda telefónica. Muy bien, parece que funcionó. Déjame seguir adelante y hacer punto barra agenda telefónica. Y ahora me está pidiendo un nombre, así que pondré Emma. Y creo que su número la semana pasada era 555-0100, entra. Pero observa esto, si escribo ls, además de todos los programas que hemos escrito hoy, también está este archivo phone book.CSV. Y de hecho, déjame abrir el phone book.CSV. Y ahí está el nombre y número de Emma en un archivo.
+
+Déjame seguir adelante y ejecutarlo una vez más y esta vez poner Rodrigo, como la semana pasada, 617-555-0101, entrar. Y listo, su nombre acaba de aparecer en el archivo.
+
+Haremos uno más. Entonces Brian era 617-555-0102, entrar. Y el archivo CSV se está actualizando en tiempo real. Y ahora, si realmente voy y descargo este archivo desde el IDE haciendo control + clic o haciendo clic derecho sobre él, termina en mi carpeta de descargas. Y si sigo adelante y hago clic en esto, si tienes algo como Numbers o Microsoft Excel instalado y lo usas por primera vez, verás que se abrió una hoja de cálculo que contiene esos nombres y esos números.
+
+Entonces, si alguna vez has necesitado hacer algún tipo de análisis de datos como ciencia de datos, puedes escribir código que genere los datos para ti en un formato CSV y te brinde estas, quizás familiares, filas y columnas.

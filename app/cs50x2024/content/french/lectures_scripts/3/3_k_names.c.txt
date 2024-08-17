@@ -1,0 +1,43 @@
+Alors c'est intéressant, mais c'est surtout une révision de la semaine dernière. Pourquoi ne pas envisager un problème différent, où désormais nous pourrions vouloir chercher non seulement des nombres, mais peut-être des noms. Par exemple, si l'objectif est de parcourir un annuaire téléphonique, laissez-moi aller de l'avant et créer names.c qui me permettra de chercher maintenant des noms dans un tableau.
+
+Donc laissez-moi aller de l'avant et inclure cs50.h. Laissez-moi aller de l'avant et inclure standard io.h. Laissez-moi aller de l'avant et faire int main void. Et puis ici, laissez-moi aller de l'avant et me donner un tableau, donc un tableau de chaînes appelées noms. Je vais aller de l'avant et me donner quatre noms. Et tout comme la dernière fois, je peux faire names bracket 0 gets Emma. Ou encore, pour gagner du temps, je peux couper quelques coins ici et dire Emma, Rodrigo, Brian, David, comme la semaine dernière, en majuscules juste parce que. C'est donc une autre façon d'écrire le même code avec plus de lignes que cela.
+
+Maintenant, je vais faire int i gets 0. i est inférieur à 5, dans ce cas, i plus plus. Et maintenant, les choses deviennent un peu plus intéressantes car je pourrais vouloir dire si le support de noms i est égal à égal - ne cherchons pas 50 maintenant. Cherchons Emma, comme la semaine dernière. Je veux aller de l'avant et dire trouvé si je trouve Emma, sinon ici je veux dire non trouvé.
+
+Le hic, c'est que cela ne fonctionnera pas. Désolé. C'est un petit échauffement aujourd'hui. Le hic, c'est que cela ne fonctionnera pas, même si je fais à peu près exactement ce que j'ai fait la dernière fois. Quelle pourrait être l'intuition, surtout si vous n'avez jamais étudié le C auparavant, pour expliquer pourquoi la ligne 10 ici ne fonctionnera pas aussi facilement que les nombres il y a un instant ? Oui ?
+
+PUBLIQUE : Différence de type de données.
+
+INTERVENANT 1 : Différence de type de données, et quelles sont les différences, pour être clair ?
+
+PUBLIQUE : [INAUDIBLE]
+
+INTERVENANT 1 : Oui.
+
+PUBLIQUE : [INAUDIBLE] du tableau [INAUDIBLE].
+
+INTERVENANT 1 : Exactement. Vous ne pouvez pas utiliser des signes égaux pour 4 chaînes car, rappelez-vous, une chaîne n'est pas un type de données, comme un char, un bool, un float, un int. Rappelez-vous, c'est en fait un tableau et un tableau qui a probablement plusieurs caractères. Et des probabilités si vous voulez comparer deux chaînes, vous devez probablement comparer intuitivement tous les caractères de ces chaînes, et pas seulement l'ensemble à la fois.
+
+Dans d'autres langages, si vous utilisez Python ou Java, vous pouvez réellement le faire en une seule ligne, comme ceci. Mais en C, tout est beaucoup plus basique. Si vous voulez comparer des chaînes, vous ne pouvez pas utiliser des signes égaux.
+
+Cependant, il s'avère qu'il y a une fonction, et vous l'avez peut-être même utilisée dans p-set 2, si vous avez adopté cette approche, où vous pouvez réellement comparer deux chaînes. Je vais donc supprimer cette ligne et dire à la place, str comp, pour la comparaison de chaînes, le support de noms i étant la première chaîne que je veux comparer puis, entre guillemets, "Emma" étant la deuxième chaîne que je veux comparer. Et vous ne le sauriez qu'en vous le faisant dire ou en lisant la documentation. Cette fonction str compare renvoie 0 si deux chaînes sont identiques.
+
+Il se trouve qu'il renvoie un nombre positif si l'une vient après l'autre par ordre alphabétique ou un nombre négatif si l'une vient avant l'autre par ordre alphabétique. Mais pour aujourd'hui, nous l'utilisons simplement pour tester l'égalité des chaînes, pour ainsi dire. Alors laissez-moi aller de l'avant et enregistrer cela. Laissez-moi aller de l'avant et faire défiler vers le haut ici et faire le nom des marques cette fois.
+
+Et malheureusement, je ne peux pas simplement utiliser cette fonction, semble-t-il. Et bien qu'il soit certainement judicieux de continuer à utiliser l'aide 50 pour comprendre ces messages, avez-vous des idées sur ce que j'ai fait de mal ?
+
+PUBLIQUE : [INAUDIBLE]
+
+INTERVENANT 1 : Oui. Je veux dire, je ne peux pas bien comprendre tous les mots à l'écran, franchement, au premier abord. Mais string.h est quelque chose que nous avons déjà vu. Et en effet, si vous lisez la documentation ou la page de manuel, vous verrez que str compare, en effet, vient dans string.h donc je dois le mettre ici. Et maintenant, si j'enregistre mon fichier et que je recompile mon code ici avec make names, il compile maintenant. Et si je fais point barre noms, je devrais voir, hmm, intéressant, un message mitigé, littéralement.
+
+Alors, Emma est-elle là ou pas dans mon tableau ? Elle est évidemment là. Et pourtant, elle n'est en quelque sorte pas là. Alors, qu'ai-je mal fait logiquement ? Oui ?
+
+PUBLIQUE : Avez-vous [INAUDIBLE] si c'est trouvé ou non. Donc [INAUDIBLE] est introuvable [INAUDIBLE].
+
+INTERVENANT 1 : Oui. Donc, c'est ce introuvable que j'imprime aveuglément à la fin comme une sorte de prise tout. Mais vraiment, si j'exécute la recherche ou imprime la recherche ici, que devrais-je vraiment faire peut-être juste après cela ? Le retour. Et nous avons regardé cela la semaine dernière. Rappelez-vous que si vous voulez aller de l'avant et renvoyer un résultat réussi, la convention est de renvoyer 0. Et en fait, ici, si vous ne réussissez pas, que faut-il peut-être renvoyer à la place ?
+
+PUBLIQUE : 1.
+
+INTERVENANT 1 : 1. Et encore une fois, ce sont des conventions totalement arbitraires. Vous les apprenez en quelque sorte au fur et à mesure. Mais 0 signifie succès. 1 a tendance à signifier échec. Et cela s'aligne maintenant. Donc maintenant, ma fonction principale quittera essentiellement plus tôt. Donc, si je continue et que je fais des noms de marques, puis que je fais des noms de points barre, maintenant si je recherche Emma dans ce tableau de quatre noms, elle est trouvée et uniquement trouvée.
+
+Des questions, alors, à ce sujet ici ?

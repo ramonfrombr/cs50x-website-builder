@@ -1,0 +1,29 @@
+Brian, aquí tenemos una situación estresante para cada uno de ustedes. Y muchas gracias. Vamos a ver si ahora podemos formalizar. Siéntanse libres de ir a cualquiera de los lados. Veamos si podemos formalizar exactamente qué hicieron estos voluntarios maravillosamente bajo la dirección de Bonnie para organizar esta lista.
+
+Resulta que lo que todos hicieron aquí tiene un nombre. Es un algoritmo conocido como clasificación de burbuja, porque como notan, el 8 inicialmente subió de izquierda a derecha y luego el 7 subió de izquierda a derecha. Al repetirse, aunque lo hicimos más rápido al [fin, ?] [? los ?] números más grandes subieron hasta que estuvieron en el lugar correcto.
+
+Entonces, en pseudocódigo, diría que lo que hicimos fue esto. Bonnie dirigió a nuestra audiencia, a una velocidad cada vez mayor, para repetir lo siguiente n menos 1 veces. ¿Por qué n menos 1? Bueno, si tienes n personas y se están comparando entre sí, solo puedes compararlas n menos 1 veces si tienes n personas.
+
+Entonces, ella les dijo que hicieran esto n menos 1 veces en total para i de 0 a n menos 2. ¿A qué se refiere realmente eso? Entonces, esta i es nuestro índice. Es como tratar a nuestros humanos como una matriz. ¿Qué hicimos? Si la iª persona, comenzando en 0, y la iª más 1 persona están fuera de orden, ¿qué les dijo que hicieran? Cambiar de lugar o intercambiar, por así decirlo.
+
+Y esto parece bastante técnico. Pero en realidad es solo una forma de pseudocódigo de resumir en inglés más sucinto, con algunos números involucrados, lo que Bonnie estaba indicando a todos que hicieran. Ella dijo que hicieran lo siguiente n menos 1 veces. Por eso se hizo durante varias rotaciones, cada vez más rápido. Luego prácticamente trató a la primera persona como corchete 0, a la siguiente persona como corchete 1, corchete 2, como una matriz, aunque de humanos.
+
+Y luego los comparó uno al lado del otro, llamando a una persona i y a la persona a su lado i más 1. Y si estaban fuera de orden, se intercambiaban una y otra y otra vez hasta que se ejecutaba este algoritmo. Hasta que finalmente, todo estaba clasificado. ¿Cuántas veces lo hizo? ¿Cuántos pasos dio? ¿Cuánto tiempo tomó?
+
+¿Cuál es el tiempo de ejecución en la notación grande O de la clasificación de burbujas? Bueno, el bucle externo toma n menos 1 pasos. El bucle interno también toma n menos 1 pasos porque es de 0 a n menos 2. Entonces, si seguimos adelante y lo multiplicamos, ala FOIL, tenemos n al cuadrado menos 1n menos 1n más 1. Si combinamos términos similares, ahora tenemos n al cuadrado menos 2n más 1.
+
+Pero en este punto, lo que importa en última instancia es que el término de orden más alto, el n al cuadrado, es el que finalmente domina. Cuanto más grande sea n, mayor será el impacto que tiene n al cuadrado. Y entonces un científico informático diría que la clasificación de burbujas está en el orden de n al cuadrado.
+
+Entonces, si agregamos a nuestra lista de antes los límites superiores del algoritmo, ahora podemos colocar la clasificación de burbujas en la parte superior, desafortunadamente, lo que quiere decir que ordenar números con clasificación de burbujas es aparentemente mucho más costoso que la búsqueda lineal o la búsqueda binaria. Y entonces, en cierto modo, invita a la pregunta, entonces, con Eric y [? Nizari ?] cuando aparecieron antes. Sí, el algoritmo de [? Nizari ?] era mejor. Pero fue mejor en el sentido de que se ejecutó más rápido. Pero, presuponía qué, solo para que quede claro?
+
+AUDIENCIA: [INAUDIBLE]
+
+ORADOR 1: Que los números estaban ordenados. Entonces es un poco engañoso decir que la búsqueda binaria es mejor que la búsqueda lineal. Porque si te cuesta mucho tiempo ordenar esos elementos para que [? Nizari ?] pueda seguir adelante y ejecutar la búsqueda binaria, podría ser inútil o incluso negativo. Entonces, realmente va a depender de, bueno, ¿estás buscando con más frecuencia, más de una vez? ¿Estás buscando muchas y muchas y muchas veces, de modo que valga la pena ordenarlo una vez y luego beneficiarse a largo plazo con un código mucho más rápido?
+
+Bueno, ¿qué pasa con omega para la clasificación de burbujas? El código de clasificación de burbujas, nuevamente, se veía así. Y, francamente, en realidad no tiene en cuenta en absoluto las buenas entradas, ¿verdad? Por ejemplo, la mejor entrada posible para cualquier algoritmo de clasificación probablemente ya esté ordenada para ti, ¿verdad? Porque si ya está ordenado, presumiblemente no hay trabajo real por hacer. ¿Qué tan afortunado sería eso?
+
+Pero la clasificación de burbujas, según se define, es algo estúpida, ¿verdad? No dice que si ya está ordenada, salga. Simplemente hace ciegamente lo siguiente n menos 1 veces y luego dentro de eso hace algo n menos 2 veces. Entonces, ¿cuál es el límite inferior del tiempo de ejecución de la clasificación de burbujas, incluso si tienes suerte y todo ya está ordenado para ti?
+
+AUDIENCIA: [? n al cuadrado. ?]
+
+ORADOR 1: Sigue siendo al cuadrado porque seguirá dando tantos pasos como antes. Entonces, la clasificación corta como límite inferior, podría decirse, tiene omega de n al cuadrado.

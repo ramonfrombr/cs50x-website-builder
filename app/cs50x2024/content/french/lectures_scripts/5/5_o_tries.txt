@@ -1,0 +1,3 @@
+Bien, à partir de là, je parie que nous pouvons essayer une autre approche ici. Il y a une autre structure de données que nous voulons présenter, non pas dans le code, mais en images. Celle-ci s'appelle un trie. Abréviation de récupération, même si elle est prononcée différemment.
+
+Un trie est une structure de données réellement très étonnante. Et il suit ce modèle de dépense d'une ressource pour économiser sur une autre. Un trie va utiliser beaucoup plus de mémoire, mais il va nous donner une recherche de temps constant réel pour des éléments tels que des noms ou des mots insérés dans la structure.

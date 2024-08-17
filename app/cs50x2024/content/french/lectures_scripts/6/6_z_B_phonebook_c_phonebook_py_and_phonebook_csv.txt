@@ -1,0 +1,45 @@
+Passons maintenant aux choses sérieuses et commençons dans la direction adoptée pendant la semaine 4 avec l'E/S de fichiers. Laissez-moi ouvrir phonebook.c. C'est un autre exemple de manipulation d'un répertoire téléphonique. Pour rappel, nous avons ouvert un fichier appelé phonebook.csv qui ressemble à un fichier Excel léger. Des valeurs séparées par des virgules. Un simple fichier texte.
+
+Nous l'avons ouvert avec fopen. Nous avons ensuite obtenu un nom et un numéro de la part de l'humain. Enfin, nous utilisons cette nouvelle fonction fprintf (file printf) pour simplement imprimer quelque chose pour cent virgule quelque chose d'autre. Le nom, la virgule et le numéro dans le fichier. C'est ainsi que j'ai pu ajouter les noms et les numéros des chefs dans ce fichier CSV.
+
+Eh bien, nous pouvons faire la même chose en Python, mais de manière un peu plus simple. Bien que la syntaxe semble légèrement cryptique au premier coup d'œil. Je vais aller de l'avant et enregistrer ce fichier sous phonebook.py, bien qu'une version plus sophistiquée désormais.
+
+Laissez-moi aller de l'avant et ouvrir ici le fichier phonebook.csv que j'ai déjà rempli avec le nom, la virgule et le numéro, juste pour que si nous devions l'ouvrir dans Excel, nous aurions des en-têtes de colonne.
+
+Et je vais faire tout ça. En Python, si vous voulez traiter des fichiers CSV, il existe un package appelé CSV. Le package est un mot Python désignant une bibliothèque. Et dans ce package se trouve de nombreuses fonctionnalités relatives aux CSV. Et je vais également importer de cs50 à nouveau obtenir la chaîne.
+
+Très bien. Que veux-je faire ? La première ligne sera assez similaire à C. Je vais ouvrir le fichier en utilisant open au lieu de fopen. Et je vais appeler le fichier phonebook.csv. Et je vais l'ouvrir dans un mode de guillemets. Quel était le mode à nouveau ? Append. Si vous utilisez w, il l'écrira et continuera à le changer encore et encore. Le stylo continuera d'ajouter du contenu au fichier. Nous pouvons donc continuer d'ajouter plus de clés au fichier.
+
+Très bien. Maintenant, laissez-moi aller de l'avant et obtenir simplement un nom de quelqu'un. Alors get_string Nom. Laissez-moi aller de l'avant et obtenir son numéro via get_string également. Oups. Le numéro est égal à get string number. Et obtenez ça de l'humain.
+
+Et maintenant, cette partie est un peu nouvelle. Mais encore une fois, c'est le genre de chose que vous recherchez simplement sur Google lorsque vous oubliez la syntaxe de quelque chose comme ça. Je vais déclarer une variable appelée writer, même si je peux l'appeler comme je veux. Il sert à écrire des trucs dans le fichier.
+
+Je vais aller dans le package CSV, encore une fois, la bibliothèque que j'ai importée en haut. Et je vais transmettre au writer function le fichier. Vous ne le sauriez qu'à partir de la documentation.
+
+Mais ce que j'ai mis en évidence ici signifie : Salut Python. Transmettez le fichier ouvert à cette bibliothèque qui me facilitera la tâche pour le lire comme un fichier CSV. Des lignes et des colonnes. C'est tout.
+
+Maintenant, laissez-moi aller de l'avant et faire ceci. Writer : oups. writer.writerow. Writerow est une fonction intégrée aux fonctionnalités de la bibliothèque CSV qui me permet tout simplement d'écrire un nom et un numéro dans ce fichier.
+
+Il s'occupera des virgules. Il s'occupera de citer n'importe quoi. En aparté, si l'un d'entre nous devait avoir une virgule dans notre nom comme Brian U, virgule, Junior, cette virgule pourrait être problématique car elle pourrait briser l'hypothèse implicite du CSV selon laquelle les virgules séparent les valeurs.
+
+Mais vous pouvez mettre des guillemets autour du nom complet de Brian, même s'il y avait une virgule, Junior ou autre dans son nom. Cette bibliothèque s'occupe de tous ces problèmes pour vous.
+
+Mais il y a une subtilité. J'ai déjà mentionné quelque chose appelé tuple auparavant. Pour des raisons de bas niveau, peu intéressantes maintenant, vous avez en fait besoin de doubles parenthèses maintenant. Donc, vous transmettez techniquement une chose entre parenthèses. Mais nous en reparlerons une autre fois.
+
+Maintenant, laissez-moi fermer le fichier. file.close. Alors laissez-moi aller de l'avant et exécuter cela. Python phonebook.py. Oups. Syntaxe invalide. J'ai oublié un signe égal. Et tout comme en C, vous verrez que les choses rouges apparaissent parfois quand il sait ce que vous avez fait de mal, mais il leur faut parfois un peu de temps pour disparaître.
+
+Nom. Allons-y et ajoutons Emma, en majuscules juste pour plus de cohérence. 617-555-0101 était son numéro. Très bien. Avec un peu de chance,espérons-le. Allez, allez.
+
+Oh, attendez. C'est le mauvais fichier.
+
+[RIRES]
+
+Ça y est. Parce que j'en ai créé un nouveau. Donc, je triche. Nom, numéro. J'ai exécuté mon programme dans un répertoire différent, ce qui signifiait qu'il créait un nouveau fichier. Donc, je ne triche pas vraiment là. J'étais juste au mauvais endroit.
+
+Erreur utilisateur. Exécutons-le une fois de plus. Rodrigo. 617-555-0101. Entrer. Voilà. Exécutons-le à nouveau, cette fois avec Brian. Brian, 617-555-0102, etc.
+
+Donc, il faut admettre que ce code n'est pas super simple. Et honnêtement, c'est exactement le genre de choses que je recherche sur Google quand j'oublie comment manipuler le CSV. Mais c'est à cela que sert la documentation.
+
+Et en fait, laissez-moi nettoyer un peu ça. Il s'avère que vous pouvez écrire ce code un peu différemment. Et en ligne, vous verrez des approches légèrement différentes. Vous verrez un mot-clé en Python appelé with qui rend l'écriture de votre code un peu plus stricte.
+
+Si vous utilisez ce mot-clé avec, comme vous le verrez dans la documentation et une partie de l'exemple de code du personnel, vous n'avez pas besoin de fermer le fichier. Il sera automatiquement fermé pour vous, ce qui vous fera économiser une ligne de code.

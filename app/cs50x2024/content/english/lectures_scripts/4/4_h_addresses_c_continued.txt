@@ -1,0 +1,39 @@
+So let's go ahead then and experiment with this string, just as we did a moment ago using Emma's name now instead of an int. So let me go ahead and erase those lines earlier. And let me go back to Week 1 style stuff, where I just say string s equals quote unquote, Emma. And then of course, if I to print this, I can simply say this as before. So just as a quick safety check, let me go ahead and make address again. 
+
+Whoops. What did I do wrong? Let me scroll up to the first-- of many it seems --errors. 
+
+Yeah. 
+
+AUDIENCE: You're using string, [INAUDIBLE] 
+
+DAVID J. MALAN: Yeah, I kind of shouldn't have taken off all the training wheels just yet. I'm still using string. So let me go ahead and put that back just for now. That will give me access to that typedef for string. Let me recompile it as make address. That worked. So that was the solution, thank you. And then address again. We just see Emma. 
+
+So what can we now do that's a little bit different here? Well, one, you know what I can actually do? I can get rid of this-- the solution a moment ago --and say, I don't need string anymore. I don't need those training wheels. If s is going to represent a string, technically, s is just going to store the address of the first character. And it suffices actually, just to write this. So literally instead of string, you write char star. 
+
+Technically, you don't need-- you can have extra space to the left or right. But most programmers write it just as I have here, char star variable name. That looks scarier now but it's no different from what we've been doing for weeks. If I now do make address without the CS50 library, still works, because C knows what I'm talking about. And if I run address now, I still see Emma. 
+
+But now I can start to play around. Right? If s is the address of a character, what was the format code I can use to print an address? Not percent i, but-- 
+
+AUDIENCE: Percent p. 
+
+DAVID J. MALAN: Percent p, a pointer. So let me go ahead and recompile this now. Make address, that compiles too. And when I run dot slash address, I'm not going to see Emma now. What should I see instead? Some address, right? I have no idea what it is. It looks like Emma's name is stored at 0x42A9F2, whatever that number translates to decimal, somewhere in the computer's memory. 
+
+But it turns out then too, what about this? Let me go ahead and add another line of code and say, you know what, I'm really curious now. What is the address of the first letter in Emma's name? How do I express in C, the first letter only of Emma's name if Emma is stored in s. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID J. MALAN: s bracket zero, right? That would seem to be that. But that is what? That's a char. s bracket 0 is a char. How do I get the address of s bracket 0? 
+
+AUDIENCE: Ampersand. 
+
+DAVID J. MALAN: Yeah, I can just say ampersand. Right? So it's ugly looking but that's fine for now. Make address, enter. 
+
+Whoops. It's uglier because I forgot my semicolon. 
+
+Let me go ahead and make address again, enter. Seems to compile. And when I run dot slash address now, notice I get the same thing. And this is because C is taking me literally. When you print out s, a string, it's technically just the address of the first character. And indeed, I can corroborate as much by running s bracket zero then get the address of the first character. And they are indeed one in the same. 
+
+So a string is this sort of abstraction on top of a bunch of characters. But again, s is just an address. And that's all we're emphasizing now. 
+
+And if I get really curious-- not that you would necessarily do this in a real program --what if I print out a few more characters in Emma's name, like s bracket 1, 2, and 3? Let me go ahead, just out of curiosity and make this program and dot slash address. Now notice what I see, is again, s's address is at 42AB52. The first character in s is at the same thing, by definition of what a string is. 
+
+And then notice what's kind of neat-- if this is-- if-- for some definition of neat --53, 54, 55 is noteworthy. Why? They're one byte apart. So this whole time, whenever you implemented Caesar, or substitution, or some other cipher in problem set two, anytime you were manipulating individual characters-- you didn't know it --but you were just visiting different mailboxes. You were just visiting different addresses in the computer's memory in order to manipulate them somehow. 

@@ -1,0 +1,19 @@
+Esto es lo bueno de Valgrind. Repasemos y volvamos a ejecutar Valgrind tras compilar este programa de memoria. Vaya, en mi directorio de origen. Avancemos y creemos memoria. Vale.
+
+Se compiló bien. Valgrind punto y barra memoria. Y por desgracia, veremos algunos mensajes de error arcanos disparatados por un momento. Pero veamos qué dice. Fíjate aquí, escritura no válida de un tamaño de 4, eso parece malo, y 40 bytes en un bloque están, vale, en realidad no añadieron una condición if en Valgrind (40 bytes en 1 bloque, en plural) se pierden definitivamente.
+
+Así que vamos a arreglar el segundo primero. ¿Por qué pierdo exactamente 40 bytes?
+
+AUDIENCIA: [ININTELIGIBLE]
+
+DAVID J. MALAN: Nunca lo libero. Así que creo que puedo librarme de ello haciendo esto aquí, simplemente liberando la memoria después de acabar de usarla, aunque en realidad no la esté usando para nada útil aquí.
+
+Así que voy a intentarlo de nuevo. Creo memoria, ahora voy a hacer Valgrind punto y barra memoria. Y, vale, mejor. Ya no veo 40 bytes perdidos. Eso está bien. Pero aún tengo este problema.
+
+Pero aquí es donde a veces es útil comprender los distintos tipos de datos y sus tamaños. Escritura no válida de un tamaño de 4. Escribir en un programa solo significa cambiar un valor. Y aquí menciona la línea 8. ¿En qué sentido se trata de una escritura no válida de un tamaño de 4? Bueno, ¿de qué tamaño es un int? Cuatro bytes.
+
+Estás intentando cambiarlo arbitrariamente a 0. Pero podría haberlo puesto en 50 o cualquier otro número. Pero estoy intentando tocar un int que no debería estar dentro de la memoria que he asignado para mí. Pedí 40 bytes, o 10 ints, pero como las matrices tienen un índice cero, esto es como ir uno más allá del límite.
+
+Así que voy a arreglar esto y arbitrariamente, vamos a tocar esa parte. Vamos a hacer memoria. Vamos a hacer Valgrind punto y barra memoria. Y ahora, aparte de la salida arcana, fíjate en que ese mensaje de error también ha desaparecido.
+
+Así que esto será útil a lo largo de las siguientes dos semanas a medida que sigamos usando C para implementar varios programas que ahora empiezan a manipular memoria. Es simplemente una herramienta que te ayuda a detectar errores que, sin duda, tu TF podría hacerlo de otro modo o que podrían estar causando que tu programa se bloquee, se congele o falle por segmentación, si ya lo habéis visto vosotros mismos antes.

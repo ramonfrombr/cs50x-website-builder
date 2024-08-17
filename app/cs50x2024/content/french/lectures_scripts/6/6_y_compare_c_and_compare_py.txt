@@ -1,0 +1,13 @@
+D'accord. Quelques exemples finaux avant de rendre les choses plus concrètes. Vous vous souviendrez de la semaine 4, la dernière semaine passée que nous allons examiner, nous avons eu quelques problèmes que nous avons rencontrés, par exemple, avec la comparaison de chaînes.
+
+C'était il y a quelques semaines maintenant. Mais rappelez-vous que cet exemple était initialement problématique parce que vous ne pouviez pas comparer s égal à t. Vous deviez utiliser une comparaison d'agitation. Pourquoi ne pouviez-vous pas simplement dire si s est égal à t pour comparer deux chaînes et voir ? Oui.
+
+AUDITOIRE : Nous pourrions [[illisible]].
+
+DAVID MALAN : Exactement. C'étaient des pointeurs vers des caractères ou des adresses de chaînes. Et vous compareriez les adresses de ces chaînes qui pourraient sembler identiques mais elles sont stockées à des endroits différents.
+
+En Python, cette nuance a maintenant disparu. Si en Python vous voulez comparer deux chaînes, par Dieu, comparez simplement ces deux chaînes comme ça. Laissez-moi appeler ceci compare.py. Permettez-moi d'aller de l'avant et de get_string d'importation à partir de la bibliothèque cs50.
+
+Laissez-moi aller de l'avant et obtenir deux chaînes de l'utilisateur. Par exemple, s et t, arbitrairement comme avant. get_string. Et voilà. Citation, ne pas citer t. Et puis si vous voulez vérifier si s est égal à t, posez simplement la question et dites Identique si c'est le cas. Sinon, allez-y et dites Différent.
+
+Maintenant, si j'exécute ce programme comme compare.py, Python de compare.py, laissez-moi aller de l'avant et taper, disons, mon nom ici puis mon nom à nouveau. Techniquement en C, s et t étaient stockés à des emplacements différents. Et en Python, ils le sont aussi techniquement. Cela n'a pas d'importance. L'opérateur égal à égal en Python va comparer littéralement ce que vous avez l'intention de faire.

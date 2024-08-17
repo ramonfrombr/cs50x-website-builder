@@ -1,0 +1,50 @@
+[0]
+Ajax
+
+[1]
+Ajax
+• Jusqu'à présent, notre interaction avec JavaScript se limitait principalement à : appuyer sur un bouton, quelque chose se produit.
+• Nous n'avons toujours pas à recharger entièrement notre page, mais il y a toujours un certain degré d'interaction de l'utilisateur.
+• Ajax (anciennement Asynchronous JavaScript et XML) nous permet de mettre à jour dynamiquement une page Web encore plus dynamiquement.
+• Cependant, pour l'instant, nous n'allons pas trop insister !
+
+[3]
+Ajax
+• Pour que notre page soit mise à jour de manière asynchrone, nous devons avoir recours à un objet JavaScript spécial appelé XMLHttpRequest.
+var xhttp = new XMLHttpRequest();
+
+[5]
+Ajax
+• Pour que notre page soit mise à jour de manière asynchrone, nous devons avoir recours à un objet JavaScript spécial appelé XMLHttpRequest.
+• Après avoir obtenu votre nouvel objet, vous devez définir son comportement onreadystatechange.
+• Il s'agit d'une fonction (généralement une fonction anonyme) qui sera appelée une fois que la requête HTTP asynchrone sera terminée et, par conséquent, définit généralement ce qui est censé changer sur votre site.
+
+[7]
+Ajax
+• Les XMLHttpRequests ont deux propriétés supplémentaires qui sont utilisées pour détecter quand la page a fini de charger.
+• La propriété readyState passe de 0 (requête non encore initialisée) à 1, 2, 3 puis 4 (requête terminée, réponse prête).
+• La propriété status sera (espérons-le !) 200 (OK).
+• Puis faites simplement votre requête asynchrone en utilisant la méthode open() pour définir la requête et la méthode send() pour l'envoyer réellement.
+• Il existe une façon légèrement différente de procéder syntaxiquement avec jQuery !
+
+[14]
+Ajax
+function ajax_request(argument)
+{
+var aj = new XMLHttpRequest();
+aj.onreadystatechange = function() {
+if (aj.readyState == 4 && aj.status == 200)
+// faire quelque chose sur la page
+};
+aj.open("GET", /* url */, true);
+aj.send();
+}
+
+[15]
+Ajax
+• On voit généralement les requêtes Ajax écrites à l'aide de jQuery plutôt qu'en JavaScript « brut ».
+
+[16]
+Ajax
+• On voit généralement les requêtes Ajax écrites à l'aide de jQuery plutôt qu'en JavaScript « brut ».
+http://api.jquery.com/jquery.ajax/

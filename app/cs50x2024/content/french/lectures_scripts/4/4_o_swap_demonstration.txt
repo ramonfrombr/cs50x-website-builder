@@ -1,0 +1,127 @@
+D'accord. C'est simplement un outil. Passons maintenant à quelques cas d'usage réels.
+
+Souvenez-vous que la semaine dernière, il était assez utile de pouvoir intervertir les valeurs. N'est-ce pas ? Avec le tri à bulles, avec le tri par sélection, nous devions pouvoir échanger des valeurs afin de placer les choses au bon endroit. Il s'avère que c'est assez simple. N'est-ce pas ? Et nous pouvons réellement imiter cela dans le monde réel.
+
+Nous avons juste l'opportunité d'avoir un volontaire aujourd'hui. Pouvons-nous avoir un petit... OK, par ici. Oui. Quel est votre nom ?
+
+FARRAH : Farrah.
+
+DAVID J. MALAN : Pardon.
+
+FARRAH : Farrah.
+
+DAVID J. MALAN : Vera.
+
+FARRAH : Farrah.
+
+DAVID J. MALAN : Oh, venez ici, montez. Alors je peux vous entendre d'ici. OK, quel est votre nom ?
+
+FARRAH : Farrah.
+
+DAVID J. MALAN : Vera.
+
+FARRAH : Avec un F.
+
+DAVID J. MALAN : Fera.
+
+FARRAH : Farrah.
+
+DAVID J. MALAN : Farrah.
+
+FARRAH : Oui.
+
+DAVID J. MALAN : Farrah. Oui, OK. Bien. Montez. Montez toujours. [RICANE] Merci. Merci.
+
+[APPLAUDISSEMENTS]
+
+[ACCLAMATIONS]
+
+OK, ravi de vous rencontrer.
+
+FARRAH : Bonjour, ravie de vous rencontrer.
+
+DAVID J. MALAN : Farrah.
+
+FARRAH : Oui.
+
+DAVID J. MALAN : OK. Alors allons-y. Laissez-moi vous donner ceci afin que vous puissiez également être au micro. OK, donc l'objectif ici est que, j'ai deux verres d'eau colorée. Nous avons donc du violet ici.
+
+[VERSEMENT D'EAU]
+
+OK. Et nous avons du vert ici.
+
+[VERSEMENT D'EAU]
+
+Et le seul objectif est d'effectuer une opération très simple comme nous avons dû le faire un peu la semaine dernière, qui est d'échanger deux variables, tout comme nous échangeons deux nombres.
+
+Donc, si vous pouviez mettre le liquide violet ici et le liquide vert ici, allez-y.
+
+[RICANE]
+
+FARRAH : Est-ce que c'est OK si elles se chevauchent ?
+
+DAVID J. MALAN : Idéalement, non. Nous voulons mettre uniquement du violet ici, et uniquement du vert ici, et pas de stockage temporaire.
+
+[RIRES]
+
+FARRAH : Oh.
+
+DAVID J. MALAN : OK, mais vous hésitez. Pourquoi ?
+
+FARRAH : Parce que vous m'avez dit qu'elles ne pouvaient pas se toucher [RICANE] et...
+
+DAVID J. MALAN : Eh bien, vous pouvez toucher les verres. Mais vous hésitez à les échanger, pourquoi ?
+
+[CLIC]
+
+OK, c'est juste de la triche.
+
+[RIRES]
+
+[APPLAUDISSEMENTS]
+
+[ACCLAMATIONS]
+
+OK, très intelligent. Supposons que vous ne puissiez pas simplement déplacer les choses en mémoire, et si je vous donnais une variable temporaire.
+
+FARRAH : OK.
+
+DAVID J. MALAN : Est-ce que ça aide ?
+
+FARRAH : Oui.
+
+DAVID J. MALAN : Alors, comment pouvons-nous maintenant mettre du violet là-dedans et du vert là-dedans ?
+
+[RICANE]
+
+FARRAH : Puis-je mettre du violet ici en premier ?
+
+DAVID J. MALAN : Bien sûr.
+
+FARRAH : Je vais le renverser.
+
+DAVID J. MALAN : C'est pas grave.
+
+[VERSEMENT D'EAU]
+
+OK. Donc le violet va dans le temporaire, très bien.
+
+[APPLAUDISSEMENTS]
+
+FARRAH : Merci.
+
+DAVID J. MALAN : Le vert va dans ce qui était violet.
+
+FARRAH : Oui
+
+DAVID J. MALAN : OK, bien.
+
+Et puis le violet va dans... de la variable temporaire dans le verre vert d'origine. Maintenant, des applaudissements nourris si vous le voulez bien. OK.
+
+[APPLAUDISSEMENTS]
+
+Merci.
+
+FARRAH : Merci.
+
+DAVID J. MALAN : OK.

@@ -1,0 +1,38 @@
+[1]
+
+Inserción
+• En la inserción, la idea del algoritmo es crear tu arreglo ordenado en su lugar, moviendo los elementos fuera del camino si es necesario para crear espacio según avanzas.
+En pseudocódigo:
+• Llama al primer elemento del arreglo "ordenado".
+• Repite hasta que todos los elementos estén ordenados:
+• Mira el siguiente elemento sin ordenar. Insértalo en la porción "ordenada" moviendo el número requerido de elementos.
+
+[16]
+
+Inserción
+2
+1
+3
+4
+1
+2
+3
+4
+5
+6
+En pseudocódigo:
+Llama al primer elemento del arreglo "ordenado".
+Repite hasta que todos los elementos estén ordenados:
+Mira el siguiente elemento sin ordenar. Insértalo en la porción "ordenada" moviendo el número requerido de elementos.
+
+[17]
+
+Inserción
+• Escenario de peor caso: El arreglo está en orden inverso; tenemos que mover cada uno de los n elementos n posiciones cada vez que realizamos una inserción.
+• Escenario de mejor caso: El arreglo ya está perfectamente ordenado, y simplemente seguimos moviendo la línea entre "sin ordenar" y "ordenado" a medida que examinamos cada elemento.
+
+[18]
+
+Inserción
+O(n2)
+Ω(n)

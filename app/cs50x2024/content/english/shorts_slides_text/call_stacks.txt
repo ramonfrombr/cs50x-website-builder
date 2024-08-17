@@ -1,0 +1,515 @@
+
+[0]
+
+Call Stack
+
+[1]
+
+Call Stack
+• When you call a function, the system sets aside space in memory for that function to do its necessary work.
+• We frequently call such chunks of memory stack frames or function frames.
+• More than one function’s stack frame may exist in memory at a given time. If main() calls move(), which then calls direction(), all three functions have open frames.
+
+[2]
+
+Call Stack
+• These frames are arranged in a stack. The frame for the most-recently called function is always on the top of the stack. 
+• When a new function is called, a new frame is pushed onto the top of the stack and becomes the active frame.
+• When a function finishes its work, its frame is popped off of the stack, and the frame immediately below it becomes the new, active, function on the top of the stack. This function picks up immediately where it left off.
+
+[3]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+main()
+main()
+
+[4]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+printf()
+main()
+
+[5]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+printf()
+main()
+
+[6]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(5)
+printf()
+main()
+
+[7]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(5)
+printf()
+main()
+
+[8]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(5)
+printf()
+main()
+
+[9]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(4)
+fact(5)
+printf()
+main()
+
+[10]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(4)
+fact(5)
+printf()
+main()
+
+[11]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(4)
+fact(5)
+printf()
+main()
+
+[12]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[13]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[14]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[15]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[16]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[17]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[18]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(1)
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[19]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(1)
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[20]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(1)
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[21]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[22]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[23]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[24]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[25]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[26]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+120
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[27]
+
+Call Stack
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(3)
+fact(4)
+fact(5)
+main()
+main()

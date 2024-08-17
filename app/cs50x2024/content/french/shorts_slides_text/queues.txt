@@ -1,0 +1,62 @@
+[1]
+Files d'attente
+• Une file d'attente est un type spécial de structure qui peut être utilisé pour conserver des données de façon organisée.
+• Cette structure de données est habituellement implémentée de deux façons : comme un tableau ou une liste enchaînée.
+• Dans les deux cas, la règle importante est que lorsque des données sont ajoutées à la file d'attente, elles sont placées à la fin, et donc si un élément doit être supprimé, l'élément en tête est le seul élément qui peut légalement être supprimé.
+• Premier entré, premier sorti (FIFO)
+
+[2]
+
+Files d'attente
+• Il n'y a que deux opérations légales qui peuvent être effectuées sur une file d'attente.
+• Enqueue : Ajout d'un nouvel élément à la fin de la file d'attente.
+• Dequeue : Suppression de l'élément le plus ancien du début de la file d'attente.
+
+[12]
+
+Files d'attente
+• Implémentation basée sur un tableau
+• Enqueue : Ajout d'un nouvel élément à la fin de la file d'attente. Dans le cas général, enqueue() doit :
+• Accepter un pointeur vers la file d'attente.
+• Accepter des données de type VALUE qui seront ajoutées à la file d'attente.
+• Ajouter ces données à la file d'attente, à la fin de la file d'attente.
+• Modifier la taille de la file d'attente.
+
+[23]
+
+Files d'attente
+• Implémentation basée sur un tableau
+• Dequeue : Suppression de l'élément le plus récent au début de la file d'attente. Dans le cas général, dequeue() doit :
+• Accepter un pointeur vers la file d'attente.
+• Modifier l'emplacement du début de la file d'attente.
+• Réduire la taille de la file d'attente.
+• Renvoyer la valeur qui a été supprimée de la file d'attente.
+
+[24]
+
+Files d'attente
+• Implémentation basée sur un tableau
+VALUE dequeue(queue* q);
+28 33 19
+0
+3
+q
+[36]
+Files d'attente
+• Assurez-vous de toujours conserver les pointeurs vers la tête et la queue de la liste enchaînée ! (probablement globaux)
+• Pour l'enqueue :
+• Allouer dynamiquement un nouveau nœud ;
+• Définir son pointeur suivant sur NULL, définir son pointeur précédent sur la queue ;
+• Définir le pointeur suivant de la queue sur le nouveau nœud ;
+• Déplacer le pointeur de queue vers le nœud nouvellement créé.
+
+[37]
+
+[43]
+
+Files d'attente
+• Pour le dequeue :
+• Parcourir la liste enchaînée jusqu'à son deuxième élément (s'il existe) ;
+• Libérer la tête de la liste ;
+• Déplacer le pointeur de tête vers le (ancien) deuxième élément ;
+• Faire pointer le pointeur précédent de ce nœud sur NULL.

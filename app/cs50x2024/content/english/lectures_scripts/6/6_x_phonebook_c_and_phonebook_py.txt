@@ -1,0 +1,47 @@
+All right. Let's go ahead and open up a fancier example, or write one, called phonebook.py, the goal of which is to represent the notion of a phone book. Let me go ahead now and still from sys import exit just so I can terminate if we fail. 
+
+Let me go ahead and define a bunch of people. But instead of putting people in a list like before, now I want to use something like a hash table. A hash table, recall, has inputs and outputs like keys and values. 
+
+Or more generally, this is now what we're going to start calling a dictionary. A dictionary, just like in the human world, has a lot of words with a lot of definitions. A phone book is essentially a dictionary. It's got a lot of names and a lot of numbers. Those are keys and values respectively. 
+
+So a dict in Python takes as input keys and produces as output values. And it happens to be implemented typically by the people who invented Python using a hash table. So the hash table you all wrote is now a building block to these data structures or abstract data structures that we'll now call, for instance, a dictionary more generally. 
+
+So curly braces are back only in the context here of defining what's a dict or dictionary. I'm going to go ahead and define a key called Emma and I'm going to give her the same phone number we gave her a while back of this. Notice the colon. Notice the double quotes around each value. 
+
+Let me go ahead and put Rodrigo in the phone book. And his number is going to be 617-555-0101 as before. Let me go ahead and put Brian in there, also separated with a colon. 555-0102. And I'll put myself in there with 617-555-0103. 
+
+So this is a little different-looking. The curly braces say, hey, Python. Here comes a dictionary. A dictionary has keys and values, just like a dictionary in the human world has keys which are words and values which are definitions. 
+
+Phone is the same idea. Names and numbers are our keys and values. I'm separating each key and value with a colon and I'm separating those pairs with a comma. 
+
+All right. So why is this useful? This is now the simplest way to represent a phone book or even a dictionary with words and definitions in Python. I can now ask a question like if Emma in people. Well, let me go ahead and get her number. Let me go to say ahead and say Found, people, bracket, Emma, using some newer syntax. But I'll come back to this in a moment. 
+
+And let's just start with this. So this is not going to work until I make it an f string, but let's see why this works. Python phonebook.py. Am I going to find Emma? Indeed. I found her number. If I change this to myself, David, and save and rerun it-- oh. You have to change this here, too. David. Sorry. Now I get my number as well. 
+
+So what's going on here? So this is the Pythonic way of just asking, is a value in a data structure? You don't have to use for loops. You don't have to traverse chains or linked lists or the like. You can just ask the question as on line 10 here. 
+
+This is somewhat new syntax. But what's cool about dictionaries in Python is that if the dictionary's called people-- and you know it's a dictionary only from these curly braces. If the dictionary is called people, you can treat it like an array but whose indices are not numbers 0, 1, 2, 3, but whose indices are words. 
+
+So another name for a dictionary and programming is called in associative array, which is almost a better name, because it makes it sound like an array. But it's associative in the sense that you can associate words with values, not just numbers with values. 
+
+So a dictionary, to be clear-- key value pairs. The keys, though, are strings. And the values are anything you want. In this case, their phone numbers. But they could be definitions of actual English words in a dictionary. 
+
+All right. And I can go ahead and clean this up, too. I can change this back to Emma. And if I find her, I can go ahead and say exit 0. And if I don't find her, I could just say print not found and exit 1. But the exits aren't strictly necessary. The program will still quit. Yeah. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Really good question and that's subtlety that I didn't mention explicitly. The single quotes are necessary here because Python would get confused if I've got outer quotes here and outer quotes here on the beginning and end of line 11. So I'm deliberately using single quotes, which are OK in Python. You can use double or single. 
+
+Unlike in C where double was strings and single was chars, there are no chars in Python. So you get to use both for either purpose. Yeah. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Really good question. So in pset 5, you implemented a hash table, which is the more lower-level notion of a dictionary. What I mean by that is that you stored words in the dictionary. But sometimes you had collisions, and so you use the linked lists. 
+
+That's fine. But your check function, recall, in pset 5 only returns true or false. Is the word in the dictionary or not? The check function did not reveal any information about how long it took to find that word or how far down the chain it actually was. 
+
+A dictionary is similarly an abstraction similar in spirit to your check function. Yes. Technically, underneath the hood, Emma and Rodrigo for whatever reason might hash to the same bucket, like the buckets on stage. 
+
+But all you care about is the value. The dictionary's purpose in life is to go find Emma's value for you or Rodrigo's value for you and return it as quickly as possible. The fact that it happens to lead to a linked list, maybe, is an implementation detail that is not exposed to me, the programmer who just wants to store keys and values. 
+
+And that's the difference between an abstract data type like a dictionary and an actual data structure like a hash table. You use the latter to implement the former. 

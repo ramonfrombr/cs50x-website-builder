@@ -1,0 +1,131 @@
+[1]
+
+Punteros de archivos
+• La capacidad de leer datos desde y escribir datos a archivos es el medio principal de almacenamiento de datos persistentes, datos que no desaparecen cuando su programa deja de ejecutarse.
+• La abstracción de archivos que proporciona C se implementa en una estructura de datos conocida como FILE.
+• Casi universalmente cuando trabajamos con archivos, utilizaremos punteros hacia ellos, FILE*.
+
+[2]
+
+Punteros de archivos
+• Las funciones de manipulación de archivos se encuentran en stdio.h.
+• Todas ellas aceptan FILE* como uno de sus parámetros, excepto por la función fopen(), que se utiliza para obtener un puntero de archivo en primer lugar.
+• Algunas de las funciones de entrada/salida (I/O) más comunes con las que trabajaremos son:
+fopen()
+fclose()
+fgetc()
+fputc()
+fread()
+fwrite()
+
+[3]
+
+Punteros de archivos
+• fopen()
+• Abre un archivo y devuelve un puntero de archivo hacia él.
+• Siempre verifique el valor devuelto para asegurarse de que no recibe NULL.
+FILE* ptr = fopen(<nombrearchivo>, <operación>);
+
+[7]
+
+Punteros de archivos
+• fclose()
+• Cierra el archivo apuntado por el puntero de archivo dado.
+fclose(<puntero archivo>);
+
+[9]
+
+Punteros de archivos
+• fgetc()
+• Lee y devuelve el siguiente carácter desde el archivo señalado.
+• Nota: La operación del puntero de archivo pasado como parámetro debe ser "r" para leer, o sufrirá un error.
+char ch = fgetc(<puntero archivo>);
+
+[11]
+
+Punteros de archivos
+• La capacidad de obtener un único carácter desde los archivos, si se envuelve en un bucle, significa que esencialmente podemos leer todos los caracteres desde un archivo e imprimirlos en la pantalla, uno por uno.
+• Podríamos poner esto en un archivo llamado cat.c, siguiendo el comando de Linux "cat", el cual esencialmente hace lo mismo.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+printf(“%c”, ch);
+
+[12]
+
+Punteros de archivos
+• La capacidad de obtener un único carácter desde los archivos, si se envuelve en un bucle, significa que esencialmente podemos leer todos los caracteres desde un archivo e imprimirlos en la pantalla, uno por uno.
+• Podríamos poner esto en un archivo llamado cat.c, siguiendo el comando de Linux "cat", el cual esencialmente hace lo mismo.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+printf(“%c”, ch);
+
+[14]
+
+Punteros de archivos
+• fputc()
+• Escribe o agrega el carácter especificado al archivo señalado.
+• Nota: La operación del puntero de archivo pasado como parámetro debe ser "w" para escribir o "a" para agregar, o sufrirá un error.
+fputc(<carácter>, <puntero archivo>);
+
+[17]
+
+Punteros de archivos
+• Ahora podemos leer caracteres desde archivos y escribir caracteres en ellos. Extendamos nuestro ejemplo anterior para copiar un archivo a otro, en lugar de imprimir en pantalla.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+printf(“%c”, ch);
+
+[18]
+
+Punteros de archivos
+• Ahora podemos leer caracteres desde archivos y escribir caracteres en ellos. Extendamos nuestro ejemplo anterior para copiar un archivo a otro, en lugar de imprimir en pantalla.
+• Podríamos poner esto en un archivo llamado cp.c, siguiendo el comando de Linux "cp", el cual esencialmente hace lo mismo.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+fputc(ch, ptr2);
+
+[19]
+
+Punteros de archivos
+• fread()
+• Lee <qty> unidades de tamaño <size> desde el archivo señalado y las almacena en memoria en un búfer (usualmente un arreglo) señalado por <buffer>.
+• Nota: La operación del puntero de archivo pasado como parámetro debe ser "r" para leer, o sufrirá un error.
+fread(<buffer>, <tamaño>, <cantidad>, <puntero archivo>);
+
+[24]
+
+Punteros de archivos
+• fwrite()
+• Escribe <qty> unidades de tamaño <size> al archivo señalado leyéndolas desde un búfer (usualmente un arreglo) señalado por <buffer>.
+• Nota: La operación del puntero de archivo pasado como parámetro debe ser "w" para escribir o "a" para agregar, o sufrirá un error.
+fwrite(<buffer>, <tamaño>, <cantidad>, <puntero archivo>);
+
+[25]
+
+Punteros de archivos
+• fwrite()
+• Escribe <qty> unidades de tamaño <size> al archivo señalado leyéndolas desde un búfer (usualmente un arreglo) señalado por <buffer>.
+• Nota: La operación del puntero de archivo pasado como parámetro debe ser "w" para escribir o "a" para agregar, o sufrirá un error.
+int arr[10];
+fwrite(arr, sizeof(int), 10, ptr);
+
+[30]
+
+Punteros de archivos
+• Muchas otras funciones útiles abundan en stdio.h para ti. ¡Estas son algunas de las que podrías encontrar útiles!
+Función
+Descripción
+fgets()
+Lee una cadena completa desde un archivo.
+fputs()
+Escribe una cadena completa a un archivo.
+fprintf()
+Escribe una cadena formateada a un archivo.
+fseek()
+Te permite retroceder o avanzar rápidamente dentro de un archivo.
+ftell()
+Te dice en qué posición (byte) te encuentras dentro de un archivo.
+feof()
+Te dice si has leído hasta el final de un archivo.
+ferror()
+Indica si se ha producido un error al trabajar con un archivo.

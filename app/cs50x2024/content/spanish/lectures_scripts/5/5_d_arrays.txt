@@ -1,0 +1,49 @@
+DAVID MALAN: Muy bien, ahora que tenemos este poder de punteros y direcciones, donde tenemos acceso de bajo nivel a la memoria de la computadora, podemos resolver problemas de manera mucho más poderosa y de modos mucho más interesantes. Pero, primero, motivaremos algunos de estos problemas.
+
+Entonces, en la Semana 2, presentamos las matrices, que eran la primera de nuestras estructuras de datos, si se quiere. Antes de eso, en la Semana 1, todo lo que teníamos eran variables para cosas como enteros, caracteres y flotantes, etc. En la Semana 2, presentamos matrices, lo que significaba que podían almacenar dos enteros en total o tres o 10 o 100. Así que se podía encapsular mucha información junta.
+
+Desafortunadamente, sin embargo, las matrices no son tan poderosas como se podría desear. Entonces, por ejemplo, si tenemos una matriz de tamaño 3 y realmente queremos seguir adelante y almacenar tres valores en ella: uno, dos, tres; supongamos que realmente queremos almacenar ahora un cuarto valor, pero no lo anticipamos desde el principio. Recuerde, después de todo, que con matrices, hay que declarar su tamaño por adelantado. Así que tienes que codificar el número 3 o una variable que contenga el número 3.
+
+Pero supongamos que queremos almacenar el número 4. Podrías pensar que, bueno, solo dame otra caja de memoria justo a la derecha del número 3, para que pueda mantener todos mis números juntos. Pero, desafortunadamente, según la semana pasada, esa no es realmente una suposición confiable, porque en el contexto del resto de la memoria de su computadora, ese 1, 2, 3, podría estar aquí rodeado por otros bytes. Y según la semana pasada, esos bytes podrían estar llenos en su mayoría con otros datos de algunas otras partes de su programa.
+
+Sin embargo, uno pensaría que al ver que 1, 2, 3 está pintado en este rincón, por así decirlo, no hay espacio para el número 4 y, por lo tanto, no se puede agregar el cuarto número a su matriz, ¿hay una solución visible para este problema? ¿Dónde más podríamos ponerlo? Sí.
+
+AUDIENCIA: Muévalo a otra memoria.
+
+DAVID MALAN: Dilo un poco más fuerte.
+
+AUDIENCIA: Podemos moverlo a otra memoria.
+
+DAVID MALAN: Sí, entonces tal vez podamos moverlo a otra memoria. Hay muchas EMM en mi memoria según la semana pasada, pero aún parece, según esta imagen, que hay algo de memoria sin usar. Entonces, tal vez podríamos cambiar el tamaño de nuestra matriz, aumentarla, no solo moviendo todas las EMM porque, francamente, eso parecería llevar mucho tiempo si tuviéramos que mover todos estos caracteres, ¿por qué no simplemente reubicamos el 1, 2, 3 aquí abajo? y eso nos da un espacio extra para al menos un número 4.
+
+De hecho, incluso si está utilizando matrices, puede lograr este resultado moviendo la memoria. Pero considera lo que implica eso. Entonces, si tienes nuestra matriz anterior en la parte superior izquierda y tenemos nuestra nueva matriz en la parte inferior derecha, eso es de tamaño 4. Así que tenemos mucho espacio. ¿Cómo hacemos para cambiar el tamaño de la matriz?
+
+Bueno, es una especie de ilusión. No puedes simplemente cambiar el tamaño de la matriz cuando tenemos todas estas EMM que nos rodean. En cambio, tenemos que mover la matriz o copiarla. Entonces, el 1 se mueve a la nueva memoria. El 2 se mueve a la nueva memoria. El 3 se mueve a la nueva memoria. Y luego, en ese punto, podemos simplemente tirar o liberar la memoria utilizada anteriormente y ahora seguir adelante y agregar nuestro 4.
+
+Desafortunadamente, esta no es necesariamente la mejor estrategia, cierto, porque si estos tres casilleros representan nuestra memoria original y estos cuatro casilleros representan nuestra nueva memoria y están deliberadamente muy separados, es decir, que si quiero seguir adelante y mover como estos mismos números, realmente tengo que hacer algo como esto, que implica bastantes pasos. Déjame seguir adelante y poner el 1 allí ahora. Ahora, déjame seguir adelante y obtener el 2 aquí. Y luego puedo seguir adelante y poner esto aquí. Entonces ahora tengo el 2. Y finalmente, puedo ir a por el 3.
+
+Y entonces, aunque hice esto bastante rápido en la pantalla, la realidad es que hay una cantidad decente de trabajo por hacer. Y luego, por supuesto, todavía tengo que seguir adelante y agregar el 4 a la mezcla, lo que quiere decir que he dado algunos pasos figurativa y físicamente para cambiar el tamaño de una matriz de tamaño 3 a tamaño 4, que es decir que si ahora consideramos la eficiencia o, si se quiere, la ineficiencia de ese algoritmo, ¿qué tipo de tiempo de ejecución está involucrado al insertar números adicionales en una matriz como la que hice aquí?
+
+Aquí está nuestro menú de opciones de hace un par de semanas cuando nos centramos en los algoritmos. ¿Cuál es el tiempo de ejecución de la inserción en una matriz incluso basándose en esa simple demostración, diría usted? ¿Cuál es el tiempo de ejecución? Sí.
+
+AUDIENCIA: O n al cuadrado.
+
+DAVID MALAN: Dilo otra vez.
+
+AUDIENCIA: O n al cuadrado.
+
+DAVID MALAN: O n al cuadrado. Entonces, tal vez O n al cuadrado porque hubo muchos idas y vueltas y ya lo hemos visto antes. Hemos visto que la clasificación de burbujas y la clasificación por selección se suman. No es tan malo como eso. No es tan malo como eso. Sí.
+
+AUDIENCIA: O de n.
+
+DAVID MALAN: O de n. ¿Y por qué dices O de n?
+
+AUDIENCIA: Porque por tantos casilleros como haya en el primero, hay que incrementar la misma cantidad de procesos para insertarlos.
+
+DAVID MALAN: Exactamente. Cualquiera que sea el número de casilleros que tengas aquí, que son tres específicamente, pero n más generalmente, me tomará n pasos transferir esos números aquí. O técnicamente, me llevará 3; tal vez si voy de un lado a otro, son como 6 pasos. Pero es algún múltiplo de n.
+
+Así que no es n al cuadrado. Ahí es cuando seguimos iterando una y otra y otra vez. Esta vez solo tengo que mover 3 números aquí y luego agregar el cuarto número.
+
+De hecho, es Big O de n cuando quieres seguir adelante e insertar o buscar de manera equivalente una matriz que en realidad está implementada; lo siento, insertar nos llevará tiempo lineal. Pero la búsqueda recuerda, y esto fue lo poderoso, ¿cuál es el tiempo de ejecución de la búsqueda mientras mantienes tu número ordenado? Hace dos semanas, eso era logarítmico. Entonces, no necesariamente hemos sacrificado eso. Y ese es el atractivo de almacenar nuestros datos en una matriz que está ordenada. Puede utilizar la búsqueda binaria.
+
+Sin embargo, esto es costoso y mover cosas no es necesariamente el enfoque ideal. Así que consideremos cómo se vería esto en código.

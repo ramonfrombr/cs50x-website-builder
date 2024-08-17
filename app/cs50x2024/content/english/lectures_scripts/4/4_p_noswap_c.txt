@@ -1,0 +1,71 @@
+So suffice it to say, that is the correct way of swapping two values. But the key detail there was that Farrah had access to a temporary variable. And so you would think that this idea, simple as it is in reality, would translate pretty naturally to code as well. But it turns out that's not necessarily the case. 
+
+So it turns out that if we wanted to swap two variables, you might implement a function called swap and just take in two integers, a and b, the goal of which is to do the switcheroo. Purple becomes green, green becomes purple, just as a becomes b, b becomes a. And you would think that we just need a temporary variable inside of that code in order to make that happen. 
+
+So I would argue that the equivalent to what Farrah did in person, in code in C, might look like this. Give me a temporary variable called temp-- or anything you want --store in it, a-- just as she stored one of the colors in the temporary glass first, purple --then go ahead and change the value of a to equal the value of b-- because you've already kept a copy of a around in a temporary variable --then finally, store in b what is in temp. So that is the code equivalent of what Farrah did using these colored liquids. 
+
+Unfortunately, it's not quite as simple it would seem, as that. I'm going to go ahead and open up, say, a program that I wrote in advance here too, called-- intentionally --no swap. Even though you would like to think that it does exactly that. 
+
+So notice that in this code we have-- including standard I/O dot h --we have a prototype for the function I just proposed we make, swap, that takes two ints a and b. Here's my main function. And I'm just going to arbitrarily initialize x to 1 and y to 2, just as I initialized one glass to purple and one glass to green. Then, just so that we can see what's going on inside our code, I'm just going to print out x is such and such, y is such and such-- printing x and y --then I'm going to call that swap function, swapping x and y. And then I'm going to literally print the same phrase. But I'm hoping that it's going to say the opposite the second time around if x and y are indeed swapped. 
+
+So how do I implement swap? Well, it would seem to be, with this same code, using a temporary variable-- or temporary glass, just as Farrah did for the two liquids. Unfortunately, when I go ahead and run this program, no swap-- and its name alone is a bit of a spoiler --if I go ahead and run dot slash no swap with x and y hardcoded to 1 and 2 respectively, you'll see that it runs, and says, x is 1, y is 2, x is 1, y is 2, thereby clearly failing to swap. 
+
+But if you're in agreement with me, this feels like it's correct. I didn't get any compiler errors. Yet, this line of code, which uses swap, seems to have no effect. So what might the intuition here or hunch be for why this program indeed does not swap? 
+
+AUDIENCE: So when it takes the [INAUDIBLE] in the-- when it takes the [INAUDIBLE] whole new variable that [INAUDIBLE]. 
+
+DAVID J. MALAN: Yeah, exactly. When you pass inputs to a function, you are effectively passing copies of your own values to that function. And so when you have two variables, x and y-- initialized to 1 and 2 --yes, you're passing them as input to swap. But swap is not getting actually x and y, it's getting copies of x and y. And per its prototype, is calling them a and b, respectively. 
+
+So it turns out this swap function actually does work. It swaps a and b. But it does not swap x and y because those are copies. Now this seems especially worrisome now in so far as I cannot seem to implement a function called swap that can even implement bubble sorts or selection sort. And frankly, you might have run into this yourself if trying to implement this for one of your voting algorithms. If you needed to do a swap, if you had a helper function, you might have had to think about it in a somewhat different way. 
+
+So what's the explanation for all of this? Well, this version of swap doesn't actually work because again, if we go back to first principles, go inside of the computer's memory and consider our memory is just a grid of bytes, top to bottom, left to right. What's really going on? 
+
+Well, it turns out that all this time we've been using C, my computer isn't just arbitrarily putting things in memory over here, over here, over here. It actually uses your computer's memory in a methodical way. Certain types of data go down here. Certain types of data go up here, and so forth. 
+
+So what is that methodology? Well, if we consider it just abstractly as a big rectangle, it turns out that if this is your computer's memory, at the very top of it, conceptually, goes all of the 0s and 1s that Clang compiled for you. The so-called machine code, is literally loaded into your computer's RAM when you run dot slash something, or in a Mac or PC, when you double click an icon, those 0s and 1s-- the compiled code --is loaded into your computer's memory up here-- let's say --and it might take up this much space for a small program, this much space for a big program. 
+
+Below that, if your program uses any global variables or other type of data, those will go just below, so to speak, the machine code in the computer's memory. Why? Just because humans needed to decide when implementing compilers where to put stuff in the computer's memory. 
+
+Below that is a special chunk of memory called the heap. And Valgrind gave it-- a teaser of this word a moment ago. The heap is a big chunk of memory where you can allocate memory from. And in fact, if you call malloc-- as I did once before --that memory is going to come from this region of the computer's memory, below the global variables, below the machine code, because that's where Clang and compiler designers decided to draw memory from. 
+
+So every time you call malloc, you're carving out more and more bytes for your program to use. And that heap grows, conceptually, downward. The more memory you use, the lower, lower, lower it gets in this artist's rendition. 
+
+However, there's a different portion of memory here down below that's used for a very different purpose. Anytime you call a function in your program, it turns out that that functions local variables end up going at the bottom of your computer's memory on what's called a stack. So if you have main, the default function, and it has one or more arguments, or one or more local variables, those variables just go down here, conceptually, in memory. And if you call a function like swap, or anything else, it just keeps using more and more memory above that. 
+
+So the heap is where malloc gets you bytes from. And the stack is where your local variables go when functions are called, bottom to top. 
+
+So let's see this in action here. If we consider the stack alone in the context of swapping variables unsuccessfully, what's really happening with code like this? Well, on the bottom of my memory when I call main, I am given-- by nature of how C programs work when compiled --a slice of memory called a frame, a stack frame. And this is just some number of bytes that store maybe argv, argc, it stores x and y, my local variables. 
+
+Any variables I have in main get stored in this chunk of memory here. If main calls a function, like this swap function, that function gets its own frame of memory, its own slice of memory, that conceptually, is above main. So swap has two variables-- right-- two arguments, right, a and b. And it also had one other variable. 
+
+AUDIENCE: Temp. 
+
+DAVID J. MALAN: Temp. So those three values are going to be in this frame of memory. X and y are on the bottom, a, b, and temp are above it in there. 
+
+So let's actually focus on this. If we focus on main, when my program first runs, I have two variables, x and y. And I initialize those to 1 and 2, respectively. Then the swap function gets called. So another frame gets used on the stack, just another bunch of bytes are being allocated by the computer for me. And swap had three variables, a, b, and temp. The first two were its inputs, its arguments, the third of which was an explicit temporary variable I gave it. 
+
+With those lines of code from before I initialized a and b to 1 and 2, respectively. And notice, they are literally identical to x and y but copies of x and y. And then if we consider the code, what happens next? Well, temp is assigned a. So temp should take on what value? 
+
+AUDIENCE: 1. 
+
+DAVID J. MALAN: Just 1. And then second line of code, a equals b. So a should take on the value of b, which means it's now 2. And meanwhile, b equals temp means that b should take on the value of 1. 
+
+And so now we have successfully swapped, it seems-- with these three lines of code taken from my actual program --a and b. Unfortunately, the thing about a stack is just like in the dining hall. When you have the stacks of Harvard trays in the dining halls and you keep putting news trays on top, on top, but then they keep getting taken from the top as well. 
+
+So just when swap is done with its third line of code, it's like someone has taken the tray away and that frame disappears. So the memory technically doesn't go anywhere. It's still a physical device. But it's just no longer allocated for my own program. 
+
+So main is still intact after the swap function returns. But of course, x and y have not actually been affected. 
+
+So what's the fundamental solution to this problem? Swap did not work because it was passed copies. It was passed by value, so to speak, when main calls swap, passing an x and y, I get copies of x and y called a and b. What could I do instead? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID J. MALAN: A little louder. 
+
+AUDIENCE: Pass by reference. 
+
+DAVID J. MALAN: Pass by reference, and what's a reference? 
+
+AUDIENCE: Make a pointer. 
+
+DAVID J. MALAN: Yeah. So a reference is synonymous for our purposes, with pointer. So yeah, that's actually kind of the germ of an idea from before. If we now have the ability to address things --like slap some addresses on mailboxes-- you know what, let's not just pass from main to swap, literally x and y, why don't we tell swap what the address of x is and the address of y so that my swap code can go to x and y, change them. And then even when the swap function returns, that's fine because it went to the right locations.

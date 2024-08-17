@@ -1,0 +1,44 @@
+[1]
+
+Piles (Structure de données)
+• Une pile est un type de structure spécial qui peut être utilisé pour gérer des données de manière organisée.
+• Cette structure de données est couramment implémentée de deux manières : sous forme de tableau ou de liste chaînée.
+• Dans les deux cas, la règle importante est que lorsque des données sont ajoutées à la pile, elles se trouvent « en haut », et donc si un élément doit être supprimé, l'élément ajouté le plus récemment est le seul élément qui peut légalement être supprimé.
+• Dernier entré, premier sorti (LIFO)
+
+[2]
+
+Piles (Structure de données)
+• Il n'y a que deux opérations qui peuvent légalement être effectuées sur une pile.
+• Push : ajouter un nouvel élément au sommet de la pile.
+• Pop : supprimer l'élément ajouté le plus récemment du sommet de la pile.
+
+[11]
+
+Piles (Structure de données)
+• Implémentation basée sur un tableau
+• Push : ajouter un nouvel élément au sommet de la pile. Dans le cas général, push() doit :
+• Accepter un pointeur vers la pile.
+• Accepter des données de type VALEUR à ajouter à la pile.
+• Ajouter ces données à la pile au sommet de la pile.
+• Modifier l'emplacement du sommet de la pile.
+
+[22]
+
+Piles (Structure de données)
+• Implémentation basée sur un tableau
+• Pop : supprimer l'élément le plus récent du sommet de la pile. Dans le cas général, pop() doit :
+• Accepter un pointeur vers la pile.
+• Modifier l'emplacement du sommet de la pile.
+• Renvoyer la valeur qui a été supprimée de la pile.
+
+[35]
+
+Piles (Structure de données)
+• Assurez-vous simplement de toujours conserver un pointeur vers la tête de la liste chaînée !
+• Pour pousser, allouez dynamiquement un nouveau nœud, définissez son pointeur suivant pour pointer vers la tête courante de la liste, puis déplacez le pointeur de tête vers le nœud nouvellement créé.
+
+[41]
+
+Piles (Structure de données)
+• Pour extraire, parcourez la liste chaînée jusqu'à son deuxième élément (si elle existe), libérez la tête de la liste, puis déplacez le pointeur de tête vers le (ancien) deuxième élément.

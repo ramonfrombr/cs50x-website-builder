@@ -1,0 +1,111 @@
+**[1]**
+
+Operadores aritméticos
+● Para manipular y trabajar con variables y valores en C, tenemos varios operadores a nuestra disposición.
+● Veamos algunos de ellos ahora.
+
+**[2]**
+
+Operadores aritméticos
+● En C, podemos agregar (+), restar (-), multiplicar (*) y dividir (/) números, como era de esperar.
+int x = y + 1;
+x = x * 5;
+● También tenemos el operador de módulo (%), que nos da el resto cuando el número a la izquierda del operador se divide por el número a la derecha.
+int m = 13 % 4; // m ahora es 1
+
+**[3]**
+
+Operadores aritméticos
+● C también proporciona una forma abreviada de aplicar un operador aritmético a una sola variable.
+x = x * 5;
+x *= 5;
+● Este truco funciona con los cinco operadores aritméticos básicos. C proporciona una forma abreviada para incrementar o disminuir una variable en 1:
+x++;
+x--;
+
+**[4]**
+
+Expresiones booleanas
+● Las expresiones booleanas se utilizan en C para comparar valores.
+● Todas las expresiones booleanas en C se evalúan en uno de dos valores posibles: verdadero o falso.
+● Podemos utilizar el resultado de evaluar una expresión booleana en otras construcciones de programación, como decidir qué rama tomar en un condicional o determinar si un bucle debe seguir ejecutándose.
+
+**[5]**
+
+Expresiones booleanas
+● A veces, al trabajar con expresiones booleanas, utilizaremos variables de tipo bool, pero no es necesario.
+● En C, cada valor distinto de cero es equivalente a verdadero, y cero es falso.
+● Dos tipos principales de expresiones booleanas: operadores lógicos y operadores relacionales.
+
+**[6]**
+
+Expresiones booleanas
+● Operadores lógicos
+● El AND lógico (&&) es verdadero si y solo si ambos operandos son verdaderos; de lo contrario, es falso.
+x
+y
+(x && y)
+verdadero
+verdadero
+verdadero
+verdadero
+falso
+falso
+falso
+verdadero
+falso
+falso
+falso
+falso
+
+**[7]**
+
+Expresiones booleanas
+● Operadores lógicos
+● El OR lógico (||) es verdadero si y solo si al menos un operando es verdadero; de lo contrario, es falso.
+x
+y
+(x || y)
+verdadero
+verdadero
+verdadero
+verdadero
+falso
+verdadero
+falso
+verdadero
+verdadero
+falso
+falso
+falso
+
+**[8]**
+
+Expresiones booleanas
+● Operadores lógicos
+● El NOT lógico (!) invierte el valor de su operando.
+x
+!x
+verdadero
+falso
+falso
+verdadero
+
+**[9]**
+
+Expresiones booleanas
+● Operadores relacionales
+● Estos se comportan como cabría esperar y parecen sintácticamente similares a como pueden recordarlos de la aritmética elemental.
+● Menor que (x < y)
+● Menor o igual que (x <= y)
+● Mayor que (x > y)
+● Mayor o igual que (x >= y)
+
+**[10]**
+
+Expresiones booleanas
+● Operadores relacionales
+● C también puede probar dos variables para determinar su igualdad y desigualdad.
+● Igualdad (x == y)
+● Desigualdad (x != y)
+● ¡Ten cuidado! Es un error común utilizar el operador de asignación (=) cuando se pretende utilizar el operador de igualdad (==).

@@ -1,0 +1,107 @@
+[0]
+
+Argumentos de Linha de Comando
+
+[1]
+
+Argumentos de Linha de Comando
+● Até agora, todos os seus programa começaram praticamente da mesma forma.
+● Como nós temos coletado entradas de usuário por meio de prompts dentro do programa, nós não precisamos modificar
+esta declaração de main().
+● Se nós quisermos que o usuário forneça dados para o nosso programa antes do programa começar a rodar, nós precisamos de uma nova forma.
+int main(void)
+{
+
+[2]
+
+Argumentos de Linha de Comando
+● Para coletar os chamados argumentos de linha de comando do usuário, declare o main como:
+● Estes dois argumentos especiais te permitem saber quais dados o usuário forneceu na linha de comando
+e quantos dados eles forneceram.
+int main(int argc, string argv[])
+{
+
+[3]
+
+Argumentos de Linha de Comando
+● argc (contagem de argumentos)
+● Esta variável do tipo inteiro irá armazenar o número de argumentos de linha de comando que o usuário digitou quando o
+programa foi executado.
+comando
+argc
+./greedy
+1
+./greedy 1024 cs50
+3
+
+[4]
+
+Argumentos de Linha de Comando
+● argv (vetor de argumentos)
+● Este array de strings armazena, uma string por elemento, o texto real que o usuário digitou na linha de comando quando
+o programa foi executado.
+● O primeiro elemento de argv é sempre encontrado em argv[0]. O último elemento de argv é sempre encontrado em
+argv[argc-1].
+● Você consegue ver por que?
+
+[5]
+
+Argumentos de Linha de Comando
+● argv (vetor de argumentos)
+● Vamos assumir que o usuário executa o programa greedy da seguinte forma
+índices de argv
+conteúdo de argv
+argv[0]
+“./greedy”
+argv[1]
+argv[2]
+argv[3]
+./greedy 1024 cs50
+
+[6]
+
+Argumentos de Linha de Comando
+● argv (vetor de argumentos)
+● Vamos assumir que o usuário executa o programa greedy da seguinte forma
+índices de argv
+conteúdo de argv
+argv[0]
+“./greedy”
+argv[1]
+“1024”
+argv[2]
+argv[3]
+./greedy 1024 cs50
+
+[7]
+
+Argumentos de Linha de Comando
+● argv (vetor de argumentos)
+● Vamos assumir que o usuário executa o programa greedy da seguinte forma
+índices de argv
+conteúdo de argv
+argv[0]
+“./greedy”
+argv[1]
+“1024”
+argv[2]
+“cs50”
+argv[3]
+./greedy 1024 cs50
+
+[8]
+
+Argumentos de Linha de Comando
+● argv (vetor de argumentos)
+● Vamos assumir que o usuário executa o programa greedy da seguinte forma
+índices de argv
+conteúdo de argv
+argv[0]
+“./greedy”
+argv[1]
+“1024”
+argv[2]
+“cs50”
+argv[3]
+???
+./greedy 1024 cs50

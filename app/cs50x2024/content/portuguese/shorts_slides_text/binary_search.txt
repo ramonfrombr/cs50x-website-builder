@@ -1,0 +1,26 @@
+[0]
+Pesquisa binária
+
+[1]
+Pesquisa binária
+• Na pesquisa binária, a ideia do algoritmo é "dividir e conquistar", reduzindo a área de pesquisa pela metade a cada vez que, tentando encontrar o número alvo.
+• A fim de impulsionar esse poder, no entanto, nosso conjunto deve primeiramente ser classificado, senão não podemos fazer pressuposições sobre o conteúdo do conjunto.
+
+[2]
+Pesquisa binária
+No pseudocódigo:
+• Repita até que o (sub)conjunto seja de tamanho 0:
+• Calcule o ponto médio do (sub)conjunto atual.
+• Se o alvo estiver no meio, pare.
+• Caso contrário, se o alvo for menor do que o que está no meio, repita, alterando o ponto final para ficar à esquerda do meio.
+• Caso contrário, se o alvo for maior do que o que está no meio, repita, alterando o ponto inicial para ficar à direita do meio.
+
+[30]
+Pesquisa binária
+• Pior cenário: temos que dividir uma lista de n elementos pela metade repetidamente para encontrar o elemento alvo, ou porque o elemento alvo será encontrado no final da última divisão ou não existe no conjunto.
+• Melhor cenário: o elemento alvo está no ponto médio do conjunto completo, portanto, podemos parar de procurar imediatamente depois de começar.
+
+[31]
+Pesquisa binária
+O(log n)
+W(1)

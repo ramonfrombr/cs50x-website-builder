@@ -1,0 +1,33 @@
+Entonces, ¿qué podemos hacer con esta información? Vamos a deshacernos del hardware y a dejarlo de lado, por así decirlo, a medida que vamos avanzando y considerar si ampliamos esta sección, cómo el equipo, la semana pasada y esta semana, almacena la información en los programas que escriben por siempre. Supongamos, por ejemplo, que tenemos un programa como este, con solo tres caracteres. Voy a seguir adelante y ponerlo en un archivo denominado, digamos, hi punto c. Y voy a seguir adelante y voy a incluir el estándar punto Io punto h, int main nulo-- aprendizaje.
+
+Ahora aquí, voy a ir y pondré esas tres líneas de código. Así que dame un carácter llamado c1 de forma arbitraria y configúralo para una H mayúscula. Dame otro llamado c2, configúralo para una I mayúscula. Dame un tercero llamado c3, y configura este signo de exclamación. Ahora notarás un detalle que no he enfatizado antes, no lo creo. ¿Qué tipos de puntuación estoy usando claramente aquí? Entonces, comillas simples o apóstrofos aquí. Las comillas simples en C son necesarias para los caracteres. Para caracteres o caracteres únicos, solo un byte.
+
+Siempre que desees codificarlos en un programa como este, como lo he hecho aquí, utiliza comillas simples. Por supuesto, para las cadenas utilizamos comillas dobles. ¿Por qué? Simplemente porque sí. Al igual que C requiere que distinguimos esos dos. Así que déjame hacer algo un poco tonto aquí. Ahora que tengo tres variables, permíteme continuar e imprimirlas todas. ¿Cuál es el código de formato que puedo imprimir-- que puedo utilizar para imprimir un carácter? Sí, un porciento--
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: El porciento c para el carácter, así que el porciento c, y quiero tres de ellos. Así que voy a imprimir los tres a la vez, seguido de una nueva línea. Y luego, si quiero imprimir c1 primero, c2, c3, esa es la sintaxis con printf para conectar solo tres marcadores de posición seguidos de tres valores, respectivamente de izquierda a derecha y, con suerte, presumiblemente imprimirá hola en la pantalla seguido de una nueva línea . Así que déjame guardar el archivo. Déjame hacer hola. OK, no hay errores, lo cual es bueno. Déjame hacer punto barra hola, y de hecho veo un signo de exclamación, sin embargo, con un espacio entre cada carácter. ¿Pero sabes qué? Hola, signo de exclamación son de hecho caracteres, pero ¿qué es un carácter? ¿Qué es un carácter Ascii bajo el capó?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Es en última instancia binario. Todo es binario. ¿Y qué hay un paso intermedio allí, en algún sentido?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Es solo un número, un entero. Gracias a Ascii y Unicode en la semana cero, solo hay una asignación de caracteres a números. Entonces, ¿cómo imprimo números? ¿Qué código de formato utilizo para printf?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Porciento i, para entero. Entonces, ¿supongamos que quiero ver esos valores? Observa lo que puedo hacer. Puedo decirle a la computadora, ¿sabes qué? Aunque c1 es un carácter, por favor sigue adelante y trátalo como un entero. Y literalmente puedo escribir int entre paréntesis antes de la variable, que es lo que se conoce como casting, C-A-S-T, que es solo un verbo que describe el acto de convertir un tipo de datos a otro para que realmente pueda ver esos números. Así que déjame seguir adelante y guardar el archivo. Déjame continuar ahora y hacer hola nuevamente. Eso parece funcionar bien. Punto barra hola, y ahora esto es muy familiar 72, 73, 33.
+
+Y francamente, no necesito ser tan pedante aquí. Francamente, clang es lo suficientemente inteligente como para saber que si le paso un carácter, pero le pido que lo formatee como un int, lo convertirá implícitamente, no explícitamente, para mí. Entonces, si continúo y vuelvo a hacer hola y hago punto barra hola, voy a ver exactamente lo mismo. Así que esta comprensión de lo que está sucediendo debajo del capó puede permitirme jugar un poco ahora y jugar con lo que está sucediendo dentro de la memoria de mi computadora. Pero ahora veamos esto más visualmente.
+
+Si esta es la memoria de mi computadora realmente magnificada, de modo que hay como mil millones de cuadrados en algún lugar disponibles para mí y esta es cero, esta es una, esta es dos. Supongamos que tengo un programa con tres variables: c1, c2 y c3; lo que va a hacer la computadora es poner la h en una de esas cajas. Va a poner la i en otra caja, y va a poner el signo de exclamación en una tercera caja, y de alguna manera u otra va a etiquetarlas con los nombres de las variables. Va a anotar como con un lápiz virtual, esta es c1, esta es c2, esta es c3. Pero es el signo de exclamación H-I que realmente se almacena en esa ubicación.
+
+Pero, por supuesto, no es solo un carácter. En realidad, técnicamente es un número. Entonces, realmente lo que está sucediendo dentro de la memoria de mi computadora es que 72, 73 y 33 están almacenados. Pero alguien mencionó anteriormente que en realidad es binario. Entonces, lo que realmente está debajo del capó es esto. Esos ceros y unos están implementados de alguna manera con transistores o bombillas o cualquiera que sea la tecnología, pero solo almacena un patrón de ceros y unos. E hice el cálculo antes de la clase. De hecho, esto representa 72 en decimal, 73 y 33.
+
+Pero aquí, también, estamos llegando a un detalle de implementación de bajo nivel que generalmente no nos importa. La abstracción, por semana cero, es algo hermoso porque podríamos simplemente, meh, sintonizar todo eso y simplemente pensarlo en cualquier nivel superior que queramos, ya sea decimal o si son caracteres Ascii reales. Pero eso es todo lo que está sucediendo debajo del capó. ¿Sí?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Muy buena pregunta. Si declaras tres variables como enteros y almacenas 72, 73, 33 en ellas y tratas de imprimirlas luego con el porciento c, sí, también podrías forzar ese comportamiento y literalmente hacer lo contrario. En ese momento, necesitas saber cuáles son los códigos Ascii: 72, 73, 33. Y sobre todo, a los programadores no les importa eso. Todo lo que hacen es saber que hay algún mapeo debajo del capó, pero absolutamente.

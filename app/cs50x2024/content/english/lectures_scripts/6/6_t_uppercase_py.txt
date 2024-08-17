@@ -1,0 +1,5 @@
+Let's look at another case from p-- of week 2, where we had this upper case code. The goal here, recall, was to take a string from the user s, and then go ahead and capitalize all of the letters therein. So how might I do this in-- oops-- how might I do this in Python? Well, we've seen hints of this already. 
+
+Let me go ahead and in a file called uppercase.py, I'm going to go ahead and from cs50 import get_string as before. Then, I'm going to go ahead and get a string from the user, asking them for the before version. And then, here, I'm going to go ahead and print out after. And then, I'm going to go ahead and print out known line. 
+
+And you know what? If I want to print the string, I'm just going to go ahead and print the string.upper and be done with it today. So now, if I do Python upper-- up-- oops-- Python of uppercase, and let's type in Emma's name this time in all lowercase-- wala-- done. And you don't have to worry about getting into the weeds of each individual character. Variables of type string, like s in this case, have functions built in, like upper. And we saw lower, as well, earlier.

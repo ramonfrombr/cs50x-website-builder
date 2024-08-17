@@ -1,0 +1,23 @@
+If a star represents an address and char represents the type of address being pointed at, just as int star can let you point at a value like n-- which stored 50 --so could a char star-- by that same logic --allow you to store the address of and therefore point at a character. And of course, as you said, from Week 1, a string is just a sequence of characters. So a string would seem to be just the address of the first byte in the sequence of characters. And the last byte happens to be all 0s by convention, to help us find the end. 
+
+So what then more technically is a string and what is the CS50 library that we're now going to start taking off as training wheels? Well last week we introduced you to the notion of typedef, where you can create your own customized data type that does not exist in C but does exist in your own program. And we introduced this keyword, typedef. 
+
+We proposed last week that this was useful because you could actually declare a fancy structure that encapsulates multiple variables, like name and number, and then we called this data structure, last week, a person. That was the new data type we invented. Well it turns out you can use typedef in exactly the same way even more simply than we did last week by saying this. If you say typedef char star string-- typedef means give me a new data type, just for my own use. Char star means the type of value is going to be the address of a character. And the name I want to give to that data type is going to be string. 
+
+And so literally, this line of code here, this is one of the lines of code in CS50 dot h-- the header file you've been including for several weeks, where we are creating a data type called string to make it a synonym for char star. So that if you will, it's an abstraction, a simplification on top of the idea of a sequence of characters being pointed at by an address. 
+
+Any questions? And honestly, this is why-- and maybe those sort of blank stares --this is why we introduced strings in Week 1 as being an actual type as opposed to not existing at all. Because who really cares about addresses and pointers and all of that when all you want to do is like, print, hello world, or hello, so and so's name? 
+
+Yeah, question. 
+
+AUDIENCE: What other-- what other functions are created-- major functions are created by CS50 are not intrinsic to-- 
+
+DAVID J. MALAN: Really good question. We'll come back to this later today. But other functions that are defined in the CS50 library that are training wheels that come off today are getString, getInt, getFloat, and the other get functions as well. But that's about it that we do for you. 
+
+Other questions? Yeah. 
+
+AUDIENCE: Can you define all of these words again? Like, it's-- so string is like a character pointer which points-- I was confused about that. Can you repeat that? 
+
+DAVID J. MALAN: Sure. A string, per this definition, is a char star, as a programmer would say. What does that mean? A string is quite simply a variable that contains the address of a character. By our human convention, that character might be the beginning of a multi character sequence. But that's what we called strings in Week 1. So a string is just the address of a single character. And we leave it to human convention to know that the end of the string will just be demarcated by eight 0 bits, a.k.a. the null terminator. 
+
+And this is the sense in which-- especially if you have some prior programming experience --that C is much more low level. In Python, as you'll soon see in a few weeks, everything just works so splendidly easily. If you want a string, you can have a string. You don't have to worry about any of these low level details. But that's because Python is built here, conceptually, where C is built down here-- so to speak --closer to the computer's memory. But there's no magic. If you want to string, fine. Just remember where it starts, remember where it ends. And boom, you're done. The star in the syntax today is just a way of expressing those ideas in code.

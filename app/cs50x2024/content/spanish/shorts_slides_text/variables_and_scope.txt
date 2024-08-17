@@ -1,0 +1,145 @@
+[0]
+
+Alcance de las Variables
+
+[1]
+
+Alcance de las Variables
+
+● El alcance es una característica de una variable que define a qué funciones puede accesar esa variable.
+● Las variables locales solo pueden accesarlas las funciones en las cuales fueron creadas.
+● Las variables globales pueden accesarlas cualquier función del programa.
+
+[2]
+
+Alcance de las Variables
+
+● Hasta ahora en el curso, casi con toda seguridad solo has trabajado con variables locales.
+● Aquí, x es local para la función triple(). Ninguna otra función puede referirse a esa variable, ni siquiera main(). result es local para main().
+int triple(int x); // declaración
+int main(void)
+{
+int result = triple(5);
+}
+int triple(int x)
+{
+return x * 3;
+}
+
+[3]
+
+Alcance de las Variables
+
+● Las variables globales también existen. Si una variable se declara fuera de todas las funciones, cualquier función puede referirse a ella.
+int triple(int x); // declaración
+#include <stdio.h>
+float global = 0.5050;
+int main(void)
+{
+triple();
+printf(“%f\n”, global);
+}
+void triple(void)
+{
+global *= 3;
+}
+
+[4]
+
+Alcance de las Variables
+
+● ¿Por qué importa esta diferencia? En su mayor parte, las variables locales en C se pasan por valor en las llamadas de función.
+● Cuando una variable se pasa por valor, el receptor recibe una copia de la variable pasada, no la variable en sí misma.
+● Eso quiere decir que la variable en el punto de llamada no cambia a menos que se sobrescriba.
+
+[5]
+
+Alcance de las Variables
+
+● No afecta foo. (Declaraciones de función omitidas por espacio).
+int main(void)
+{
+int foo = 4;
+triple(foo);
+}
+int triple(int x)
+{
+return x *= 3;
+}
+
+[6]
+
+Alcance de las Variables
+
+● Sobrescribe foo. (Declaraciones de función omitidas por espacio).
+int main(void)
+{
+int foo = 4;
+foo = triple(foo);
+}
+int triple(int x)
+{
+return x *= 3;
+}
+
+[7]
+
+Alcance de las Variables
+
+● Las cosas pueden resultar especialmente peores si el mismo nombre de variable aparece en varias funciones, lo cual es perfectamente aceptable siempre y cuando las variables existan en diferentes ámbitos.
+
+[8]
+
+Alcance de las Variables
+int increment(int x);
+int main(void)
+{
+int x = 1;
+int y;
+y = increment(x);
+printf(“x es %i, y es %i\n”, x, y);
+}
+int increment(int x)
+{
+x++;
+return x;
+}
+
+[9]
+
+Alcance de las Variables
+int increment(int x);
+int main(void)
+{
+int x = 1;
+int y;
+y = increment(x);
+printf(“x es %i, y es %i\n”, x, y);
+}
+int increment(int x)
+{
+x++;
+return x;
+}
+
+[10]
+
+Alcance de las Variables
+int increment(int x);
+int main(void)
+{
+int xm = 1;
+int y;
+y = increment(xm);
+printf(“x es %i, y es %i\n”, xm, y);
+}
+int increment(int xi)
+{
+xi++;
+return xi;
+}
+
+[11]
+
+Alcance de las Variables
+x es 1, y es 2

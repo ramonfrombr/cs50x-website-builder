@@ -1,0 +1,53 @@
+Muy bien, bueno, ¿y si quiero hacer una cosa más y combinar estas dos ideas en un programa final, pero en este caso una agenda telefónica? Entonces, voy a cerrar estos archivos. Me daré un archivo nuevo.
+
+Lo llamaré phonebook.c. E incluyamos todos estos bloques de construcción de la siguiente manera. De nuevo, cs50.h. Voy a seguir adelante e incluir estándar io.h. Voy a incluir string.h, como antes. Y ahora voy a hacer int main void.
+
+Y ahora quiero implementar la idea de hacer una búsqueda en una agenda telefónica, como en la semana 0, pero ahora en C. Vamos a hacerlo sencillo. Y sólo tendremos cuatro nombres en la agenda telefónica, así que string names 4 equals. Y voy a usar mi mismo truco solo para ahorrarme unas líneas de código, Emma, Rodrigo, y luego, entre comillas, "Brian", entre comillas, "yo mismo".
+
+Pero después nuestros números. ¿Cómo deberíamos almacenar un número de teléfono? ¿Qué tipo de dato propones?
+
+AUDIENCIA: [ININTELIGIBLE]
+
+ORADOR 1: ¿Perdón?
+
+AUDIENCIA: String.
+
+ORADOR 1: ¿String? ¿Por qué string? Yo creo que los números de teléfono son números, y los strings...
+
+AUDIENCIA: Quizá si lo almacenas como [ININTELIGIBLE] o un entero, implicaría que necesitas hacer mucho [ININTELIGIBLE]. No tienes que [ININTELIGIBLE] el [ININTELIGIBLE], como [?añadir?] [ININTELIGIBLE] un número un guion o algo. Sería muy difícil manipular un entero.
+
+ORADOR 1: Exacto. Así que en resumen, si un número de teléfono tiene guiones o paréntesis o quizá signos más delante, esos son carácteres. Esos no son números. Así que no cabrán en enteros o en largos. Así que aunque lo llamemos número de teléfono, ahora que eres programador, en realidad no es tanto un número como un string que parece un número.
+
+Así que string es probablemente la mejor opción aquí. Y si lo piensas, en ciertas zonas geográficas, a veces se tiene que marcar 0 para marcar el número de alguien, si es local. Pero si es un 0, se eliminará matemáticamente porque los ceros a la izquierda no importan. Así que, de nuevo, modelar cosas que parecen números pero en realidad no son, como enteros, probablemente no es la mejor decisión.
+
+Así que hagamos efectivamente string numbers. Y aquí me daré cuatro números. Y hagamos 617 555, ¿qué tal, 0100? Haremos 617 555 como en las películas, 0101. Déjame arreglar eso. Luego haremos 617 555 [?0102?] Y por último, mi número, que será... quién... que será 617 555 0103.
+
+Y estoy haciendo un truco similar, pero esto ahora me está dando dos arreglos, uno llamado names, el otro llamado numbers. Aquí vamos, para int i gets 0, i menor que 4 i más más, así que el mismo bucle rápido que antes. Voy a seguir y compararé ahora. Estoy buscando a Emma. Y ahora estoy buscando específicamente su número, no solo su nombre. Así que quiero imprimir su número esta vez, no solo encontrado o no encontrado.
+
+Así que como antes, puedo decir que si la comparación de los dos strings en names en el corchete i y, entre comillas, "Emma" es igual a igual a 0, sé que encontré a Emma. Y si quiero seguir adelante e imprimir el número de teléfono de Emma, ¿qué debo hacer aquí? No es names. No es numbers. ¿Qué debería ir entre las comillas?
+
+AUDIENCIA: [ININTELIGIBLE]
+
+ORADOR 1: Sí, así que [?%s?], recuerda, solo es nuestro familiar marcador de posición para strings. Y luego aquí no hay names porque sé que estoy buscando a Emma. Aquí quiero seguir adelante y poner number. Así que es un arreglo separado, pero está en la misma ubicación, corchete 1. Déjame guardar eso.
+
+Y aquí abajo, voy a seguir adelante y diré printf no encontrado, si no encontramos a Emma, aunque seguramente lo haremos en este caso. Y aprenderé mi lección. Voy a regresar 0 para éxito y a regresar 1 para fracaso en este caso. Déjame guardar el archivo, subir un poco mi ventana de terminal, hacer phone book, enter, compila bien, punto, slash, phone book. ¿Y qué debería ver cuando ejecute el programa ahora?
+
+AUDIENCIA: [ININTELIGIBLE]
+
+ORADOR 1: 617 555 0100, con suerte. Así que este código es correcto. Y esta es una oportunidad para que lo critiquemos, aunque de una manera diferente. Esto está correcto. Tengo dos arreglos, ambos de tamaño 4, uno con nombres, otro con números, el código encuentra a Emma, imprime su número, regresa 0. Parece que he hecho todo correctamente.
+
+¿Pero hay algo que te incomode del diseño de este código? ¿Podría ser mejor? ¿Hay algo que sea un poco arbitrario, un poco forzado, un poco peligroso sobre este código? ¿Alguna idea? Sí, ¿por aquí?
+
+AUDIENCIA: [ININTELIGIBLE]
+
+ORADOR 1: Perdón, un poco más fuerte.
+
+AUDIENCIA: [ININTELIGIBLE] [?dos?] [?dígitos?], [?en ambos lados?] [ININTELIGIBLE]
+
+ORADOR 1: Así que podríamos usar un arreglo bidimensional para almacenar datos como este. Yo diría que no es estrictamente necesario, y que podría complicar un poco las cosas, pero también es una alternativa razonable. ¿Alguna otra idea?
+
+AUDIENCIA: [ININTELIGIBLE] el número de Emma [ININTELIGIBLE]
+
+ORADOR 1: Sí, está asumiendo que el número de Emma es el primero. Y eso parece razonable, ¿no? El nombre de Emma es el primero. Así que probablemente su número también lo es. El nombre de Rodrigo es segundo. Así que probablemente su número también lo es. Y podría ser cierto.
+
+Pero, francamente, esa es la preocupación, este tipo de sistema de honor al que prometí mantener los nombres en el orden correcto, y prometí mantener los números en el orden correcto, cuando en realidad, ese es justo el tipo de acuerdo tácito entre yo y yo mismo, o si estoy trabajando con colegas o compañeros de clase, que todos acordamos mantener esas cosas sincronizadas. Y eso es peligroso, ¿no? Si tuvieras más de cuatro números, podrías imaginar que las cosas se desordenen rápidamente. O peor aún, si ordenas los nombres alfabéticamente, ¿cómo ordenas los números también y mantienes las cosas juntas?

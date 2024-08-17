@@ -1,0 +1,73 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-4">Ensembles de problèmes 4</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>La collaboration sur les ensembles de problèmes n'est pas autorisée, sauf dans la mesure où vous pouvez demander de l'aide à des camarades de classe et à d'autres personnes, tant que cette aide ne se réduit pas à ce qu'une autre personne fasse votre travail à votre place, conformément à la politique du cours sur
+      <a href="{{ url_for('cs50x2024.honesty') }}">l'honnêteté académique</a>.</p>
+
+    <p>Le personnel effectue des audits aléatoires des soumissions à CS50x. Les étudiants reconnus coupables d'avoir enfreint cette politique seront retirés du cours. Les étudiants qui ont déjà terminé CS50x, s'ils sont reconnus coupables d'une infraction, verront leur certificat CS50 révoqué de manière permanente.</p>
+  </div>
+
+  <h2 id="what-to-do">À faire</h2>
+
+  <ol>
+    <li>Connectez-vous à
+      <a href="https://cs50.dev">cs50.dev</a>
+      en utilisant votre compte GitHub</li>
+    <li>Exécutez
+      <code class="language-plaintext highlighter-rouge">update50</code>
+      dans la fenêtre du terminal de votre codespace pour vous assurer que votre codespace est à jour et, lorsque vous y êtes invité, cliquez sur
+      <strong>Reconstruire maintenant</strong>
+    </li>
+    <li>Soumettez
+      <a href="{{ url_for('cs50x2024.psets.pset4.volume') }}">Volume</a>
+    </li>
+    <li>Soumettez l'un des éléments suivants :
+      <ul>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset4.filter_less') }}">cette version de Filter</a>
+          si vous vous sentez moins à l'aise</li>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset4.filter_more') }}">cette version de Filter</a>
+          si vous vous sentez plus à l'aise</li>
+      </ul>
+    </li>
+    <li>Soumettez
+      <a href="{{ url_for('cs50x2024.psets.pset4.recover') }}">Récupérer</a>
+    </li>
+  </ol>
+
+  <h2 id="when-to-do-it">Quand le faire</h2>
+
+  <p>Avant le
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+  <h2 id="advice">Conseils</h2>
+
+  <ul>
+    <li data-marker="*">Essayez l'un des programmes de David de
+      <a href="{{ url_for('cs50x2024.weeks.week4') }}">la semaine 4</a>.</li>
+    <li data-marker="*">Si vous voyez des erreurs lors de la compilation de votre code avec
+      <code class="language-plaintext highlighter-rouge">make</code>, concentrez-vous d'abord sur la correction de la toute première erreur que vous voyez, en faisant défiler vers le haut si nécessaire. Si vous n'êtes pas sûr de ce que cela signifie, essayez de demander
+      <code class="language-plaintext highlighter-rouge">help50</code>
+      de l'aide. Par exemple, si vous essayez de compiler
+      <code class="language-plaintext highlighter-rouge">filter</code>, et
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>make filter
+</code></pre>
+        </div>
+      </div>
+      <p>génère des erreurs, essayez d'exécuter</p>
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>help50 make filter
+</code></pre>
+        </div>
+      </div>
+      <p>à la place !</p>
+    </li>
+  </ul>
+
+{% endblock %}

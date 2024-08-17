@@ -1,0 +1,21 @@
+All right. A few other examples, and we'll build ultimately to some of the more powerful examples we can do even after just two hours of Python programming. Let me go ahead and open up, first of all, overflow.c, which you might recall from a few weeks back was a problem, because as soon as I kept doubling and doubling and doubling an integer in C and printing it out, what eventually happened? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Slight spoiler in the file name. 
+
+AUDIENCE: It overflowed. 
+
+DAVID MALAN: It overflowed, right? And it rolled around, so to speak, to 0, because all of the bits eventually rolled-- you carried too many ones. And voila, you were left with all zeros. Python is actually kind of cool. Let me go ahead and open up a file here called overflow.py and implement this same idea this time in Python. 
+
+Let me go ahead and save this as overflow.py, which now might actually be a bit of a misnomer. I'm going to go ahead and do this. i equals 1 initially. While True, do the following forever. Go ahead and print out i. And then, you know what? Let me go ahead and sleep for one second and then, go ahead and multiply i times 2, which I can also more succinctly write as i star equals 2-- so almost identical to C, except no semicolon here. 
+
+However, sleep you don't just get automatically. It turns out sleep is in a library called time. So I'm going to have to import sleep, so to speak, by using this one-liner up top. Let me go ahead and run this as Python of overflow.py. Let me go ahead and increase the size of this window here and run this. 
+
+OK. I'm a little impatient. That seems a little slow. In Python, you can actually sleep for fractions of sentence-- frackish-- blah, blah-- fractions of seconds. So let me do this faster. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: OK. Now, I'm not counting. But I'm pretty sure that's more than 4 billion, which you'll recall was the upper bound the last time around. And in fact, even though the internet is a little slow here-- so that's why it's not churning it out at a super fast rate-- these are really big numbers. And amazingly in Python, indeed, it's great for data science and analytics and such. Ints have no upper bounds. 
+
+You cannot overflow an int. It will just grow and grow and grow until, frankly, it takes over your computer. But there is no fixed limit, as there was in C, which is wonderful. Downside, though, if Python floats, still imprecise-- so there are libraries, though. There is code that other people have written, though, to mitigate that problem in Python, as well. 

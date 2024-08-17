@@ -1,0 +1,43 @@
+Muy bien. ¿Alguna pregunta al respecto? De acuerdo. Ahora pasemos a algo más, basta con este tipo de detalles sintácticos. Como, eso es Python. De esta manera, aprenderás el 80%, 90% de Python, aunque siempre puedas apoyarte en las diapositivas, apuntes, Google y Stack Overflow para ver pequeños detalles sintácticos a medida que conviertas tus programas de C en programas de Python en el conjunto de problemas 6.
+
+Pero expresiones regulares. Ahora introduzcamos algunas nuevas y potentes funciones de este lenguaje que C no tenía, pero que otros lenguajes sí. Las expresiones regulares a las que he hecho referencia anteriormente como representantes de una función donde puedes definir patrones cuando estás intentando detectar patrones en las entradas de los usuarios.
+
+Y resulta que en las expresiones regulares, hay algunas partes de la sintaxis que conviene conocer. El punto en los ejemplos que vamos a hacer representa cualquier carácter. Así que si no sabes qué carácter estás esperando, puedes poner punto para representar cualquier carácter.
+
+Punto estrella va a significar cero o más caracteres. Punto más va a significar uno o más caracteres. El signo de interrogación va a significar algo opcional. Y hay también otra sintaxis.
+
+Pero primero hagamos esto más real. Si vuelvo a un ejemplo anterior de acuerdo muy simple que hicimos hace un rato, recordarás que teníamos este código donde he enumerado explícitamente sí y y, no y n.
+
+Pero como alguien ha señalado, estos ya siguen un patrón. Y resulta que podría bastar con comprobar una palabra que empieza por y o quizá podría comprobar un poco más sucintamente varios valores a la vez.
+
+Así que voy a seguir adelante y hacerlo. Resulta que Python tiene una biblioteca llamada expresiones regulares, o RE. En esta biblioteca hay un montón de funciones más avanzadas. Puedo cambiar esta condición if por esta otra.
+
+Puedo seguir adelante y usar re.search que es una función cuyo propósito en la vida va a ser buscar un patrón que te importe en una cadena, como algo que empieza por y. Y la manera en que lo voy a hacer es buscar inicialmente sí. Y la cadena que voy a buscar es s.
+
+Y eso va a devolver de manera efectiva verdadero o falso. Así que voy a cambiar mi código para que simplemente sea esto. Esto dice oye, Python. Busca la palabra en la cadena s.
+
+Muy bien. Probemos esto. Así que Python de agree... Vaya, ahora en esta versión. Vaya. Olvidé mi propio... Veamos. Olvidé mis dos puntos. Así que Python de agree. Enter. ¿Estoy de acuerdo? Voy a escribir sí, de acuerdo.
+
+Pero por el momento, solo y no funciona. Así que hagamos que funcione. Bueno, podría hacerlo de varias maneras. En las expresiones regulares, puedes decir sí o algún otro valor.
+
+Así que una barra vertical solo significa o. Así que no es la palabra o y no son barras dobles en este contexto de patrones. Es solo una barra vertical simple. Pero ahora puedo escribir y o sí.
+
+Pero hay algo de inteligencia aquí, ¿verdad? Como, sí ya empieza por y. Así que podría decir esto. Permítanme poner arbitrariamente paréntesis alrededor de los es inicialmente. Pero luego poner un signo de interrogación al final.
+
+Esta es una sintaxis rara. Y de nuevo, de lo que estamos hablando ahora no es Python per se. Estas son expresiones regulares, patrones de texto. Esto solo significa buscar una y y quizás una es, pero quizás no una es.
+
+Así que el signo de interrogación significa 0 o 1 instancia de lo de la izquierda. Es opcional. Así que ahora puedo volver a ejecutar esto y decir sí. Y eso parece funcionar. O puedo decir y y eso parece funcionar.
+
+Pero esto no funciona. Entonces, ¿cómo podría arreglar esto y hacerlo insensible a las mayúsculas y minúsculas? De hecho, podría decir minúsculas y obligar a poner todo en minúsculas. O resulta que, si lees la documentación (esto parece un poco raro), también puedes pasar un tercer argumento, que extrañamente está todo en mayúsculas como si estuvieras gritando.
+
+Pero esta es la expresión regular IGNORECASE. Y esto obligará a que todo se trate como minúsculas o mayúsculas. Da igual. Pero veremos aquí que esto va a hacer mucho más fácil buscar determinados patrones.
+
+Podemos decir no de forma similar aquí simplemente empezando a construir patrones. Y de nuevo, no te sientas y escribas expresiones regulares que simplemente funcionen así. Las construyes trozo a trozo como ya estoy haciendo yo.
+
+Así que déjame arreglar esto rápido. ¿Qué he hecho mal? Aquí vamos. Déjame hacer una última cosa. Supón que estoy de acuerdo. Sí. De acuerdo. Eso está bien. Porque estoy buscando toda la cadena s
+
+Pero si quiero buscar literalmente el principio de la cadena, puedo usar un símbolo de circunflejo aquí. Y para buscar hasta el final de la cadena, puedes usar un signo de dólar. Por qué son así, no lo sé. Es horrible. Pero el circunflejo significa principio de la cadena. El signo de dólar significa final de la cadena.
+
+Y si no es suficientemente loco ahora, sí no va a funcionar. Sin acuerdo. Pero sí, literalmente sí. Porque esto significa que el humano debe escribir literalmente al principio de su entrada una y seguida opcionalmente por una es.
+
+Y después por el signo de dólar, eso debe ser todo para su entrada. Puedes ajustarlo mucho a la entrada del usuario para controlar lo que está escribiendo, especialmente para algo como un acuerdo.

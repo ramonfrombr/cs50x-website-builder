@@ -1,0 +1,17 @@
+D’accord, pour l’instant, même si cela fait beaucoup de code, penchons-nous maintenant sur les éléments à retenir de plus haut niveau, simplement pour pouvoir ensuite motiver une approche alternative qui nous permette d’assembler des structures de données un peu plus sophistiquées à la place. En général, une structure de données est simplement une construction de programme en C, C++, Java, Python (nous les verrons dans différentes langues au cours du reste du trimestre) qui vous permet de stocker des informations différemment dans la mémoire de votre ordinateur.
+
+En C, tout ce que nous allons faire aujourd’hui est grâce à ces trois fonctionnalités de C. Donc même si cela peut sembler être beaucoup de syntaxe, tout ce que nous faisons aujourd’hui se résume à trois éléments de syntaxe que vous avez déjà vus auparavant.
+
+Struct, ce rappel était un mot clé en C qui vous permet de créer votre propre structure. Par exemple, il y a quelques semaines, nous avons créé une structure de personne qui avait un nom et un numéro. Et cela nous donne notre propre type de données qui est structuré pour contenir deux valeurs, comme le nom et le numéro.
+
+Vous utilisez également des structures pour le problème défini impliquant des bitmaps, l’en-tête du bitmap et ainsi de suite. C’étaient également des structures de données.
+
+Dans quel but utilisons-nous la notation par points pour être clairs ? Et vous l’utilisez certainement lorsque vous manipulez les pixels rouges, verts et bleus récemment. Ouais.
+
+PUBLIC : Pour accéder à une propriété d’une structure.
+
+DAVID MALAN : Exactement. Pour accéder à une propriété d’une structure. Donc si vous voulez accéder au nom d’une personne ou à son numéro, vous utilisez le nom de la variable et ensuite un opérateur point pour entrer dans cette structure de données. Nous avons donc déjà vu cela.
+
+Puis la semaine dernière et à nouveau aujourd’hui, nous voyons l’opérateur étoile, qui peut en quelque sorte signifier différentes choses dans différents contextes. Mais il est toujours lié ici à la mémoire depuis la semaine dernière. C’est l’opérateur de déréférence qui vous permet d’accéder à un bloc de mémoire au moyen de cette chose appelée pointeur.
+
+Donc, même si aujourd’hui semble être un peu comme une lance à incendie (et encore une fois selon mon e-mail, c’est là que les choses commencent maintenant à se stabiliser), comprenez que tout se résume à des principes de base, ou si vous voulez une sorte de trois pièces de puzzle à gratter que nous allons maintenant assembler en des solutions plus intéressantes aux problèmes.

@@ -1,0 +1,35 @@
+Bien sûr, ce n'est qu'une simple ligne de code permettant de créer une variable appelée n. Et cette variable se voit alors attribuer la valeur 50. Concevons maintenant un programme pour mettre cela à exécution. Je commencerai par l'appeler address.c, simplement pour indiquer que nous allons manipuler des adresses dans la mémoire de l'ordinateur. Et je vais dans un premier temps garder les choses simples : include standard I/O dot h, puis int main void. Ensuite, ici, très simple : int n prend la valeur 50. Puis je vais imprimer, % i, n, pour imprimer cette valeur.
+
+Il s'agit donc de concepts de base de la semaine 1 ; ainsi, lorsque j'exécute maintenant ce programme après l'avoir enregistré, make address -- qui semble se compiler correctement --./address, je dois bien sûr voir 50. D'accord, juste le chiffre 50 dans cette variable.
+
+Très bien. Vous êtes donc probablement à l'aise avec ces exercices pour le moment. Mais il s'avère que nous pouvons maintenant en quelque sorte déduire ce qui se passe dans la mémoire de l'ordinateur. Si là encore il s'agit de la mémoire de mon ordinateur et que quelque part dedans j'ai une variable n, elle pourrait occuper quatre octets là-bas. Un int, rappelons-le, est constitué de quatre octets, donc je vais utiliser quatre carrés à l'écran. Pour des raisons de cohérence, je l'appelerai n et je mettrai simplement le chiffre 50.
+
+À présent, si vous regardez vraiment sous le capot, ce n'est pas 50 en soi, ce sont comme 32 bits, des 0 et des 1 qui représentent le chiffre 50. Mais encore une fois, nous ne nous soucions pas des transistors dans ces détails de bas niveau pour l'instant. Mais lorsque j'imprime ceci, tout ce que je fais, c'est imprimer le contenu de cette variable appelée n. Mais cette variable existe techniquement à une adresse spécifique en mémoire. N'est-ce pas ?
+
+Si le coin supérieur gauche était 0 et le coin inférieur droit un plus grand nombre -- et cela est peut-être hors sujet. Je prends du recul, car votre ordinateur peut disposer de milliards d'octets de mémoire. Supposons, aux fins de la discussion, que cette variable n et la valeur qu'elle contient, 50, se trouvent techniquement à l'adresse 0x, ce qui signifie hexadécimal 12345678, où que cela soit. C'est un grand nombre arbitraire. Mais elle existe réellement quelque part dans la mémoire de votre ordinateur, tant que vous disposez d'autant d'octets de matériel à utiliser.
+
+Bien, il s'avère qu'en utilisant C, nous pouvons en réalité -- sans jeu de mots -- voir cette valeur également. Laissez-moi modifier légèrement ce code. Je ne vais pas imprimer n cette fois-ci, je vais imprimer &n, qui se trouve être une nouvelle syntaxe en C. Mais cela signifie tout simplement l'opérateur AddressOf.
+
+Donc, où que n se trouve, déterminez son adresse, son emplacement en mémoire. Il s'avère que C possède un code de format spécial à cet effet. Au lieu de % i, c'est % p, où % p va imprimer cette adresse pour nous. Laissez-moi enregistrer cela, make address à nouveau pour recompiler, puis ./address, entrée. Et voilà.
+
+Il se trouve que dans l'IDE CS50 s'exécutant sur ce serveur cloud, ce n'est pas l'adresse 0x12345678. Je l'ai inventée pour les besoins de la discussion. Elle se trouve techniquement à 0x7FFE00B3ADBC, ce qui n'a pas de signification pour nous en classe, mais tout est en hexadécimal car tous les chiffres ici sont de 0 à F.
+
+C'est plutôt cool. Cela ne semble pas être une information utile pour l'instant, mais vous pouvez en fait voir où se trouvent les valeurs dans la mémoire de votre ordinateur. Quelle est alors cette valeur ? En fait, dès que vous demandez à l'ordinateur l'adresse d'une valeur, vous obtenez ce qu'on appelle un pointeur vers cette valeur. Un pointeur est en effet une adresse dans la mémoire de l'ordinateur. C'est pourquoi c'est % p. Cela dit à printf d'aller imprimer pour moi un pointeur, l'adresse d'une valeur. Et par convention, encore une fois, elle est affichée en hexadécimal comme cela.
+
+En fait, il s'avère que nous pouvons annuler ces effets. Laissez-moi faire un changement ici. Supposons que je souhaite maintenant imprimer à nouveau 50. Je peux en fait inverser les effets de cet opérateur. Donc, &n signifie aller chercher l'adresse de n. Mais il se trouve qu'il existe un autre opérateur en C qui est très utile actuellement, à savoir celui-ci ici. Alors que & est notre opérateur AddressOf, --étoile, ou astérisque-- nous l'avons déjà vu en multiplication. Et aujourd'hui, il a une signification différente dans un contexte différent. L'étoile est l'opposé de l'opérateur AddressOf, elle dit d'aller à une adresse spécifique. Donc, alors que & signifie quelle est l'adresse, * signifie aller à une adresse.
+
+Donc, si je veux maintenant imprimer, non pas l'adresse en soi, mais que je veux littéralement imprimer la valeur de n, ergo en utilisant % i, je peux en fait annuler ce que j'ai littéralement fait, bêtement -- mais pour la démonstration -- en faisant *&n. Pourquoi ? Le & dit : quelle est l'adresse ? L'astérisque dit : allez à cette adresse. Cela annule donc efficacement l'opération.
+
+Vous ne voudriez donc pas utiliser cela en pratique, mais cela ne fait que parler du type d'opérations de base que nous faisons ici. Donc make address, laissez-moi dire maintenant, ./address, entrée. Et que dois-je voir cette fois ? 50, parce que je n'affiche même pas l'adresse. J'obtiens l'adresse et je vais à l'adresse, ce qui va à l'encontre du but recherché. Je vois à nouveau 50. Mais cela revient simplement à dire que même si les choses peuvent sembler un peu cryptiques à première vue, syntaxiquement, & permet d'obtenir l'adresse, * permet d'aller à cette adresse, d'une manière ou d'une autre.
+
+D'accord ?
+
+PUBLIC : Pouvez-vous [INAUDIBLE] en tapant l'adresse dans [INAUDIBLE] comme un [INAUDIBLE] ?
+
+DAVID J. MALAN : Très bonne question, oui. Si je m'étais souvenu de l'adresse, peut-être était-ce 0x12345678, je pourrais en fait coder en dur cette adresse dans mon programme et dire à l'ordinateur d'y aller. La syntaxe est un peu différente. Je devrais la convertir à l'aide d'un cast, mais je pourrais y arriver, oui.
+
+D'accord.
+
+PUBLIC : Que se passe-t-il si vous ne connaissez même pas le type de variable ? Pouvez-vous [INAUDIBLE] sans le savoir ?
+
+DAVID J. MALAN : Ah, très bonne question. Que se passe-t-il si vous ne connaissez pas le type de variable, quel code de format devez-vous alors utiliser ? Réponse courte, c'est à vous de décider. Pour un ordinateur, tout ce qui se trouve en mémoire n'est que des bits, des 0 et des 1 ; la façon dont vous les affichez dépend entièrement de vous. Donc, si vous ne savez pas ce qu'ils sont, vous ne pouvez que deviner, ou dire arbitrairement à l'ordinateur qu'il s'agit d'un caractère, d'un flottant, d'un nombre entier ou autre chose. Il ne peut pas le déterminer pour vous, du moins en C.

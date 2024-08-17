@@ -1,0 +1,27 @@
+Mais profitons de nos dernières minutes ensemble pour jeter un œil à un dernier visuel, créé par certains de nos autres amis en ligne qui ont réalisé une animation racontant l'histoire des différences entre les piles et les files d'attente personnifiées comme suit.
+
+[LECTURE VIDÉO]
+
+NARRATEUR : Il était une fois, un homme nommé Jack. Lorsqu'il s'agissait de se faire des amis, Jack n'avait pas le don. Alors Jack est allé parler à l'homme le plus populaire qu'il connaissait. Il est allé voir Lou et lui a demandé : que dois-je faire ?
+
+Lou a vu que son ami était vraiment désespéré. Eh bien, Lou a commencé, regarde comment tu es habillé. Tu n'as pas d'autres vêtements avec un look différent ?
+
+Oui, a dit Jack, bien sûr. Viens chez moi et je te les montre.
+
+Alors ils sont allés chez Jack. Et Jack a montré à Lou la boîte où il rangeait toutes ses chemises, ses pantalons et ses chaussettes.
+
+Lou a dit : je vois que tu as tous tes vêtements en pile. Pourquoi ne portes-tu pas d'autres vêtements de temps en temps ?
+
+Jack a dit : eh bien, quand j'enlève mes chaussettes, je les lave et je les range dans la boîte. Puis vient le lendemain matin et je saute du lit. Je vais à la boîte et prends mes affaires en haut.
+
+Lou a vite compris le problème de Jack. Il rangeait ses vêtements, ses CD et ses livres en pile. Quand il voulait prendre quelque chose à lire ou à porter, il prenait le livre ou les sous-vêtements du dessus. Puis quand il avait fini, il les remettait en place. Il les remettait au-dessus de la pile.
+
+Je connais la solution, a dit Lou triomphant. Tu dois apprendre à utiliser une file d'attente. Lou a pris les vêtements de Jack et les a suspendus dans un placard. Et quand il a vidé la boîte, il l'a tout simplement jetée.
+
+Puis il a dit : maintenant Jack, à la fin de la journée, mets tes vêtements à gauche quand tu les ranges. Puis demain matin, quand tu verras le soleil briller, prends tes vêtements à droite, à la fin de la ligne. Tu vois, a dit Lou, ce sera génial. Tu porteras tout une fois avant de porter quelque chose deux fois.
+
+Et avec tout dans les files d'attente dans son placard et sur son étagère, Jack a commencé à être sûr de lui, tout cela grâce à Lou et à sa merveilleuse file d'attente.
+
+[FIN DE LA LECTURE]
+
+DAVID MALAN : D'accord, c'est tout pour CS50. On se voit la prochaine fois.

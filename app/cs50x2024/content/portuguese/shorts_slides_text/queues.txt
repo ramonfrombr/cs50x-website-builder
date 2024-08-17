@@ -1,0 +1,65 @@
+[1]
+
+Filas
+• Uma fila é um tipo especial de estrutura que pode ser usada para manter dados de forma organizada.
+• Esta estrutura de dados é comumente implementada de duas formas: como um array ou como uma lista ligada.
+• Em qualquer um dos casos, a regra importante é que quando dados são adicionados à fila, eles são anexados ao final. Logo, se um elemento precisa ser removido, o elemento na frente é o único que pode ser removido legalmente.
+• Primeiro a entrar Primeiro a sair (FIFO)
+
+[2]
+
+Filas
+• Existem apenas duas operações que podem ser executadas legalmente em uma fila.
+• Enfileirar: Adicione um novo elemento ao final da fila.
+• Desenfileirar: Remova o elemento mais antigo da frente da fila.
+
+
+[12]
+
+Filas
+• Implementação baseada em array
+• Enfileirar: Adicione um novo elemento ao final da fila. No caso geral, enfileirar() precisa:
+• Aceitar um ponteiro para a fila.
+• Aceitar dados do tipo VALOR a serem adicionados à fila.
+• Adicionar esses dados à fila no fim da fila.
+• Alterar o tamanho da fila.
+
+[23]
+
+Filas
+• Implementação baseada em array
+• Desenfileirar: Remova o elemento mais antigo da frente da fila. No caso geral, desenfileirar() precisa:
+• Aceitar um ponteiro para a fila.
+• Alterar a localização da frente da fila.
+• Diminuir o tamanho da fila.
+• Retornar o valor que foi removido da fila.
+
+[24]
+
+Filas
+• Implementação baseada em array
+VALOR desenfileirar (fila* q);
+28 33 19
+0
+3
+q
+[36]
+
+Filas
+• Apenas certifique-se de sempre manter os ponteiros para o início e fim da lista ligada! (provavelmente global)
+• Para enfileirar:
+• Aloque dinamicamente um novo nó;
+• Defina seu próximo ponteiro para NULL, defina seu ponteiro anterior para a cauda;
+• Defina o ponteiro para o próximo da cauda para o novo nó;
+• Mova o ponteiro da cauda para o nó recém-criado.
+
+[37]
+
+[43]
+
+Filas
+• Para desenfileirar:
+• Atravesse a lista ligada até o seu segundo elemento (se existir);
+• Libere o início da lista;
+• Mova o ponteiro da cabeça para o (ex-) segundo elemento;
+• Faça com que o ponteiro anterior desse nó aponte para NULL.

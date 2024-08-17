@@ -1,0 +1,25 @@
+Let me do one final example now because there's one sort of power we now get that we have the ability to talk in terms of memory addresses. I'm going to go ahead and make a program here, reminiscent of last week, called phone book dot C, whose purpose in life is going to be to store some information in a file-- for the very first time. I'm going to use the CS50 library just to put the training wheels back on briefly so I can get input from the human easily. 
+
+But I'm going to go ahead then and use the string library and standard I/O, int main void. And I'm going to go ahead and do the following. I'm going to go ahead and open a file called file, using a new function called fopen, phone book dot CSV, a. 
+
+Now what is going on here? Well it turns out, now that we know pointers-- or starting to get comfortable with pointers over the next couple of weeks --notice that I can actually use a new data type-- it's weirdly capitalized-- all caps, FILE. But I can say, give me a pointer to a file and call it lower case file. So this is just a variable called FILE, that effectively, for today's purposes, is going to store the contents of a file for me. It's not technically doing that but that's a reasonable mental model for now. 
+
+fopen takes, as its first argument, the name of the file you want to open. And the second argument is either r, or w, or a-- r, for read w, for write, a, for append-- to just keep adding to a file. 
+
+The goal at hand is to write a phone book program that lets me type in a human's name and number and just keep appending it to a text file, like a database that I can store if I want to keep track of people's phone numbers. fopen, by definition, is going to return a pointer to that file. 
+
+So let me go ahead now and do the following. First, I'm going to go ahead and give myself a name, although I don't really need to use string per se. I'll use char star name. But I am going to use getString just to save myself some trouble here, asking the human for their name. I am going to then ask the human for their number using getString as well. But again I could use scanf If I want. But it's going to require more error checking today. 
+
+And now I'm going to go ahead and do this. It turns out that besides the function printf, there's another function called fprintf, which means file printf. You can print literally to a file. So I'm going to go ahead here and now do print to this file, print a string, and a comma, and another string, and then a new line. And I'm going to go ahead and print out someone's name and then their number. And then down here I'm going to close the file. 
+
+So a bunch of new lines, but this one in short-- I'll comment it --open file, get strings from user, print-- that is write --strings to file, and then close file. So new functions but pretty straightforward at least, conceptually, I would argue. It's terms of what's happening even though the syntax is a little strange. 
+
+But I did deliberately choose this file name, phone book dot CSV. Does anyone know what a CSV is? Yeah, comma separated variables. It's like a very-- comma separated values, it's a very simple spreadsheet format that you can open in Excel, or Apple Numbers, or other tools like that. So I can actually make my own CSV files kind of like this. 
+
+Let me go ahead and make phone book. All right, that seemed to work. Let me go ahead and do dot slash phone book. And now it's asking for a name, so I'll do Emma. And then I think her number last week was 555-0100, enter. But notice this, if I type ls, besides all of the programs we've written today, there's also this phone book dot CSV file. And in fact, let me open up phone book dot CSV. And there's Emma's name and number in a file. 
+
+Let me go ahead and run it once more and this time do Rodrigo, like last week, 617-555-0101, enter. And voila, his name just appeared in the file. 
+
+We'll do one more. So Brian was 617-555-0102, enter. And the CSV file is getting updated in real time. And now if I actually go and download this file from the IDE by control clicking or right clicking on it, that ends up in my downloads folder. And if I go ahead and click on this-- if you have something like Numbers or Microsoft Excel installed and you use it for the very first time-- you'll see that it's opened up a spreadsheet containing those names and those numbers. 
+
+So if you've ever needed to do a sort of data science-like analysis of data, you can actually write code that generates the data for you in a CSV format and gives you these, perhaps, familiar, rows and columns.

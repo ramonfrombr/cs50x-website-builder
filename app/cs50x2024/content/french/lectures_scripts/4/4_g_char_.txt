@@ -1,0 +1,23 @@
+Si une étoile représente une adresse et que char représente le type d'adresse pointé, tout comme int star peut vous permettre de pointer vers une valeur comme n--, qui a stocké 50, un char star pourrait également, selon la même logique, vous permettre de stocker l'adresse et donc de pointer vers un caractère. Et bien sûr, comme vous l'avez dit dans la semaine 1, une chaîne n'est qu'une séquence de caractères. Une chaîne semblerait donc n'être que l'adresse du premier octet dans la séquence de caractères. Et le dernier octet se trouve être tout simplement des 0 par convention, pour nous aider à trouver la fin.
+
+Alors, qu'est-ce qu'une chaîne au sens technique et qu'est-ce que la bibliothèque CS50 que nous allons maintenant commencer à utiliser comme des roulettes d'entraînement ? Eh bien, la semaine dernière, nous vous avons présenté la notion de typedef, grâce à laquelle vous pouvez créer votre propre type de données personnalisé qui n'existe pas dans C mais uniquement dans votre propre programme. Et nous avons présenté ce mot clé, typedef.
+
+Nous avons proposé la semaine dernière que cela était utile car vous pouviez en fait déclarer une structure sophistiquée encapsulant plusieurs variables, comme le nom et le numéro, puis nous avons appelé cette structure de données personne la semaine dernière. C'était le nouveau type de données que nous avions inventé. Eh bien, il s'avère que vous pouvez utiliser typedef exactement de la même manière, encore plus simplement que ce que nous avons fait la semaine dernière, en disant ceci. Si vous dites typedef char star string, typedef signifie donnez-moi un nouveau type de données, juste pour mon propre usage. Char star signifie que le type de valeur va être l'adresse d'un caractère. Et le nom que je veux donner à ce type de données va être string.
+
+Et donc littéralement, cette ligne de code ici, c'est l'une des lignes de code dans CS50 dot h (le fichier d'en-tête que vous incluez depuis plusieurs semaines), dans laquelle nous créons un type de données appelé string pour en faire un synonyme de char star. Donc, si vous voulez, c'est une abstraction, une simplification de l'idée d'une séquence de caractères pointée par une adresse.
+
+Des questions ? Et honnêtement, c'est pourquoi (et peut-être ces regards vides) nous avons présenté les chaînes la semaine 1 comme étant un type réel et non pas inexistant. Parce qu'au fait qui se soucie des adresses, des pointeurs et de tout ça quand tout ce que tu veux faire, c'est par exemple imprimer Bonjour le monde, ou bonjour, le nom de untel.
+
+Oui, une question.
+
+LE PUBLIC : Quelles autres fonctions créées (les principales fonctions créées par CS50) ne sont pas intrinsèques à ?
+
+DAVID J. MALAN : Très bonne question. Nous y reviendrons plus tard aujourd'hui. Mais les autres fonctions qui sont définies dans la bibliothèque CS50 et qui sont des roulettes d'entraînement que l'on abandonne aujourd'hui sont getString, getInt, getFloat, ainsi que les autres fonctions get. Mais c'est à peu près tout ce que nous faisons pour vous.
+
+D'autres questions ? Oui.
+
+LE PUBLIC : Pouvez-vous encore une fois définir tous ces mots ? Par exemple, une chaîne est comme un pointeur de caractère qui pointe vers... J'étais confuses à ce sujet. Pouvez-vous le répéter ?
+
+DAVID J. MALAN : Bien sûr. Une chaîne, selon cette définition, est un char star, comme dirait un programmeur. Qu'est-ce que cela signifie ? Une chaîne est tout simplement une variable qui contient l'adresse d'un caractère. Par convention humaine, ce caractère peut être le début d'une séquence de plusieurs caractères. Mais c'est ce que nous avons appelé des chaînes dans la semaine 1. Donc, une chaîne est juste l'adresse d'un seul caractère. Et nous laissons à la convention humaine le soin de savoir que la fin de la chaîne sera simplement délimitée par huit bits à 0, alias le caractère nul.
+
+Et c'est en ce sens que, surtout si vous avez une expérience préalable en programmation, C est beaucoup plus bas niveau. En Python, comme vous le verrez bientôt dans quelques semaines, tout fonctionne si facilement et si bien. Si vous voulez une chaîne, vous pouvez avoir une chaîne. Vous n'avez pas à vous soucier de tous ces détails de bas niveau. Mais c'est parce que Python est construit ici, conceptuellement, tandis que C est construit ici (pour ainsi dire), plus près de la mémoire de l'ordinateur. Mais il n'y a pas de magie. Si vous voulez une chaîne, très bien. Rappelez-vous simplement où elle commence, où elle se termine. Et boom, c'est fait. L'étoile dans la syntaxe aujourd'hui n'est qu'un moyen d'exprimer ces idées dans le code.

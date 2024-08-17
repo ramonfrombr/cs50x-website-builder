@@ -1,0 +1,15 @@
+Muy bien. Entonces veamos si podemos distinguir algunas de las diferencias en este lenguaje por medio de ejemplos al revisar varios de los ejemplos que hemos hecho en las últimas semanas. Y para que sea más fácil ver el antes y el después, déjenme utilizar esta función del IDE: resulta que si hacen clic en este pequeño icono blanco aquí, pueden dividir su pantalla así. Entonces adoptaré el hábito de abrir un archivo en C a la izquierda y un archivo en Python a la derecha por un rato.
+
+Entonces vayamos, por ejemplo, al directorio llamado Uno, que tiene todos mis programas de la semana 1 escritos en C, así como algunos nuevos para hoy que escribiremos principalmente en tiempo real. Entonces aquí hay un programa de la semana 1 que simplemente hizo esto. Obtiene el nombre del usuario.
+
+¿Cómo implementamos esto en Python? Bueno, déjenme crear un archivo llamado string.py. Y como antes, voy a convertir esto de "antes" a "después". Sin embargo, esta función get_string es, por el momento, algo que les damos en CS50. Hay una librería de CS50 para Python, pero solo vamos a utilizarla durante una o dos semanas. Y les quitaremos esa rueda de entrenamiento.
+
+Para usarla, pueden decir simplemente import cs50, que es similar a include cs50.h. O pueden decir de manera más explícita from cs50, importar la función real que quieren, como get_string. Entonces voy a hacer esto de manera explícita por ahora para que luego pueda hacer s = get_string. ¿Cuál es su nombre signo de interrogación? y pondré una barra invertida aquí, porque get_string no es print. No les da una nueva línea de manera automática. Y luego, imprimiré el nombre del usuario: hola, coma más s.
+
+Voy a guardar mi archivo, ir a la ventana de mi terminal y ejecutar Python en string.py. Luego escribiré mi nombre, David, cuando se me solicite. Y esperemos que diga hola, David. Para calentar también, no necesitamos utilizar el operador más. Puedo, en vez de eso, cambiar esto a un segundo argumento, eliminar el espacio dentro de "hola" y ahora volver a ejecutar este programa. Y espero ver exactamente el mismo efecto; por ejemplo, si Brian escribe su nombre, hola, Brian.
+
+Y si realmente quiero ponerme elegante, recuerden que hay otra forma de hacer esto. Si quiero incluir el nombre del usuario aquí, como en Scratch, ¿qué puedo poner entre llaves?
+
+AUDIENCIA: S.
+
+DAVID MALAN: S, que es el nombre de la variable que elegí, pero observen esto. Si me pongo un poco descuidado y solo uso las llaves y luego ejecuto Python de string.py, y escribo, por ejemplo, el nombre de Emma, ese no es el nombre de Emma. Me lo está tomando literalmente. Tengo que convertirlo en una cadena f o una cadena de formato, aunque esa sintaxis se vea rara. Ahora, si lo vuelvo a ejecutar y escribo Emma, esperemos que salude a Emma, así que solo algunos calentamientos para mapear uno al otro. Pero veamos qué más podemos hacer aquí en Python.

@@ -1,0 +1,37 @@
+All right. So now let's do something more fun. So now that we have Python, it turns out we can do some more interesting things. And it turns out you can do these even on your own Mac or PC. I've been using the IDE all this time. 
+
+But Python is even easier than C to get working on your own Mac and PC. And so indeed, before class, I literally downloaded a program called Python, installed it on my Mac-- and you could do it on a PC as well-- which allows me on my own Mac to use something like this terminal window in order to run Python programs on my own Mac without the IDE in the way. 
+
+What this means in particular, I can use hardware on my own Mac or PC. For instance, like the microphone built in. So let me go ahead and make a program here that's going to be called, for instance, voice. Let me go ahead and open voice.py. 
+
+I'm going use a different text editing program. It's not the IDE, but it's going to let me write code. And let me go ahead and do this. Let me go ahead and get input from the user not even using the CS50 library. 
+
+But I'm just going to ask the human to say something backslash n. And then I'm going to force the user's input to lowercase just to make my life a little easier. 
+
+And now I'm going to ask a few questions. If the word hello is in the user's words, well, let me go ahead and say hello to you, too. That's nice. elif, for instance, how are you in words. Let me go ahead and say something like, print, for instance, I am well. Thanks. 
+
+elif, how about goodbye in words. Let me go ahead and print goodbye to you, too. Though I could certainly say most anything I want here. else, I don't know what's going on, so I'm just going to say huh. 
+
+So what is the essence of this program? What have I done? Like, this is kind of, sort of, definitely a stretch, but the beginnings of artificial intelligence, if you will. It's a program that's interacting with me. And way back when, some of the earliest programs in AI were just text-based like this. 
+
+Artificial intelligence is essentially like creating a human that's sentient and actually can respond to and react to a human as though they too are human themselves. So let me go ahead and run this. Python voice.py as though I'm talking to it and say, hello there. 
+
+That's grammatically wrong, but we won't care. Hello to you, too. How are you? I am well, thanks that's kind of cool. Goodbye. Goodbye to you, too. 
+
+Now why did that work? I'm just using pythons in operator, searching the user's words which are just strings that have been typed in via the input function. And again, the input function is almost the same as get string but it's the one that comes with Python. And I'm just doing if else, if else, if else, if else, printing out things. 
+
+But it turns out with Python-- and honestly, other languages, but Python especially-- it's easy to do even fancier things, too. Let me go ahead and not get the human's words from the keyboard but let me import speech recognition, which is a library that I've installed on my computer in advance. 
+
+And let me go ahead and change this a little bit. Let me go ahead and say something like this. Recognizer gets speech recognition.recognizer. And I literally did not know what I was doing. I was simply following the directions when I downloaded the library initially. 
+
+But I learned that I can say speech recognition.microphone as source. Print. Now let's go ahead and say something to the human so they provide input. Then let me get some audio from the. User recognizer.listen to that source being the microphone. 
+
+And then down here I'm going to say, Google speech recognition thinks things you said. And then print recognizer.recognize Google audio. 
+
+So it's OK if we don't understand each and every line. I didn't last night when I was sort of experimenting with this example. The key, though, is that I've imported a very powerful library that's open source and freely available. Happens to talk to Google's back end infrastructure where they implement a number of artificial intelligence features. 
+
+And if I didn't screw up, let's see how this one works. Python of voices.py. Hello, world. How are you? Goodbye, world. OK. Pretty, pretty amazing. 
+
+[APPLAUSE] 
+
+Thank you.

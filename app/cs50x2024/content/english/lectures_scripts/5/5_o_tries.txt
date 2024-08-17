@@ -1,0 +1,3 @@
+All right, so from there, I bet we can try one other approach here. There's another data structure we want to present to, not in code, but in pictures. This one's called a trie. Short for retrieval, even though it's pronounced differently. 
+
+A trie is a data structure that actually is pretty amazing. And it follows this pattern of spending one resource to save on another. A trie is going to use a lot more memory, but it is going to give us actual constant time lookup for things like names or words being inserted into the structure. 

@@ -1,0 +1,15 @@
+Déjenme continuar y abrir otro archivo aquí, o mejorar este con buggy one dot c y cometer un error similar, pero que desencadene un mensaje de error diferente. En este caso, voy a continuar y hacerlo bien esta vez, incluyendo estándar Io dot h. Luego voy a continuar y hacer int main void, y luego como antes, voy a hacer este programa canónico. String name gets get string. Y le pregunto al usuario, cuál es tu nombre -- barra invertida, n. Luego voy a continuar y los saludo con un %s, nombre.
+
+Así que eso también se ve bien. Voy a continuar y desplazarse hacia arriba, para hacer buggy one esta vez. Pero por supuesto, parece que, por Dios, como antes, tengo dos líneas de código, pero de alguna manera, cinco o seis errores. Siempre concéntrate en la parte superior. Probablemente se relaciona con algo como esto, pero esto es más confuso. El identificador no declarado string -- ¿quisiste decir estándar Io? Bueno, no. Entonces, si no lo entiendes, continúa y ejecuta el mismo comando, help 50, make buggy one. Y esta vez, veremos la salida de este comando, con suerte, después de pedir ayuda, una pista sobre lo que realmente estamos buscando.
+
+Y de hecho, ahora notamos que oh, por identificador no declarado, clang significa que has usado un nombre string en la línea cinco de buggy one dot c, que no se ha definido. ¿Olvidaste incluir cs50.h en este punto? Entonces, en resumen, cada vez que tengas un problema al ejecutar un comando y veas mensajes crípticos, busca help 50 como comando para explicártelo. Y de ahí en adelante, probablemente no tendrás que ejecutar ese mismo comando nuevamente.
+
+Pero ¿qué pasa con otro? Déjame continuar y abrir un programa que escribí de antemano aquí y abrir este. ¿Sí? Claro.
+
+AUDIENCIA: [INAUDIBLE] simplemente presiona más botones.
+
+DAVID MALAN: ¿Para volver a ejecutar el mismo comando?
+
+AUDIENCIA: No para borrarlo, sino para [INAUDIBLE]
+
+DAVID MALAN: Oh, sí, para mantener las cosas ordenadas en clase, tengo el hábito de presionar Control l mucho, lo que simplemente limpia mi ventana de terminal. No tiene impacto funcional. Simplemente quita el desorden de la pantalla. También puedes escribir literalmente, por ejemplo, clear, Enter. Eso es un poco más detallado que presionar Control l. Hay muchos pequeños atajos de teclado e interrumpe en cualquier momento si tienes preguntas sobre eso.

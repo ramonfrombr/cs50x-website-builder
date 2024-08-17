@@ -1,0 +1,84 @@
+[1]
+HTML
+• HTML (Lenguaje de marcado de hipertexto) es un componente fundamental de todo sitio web.
+• HTML es un lenguaje, pero no es un lenguaje de programación. Carece de conceptos de variables, lógica, funciones y similares.
+• Es más bien un lenguaje de marcado que utiliza etiquetas delimitadas por corchetes angulares para definir semánticamente la estructura de una página web, haciendo que el navegador web interprete de distinta manera el texto sin formato contenido en los conjuntos de etiquetas.
+
+[8]
+HTML
+• Note cómo el marcado nos permite transmitir información adicional respecto del texto que hemos escrito.
+• Existen más de 100 etiquetas HTML y una gran cantidad de excelentes recursos en línea para encontrarlas. No trataremos todas ellas aquí.
+• Otra forma interesante de aprender sobre las etiquetas HTML es ver el código fuente de un sitio web que frecuentes; para ello, abre las herramientas para desarrollador del navegador de tu preferencia.
+
+[9]
+HTML
+• Etiquetas HTML comunes
+• <b>, </b>
+• El texto entre estas etiquetas se representará en negrita en el navegador.
+• <i>, </i>
+• El texto entre estas etiquetas se representará en cursiva en el navegador.
+• <u>, </u>
+• El texto entre estas etiquetas se representará subrayado en el navegador.
+
+[10]
+HTML
+• Etiquetas HTML comunes
+• <p>, </p>
+• El texto entre estas etiquetas se representará como un párrafo en el navegador, con espacio arriba y debajo.
+• <hX>, </hX>
+• X = 1, 2, 3, 4, 5 o 6
+• El texto entre estas etiquetas se representará como un encabezado de sección de nivel X.
+
+[11]
+HTML
+• Etiquetas HTML comunes
+• <ul>, </ul>
+• Delimitan el comienzo y el final de una lista desordenada (con viñetas).
+• <ol>, </ol>
+• Delimitan el comienzo y el final de una lista ordenada (numerada).
+• <li>, </li>
+• Delimitan los elementos de una lista ordenada o desordenada.
+
+[12]
+HTML
+• Etiquetas HTML comunes
+• <table>, </table>
+• Delimitan el comienzo y el final de la definición de una tabla.
+• <tr>, </tr>
+• Delimitan el comienzo y el final de una fila dentro de una tabla.
+• <td>, </td>
+• Delimitan el comienzo y el final de una columna dentro de una fila dentro de una tabla.
+
+[14]
+HTML
+• Etiquetas HTML comunes
+• <form>, </form>
+• Delimitan el comienzo y el final de un formulario HTML.
+• <div>, </div>
+• Delimitan el comienzo y el final de una división arbitraria de página HTML.
+• <input name=X type=Y />
+• Definen un campo dentro de un formulario HTML. X es un identificador único para ese campo, Y es el tipo de dato que acepta.
+
+[15]
+HTML
+• Etiquetas HTML comunes
+• <a href=X>, </a>
+• Crea un hipervínculo a la página web X, y el texto entre las etiquetas se representa y funciona como el texto del vínculo.
+• <img src=X ... />
+• Otra etiqueta autocerrada para mostrar una imagen ubicada en X, con posibles atributos adicionales (como la especificación del ancho y el alto).
+• <!DOCTYPE html>
+• Específico de HTML5, permite que el navegador sepa que ese es el estándar que está utilizando.
+
+[16]
+HTML
+• Etiquetas HTML comunes
+• <!--, -->
+• Delimitan el comienzo y el final de un comentario HTML.
+• Más allá de las etiquetas como se explica aquí, cada una también puede tener múltiples atributos que modifican levemente la etiqueta.
+• Por ejemplo, generalmente se puede agregar un atributo id=X para identificar de manera única una etiqueta dentro de una página general.
+
+[17]
+HTML
+• Es importante que el HTML que escriba esté bien formado. Cada etiqueta que abra debe cerrarse (a menos que sea una etiqueta autocerrada) y las etiquetas deben cerrarse en orden inverso al que se abrieron.
+• A diferencia de C, su HTML no necesariamente fallará con errores de sintaxis si no está bien formado, por lo que depende de usted estar atento.
+• Como puede resultar una tarea ardua investigar esto, ¡asegúrese de utilizar validadores HTML en línea para obtener ayuda!

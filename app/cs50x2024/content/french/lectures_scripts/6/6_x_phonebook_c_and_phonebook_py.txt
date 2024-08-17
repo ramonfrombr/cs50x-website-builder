@@ -1,0 +1,47 @@
+Bien. Voyons et ouvrons un exemple plus sophistiqué, ou en écrivons un, nommé phonebook.py, dont le but est de représenter la notion d'un annuaire téléphonique. Je vais y aller et de la même manière que plus haut, importer exit depuis sys juste pour pouvoir terminer le programme si on échoue. 
+
+Je vais définir plusieurs personnes. Mais au lieu de les mettre dans une liste comme précédemment, je veux maintenant utiliser quelque chose comme une table de hachage. Une table de hachage, souvenez-vous, a des entrées et des sorties comme des clés et des valeurs. 
+
+Plus généralement, c'est ce que nous allons maintenant appeler un dictionnaire. Un dictionnaire, tout comme dans le monde humain, a beaucoup de mots avec beaucoup de définitions. Un annuaire téléphonique est essentiellement un dictionnaire. Il a beaucoup de noms et beaucoup de numéros. Ce sont respectivement des clés et des valeurs. 
+
+Donc un dictionnaire en Python prend en entrée des clés et produit des valeurs en sortie. Et il est généralement implémenté par les gens qui ont inventé Python en utilisant une table de hachage. Donc la table de hachage que vous avez tous écrite est maintenant un bloc de construction pour ces structures de données ou des structures de données abstraites que nous appellerons maintenant, par exemple, un dictionnaire de manière plus générale. 
+
+Donc les accolades sont de retour uniquement dans le contexte de définir ce qu'est un dictionnaire. Je vais définir une clé appelée Emma et je vais lui donner le même numéro de téléphone que nous lui avions donné il y a quelque temps. Remarquez le deux-points. Remarquez les guillemets autour de chaque valeur. 
+
+Je vais mettre Rodrigo dans l'annuaire téléphonique. Et son numéro va être 617-555-0101 comme avant. Je vais mettre Brian dedans, également séparé par un deux-points. 555-0102. Et je vais me mettre dedans avec 617-555-0103. 
+
+C'est donc un peu différent. Les accolades disent, hé Python. Voilà un dictionnaire. Un dictionnaire a des clés et des valeurs, tout comme un dictionnaire dans le monde humain a des clés qui sont des mots et des valeurs qui sont des définitions. 
+
+Le téléphone a la même idée. Les noms et les numéros sont nos clés et nos valeurs. Je sépare chaque clé et valeur par un deux-points et je sépare ces paires par une virgule. 
+
+Très bien. Alors pourquoi est-ce utile ? C'est maintenant la manière la plus simple de représenter un annuaire téléphonique ou même un dictionnaire avec des mots et des définitions en Python. Je peux maintenant poser une question comme si Emma est dans les gens. Eh bien, laissez-moi aller de l'avant et obtenir son numéro. Laissez-moi aller dire ahead et dire Trouvé, les gens, crochets, Emma, en utilisant une nouvelle syntaxe. Mais je reviendrai là-dessus dans un instant. 
+
+Commençons simplement par cela. Cela ne fonctionnera pas tant que je n'en ferai pas une chaîne f, mais voyons pourquoi cela fonctionne. Python phonebook.py. Vais-je trouver Emma ? En effet. J'ai trouvé son numéro. Si je change cela pour moi-même, David, et que je l'enregistre et que je le relance, oh. Vous devez également changer cela ici. David. Désolé. Maintenant, j'obtiens également mon numéro. 
+
+Qu'est-ce qui se passe ici ? Voici la façon pythonique de simplement demander s'il y a une valeur dans une structure de données. Vous n'avez pas besoin d'utiliser des boucles for. Vous n'avez pas à parcourir des chaînes ou des listes chaînées ou autres. Vous pouvez simplement poser la question comme à la ligne 10 ici. 
+
+C'est une syntaxe relativement nouvelle. Mais ce qui est cool avec les dictionnaires en Python, c'est que si le dictionnaire s'appelle people, et vous savez que c'est un dictionnaire uniquement à partir de ces accolades. Si le dictionnaire s'appelle people, vous pouvez le traiter comme un tableau, mais dont les indices ne sont pas des nombres 0, 1, 2, 3, mais dont les indices sont des mots. 
+
+Donc un autre nom pour un dictionnaire et la programmation est appelé un tableau associatif, ce qui est presque un meilleur nom, car cela sonne comme un tableau. Mais il est associatif dans le sens où vous pouvez associer des mots à des valeurs, pas seulement des nombres à des valeurs. 
+
+Donc, pour être clair, un dictionnaire est des paires clé-valeur. Cependant, les clés sont des chaînes. Et les valeurs sont ce que vous voulez. Dans ce cas, leurs numéros de téléphone. Mais elles pourraient être des définitions de mots anglais réels dans un dictionnaire. 
+
+Très bien. Et je peux continuer et nettoyer cela aussi. Je peux changer cela pour Emma. Et si je la trouve, je peux aller de l'avant et dire quitter 0. Et si je ne la trouve pas, je peux simplement dire imprimer introuvable et quitter 1. Mais les sorties ne sont pas strictement nécessaires. Le programme quittera quand même. Ouais. 
+
+AUDIENCE : [INAUDIBLE] 
+
+DAVID MALAN : Très bonne question et c'est une subtilité que je n'ai pas mentionnée explicitement. Les guillemets simples sont nécessaires ici parce que Python serait confus si j'avais des guillemets extérieurs ici et des guillemets extérieurs ici au début et à la fin de la ligne 11. J'utilise donc délibérément des guillemets simples, qui sont OK en Python. Vous pouvez utiliser des guillemets doubles ou simples. 
+
+Contrairement au C où les doubles étaient des chaînes et les simples étaient des char, il n'y a pas de char en Python. Vous pouvez donc utiliser les deux à n'importe quelle fin. Ouais. 
+
+AUDIENCE : [INAUDIBLE] 
+
+DAVID MALAN : Très bonne question. Donc, dans pset 5, vous avez implémenté une table de hachage, qui est une notion de dictionnaire de plus bas niveau. Ce que je veux dire par là, c'est que vous avez stocké des mots dans le dictionnaire. Mais parfois vous aviez des collisions, et donc vous avez utilisé des listes chaînées. 
+
+C'est bien. Mais votre fonction de vérification, rappelez-vous, dans pset 5 ne renvoie que vrai ou faux. Le mot est-il dans le dictionnaire ou pas ? La fonction de vérification n'a révélé aucune information sur le temps qu'il a fallu pour trouver ce mot ou à quelle distance de la chaîne il se trouvait réellement. 
+
+Un dictionnaire est une abstraction similaire dans l'esprit à votre fonction de vérification. Oui. Techniquement, sous le capot, Emma et Rodrigo pourraient pour une raison quelconque se hacher dans le même compartiment, comme les compartiments sur scène. 
+
+Mais tout ce qui vous intéresse, c'est la valeur. Le but du dictionnaire dans la vie est d'aller trouver la valeur d'Emma pour vous ou la valeur de Rodrigo pour vous et de vous la renvoyer le plus rapidement possible. Le fait que cela conduise à une liste chaînée, peut-être, est un détail d'implémentation qui n'est pas exposé à moi, au programmeur qui veut simplement stocker des clés et des valeurs. 
+
+Et c'est la différence entre un type de données abstrait comme un dictionnaire et une structure de données réelle comme une table de hachage. Vous utilisez ce dernier pour implémenter le premier.

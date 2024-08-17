@@ -1,0 +1,44 @@
+[1]
+
+Pilhas (Estrutura de Dados)
+• Uma pilha é um tipo especial de estrutura que pode ser usada para manter dados de forma organizada.
+• Essa estrutura de dados é normalmente implementada de duas formas: como um array ou como uma lista encadeada.
+• Em ambos os casos, a regra importante é que quando os dados são adicionados à pilha, eles ficam no "topo". Então, se um elemento for removido, o elemento adicionado mais recentemente é o único que pode ser removido legalmente.
+• Último a entrar, primeiro a sair (LIFO)
+
+[2]
+
+Pilhas (Estrutura de Dados)
+• Há apenas duas operações que podem ser realizadas legalmente em uma pilha.
+• Inserir: Adiciona um novo elemento ao topo da pilha.
+• Remover: Remove o elemento adicionado mais recentemente do topo da pilha.
+
+[11]
+
+Pilhas (Estrutura de Dados)
+• Implementação baseada em array
+• Inserir: Adiciona um novo elemento ao topo da pilha. No caso geral, insert() precisa:
+• Aceitar um ponteiro para a pilha.
+• Aceitar dados do tipo VALUE a serem adicionados à pilha.
+• Adicionar esses dados à pilha no topo da pilha.
+• Alterar a localização do topo da pilha.
+
+[22]
+
+Pilhas (Estrutura de Dados)
+• Implementação baseada em array
+• Remover: Remove o elemento mais recente do topo da pilha. No caso geral, remove() precisa:
+• Aceitar um ponteiro para a pilha.
+• Alterar a localização do topo da pilha.
+• Retornar o valor que foi removido da pilha.
+
+[35]
+
+Pilhas (Estrutura de Dados)
+• Certifique-se sempre de manter um ponteiro para o cabeçalho da lista encadeada!
+• Para inserir, aloque dinamicamente um novo nó, defina seu próximo ponteiro para apontar para o cabeçalho atual da lista e, em seguida, mova o ponteiro do cabeçalho para o nó recém-criado.
+
+[41]
+
+Pilhas (Estrutura de Dados)
+• Para remover, percorra a lista encadeada até seu segundo elemento (se existir), libere o cabeçalho da lista e mova o ponteiro do cabeçalho para o (antigo) segundo elemento.

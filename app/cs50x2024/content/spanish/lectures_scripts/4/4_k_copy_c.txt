@@ -1,0 +1,59 @@
+Entonces, ¿cuáles son las implicaciones? Vamos a poner otro ejemplo. Déjenme continuar y guardar esto como copiar punto C. Vamos a intentar una meta muy razonable. Si quiero continuar y obtener la entrada del usuario en realidad copiar una cadena y poner en mayúsculas la cadena del usuario, veamos esto. Déjenme continuar y darme de nuevo los entrenadores temporales, solo para poder obtener una cadena de la persona. Déjenme continuar e incluir entrada y salida estándar punto h y luego un int main vacío.
+
+Déjenme poner un ejemplo sencillo, cuya meta ahora es obtener una cadena del usuario y poner en mayúsculas una copia de este. Así que voy a continuar y hacer que la cadena s obtenga la cadena y llamarla s, como antes. Voy a continuar y luego hacer que la cadena t sea igual a s para hacer una copia de la variable. Y luego voy a continuar y decir, ¿qué? Déjenme continuar y poner en mayúscula la copia.
+
+Y para poner en mayúscula la copia, puedo solo cambiar el primer carácter en t, entonces t corchete 0, ¿a qué? Creo que teníamos toupper hace un rato. ¿Les parece familiar? Pueden llamar la función toupper. Y la función toupper, si no la recuerdan, tienen que usar técnicamente C tipo punto h. Esto podría recordarles la segunda lista de problemas c, donde podrían haber usado esto en el César o en la sustitución, o algo así.
+
+Muy bien. Ahora déjenme continuar e imprimir estas dos cadenas. Déjenme continuar e imprimir s. Déjenme continuar e imprimir t. Así que, de nuevo, todo lo que he hecho en este programa es obtener una cadena del usuario, copiar esa cadena, poner en mayúscula la copia llamada t. Y vamos a imprimir los resultados finales.
+
+Así que déjenme continuar y guardar el archivo. Déjenme continuar y hacer una copia. Parece que se compila bien. Déjenme continuar y ejecutar copia. Déjenme continuar y escribir emma, todo en minúsculas, deliberadamente, porque quiero ver que t esté en mayúsculas pero s no.
+
+Hmm. Pero de alguna manera ambas están en mayúsculas. Observen que emma en minúsculas terminó en mayúsculas tanto en s como en t según las dos líneas de salida. ¿Eso es un error? ¿Verdad? Solo puse en mayúsculas t, ¿cómo también puse accidentalmente en mayúsculas s, creen? ¿Alguna idea?
+
+No importa si apago las luces, sigo sin poder ver ninguna mano. Bien, ¿qué tal aquí adelante? Sí.
+
+AUDIENCIA: Entonces, cuando usted dice t igual a s tiene que [INCOMPRENSIBLE]
+
+DAVID J. MALAN: Exacto. Cuando digo t igual a s en esta línea, obtengo una segunda variable llamada t. Y estoy copiando s. Pero estoy copiando s literalmente. s a partir de hoy, es una dirección. Después de todo, cadena es lo mismo que carácter estrella tanto para s como para t. Y así, técnicamente, todo lo que estoy haciendo es copiando una dirección.
+
+Así que si regreso a mi imagen de antes, esta vez, si he continuado y escrito en una matriz de emma, con todo en minúsculas, e-m-m-a --y luego una barra diagonal 0, en algún lugar en la memoria usando obtener cadena, y he continuado inicialmente y lo he almacenado en una variable llamada s-- y ya no me importan las direcciones. Solo voy a usar flechas ahora para representarlo gráficamente. Cuando creé una segunda variable llamada t y puse t igual a s, eso fue como copiar literalmente la flecha que está en s y almacenarla en t, lo que significa que t también está apuntando a lo mismo.
+
+Porque nuevamente, si no hubiera hecho esta notación de flecha ondulada a mano, habría escrito literalmente 0x123. Habría escrito 0x123 en s y t. Así que cuando, en mi código, continúo y digo, ya saben, vayan al primer carácter en t y luego continúen y pónganlo en mayúsculas. ¿Adivinen qué es el primer carácter en t? Bueno, es esta e. Pero adivinen qué es el primer carácter en s, literalmente la misma e.
+
+Así que esto no es suficiente para copiar una cadena solo diciendo t igual a s, ya que hasta ahora ha ocurrido con cada una de las variables. Cada vez que han necesitado una variable temporal o una copia de algo esto funcionó. Intuitivamente, ¿qué tenemos que hacer probablemente en lugar de eso para copiar realmente Emma a dos lugares diferentes en la memoria? Sí.
+
+AUDIENCIA: Probablemente crear un carácter o crear una variable exactamente del mismo tamaño y copiar cada carácter individualmente.
+
+DAVID J. MALAN: Bien. Así que tal vez deberíamos darnos una variable que tenga más memoria, la misma cantidad de memoria que se almacena para la Emma original, y luego copiar los caracteres de s al espacio que hemos asignado para t. Y de hecho podemos hacer esto.
+
+Déjenme continuar y eliminar todo menos esa primera línea, donde he obtenido s como antes. Y voy a continuar y hacer esto, voy a decir que t es una cadena, pero ya saben, ya no necesitamos ese entrenador. Cadena, carácter estrella, aunque se vea más feo. Déjenme continuar y asignar más memoria para mí. ¿Cómo hago eso?
+
+Bueno, resulta que, no hemos usado esto antes, hay una función C llamada malloc, para memoria alloca. Y todo lo que pide como entrada es cuántos bytes quieres.
+
+¿Entonces cuántos bytes quiero para que Emma guarde su nombre?
+
+AUDIENCIA: [INCOMPRENSIBLE]
+
+DAVID J. MALAN: Escuché 4, 5. ¿Por qué 5?
+
+AUDIENCIA: [INCOMPRENSIBLE]
+
+DAVID J. MALAN: Necesitamos el carácter de terminación nula, e-m-m-a y luego barra diagonal 0. Así que eso es 5. Así que literalmente podría codificar esto aquí. Por supuesto, esto parece un poco frágil porque estoy pidiendo cualquier cadena por medio de obtener cadena. No sé que va a ser Emma. Así que ya saben qué, déjenme continuar y hacer una pregunta. Cualquiera que sea el largo de la entrada de la persona en s, continúen y añádanle 1 para el carácter nulo y luego asignen esa cantidad de bytes. Así que ahora mi programa es más dinámico.
+
+Y una vez que tengo esto, bueno, ¿cómo puedo continuar y copiar esto? Bueno, déjenme simplemente hacer un bucle de la vieja escuela. Así que para int obtengo 0, i es menor que el largo de la cadena de s, i más más, así que este es solo un bucle for estándar que recorre en iteración una cadena-- y creo que puedo simplemente hacer t corchete i igual a s corchete i para copiar las dos cadenas.
+
+Hay un error sutil y una ineficacia sutil aunque. ¿Alguien quiere criticar cómo he hecho para copiar s en t? Sí.
+
+AUDIENCIA: [INCOMPRENSIBLE] obtener cadena [INCOMPRENSIBLE].
+
+DAVID J. MALAN: Sí. Esto fue ineficaz. Dijimos hace un par de semanas que este es un mal diseño simplemente para seguir haciendo la pregunta, ¿cuál es el largo de s? ¿Cuál es el largo de s? Así que recuerden que tuvimos una pequeña optimización hace un par de semanas. Vamos a declarar n para que sea igual al largo de la cadena de s y luego hacer una condición de que i sea menor que n. Así que hemos mejorado el diseño allí. Es un poco más eficaz. Estamos perdiendo menos tiempo. Todavía hay un error sutil aquí. Cuántos bytes-- sí.
+
+AUDIENCIA: ¿No está copiando el terminador nulo?
+
+DAVID J. MALAN: No estoy copiando el terminador nulo. Así que cada otra vez que hemos recorrido en iteración una cadena, esto ha sido correcto. Recorrer en iteración hasta el largo pero no a través del largo de esa cadena. Pero técnicamente quiero dar un paso más esta vez, o de manera equivalente, un paso más. Porque también quiero copiar no solo e-m-m-a, que es el largo de la cadena 4, e-m-m-a es 4, también quiero hacerlo por quinta vez para el carácter nulo.
+
+Así que en este caso, estoy dando deliberadamente un paso más allá de donde normalmente quiero ir para asegurarme de copiar 5 bytes para Emma, no solo 4. Muy bien. Vamos a continuar ahora y a poner en mayúsculas a Emma. Así que t corchete 0 obtiene toupper del primer carácter de Emma en la copia. Y ahora vamos a continuar e imprimir ambas cadenas s y t, justo como antes, con por ciento s de t.
+
+Y déjenme hacer un cambio, uso strlen ahora. Así que sé que voy a obtener un error si no hago esto. Necesito usar cadena punto h-- recuerden-- cada vez que usen el largo de la cadena. Así que voy a añadir eso proactivamente.
+
+Entonces, ¿qué es diferente? Esta línea es la misma que antes. Estoy obteniendo una cadena del usuario. Esta línea es la misma que antes. Estoy poniendo en mayúscula la primera letra. Y estas dos líneas son las mismas. Solo estoy imprimiendo s y t. Así que la nueva idea aquí es, con mi malloc, ¿estoy asignando tantos bytes como necesito para almacenar una copia de Emma, y luego con este bucle for

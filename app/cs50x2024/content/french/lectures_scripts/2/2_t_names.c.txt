@@ -1,0 +1,39 @@
+Alors, voyons cela. Si on doit écrire un programme en utilisant ces quatre noms, je vais le faire rapidement ici. Je vais créer un fichier appelé "noms.c", et j'y insérerai la directive #include <stdio.h>. Et ensuite, j'écrirai int main(void). À l’intérieur, je vais m’attribuer quatre chaînes, en utilisant ma nouvelle syntaxe de tableau, comme précédemment. Je pourrais les appeler name one, name two, name three, name four, mais je ne vais pas reprendre cette mauvaise habitude. Je vais m’attribuer un nom -- une variable appelée names, au pluriel, et y stocker quatre chaînes, comme suit :
+
+Donnons à Emma la première place. Donnons à Rodrigo la deuxième place. J’utilise des majuscules simplement parce que nous avons déjà vu certains de ces codes Ascii, mais je pourrais aussi utiliser des minuscules. Ajoutons Brian. Et puis je vais ajouter mon nom en dernier. Ainsi, le tableau est de taille quatre, mais je compte de zéro à C. Et maintenant, juste pour la démonstration, affichons, disons, le nom d’Emma. Alors, si je veux afficher le nom d’Emma, quel est le type de variable dans lequel elle est stockée ? Quel est le type que je veux afficher ? String. Donc c’est %s, comme la semaine dernière. Et je vais mettre une barre oblique inversée n. Et si je veux afficher le nom d’Emma, qu’est-ce que je dois taper ici pour brancher cet espace réservé ?
+
+PUBLIC : [inaudible]
+
+DAVID MALAN : names[0]. C’est un peu dommage que je le code en dur ici, mais encore une fois, je montre simplement comment tout cela fonctionne pour le moment. Laissez-moi enregistrer cela. Laissez-moi faire make names. Petite erreur ici. Qu’est-ce que j’ai fait de mal ? Oh mon Dieu, tout cela est faux. Est-ce que quelqu’un le voit ?
+
+PUBLIC : [inaudible]
+
+DAVID MALAN : Oui, j’ai oublié la bibliothèque CS50. Donc même si je n’utilise pas get string, j’utilise string, donc j’ai besoin de la bibliothèque CS50 ici. Laissez-moi effacer cela. Make names. OK, c’est mieux. ./names, et je devrais juste voir le nom d’Emma. Mais regardez ça, ce que je peux faire aussi. Je sais que le nom d’Emma est une chaîne, et je sais maintenant qu’une chaîne est un tableau de caractères, donc je peux aussi faire cela. Laissez-moi afficher un, deux, trois, quatre caractères, puis une nouvelle ligne. Et les caractères que je vais afficher sont le nom d’Emma, premier caractère, nom d’Emma, deuxième caractère, nom d’Emma, troisième caractère, et nom d’Emma, quatrième caractère.
+
+Vous pouvez donc avoir ce qui est essentiellement un tableau à deux dimensions, où vous avez deux ensembles de crochets. Le premier m’indexe dans le tableau des noms. Et indexer dans un tableau signifie aller à un certain endroit dans un tableau. Donc names[0], pour ainsi dire. Cette partie ici signifie : "Obtenez le nom d’Emma dans le tableau des quatre noms." Ce crochet carré après indique que dans cette chaîne, traitez-la comme un tableau de caractères et obtenez le caractère zéro, le premier caractère, qui est espérons-le e, puis m, m et enfin a.
+
+Je vais donc enregistrer ce fichier maintenant. Make names à nouveau. Il est compilé, ./names, et voilà, Emma, Emma, je le vois deux fois. Maintenant, je ne vais plus jamais imprimer une chaîne comme ça. C'est ridicule, et en plus j'ai dû savoir à l’avance la longueur de son nom. Cependant, c’est équivalent à l’impression de la chaîne elle-même. C’est juste que C et printf savent que lorsque vous utilisez %s et que vous passez le nom d’une variable, tout ce que printf fait probablement sous le capot est une sorte de boucle et qu’il itère sur votre chaîne à partir du premier caractère et vérifie : "Est-ce le caractère nul ?" Si ce n’est pas le cas, imprimez-le. "Est-ce le caractère nul ?" Si ce n’est pas le cas, imprimez-le. Si c’est le caractère nul -- est-ce le caractère nul ? Si ce n’est pas le cas, imprimez-le. Et c’est comme ça que nous obtenons E-M-M-A, stop, car printf, à cette ligne 12, a probablement remarqué : "Oh, attendez une minute, le cinquième octet dans le tableau zéro des noms d’Emma est la barre oblique inversée zéro, ou les huit bits à zéro." Oui ?
+
+PUBLIC : Cela fait juste partie de [inaudible]
+
+DAVID MALAN : Cela fait partie des trucs sous le capot de printf et c’est ainsi que les humains ont décidé il y a des décennies avec C comment les chaînes fonctionneraient. Ils auraient pu trouver un système différent, mais c’est celui qu’ils ont décidé d’utiliser. D’autres questions ? Oui ?
+
+PUBLIC : [inaudible]
+
+DAVID MALAN : Je n’ai pas été plus loin. J’ai donc délibérément évité de toucher au crochet quatre, même s’il est là. Mais je peux essayer d’imprimer cela. Voyons voir. Je vais donc modifier ce programme rapidement. Je vais afficher %c une cinquième fois. Et voyons si nous pouvons voir le caractère de fin nul d’Emma à l’emplacement quatre, qui est son cinquième emplacement, donc après E-M-M-A. Laissez-moi enregistrer cela. Make names, ./names, Emma, Emma. Donc je ne le vois pas là. Mais vous savez quoi ? Laissez-moi essayer de changer ce dernier uniquement pour rire en %i.
+
+Et encore une fois, c’est là que printf est votre ami. Vous pouvez l’utiliser avec puissance pour voir ce qui se passe. Ou nous pourrions sortir debug 50. Laissez-moi faire make names, ./names. Et voilà, zéro. Je l’imprime littéralement en tant qu’int juste pour le voir. Je ne ferais jamais cela dans le monde réel. Mais il est bien là. Et maintenant, cela ne fonctionne pas souvent, mais juste pour le fun -- je deviens un peu fou -- supposons que je veuille regarder bien au-delà du nom d’Emma, à l’emplacement 400, comme si nous commencions à fouiller dans la mémoire de l’ordinateur, une de ces autres boîtes. Make names, ./names. OK, il y a un moins trois là aussi, ou techniquement un tiret puis un trois.
+
+Nous y reviendrons dans quelques semaines. Nous pouvons en fait commencer à pirater et à regarder autour de la mémoire de mon ordinateur à n’importe quel endroit, car ce ne sont que des chiffres de boîtes sur l’écran. Oui ?
+
+PUBLIC : Y a-t-il une limite à la longueur de la chaîne ?
+
+DAVID MALAN : Y a-t-il une limite à la longueur de la chaîne ? Réponse courte : oui, la quantité de mémoire dont dispose l’ordinateur. Donc, comme 2 milliards, 4 milliards, c’est long.
+
+PUBLIC : Que se passe-t-il si j’essaie de taper [inaudible]
+
+DAVID MALAN : Très bonne question. Que se passe-t-il si vous essayez de taper cela hypothétiquement ? Cela dépend de la fonction que vous utilisez. Laissez-moi revenir là-dessus dans environ deux semaines. Get string ne plantera pas. D’autres fonctions C planteront, si vous leur donnez plus d’entrées qu’elles n’en attendent, et nous reviendrons sur les raisons.
+
+Alors, que se passe-t-il réellement sous ce capot, si nous avons ces quatre noms : Emma, Rodrigo, Brian et David ? Eh bien, si nous considérons à nouveau notre mémoire, nous savons qu’Emma est à ce premier endroit, E-M-M-A, suivie de ce caractère de fin nul. Mais si le deuxième nom que nous avons stocké dans une variable était Rodrigo, il s’avère qu’il va se retrouver dos à dos avec cette mémoire également. Et encore une fois, il s’enroule uniquement parce qu’il s’agit d’une interprétation artistique de ce à quoi ressemble la mémoire. Il n’y a aucune notion de gauche, droite, haut ou bas dans la RAM. Mais il est R-O-D-R-I-G-O, et son caractère de fin nul là. Brian pourrait se retrouver là. Je pourrais me retrouver après lui. Et c’est ce qui se passe réellement sous le capot de votre ordinateur.
+
+Chacune de ces valeurs n’est techniquement pas un caractère. C’est techniquement un nombre. Et franchement, ce n’est même pas un nombre. Ce sont huit bits à la fois. Mais encore une fois, nous n’avons pas à nous soucier de ce niveau de détail maintenant que nous opérons à ce niveau d’abstraction. Et j’ai mis le mauvais code

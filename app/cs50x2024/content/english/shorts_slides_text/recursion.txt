@@ -1,0 +1,61 @@
+[1]
+
+Recursion
+• We might describe an implementation of an algorithm as being particularly “elegant” if it solves a problem in a way that is both interesting and easy to visualize.
+• The technique of recursion is a very common way to implement such an “elegant” solution.
+• The definition of a recursive function is one that, as part of its execution, invokes itself.
+
+[2]
+
+Recursion
+• The factorial function (n!) is defined over all positive integers. 
+• n! equals all of the positive integers less than or equal to n, multiplied together.
+• Thinking in terms of programming, we’ll define the mathematical function n! as fact(n).
+
+[9]
+
+Recursion
+• This forms the basis for a recursive definition of the factorial function.
+• Every recursive function has two cases that could apply, given any input.
+• The base case, which when triggered will terminate the recursive process.
+• The recursive case, which is where the recursion will actually occur.
+
+
+[11]
+
+Recursion
+int fact(int n)
+{
+// base case
+// recursive case
+}
+
+
+[18]
+
+Recursion
+• In general, but not always, recursive functions replace loops in non-recursive functions.
+
+[20]
+
+Recursion
+• In general, but not always, recursive functions replace loops in non-recursive functions.
+• It’s also possible to have more than one base or recursive case, if the program might recurse or terminate in different ways, depending on the input being passed in.
+
+[21]
+
+Recursion
+• Multiple base cases: The Fibonacci number sequence is defined as follows:
+• The first element is 0.
+• The second element is 1.
+• The nth element is the sum of the (n-1)th and (n-2)th elements.
+• Multiple recursive cases: The Collatz conjecture.
+
+[22]
+
+Recursion
+• The Collatz conjecture is applies to positive integers and speculates that it is always possible to get “back to 1” if you follow these steps:
+• If n is 1, stop.
+• Otherwise, if n is even, repeat this process on n/2.
+• Otherwise, if n is odd, repeat this process on 3n + 1.
+• Write a recursive function collatz(n) that calculates how many steps it takes to get to 1 if you start from n and recurseas indicated above.

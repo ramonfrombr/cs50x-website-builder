@@ -1,0 +1,76 @@
+[1]
+
+CSS
+• Les CSS (Cascading Style Sheets) sont un autre langage qu'on utilise lors de la construction de sites web.
+• Si le HTML est utilisé pour organiser le contenu qu'on veut présenter sur nos pages, les CSS sont l'outil qu'on utilise pour personnaliser le look and feel de notre site.
+• Comme le HTML, les CSS ne sont pas un langage de programmation, ils n'ont pas de logique. C'est plutôt un langage de style et sa syntaxe décrit comment certains attributs d'éléments HTML doivent être modifiés.
+
+[6]
+
+CSS
+• Une feuille de style est construite en identifiant un sélecteur (dans le dernier exemple, body) et ensuite en ouvrant une accolade pour indiquer le début de la feuille de style pour ce sélecteur.
+• Entre les accolades, on place une liste de paires clé-valeur de propriétés de style et de valeurs pour ces propriétés, chaque déclaration se terminant par un point-virgule.
+• Puis une accolade fermante termine la feuille de style.
+
+[7]
+
+CSS
+• Propriétés CSS courantes
+• border: style couleur largeur
+• Applique une bordure de la couleur, largeur et style spécifiés (par ex., en pointillés, en tirets, en ligne pleine, en relief…).
+• background-color: [mot-clé | #<hexa à 6 chiffres>]
+• Définit la couleur d'arrière plan. Certaines couleurs sont prédéfinies dans les CSS.
+• color: [mot-clé | #<hexa à 6 chiffres>]
+• Définit la couleur du premier plan (généralement le texte).
+
+[8]
+
+CSS
+• Propriétés CSS courantes
+• font-size: [taille absolue | taille relative]
+• On peut utiliser des mots-clés (xx-petit, moyen…), des points fixes (10pt, 12pt…), des pourcentages (80 %, 120 %) ou reprendre la dernière taille de police (plus petit, plus grand).
+• font-family: [nom de police | nom générique]
+• Certaines polices « sécurisées pour le web » sont prédéfinies dans les CSS.
+• text-align: [gauche | droite | centre | justifier]
+• Pour présenter du texte.
+
+[9]
+
+CSS
+• Vos sélecteurs n'ont pas à s'appliquer uniquement à des catégories de balises HTML. Il existe aussi des sélecteurs d'ID et des sélecteurs de classe.
+• Un sélecteur de balise s'appliquera à tous les éléments avec une balise HTML donnée.
+h2
+{
+font-family: times;
+color: #fefefe;
+}
+
+[10]
+
+CSS
+• Vos sélecteurs n'ont pas à s'appliquer uniquement à des catégories de balises HTML. Il existe aussi des sélecteurs d'ID et des sélecteurs de classe.
+• Un sélecteur d'ID s'appliquera uniquement à une balise HTML avec un identifiant unique.
+#unique
+{
+border: 4px dotted blue;
+text-align: right;
+}
+
+[11]
+
+CSS
+• Vos sélecteurs n'ont pas à s'appliquer uniquement à des catégories de balises HTML. Il existe aussi des sélecteurs d'ID et des sélecteurs de classe.
+• Un sélecteur de classe s'appliquera uniquement à ces balises HTML qui ont reçu des attributs « classe » identiques.
+.students
+{
+background-color: yellow;
+opacity: 0.7;
+}
+
+[12]
+
+CSS
+• Les feuilles de style peuvent être écrites directement dans votre HTML.
+• Placez-les dans des balises <style> dans la tête de votre page.
+• Les feuilles de style peuvent aussi être écrites comme des fichiers CSS séparés et ensuite reliées à votre document.
+• Utilisez des balises <link> dans la tête de votre page pour accomplir cela.

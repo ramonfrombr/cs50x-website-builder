@@ -1,0 +1,156 @@
+[1]
+
+SQL
+• Bien souvent, afin de réaliser le site web le plus fonctionnel possible, nous dépendons d’une base de données pour stocker des informations.
+• Si vous avez déjà utilisé Microsoft Excel ou Google Spreadsheets (parmi d’autres), il y a fort à parier que vous soyez familiarisé avec la notion de base de données : un ensemble de tableaux organisés hiérarchiquement, chacun contenant un ensemble de lignes et de colonnes.
+
+[2]
+
+SQL
+• SQL (Structured Query Language, langage de requête structuré) est un langage de programmation dont l’objectif est d’interroger une base de données.
+• MySQL est une plateforme open-source sur laquelle vous pouvez établir le type de base de données relationnelle avec lequel SQL est le plus à même de fonctionner.
+• De nombreuses installations de MySQL sont livrées avec un outil d’interface graphique utilisateur appelé phpMyAdmin qui peut être utilisé pour exécuter des requêtes de base de données de manière plus conviviale.
+
+[3]
+
+SQL
+• Après avoir créé une base de données, la prochaine chose que vous souhaiterez probablement faire est de créer un tableau.
+• La syntaxe pour ce faire est en fait un peu gênante à appliquer de manière programmatique, du moins au début. C’est là qu’intervient phpMyAdmin.
+• Dans le cadre du processus de création d’un tableau, il vous sera demandé de spécifier toutes les colonnes de ce tableau.
+• Par la suite, toutes vos requêtes feront référence à des lignes du tableau.
+
+[13]
+
+SQL
+• Chaque colonne de votre tableau SQL est capable de contenir des données d’un type de données particulier.
+
+[14]
+
+SQL
+• Contrairement à C, le type de données CHAR dans SQL ne fait pas référence à un seul caractère. Il s’agit plutôt d’une chaîne de caractères de longueur fixe.
+• Dans la plupart des bases de données relationnelles, y compris MySQL, vous spécifiez en réalité la longueur fixe dans le cadre de la définition de type, par exemple CHAR(10).
+• VARCHAR fait référence à une chaîne de caractères de longueur variable.
+• VARCHARs vous oblige également à spécifier la longueur maximale possible d’une chaîne pouvant être stockée dans cette colonne, par exemple VARCHAR(99).
+
+[15]
+
+SQL
+• Une autre considération importante lors de la construction d’un tableau dans SQL est de choisir une colonne comme clé primaire.
+• Les clés primaires permettent d’identifier de manière unique et rapide les lignes d’un tableau.
+• Le choix approprié de votre clé primaire peut faciliter les opérations suivantes sur le tableau.
+• Il est également possible d’établir une clé primaire conjointe, une combinaison de deux colonnes toujours unique.
+
+[16]
+
+SQL
+• SQL est un langage de programmation, mais son vocabulaire est assez limité.
+• Nous envisagerons principalement quatre opérations pouvant être exécutées sur un tableau.
+
+[20]
+
+SQL
+• SQL est un langage de programmation, mais son vocabulaire est assez limité.
+• Nous envisagerons principalement quatre opérations pouvant être exécutées sur un tableau.
+INSERT
+SELECT
+UPDATE
+DELETE
+
+[22]
+
+SQL
+• INSERT
+• Ajouter des informations à un tableau.
+
+[23]
+
+SQL
+• INSERT
+• Ajouter des informations à un tableau.
+INSERT INTO<tableau>(<colonnes>)VALUES(<valeurs>)
+
+[28]
+
+SQL
+• Lors de la définition de la colonne qui finit par être la clé primaire de votre tableau, il est généralement judicieux que cette colonne soit un entier.
+• De plus, pour éviter la situation dans laquelle vous pourriez oublier accidentellement de spécifier une valeur réelle pour la colonne de clé primaire, vous pouvez configurer cette colonne en auto-incrémentation. Elle préremplira ainsi cette colonne pour vous automatiquement lorsque des lignes sont ajoutées au tableau.
+
+[45]
+
+SQL
+• Les bases de données nous permettent d’organiser efficacement les informations dans des tableaux.
+• Nous n’avons pas toujours besoin de stocker toutes les informations pertinentes possibles dans le même tableau, mais nous pouvons utiliser des relations entre les tableaux pour nous permettre d’extraire les informations dont nous avons besoin.
+
+
+[47]
+
+SQL
+• Les bases de données nous permettent d’organiser efficacement les informations dans des tableaux.
+• Nous n’avons pas toujours besoin de stocker toutes les informations pertinentes possibles dans le même tableau, mais nous pouvons utiliser des relations entre les tableaux pour nous permettre d’extraire les informations dont nous avons besoin.
+• Que se passe-t-il si nous nous trouvons maintenant dans une situation où nous devons obtenir le nom complet d’un utilisateur (à partir du tableau des utilisateurs) et le nom de sa mère (à partir du tableau des mères).
+
+[48]
+
+SQL
+• SELECT (JOIN)
+• Extraire des informations à partir de plusieurs tableaux.
+
+[49]
+
+SQL
+• SELECT (JOIN)
+• Extraire des informations à partir de plusieurs tableaux.
+SELECT<colonnes>FROM<tableau1>JOIN<tableau2>ON<prédicat>
+
+[62]
+
+SQL
+• DELETE
+• Supprimer des informations d’un tableau.
+
+[63]
+
+SQL
+• DELETE
+• Supprimer des informations d’un tableau.
+DELETE FROM<tableau>WHERE<prédicat>
+
+
+[67]
+
+SQL
+• Toutes ces opérations sont assez faciles à effectuer dans l’interface graphique de phpMyAdmin.
+• Nous souhaitons trouver un moyen de faire cela de manière programmatique, et pas simplement en saisissant des commandes SQL dans l’onglet « SQL » de phpMyAdmin.
+• Heureusement, SQL s’intègre très bien avec PHP au moyen de fonctions comme query().
+
+[73]
+
+SQL
+• Après vous être connecté à votre base de données avec PHP (à l’aide d’un processus appelé MySQLi ou PDO), vous pouvez transmettre des chaînes de requête en tant qu’arguments aux fonctions en PHP et stocker l’ensemble de résultats dans un tableau associatif.
+$results = query(“SELECT fullname FROM users WHERE idnum = ?”,
+$_SESSION[“id”]);
+print(“Merci de vous être connecté, {$results[‘fullname’]} !”);
+
+[74]
+
+SQL
+• Après vous être connecté à votre base de données avec PHP (à l’aide d’un processus appelé MySQLi ou PDO), vous pouvez transmettre des chaînes de requête en tant qu’arguments aux fonctions en PHP et stocker l’ensemble de résultats dans un tableau associatif.
+• Il est également possible que votre ensemble de résultats puisse se composer de plusieurs lignes, auquel cas l’ensemble de résultats sera un tableau de tableaux associatifs. Il suffit donc de l’itérer !
+
+
+[78]
+
+SQL
+<p>Les mères de la série télé Seinfeld :</p>
+<table>
+<?php
+$results = query(“SELECT mothers FROM moms”);
+if($results !== false)
+{
+foreach($results as $result)
+{
+print(“<tr><td>” . $result[‘mothers’] . “</td></tr>”);
+}
+}
+?>
+</table>

@@ -1,0 +1,93 @@
+[0]
+
+Administrivia
+
+[1]
+
+Administration
+● Il y a beaucoup à apprendre dans ce cours, et pour maximiser votre capacité à le faire, de nombreuses
+ressources sont à votre disposition.
+● Nous avons fait de notre mieux pour concevoir un ensemble de ressources qui conviendra à tout le monde.
+
+[2]
+
+Administration
+● Site Web du cours
+● Matériel de cours – cs50.harvard.edu/lectures
+●
+Transmissions en direct, vidéos, exemples de code, diapositives, notes de scribes, liens
+● Référence de fonction – reference.cs50.net
+●
+Pour ceux qui sont moins à l'aise et plus à l'aise
+●
+Un ensemble consolidé et annoté de pages de manuel.
+● Guide d'étude interactif – study.cs50.net
+●
+Exemples de diapositives, exercices pratiques et plus encore sur divers sujets du cours.
+● Préparation du quiz – cs50.harvard.edu/quizzes
+●
+Anciennes questions et réponses du quiz archivées pour votre examen
+
+[3]
+
+Administration
+● Site Web du cours
+● Problèmes – cs50.harvard.edu/psets
+●
+Spécifications, code de distribution
+●
+Procédures détaillées, rapports d'autopsie
+● Sections – cs50.harvard.edu/sections
+●
+Horaire des sections, vidéos, diapositives
+● Heures de bureau – cs50.harvard.edu/hours
+●
+Calendrier des heures de bureau, généralement disponible en semaine
+● Forum de discussion – cs50.harvard.edu/discuss
+●
+Babillard asynchrone pour obtenir de l'aide des A. T., des T. F. et des camarades de classe.
+
+[4]
+
+Administration
+● Archives du cours
+● Depuis 2007 – cs50.tv
+● Toutes les autres ressources disponibles sur le site Web du cours
+publiées là à la fin de l'automne.
+● Autre aide en ligne
+● CS50 Slack – cs50x.slack.com
+● CS50 Stack Exchange – cs50.stackexchange.com
+● CS50 Facebook – facebook.com/groups/cs50
+● CS50 Twitter – @cs50, #cs50
+● CS50 Reddit – reddit.com/r/cs50
+
+[5]
+
+Administration
+● Notation
+● Les affectations sont notées sur quatre axes différents.
+● Champ d'application
+● Avez-vous fait un effort sincère pour résoudre le problème ?
+● Exactitude
+● Votre code fonctionne-t-il ? Est-il exempt de bogues ?
+● Conception
+● Dans quelle mesure votre code est-il efficace ? Dans quelle mesure est-il bien écrit ?
+● Style
+● Dans quelle mesure votre code est-il lisible par l'homme ?
+
+[6]
+
+Administration
+● Notation
+check50 est un outil de ligne de commande qui peut être utilisé pour vous aider 
+à améliorer votre score d'exactitude
+style50 est un outil de ligne de commande qui peut être utilisé pour vous aider 
+à améliorer votre score de style
+Votre chargé de cours vous fournira des commentaires qualitatifs, basés sur des commentaires, pour vous aider à améliorer votre 
+score de conception
+0
+1
+2
+3
+4
+5

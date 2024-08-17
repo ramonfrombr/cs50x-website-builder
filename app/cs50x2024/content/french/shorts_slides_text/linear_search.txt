@@ -1,0 +1,38 @@
+[1]
+
+Recherche linéaire
+• La recherche linéaire consiste à itérer sur le tableau de gauche à droite, à la recherche d'un élément spécifié.
+En pseudocode :
+• Répétez, en commençant par le premier élément :
+• Si le premier élément est ce que vous recherchez (la cible), arrêtez-vous.
+• Sinon, passez à l'élément suivant.
+
+[2]
+
+Recherche linéaire
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+En pseudocode :
+Répétez, en commençant par le premier élément :
+Si le premier élément est ce que vous recherchez (la cible), arrêtez-vous.
+Sinon, passez à l'élément suivant.
+Cible
+9
+
+[27]
+
+Recherche linéaire
+• Pire scénario : Vous devez parcourir l'intégralité du tableau de n éléments, soit parce que l'élément cible est le dernier élément du tableau, soit parce qu'il n'existe pas dans le tableau.
+• Meilleur scénario : L'élément cible est le premier élément du tableau, et vous pouvez donc arrêter de chercher immédiatement après avoir commencé.
+
+[28]
+
+Recherche linéaire
+O(n)
+Ω(1)

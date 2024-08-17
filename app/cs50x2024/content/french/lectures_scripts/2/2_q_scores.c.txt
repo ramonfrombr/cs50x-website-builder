@@ -1,0 +1,65 @@
+Revenons à un autre exemple, cette fois impliquant trois scores, donc trois entiers, au lieu de trois caractères. Que puis-je réellement faire avec des valeurs comme celles-ci ? Eh bien, laissez-moi avancer et écrire du code, cette fois dans un fichier appelé scores point c. Je vais avancer et nettoyer mon terminal ici et créer un nouveau fichier appelé scores point c. Avançons et faisons quelques lignes similaires ici. Laissez-moi avancer et inclure, disons, CS50 point h, inclure standard Io point h, int main void, et maintenant déclarer quelques variables.
+
+Donnez-moi int score one. Et je vais déclarer mon score sur une affectation égale à 72, un autre score sur une affectation égale à environ 73, et une autre affectation regrettable égale à, disons, 33. Maintenant, j'ai trois variables appelées entiers, et supposons que je veux simplement faire quelque chose comme imprimer la moyenne. Je peux certainement le faire avec printf et quelques calculs mathématiques. Je pourrais donc avancer et dire que la moyenne est de %i, où ce sera un espace réservé, puis une nouvelle ligne. Et puis la moyenne, bien sûr, sera quelque chose comme score one, plus score two, plus score three, divisé par trois au total, puis point-virgule. Donc encore une fois, c'est juste la moyenne. Additionnez trois nombres ensemble, divisez par le nombre total et, le tour est joué, nous devrions obtenir une moyenne.
+
+Laissez-moi avancer et enregistrer le fichier, compiler cela avec make scores, Enter. Semble bien compiler : dot slash scores. Et je devrais obtenir une moyenne de 59 pour ces trois notes de quiz, ou notes d'affectation, dans ce contexte. Mais ce n'est pas la meilleure conception pour l'instant. Maintenant que nous avons affaire à des nombres et à des scores, notamment dans le contexte comme une classe où vous allez peut-être avoir quatre scores ou cinq scores ou plus de scores, en fin de compte, semaine après semaine. Qu'est-ce qui vous dérange peut-être dans cette conception jusqu'à présent ?
+
+AUDITOIRE : [INAUDIBLE]
+
+DAVID MALAN : Répétez.
+
+AUDIENCE : I
+
+DAVID MALAN : Oui, c'est très fixe. C'est comme écrire un programme au début du semestre et décider à l'avance qu'il n'y aura que trois devoirs, et si vous en voulez un quatrième, tant pis. Le logiciel ne le supporte pas. Ce n'est donc pas la meilleure conception. Et que pourriez-vous critiquer d'autre à propos de ce code, aussi simple soit-il. Oui ?
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID MALAN : Oui, je prive potentiellement les étudiants d'un score partiel, surtout si leur moyenne était comme 59,5. Je voudrais être arrondi à 60, par exemple. Nous avons donc également des problèmes d'imprécision. Et nous y reviendrons également. D'autres critiques ? Oui ?
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID MALAN : Oui, même si je l'ai tapé manuellement, c'est dangereusement proche de simplement copier et coller le même code encore et encore et encore. Donc, juste avec l'exemple hi, comme avec celui-ci, comme avec notre exemple de toux la semaine dernière et celle d'avant, refaire sans cesse cette chose est vraiment une opportunité pour une meilleure conception. Il s'avère qu'il y a cette opportunité. Et en C, si vous savez que vous voulez avoir plus qu'une seule valeur, mais qu'elles sont toutes liées, quel pourrait être un joli nom pour une variable contenant plusieurs scores ?
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID MALAN : Scores pluriels en anglais. Alors comment pouvons-nous faire cela ? Malheureusement, si je dis simplement int scores, je dois décider quel score obtient comme valeur. Maintenant, ceux d'entre vous qui ont une expérience de programmation préalable pourraient savoir où nous allons avec cela, et nous sommes sur le point d'y arriver. Il s'avère qu'en C, si vous voulez avoir une variable qui peut stocker plusieurs valeurs, vous utilisez ce qu'on appelle un tableau. Un tableau est une liste de valeurs qui peuvent être toutes du même type dans une variable du même nom. Donc, si vous voulez trois scores, chacun étant un int en C, vous utilisez littéralement des crochets, le nombre de scores que vous voulez, puis un point-virgule. Cela indiquera à l'ordinateur, donnez-moi suffisamment de mémoire pour trois nombres entiers.
+
+Ici, je peux maintenant changer ma syntaxe. Je ne veux pas de score one, score two, score three. Je veux mettre ces scores dans le tableau en disant simplement son nom, en utilisant des crochets, bien qu'un peu différemment cette fois, et en les mettant aux emplacements 1, 2, 3, mais c'est en fait ma première erreur. Les informaticiens commencent généralement à compter à un : non : les informaticiens commencent généralement à compter à zéro, j'ai donc besoin de zéro pour indexer mon tableau. Les tableaux sont indexés à zéro, ce qui signifie simplement que le premier emplacement est zéro, le second est un, le troisième est deux. Donc ceci, est maintenant un code équivalent pour me donner trois variables, mais maintenant je me suis débarrassé du désordre que vous avez identifié en copiant et collant le nom encore et encore, et je peux tous les stocker ensemble.
+
+AUDIENCE : Sur les scores, le nombre trois représente trois variables, n'est-ce pas ? Il ne représente pas quatre ?
+
+DAVID MALAN : Le trois représente-t-il trois variables ? Cela représente suffisamment d'espace pour trois valeurs dans une variable. Bonne question. D'autres, des questions ? Oui ?
+
+AUDIENCE : [INAUDIBLE] apportant des égaux puis [INAUDIBLE]
+
+DAVID MALAN : Très bonne question. Pouvez-vous faire tout cela en une seule ligne ? Oui, mais permettez-moi simplement de vous taquiner en disant quelque chose comme cela impliquant des accolades, mais nous n'irons pas jusque-là aujourd'hui. Mais oui, il existe des moyens de contourner cela. Alors laissez-moi aller de l'avant et corriger cela maintenant. Si je veux calculer la moyenne maintenant, je dois additionner ces trois valeurs dans ce tableau, les scores zéro, les scores un et les scores deux. Mais arithmétiquement, la réponse, le code reste le même, donc si maintenant je fais des scores et que je fais un point-barre scores, ma moyenne est toujours de 59. Et je décline toute responsabilité, il y a probablement encore un bogue mathématique parce que si nous utilisons des entiers, comme cela a été noté, mais nous y reviendrons dans un instant.
+
+Alors poussons un peu plus fort. Même si vous n'avez jamais programmé auparavant, qu'est-ce qui pourrait encore être un peu mauvais dans la conception. Le programme fonctionne, mais nous pouvons faire mieux.
+
+AUDIENCE : Ne stocke toujours que trois.
+
+DAVID MALAN : Ne stocke toujours que trois. Nous n'avons donc même pas résolu le tout premier problème. D'autres critiques ?
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID MALAN : J'ai trop de code dans la dernière ligne. Oui, ça commence à être un peu verbeux, donc ça va être un peu plus difficile à lire : assez juste. Oui ?
+
+AUDIENCE : I
+
+DAVID MALAN : Désolé, dis-le un peu plus fort.
+
+AUDIENCE : Les scores sont codés en dur dans le programme.
+
+DAVID MALAN : Oui, les scores sont codés en dur dans le programme, ce qui signifie que peu importe ce que vous obtenez dans vos devoirs, nous obtenons tous des 59. C'est donc un autre problème également. Et toute autre critique ? Oui ?
+
+AUDIENCE : S'il pouvait lire les données d'entrée, ce serait peut-être mieux.
+
+DAVID MALAN : S'il pouvait lire les données d'entrée, oui, alors laissez-moi combiner ces suggestions. Ce serait formidable si, à terme, ce programme soit dynamique. Et autre chose ? Oui ?
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID MALAN : Certainement. Nous pouvons insérer une boucle dans la situation et obtenir en fait plusieurs valeurs de l'utilisateur.
+
+AUDIENCE : Toujours diviser par trois, donc [INAUDIBLE]
+
+DAVID MALAN : Oui, c'est aussi toujours diviser par trois. Et c'est subtil, et ce n'est pas encore un énorme problème, mais il y a ce principe que je viole ici, appelé ne vous répétez pas. Et je me suis répété dans au moins deux endroits. Quelles valeurs apparaissent à deux endroits ? Trois ici, puis aussi trois ici. Et aussi mineur que ce détail puisse paraître, c'est la source de tant de bogues courants parce que si vous décidez simplement par vous-même, eh bien, je vais coder en dur trois ici, je vais coder en dur trois ici, il y a de fortes chances que demain matin, la semaine prochaine, le mois prochain, l'année prochaine, et encore moins

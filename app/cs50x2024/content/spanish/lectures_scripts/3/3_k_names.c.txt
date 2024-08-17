@@ -1,0 +1,43 @@
+Vale, es interesante, pero en general es un calentamiento de la semana pasada. ¿Por qué no consideramos un problema distinto en el que quizá no queremos buscar solo números, sino quizás nombres? Como, si el objetivo es buscar en una agenda telefónica, voy a seguir adelante y crearé names.c, que me permite buscar nombres en un array.
+
+Así que voy a seguir adelante e incluiré cs50.h. Voy a seguir adelante e incluiré el estándar io.h. Voy a seguir adelante y lo haré int main void. Y aquí abajo voy a seguir adelante y me daré un array, así que un array de string llamado nombres. Voy a seguir adelante y me daré cuatro nombres. Y, al igual que la última vez, puedo hacer que los nombres entre corchetes 0 obtengan Emma. O, de nuevo, para ahorrarme tiempo, puedo cortar unas esquinas aquí y decir Emma, Rodrigo, Brian, David, igual que la semana pasada, en mayúsculas solo porque sí. Así que esa es otra forma de escribir el mismo código con más líneas que eso.
+
+Ahora voy a hacer que int i obtenga 0. i es menor que 5, en este caso, i más más. Y ahora las cosas se ponen un poco interesantes porque quizás quiera decir que si los nombres entre corchetes i son iguales, no busquemos 50 ahora. Busquemos Emma, como la semana pasada. Quiero seguir adelante y decir encontrado si encuentro a Emma, de lo contrario, aquí abajo quiero decir no encontrado.
+
+El problema es que esto no funcionará. Lo siento. Hoy es un pequeño calentamiento. El problema es que esto no funcionará, aunque prácticamente estoy haciendo exactamente lo que hice la última vez. ¿Cuál podría ser la intuición, especialmente si nunca has estudiado C antes, sobre por qué la línea 10 aquí no funcionará tan fácilmente como los números hace un momento? ¿Sí?
+
+AUDIENCIA: Diferencia en el tipo de datos.
+
+PRESENTADOR 1: Diferencia en el tipo de datos, ¿y cuáles son las diferencias, para ser claros?
+
+AUDIENCIA: [INAUDIBLE]
+
+PRESENTADOR 1: Sí.
+
+AUDIENCIA: [INAUDIBLE] del array [INAUDIBLE].
+
+PRESENTADOR 1: Exacto. No puedes usar igual igual para 4 strings porque, recuerda, un string no es un tipo de datos como char, bool, float o int. Recuerda que en realidad es un array y un array que probablemente tiene varios caracteres. Y las probabilidades de que quieras comparar dos strings, probablemente necesites intuitivamente comparar todos los caracteres de esos strings, no solo todo el conjunto a la vez.
+
+En otros lenguajes, si usas Python o Java, en realidad puedes hacer esto en una línea, así como así. Pero en C, todo es mucho más básico. Si quieres comparar strings, no puedes utilizar igual igual.
+
+Sin embargo, resulta que hay una función, y quizás hayas usado esto en p-set 2, si adoptaste este enfoque, donde en realidad puedes comparar dos strings. Así que voy a borrar esta línea y en su lugar voy a decir str comp, para comparación de string, siendo los nombres entre corchetes i el primer string que quiero comparar y luego, entre comillas, "Emma" siendo el segundo string que quiero comparar. Y solo sabrías esto porque te lo han dicho o lo has leído en la documentación. Esta función str compare devuelve 0 si dos strings son iguales.
+
+Devuelve un número positivo si uno viene después que el otro alfabéticamente o un número negativo si uno viene antes que el otro alfabéticamente. Pero por hoy, solo lo estamos usando para probar la igualdad de strings, por así decirlo. Así que voy a seguir adelante y guardaré esto. Voy a seguir adelante y me desplazaré hacia arriba aquí y haré que nombre nombres esta vez.
+
+Y desafortunadamente, parece que no puedo simplemente usar esta función. Y aunque está bien seguir usando ayuda 50 para entender estos mensajes, ¿alguna idea de lo que he hecho mal?
+
+AUDIENCIA: [INAUDIBLE]
+
+PRESENTADOR 1: Sí. Quiero decir, francamente, no puedo entender todas las palabras en la pantalla a primera vista. Pero string.h es algo que hemos visto antes. Y de hecho, si lees la documentación o la página del manual, verás que str compare, de hecho, viene en string.h, así que necesito poner esto aquí arriba. Y ahora, si guardo mi archivo y recompilo mi código aquí abajo con nombres, ahora se compila. Y si hago punto barra nombres, debería ver, mmm, interesante, un mensaje mixto, literalmente.
+
+Entonces, ¿Emma está o no está en mi array? Obviamente está ahí. Y, sin embargo, de alguna manera no está ahí. Entonces, ¿qué he hecho mal lógicamente? ¿Sí?
+
+AUDIENCIA: ¿Tiene [INAUDIBLE] si se encuentra o no? Así que [INAUDIBLE] no se encuentra [INAUDIBLE].
+
+PRESENTADOR 1: Sí. Así que es este no encontrado que estoy imprimiendo al final a ciegas como una especie de solución general. Pero realmente, si ejecuto encontrado o imprimo encontrado aquí arriba, ¿qué debería estar haciendo realmente justo después de eso? Volviendo. Y miramos esto la semana pasada. Recuerda que si quieres seguir adelante y devolver un resultado exitoso, la convención es devolver 0. Y en realidad, aquí abajo, si no tienes éxito, ¿qué debería devolverse quizás en su lugar?
+
+AUDIENCIA: 1.
+
+PRESENTADOR 1: 1. Y de nuevo, estas son convenciones totalmente arbitrarias. Simplemente las aprendes sobre la marcha. Pero 0 significa éxito. 1 tiende a significar fracaso. Y eso ahora se alinea. Así que ahora mi función main esencialmente saldrá antes de tiempo. Entonces, si sigo adelante y ejecuto make names y luego hago punto barra nombres, ahora si estoy buscando a Emma en ese array de cuatro nombres, ella se encuentra y solo se encuentra.
+
+¿Alguna pregunta, entonces, sobre esto aquí?

@@ -1,0 +1,33 @@
+Muy bien. Pasando de esto a algo más familiar, por así decirlo. Recuerden que hemos estado hablando de cadenas por bastante tiempo. De hecho, la mayoría de los programas interesantes que hemos escrito hasta ahora implican quizá información del humano y alguna forma de texto que después manipulas. Pero ya dijimos en la Semana 1 que hablar de cadenas es como decir una mentira piadosa. Quiero decir, son como las rueditas de entrenamiento que prometí que empezaríamos a quitar hoy. Así que consideremos qué es una cadena en este nuevo contexto.
+
+Así que si tenemos una cadena como EMMA aquí, declarada en una variable llamada s, y entre comillas, EMMA en mayúsculas, como lo hemos hecho un par de veces. ¿Cómo se ve esto en la computadora? Bueno, en algún lugar de la memoria de mi computadora hay cuatro, no, cinco bytes, donde se guarda E-M-M-A, y además, ese carácter de terminación nula que marca dónde termina la cadena. Son solo ocho bits 0 individuales. Así es como se representaría EMMA en la memoria de la computadora.
+
+Pero recuerden que la variable en cuestión era s. Esa era mi cadena. Así que esa es la razón por la que durante las últimas semanas, cada vez que querían manipular una cadena, usaban su nombre, como s. Y puede acceder al corchete 0, corchete 1, corchete 2, corchete 3 para llegar a los caracteres individuales de esa cadena como EMMA, E-M-M-A, respectivamente.
+
+Pero por supuesto, y especialmente por la revelación de hoy, todos esos bytes realmente tienen sus propias direcciones. ¿Verdad? Después de esta semana no nos importará cuáles son esas direcciones, pero sin duda existen. Por ejemplo, E podría estar en 0x123. M podría estar en 0x124 (a 1 byte de distancia) 0x125, 0x126 y 0x127. Están a una distancia de 1 byte intencionalmente porque recuerden que una cadena se define por caracteres uno tras otro.
+
+Así que digamos que por el bien de la discusión, el nombre EMMA en la memoria se encuentra en 0x123. Bueno, entonces, ¿qué es realmente esa variable s? Bueno, me atrevo a decir que s es en realidad solo un puntero. ¿Verdad? Puede ser una variable, representada aquí como antes, llamada s. Y guarda el valor 0x123. ¿Por qué? Ahí es donde comienza el nombre de Emma.
+
+Pero, por supuesto, realmente no tenemos que preocuparnos por este nivel de precisión, los números reales. Dibujémoslo como una imagen. s es, si se quiere, un puntero al nombre real de Emma en la memoria, el cual podría estar más abajo. Podría estar aquí. Podría estar aquí, dependiendo de dónde haya terminado en la memoria de la computadora por casualidad. Pero esta flecha solo sugiere que s está apuntando a Emma, específicamente a la primera letra de su nombre.
+
+Pero eso es suficiente, ¿verdad? Porque cómo, si s almacena el inicio del nombre de Emma, 0x123. Y ahí es donde está la E, pero solo lo dibujamos pictóricamente con una flecha. ¿Cómo sabe la computadora dónde termina el nombre de Emma si técnicamente solo recuerda el inicio?
+
+AUDIENCIA: El carácter de terminación nula.
+
+DAVID J. MALAN: El carácter de terminación nula. Y estipulamos hace un par de semanas que eso es importante. Pero ahora es aún más importante porque resulta que s, esta cosa que hemos estado llamando una cadena, no está familiarizada con MMA ni con el terminador nulo. Todo lo que s está señalando técnicamente, hasta hoy, es la primera letra de su nombre, que en esta historia está en 0x123. Pero la computadora es lo suficientemente inteligente para saber que si solo lo apuntas a la primera letra de una cadena, puede averiguar dónde termina la cadena con solo buscar (como con un ciclo) ese carácter de terminación nula.
+
+En última instancia, esto quiere decir que no existe una cadena en sí. Y veremos si esto les suena familiar. No existe una cadena. Esta fue una mentira piadosa que empezamos a decir en la Semana 1 solo para poder hacer un trabajo interesante y real, manipulando texto. Pero, ¿cómo se implementa una cadena lo más probable?
+
+AUDIENCIA: Un arreglo de caracteres.
+
+DAVID J. MALAN: Un arreglo de caracteres, sí. Pero esa fue la definición de la Semana 1. ¿Qué debe ser técnicamente una cadena a partir de hoy?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID J. MALAN: Lo siento, aquí.
+
+AUDIENCIA: Un puntero.
+
+DAVID J. MALAN: Un puntero. ¿Verdad? s, la variable en la que estaba almacenando el nombre de Emma, parecería manifestar un patrón justo como vimos con los números hace un momento, el número 50. s parece almacenar la dirección del primer carácter en esa secuencia de caracteres. Entonces, de hecho, parecería ser una cadena.
+
+Bueno, ¿cómo conectamos realmente estos puntos? Supongamos que tenemos esta línea de código nuevamente en la que teníamos int n igual a 50. Y luego tuvimos esta otra línea de código donde dijimos, continúa y crea una variable llamada p y almacena en ella la dirección de n. Ahí fue donde lo dejamos antes. Pero resulta que esta cosa aquí es nuestro tipo de datos de la Semana 1. Esta cosa aquí, int star, es un nuevo tipo de datos a partir de hoy. La variable almacena, no un int, sino la dirección de un int. Resulta que algo como esta línea de código, con el nombre de Emma, es sinónimo de char star. ¿Verdad?

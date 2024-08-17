@@ -1,0 +1,38 @@
+[1]
+
+Tri par insertion
+• Dans le tri par insertion, l'idée de l'algorithme est de construire votre tableau trié en place, en décalant les éléments hors du chemin si nécessaire pour faire de la place au fur et à mesure.
+En pseudo-code :
+• Appeler le premier élément du tableau « trié ».
+• Répéter jusqu'à ce que tous les éléments soient triés :
+• Regarder l'élément suivant non trié. Insérer dans la partie « triée » en décalant le nombre requis d'éléments.
+
+[16]
+
+Tri par insertion
+2
+1
+3
+4
+1
+2
+3
+4
+5
+6
+En pseudo-code :
+Appeler le premier élément du tableau « trié ».
+Répéter jusqu'à ce que tous les éléments soient triés :
+Regarder l'élément suivant non trié. Insérer dans la partie « triée » en décalant le nombre requis d'éléments.
+
+[17]
+
+Tri par insertion
+• Scénario du pire : le tableau est dans l'ordre inverse ; nous devons décaler chacun des éléments n positions chaque fois que nous effectuons une insertion.
+• Scénario idéal : le tableau est déjà parfaitement trié, et nous continuons simplement à déplacer la ligne entre « non trié » et « trié » à mesure que nous examinons chaque élément.
+
+[18]
+
+Tri par insertion
+O(n2)
+Ω(n)

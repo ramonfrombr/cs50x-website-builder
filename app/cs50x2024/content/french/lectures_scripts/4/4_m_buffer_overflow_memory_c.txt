@@ -1,0 +1,17 @@
+Laissez-moi essayer autre chose en réalité. C'est un programme que j'ai écrit à l'avance. Celui-ci est appelé memory dot C. Comme d'habitude, ils sont tous disponibles sur le site web du cours si vous souhaitez bricoler après. Et c'est un peu inutile. C'est juste conçu à des fins de démonstration.
+
+Voici donc un programme. Il est copié à partir de ce manuel en ligne pour Valgrind, l'outil que je viens d'utiliser. Voyons donc ce qui se passe. Ici, j'ai main, au bas de mon code. Je l'ai copié. Je n'ai pas utilisé de prototype. J'ai simplement recopié ce qu'ils ont fait. Et regardez ici, cela appelle une fonction appelée f, puis renvoie 0. Eh bien, que fait f ? f est cette fonction aléatoire ici qui ne prend aucune entrée par le vide. Et en français, comment décririez-vous ce qui se passe dans la ligne 7 maintenant -- que nous avons introduit malloc et les étoiles -- ou les pointeurs ? Qu'est-ce que cela fait ? Oui.
+
+PUBLIC : Cela alloue suffisamment de mémoire dans [INAUDIBLE] pour [INAUDIBLE].
+
+DAVID J. MALAN : Bien. Allouez suffisamment de mémoire pour 10 entiers -- et permettez-moi d'ajouter -- de préciser vos mots -- puis stockez l'adresse de ce morceau de mémoire dans un pointeur appelé x, si vous voulez.
+
+Donc sizeof est nouveau. Mais il fait littéralement ce qu'il dit. Si vous dites sizeof ouvert parenthèse, fermé parenthèse, puis le nom d'un type de données, cela vous indiquera qu'un int est de 4 octets. Cela vous dira qu'un long est de 8 octets. Cela vous dira qu'un char est d'un octet. C'est juste une façon dynamique d'éviter d'avoir à mémoriser ce genre de choses.
+
+Cela signifie donc simplement donnez-moi 10 fois la taille d'un int, qui est de 4 octets. Cela signifie donc que donnez-moi 10 fois 4, ou 40 octets de mémoire. C'est effectivement un tableau de mémoire dans lequel je peux stocker des nombres entiers. Et malloc, selon sa définition, va me renvoyer l'adresse du premier octet de cette mémoire. Qu'est-ce qui est maintenant effrayant à propos de la ligne 8, relativement parlant ? Qu'est-ce qui pourrait vous inquiéter avec la ligne 8, qui est boguée, malheureusement ? Oui.
+
+PUBLIC : [INAUDIBLE]
+
+DAVID J. MALAN : Exactement. Je fais x entre crochets 10 et je stocke arbitrairement le nombre 0. Pourquoi ? Juste parce que. Mais 10 n'existe pas. N'est-ce pas ? Si j'ai 10 int, c'est entre crochets 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, pas entre crochets 10. Il s'agit donc d'un exemple de dépassement de mémoire, pour ainsi dire. Chaque fois que vous parlez de mémoire, chaque fois que vous parlez d'un tableau de mémoire -- ce qui est effectivement le cas, 10 entiers, de la place pour 10 entiers dos à dos -- si vous allez un peu trop loin, c'est ce qu'on appelle un débordement de mémoire tampon, où le tampon est le tableau.
+
+Et en fait, cela le rendrait encore plus clair. Supposons que j'aie essayé d'y aller, entre crochets 10 000. Ce n'est certainement pas parmi les octets de mémoire que j'ai alloués. Cela dépasse définitivement les limites de mon tableau. Mais il est également vrai que l'accolade 10 est un pas de trop.

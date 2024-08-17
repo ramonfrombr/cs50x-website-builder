@@ -1,0 +1,56 @@
+[1]
+
+Protocolo de Internet (IP)
+• Conforme discutido anteriormente, "a Internet" é uma rede de fato interconectada composta de redes menores entrelaçadas e que concordam em se comunicar entre si.
+• Como essas redes sabem se comunicar entre si? Essa é a responsabilidade do Protocolo de Internet (IP).
+• Embora possa ser uma escala extremamente pequena, esta imagem é enganosa, pois se refere à comunicação de rede.
+
+[7]
+
+Protocolo de Internet (IP)
+• Com apenas seis redes, as coisas estão ficando fora de controle rapidamente. E a Internet moderna consiste em muito mais do que seis redes. Simplesmente não podemos nos dar ao luxo de ligá-las de tal forma que cada uma se conecte diretamente a todas as outras.
+• Mas, mesmo assim, precisamos que cada rede possa se comunicar com todas as outras redes, ou acabamos com partes da rede que são incapazes de se comunicar com outras partes da rede.
+
+[8]
+
+Protocolo de Internet (IP)
+• É aqui que os roteadores voltam a entrar em ação.
+• E se, em vez de estar conectado a todas as outras redes, cada rede estivesse conectada a um número limitado de roteadores (cada um deles conectado a outros roteadores próximos), e cada roteador tivesse instruções integradas sobre como mover informações em direção ao seu destino?
+• Essas informações podem ser armazenadas em uma tabela de roteamento, dentro do roteador.
+
+[9]
+
+Protocolo de Internet (IP)
+• Para esta ilustração, vamos assumir que cada rede tem endereços IP na faixa n.x.x.x, onde n é o número da sua rede e cada x está na faixa [0, 255].
+• Uma generalização da forma como as coisas realmente funcionam!
+
+[14]
+
+Protocolo de Internet (IP)
+• Agora as redes não estão conectadas diretamente entre si e contam com os roteadores para distribuir as comunicações.
+• Em uma pequena escala, esta configuração na verdade pode ser mais ineficiente do que apenas ter conexões diretas.
+• Em uma grande escala, esta configuração pode reduzir drasticamente os custos de infraestrutura de rede.
+
+[30]
+
+Protocolo de Internet (IP)
+• Na realidade, se 1.208.12.37 (eu) estiver enviando e-mail, transferência de arquivo FTP ou solicitação de navegador da web para 5.188.109.14 (você), os dados não estão sendo enviados como um bloco gigantesco.
+• Qualquer lentidão causada pelo envio de uma quantidade tão grande de dados teria um efeito cascata que afetaria a rede para todos os outros usuários.
+• Como tal, outra parte crucial do IP é dividir os dados em pacotes.
+
+[31]
+
+Protocolo de Internet (IP)
+• O IP também é conhecido como um protocolo sem conexão. Não há necessariamente um caminho definido do remetente para o destinatário, e vice-versa.
+
+[34]
+
+Protocolo de Internet (IP)
+• O IP também é conhecido como um protocolo sem conexão. Não há necessariamente um caminho definido do remetente para o destinatário e vice-versa.
+• Isso significa que, em resposta ao tráfego que pode estar "entupindo" um determinado caminho pela Internet, alguns pacotes podem ser "reencaminhados" ao redor do congestionamento para seguir o caminho mais otimizado, com base no estado atual da rede.
+
+[35]
+
+Protocolo de Internet (IP)
+• A tabela de roteamento provavelmente consiste em mais informações do que apenas "para onde eu envio este pacote a partir daqui", mas também informações "qual é o custo de usar aquela determinada rota?".
+• Outro efeito colateral de ser sem conexão é que a entrega não pode ser garantida, uma vez que o caminho do remetente ao destinatário não tem garantia de ser consistente.

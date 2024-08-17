@@ -1,0 +1,131 @@
+[1]
+
+Ponteiros de arquivo
+• A capacidade de ler dados e escrever dados em arquivos é o meio principal de armazenar dados persistentes, dados que não desaparecem quando seu programa para de ser executado.
+• A abstração de arquivos que o C oferece é implementada em uma estrutura de dados conhecida como FILE.
+• Quase universalmente, quando trabalharmos com arquivos, usaremos ponteiros para eles, FILE*.
+
+[2]
+
+Ponteiros de arquivo
+• Todas as funções de manipulação de arquivo residem em stdio.h.
+• Todas aceitam FILE* como um de seus parâmetros, exceto pela função fopen(), que é usada para obter um ponteiro de arquivo em primeiro lugar.
+• Algumas das funções de entrada/saída (I/O) de arquivo mais comuns com as quais trabalharemos são:
+fopen()
+fclose()
+fgetc()
+fputc()
+fread()
+fwrite()
+
+[3]
+
+Ponteiros de arquivo
+• fopen()
+• Abre um arquivo e retorna um ponteiro de arquivo para ele.
+• Sempre verifique o valor de retorno para certificar-se de não receber NULL.
+FILE* ptr = fopen(<nome do arquivo>, <operação>);
+
+[7]
+
+Ponteiros de arquivo
+• fclose()
+• Fecha o arquivo apontado pelo ponteiro de arquivo dado.
+fclose(<ponteiro de arquivo>);
+
+[9]
+
+Ponteiros de arquivo
+• fgetc()
+• Lê e retorna o próximo caractere do arquivo apontado.
+• Observação: a operação do ponteiro de arquivo passado como parâmetro deve ser "r" para leitura, ou você encontrará um erro.
+char ch = fgetc(<ponteiro de arquivo>);
+
+[11]
+
+Ponteiros de arquivo
+• A capacidade de obter caracteres únicos de arquivos, se encapsulada em um loop, significa que poderíamos ler todos os caracteres de um arquivo e imprimi-los na tela, um por um, essencialmente.
+• Podemos colocar isso em um arquivo chamado cat.c, após o comando Linux "cat" que, essencialmente, faz exatamente isso.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+printf(“%c”, ch);
+
+[12]
+
+Ponteiros de arquivo
+• A capacidade de obter caracteres únicos de arquivos, se encapsulada em um loop, significa que poderíamos ler todos os caracteres de um arquivo e imprimi-los na tela, um por um, essencialmente.
+• Podemos colocar isso em um arquivo chamado cat.c, após o comando Linux "cat" que, essencialmente, faz exatamente isso.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+printf(“%c”, ch);
+
+[14]
+
+Ponteiros de arquivo
+• fputc()
+• Grava ou adiciona o caractere especificado ao arquivo apontado.
+• Observação: a operação do ponteiro de arquivo passado como parâmetro deve ser "w" para gravação ou "a" para adição, ou você encontrará um erro.
+fputc(<caractere>, <ponteiro de arquivo>);
+
+[17]
+
+Ponteiros de arquivo
+• Agora podemos ler caracteres de arquivos e gravar caracteres neles. Vamos estender nosso exemplo anterior para copiar um arquivo para outro, em vez de imprimir na tela.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+printf(“%c”, ch);
+
+[18]
+
+Ponteiros de arquivo
+• Agora podemos ler caracteres de arquivos e gravar caracteres neles. Vamos estender nosso exemplo anterior para copiar um arquivo para outro, em vez de imprimir na tela.
+• Podemos colocar isso em um arquivo chamado cp.c, após o comando Linux "cp" que, essencialmente, faz exatamente isso.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+fputc(ch, ptr2);
+
+[19]
+
+Ponteiros de arquivo
+• fread()
+• Lê <quantidade> unidades do tamanho <tamanho> do arquivo apontado e as armazena na memória em um buffer (geralmente um array) apontado por <buffer>.
+• Observação: a operação do ponteiro de arquivo passado como parâmetro deve ser "r" para leitura, ou você encontrará um erro.
+fread(<buffer>, <tamanho>, <quantidade>, <ponteiro de arquivo>);
+
+[24]
+
+Ponteiros de arquivo
+• fwrite()
+• Grava <qty> unidades de tamanho <size> no arquivo apontado pela leitura a partir de um buffer (geralmente um array) apontado por <buffer>.
+• Observação: a operação do ponteiro de arquivo passado como parâmetro deve ser "w" para gravação ou "a" para adição, ou você encontrará um erro.
+fwrite(<buffer>, <tamanho>, <quantidade>, <ponteiro de arquivo>);
+
+[25]
+
+Ponteiros de arquivo
+• fwrite()
+• Grava <qty> unidades de tamanho <size> no arquivo apontado pela leitura a partir de um buffer (geralmente um array) apontado por <buffer>.
+• Observação: a operação do ponteiro de arquivo passado como parâmetro deve ser "w" para gravação ou "a" para adição, ou você encontrará um erro.
+int arr[10];
+fwrite(arr, sizeof(int), 10, ptr);
+
+[30]
+
+Ponteiros de arquivo
+• Muitas outras funções úteis abundam em stdio.h para você trabalhar. Aqui estão algumas que você pode achar úteis!
+Função
+Descrição
+fgets()
+Lê uma string completa de um arquivo.
+fputs()
+Grava uma string completa em um arquivo.
+fprintf()
+Grava uma string formatada em um arquivo.
+fseek()
+Permite que você rebobine ou avance rapidamente dentro de um arquivo.
+ftell()
+Informa em qual posição (byte) você está dentro de um arquivo.
+feof()
+Informa se você leu até o final de um arquivo.
+ferror()
+Indica se ocorreu um erro ao trabalhar com um arquivo.

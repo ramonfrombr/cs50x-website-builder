@@ -1,0 +1,9 @@
+So these, of course, are two algorithms. But let's now start to formalize this discussion a little bit and consider how it was each of them was able to solve the problem correctly and then ultimately with better design. So linear search, we might distill as pseudocode like this and again, pseudocode, English-like syntax, no one way to write this. 
+
+Eric, if I can put words in your mouth, might have done this. You might have thought to yourself for [? i ?] from 0 to n minus 1, to very quickly kind of map it to the idea of code, where this is locker 0, and this is locker n minus 1 or 7 or 6, specifically, in this case, with 7 total lockers. He then checked if the ith elements-- ith just meaning the one he's currently looking at-- happens to be 50, then go ahead and return true, the bool that was meant to be the output of this algorithm. 
+
+And he kept doing that and doing that and doing that. But suppose 50 were not there. And suppose he got all the way here, to where there is no locker. What should he ultimately return? 
+
+AUDIENCE: False. 
+
+SPEAKER 1: So false. And so the very last step of this algorithm not inside of that loop has to be kind of a catch all, where you just say, return false. If I got all the way through this loop and didn't find it, it must be the case that 50 is simply not there. So that might be one way to write the pseudocode for this problem.

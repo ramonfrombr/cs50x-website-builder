@@ -1,0 +1,70 @@
+[1]
+
+Protocolo de Transferência de Hipertexto (HTTP)
+• Além dos protocolos que ditam como as informações são comunicadas de máquina para máquina e de aplicativo para aplicativo (IP e TCP, respectivamente), é frequente que o próprio aplicativo tenha um sistema de regras sobre como interpretar os dados que foram enviados.
+• HTTP é um exemplo de um protocolo de camada de aplicativo que dita especificamente o formato pelo qual os clientes solicitam páginas da web a um servidor e o formato pelo qual os servidores devolvem informações aos clientes.
+
+[2]
+
+Protocolo de Transferência de Hipertexto (HTTP)
+• Outros protocolos de camada de aplicativo incluem:
+• Protocolo de Transferência de Arquivos (FTP)
+• Protocolo Simples de Transferência de Correio (SMTP)
+• Serviço de Distribuição de Dados (DDS)
+• Protocolo de Área de Trabalho Remota (RDP)
+• Protocolo Extensível de Mensagem e Presença (XMPP)
+
+[13]
+
+Protocolo de Transferência de Hipertexto (HTTP)
+• Uma linha do formato
+method request-target http-version
+• É um exemplo simples de uma linha de solicitação HTTP, uma parte essencial de uma solicitação geral de HTTP que um cliente pode fazer a um servidor.
+
+[17]
+
+Protocolo de Transferência de Hipertexto (HTTP)
+• O nome do host (nome de domínio do servidor) também é incluído como uma linha separada da solicitação geral de HTTP.
+• Juntos, o nome do host e o destino da solicitação da linha de solicitação especificam um recurso específico que está sendo buscado.
+• Com base em se o recurso existe e se o servidor está capacitado a fornecer esse recurso de acordo com a solicitação do cliente, uma série de códigos de status pode resultar.
+
+[18]
+
+Protocolo de Transferência de Hipertexto (HTTP)
+• Um código de status faz parte da primeira linha que um servidor usará para responder a uma solicitação HTTP.
+http-version status
+
+[20]
+
+Protocolo de Transferência de Hipertexto (HTTP)
+Classe
+Código
+Texto
+Comentários
+Sucesso
+200
+OK
+Tudo bem, solicitação e resposta válidas.
+Redirecionamento
+301
+Movido 
+Permanentemente
+A página agora está em um novo local, redirecionamentos automáticos integrados à maioria dos navegadores.
+302
+Encontrado
+A página agora está em um novo local temporariamente.
+Erro do Cliente
+401
+Não autorizado
+A página normalmente requer credenciais de login.
+403
+Proibido
+O servidor não permitirá esta solicitação.
+404
+Não encontrado
+O servidor não consegue encontrar o que foi solicitado.
+Erro do Servidor
+500
+Erro Interno do 
+Servidor
+Falha genérica do servidor ao responder à solicitação válida.

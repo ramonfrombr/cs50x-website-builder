@@ -1,0 +1,5 @@
+Muy bien, alguien se nos acercó durante el descanso y señaló que esto, en realidad, parece ser una regresión en la medida en que los arrays nos dieron la capacidad de redimensionar, aunque resulte algo costoso porque tienes que copiar todo de un lugar a otro. Pero teníamos acceso aleatorio y, por lo tanto, búsqueda binaria y, además, tiempo de ejecución logarítmico para cosas como buscar listas variadas. Parece que nos hemos deshecho de eso.
+
+Las listas enlazadas nos dan dinamismo en el que no desperdiciamos tiempo moviendo cosas de un lado a otro. Pero hemos perdido el acceso aleatorio. Pero saben qué? Ahora que tenemos esta capacidad de utilizar punteros y estructuras de datos para juntar las cosas en la memoria, conectarlas con flechas, ¿saben qué? Podemos construir cosas más sofisticadas.
+
+Probablemente, la mayoría de ustedes estén familiarizados con la idea de un árbol genealógico, que es una estructura jerárquica bidimensional. Y, efectivamente, esa es nuestra inspiración aquí.

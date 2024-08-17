@@ -1,0 +1,65 @@
+Resulta que puedes usar print de algunas maneras diferentes. De hecho, puedes concatenar una cadena con otra simplemente usando el operador más. O si lees la documentación, verás que print acepta múltiples argumentos. Así que el primero podría ser la primera palabra que quieres decir.
+
+El segundo argumento podría ser la segunda cosa que quieres decir. Y por defecto, lo que print hará, según su documentación, es unir o concatenar automáticamente esas dos cadenas agregando un espacio. Por eso no es un error tipográfico que haya eliminado el espacio después de la coma. Lo obtendré gratis, por así decirlo, porque print lo hará por mí.
+
+Ahora, este está a punto de ser un poco feo. Pero es un enfoque cada vez más común en Python para hacer lo mismo. Y recuerda un poco a C. Pero resulta que veremos con el tiempo que es un poco más poderoso. También puedes lograr el mismo resultado de esta manera.
+
+Muy bien. Parece un poco extraño. Pero una vez que empiezas a reconocer el patrón, es bastante sencillo. Así que sigue siendo la función print. Todavía hay una cadena entre comillas dobles, aunque resulta que también puedes usar comillas simples en Python. Respuesta es la variable que queremos imprimir. Entonces, lo nuevo ahora son estas llaves, que dicen interpolar el valor entre esas llaves, es decir, sustituirlo como lo hace %s.
+
+Pero hay una rareza más, definitivamente digna de una pelota antiestrés aquí, que no es un error tipográfico, pero sí que la distingue de C. Sí.
+
+AUDIENCIA: La f.
+
+DAVID MALAN: La f-- y esta es una-- aquí tienes-- de las características más extrañas de-- oh, mi error.
+
+[RISAS]
+
+Esta es una de las cosas más extrañas de las versiones recientes de Python en los últimos años. Esto es lo que se llama una cadena de formato o cadena f. Si no tienes esta extraña f al principio de la cadena inmediatamente a la izquierda de las comillas dobles, literalmente imprimirás en la pantalla H-E-L-L-O coma espacio llave ANSWER llave. Y eso es todo. Así que la f delante de esto convierte la cadena en una cadena f o cadena de formato, que le dice a Python, no imprimas esto literalmente. Conecta el valor que he colocado entre las llaves. Así que es bastante poderoso una vez que aprendes la convención de esa manera.
+
+Muy bien. Veamos algunos otros ejemplos. Esto, en el ejemplo-- a la izquierda era un-- esto a la izquierda era un ejemplo de qué tipo de característica de programación? ¿Cómo llamamos a esto-- el encuentro? Sí.
+
+AUDIENCIA: La variable.
+
+DAVID MALAN: Así que esto es sólo una variable. Así que una variable aquí y permítanme no-- bueno, esto se está poniendo un poco más fácil para las pelotas antiestrés. Esta es una variable. Y en C, correspondía a una línea como esta. Así que en Python, esto también se vuelve un poco más simple. En lugar de decir int counter equals zero semicolon, ahora, ¿quieres una variable llamada counter? Simplemente hazlo así. Usa el signo igual como operador de asignación. Ponlo igual a algún valor en el lado derecho, pero ya no hay punto y coma.
+
+Esto, a la izquierda, por ejemplo, era un ejemplo de Scratch actualizando el valor de una variable en uno, incrementándolo, por así decirlo. En C, logramos el mismo resultado simplemente diciendo counter equals counter plus 1 semicolon, asumiendo que la variable ya existía. También podríamos hacer esto de otra manera. Pero en Python, podemos hacer esto así. Es idéntico, pero no hay punto y coma. Pero en C, también podríamos hacerlo así: counter plus equals 1 semicolon. Eso fue un poco más corto que tener que escribir todo. En Python, puedes hacer exactamente lo mismo. Pero va a parecer diferente, ¿cómo?
+
+AUDIENCIA: Sin punto y coma.
+
+DAVID MALAN: Sin punto y coma para este también-- lo que no puedes hacer, para bien o para mal, en C, tienes un truco aún más conciso. ¿Qué podrías hacer en C para incrementar una variable? Sí.
+
+AUDIENCIA: Escribe plus plus.
+
+DAVID MALAN: Podrías hacer el operador plus plus después del nombre de la variable. Eso no existe en Python. Aquí vamos. Eso no existe-- lo siento. Existe en Python. Simplemente no está en el lenguaje. Así que tienes que empezar a usar este enfoque para ser más conciso.
+
+Bueno, ¿qué más tenemos en Python? Aquí hay, en Scratch, un ejemplo de una condición que sólo si x es menor que y, dice algo en la pantalla como esto. En C, un poco feo al principio, pero probablemente te has acostumbrado a esto después de varias semanas de codificación en C.
+
+Ahora, en Python, esto también se va a simplificar. El punto y coma definitivamente se va a ir. La barra invertida n definitivamente se va a ir. Printf está a punto de convertirse en print, pero también va a desaparecer casi todo lo demás. Así que ya no hay llaves. Ahora hay dos puntos después de la condición, o la expresión booleana allí. Hay sangría necesaria.
+
+Así que aquellos de ustedes que han sido un poco flojos con style50 y que prefieren, en cambio, escribir todo su código en el lado izquierdo del terminal, eso tiene que parar ahora, incluso si style50 no les ha quitado ese hábito. Python es sensible al espacio en blanco, lo que significa que si quieres usar una condición y ejecutar código dentro de esa condición, debe estar sangrado de manera consistente, por convención, cuatro espacios. Y siempre debe ser cuatro espacios o cuatro espacios más y así sucesivamente. Las llaves, sin embargo, ya no existen.
+
+¿Qué tal algo como esto? Si tenemos una declaración if else, como hicimos en la semana 0, en la semana 1, lo tradujimos a C como tal, introduciendo if y else esta vez. Eso también se vuelve más simple. Ahora, se puede destilar como esto. Las llaves se han ido. Las barras invertidas n se han ido. Pero hemos, de nuevo, añadido algunos dos puntos, algunos dos puntos, y alguna sangría explícita que ahora importa mucho más.
+
+¿Qué tal un if else if else-- así que una bifurcación de tres vías en el camino, por así decirlo? En C, simplemente continuas con la misma lógica, preguntando si else if else. Python no sólo va a ser más conciso. También se va a volver un poco extraño, pero no un error tipográfico. ¿Qué te salta a la vista aquí con Python que parece un poco engañoso? Sí.
+
+AUDIENCIA: Else if se convierte en elif.
+
+DAVID MALAN: Sí, así que else if era aparentemente demasiado laborioso para que los humanos lo escribieran. Y ahora, en Python, eso es sólo elif-- E-L-I-F-- pero significa exactamente lo mismo. Muy bien. ¿Qué tal esto? Este es un bucle en Scratch. Hace algo para siempre. Esto no fue muy sencillo de convertir a C, porque en C, realmente no tienes un bloque para siempre. Pero decidimos que puedes usar while y simplemente decir true, siendo true un valor booleano que evalúa siempre en true por definición. Así que esto imprimiría hola mundo para siempre. En Python, es casi lo mismo. Pero en Python, se verá así. Así que las llaves se han ido. El punto y coma se ha ido. La mano ya está levantada. ¿Qué hay de diferente aquí?
+
+AUDIENCIA: Tengo una pregunta sobre if.
+
+DAVID MALAN: Claro. ¿Cuál es la pregunta sobre if?
+
+AUDIENCIA: No usamos llaves para resolver el if. Así que, como que sólo sangramos hacia atrás a [INAUDIBLE].
+
+DAVID MALAN: Correcto. Pero no-- como no tenemos llaves, no es necesariamente obvio a primera vista dónde comienza y termina el código que quieres ejecutar condicionalmente, a menos que confíes en la sangría. Así que si quieres hacer algo fuera de la condición, simplemente des-sangras y sigues tu camino. Así que es idéntico a cómo deberías haber estado escribiendo código C. No hay llaves. Pero ahora, la sangría importa.
+
+Así que volvamos al bucle for aquí-- este se repetirá infinitamente en C. En Python, afirmo que se ve así. Y la única diferencia nueva aquí que vale la pena notar es-- ¿qué?
+
+AUDIENCIA: True está en mayúsculas.
+
+DAVID MALAN: True está en mayúsculas. ¿Por qué? Sólo porque sí, pero en Python, los dos valores booleanos, true y false, están, de hecho, en mayúsculas como aquí. Muy bien. Así que terminemos con algunos bloques más. Recordemos que implementamos un gato tosiendo al principio. Y así es como podrías hacerlo tres veces específicamente.
+
+En C, puedes hacer esto de un par de maneras. Y la primera forma que propusimos en la semana 1 fue que te dieras una variable de conteo como i, pero podrías llamarla como quisieras. Y luego, haces algo mientras i es mayor que algún valor objetivo, como 0. Y luego, sigues adelante y toses una y otra y otra vez en cada iteración disminuyendo-- es decir, disminuyendo el valor de i-- y luego, sigues comprobando esa condición.
+
+Así que en Python, podemos hacer prácticamente lo mismo. Esto se convierte bastante estrictamente en sólo esto, que es bastante equivalente, excepto por los puntos y comas, las llaves, etc., notando esta vez

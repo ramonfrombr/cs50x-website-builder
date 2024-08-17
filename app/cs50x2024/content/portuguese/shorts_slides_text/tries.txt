@@ -1,0 +1,52 @@
+[1]
+
+Tries
+• Já vimos algumas estruturas de dados que lidam com o mapeamento de pares chave-valor.
+• Matrizes: A chave é o índice do elemento, o valor são os dados naquele local.
+• Tabelas hash: A chave é o código hash dos dados, o valor é uma lista vinculada de dados do hash para aquele código hash.
+• E quanto a um tipo de estrutura de dados ligeiramente diferente em que a chave tem garantia de ser única e o valor pode ser tão simples quanto um booleano que indica se os dados existem na estrutura?
+
+[2]
+
+Tries
+• Tries combinam estruturas e ponteiros para armazenar dados de uma forma interessante.
+• Os dados a serem pesquisados no trie agora são um roteiro.
+• Se você conseguir seguir o mapa do início ao fim, os dados existem no trie.
+• Se não conseguir, não existe.
+• Ao contrário de uma tabela hash, não há colisões e dois pedaços de dados (a menos que sejam idênticos) não têm o mesmo caminho.
+
+[3]
+
+Tries
+• Vamos mapear pares chave-valor onde as chaves são anos de quatro dígitos (AAAA) e os valores são nomes de universidades fundadas durante esses anos.
+• Em um trie, os caminhos de um nó raiz central para um nó folha (onde os nomes das escolas estariam) seriam rotulados com dígitos do ano.
+• Cada nó no caminho da raiz para a folha pode ter 10 ponteiros emanando dele, um para cada dígito.
+
+[4]
+
+Tries
+• Para inserir um elemento no trie, basta construir o caminho correto da raiz à folha.
+
+[5]
+
+Tries
+typedef struct _trie
+{
+char university[20];
+struct _trie* paths[10];
+}
+trie;
+
+[6]
+
+Tries
+typedef struct _trie
+{
+char university[20];
+struct _trie* paths[10];
+}
+trie;
+[34]
+
+Tries
+• Para pesquisar um elemento no trie, use dígitos sucessivos para navegar a partir da raiz e, se conseguir chegar ao final sem atingir um beco sem saída (um ponteiro NULO), você o encontrou.

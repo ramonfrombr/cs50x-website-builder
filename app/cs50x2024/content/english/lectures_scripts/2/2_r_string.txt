@@ -1,0 +1,7 @@
+So string is a data type in the CS50 library that for today's purposes indeed, just an array of characters. And we'll see before long that, that too is actually kind of a bit of a white lie, but we'll see why before long as well. So if I declare a string in C, I can actually literally do something like this. String s equals quote unquote hi, this time using double quotes, and not single quotes, because it's three characters and not just a single char. So in memory, that's actually going to look pretty much the same. If the variable's called s, it's going to have h i and an exclamation point. And just for simplicity, I'll label the first box as s and just assume that we can get everywhere else. 
+
+But it turns out that strings are a little special, because unlike a char, which is one byte, unlike an int, which is four bytes, unlike a long, which is eight bytes, how long should a string be? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Yeah, I mean as many characters as you need, because if I want to store H-I I need-- H-I exclamation point, I need strings to be at least three bytes, it would seem-- for my name David, at least five bytes, for D-A-V-I-D-- Brian, as well, and much longer names in the room, too. So strings can't really have a preordained length associated with them, which is why I put a question mark on the board before when I first summarized the sizes of these types.

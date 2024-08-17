@@ -1,0 +1,153 @@
+All right, let's see if we can't make this a little more real with maybe one demonstration here. Let me go ahead and put on the screen the end point that we want to get to, which is that here with everything in order, I think for this we need maybe five volunteers if we could. Let me go a little farther in back. OK, one over there. Maybe two over there. Now the hands are-- OK, 3 over here if we can go in back up over there. OK, 4 being volunteered by your friend. And 5 being volunteered by your friends. 
+
+Do you want to come on up? All right, come on up. Come on up. Brian's going to help me run this demonstration. If all five of you could come on over, come on over here where we have some space. All right, let me get you some microphones and introductions. OK, thank you. 
+
+Two of them were bravely volunteered by the people sitting next to them. So props to both of you. You want to say hello and a little something about yourself. 
+
+AUDIENCE: Hello. My name [? Siobhana. ?] 
+
+DAVID MALAN: [? Siobhana. ?] And year or-- 
+
+AUDIENCE: I'm a sophomore. 
+
+DAVID MALAN: Sophomore. OK. Nice to meet you. 
+
+AUDIENCE: Hi. I'm a senior. 
+
+DAVID MALAN: It's nice to have you too. Yeah. 
+
+AUDIENCE: Hi, I'm Athena a sophomore in FOHO. 
+
+DAVID MALAN: Athena. 
+
+AUDIENCE: Hi. I'm Anurag. I'm a first year at Matthews. 
+
+AUDIENCE: I'm Ethan. I'm a first year at Weld. 
+
+DAVID MALAN: OK, and-- 
+
+AUDIENCE: I'm Sarika. I'm first year in Thayer. 
+
+DAVID MALAN: Wonderful. All right, thank you all for volunteering. Let's go ahead and do this. You for the moment represent a heap of memory, if you will. So if you could maybe all back up over here just to where we have some available space. We're going to need one of you to represent the list. Siobhan was it? 
+
+AUDIENCE: [? Siobhana. ?] 
+
+DAVID MALAN: [? Siobhana, ?] come on up. [? Siobhana, ?] do you want to go ahead and represent list. And to represent our actual list, we have-- or Brian-- yeah, we have a name tag, hello, my name is list. So you're going to represent the rectangle on the left that represents the linked list itself. 
+
+And now initially we're going to go ahead initialize you to null. So you can just go ahead and put that behind your back. So you're not pointing at anything. But you represent list. And there's nothing in the list, no numbers in the list. 
+
+What was the next step? If the goal at hand is to insert 2, 4, 5, 1, 3, we want to do what first, what lower level operation to get 2 in there? What was the first line of code? 
+
+AUDIENCE: malloc. 
+
+DAVID MALAN: malloc. So we want to malloc a node for 2. So let's go ahead and malloc. OK, come on up. So malloc. And what's your name again? 
+
+AUDIENCE: Ethan. 
+
+DAVID MALAN: Ethan. OK. And what do we need to give Ethan? Ethan has two values or two fields. The first one is the number 2. Thank you. The next one is a pointer called next. 
+
+Now, you're not pointing at anyone else. So you'll put it behind your back. And now what do we want to do with? [? Siobhana, ?] what do we have to do? 
+
+AUDIENCE: Point to-- 
+
+DAVID MALAN: Point to? 
+
+AUDIENCE: 2. 
+
+DAVID MALAN: Him, yes, number 2. OK, so this now represents the picture where we have list here, 2 here, but the null pointer as well. 
+
+All right next we wanted to add 4 to the list. How do we go ahead and do this? Well, with 4, we're going to go ahead and malloc. malloc, all right. And now, Brian has a lovely number 4 for you and a pointer. What do we want to do with your pointer? 
+
+AUDIENCE: Not point it. 
+
+DAVID MALAN: Not point at anything. Now, it's a little more work. And I need a temporary variable. So I'll play this role. I'm going to go ahead and point at wherever Siobhana is pointing at in sort of unnaturally this way. That's OK. We couldn't get hands that point the other way physically. So we're going to point at the same thing here. You're both pointing at 2. And what am I looking for in order to decide where to put 4? 
+
+AUDIENCE: If it's greater than. 
+
+DAVID MALAN: If it's greater than some value. So I'm going to check. Well, 4 is greater than 2. So I'm going to keep going. And your name was Eric? 
+
+AUDIENCE: Ethan. 
+
+DAVID MALAN: Ethan, sorry. So, Ethan, what are you pointing at? Nothing. So that's an opportunity. There's nothing to his right. So let me go ahead and have Ethan point at-- what's you're name again? 
+
+AUDIENCE: Athena. 
+
+DAVID MALAN: Athena. Also, unnaturally, but that's fine. And so now does Athena need to update her pointer? No, she's good. She represents the end of the list. So her pointer can stay behind her back. 
+
+All right, let's go ahead and malloc 5. You want to be our 5? So now we need a 5. So we need to hand you the number 5. And what's your name again? 
+
+AUDIENCE: Sarika. 
+
+DAVID MALAN: Sarika. All right, so Sarika's holding the number 5. She also is going to get a pointer called next. What should Sarika be pointing at? 
+
+AUDIENCE: Nothing. 
+
+DAVID MALAN: Nothing. And now how to do I insert her into the right place? Well, I have to do the same thing. So I'm going to get involved again and be a temporary variable. I'm going to point at the same thing [? Siobhana ?] is pointing out, which is Ethan. I'm going to follow this and see, ooh, wait a minute, he's actually pointing at someone else. So I'm going to follow that. It's still number 4. So I want to keep going. 
+
+Oh, wait a minute. Athena is not pointing at anyone. This is an opportunity now to have Athena point at 5 and voila. But are you going to change your pointer yet? No. 
+
+Now things get a little more interesting. Could we go ahead and malloc 1? And what's your name again? 
+
+AUDIENCE: Emma. 
+
+DAVID MALAN: Emma. OK, Emma, we have the number 1 for you from Brian. You have a pointer, which should be initialized as well to null. And now we have a couple of steps involved here. What do we want to do first? What's your proposal? 
+
+AUDIENCE: Temporary pointer. 
+
+DAVID MALAN: Temporary pointer. So I'm going to point at the same things [? Siobhana ?] is pointing at, which is Ethan here. But I see that 2 is greater than 1. So what do I actually want to do? 
+
+Well, let me incorrectly for a moment-- [? Siobhana, ?] could you point at number 1? What have we just done wrong? We've orphaned everyone else. And even more visibly now, no one is pointing at Ethan or beyond, which means we've just leaked that memory, never to be recovered or free. So we don't want to do that. Undo, Control-Z. 
+
+What do we want to do instead? What's your name again? 
+
+AUDIENCE: Emma. 
+
+DAVID MALAN: Emma. What do you want to point at? 
+
+AUDIENCE: I want to point at [? Siobhana. ?] 
+
+DAVID MALAN: At that the same thing, [? Siobhana ?] is pointing at, which is equivalent then to Ethan. So go ahead and do that with your-- OK, sort of like Twister now. That's OK. And then [? Siobhana, ?] what I do want to point at? Perfect. 
+
+So again a bunch of steps involved, but it really is just two or three steps depending on which pointers we want to update. And then lastly, let's go head to malloc 3. And your name was again? 
+
+AUDIENCE: Anurag. 
+
+DAVID MALAN: Anurag. So then we have a 3 for you from Brian. We have a pointer for you. It's initialized initially to null. So you can put that behind your back. I'm going to point at the same thing as [? Siobhana. ?] And here we go. 
+
+1 is smaller. 2 is smaller. 4 is larger. So let's get this right. And who do we want to point at whom first? 
+
+AUDIENCE: 3 points at 4. 
+
+DAVID MALAN: 3 should point at 4. So go ahead and do that. And you can step a little forward just so it looks a little less awkward. And then lastly, big finale, Ethan, who do you want to point at? Number 3. And thankfully, all these steps later, we have a linked list. 
+
+We have wonderful souvenirs for each of you. We just need the numbers back. Thank you to our volunteers here if we could. OK, you can keep that. You can put the numbers on the desk here. 
+
+So as these folks head off the stage, let me point out now one of the shortcomings of the approach-- thank you all so much-- of what we've just done here. Even though you all had the luxury of seeing 1 and 2 and 3 and 4 and 5 and you could even sort of immediately figure out where things go, even these linked lists are implemented with chunks of memory. And just like with arrays, or equivalently lockers, the computer can only look at one piece of memory at a time, which is to say that to a computer, that same linked list kind of looks like this. It's sort of blind to the specific numbers in that linked list until it opens each of those doors of memory. So to find where 3 goes or to find where 5 goes or to find where 1 goes, all of those doors maximally might need to be opened one at a time to find that value. 
+
+So with linked lists we have gained a feature. We have gained the ability to add dynamically to the list, right. I just kept malloc-ing, malloc-ing, malloc-ing additional students and additional numbers. So the list can grow as big as we wanted it to. And that case, we had five. We could have done it 50 times or 500 to add more and more numbers. 
+
+That's an upside, because we don't have to waste time inserting into an array by resizing it and moving all of the original contents. None of our volunteers had to move, technically speaking, just to insert a number 5 or number 3. They just had to point at someone else in memory or someone else on stage. 
+
+So if your data structure now is a linked list that looks like this, we've paid a price for that dynamism. We've paid a price for the ability to resize our list without moving everything around that's already there. What is a downside that you might perceive of a linked list? What have we lost or given up here? 
+
+AUDIENCE: We lost random access. 
+
+DAVID MALAN: Sorry. Say again. 
+
+AUDIENCE: We lost random access. 
+
+DAVID MALAN: We lost random access. That's spot on. We've lost random access. 
+
+Why? Because the way you get from the beginning of the list to the end is by following these pointers, following these arrows, these breadcrumbs, you can't just jump to the middle elements, even though obviously this one here on the screen to all of us humans, that's the middle element. You don't know that if you're the computer. 
+
+If the main variable that's storing this data structure is the pointer, like [? Siobhana, ?] pointing to the first elements of the list, you're going to have to follow all of these arrows, frankly counting them up and then retroactively realizing, oh, there was 5. I passed the middle one earlier. You've glossed random access. 
+
+And what algorithm have we used wonderfully in the past when we do have random access? 
+
+AUDIENCE: Binary search. 
+
+DAVID MALAN: Binary search. So we've lost the ability now to do binary search as efficiently as we once were able to. And so if we consider now the running time of linked lists, unfortunately, we've paid that price. Searching now has gone back up to linear. We no longer have logarithmic running time because of the fact that we're stitching together this data structure. 
+
+And the only way to find the end of the list, the middle of the list is to follow all of these arrows. You can't just jump to one location. Meanwhile inserting into the list, in the worst case, big O of n is going to be linear as well, because you have to walk through the whole list to actually find a spot for the given number, especially if you're trying to keep it sorted. 
+
+So it would seem that even though we've gained this feature of much more dynamic insertion and we're building up something more interesting in memory, and you can imagine this just taking much less time overall, because you have to keep moving everything around like we did with realloc, it's unfortunately something we're paying a price for. But that was a lot. Let's go ahead and take our 5-minute break. Fruit awaits outside. And we'll be back.

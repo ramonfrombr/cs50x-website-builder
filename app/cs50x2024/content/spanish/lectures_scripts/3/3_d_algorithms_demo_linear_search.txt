@@ -1,0 +1,99 @@
+Y entonces en lugar de mi tipo de curioseo buscando ese número, ¿podría llamar, digamos, a dos voluntarios para que nos inicien con dos, digamos, algoritmos? Veamos. ¿Por aquí? Sí. Y vamos a revisar aquí al frente, si nos lo permiten. Suban. ¿Y cuáles son sus nombres?
+
+AUDIENCIA: [¿Nizari?]
+
+ORADOR 1: ¿Lizari?
+
+AUDIENCIA: [¿Nizari?]
+
+ORADOR 1: [¿Nizari?] Ok, David. Encantado de conocerte. Sube, [¿Nizari?] Y por aquí, ¿cómo te llamas?
+
+AUDIENCIA: Eric.
+
+ORADOR 1: Eric, ok. David. Y sube también, Brian. Encantado de conocerte, Eric. Eric, [¿Nizari?] [¿Nizari?], Eric.
+
+[APLAUSOS]
+
+Venga por aquí. Así que subiste primero al escenario. ¿Quieres ir primero o segundo?
+
+AUDIENCIA: Iré segundo.
+
+ORADOR 1: Irás segundo. Así que Eric, tú primero. Ven por aquí, si quieres. Entonces Eric, detrás de estas siete puertas hemos puesto, de antemano, el número 50. Y simplemente nos gustaría que tú, la computadora, busques este arreglo para el número 50.
+
+AUDIENCIA: ¿Está ordenado?
+
+ORADOR 1: No puedo responder esa pregunta en este momento. Adelante. Oh, y para que la audiencia sepa qué está pasando, si no te molestara sacar los números y ver.
+
+AUDIENCIA: Este es siete.
+
+ORADOR 1: Excelente. No es 50.
+
+AUDIENCIA: ¿Debo-- puedo sacarlo?
+
+ORADOR 1: En este momento, sí, puedes hacer lo que quieras. Solo encuéntranos el 50.
+
+AUDIENCIA: Dos.
+
+[RISAS]
+
+ORADOR 1: Muy bien.
+
+AUDIENCIA: Uno.
+
+ORADOR 1: Bien.
+
+AUDIENCIA: Seis.
+
+ORADOR 1: Muy bien.
+
+AUDIENCIA: Tres.
+
+ORADOR 1: Bien.
+
+AUDIENCIA: Ninguno de estos está cerca del 50.
+
+ORADOR 1: No, ninguno de ellos está cerca del 50.
+
+AUDIENCIA: Cuatro.
+
+ORADOR 1: ¿Cuatro? ¿Y?
+
+AUDIENCIA: ¡50!
+
+ORADOR 1: ¡Increíble! Muy bien hecho.
+
+[APLAUSOS]
+
+Muy bien hecho. Ahora, si me lo permites, Eric, ¿cuál fue el algoritmo por el cual nos encontraste el número 50?
+
+AUDIENCIA: Búsqueda lineal.
+
+ORADOR 1: Ok, búsqueda lineal, ¿qué significa para ti?
+
+AUDIENCIA: Simplemente vas en línea, empezando allí hasta ahí.
+
+ORADOR 1: Ok, esa fue una respuesta muy sofisticada para un término que aún no hemos presentado. Y eso es genial, búsqueda lineal de izquierda a derecha, literalmente siguiendo una línea. ¿Y tu algoritmo fue correcto, dirías?
+
+AUDIENCIA: Sí.
+
+ORADOR 1: Ok, así que fue correcto. Pero hay diferentes parámetros para los que queremos optimizar las soluciones, no solo la exactitud, ¿qué otra propiedad también?
+
+AUDIENCIA: Diseño.
+
+ORADOR 1: Entonces tal vez diseño, cierto, la eficiencia. ¿Era eso lo más eficiente que podrías haber hecho?
+
+AUDIENCIA: En realidad, sí, creo que sí.
+
+[RISAS]
+
+ORADOR 1: ¿Y por qué dices eso?
+
+AUDIENCIA: Porque-- los números están ordenados. Entonces al final del día, tengo que revisar cada uno de ellos.
+
+ORADOR 1: Sí.
+
+AUDIENCIA: Y es solo por casualidad que el 50 fue el último.
+
+ORADOR 1: Exactamente. Así que es una lástima que hayan sido todos aleatorios. Y no quería decírtelo porque no quería sesgar tu algoritmo de una forma u otra. Pero no saber si están ordenados y que ni siquiera estén ordenados significa que eso es lo mejor que puedes hacer, mirar todas las puertas para encontrar el número en cuestión. Y tal vez podrías haber tenido suerte, si hubiéramos puesto 50 aquí. Pero en el peor de los casos, Eric, por supuesto, iba a tener que hacer exactamente eso, buscar en todas las casillas.
+
+Así que gracias, Eric. Quédate en el escenario con nosotros, si no te importa, por un momento.

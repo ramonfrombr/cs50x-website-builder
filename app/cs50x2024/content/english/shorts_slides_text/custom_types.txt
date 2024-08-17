@@ -1,0 +1,33 @@
+[1]
+
+Defining Custom Data Types
+• The C keyword typedef provides a way to create a shorthand or rewritten name for data types.
+• The basic idea is to first define a type in the normal way, then alias it to something else.
+
+[2]
+
+Defining Custom Data Types
+typedef <old name> <new name>;
+
+[9]
+
+Defining Custom Data Types
+struct car
+{
+int year;
+char model[10];
+char plate[7];
+int odometer;
+double engine_size;
+};
+typedef struct car car_t;
+
+[16]
+
+Defining Custom Data Types
+// variable declaration
+car_t mycar;
+// field accessing
+mycar.year = 2011;
+strcpy(mycar.plate, “CS50”);
+mycar.odometer = 50505;

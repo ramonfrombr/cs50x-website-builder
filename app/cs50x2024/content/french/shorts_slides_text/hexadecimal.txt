@@ -1,0 +1,32 @@
+[1]
+
+Hexadécimal
+• La plupart des cultures occidentales utilisent le système décimal, ou base 10, pour représenter les données numériques.
+• Les ordinateurs utilisent, eux, le système binaire, ou base 2, comme nous le savons, pour représenter des données numériques (et toutes les données d'ailleurs).
+0  1  2  3  4  5  6  7  8  9
+0  1
+
+[2]
+
+Hexadécimal
+• En tant qu'informaticiens, il est utile d'être capable d'exprimer des données de la même manière qu'un ordinateur.
+• Le problème, bien sûr, est qu'il peut être assez difficile d'analyser une chaîne énorme de 0 et de 1.
+
+[3]
+
+Hexadécimal
+• Le système hexadécimal, ou base 16, est une manière bien plus concise d'exprimer les données dans un système informatique.
+• L'hexadécimal facilite cette mise en correspondance, parce qu'un groupe de quatre chiffres binaires (bits) peut avoir 16 combinaisons possibles, chaque combinaison étant mappable à un chiffre hexadécimal.
+0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+
+[7]
+
+Hexadécimal
+• Tout comme le binaire a des valeurs de position (1, 2, 4, 8...), et le système décimal aussi (1, 10, 100, 1000...), tout comme le système hexadécimal.
+
+[13]
+
+Hexadécimal
+• Pour convertir un nombre binaire en hexadécimal, regroupez quatre chiffres binaires (bits) ensemble de droite à gauche.
+• Si nécessaire, complétez le groupe le plus à gauche avec des 0 supplémentaires à l'avant.
+• Puis utilisez le tableau de quelques diapositives plus tôt ou votre mémoire pour convertir ces bits en quelque chose d'un peu plus concis.

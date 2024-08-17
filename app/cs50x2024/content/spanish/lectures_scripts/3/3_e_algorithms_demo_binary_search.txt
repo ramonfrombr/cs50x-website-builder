@@ -1,0 +1,65 @@
+Y un aplauso, si podemos, por encontrar el 50 tan bien.
+
+[APLAUSOS]
+
+[¿Nizari?] ¿Podrías subir? Necesitamos que no mires los números, porque Brian necesita hacer un poco de magia. Y pondrá algunos números de nuevo en el armario. Así que, literalmente, todos en la sala sabrán lo que pasa, excepto tú, por el momento. Pero te daremos el beneficio adicional de ordenar los números con anticipación.
+
+Así que Brian está ordenando algunos números para nosotros. El objetivo a lograr, en un momento, seguirá siendo encontrar el número 50. Realmente estoy deteniendo esto porque él todavía sigue haciéndolo. Así que todavía no tengo nada interesante que decir.
+
+Brian ya regresó. Espera un momento. ¿Podrías presentarte?
+
+AUDIENCIA: Soy [¿Nizari?]
+
+ORADOR 1: Nizari, ¿en qué año estás?
+
+AUDIENCIA: Soy estudiante de secundaria, de último año.
+
+ORADOR 1: Maravilloso. ¿En qué escuela?
+
+AUDIENCIA: Cambridge Rindge y Latín, está a la vuelta de la esquina.
+
+ORADOR 1: A la vuelta de la esquina. Estoy muy agradecido de que te unas a nosotros hoy. Llegaste en el momento perfecto, si me permites. Ahora tenemos siete casilleros aquí detrás de ti. El objetivo sigue siendo encontrar el número 50. Pero te diré que los números están ordenados. Entonces, ¿cuál será tu algoritmo, si no es lo mismo que el de Eric?
+
+AUDIENCIA: Comenzaré...
+
+ORADOR 1: Y aquí tienes.
+
+AUDIENCIA: Voy a empezar por el medio.
+
+ORADOR 1: Está bien, adelante y enséñanos qué hay en el medio.
+
+AUDIENCIA: El número del medio es siete.
+
+ORADOR 1: Muy bien. ¿Y cuál será tu próximo paso?
+
+AUDIENCIA: Quiero llegar a 50. Así que asumiendo que están ordenados, iré por aquí.
+
+ORADOR 1: Ve a la derecha, está bien. Tenemos tres casilleros restantes en el lado derecho. ¿Cuál es tu instinto ahora?
+
+AUDIENCIA: Mmm, comenzaré con este casillero.
+
+ORADOR 1: De acuerdo, este está en el medio de esos tres. ¿Y qué encontraste?
+
+AUDIENCIA: Encontramos 81.
+
+ORADOR 1: 81.
+
+AUDIENCIA: Sé que es demasiado grande.
+
+ORADOR 1: Demasiado lejos.
+
+AUDIENCIA: Guau, así que iré con este.
+
+ORADOR 1: Que ahora está en medio de los dos casilleros.
+
+AUDIENCIA: Y obtuve 50.
+
+ORADOR 1: Y un aplauso, si podemos, por [¿Nizari?]
+
+[APLAUSOS]
+
+Felicitaciones y gracias a ambos. Muchas gracias a los dos. Aquí tuvimos dos algoritmos, denominados búsqueda lineal y búsqueda binaria. Y eso es todo lo que tenemos para ti ahora mismo.
+
+[RISAS]
+
+La búsqueda lineal y la búsqueda binaria reciben su nombre adecuado por las razones que vimos. Eric literalmente caminó en línea buscando algún elemento, donde [¿Nizari?] en cambio, usó la búsqueda binaria, "bi" que significa dos, y es muy similar a nuestra discusión sobre guías telefónicas en la semana 0, cuando hice este enfoque de dividir y conquistar. Eso también fue llamado, aunque tal vez no lo haya etiquetado como tal, búsqueda binaria porque seguí dividiendo el problema en dos, de ahí la "bi" en binario. La búsqueda binaria fue una y otra vez, tal como hicimos aquí cuando buscamos 50 por segunda vez.

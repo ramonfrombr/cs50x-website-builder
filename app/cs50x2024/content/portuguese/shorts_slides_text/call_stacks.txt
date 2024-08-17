@@ -1,0 +1,426 @@
+[0]
+
+Pilha de Chamadas
+
+[1]
+
+Pilha de Chamadas
+• Quando você chama uma função, o sistema separa um espaço na memória para que essa função faça seu trabalho necessário.
+• Frequentemente chamamos esses pedaços de memória de quadros de pilha ou quadros de função.
+• Mais de um quadro de pilha de funções pode existir na memória em um determinado momento. Se main() chamar move(), que por sua vez chama direction(), todas as três funções têm quadros abertos.
+
+[2]
+
+Pilha de Chamadas
+• Esses quadros são organizados em uma pilha. O quadro da função chamada mais recentemente está sempre no topo da pilha.
+• Quando uma nova função é chamada, um novo quadro é empurrado para o topo da pilha e se torna o quadro ativo.
+• Quando uma função conclui seu trabalho, seu quadro é retirado da pilha e o quadro imediatamente abaixo dele se torna a nova função ativa no topo da pilha. Esta função recomeça imediatamente de onde parou.
+
+[3]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+main()
+main()
+
+[4]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+printf()
+main()
+
+[5]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+printf()
+main()
+
+[6]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(5)
+printf()
+main()
+
+[7]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(5)
+printf()
+main()
+
+[8]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(5)
+printf()
+main()
+
+[9]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(4)
+fact(5)
+printf()
+main()
+
+[10]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(4)
+fact(5)
+printf()
+main()
+
+[11]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(4)
+fact(5)
+printf()
+main()
+
+[12]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[13]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[14]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[15]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[16]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[17]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[18]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(1)
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[19]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(1)
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[20]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(1)
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[21]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[22]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(2)
+fact(3)
+fact(4)
+fact(5)
+printf()
+main()
+
+[23]
+
+Pilha de Chamadas
+int fact(int n)
+{
+if (n == 1)
+return 1;
+else
+return n * fact(n-1);
+}
+int main(void)
+{
+printf(“%i\n”, fact(5));
+}
+fact(

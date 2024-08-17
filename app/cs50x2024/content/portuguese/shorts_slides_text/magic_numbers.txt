@@ -1,0 +1,71 @@
+[1]
+
+Números mágicos
+● Alguns dos programas que escrevemos no CS50 têm alguns números estranhos incluídos.
+● A altura da pirâmide do Mario é limitada a 23, por exemplo.
+● O que esses números significam? Se alguém olha para o seu programa, o significado de 23 é imediatamente óbvio?
+● Escrever constantes diretamente em nosso código às vezes é chamado de usar números mágicos.
+
+[2]
+
+Números mágicos
+● Temos um número mágico aqui. Você vê o que é?
+● Mais importante, você vê um problema em potencial aqui? Especialmente se esta função é apenas uma de muitas em um pacote de programas que manipulam baralhos de cartas.
+card deal_cards(deck name)
+{
+for (int i = 0; i < 52; i++)
+{
+// distribui a carta
+}
+}
+
+[3]
+
+Números mágicos
+● Isso corrige um problema, mas apresenta outro.
+● Mesmo que seja declarado globalmente, e se alguma outra função em nosso pacote inadvertidamente manipular deck_size. Pode significar problema.
+card deal_cards(deck name)
+{
+int deck_size = 52;
+for (int i = 0; i < deck_size; i++)
+{
+// distribui a carta
+}
+}
+
+[4]
+
+Números mágicos
+● C fornece uma diretiva de pré-processador (também chamada de macro) para criar constantes simbólicas.
+● No momento em que seu programa é compilado, #define percorre seu código e substitui NAME por REPLACEMENT.
+● Se #include é semelhante a copiar/colar, então #define é análogo a localizar/substituir.
+
+#define NAME REPLACEMENT
+
+[5]
+
+Números mágicos
+● C fornece uma diretiva de pré-processador (também chamada de macro) para criar constantes simbólicas.
+● No momento em que seu programa é compilado, #define percorre seu código e substitui PI por 3.14159265.
+● Se #include é semelhante a copiar/colar, então #define é análogo a localizar/substituir.
+#define PI 3.14159265
+
+[6]
+
+Números mágicos
+● C fornece uma diretiva de pré-processador (também chamada de macro) para criar constantes simbólicas.
+● No momento em que seu programa é compilado, #define percorre seu código e substitui COURSE por “CS50”.
+● Se #include é semelhante a copiar/colar, então #define é análogo a localizar/substituir.
+#define COURSE “CS50”
+
+[7]
+
+Números mágicos
+#define DECKSIZE 52
+card deal_cards(deck name)
+{
+for (int i = 0; i < DECKSIZE; i++)
+{
+// distribui a carta
+}
+}

@@ -1,0 +1,182 @@
+[1]
+
+JavaScript
+• À l'instar de PHP, JavaScript est un langage de programmation moderne dérivé de la syntaxe de C.
+• Il est apparu presque aussi longtemps que PHP, ayant également été inventé en 1995.
+• JavaScript, HTML et CSS constituent les trois langages qui définissent la majeure partie de l'expérience utilisateur sur le Web.
+
+[2]
+
+JavaScript
+• Pour commencer à écrire du JavaScript, ouvrez un fichier avec l'extension de fichier .js.
+• Pas besoin de délimiteurs de code comme ceux que nous avons utilisés en PHP. Notre site Web saura que notre fichier est du JavaScript parce que nous le préciserons explicitement dans une balise HTML.
+• Contrairement à PHP qui s'exécute côté serveur, les applications JavaScript s'exécutent côté client, sur votre propre machine.
+
+[4]
+
+JavaScript
+• Inclusion de JavaScript dans votre HTML
+• Tout comme le CSS avec les balises <style>, vous pouvez écrire directement votre JavaScript entre les balises <script>.
+• Tout comme le CSS avec les balises <link>, vous pouvez écrire votre JavaScript dans des fichiers séparés et les lier en utilisant l'attribut src de la balise <script>.
+
+[8]
+
+JavaScript
+• Variables
+• Les variables JavaScript sont similaires aux variables PHP.
+• Aucun spécificateur de type.
+• Lorsqu'une variable locale est déclarée pour la première fois, utilisez le mot-clé var en préfixe.
+var x = 44;
+
+[17]
+
+JavaScript
+• Boucles
+• Tous les anciens favoris de C sont toujours disponibles pour votre utilisation.
+while
+do-while
+for
+
+[18]
+
+JavaScript
+• Fonctions
+• Toutes les fonctions sont introduites avec le mot-clé function.
+• Les fonctions JavaScript, en particulier celles liées spécifiquement aux éléments HTML, peuvent être anonymes (vous n'avez pas à leur donner de nom).
+• Nous reviendrons sur l'anonymat un peu plus tard, et nous reviendrons sur la liaison aux éléments HTML dans la vidéo sur le modèle d'objet du document.
+
+[21]
+
+JavaScript
+• Tableaux
+• La déclaration d'un tableau est assez simple.
+var nums = [1, 2, 3, 4, 5];
+var mixed = [1, 
+true,
+3.333,
+'five'];
+
+[22]
+
+JavaScript
+• Objets
+• JavaScript peut se comporter comme un langage de programmation orienté objet.
+• Un objet est en quelque sorte analogue à une structure C.
+
+[28]
+
+JavaScript
+• Objets
+• Les structures C contiennent un certain nombre de champs, que nous pourrions également appeler propriétés.
+• Mais les propriétés elles-mêmes ne peuvent jamais être autonomes.
+struct car
+{
+int year;
+char model[10];
+}
+struct car herbie;
+year = 1963;
+model = "Beetle"; 
+
+[29]
+
+JavaScript
+• Objets
+• Les structures C contiennent un certain nombre de champs, que nous pourrions également appeler propriétés.
+• Mais les propriétés elles-mêmes ne peuvent jamais être autonomes.
+• Les objets, quant à eux, possèdent des propriétés mais aussi des méthodes, ou fonctions inhérentes à l'objet, qui n'ont aucun sens en dehors de celui-ci.
+• Ainsi, comme les propriétés, les méthodes ne peuvent jamais être autonomes.
+
+[31]
+
+JavaScript
+• Objets
+function(object);
+
+[32]
+
+JavaScript
+• Objets
+object.function();
+
+[34]
+
+JavaScript
+• Objets
+• Les champs et les méthodes d'un objet sont similaires dans leur esprit à l'idée d'un tableau associatif, que nous connaissons de PHP.
+var herbie = {year : 1963, model: 'Beetle'};
+
+[39]
+
+JavaScript
+• Boucles (redux)
+• Comment itérer sur toutes les paires clé-valeur d'un objet (ou même sur tous les éléments d'un tableau) ?
+for (var key of object)
+{
+// utiliser la clé ici
+}
+
+[42]
+
+JavaScript
+• Boucles (redux)
+var wkArray = ['Monday,
+'Tuesday',
+'Wednesday',
+'Thursday',
+'Friday', 
+'Saturday',
+'Sunday'];
+for (var day of wkArray)
+{
+console.log(day);
+}
+
+[46]
+
+JavaScript
+• Impression et interpolation de variables
+console.log(wkArray[day] + ' is day number ' + (parseInt(day) + 1) + ' of the week!');
+
+[47]
+
+JavaScript
+• Fonctions (redux)
+• Les tableaux sont un cas particulier d'objet (en fait, tout en JavaScript est un cas particulier d'objet), et disposent de nombreuses méthodes qui peuvent leur être appliquées :
+• array.size(), array.pop(), array.push(x), 
+array.shift();
+• Il existe également une méthode pour les tableaux, appelée map(), qui peut être utilisée pour appliquer une fonction à tous les éléments d'un tableau.
+• Une excellente situation pour utiliser une fonction anonyme
+
+[51]
+
+JavaScript
+• Fonctions (redux)
+nums = nums.map(function(num) {
+return num * 2;
+});
+var nums = [2, 4, 6, 8, 10];
+
+[52]
+
+JavaScript
+• Événements
+• Un événement en HTML et JavaScript est une réponse à l'interaction de l'utilisateur avec la page Web.
+• Un utilisateur clique sur un bouton, une page a fini de se charger, un utilisateur survole une partie de la page, l'utilisateur tape dans un champ de saisie.
+• JavaScript prend en charge les gestionnaires d'événements, qui sont des fonctions de rappel qui répondent aux événements HTML.
+• De nombreux éléments HTML prennent en charge les événements en tant qu'attribut.
+
+[55]
+
+JavaScript
+• Événements
+• Nous pouvons écrire un gestionnaire d'événements générique en JavaScript, créant un objet d'événement, qui nous dira sur lequel de ces deux boutons on a cliqué.
+
+[59]
+
+JavaScript
+function alertName(event)
+{
+var trigger = event.srcElement;
+alert('You clicked on ' + trigger.innerHTML);
+}

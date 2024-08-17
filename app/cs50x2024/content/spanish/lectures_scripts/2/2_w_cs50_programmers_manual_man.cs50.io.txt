@@ -1,0 +1,21 @@
+Y es posible que hayas descubierto estas la semana pasada o las hayas utilizado tú mismo. Pero en el sitio web de CS50 hay un ejemplo de lo que se llaman páginas del manual. Y si sigo adelante y busco esto en el sitio web del curso, veremos una herramienta que agrega lo siguiente. Si voy a la página web del curso y hago clic en páginas del manual, verás el manual del programador de CS50, que es una versión simplificada de una herramienta muy popular que está disponible en la mayoría de los sistemas informáticos que admiten programación. Y supongamos que quiero hacer algo como convertir algo a mayúsculas, puedo buscar allí.
+
+Y fíjate, hay algunas funciones disponibles en C relacionadas con las mayúsculas. Is upper, que hace una pregunta, to lower y to upper. Voy a seguir adelante y utilizar to upper. Voy a seguir adelante y utilizar to upper. Y si hago clic en esto, veré esencialmente la documentación. Y es un poco enigmática a primera vista. Pero lo que estás viendo en la documentación es el archivo de encabezado requerido y su prototipo. ¿Qué archivo aparentemente necesito incluir para utilizar to upper?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Sí, c type dot h. Realmente no sé qué más hay ahí, pero esta es mi sugerencia de que debería usar ese archivo. ¿Y qué tipo de entrada toma to upper? Bueno, técnicamente, toma un int, por razones que se explican en la documentación. Pero incluso si la documentación no es obvia, resulta que en realidad es bastante fácil de usar. Voy a seguir adelante y eliminaré la mayor parte de esta lógica, y solo haré esto: printf, percent c, to upper, s bracket i, punto y coma. Y aquí arriba, voy a incluir c type dot h, porque al leer la documentación, me doy cuenta de que puedo pasar cualquier carácter a to upper, y si es minúscula, lo devolverá en mayúscula, y si no es una letra minúscula, simplemente la devolverá sin cambios.
+
+Entonces, si guardo este archivo ahora, pongo mayúsculas y luego vuelvo a ejecutar este programa, esta vez escribiendo el nombre de Emma nuevamente en minúsculas, listo, ahora he usado otra función auxiliar, algo que alguien más escribió. Pero puedes imaginar que todo lo que hizo la persona que escribió esta función para nosotros es ¿qué? Como un if else, comprobando las matemáticas Ascii para ver si el carácter es efectivamente minúscula. ¿Alguna pregunta sobre esto? Nuevamente, ahora el objetivo es dejar de preocuparse por los códigos Ascii o 32 y simplemente usar funciones auxiliares que alguien más escribió. ¿Si?
+
+AUDIENCIA: ¿Por qué [INAUDIBLE]
+
+DAVID MALAN: ¿Por qué no necesitas...?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: El tipo... Ah, ¿por qué no es necesario declarar el tipo de int? Yo soy. Esto solo funciona si es del mismo tipo que i. Buena pregunta. Entonces me salgo con la mía porque tanto i como n están destinados a ser números enteros. ¿Si?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: ¿Hay alguna limitación? No, puedes utilizar cualquier función que desees en los conjuntos de problemas de CS50, tanto si los hemos utilizado en clase como si no. Eso ciertamente está bien, a menos que se especifique lo contrario, lo que rara vez será el caso.

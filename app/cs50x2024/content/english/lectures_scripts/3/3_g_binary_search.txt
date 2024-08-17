@@ -1,0 +1,11 @@
+But now let's consider for a moment just how efficient or inefficient that code might have been vis a vis the second algorithm, [? Nizari, ?] where she actually divided the conquer in half in half in half. That, of course, was called binary search. And we can write this in any number of ways as well. But in pseudocode, I might propose this. 
+
+Look right in the middle, just as she did. And if that number is 50, what should she have returned or outputted? 
+
+AUDIENCE: True. 
+
+SPEAKER 1: So true as our bool. And so we might have done this, else if 50 were less than the middle item. She probably wanted a search to the left, just as when I was searching for Mike Smith, I might have gone left or right. So if 50 is less than the middle item, she might want to search the left half. 
+
+Meanwhile, if 50 is greater than the middle item, then she might want to search instead the right half. But there is a fourth possibility, just to be safe here. What else might be the case? It's not in the middle, and it's not to the left, and it's not to the right. So it's just not there. And so there's actually a fourth case, and we can express this differently. 
+
+I'm going to go ahead and just say at the top if there's no items in the list, let me go ahead and just claim return false. There's nothing there. After all, if I keep dividing a list in half and half and half and half, eventually there's going to be no list left. At which point, I should just conclude, oh, it clearly wasn't there. If I halved it so many times, nothing is left on the right or the left. 

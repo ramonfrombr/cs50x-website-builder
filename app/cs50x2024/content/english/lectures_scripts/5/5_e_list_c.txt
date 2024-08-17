@@ -1,0 +1,111 @@
+Let me go over to CS50 IDE here. And let me go ahead and create a new file called list.c. And let's see if we can't represent in code exactly this idea. 
+
+So let me go ahead and include for myself standard stdio.h just so that we can print out some values ultimately. Let me go ahead then and declare main-- int main void. And then down here, let's just arbitrarily start where we did with three integers, called list and size 3. So I'm just mimicking exactly where we started pictorially by having an array that was fixed at size 3. 
+
+And then if I went ahead and initialized that list, I could just hard code-- that is type into the program itself-- those three values into bracket 0, 1, and 2 the numbers 1, 2, 3 respectively. So I'm just manually initializing that array to three values. 
+
+And then just so that this program has some purpose in life, let me go ahead and do int i equals 0, i less than 3, i++. And then, let's just print out these elements just for good measure. Each of them is an int. So we'll use %i. And then I'm going to go ahead and print out list bracket i. 
+
+So kind of a Week 2 style program, where All I'm doing is hard coding an array of size 3, initializing it with three values, 1, 2, 3; 0 indexed, and then printing them out. So if I go ahead and save this and make my list and then go ahead and compile this with ./list, I should see hopefully 1, 2, 3. 
+
+But there's a problem with this implementation fundamentally because I have hardcoded-- that is typed explicitly-- the size of this array, how can I go about adding a fourth element? What would I have to do? 
+
+Well, I could change the code up here to 4. And then I could add another line here. And then I could change this. But then I have to recompile it. And so it's certainly not dynamic. But we did see a function last week that lets you allocate more memory dynamically. And just to be sure what was that function? 
+
+So malloc. Right? Now that we have malloc, you don't have to type into your program source code from the get go a fixed number. You can actually allocate some amount of memory dynamically. Now, here just for demonstration's sake, we'll do it to achieve the same goal, but in a way that's going to scale a little more effectively. 
+
+Recall from last week that if you want to get a chunk of memory from malloc, it's going to return the address of that chunk of memory. So that suggests that I can declare a pointer to an integer called list. And then let me go ahead and allocate, how about, three integers initially times whatever the size is of an integer. 
+
+So this is a little weird looking, but consider what this is doing. malloc is being asked for 3 times the size of an int. So give me enough memory to fit three integers. By definition that returns a pointer, per last week. So we have to assign it to a pointer on the left. So list is a variable now, just like x and y from our previous example, that's storing the address of that chunk of memory. 
+
+But what's cool about C is that now that you know that list is a chunk of memory, we can actually borrow that same square bracket notation from Week 2. And this code here doesn't actually need to change. If you use square bracket notation next to the name of a pointer, what's going to happen for you automatically is the computer is going to go to the first byte in that chunk of memory. This index is going to go to the next chunk of memory. This is going to go to the next chunk of memory, all within the scope of what malloc returned for you. 
+
+And just as an aside, how many bytes are in an integer? 
+
+AUDIENCE: 4. 
+
+DAVID MALAN: 4. And recall I briefly mentioned the expression last week pointer arithmetic. What you're also getting sort of magically with this square bracket notation is that bracket 0, it happens to be byte 0. Bracket 1 is not the second byte. It's actually 4 bytes over. And bracket 2 is not the third byte. It's actually 8 bytes over, because you allocated 4 plus 4 plus 4, 12 bytes. And so this square bracket notation just jumps you to the right place in that chunk of memory, so that you can fit int, int, int. Yeah. 
+
+AUDIENCE: Why do you allocate a pointer to an int rather than an pointer to an int array? 
+
+DAVID MALAN: Why do you allocate a pointer to an int and not a pointer to an int array? In this context, arrays and pointers are in some sense the same. A pointer is an address of memory. An array is just a chunk of memory. And so even though we used chunks of memory in Week 2 by just calling them arrays, they really are just more generally chunks of memory that support square bracket notation. 
+
+But now that we can allocate as much memory as we want, we can kind of use these two concepts interchangeably. And there are some subtleties in C. But this now has the same effect as Week 2. And this is the only new line from this week. 
+
+But now if you're using malloc, even though I'm not going to do it in a more complicated program here, you can imagine now the code running in a loop and maybe allocating more memory and more memory and more memory when you need it, because malloc allows you to do just that. 
+
+And we do need to do a couple of safety checks here. It turns out, per last week, that malloc can sometimes run out of memory. If you're Mac or PC or the cloud runs out of memory for your account, well, you might want to check the return value. And so good practice would be, well, wait a minute, if list equals equals null, let me just go ahead and return 1, something went wrong, because my computer is out of memory for some reason. So best practice would say anytime you allocate memory, always check if you've gotten back null. 
+
+Now, let me just do something for the sake of demonstration. Let me move my window down here. Let me highlight these lines of code and just make the claim that highlighted here between lines 5 and 13 are lines of code that simply allocate a list of size 3 and store three values in it. That's the story where we left off a moment ago. 
+
+Suppose now I change my mind and decide after line 13 or maybe elsewhere in this program if it were larger, you know what, I actually want another integer. I want to resize that array. Well, how can I go about doing it? Well, let me go ahead and do this. Let me go ahead and allocate, for instance, another address and say store at that address a chunk of memory corresponding to four integers using the size of operator as before. 
+
+So temporarily, let me go ahead and give myself a new chunk of memory that is big enough to fit four integers instead of just three. Let me practice best practices and say, you know what, just in case, if temp equals equals null because I'm out of memory, forget it, I'm done with the program. We're not going to proceed anyway. But that's just good practice now. 
+
+But now what I want to do? If I now have two chunks of memory, this one is a size 3, this one is of size 4, what did we do the last time we wanted to move something around in the computer's memory, what did I physically do with the lockers? I think you're nodding. What did I do? 
+
+AUDIENCE: You went through each and move 1 to the-- 
+
+DAVID MALAN: Yeah, exactly, I went through each one and copied the value from left to right, from old to new. And so let me go ahead and do exactly that. I think I can do this with a for loop, for int i get 0, i is less than 3, because that's the size of the old array that size 3, i++. And then in this iteration, I can just do something like this-- use this new chunk of memory just like an array, because I claimed I can use my square bracket notation and store location i whatever is in the original list at location i. 
+
+So this code here now, if I were to comment it, copy integers from old array into new array. And that too is just using a for loop from old to new. But now that's not quite everything I want to do. I also want to store at the location 3, 0 index, which means it's the fourth location, another value, number 4. That's why I put the additional number 4 into those lockers. 
+
+So now with these lines of code, I have implemented the physical notion of copying all of the values from the old array into the new array. So I'm almost done, except what did we learn last week that you should do whenever you're done with a chunk of memory? Do I still need the original chunk of memory? 
+
+AUDIENCE: No. 
+
+DAVID MALAN: No. And how do I give it back to the computer? 
+
+AUDIENCE: Free. 
+
+DAVID MALAN: Free. So quite simply, I literally just call free, passing in the address of the chunk of memory that I want to free. And even though I'm passing in one address, the computer is going to do the heavy, lifting of remembering how many bytes I asked for originally. You don't have to worry about that. You just say, whatever this is pointing at, go ahead and free it all. 
+
+So now, you know what, now that I've gotten rid of that list, I'm going to update list equal temp, which is just cleaning up the naming. Temp is kind of a stupid name for a list. Let me just reuse the original pointer and let list equal temp. 
+
+And now down here if I've done everything correctly, it should suffice to print out that whole list. So let me save this. Let me give myself a bigger terminal window. Do make list again. A lot of mistakes. 
+
+Let's see, first one is up here. Implicitly declaring library function malloc dot dot dot. What generally is the solution when you see implicitly declaring something? 
+
+AUDIENCE: Header file. 
+
+DAVID MALAN: Header file, which one do I want? Do you recall? This is subtle and we might not have used it last time if I used the CS50 library, but it's stdlib.h. That is where malloc is. That is where free is. So stdlib.h is one new header file that contains last week's functions. 
+
+So let me try this again. Let me make list. Nice, this time it did compile. ./list and-- hm, I seem to be missing that fourth number. But I think this is just a stupid mistake on my part. What did I do wrong if I look at the printing of this array? 
+
+AUDIENCE: Size of list. 
+
+DAVID MALAN: Yeah, down here the new list is size 4. So frankly, if you recall a few weeks ago, I encouraged you, don't just hard code numbers, magic numbers, in your programs. We should really be using constants or some other variable. This is exactly why, because you, just like me, might overlook a detail like that. 
+
+So let me recompile it. And let me do list. And, voila, there is my 1, 2, 3, 4. 
+
+Now, to be clear, this is kind of a stupid program, because I sort of decided halfway through writing this program, wait a minute, I want four integers, not three. And, of course, at that point, you should just delete the earlier code you wrote. So this is just for demonstration sake. If you imagine this being a bigger program, that just over time the human decides maybe because get int is called that they need more memory, this is how you would do it using malloc. 
+
+But it turns out there's a function that can actually make our lives a little easier here. So let me go ahead and clean this up just a little bit. It turns out that I don't have to allocate more memory myself, copy all of these things myself, and then also free it. I can consolidate a bunch of these lines as follows. 
+
+Instead of using malloc, I can actually say realloc, which as the name suggests, reallocate a chunk of memory. What do you want to reallocate? Well, I want to reallocate the list. 
+
+And this time I want to do 4 times size of an int. I'm going to store this in temp temporarily. I'm going to make sure that nothing went wrong, as by checking for null, which just means, hey, you might be out of memory. And then I'm going to return if so. 
+
+But down here, if all is well, I'm going to go ahead and do this. And watch this I now have simplified my code by quite a few lines. realloc, by definition-- this is another function in stdlib.h-- handles the process of taking an existing chunk of memory that you already asked for, resizes it to be this new size, whether it's bigger or smaller. It handles the copying of the data from old to new to you. And you just need to check that nothing went wrong as by checking for null here and then remembering the new value. 
+
+So this code now, which is just six lines of code, previously was more than that. And it's just a handy function to use. All right, a question from earlier. 
+
+AUDIENCE: Why can't we just create this to the temp in the beginning, because if we equate this to the temp, then we equate this to the pointer perhaps, so this to the point to the 4 bytes of memory? 
+
+DAVID MALAN: Really good question. So let me roll this back by rewinding. And all of the finished versions are on the course's website if you want to play with them later. This was the previous version using just malloc. 
+
+If you just do this, update a new chunk of memory, as I think you're asking, what's happening is you are effectively orphaning the old chunk of memory. Because if you change what's stored in list and have it store the new chunk of memory, where'd the old chunk of memory go? It's sort of floating there in your computer's memory. But you've lost all pointers to it. There's no arrow anymore pointing to it conceptually. 
+
+So that's why we have to jump through these hoops of having a temporary variable just so that we don't lose track of things we've allocated. And we'll see this later today with another data structure as well. Yeah. 
+
+AUDIENCE: Somebody asked this, but I don't understand that if you initialize temp as a pointer toward integer, then does it not create problems that you use it as an array. 
+
+DAVID MALAN: Good question. If you initialize temp as a pointer to an integer, does it not create problems that you're using it as an array? Short answer, no, because again an array by definition from Week 2 is just a chunk of memory. And in C you can use the square bracket notation to jump to random parts of that memory using simple arithmetic, bracket 0, 1, 2, and so forth. 
+
+Last week when we introduced malloc and free and now realloc, you now have a more low level way of allocating as much memory as you want. So it's a more powerful, general purpose mechanism. But at the end of the day, you're still getting back a chunk of memory, contiguous memory, bytes that are back to back to back. So you can certainly still use the square bracket notation because essentially an array is a chunk of memory. And malloc gives you a chunk of memory, ergo you can treat it as an array. They really are equivalent in that sense. 
+
+You just don't get as many user friendly features as with arrays, like them being freed for you, as we never until last week do we have to free chunks of memory. Arrays do that for you automatically thanks to the compiler. Yeah. 
+
+AUDIENCE: Do you not have to recreate the list for temp after line 37. 
+
+DAVID MALAN: Yes. Thank you. So there is a bug here. And if I ran Valgrind on this code, I would see exactly that, that I'm leaking some number of bytes. So indeed, at the end of this program, I want to free the-- let's make sure-- yep, I want to free now the new chunk of memory, which is a size 4, to avoid exactly the problem you identified. Good catch.

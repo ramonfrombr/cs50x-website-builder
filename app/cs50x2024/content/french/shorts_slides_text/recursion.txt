@@ -1,0 +1,53 @@
+[1]
+Récurrence
+• Nous pourrions décrire une implémentation d’un algorithme comme étant particulièrement « élégante » si elle permet de résoudre un problème d’une manière à la fois intéressante et simple à visualiser.
+• La technique de la récurrence est une façon très courante d’implémenter une solution aussi « élégante ».
+• La définition d’une fonction récursive correspond à une fonction qui, dans le cadre de son exécution, s’appelle elle-même.
+
+[2]
+Récurrence
+• La fonction factorielle (n !) est définie pour tous les nombres entiers positifs.
+• n ! est égal à tous les nombres entiers positifs inférieurs ou égaux à n multipliés les uns par les autres.
+• En termes de programmation, nous définirons la fonction mathématique comme fact(n).
+
+[9]
+Récurrence
+• Ceci forme la base pour une définition récursive de la fonction factorielle.
+• Chaque fonction récursive a deux cas qui peuvent s’appliquer, quelle que soit l’entrée.
+• Le cas de base, qui une fois déclenché, met fin au processus récursif.
+• Le cas récursif, qui est celui où la récurrence va réellement se produire.
+
+
+[11]
+Récurrence
+int fact(int n)
+{
+// cas de base
+// cas récursif
+}
+
+
+[18]
+Récurrence
+• En général, mais pas toujours, les fonctions récursives remplacent les boucles dans les fonctions non récursives.
+
+[20]
+Récurrence
+• En général, mais pas toujours, les fonctions récursives remplacent les boucles dans les fonctions non récursives.
+• Il est également possible d’avoir plusieurs cas de base ou récursifs, si le programme peut effectuer une récurrence ou se terminer de différentes manières, en fonction de l’entrée transmise.
+
+[21]
+Récurrence
+• Plusieurs cas de base : La suite de Fibonacci est définie comme suit :
+• Le premier élément est 0.
+• Le deuxième élément est 1.
+• Le nième élément est la somme des (n-1)ième et (n-2)ième éléments.
+• Plusieurs cas récursifs : La conjecture de Collatz.
+
+[22]
+Récurrence
+• La conjecture de Collatz s’applique aux nombres entiers positifs et prétend qu’il est toujours possible de « revenir à 1 » si vous suivez ces étapes :
+• Si n est égal à 1, arrêtez-vous.
+• Sinon, si n est pair, répétez ce processus sur n/2.
+• Sinon, si n est impair, répétez ce processus sur 3n + 1.
+• Écrivez une fonction récursive collatz(n) qui calcule le nombre d’étapes nécessaires pour arriver à 1 si vous commencez à partir de n et utilisez la récurrence indiquée ci-dessus.

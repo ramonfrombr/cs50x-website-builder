@@ -1,0 +1,9 @@
+Bueno, recuerda que en Python, en el lenguaje C, teníamos este ejemplo, int.c. Era un ejemplo relativamente sencillo con el único propósito de obtener un número entero y realizar operaciones matemáticas, como multiplicar la edad por 365 para estimar aproximadamente cuántos días de vida tienes.
+
+En Python podemos hacer algo muy parecido. Vamos a abrir un archivo al que llamaremos int.py. En la parte superior del archivo escribiremos from cs50 import get_int, ya que esa es la función que usaremos en esta ocasión. Vamos a seguir y obtener la edad del usuario con get_int y preguntar: ¿Cuál es tu edad? \n. Después escribiremos y mostraremos, en lugar de printf, lo mismo que la vez anterior: tienes como mínimo, voy a crear más espacio, tienes como mínimo, volveré a esto, algo días.
+
+¿Cómo hacemos esto ahora? Resulta que puedes insertar no solo valores, sino expresiones. Puedo escribir age times 365 dentro de las llaves. Por lo tanto, no necesito crearme otra variable ni usar comas. Pero, por supuesto, todavía me falta algo.
+
+AUDIENCIA: F.
+
+DAVID MALAN: La f es para hacer una cadena de formato, y notarás que el IDE es inteligente. Cuando se da cuenta de que es una cadena de formato, resalta con diferentes colores los valores que se interpolarán, el código dentro de la cadena que se ejecutará. Ahora, si ejecuto Python de int.py y escribo mi edad, por ejemplo, 50, parecerá que tengo como mínimo 18,000 días en este caso.

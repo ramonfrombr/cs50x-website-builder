@@ -1,0 +1,63 @@
+Muy bien. Voy a seguir adelante y a crear otro archivo llamado cough.py solo para mostrar cómo podemos también arrancarnos de algo muy simple e ingenuo hasta una mejor versión diseñada en Python. Recuerden que en la semana 0, queríamos que el gato tosiera tres veces. Y en la semana 1, volvimos a implementar la misma idea con un poco de copiar/pegar, pero de una manera que funcionara.
+
+Así que observen que este es un programa de Python. Y va a toser tres veces. Y no voy a seguir ejecutando cada programa, porque solo quiero dar por sentado que lo hará. Pero en este caso, aunque afirmo que este es un programa que toserá tres veces, seamos muy claros. Con esto en todos los ejemplos anteriores, ¿qué más no he puesto en el archivo? Por ejemplo, ¿qué falta con respecto a los programas en C?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: ¿No qué?
+
+AUDIENCIA: Int main void.
+
+DAVID MALAN: No hay int main void. Y no hay main en absoluto. Entonces, otra característica de Python es que si solo quieres escribir un programa, simplemente comienzas a escribirlo. No necesitas una función principal. Ahora, voy a retractarme un poco de esa afirmación, porque hay algunas situaciones en las que sí necesitas una función principal. Pero a diferencia de C, no es necesario.
+
+Ahora, en la semana 0 y 1, varias personas comentaron que seguramente podemos implementar esto mejor, no usando tres impresiones. Pero en cambio, usemos un bucle. Entonces, en Python, podrías decir for i in [0, 1, 2], luego imprimir "cough", pero por supuesto, esto va a resultar molesto porque si quieres imprimir cuatro veces o -- disculpa -- cuatro veces, cinco veces, seis veces o siete veces con índice cero, tienes que seguir enumerando los valores estúpidos. Entonces, ¿por eso usamos qué función?
+
+AUDIENCIA: Rango.
+
+DAVID MALAN: Rango -- así que eso es lo mismo ahora que imprimirá cough tres veces. Pero, ¿qué pasa si ahora quisiéramos comenzar a definir nuestra propia función para toser, verdad? El objetivo de las semanas 1 y 2 en adelante era comenzar a abstraernos y construir nuestras propias piezas de rompecabezas reutilizables, aunque en un lenguaje diferente. ¿Cómo podría hacerlo en Python?
+
+Supongamos que quiero hacer lo siguiente. Para i en el rango 3, solo quiero toser. Y quiero que cough sea una abstracción, una función personalizada o una pieza de rompecabezas de Scratch, que alguien más o tal vez yo escribí que hace esta idea de toser. Bueno, en Python, ¿cuál es la palabra clave que podemos usar para darnos una nueva función?
+
+AUDIENCIA: Def.
+
+DAVID MALAN: Def para definir -- y solo puedo decir que el nombre de la función es cough. Y no toma argumentos. Entonces, a diferencia de C, no especifico un tipo de retorno. Y no especifico los tipos de entradas, pero en este caso, eso es discutible, porque no hay entradas para toser.
+
+Esta función es súper simple. Solo quiere decir print("cough"). Entonces, aquí, ahora tengo una función que simplemente hará esto. Y es una abstracción en el sentido de que puede estar hasta aquí abajo fuera de la vista, fuera de la mente. Ya no me importa cómo se implementa. Quizás incluso un amigo lo implementó. Y he importado su código. Pero ahora surge el problema de la siguiente manera.
+
+Voy a seguir adelante y guardar esto sin todos los espacios en blanco. Parece que estoy practicando lo que predico -- sin función principal. Simplemente comienza a escribir el código, pero usa def. Pero déjame continuar y ejecutar ahora Python de cough.py. Creo -- sí, voy a ver el primero de nuestros errores.
+
+Los errores de Python se ven un poco diferentes. Vas a ver mucho esta palabra tracebac, que es como un retroceso en el tiempo de todo lo que acaba de suceder. Pero sí ves algunas pistas. Cough.py es el archivo. La línea 2 es el problema. El nombre cough no está definido. Pero espera un minuto. Lo es. Cough se define literalmente con la palabra def aquí mismo en la línea 4. Pero hay un problema en la línea 2, que está aquí. Entonces, incluso si nunca antes has programado en Python, ¿cuál es la intuición de este error? ¿Por qué está roto? Sí.
+
+AUDIENCIA: No definiste tu función antes de usarla.
+
+DAVID MALAN: Sí, no definí mi función antes de usarla, que era exactamente un problema con el que nos encontramos en C. Desafortunadamente, en Python, no hay noción de prototipos. Así que tenemos una o dos soluciones. Simplemente puedo mover la función aquí arriba. Pero hay argumentos en contra de esto.
+
+En este momento, como con main, en general, es un poco molesto poner, como, todas tus funciones en la parte superior, porque entonces, el lector o tú tenéis que ir pescando a través de archivos más grandes si has escrito más líneas. ¿Dónde está la parte principal de este programa? Entonces, en general, es mejor poner el código principal arriba y el código auxiliar abajo.
+
+Entonces, la forma de resolver esto convencionalmente será definir una función principal. Técnicamente, no tiene que llamarse main. No tiene un significado especial como en C. Pero los humanos adoptan este paradigma y simplemente se definen una función llamada main. Y también lo ponen arriba por convención.
+
+Pero ahora, he introducido un nuevo problema. Python de cough.py enter no hace nada. Bueno, ¿por qué es eso? Python te tomará literalmente. Has definido una función llamada main. Has definido una función llamada cough. ¿Qué es lo que aparentemente no he hecho explícitamente?
+
+AUDIENCIA: No has llamado a main.
+
+DAVID MALAN: No he llamado a main. Ahora, en C, obtienes esta función gratis. Si escribes main, se llamará. Python -- esas ruedas de entrenamiento también están apagadas. Tienes que llamar a main explícitamente. Entonces esto parece un poco estúpido. Pero esta es la solución convencional para este problema, donde literalmente llamas a main en la parte inferior de tu archivo, pero defines main en la parte superior. Y esto asegura que para cuando la computadora, el programa de Python, el intérprete lea la línea 8, se dará cuenta, oh, está bien. Has definido main antes. Ahora sé lo que es. Entonces, ahora, si lo ejecuto de nuevo, veo cough, cough, cough.
+
+Muy bien. Hagamos un último ajuste aquí ahora para que pueda factorizar mi bucle aquí y, en cambio, cambiar mi función cough tal como lo hicimos en la semana 0 y 1 para toser un cierto número de veces. ¿Cómo defino una función de Python que toma una entrada? En realidad, es relativamente sencillo.
+
+Recuerde que no tiene que especificar tipos. Pero sí tiene que especificar nombres. ¿Y cuál sería un buen nombre para la entrada para cough para un número? n, correcto, salvo por otra cosa -- podrías llamarlo como quieras. Pero n es una especie de referencia para un entero.
+
+Entonces, si vas a toser n veces, ¿qué quiero hacer? Para i en el rango de n, puedo seguir adelante y toser n veces. Entonces, este programa es funcionalmente el mismo. Pero ahora, observe que mi función personalizada, como en la semana 0 y 1, es más poderosa. Toma entrada y produce salida. Entonces, ahora, puedo abstraerme de la noción de toser para simplemente decir cough 3. Entonces, nuevamente, las mismas ideas exactas que encontramos hace un tiempo, pero ahora, podemos hacer esto ahora en Python. ¿Alguna pregunta, entonces, sobre esos ejemplos hasta ahora? Esto es demasiado rápido. Por supuesto, retrocede. Y pregunta ahora. Sí.
+
+AUDIENCIA: Yo [INAUDIBLE] para Python, y recuerdo que decía algo como, si [INAUDIBLE] tiempos de tos [INAUDIBLE].
+
+DAVID MALAN: Sí, está bien. ¿Le gustaría que su mente realmente se quedara impresionada aquí entonces? Sí, también puedes hacer esto en Python. Si quieres toser tres veces, simplemente puedes multiplicar la cuerda por tres. Entonces ahora -- y si estás impresionado por esto, ahora realmente eres un friki, pero aquí vamos --
+
+[RISAS]
+
+--cough, cough, cough-- en el buen sentido. Esto es muy Pythonic, ¿verdad? Entonces está bien. Entonces ahora, podemos dejarte entrar al club. Entonces, existe esta expresión en el mundo de Python. Y hay muchas comunidades de programación, donde las cosas se consideran Pythonic si -- lo que significa que esta es la manera de hacerlo. No es la única forma. Y podría decirse que ni siquiera es la mejor manera. Pero es la forma en que todos lo hacen, en dobles comillas.
+
+Sin embargo, la gente es muy religiosa cuando se trata de sus idiomas. Entonces, una forma Pythonic de hacer esto -- y la razón por la que hay memes que se burlan de esto es que esta es la forma Pythonic. Como, boom -- sin bucles en absoluto, simplemente multiplica lo que quieras.
+
+Ahora, para ser justos, tiene algunos errores. Como, de hecho, tengo una nueva línea extra. Así que probablemente tenga que esforzarme un poco más para hacerlo bien. Pero sí, hay trucos ocultos en Python, algunos de los cuales encontraremos hoy que te permiten hacer líneas muy elegantes para ahorrar tiempo también.
+
+AUDIENCIA: ¿Por qué en algunos escenarios dijiste que no necesitamos barras in

@@ -1,0 +1,11 @@
+Dicho esto, sigamos adelante y hagamos un par de demostraciones de lo que podemos hacer con este lenguaje y por qué no solo es tan potente, sino también tan popular ahora mismo. Voy a abrir un archivo llamado--llamémoslo blur.py. Blur.py puede recordar lo que hicimos hace unas semanas en Pset4, donde en C implementaron un conjunto de filtros. Y desenfocar una imagen fue uno de ellos.
+
+Y déjame abrir la imagen aquí, por ejemplo. Tengo en el directorio de origen 6 de hoy un montón de ejemplos, como--la imagen que quiero va a estar en Filter. Esta fue la que vimos hace unas semanas. Así que teníamos esta bonita imagen del puente [INAUDIBLE] junto al río. Está súper nítida, bonita y clara porque es una foto de muy alta calidad. Pero intentemos desenfocarla esta vez usando Python.
+
+Así que voy a ir a blur.py. Voy a incluir algunas bibliotecas o archivos de cabecera equivalentes en Python. Pero en Python no se dice "include". En su lugar, se dice "import". Voy a decir desde PIL, que es como la biblioteca de almohadas: voy a importar algo llamado una imagen y un filtro de imagen. Solo sé que existen porque he leído su documentación y sé que puedo incluir o importar esas funciones especiales.
+
+Sigamos adelante y hagamos esto. Voy a abrir la imagen tal y como está ahora. Y llamaré a eso "antes". Así que abriré una imagen llamada bridge.bmp. Y luego, diré: "¿Sabes qué? Sigue adelante, pasa la imagen anterior por un filtro llamado ImageFilter, específicamente ImageFilter.BLUR".
+
+Y luego, guardaré mi archivo. Entonces, una vez que esto se haya leído aquí, ahí vamos, una vez que esto se haya guardado aquí, ahora voy a hacer lo siguiente. Déjame ir a mi directorio de archivos aquí. Déjame abrir mi ventana de terminal aquí. Voy a tomar una copia de mi directorio src6 aquí, que está en mi subdirectorio de filtros hoy: bridge.bmp.
+
+Y ahora voy a ejecutar python blur.py. Así que voy a presionar Enter ahora. Observa que se acaba de crear otro archivo en mi directorio aquí. Veamos el bonito puente, que es donde empezamos. Déjame encoger mi ventana de terminal aquí. Ahora abrimos out.bmp. Y listo--desenfocado--antes, después, antes, después. Pero lo que es más importante: tres líneas de código--así es como implementarías lo mismo que la función de desenfoque de Pset4 en Python.

@@ -1,0 +1,37 @@
+Il existe donc différents algorithmes, dans le monde. Et voici une sorte de feuille de triche des temps d'exécution courants. Un temps d'exécution est simplement la durée nécessaire à l'exécution de votre programme ou de votre algorithme, le nombre de secondes nécessaire, le nombre d'étapes nécessaires, quelle que soit votre unité de mesure. Et nous verrons sur la liste ici quelques termes familiers.
+
+Si je devais étiqueter ce graphique maintenant avec quelques-uns des algorithmes que nous avons vus, la recherche linéaire, disons-nous, est en grand O de n. Dans le pire des cas, Eric va devoir regarder tous les casiers, tout comme il y a quelques semaines, j'ai dû regarder au maximum toutes les pages de l'annuaire téléphonique pour trouver Mike Smith. Et juste pour être clair, où la recherche binaire va-t-elle se trouver dans cette liste de temps d'exécution ?
+
+PUBLIC : Log n.
+
+ORATEUR 1 : Log n. C'est donc en fait mieux. Plus c'est bas sur ce graphique, mieux c'est, du moins en termes de temps requis, que tout ce qui est au-dessus. Nous l'avons donc vu jusqu'à présent. Et maintenant, cela invite en quelque sorte à la question, quels algorithmes vont ici ou là ? Quels sont les plus lents ? Lesquels sont les plus rapides ? Ce sera l'une des choses que nous examinerons ici aujourd'hui.
+
+Mais les informaticiens ont une autre sorte d'outil dans la boîte à outils que nous voulons vous présenter aujourd'hui. Et c'est juste un oméga grec majuscule, ce symbole ici. Et cela ne fait pas référence à un... C'est l'opposé de grand O, si vous voulez. Grand O est essentiellement une limite supérieure au temps qu'un algorithme peut prendre. Eric a peut-être réalisé les n étapes, les 7 casiers, pour trouver le numéro 50 en raison de la recherche linéaire. C'est grand O de n, ou de l'ordre de n. C'est une limite supérieure, dans le pire des cas dans ce scénario.
+
+Vous pouvez cependant utiliser oméga pour décrire des choses comme les meilleurs cas. Ainsi, par exemple, avec l'approche de recherche linéaire d'Eric dans le pire des cas, cela aurait pu et cela lui a pris n étapes, ou 7 précisément. Mais dans le meilleur des cas, combien d'étapes cela aurait-il pu lui prendre ? Juste une, n'est-ce pas ? Il a peut-être eu de la chance et 50 était peut-être juste là.
+
+De même, quand [? Nizari, ?] quand elle a cherché 50 au milieu, combien d'étapes aurait-elle pu lui falloir pour trouver 50 parmi ses 7 casiers ?
+
+PUBLIC : Un.
+
+ORATEUR 1 : Une étape, aussi. Elle a peut-être eu de la chance parce que Brian a peut-être mis le numéro 50 là par coïncidence ou par dessein. Donc, alors que vous avez cette limite supérieure sur le nombre d'étapes qu'un algorithme peut prendre, parfois vous pouvez avoir de la chance. Et si les entrées sont dans un certain ordre, vous pourriez avoir de la chance et avoir une limite inférieure sur le temps d'exécution qui est bien, bien meilleure.
+
+Nous pourrions donc avoir un graphique qui ressemble à ceci. C'est la même fonction, pour ainsi dire, les mêmes maths. Mais j'utilise simplement oméga maintenant au lieu de grand O. Et maintenant, appliquons simplement quelques-uns de ces algorithmes au chat ici, alors. La recherche linéaire est en oméga de quoi, pour ainsi dire, par cette définition ?
+
+PUBLIC : Oméga 1.
+
+ORATEUR 1 : Oméga de 1, d'accord ? Dans le meilleur des cas, la limite inférieure du temps que la recherche linéaire aurait pu prendre à Eric ne serait qu'une seule étape. Nous allons donc appeler la recherche linéaire oméga de 1. Et pendant ce temps, lorsque nous avons effectué une recherche binaire, deuxièmement, ce ne sera pas log n dans le meilleur des cas. Cela pourrait aussi bien être oméga de 1 parce que nous pourrions simplement avoir de la chance.
+
+Et donc maintenant, nous avons des règles empiriques utiles pour décrire à quel point votre algorithme ou votre code peut être bon ou mauvais, en fonction, du moins, des entrées qui sont transmises à cet algorithme. C'est donc grand O, et c'est oméga. Des questions sur ces deux principes, grand O ou oméga ? Oui ?
+
+PUBLIC : [INAUDIBLE] peu importe où il commence [INAUDIBLE] ?
+
+ORATEUR 1 : Très bonne question. Et nous aborderons quelques-uns de ces algorithmes aujourd'hui. Mais pour l'instant, la question est, quel est un exemple d'algorithme qui pourrait être oméga de n, de sorte que dans le meilleur des cas, quelle que soit la qualité ou la mauvaise qualité de votre entrée, il faut n étapes ? Peut-être compter le nombre de casiers, n'est-ce pas ?
+
+Comment je fais ça ? 1, 2, 3, 4, 5, 6, 7-- ma sortie est 7. Combien d'étapes cela a-t-il pris ? Grand O de n parce que dans le pire des cas, j'ai dû tous les regarder, mais aussi oméga de n parce que dans le meilleur des cas, je devais quand même tous les regarder. Sinon, je n'aurais pas pu vous donner un compte précis. Ce serait donc un exemple d'algorithme oméga de n. Et nous verrons d'autres au fil du temps. D'autres questions ? Oui ?
+
+PUBLIC : [INAUDIBLE] oméga ou [INAUDIBLE] meilleure valeur oméga ou meilleure valeur O ?
+
+ORATEUR 1 : Très bonne question. Est-il préférable d'avoir une très bonne valeur oméga ou une très bonne valeur O ? Ce dernier, et nous le verrons au fil du temps. Vraiment, ce qui inquiète généralement les informaticiens, c'est la façon dont leur code se comporte dans le pire des cas, ou peut-être même pas cela, dans le cas moyen.
+
+En général, aujourd'hui, le meilleur des cas est agréable à vivre. Mais qui se soucie vraiment si votre code est super rapide lorsque l'entrée est déjà triée pour vous ? Ce serait un cas particulier, pour ainsi dire. C'est donc un outil utile pour décrire votre algorithme. Mais une grande limite supérieure O est généralement ce qui nous importe un peu plus.

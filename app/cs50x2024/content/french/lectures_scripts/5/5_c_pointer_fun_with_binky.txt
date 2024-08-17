@@ -1,0 +1,59 @@
+[LECTURE VIDÉO]
+
+NARRATEUR : Hé, Binky, réveille-toi. Il est temps d'apprendre les pointeurs.
+
+BINKY : Quoi ? En apprendre sur les pointeurs ? Oh, super.
+
+NARRATEUR : Bien, pour commencer, je suppose que nous aurons besoin de quelques pointeurs.
+
+BINKY : OK, ce code alloue deux pointeurs, qui peuvent pointer vers des entiers.
+
+NARRATEUR : OK, eh bien, je vois bien les deux pointeurs. Mais ils ne semblent pointer vers rien.
+
+BINKY : C'est vrai, les pointeurs ne pointent initialement vers rien. Les éléments vers lesquels ils pointent sont appelés des objets pointés. Et les configurer est une étape distincte.
+
+NARRATEUR : Oh, oui, c'est vrai. Les objets pointés sont distincts. Alors, comment alloua-t-on un objet pointé ?
+
+BINKY : OK, eh bien, ce code alloue un nouvel objet pointé entier. Et cette partie définit x pour qu'il pointe vers lui.
+
+NARRATEUR : Hé, ça a l'air mieux. Alors faites-lui faire quelque chose.
+
+BINKY : OK, je vais déréférencer le pointeur x pour stocker le nombre 42 dans son objet pointé. Pour cette astuce, j'aurai besoin de ma baguette magique de déréférencement y.
+
+NARRATEUR : Votre baguette magique de déréférencement. C'est... c'est génial.
+
+BINKY : Voici à quoi ressemble le code. Je vais simplement configurer le nombre. Et...
+
+NARRATEUR : Hé, regardez, ça y est. Donc, en déréférençant x, on suit la flèche pour accéder à son objet pointé, dans ce cas, on y stocke 42. Hé, essayez de l'utiliser pour stocker le nombre 13 via l'autre pointeur, y.
+
+BINKY : OK. Je vais simplement passer à y et configurer le nombre 13, puis prendre la baguette de déréférencement et simplement... [BRUIT DE SONNERIE] oh.
+
+NARRATEUR : Oh, hé, ça n'a pas marché. Dites, Binky, je ne pense pas que déréférencer y soit une bonne idée, parce que, vous savez, configurer l'objet pointé est une étape distincte. Et je ne pense pas que nous l'ayons jamais fait.
+
+BINKY : Oh, bonne remarque.
+
+NARRATEUR : Oui, nous avons alloué le pointeur y. Mais nous ne l'avons jamais configuré pour pointer vers un objet pointé.
+
+BINKY : Mm, très observateur.
+
+NARRATEUR : Hé, vous avez l'air bien, Binky. Pouvez-vous le réparer pour que y pointe vers le même objet pointé que x ?
+
+BINKY : Bien sûr. J'utiliserai ma baguette magique d'assignation de pointeur.
+
+NARRATEUR : Cela va-t-il poser problème comme tout à l'heure ?
+
+BINKY : Non, cela ne touche pas les objets pointés. Cela modifie simplement un pointeur pour qu'il pointe vers le même élément qu'un autre.
+
+NARRATEUR : Oh, je vois. Maintenant, y pointe vers le même endroit que x. Alors, attendez, maintenant y est corrigé. Il a un objet pointé. Vous pouvez donc réessayer la baguette de déréférencement pour envoyer le 13.
+
+BINKY : Euh... OK, c'est parti.
+
+NARRATEUR : Hé, regardez ça. Maintenant, la déréférence fonctionne sur y. Et comme les pointeurs partagent cet objet pointé unique, ils voient tous les deux le 13.
+
+BINKY : Ouais, partager, peu importe. Alors, on va échanger nos places maintenant ?
+
+NARRATEUR : Oh, regardez, nous n'avons plus de temps.
+
+BINKY : Mais...
+
+[FIN DE LA LECTURE]

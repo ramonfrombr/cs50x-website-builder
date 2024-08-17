@@ -1,0 +1,78 @@
+[0]
+
+Cómo utilizar la línea de comandos de Linux
+
+[1]
+
+Cómo utilizar la línea de comandos de Linux
+● El IDE de CS50 es una máquina basada en la nube que ejecuta Ubuntu, una de las múltiples versiones del SO Linux.
+● Muchas distribuciones modernas de Linux tienen interfaces gráficas de usuario (GUI) para permitir una fácil navegación con el mouse.
+● Aún así, como programador probablemente utilizarás la ventana del terminal con frecuencia; puedes realizar muchas de las mismas tareas con comandos de teclado.
+
+[2]
+
+Cómo utilizar la línea de comandos de Linux
+● Veamos algunos de los comandos basados en el teclado más importantes para trabajar dentro del IDE o de cualquier sistema basado en UNIX.
+
+[3]
+
+Cómo utilizar la línea de comandos de Linux
+ls
+● Abreviación de "list" (lista), este comando te proporcionará una lectura de todos los archivos y carpetas de tu directorio actual.
+
+[4]
+
+Cómo utilizar la línea de comandos de Linux
+cd <directory>
+● Abreviación de "change directory" (cambiar directorio), este comando cambia tu directorio actual a <directory>, que es el que especificas en tu espacio de trabajo o en tu sistema operativo.
+● El nombre abreviado del directorio actual es .
+● El nombre abreviado del directorio principal del directorio actual es ..
+● Si alguna vez tienes curiosidad por saber el nombre del directorio actual, aunque la terminal te lo indicará a menudo, puedes escribir pwd (directorio de trabajo actual).
+
+[5]
+
+Cómo utilizar la línea de comandos de Linux
+mkdir <directory>
+● Abreviación de "make directory" (crear directorio), este comando creará un nuevo subdirectorio llamado <directory> ubicado en el directorio actual.
+
+[6]
+
+Cómo utilizar la línea de comandos de Linux
+cp <source> <destination>
+● Abreviación de "copy" (copiar), este comando te permitirá crear un duplicado del archivo que especifiques como <source>, que se guardará en <destination>.
+● Si deseas copiar directorios completos, deberás modificar ligeramente el comando:
+cp –r <source directory> <destination directory>
+"-r" significa recursivo y le indica a cp que busque en el directorio y copie todo lo que contenga (incluyendo cualquier subdirectorio que pueda contener).
+
+[7]
+
+Cómo utilizar la línea de comandos de Linux
+rm <file>
+● Abreviación de "remove" (quitar), este comando eliminará <file> después de preguntarte si deseas eliminarlo (y/n).
+● Puedes omitir la confirmación escribiendo:
+rm –f <file>
+¡Pero úsalo bajo tu propio riesgo! No se pueden deshacer los cambios.
+● Para eliminar directorios completos, debes utilizar la marca –r, como en el caso de cp.
+rm –r <directory>
+● También puedes combinar las marcas –r y –f en –rf. Nuevamente, ¡ten cuidado! ¡No se pueden deshacer los cambios!
+
+[8]
+
+Cómo utilizar la línea de comandos de Linux
+mv <source> <destination>
+● Abreviación de "move" (mover), este comando te permitirá cambiar el nombre de un archivo de manera efectiva, moviéndolo de <source> a <destination>.
+
+[9]
+
+Cómo utilizar la línea de comandos de Linux
+● Para estar seguros, tienes muchas más utilidades de línea de comandos básicas a tu disposición y hablaremos de muchas de ellas en el futuro en CS50.
+● Si deseas explorar otras interesantes antes de verlas en la clase, lee sobre:
+chmod
+ln
+touch
+rmdir
+man
+diff
+sudo
+clear
+telnet

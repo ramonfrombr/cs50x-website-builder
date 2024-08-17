@@ -1,0 +1,13 @@
+A couple more quick examples just of building blocks that you might assume exist, and indeed do. In exit.c, a few weeks back, we just introduced the notion of returning 0 or returning 1 or some other value just to signify that something worked or did not work. This was success or failure. 
+
+Python offers the same feature but the syntax is a little different. Let me create a file called exit.py. And I can get access to both argv and exit like this. Let me go ahead and from sys import argv and a function called exit. 
+
+So in Python, you don't just magically have access to functions. Sometimes you do need, as in C, to import them. And you only know this from the documentation what exists. And I'm going to do the same thing. 
+
+So I wanted to say in c, if argc does not equal to, the equivalent in Python is if length of argv does not equal to. What do I want to do? I want to go ahead and print missing command line argument. And then I'm going to go ahead and exit 1. 
+
+So whereas in c we said return 1 because we had a special main function, in Python, for now, we're just going to say exit 1. Same idea, slightly different name. Otherwise I'm going to go ahead and print out hello, placeholder, argv 1. With an f string. 
+
+So this one's a little faster. But just to be super clear, all I'm doing is converting from left to right. And we'll have all of these examples on the course's website if you want to look at the more slowly left and right. 
+
+The only new detail here is instead of returning one in error, I'm going to start calling exit 1. And I have to access that function after importing it from the sys library. That's all that's different here. Returning 0 is then, the same thing is exiting 0 as well.

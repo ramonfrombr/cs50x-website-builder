@@ -1,0 +1,161 @@
+So this is only to say we clearly have the ability, then, in code to implement these ideas, like [? Nizari ?] and Eric implemented more physically, using something like this array of lockers. So where do we go from here? 
+
+Well, unfortunately, [? Nizari ?] benefited from the fact that the lockers were, of course, already sorted sort of behind her by Brian. But there were some price paid, right? Indeed, even we had to wait a little bit of time for all of those numbers to get sorted in the lockers before we could proceed to execute that algorithm. So a question, then, reasonable to ask is, well, how expensive is it to sort numbers? And should you sort numbers and then search? Or should you just jump right into searching and not worry about sorting the numbers, especially if one might be more costly than the other? These are going to be ultimately trade-offs. 
+
+So let's consider them as follows. If now the problem at hand is to provide as input to our problem an unsorted list of numbers, the goal of which is to get a sorted list of numbers back out, how do we go about implementing this? For instance, if the numbers are 7, 2, 1, 6, 3, 4, 50 in that order, that unsorted order, the goal at hand is to get out 1, 2, 3, 4, 6, 7, 50 in sorted order from left to right, smallest to largest. So how can we go about implementing that idea? 
+
+Well, let me go ahead and see. We have a few stress balls left. And we could perhaps do this a little dramatically maybe with eight volunteers, if you will. OK, that's a plan. OK, so 1, about 2, 3, if we could, OK, 4 in the middle there, 5, 6, 7, and let's see-- and let's see, [INAUDIBLE] can come up here. Can we do it after? OK, thanks. And how about-- wait, I saw a hand in the middle. How about eight, volunteered by your friends. Come on up. 
+
+So come on up, if you would. And Brian, if we could go ahead and equip our volunteers each with a number. We're going to go ahead and see if we can't solve together the idea of finding an algorithm for sorting the numbers at hand. 
+
+So in just a moment, each of you will be handed a number. In the meantime, let's go ahead and just say a quick introduction, who you are, and perhaps your house. 
+
+AUDIENCE: [? Crus, ?] Dudley House, from Germany. 
+
+AUDIENCE: Curtis, just here visiting. 
+
+SPEAKER 1: Wonderful. 
+
+AUDIENCE: Ali, freshman, [INAUDIBLE], from Turkey. 
+
+AUDIENCE: Farah [? Foho, ?] from Detroit. 
+
+SPEAKER 1: Nice. 
+
+AUDIENCE: Allison, Hollis because I'm first year, from Cleveland. 
+
+AUDIENCE: I'm Claude. I'm in Mauer. And I'm from Virginia. 
+
+AUDIENCE: I'm [? Rohil. ?] I'm in Wigglesworth. And I'm from Atlanta. 
+
+AUDIENCE: I'm [? Yowell. ?] I'm also from Wigglesworth. And I'm from New York. 
+
+AUDIENCE: I'm Bonnie. I'm in Lowell. I'm from Beijing and [? Ann ?] [? Arbor. ?] 
+
+SPEAKER 1: Wonderful. And I'm noticing now, as you might be too, we have nine volunteers on stage. So we're going to go ahead and solve this. That's OK. What's your name again? 
+
+AUDIENCE: Bonnie. 
+
+SPEAKER 1: Bonnie, come on over here. You're going to be maybe my assistant, if you could, as we sought these elements. Let's go ahead and give you the mic here. Each of you has been handed a number that happens to match with this, which is just an unsorted list of numbers. 
+
+And let me just ask that our eight volunteers here sort yourselves. Go. 
+
+[INTERPOSING VOICES] 
+
+SPEAKER 1: And I'll have you direct them after this. Excellent. Very well done. 
+
+[APPLAUSE] 
+
+OK. So let me ask any of you, and we'll hand you the mic, if need be, what was the algorithm you used to sort yourselves? 
+
+AUDIENCE: Human intuition. 
+
+SPEAKER 1: Human intuition, OK. 
+
+[LAUGHTER] 
+
+Nice. 
+
+[APPLAUSE] 
+
+Nice. Other formulations? Yeah? 
+
+AUDIENCE: I just checked if the person who's left me, who is supposed to be larger than me is larger than me. And if he was larger than me, then I stayed there. And if I was larger than him, I just switched places with him. 
+
+SPEAKER 1: OK, I like that. It's sort [? of a ?] locally optimum approach, where you just kind of look to the left and right and sort of fix any transpositions or mismatches. And in fact, let's go ahead and try and apply that same idea. Can all eight of you reorder yourselves, just like that, so that you're standing below your number so that we're undoing the human intuition that we just executed. 
+
+And now let's go ahead and say, all right, so, Bonnie, if you don't mind helping direct us there-- direct us here, we clearly have now an unsorted list of numbers. Let's just bite off this problem one bit at a time. So for instance, you two, your names again? 
+
+AUDIENCE: Tris. 
+
+SPEAKER 1: Tris. 
+
+AUDIENCE: Curtis. 
+
+SPEAKER 1: And Curtis. So you guys are clearly out of order. So what would be the locally optimal solution here. 
+
+AUDIENCE: They would switch orders. 
+
+SPEAKER 1: OK, please do that. All right, now let's consider 6 and 8. 
+
+AUDIENCE: They're fine. 
+
+SPEAKER 1: OK, 8 and 5? 
+
+AUDIENCE: Let's switch again. 
+
+SPEAKER 1: Please switch again. 8 and 2? 
+
+AUDIENCE: Switch. 
+
+SPEAKER 1: OK. 8 and 7? 
+
+AUDIENCE: Switch. 
+
+SPEAKER 1: 8 and 4? 
+
+AUDIENCE: Switch. 
+
+SPEAKER 1: 8 and-- 
+
+AUDIENCE: 1. 
+
+SPEAKER 1: --1? 
+
+AUDIENCE: Switch. 
+
+SPEAKER 1: All right. So have we solved the problem? 
+
+AUDIENCE: No. 
+
+SPEAKER 1: OK, no, obviously not, but is it better? Are we closer to the solution? I'd argue we are closer because, right, like 8 somehow made its way all the way to the correct destination, even though we still have kind of a mess here to fix. But notice that the solution got better in this direction and a little better this direction. But we're going to do this again. 
+
+So Bonnie, can you direct us once more? 
+
+AUDIENCE: Yes. So if you would proceed from this order, you two would switch. 
+
+SPEAKER 1: 5 and 6? 
+
+AUDIENCE: Let's switch again. 
+
+SPEAKER 1: 6 and 2? 
+
+AUDIENCE: Remain, and then the next person-- 
+
+SPEAKER 1: 7 and 4? 
+
+AUDIENCE: 7 and 4 switch. 
+
+SPEAKER 1: Nice. 7 and 1? 
+
+AUDIENCE: 1 and 7 switch. And then-- 
+
+SPEAKER 1: So now are we done? 
+
+AUDIENCE: No. 
+
+SPEAKER 1: So no, but look, the problem is getting better. It's closer to solution because now we have 8 in place and 7 in place. So we've taken a bite out of the problem, if you would. Now, we can do this a little more rapid. So if you want to tell everyone what to do pairwise, pretty quickly. Go. 
+
+AUDIENCE: So everyone, just if you're-- 
+
+[LAUGHTER] 
+
+SPEAKER 1: Human intuition, if you would. But let's do it pairwise. 
+
+AUDIENCE: OK. Sure. Could everyone if the person on your right is smaller than you, switch with them and then do that again. 
+
+SPEAKER 1: Good. 
+
+AUDIENCE: Do that again, again. 
+
+SPEAKER 1: Good. 
+
+AUDIENCE: Again. And then one last time. 
+
+SPEAKER 1: Yeah. So even though we allowed it to get a little organic there at the end, now is the list sorted? 
+
+AUDIENCE: Yeah. 
+
+SPEAKER 1: [LAUGHS] Yes. So maybe a round of applause for our volunteers here. And thank you to Bonnie, especially. Thank you. 
+
+[APPLAUSE] 

@@ -1,0 +1,19 @@
+Entonces, ¿por qué hicimos lo que hicimos? Bien, vamos a ver un ejemplo. Tengo dos ventanas abiertas ahora: dos ventanas de terminal, a la izquierda y a la derecha. A la izquierda está mi implementación de un corrector ortográfico en C desde hace un par de semanas. Déjame ejecutar el corrector ortográfico en uno de los archivos más grandes, como Shakespeare, que fue uno de los archivos más grandes.
+
+Entonces, veamos todas las palabras mal escritas en Shakespeare y usando una tabla hash hace dos semanas, parece que me tomó 0.51 segundos buscar las faltas de ortografía en Shakespeare.text. ¿Qué tal en Python? Bueno, aquí, tengo una copia de lo que acabamos de escribir. Esto también está usando un programa llamado speller.py, que no abrí, pero escribí antes. Y esto no es el código que está programado. Solo dictionary.c y dictionary.py están programados.
+
+Voy a seguir adelante y ejecutar la versión de Python del corrector ortográfico, que va a usar dictionary.py que acabo de escribir en Shakespeare.text, el mismo archivo en el lado derecho. Verás las mismas palabras volando rápidamente en la pantalla, pero puede que ya notes algo.
+
+Entonces, siempre hay un compromiso en la informática y ciertamente en la programación. Siempre hay un precio que pagar. Sorprendido por lo rápido que es esto, relativamente hablando, y lo que es más convincente es cuántos segundos me tomó implementar Pset5 en Python y presumiblemente cuántas horas te llevó implementar Pset5 en C, eso también, el tiempo de desarrollo es un recurso, un recurso humano. Pero estamos pagando un precio. Y según el resultado de C a la izquierda y Python a la derecha, ¿cuál es aparentemente al menos uno de los precios pagados?
+
+AUDIENCIA: Es lento.
+
+DAVID MALAN: Dilo de nuevo.
+
+AUDIENCIA: Más lento.
+
+DAVID MALAN: Es más lento, ¿verdad? Mientras que esto tomó 0.51 segundos en C, el mismo problema resuelto en Python tomó 1.45 segundos en Python. Ahora, francamente, pensando en las últimas dos semanas y las muchas horas que probablemente dedicaste a Pset5, ¿a quién le importa? Como, oh, Dios mío. Seguro. Es tres veces más lento. Pero, Dios mío, el número de horas que tomó implementar esa solución, pero realmente depende de cuáles sean tus metas, ¿verdad?
+
+Si estás optimizando para pasar el menor tiempo posible en un conjunto P, lo más probable es que quieras usar Python. Pero si estás implementando un corrector ortográfico que utilizan miles o millones de personas todos los días, por ejemplo, en Google o Facebook o incluso en Google Docs y similares, ¿sabes qué?
+
+Probablemente no quieras dedicar tres veces más segundos o fracciones de segundo solo porque es más fácil escribirlo en Python, porque ese aumento de tres veces podría costarles más tiempo a tus usuarios. Podría costarte tres veces más hardware. Podría costarle tres veces más dinero comprar tres veces más servidores para hacer exactamente el mismo trabajo. Entonces, nuevamente, esto va a ser una muestra de los tipos de concesiones en la programación, pero me disculpo por no mencionar esto hace dos semanas.

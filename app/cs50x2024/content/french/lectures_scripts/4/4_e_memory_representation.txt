@@ -1,0 +1,35 @@
+Très bien. Rentrons un peu plus dans le visuel. Si ceci représente encore la mémoire de mon ordinateur, laissez-moi aller plus loin et reprendre la diapo de tout à l'heure. Et l'objectif ici est de vraiment visualiser ces deux lignes de code. Donnez-moi une variable appelée n et stockez dedans 50-- comme en Semaine 1 --puis donnez-moi aussi une variable appelée p et stockez dedans l'adresse de n. Nous sommes en Semaine 4. À quoi cela ressemble-t-il ?
+
+Eh bien, la mémoire de mon ordinateur. Remettons n à l'écran. Et n se trouve peut-être arbitrairement quelque part dans la mémoire. Et c'est appelé n, la valeur est 50. Techniquement, ce 50 se trouve quelque part. Et arbitrairement, pour la discussion, disons que c'est l'adresse 0x12345678, donc quelque part en arbitraire.
+
+À quoi ressemble p sur cette image ? Eh bien p est une variable, ce qui veut dire que c'est un tas de bits qui peut stocker des informations. Et proposons simplement qu'ils soient en haut au milieu. Cette variable s'appelle p. Quelle valeur stocke p ? Il s'agit littéralement de stocker 0x12345678, ce qui est encore une fois l'adresse de la valeur n. Donc c'est tout ce qui se passe ici.
+
+Mais honnêtement, c'est de plus en plus bas niveau. Et même mes yeux deviennent vitreux quand nous commençons à parler de ces détails de bas niveau. Il s'avère que les pointeurs se prêtent à l'abstraction. Et en fait, nous pouvons déjà commencer à faire cela.
+
+Restons focalisés maintenant sur l'absence de mémoire, juste sur ces deux valeurs. Ce grand rectangle ici représente une variable appelée p, qui stocke une adresse. Ce rectangle ici représente une autre variable appelée n qui stocke le nombre 50. Techniquement parlant, je ne veux pas me préoccuper à l'avenir de l'adresse de n. Je veux juste que vous sachiez que j'y ai accès.
+
+Et donc ce qu'un informaticien ferait en général ne serait jamais de parler d'adresses spécifiques-- et certainement jamais de les écrire comme je l'ai fait jusqu'à présent --mais à la place, dessiner littéralement une flèche qui dit conceptuellement que cette variable p pointe vers le nombre 50. Et nous pouvons très rapidement commencer à nous éloigner des adresses réelles en question.
+
+Et en fait, nous pouvons visualiser cela de manière un peu plus métaphorique. Donc par exemple, voici par exemple une boîte aux lettres. Et supposons qu'il s'agisse de l'adresse 123. Qu'y a-t-il à l'adresse 123 ? Eh bien, c'est une variable de type int, appelée n, qui a l'air de stocker le nombre 50. N'est-ce pas ? Nous avons vu ces lettres-- ces nombres la semaine dernière. Voici donc le nombre 50, qui est un nombre entier à l'intérieur de cette variable, aujourd'hui, représenté comme une boîte aux lettres plutôt que comme un casier.
+
+Supposons que cette boîte aux lettres ici ne soit pas n mais supposons que ce soit p. Et que ce soit l'adresse 456. Mais qui s'en soucie réellement ? Si cette variable p est un pointeur vers un nombre entier, à savoir celui qui est là-bas, lorsque j'ouvre cette porte, que vais-je trouver ? Eh bien j'espère trouver l'équivalent de-- nous les avions prises à la Coop plus tôt --l'équivalent d'un pointeur conceptuel qui dit que le nombre n est là-bas.
+
+Mais plus spécifiquement, à un niveau inférieur, qu'y a-t-il réellement à l'intérieur de cette boîte aux lettres si cette variable n se trouve à l'emplacement 0x123 ? Qu'y a-t-il probablement à l'intérieur de cette boîte aux lettres ?
+
+PUBLIC : [INAUDIBLE]
+
+DAVID J. MALAN : Oui, en effet, l'adresse, 123. C'est donc un peu comme une carte au trésor si vous voulez. Oh, je dois aller à 123 pour obtenir cette valeur. Oh, le nombre entier en question est en effet 50. Et c'est la différence fondamentale. C'est l'int qui se trouve à l'intérieur de cette variable de type int. C'est l'adresse qui est un pointeur qui est dans cette autre variable, p, mais qui pointe conceptuellement simplement d'une variable à une autre, fournissant ainsi une sorte de fil d'Ariane conceptuel.
+
+Et nous verrons-- franchement, dans une semaine --à quel point c'est incroyablement puissant. Lorsque vous pouvez avoir un morceau de mémoire qui pointe vers un autre, qui pointe vers un autre, qui pointe vers un autre, vous pouvez commencer à construire des structures de données très sophistiquées, comme on les appelle, des choses comme des arbres généalogiques, des listes et d'autres structures de données dont vous avez peut-être entendu parler. Ou même si vous ne l'avez pas fait, ce seront la base de la semaine prochaine de tous les algorithmes les plus sophistiqués utilisés aujourd'hui par, certainement Google, Facebook et Microsoft, pour gérer de grands ensembles de données. C'est là que nous allons la semaine prochaine, en termes d'application.
+
+Des questions sur cette représentation ? Oui, au milieu.
+
+PUBLIC : Cela signifie-t-il que votre mémoire doit être deux fois plus grande ?
+
+DAVID J. MALAN : Désolé, pouvez-vous le répéter une fois ?
+
+PUBLIC : Cela veut-il dire que votre mémoire doit être deux fois plus grande pour stocker des pointeurs ?
+
+DAVID J. MALAN : Ah, très bonne question. Est-ce que vos pointeurs doivent être deux fois plus grands ? Pas nécessairement, c'est simplement ainsi que les choses sont en ce moment. Sur la plupart des Macs et PC modernes, les pointeurs utilisent 64 bits-- l'équivalent d'un long, si vous vous rappelez cette brève discussion en Semaine 1. Donc j'ai délibérément dessiné mon pointeur à l'écran ici comme prenant 8 octets ou 64 bits.
+
+J'ai délibérément dessiné mon entier n comme prenant 4 octets ou 32 bits. C'est la convention aujourd'hui sur le matériel moderne. Mais ce n'est pas nécessairement le cas. Franchement, je n'ai pas pu trouver une boîte aux lettres plus grande chez Home Depot, donc nous avons opté pour deux identiques de couleurs différentes. La métaphore est donc imparfaite.

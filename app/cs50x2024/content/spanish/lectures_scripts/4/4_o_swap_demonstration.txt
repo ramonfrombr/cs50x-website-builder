@@ -1,0 +1,127 @@
+Muy bien. Bueno, eso es simplemente una herramienta. Vamos a continuar y realizar la transición ahora a algunos casos de uso reales.
+
+Recuerda que la semana pasada fue muy útil poder intercambiar valores. ¿Correcto? Con la ordenación de burbuja, con la ordenación por selección, necesitábamos poder intercambiar valores para poder poner las cosas en el lugar correcto. Resulta que esto es bastante sencillo. ¿Correcto? Y en realidad podemos imitar esto en el mundo real.
+
+Solo tenemos oportunidad para un voluntario hoy, un voluntario. ¿Podemos tener un poco... OK, por aquí. Sí. ¿Cómo te llamas?
+
+FARRAH: Farrah.
+
+DAVID J. MALAN: Lo siento.
+
+FARRAH: Farrah.
+
+DAVID J. MALAN: Vera.
+
+FARRAH: Farrah.
+
+DAVID J. MALAN: Oh, Venga, sube aquí. Entonces puedo escucharte ahí arriba. OK, ¿Cómo te llamas?
+
+FARRAH: Farrah.
+
+DAVID J. MALAN: Vera.
+
+FARRAH: Con F.
+
+DAVID J. MALAN: Fera.
+
+FARRAH: Farrah.
+
+DAVID J. MALAN: Farrah.
+
+FARRAH: Sí.
+
+DAVID J. MALAN: Farrah. Sí, OK. Bien. Sube. Todavía sube. [RISAS] Gracias. Gracias.
+
+[APLAUSOS]
+
+[VÍTORES]
+
+OK, encantado de conocerte.
+
+FARRAH: Hola, encantado de conocerte.
+
+DAVID J. MALAN: Farrah.
+
+FARRAH: Sí.
+
+DAVID J. MALAN: OK. Así que vamos a continuar aquí. Déjame darte esto para que también tengas micrófono. OK, así que el objetivo en cuestión es aquí, tengo dos vasos de agua de colores. Así que aquí tenemos un poco de púrpura.
+
+[AGUA VERTIÉNDOSE]
+
+OK. Y tenemos un poco de verde aquí.
+
+[AGUA VERTIÉNDOSE]
+
+Y el único objetivo en cuestión es hacer una operación muy sencilla como la que necesitábamos hacer un poco la semana pasada, que es intercambiar dos variables como intercambiamos dos números.
+
+Así que si pudieras seguir adelante y poner el líquido púrpura aquí y el líquido verde aquí, adelante.
+
+[RISAS]
+
+FARRAH: ¿Está bien que se superpongan?
+
+DAVID J. MALAN: Idealmente, no. Queremos poner solo púrpura aquí y solo verde aquí, y sin almacenamiento temporal.
+
+[RISAS]
+
+FARRAH: Oh.
+
+DAVID J. MALAN: OK, pero estás dudando. ¿Por qué?
+
+FARRAH: Porque me dijiste que no podían tocarse [RISAS] y...
+
+DAVID J. MALAN: Bueno, puedes tocar los vasos. Pero estás dudando en intercambiarlos, ¿por qué?
+
+[CHOCAN]
+
+OK, eso es solo hacer trampa.
+
+[RISAS]
+
+[APLAUSOS]
+
+[VÍTORES]
+
+OK, muy inteligente. Suponiendo que no puedes simplemente mover cosas en la memoria, ¿qué pasa si te doy una variable temporal?
+
+FARRAH: OK.
+
+DAVID J. MALAN: ¿Ayuda esto?
+
+FARRAH: Sí.
+
+DAVID J. MALAN: Entonces, ¿cómo podemos ahora poner púrpura allí y verde allí?
+
+[RISAS]
+
+FARRAH: ¿Puedo poner púrpura aquí primero?
+
+DAVID J. MALAN: Claro.
+
+FARRAH: Voy a derramarlo.
+
+DAVID J. MALAN: Está bien.
+
+[AGUA VERTIÉNDOSE]
+
+OK. Así que el púrpura va a la temporal, muy bien.
+
+[APLAUSOS]
+
+FARRAH: Gracias.
+
+DAVID J. MALAN: El verde va a lo que era púrpura.
+
+FARRAH: Sí
+
+DAVID J. MALAN: OK, bien.
+
+Y luego el púrpura va... de la variable temporal al vaso verde original. Ahora, un aplauso si podemos. OK.
+
+[APLAUSOS]
+
+Gracias.
+
+FARRAH: Gracias.
+
+DAVID J. MALAN: OK.

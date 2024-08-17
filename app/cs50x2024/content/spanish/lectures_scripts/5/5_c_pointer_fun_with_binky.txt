@@ -1,0 +1,59 @@
+[REPRODUCCIÓN DE VIDEO]
+
+NARRADOR: Oye, Binky, despierta. Es hora de divertirse con punteros.
+
+BINKY: ¿Qué es eso? ¿Aprender sobre punteros? ¡Guau! ¡Qué bien!
+
+NARRADOR: Bien, para empezar, creo que necesitaremos algunos punteros.
+
+BINKY: Vale, este código asigna dos punteros que pueden apuntar a enteros.
+
+NARRADOR: Bueno, vale, veo los dos punteros. Pero no parecen estar apuntando a nada.
+
+BINKY: Eso es, los punteros inicialmente no apuntan a nada. Las cosas a las que apuntan se llaman señalados. Y asignarlos es un paso aparte.
+
+NARRADOR: Ah, claro, claro. Lo sabía. Los señalados son cosas aparte. Entonces, ¿cómo se asigna un señalado?
+
+BINKY: Vale, este código asigna un nuevo señalado entero. Y esta parte asigna x para que apunte a él.
+
+NARRADOR: Oye, eso parece mejor. Entonces, haz que haga algo.
+
+BINKY: Vale, desreferenciaré el puntero x para almacenar el número 42 en su señalado. Para este truco, necesitaré mi varita mágica de desreferenciación.
+
+NARRADOR: Tu varita mágica de desreferenciación. Eso... es genial.
+
+BINKY: Así es el código. Solo crearé el número. Y...
+
+NARRADOR: Oye, mira, ahí va. Entonces, al desreferenciar x, sigue la flecha para acceder a su señalado, en este caso, almacenar el 42 ahí. Oye, intenta usarlo para almacenar el número 13 a través del otro puntero, y.
+
+BINKY: Vale. Iré a y, asignaré el número 13 y luego cogeré la varita de desreferenciación y... [SONIDO DE ZUMBIDO] oh.
+
+NARRADOR: Oh, oye, eso no ha funcionado. Binky, no creo que sea buena idea desreferenciar y porque asignar el señalado es un paso aparte. Y no creo que lo hayamos hecho nunca.
+
+BINKY: Oh, buena observación.
+
+NARRADOR: Sí, asignamos el puntero y. Pero nunca lo asignamos para apuntar a un señalado.
+
+BINKY: Mm, muy observador.
+
+NARRADOR: Oye, te ves bien, Binky. ¿Puedes arreglarlo para que y apunte al mismo señalado que x?
+
+BINKY: Claro. Usaré mi varita mágica de asignación de punteros.
+
+NARRADOR: ¿Va a ser un problema como antes?
+
+BINKY: No, esto no afecta a los señalados. Solo cambia un puntero para que apunte a lo mismo que otro.
+
+NARRADOR: Ah, ya veo. Ahora y apunta al mismo lugar que x. Entonces, espera, ahora y está arreglado. Tiene un señalado. Así que puedes volver a probar con la varita de desreferenciación para enviar el 13.
+
+BINKY: Uh... vale, allá voy.
+
+NARRADOR: Oye, mira eso. Ahora la desreferenciación funciona en y. Y debido a que los punteros comparten ese señalado, ambos ven el 13.
+
+BINKY: Sí, compartir, como sea. ¿Entonces vamos a cambiar el sitio ahora?
+
+NARRADOR: Oh, mira, se nos terminó el tiempo.
+
+BINKY: Pero...
+
+[FIN DE LA REPRODUCCIÓN]

@@ -1,0 +1,7 @@
+Entonces, la cadena es un tipo de datos en la biblioteca CS50 que, para los propósitos de hoy, es solo un arreglo de caracteres. Y pronto veremos que eso también es una especie de mentira piadosa, pero también veremos por qué dentro de poco. Entonces, si declaro una cadena en C, puedo literalmente hacer algo como esto. La cadena s es igual a comillas simples hola, esta vez usando comillas dobles y no simples, porque son tres caracteres y no solo un único carácter. Entonces, en la memoria, eso en realidad se verá más o menos igual. Si la variable se llama s, tendrá h i y un signo de exclamación. Y solo por simplicidad, etiquetaré el primer cuadro como s y supondré que podemos llegar a cualquier otro lugar.
+
+Pero resulta que las cadenas son un poco especiales porque, a diferencia de un carácter, que es un byte, a diferencia de un int, que es de cuatro bytes, a diferencia de un long, que es de ocho bytes, ¿qué tan larga debería ser una cadena?
+
+AUDIENCIA: [ININTELIGIBLE]
+
+DAVID MALAN: Sí, me refiero a tantos caracteres como necesites, porque si quiero almacenar H-I, necesito... Punto de exclamación H-I, necesito cadenas de al menos tres bytes, para mi nombre David, al menos cinco bytes, para D-A-V-I-D - Brian también, y nombres mucho más largos en la sala también. Por lo tanto, las cadenas realmente no pueden tener una longitud preordenada asociada con ellas, que es la razón por la que puse un signo de interrogación en la pizarra antes, cuando resumí los tamaños de estos tipos.

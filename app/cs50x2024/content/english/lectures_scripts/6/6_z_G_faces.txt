@@ -1,0 +1,9 @@
+Let's do something else more powerful. And I hope you'll forgive if we go, like, two minutes over today. I hope it's going to be worth it. Let me go ahead, and in today's examples 2 for week 6, let me open up something like faces. 
+
+In this case here, we have, for instance, a whole bunch of our Yale staff some weeks ago. So you'll see here a whole bunch of faces in Yale. And now I'm going to go ahead and, in advance, I wrote a program here called detect to detect faces. 
+
+I'm going to go ahead and run this program called detect.py. It's written in Python but we'll let you see the code online. It's going to open that Yale JPEG file. It's going to analyze it looking for things that look like faces. Eyes, and nose, and mouth, and so forth. And if it finds them, it's going to open and extract each and every one of them, for better or for worse. 
+
+Better still, suppose we have this photo which is a photo of most of CS50 staff here at Harvard this year. And if you see, I am among them somewhere. Well, I wrote another program thanks to a nice tutorial online, this one called recognize.py, that's going to analyze harvard.jpg this time and actually find, hopefully, me. 
+
+Because I also have fed this program as input one photo of myself from CS50's website. And in just a moment, hopefully this will open up a file containing an analyzed version. And indeed, if we look for Waldo, there I am in the back. And the program in Python drew that green box. 

@@ -1,0 +1,29 @@
+**[1]**
+
+Merge Sort
+• No merge sort, a ideia do algoritmo é ordenar arrays menores e então combiná-los (mesclá-los) em ordem crescente.
+• Merge sort alavanca algo chamado recursão, que trataremos com mais detalhes em um vídeo futuro.
+Em pseudocódigo:
+• Ordene a metade esquerda do array (considerando que n > 1)
+• Ordene a metade direita do array (considerando que n > 1)
+• Mescle as duas metades
+
+**[37]**
+
+Merge Sort
+1
+2
+3
+4
+5
+6
+Em pseudocódigo:
+Ordene a metade esquerda do array (considerando que n > 1)
+Ordene a metade direita do array (considerando que n > 1)
+Mescle as duas metades
+
+**[38]**
+
+Merge Sort
+• Cenário de pior caso: precisamos separar n elementos e então recombiná-los, efetivamente dobrando os subarrays ordenados à medida que os construímos. (combinando arrays com 1 elemento ordenados em arrays com 2 elementos, combinando arrays com 2 elementos ordenados em arrays com 4 elementos...)
+• Cenário de melhor caso: o array já está perfeitamente ordenado. Mas ainda precisamos separá-lo e recombiná-lo usando esse algoritmo.

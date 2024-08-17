@@ -1,0 +1,138 @@
+[0]
+
+Escopo da Variável
+
+[1]
+
+Escopo da Variável
+● Escopo é uma característica de uma variável que define a partir de quais funções pode-se acessar essa variável.
+● Variáveis locais só podem ser acessadas dentro das funções nas quais elas foram criadas.
+● Variáveis globais podem ser acessadas por qualquer função do programa.
+
+[2]
+
+Escopo da Variável
+● Até agora no curso, você quase certamente tem trabalhado apenas com variáveis locais.
+● Aqui, x é local para a função triple(). Nenhuma outra função pode se referir a essa variável, nem mesmo main(). result é local para main().
+int triple(int x); // declaração
+int main(void)
+{
+int result = triple(5);
+}
+int triple(int x)
+{
+return x * 3;
+}
+
+[3]
+
+Escopo da Variável
+● Variáveis globais também existem. Se uma variável é declarada fora de todas as funções, qualquer função pode se referir a ela.
+int triple(int x); // declaração
+#include <stdio.h>
+float global = 0.5050;
+int main(void)
+{
+triple();
+printf(“%f\n”, global);
+}
+void triple(void)
+{
+global *= 3;
+}
+
+[4]
+
+Escopo da Variável
+● Por que essa diferença importa? Em grande parte, variáveis locais em C são passadas por valor nas chamadas de função.
+● Quando uma variável é passada por valor, o chamado recebe uma cópia da variável passada, não a variável em si.
+● Isso significa que a variável no chamador não é alterada a menos que seja sobrescrita.
+
+[5]
+
+Escopo da Variável
+● Sem efeito em foo. (Declarações da função omitidas para espaço.)
+int main(void)
+{
+int foo = 4;
+triple(foo);
+}
+int triple(int x)
+{
+return x *= 3;
+}
+
+[6]
+
+Escopo da Variável
+● Substitui foo. (Declarações da função omitidas para espaço.)
+int main(void)
+{
+int foo = 4;
+foo = triple(foo);
+}
+int triple(int x)
+{
+return x *= 3;
+}
+
+[7]
+
+Escopo da Variável
+● As coisas podem se tornar particularmente insidiosas se o mesmo nome de variável aparecer em várias funções, o que é perfeitamente aceitável, desde que as variáveis existam em escopos diferentes.
+
+[8]
+
+Escopo da Variável
+int increment(int x);
+int main(void)
+{
+int x = 1;
+int y;
+y = increment(x);
+printf(“x é %i, y é %i\n”, x, y);
+}
+int increment(int x)
+{
+x++;
+return x;
+}
+
+[9]
+
+Escopo da Variável
+int increment(int x);
+int main(void)
+{
+int x = 1;
+int y;
+y = increment(x);
+printf(“x é %i, y é %i\n”, x, y);
+}
+int increment(int x)
+{
+x++;
+return x;
+}
+
+[10]
+
+Escopo da Variável
+int increment(int x);
+int main(void)
+{
+int xm = 1;
+int y;
+y = increment(xm);
+printf(“x é %i, y é %i\n”, xm, y);
+}
+int increment(int xi)
+{
+xi++;
+return xi;
+}
+
+[11]
+
+Escopo da Variável
+x é 1, y é 2

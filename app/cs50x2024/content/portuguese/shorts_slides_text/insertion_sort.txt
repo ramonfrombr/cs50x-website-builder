@@ -1,0 +1,38 @@
+[1]
+
+Ordenação por Inserção
+• Na ordenação por inserção, a ideia do algoritmo é construir sua matriz ordenada no local, deslocando os elementos para fora do caminho, se necessário, para abrir espaço enquanto você avança.
+Em pseudocódigo:
+• Chame o primeiro elemento do array de "ordenado".
+• Repita até que todos os elementos estejam ordenados:
+• Olhe para o próximo elemento não ordenado. Insira na parte "ordenada" deslocando o número necessário de elementos.
+
+[16]
+
+Ordenação por Inserção
+2
+1
+3
+4
+1
+2
+3
+4
+5
+6
+Em pseudocódigo:
+Chame o primeiro elemento do array de "ordenado".
+Repita até que todos os elementos estejam ordenados:
+Olhe para o próximo elemento não ordenado. Insira na parte "ordenada" deslocando o número necessário de elementos.
+
+[17]
+
+Ordenação por Inserção
+• Pior cenário: O array está na ordem inversa; temos que deslocar cada um dos n elementos em n posições cada vez que fazemos uma inserção.
+• Melhor cenário: O array já está perfeitamente ordenado e simplesmente continuamos movendo a linha entre "não ordenado" e "ordenado" à medida que examinamos cada elemento.
+
+[18]
+
+Ordenação por Inserção
+O(n2)
+Ω(n)

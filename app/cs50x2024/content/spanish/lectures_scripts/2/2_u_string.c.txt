@@ -1,0 +1,41 @@
+Ahora veamos lo que realmente es una cadena y concluiremos el día de hoy con algunos problemas específicos de dominio. De hecho, con el problema establecido dos, estarás explorando varios problemas del mundo real, como evaluar qué tan legible es un texto, qué grado de dificultad tiene un cierto libro o no, o dos, implementar alguna noción de criptografía, el arte de codificar la información. Y basta decir que, en ambos dominios, leer textos y también criptografía, las cadenas serán el ingrediente que necesitamos. Así que observemos ahora algunos ejemplos que involucran cada vez más cadenas.
+
+Voy a seguir adelante y crearé un programa aquí llamado cadena punto c, solo para poder jugar con esta noción. Voy a seguir adelante e incluiré CS50 punto h. Voy a seguir adelante e incluiré Io estándar punto h. Solucionaré esto aquí --principal vacío int. Y ahora permítanme seguir adelante y solo jugar un poco con algunas cadenas por un momento. Permíteme continuar y obtener una cadena del usuario. Entonces, obtenga la cadena y pregunte por su entrada. Intentando escribir demasiado rápido ahora.
+
+Así que permítanme continuar y preguntarle al usuario por su entrada a través de obtener cadena, y almacenar la respuesta en una variable llamada s. Entonces, permítanme continuar y decir preventivamente que su producción va a ser la siguiente. Y lo que quiero hacer es simplemente imprimir los caracteres individuales en esa cadena. Entonces, para int i llego a cero, aún no sé cuál es mi condición, así que volveré a eso -- i más más. Voy a seguir adelante e imprimiré el carácter individual en la ubicación i-enésima de esa cadena, y terminaré todo este programa con una nueva línea.
+
+Así que todavía tengo un espacio en blanco para rellenar, estos signos de interrogación, pero en última instancia solo quiero tomar como entrada una cadena y luego imprimirla como salida, pero no usando por ciento s. Voy a utilizar por ciento c, un carácter a la vez. Entonces, mi pregunta aquí es ¿qué pregunta podría hacer en cada iteración antes de decidir si he impreso o no cada carácter en la cadena? ¿Sí?
+
+AUDIENCIA: Longitud de la cadena.
+
+DAVID MALAN: Longitud de la cadena. Entonces, podría decir mientras i sea menor que la longitud de la cadena. ¿Qué más?
+
+AUDIENCIA: El carácter nulo.
+
+DAVID MALAN: O si es igual al carácter nulo. Intentemos estas dos. Entonces, si sé cómo se representan las cadenas, simplemente puedo decir mientras que el corchete s no es igual a la barra cero. Ahora bien, esta es una sintaxis un poco peculiar, porque aunque son dos caracteres, todavía tengo que usar comillas simples, porque esos dos caracteres, como barra n, representan una idea, no dos caracteres literales. Pero esta es una traducción literal de lo que acabamos de discutir. Inicialice i a cero, incrementado en cada iteración, pero cada vez que haga esa comprobación ¿el carácter i-ésimo en la cadena es igual al carácter nulo especial y si es así, eso es todo por el bucle? Solo queremos iterar a través de este bucle mientras no sea esa barra cero especial.
+
+Entonces, si sigo adelante ahora y guardo este archivo y hago cadena y ejecuto el punto barra cadena, y mi entrada, por ejemplo, es Emma, Enter, voy a ver literalmente su nombre de regreso. Así que esta es mi forma de volver a implementar la idea de por ciento s, pero usando solo por ciento c. Pero me gustó tu sugerencia. ¿Por qué no utilizamos la cadena, la longitud de la cadena, en lugar de este detalle de implementación de bajo nivel? Sería realmente bueno si pudiera decir mientras i sea menor que la longitud de s -- así que ¿cómo expreso esto? Bueno, resulta que hay otro archivo llamado string punto h dentro del cual hay un montón de funciones relacionadas con cadenas que me gustaría usar.
+
+Una de ellas es una función llamada str leng, para abreviar, que significa la longitud de una cadena. Entonces, puedo tomar su sugerencia y simplemente decir, no me importa cómo se implementa una cadena. Quiero decir, Dios mío, el objetivo de la programación en última instancia es abstraer demasiado esos detalles de implementación de bajo nivel. Permíteme preguntar a la computadora cuál es tu longitud, para no contar más allá de ella. Permítanme continuar ahora y hacer cadena, punto barra cadena. Escribamos Emma de nuevo. Y la salida es la misma.
+
+Pero bueno, esto es correcto quizás, pero sostengo que no está muy bien diseñado. Estoy siendo un poco ineficiente y apuesto a que puedo hacerlo mejor. ¿Qué ves?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Adelante.
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Sí, exactamente. Recuerde que en un bucle for, la condición en el medio, entre los punto y coma, es una pregunta, una expresión booleana, que se pregunta una y otra vez. Y resulta que llamar a una función no es gratuito. Puede que tarde una fracción de segundo, porque las computadoras son súper rápidas, pero ¿por qué hace la misma pregunta una y otra vez? La respuesta nunca va a cambiar, porque el nombre de Emma no está creciendo ni disminuyendo, es solo Emma. Entonces, puedo resolver esto de varias formas.
+
+Podría hacer algo así. Int n obtener str leng de s, y luego podría simplemente conectar n. Mi programa es igual de correcto, pero ahora está un poco mejor diseñado porque estoy haciendo la pregunta de la longitud de la cadena una vez, recordando la respuesta y luego usando esa respuesta una y otra vez. Ahora, sí, técnicamente, ahora estoy desperdiciando algo de espacio, porque ahora tengo otra variable llamada n. Entonces algo tiene que ceder. Voy a utilizar más espacio o tal vez más tiempo, pero es un tema al que volveremos especialmente la próxima semana.
+
+Pero resulta que también hay una sintaxis especial para esto. Si sabe en un bucle que quiere hacer una pregunta una vez y recordar la respuesta, en realidad puede decir esto y hacer todo esto en una sola línea. No es mejor ni peor, es solo un poco más sucinto, estilísticamente. Esto tiene el mismo efecto de inicializar i a cero y n a la longitud de la cadena, y luego nunca más hacer esa pregunta. Entonces puedo guardar esto. Puedo hacer cadena. Entonces puedo hacer punto barra cadena, y espero ver, Emma, Emma nuevamente. Así que una tercera y última versión de esta idea, pero un poco mejor diseñada. ¿Sí?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: En este caso, está bien. Esta sería una convención común. Cuando haces algo especialmente para minimizar la cantidad de preguntas que haces, esto está bien, siempre que aún sea bastante estricto. Pero ahí también gente razonable podría estar en desacuerdo. ¿Sí?
+
+AUDIENCIA: ¿El prototipo de cadena está en la biblioteca [INAUDIBLE]?
+
+DAVID MALAN: Realmente buena pregunta. El prototipo de cadena, su declaración, está en string punto h. Recibiría uno de esos crípticos mensajes de error si me olvidara de incluir cadena punto h, porque clang no sabría que str leng realmente existe.

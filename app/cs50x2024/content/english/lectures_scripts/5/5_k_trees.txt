@@ -1,0 +1,5 @@
+All right, so someone came up during break and noted that this actually seems to be a regression in that arrays gave us the ability to resize, even though it was a little expensive because you got to copy everything from one place to another. But we had random access and therefore binary search and therefore logarithmic running time for things like searching assorted lists. We seem to have given that up. 
+
+Linked lists give us dynamism where we and shrink things without wasting time by moving things around. But we've lost random access. But you know what? Now, that we have this ability using pointers and data structures to kind of stitch things together in memory, connect things with arrows, you know what, we can build fancier things. 
+
+Most of you are probably familiar with the idea of a family tree, which is this hierarchical two dimensional structure. And indeed, that's our inspiration here.

@@ -1,0 +1,43 @@
+Très bien. Des questions à ce sujet ? Très bien. Et maintenant, si nous le pouvons, trêve de détails syntaxiques. C'est le style Python. Cela va vous permettre d'avancer à 80 %, voire 90 % dans l'apprentissage de Python, même si vous devrez invariablement vous appuyer sur les diapositives, les notes, Google et Stack Overflow pour quelques détails syntaxiques lorsque vous traduirez vos programmes C du problème 6 en programmes Python dans le problème 6.
+
+Mais les expressions régulières. Présentons maintenant quelques nouvelles fonctionnalités puissantes de ce langage que le C ne possédait pas, mais que d'autres langages ont aussi. J'ai fait allusion aux expressions régulières plus tôt comme étant représentatives d'une fonctionnalité où vous pouvez définir des modèles lorsque vous essayez de détecter des modèles dans les entrées des utilisateurs.
+
+Et il s'avère qu'il y a quelques éléments de syntaxe utiles à connaître dans les expressions régulières. Le point dans les exemples que nous allons faire représente n'importe quel caractère. Donc, si vous ne savez pas quel caractère vous attendez, vous pouvez simplement indiquer un point pour représenter n'importe quel caractère.
+
+Le point suivi d'un astérisque va signifier zéro caractère ou plus. Le point suivi d'un plus va signifier un caractère ou plus. Le point d'interrogation va signifier quelque chose d'optionnel. Et il y a d'autres syntaxes également.
+
+Mais rendons d'abord cela plus concret. Si je reviens à l'exemple très simple d'accord que nous avons fait il y a un moment, vous vous souvenez peut-être que nous avions ce code où j'ai explicitement énuméré oui et y, non et n.
+
+Mais comme quelqu'un l'a fait remarquer, ceux-ci suivent déjà une sorte de modèle. Et il s'avère qu'il pourrait suffire de vérifier un mot commençant par y ou peut-être pourrais-je vérifier plus succinctement plusieurs valeurs à la fois.
+
+Alors, laissez-moi faire ça. Il s'avère que Python a une bibliothèque appelée expressions régulières, ou RE. Cette bibliothèque contient un tas de fonctionnalités plus avancées. Je peux changer cette condition if par celle-ci.
+
+Je peux utiliser re.search qui est une fonction dont le but dans la vie est de rechercher dans une chaîne un modèle qui vous intéresse, comme quelque chose commençant par y. Et la façon dont je vais faire cela est de rechercher initialement oui. Et la chaîne que je vais rechercher est s.
+
+Et cela va renvoyer efficacement true ou false. Je vais donc modifier mon code pour qu'il soit simplement celui-ci. Cela dit : hé Python. Recherche le mot suivant dans la chaîne s.
+
+Très bien. Testons cela. Donc Python of agree : oups, maintenant dans cette version. Oups ! J'ai oublié mon propre : voyons voir. J'ai oublié mes deux-points. Donc Python of agree. Entrée. Suis-je d'accord ? Je vais saisir : oui, d'accord.
+
+Mais pour le moment, y seul ne fonctionne pas. Alors faisons-le fonctionner. Eh bien, je pourrais faire cela de plusieurs façons. Dans les expressions régulières, vous pouvez dire oui ou une autre valeur.
+
+Donc une barre verticale signifie simplement ou. Donc ce n'est pas le mot ou et ce n'est pas des doubles barres dans ce contexte de motifs. C'est juste une seule barre verticale. Mais maintenant, je peux taper y ou oui.
+
+Mais il y a un peu d'intelligence ici, n'est-ce pas ? Comme, oui commence déjà par y. Je pourrais donc dire cela. Laissez-moi arbitrairement mettre les parenthèses autour d'es initialement. Mais mettez ensuite un point d'interrogation à la fin.
+
+C'est une syntaxe funky. Et encore une fois, ce dont nous parlons maintenant n'est pas Python en soi. Ce sont les expressions régulières, les motifs de texte. Cela signifie simplement recherchez un y et peut-être un es, mais peut-être pas un es.
+
+Donc le point d'interrogation signifie 0 ou 1 instance de la chose à gauche. C'est facultatif. Je peux donc maintenant exécuter ceci à nouveau et dire oui. Et cela semble fonctionner. Ou je peux dire y et cela semble fonctionner.
+
+Mais cela ne fonctionne pas. Alors comment pourrais-je résoudre ce problème et le rendre insensible à la casse ? Je pourrais simplement dire lower et forcer tout en minuscules. Ou il s'avère que, si vous lisez la documentation : cela semble un peu bizarre : vous pouvez également transmettre un troisième argument, qui est étrangement en majuscules, comme si vous criiez.
+
+Mais c'est l'expression régulière IGNORECASE. Et cela va forcer tout à être traité en minuscules ou en majuscules. Cela n'a pas d'importance. Mais nous verrons ici que cela va en fait faciliter la recherche de certains motifs.
+
+Nous pouvons dire non de la même manière ici en commençant simplement à construire des motifs. Et encore une fois, vous ne vous asseyez généralement pas et vous n'écrivez pas des expressions régulières qui fonctionnent simplement comme ça. Vous les construisez pièce par pièce comme je le fais déjà.
+
+Alors laissez-moi corriger cela très vite. Qu'est-ce que je viens de faire de mal ? Et voilà. Laissez-moi faire une dernière chose. Supposons que je sois d'accord. Oui. OK. C'est OK. Parce que je recherche dans toute la chaîne s 
+
+Mais si je veux faire une recherche au début de la chaîne, je peux utiliser un symbole caret ici. Et pour faire une recherche jusqu'à la fin de la chaîne, vous pouvez utiliser un signe dollar. Pourquoi c'est comme ça, je ne sais pas. C'est hideux. Mais caret signifie le début de la chaîne. Le signe dollar signifie la fin de la chaîne.
+
+Et si ce n'est pas assez fou, oui ne va plus fonctionner. Aucun accord. Mais oui va le faire littéralement. Parce que cela signifie que l'utilisateur doit taper littéralement au début de son entrée un y suivi éventuellement d'un es.
+
+Et puis, selon le signe dollar, c'est tout pour son entrée. Vous pouvez vraiment resserrer l'entrée de l'utilisateur pour contrôler ce qu'il tape, surtout pour quelque chose comme un accord.

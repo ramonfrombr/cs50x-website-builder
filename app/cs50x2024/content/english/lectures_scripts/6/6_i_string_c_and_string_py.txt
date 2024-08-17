@@ -1,0 +1,15 @@
+All right. So let's now see if we can't tease apart some of the differences in this language by way of examples by walking through a number of the examples we've done in weeks past. And to make it easier to see before and after, let me go ahead and use this feature of the IDE-- turns out if you click this little white icon here, you can split your screen like this. So I'm going to adopt the habit for a little bit now of opening one file on the left in C and one file in the right in Python instead. 
+
+So lets go into, for instance, this directory called One, which has all of my programs from week 1 written in C, as well as some new ones for today that we'll write mostly in real time. So here is a program in week 1 that simply did this. It gets the user's name. 
+
+How do we go about implementing this in Python? Well, let me go ahead and create a file called string.py. And as before, I'm going to go ahead now and convert this from before to after. However, this get string function is, for the moment, something that we give you in CS50. There is a CS50 library for Python. But we're only going to use it for a week or two's time. And we'll take that training wheel off. 
+
+To use it, you can either say quite simply import cs50, which is similar to include cs50.h. Or you can more explicitly say from cs50, import the actual function you want, like get_string. So I'm going to go ahead and do it the more explicit way for now so that I can then do s gets get string. What's your name question mark? And I will put a backslash in here, because get_string is not print. It doesn't presumptuously give you a new line. And then, I'm going to go ahead and print out the user's name-- hello comma plus s. 
+
+I'm going to save my file, go down to my terminal window, and run Python on string.py. I'm going to go ahead then and when prompted, type my name David. And hopefully, it's going to say hello comma David. Just to warm up here, too, we don't need to use the plus operator. I can, instead, change this to a second argument, getting rid of the space inside of hello and now rerun this program. And I'm hopefully going to see the exact same effect-- for instance, if Brian types his name, hello, Brian. 
+
+And if I really want to get fancy, recall there's one other way I can do this. If I want to plug in the user's name here, as in Scratch, I can put what in between curly braces? 
+
+AUDIENCE: S. 
+
+DAVID MALAN: S, which is the name of the variable I've chosen, but notice this. If I get a little sloppy and I just use the curly braces and then I run Python of string.py, and type in, for instance, Emma's name-- that is not Emma's name. It's taking me literally. I have to turn it into an f string or format string, even though that syntax looks weird. Now, if I rerun it and type Emma, we'll hopefully be greeting, indeed, Emma-- so just some warm-ups to map one to the other. But let's see what else we can do here in Python.

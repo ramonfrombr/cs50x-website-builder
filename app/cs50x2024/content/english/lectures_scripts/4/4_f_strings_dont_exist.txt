@@ -1,0 +1,33 @@
+All right. So moving from this to something more familiar now, if you will. Recall that we've been talking about strings for quite some time. And in fact, most of the interesting programs we've written thus far involve maybe input from the human and some form of text that you are then manipulating. But string we said in Week 1 is a bit of a white lie. I mean, it is the training wheels that I promised we would start taking off today. So let's consider what a string actually is now in this new context. 
+
+So if we have a string like EMMA here, declared in a variable called s, and quote unquote, EMMA in all caps, as we've done a couple of times now. What does this actually look like inside of the computer? Well somewhere in my computer's memory there are four, nay, five bytes, storing E-M-M-A, and then additionally, that null terminating character that demarcates where the end of the string is. This is just eight individual 0 bits. So that's where EMMA might be represented in the computer's memory. 
+
+But recall that the variable in question was s. That was my string. And so that's why over the past few weeks any time you want to manipulate a string, you use its name, like s. And you can access bracket 0, bracket 1, bracket 2, bracket 3, to get at the individual characters in that string like EMMA, E-M-M-A, respectively. 
+
+But of course it's the case, especially per today's revelation, that really, all of those bytes have their own addresses. Right? We're not going to care after this week what those addresses are but they certainly exist. For instance, E might be at 0x123. M might be at 0x124-- 1 byte away --0x125, 0x126, 0x127. They're deliberately 1 byte away because remember a string is defined by characters back-to-back-to-back. 
+
+So let's say for the sake of discussion that EMMA name in memory happens to start at 0x123. Well, what then really is that variable s? Well, I dare say that s is really just a pointer. Right? It can be a variable, depicted here just as before, called s. And it stores the value 0x123. Why? That's where Emma's name begins. 
+
+But of course, we don't really have to care about this level of precision, the actual numbers. Let's just draw it as a picture. s is, if you will, a pointer to Emma's actual name in memory, which might be down over here. It might be over here. It might be over here, depending on where in the computer's memory it ended up by chance. But this arrow just suggests that s is pointing to Emma, specifically at the first letter in her name. 
+
+But that's sufficient though, right? Because how-- if s stores the beginning of Emma's name, 0x123. And that's indeed where the E is but we just draw this pictorially with an arrow. How does the computer know where Emma's name ends if all it's technically remembering is the beginning? 
+
+AUDIENCE: The null terminating character. 
+
+DAVID J. MALAN: The null terminating character. And we stipulated a couple of weeks ago that that is important. But now it's all the more important because it turns out that s, this thing we've been calling a string, has no familiarity with MMA or the null terminator. All s is pointing at technically, as of today, is the first letter in her name, which happens to be in this story at 0x123. But the computer is smart enough to know that if you just point it at the first letter in a string, it can figure out where the string ends by just looking-- as with a loop --for that null terminating character. 
+
+So this is to say ultimately, that there is no such thing as string. And we'll see if this strikes a chord. There is no such thing as a string. This was a little white lie we began telling in Week 1 just so that we could get interesting, real work done, manipulating text. But what is string most likely implemented as would you say? 
+
+AUDIENCE: An array of characters. 
+
+DAVID J. MALAN: An array of characters, yes. But that was Week 1's definition. What technically now, as of today, must a string be? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID J. MALAN: Sorry, over here. 
+
+AUDIENCE: A pointer. 
+
+DAVID J. MALAN: A pointer. Right? s, the variable in which I was storing Emma's name would seem to manifest a pattern just like we saw with the numbers a moment ago, the number 50. s seems to be storing the address of the first character in that sequence of characters. And so indeed, it would seem to be a string. 
+
+Well, how do we actually connect these dots? Well suppose that we have this line of code again where we had int n equals 50. And then we had this other line of code where we said, go ahead and create a variable called p and store in it the address of n. That's where we left off earlier. But it turns out that this thing here is our data type from Week 1. This thing here, int star, is a new data type as of today. The variable stores, not an int, but the address of an int. It turns out that something like this line of code, with Emma's name, is synonymous with char star. Right? 

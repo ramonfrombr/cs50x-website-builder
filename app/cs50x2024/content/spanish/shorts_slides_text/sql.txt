@@ -1,0 +1,167 @@
+[1]
+
+SQL
+• Muchas veces, para poder desarrollar el sitio web más funcional que podamos, confiamos en una base de datos para almacenar información.
+• Si alguna vez usaste Microsoft Excel o Google Spreadsheets (entre otros), lo más probable es que estés familiarizado con la noción de base de datos: un conjunto de tablas organizadas jerárquicamente, cada una de las cuales contiene un conjunto de filas y columnas.
+
+[2]
+
+SQL
+• SQL (lenguaje de consulta estructurado) es un lenguaje de programación cuyo propósito es consultar una base de datos.
+• MySQL es una plataforma de código abierto en la que se puede establecer el tipo de base de datos relacional con la que SQL es más experto en trabajar.
+• Muchas instalaciones de MySQL vienen con una herramienta GUI llamada phpMyAdmin que se puede utilizar para ejecutar consultas de bases de datos de una manera más fácil de usar.
+
+[3]
+
+SQL
+• Después de crear una base de datos, lo siguiente que querrás hacer es crear una tabla.
+• La sintaxis para hacer esto es un poco incómoda de hacer mediante programación, al menos al principio, y ahí es donde phpMyAdmin será útil.
+• Como parte del proceso de creación de una tabla, se te pedirá que especifiques todas las columnas de esa tabla.
+• A partir de entonces, todas tus consultas se referirán a filas de la tabla.
+
+[13]
+
+SQL
+• Cada columna de tu tabla SQL es capaz de contener datos de un tipo de datos en particular.
+
+[14]
+
+SQL
+• A diferencia de C, el tipo de datos CHAR en SQL no se refiere a un solo carácter. Más bien, es una cadena de longitud fija.
+• En la mayoría de las bases de datos relacionales, incluida MySQL, en realidad se especifica la longitud fija como parte de la definición del tipo, por ejemplo, CHAR(10).
+• VARCHAR se refiere a una cadena de longitud variable.
+• Las VARCHAR también requieren que especifiques la longitud máxima posible de una cadena que podría almacenarse en esa columna, por ejemplo, VARCHAR(99).
+
+[15]
+
+SQL
+• Otra consideración importante al construir una tabla en SQL es elegir una columna para que sea tu clave principal.
+• Las claves principales permiten identificar las filas de una tabla de forma rápida y única.
+• Elegir tu clave principal de manera adecuada puede facilitar mucho las operaciones posteriores en la tabla.
+• También es posible establecer una clave principal conjunta: una combinación de dos columnas que siempre tendrá la garantía de ser única.
+
+[16]
+
+SQL
+• SQL es un lenguaje de programación, pero su vocabulario es bastante limitado.
+• Consideraremos principalmente solo cuatro operaciones que se pueden realizar en una tabla.
+
+[20]
+
+SQL
+• SQL es un lenguaje de programación, pero su vocabulario es bastante limitado.
+• Consideraremos principalmente solo cuatro operaciones que se pueden realizar en una tabla.
+INSERTAR
+SELECCIONAR
+ACTUALIZAR
+BORRAR
+
+[22]
+
+SQL
+• INSERTAR
+• Agrega información a una tabla.
+
+[23]
+
+SQL
+• INSERTAR
+• Agrega información a una tabla.
+INSERT INTO 
+<table>
+(<columnas>)
+VALUES
+(<valores>)
+
+[28]
+
+SQL
+• Al definir la columna que finalmente termina siendo la clave principal de tu tabla, generalmente es una buena idea que esa columna sea un número entero.
+• Además, para eliminar la situación en la que puedas olvidar accidentalmente especificar un valor real para la columna de la clave principal, puedes configurar esa columna para que se autoincremente, por lo que llenará previamente esa columna automáticamente cuando se agreguen filas a la tabla.
+
+[45]
+
+SQL
+• Las bases de datos nos permiten organizar la información en tablas de manera eficiente.
+• No siempre necesitamos almacenar cada posible información relevante en la misma tabla, pero podemos utilizar relaciones entre las tablas para permitirnos extraer información de donde la necesitamos.
+
+[47]
+
+SQL
+• Las bases de datos nos permiten organizar la información en tablas de manera eficiente.
+• No siempre necesitamos almacenar cada posible información relevante en la misma tabla, pero podemos utilizar relaciones entre las tablas para permitirnos extraer información de donde la necesitamos.
+• ¿Qué pasa si ahora nos encontramos en una situación en la que necesitamos obtener el nombre completo de un usuario (de la tabla de usuarios) y el nombre de su madre (de la tabla de madres)?
+
+[48]
+
+SQL
+• SELECCIONAR (UNIR)
+• Extrae información de varias tablas.
+
+[49]
+
+SQL
+• SELECCIONAR (UNIR)
+• Extrae información de varias tablas.
+SELECT 
+<columnas>
+FROM
+<tabla1>
+JOIN
+<tabla2>
+ON
+<predicado>
+
+[62]
+
+SQL
+• BORRAR
+• Elimina información de una tabla.
+
+[63]
+
+SQL
+• BORRAR
+• Elimina información de una tabla.
+DELETE FROM 
+<table>
+WHERE
+<predicado>
+
+[67]
+
+SQL
+• Todas estas operaciones son bastante fáciles de hacer en la interfaz gráfica de phpMyAdmin.
+• Queremos una forma de hacer esto mediante programación, no solo escribiendo comandos SQL en la pestaña "SQL" de phpMyAdmin.
+• Afortunadamente, SQL se integra muy bien con PHP, mediante funciones como query().
+
+[73]
+
+SQL
+• Después de conectarte a tu base de datos con PHP (utilizando un proceso llamado MySQLi o PDO), puedes pasar cadenas de consulta como argumentos a las funciones en PHP y almacenar el conjunto de resultados en una matriz asociativa.
+$results = query(“SELECT fullname FROM users WHERE idnum = ?”,
+$_SESSION[“id”]);
+print(“¡Gracias por iniciar sesión, {$results[‘fullname’]}!"");
+
+[74]
+
+SQL
+• Después de conectarte a tu base de datos con PHP (utilizando un proceso llamado MySQLi o PDO), puedes pasar cadenas de consulta como argumentos a las funciones en PHP y almacenar el conjunto de resultados en una matriz asociativa.
+• También es posible que tu conjunto de resultados pueda constar de varias filas, en cuyo caso el conjunto de resultados sería una matriz de matrices asociativas, ¡así que solo necesitas iterar sobre él!
+
+[78]
+
+SQL
+<p>Las mamás de la Seinfeld de la televisión:</p>
+<table>
+<?php
+$results = query(“SELECT mothers FROM moms”);
+if($results !== false)
+{
+foreach($results as $result)
+{
+print(“<tr><td>” . $result[‘mothers’] . “</td></tr>”);
+}
+}
+?>
+</table>

@@ -1,0 +1,57 @@
+¿Qué ocurriría si no nos limitáramos a seguir creando estructuras de datos unidimensionales, matrices que van de izquierda a derecha, listas enlazadas que van en cierto modo de izquierda a derecha? ¿Qué ocurriría si utilizáramos también una noción vertical y presentáramos las cosas de forma más interesante? ¿Qué podemos ganar con ello? Bueno, permíteme proponer que, cada vez que hemos visto una matriz, podemos volver a implementarla, pero obtener lo mejor de ambos mundos, lo mejor de las matrices, lo mejor de las listas enlazadas, del siguiente modo. Aquí tienes una matriz, allá por la semana 1 o incluso la semana 0, cuando buscábamos detrás de puertas. Y aquí, en la semana 2, cuando buscábamos detrás de puertas, tomemos nota de que si tuviéramos que realizar una búsqueda binaria en esto buscando algún valor, como antes, muchas veces buscas primero en medio.
+
+Y luego decides, ¿vas a la izquierda o a la derecha? Y si vas a la izquierda o a la derecha, buscarías en el elemento central por aquí o en el elemento central por aquí. ¿Y entonces qué haces? Vas a la izquierda o a la derecha, mirando el elemento central aquí o aquí o aquí o aquí.
+
+¿Sabes qué? Voy a ampliar un poco esta imagen porque todo esto está ocurriendo en una sola dimensión. En realidad, podemos pensar que esto está ocurriendo en dos dimensiones. Déjame dibujar la misma matriz, 1, 2, 3, 4, 5, 6, 7, pero déjame representarla en distintos niveles que indican lo que está ocurriendo.
+
+Empiezo por el centro. Y voy a la izquierda o a la derecha. Entonces sigo adelante y miro este elemento. Y luego voy a la izquierda o a la derecha. Así que es lo mismo, pero es una versión bidimensional de lo que hemos estado haciendo desde hace unas semanas cuando realizamos la búsqueda binaria.
+
+Bueno, ¿sabes a qué se parece esto? Se parece a una lista enlazada, aunque sin las flechas. Pero ¿sabes qué? No creo que quiera coser esto de 1 a 2 a 3 a 4 a 5 a 6 a 7, porque eso va a ser simplemente una lista enlazada.
+
+Pero, ¿y si utilizo mi nueva familiaridad con los punteros y uso algunos más? De modo que uso más espacio y coso esta estructura de datos en dos dimensiones conceptualmente. Cada nodo representado aquí es un rectángulo. No tiene por qué tener un solo puntero. No hay nada que me impida crear una nueva estructura, una nueva definición de nodo que tenga dos punteros.
+
+Quizás se llame izquierda. Quizás se llame derecha. Antes, solo teníamos uno al que llamábamos siguiente. Pero no hay nada que nos impida crear una estructura más elegante que tenga realmente dos.
+
+Y por tanto podríamos hacer que no se parezca a esto como antes para una lista enlazada, pero libremosnos del siguiente puntero. Hagamos un poco más de espacio. Y démosnos dos punteros, izquierda y derecha. Y afirmo que esta estructura ahora en C podría usarse para implementar el árbol que acabo de describir, el árbol del tipo familiar, más apropiadamente llamado árbol de búsqueda binaria, de la siguiente manera.
+
+Este es un árbol de búsqueda binaria. Uno, porque cada nodo en el árbol tiene como mucho dos hijos, de ahí el bi en binario, que significa como máximo dos. No tiene hijos, como estos de aquí abajo. O tiene como máximo dos hijos. De ahí, el bi en árbol de búsqueda binaria. Es un árbol de búsqueda en el sentido de que he tenido cuidado con estos datos de ordenar las cosas correctamente.
+
+Fíjate en la siguiente definición. Para cualquier nodo en el árbol, cada elemento de la izquierda es más pequeño que él. Y cada elemento de la derecha es mayor que él.
+
+Esa es una definición recursiva, porque fíjate, mira este nodo. Todo a su izquierda es más pequeño. Todo a su derecha es más grande.
+
+Miremos el 6. Todo a su izquierda es más pequeño. Todo a su derecha es más grande. De modo que es recursivo en el sentido de que no importa qué nodo mires, no importa qué rectángulo mires, lo que acabo de decir es correcto tanto para el hijo o subárbol izquierdo como para el hijo o subárbol derecho.
+
+Así que esto equivale a decir que si tienes una lista de números, por ejemplo, o una lista de cualquier cosa y realmente los almacenas utilizando nodos que se parecen a este, pero conceptualmente lo que realmente haces es coserlos bidimensionalmente como esto, ¿adivina qué característica acabamos de recuperar? ¿Qué acabamos de mejorar? He oído murmullos por aquí.
+
+AUDIENCIA: Búsqueda binaria.
+
+DAVID MALAN: Hemos recuperado la búsqueda binaria. Así que seguimos teniendo dinamismo, como una lista enlazada. Seguimos utilizando punteros. Y supongamos que queremos añadir el número 0 o el número 8, podrías imaginarte 0 pasando por aquí y 8 pasando por aquí. Así que podríamos seguir conectándolos sin tener que mover todo de sitio como haríamos para una matriz. Pero como estás cosiendo cosas con flechas adicionales dondequiera que estén en la memoria, siempre que realices un seguimiento de esta estructura de datos, llamada árbol, con un puntero a la denominada raíz (la raíz está al revés en este mundo de la informática), esta es la raíz de este árbol de búsqueda binaria, ¿adivina qué harías si estuvieras buscando el número 7?
+
+Bueno, ves el 4. Sabes que es mayor que 4. ¿Entonces qué haces? Te mueves a la derecha, ignorando por tanto la otra mitad de este árbol, como la otra mitad de la guía telefónica en la semana 0. Una vez llegas al 6, consideras: estoy buscando 7. ¿Qué sé? Tiene que estar a la derecha. Y entonces vas.
+
+La altura de este árbol resulta ser logarítmica, para los que estén familiarizados, log en base 2 de n, que quiere decir que tengo 8 elementos o 7 elementos en este árbol. Pero solo me hacen falta 1, 2, 3 pasos para encontrar el valor. No se tarda un orden grande O de n, o un número lineal de pasos.
+
+Y si de verdad quieres alucinar, resulta que esta es en realidad la mejor aplicación para la recursión, que podría haber parecido un poco forzada antes cuando construimos la pirámide de Mario con recursión donde hacíamos factorial o producto o suma o algo así en la sección recursivamente. Resulta que ahora que tenemos estructuras de datos que existen conceptualmente en dos dimensiones que se definen recursivamente (y por definido recursivamente, quiero decir que para cualquier nodo dado, izquierda es más pequeño, derecha es más grande, y puedes hacer esa afirmación sobre cualquier nodo en el árbol), mira lo que podemos hacer en términos de implementación de búsqueda binaria.
+
+Si tengo aquí una función llamada búsqueda, cuyo propósito en la vida es devolver verdadero o falso si el número 50 está en el árbol. ¿Cómo se busca en un árbol? Bueno, toma el árbol como entrada. Más específicamente, toma la dirección del árbol. Más específicamente, toma la dirección de la raíz del árbol.
+
+Eso es cuando quieres buscar en un árbol, literalmente le pasas la dirección del primer nodo superior llamado raíz. Y desde ahí, puedes llegar a cualquier otro sitio. Igual que con la lista, solo necesitamos el comienzo de la lista.
+
+Así que ¿cómo busco en un árbol? Bueno, consideremos primero el caso fácil. Supón que la dirección que te pasas es nula, ¿qué debes hacer si estás buscando el 50, pero te pasan la dirección vacía, ceros?
+
+AUDIENCIA: Devolver falso.
+
+DAVID MALAN: Probablemente devolver falso, ¿verdad? Si no te paso ningún árbol y digo que está el 50 aquí, es una respuesta fácil. No, no hay ningún 50, porque no hay ningún árbol. De modo que es nuestro caso base, si recuerdas esa nomenclatura de nuestra charla sobre recursión. Lo codificas. Escribes manualmente un caso explícito que te saca del programa.
+
+Siguiente caso, si 50 es menor que el árbol, sigue la flecha al campo número, ¿entonces qué sabes? 50 es menor que el nodo que estás mirando. ¿En qué dirección quieres ir conceptualmente?
+
+AUDIENCIA: A la izquierda.
+
+DAVID MALAN: Quieres ir a la izquierda. Así que esta línea aquí busca el hijo izquierdo del árbol, por así decirlo, en el sentido del árbol genealógico, el subárbol izquierdo.
+
+Así que si volvemos a la imagen de hace un momento, si busco 50 en esa historia (o hagámosla más real, si busco 1 en la historia actual), veo que 1 es menor que el nodo actual. Así que sigo adelante y solo busco el subárbol izquierdo.
+
+Y fíjate, esto es un árbol. Pero también lo es este si lo miras aislado. Y también lo es este. Y ahí es donde radica la oportunidad de recursión.
+
+Así que, de nuevo aquí, si 50 es menor que el número del árbol, entonces sigue adelante y busca en la izquierda. De lo contrario, si 50 es mayor que el número actual del árbol, busca en la derecha. De lo contrario, lógicamente ¿qué tiene que ocurrir si el árbol existe y no es menor que ni mayor que el número que estás buscando? Tiene que

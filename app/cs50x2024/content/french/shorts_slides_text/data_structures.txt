@@ -1,0 +1,50 @@
+[1]
+Résumé sur les structures de données
+• Jusqu'à présent, nous avons examiné quatre façons différentes de stocker des ensembles de données :
+• Tableaux
+• Listes chaînées
+• Tables de hachage
+• Tries
+• Il existe même quelques variantes (arbres et tas, assez similaires aux tries, piles et files d'attente, assez similaires aux tableaux ou aux listes chaînées, etc.), mais cela couvrira généralement la majeure partie de ce que nous examinons en C.
+
+[2]
+Résumé sur les structures de données
+• Comment toutes ces structures de données se comportent-elles ? Comment savoir laquelle choisir pour votre situation ?
+• Il s'agit généralement de peser le pour et le contre. Voyons quelques-unes des métriques importantes pour chacune.
+
+[3]
+Résumé sur les structures de données
+• Tableaux
+• L'insertion est mauvaise : beaucoup de décalages pour insérer un élément au milieu
+• La suppression est mauvaise : beaucoup de décalages après la suppression d'un élément
+• La consultation est excellente : accès aléatoire, temps constant
+• Relativement facile à trier
+• Relativement petite taille
+• Collé avec une taille fixe, pas de flexibilité
+
+[4]
+Résumé sur les structures de données
+• Listes chaînées
+• L'insertion est facile : il suffit de l'accrocher à l'avant
+• La suppression est facile : une fois que vous avez trouvé l'élément
+• La consultation est mauvaise : il faut s'appuyer sur la recherche linéaire
+• Relativement difficile à trier, à moins que vous ne soyez prêt à faire des compromis sur une insertion ultra-rapide et que vous les triiez au lieu de les construire
+• Taille relativement petite (pas aussi petite que les tableaux)
+
+[5]
+Résumé sur les structures de données
+• Tables de hachage
+• L'insertion est un processus en deux étapes : hachage, puis ajout
+• La suppression est facile : une fois que vous avez trouvé l'élément
+• La consultation est en moyenne meilleure qu'avec les listes chaînées, car vous bénéficiez d'un facteur constant réel
+• Pas une structure de données idéale si le tri est le but : utilisez simplement un tableau
+• Peut exécuter la gamme de taille
+
+[6]
+Résumé sur les structures de données
+• Tries
+• L'insertion est complexe : beaucoup d'allocation de mémoire dynamique, mais devient plus facile au fur et à mesure
+• La suppression est facile : il suffit de libérer un nœud
+• La consultation est rapide : pas aussi rapide qu'un tableau, mais presque
+• Déjà trié : trié au fur et à mesure que vous construisez dans presque toutes les situations
+• Devient rapidement énorme, même avec très peu de données présentes, pas génial si l'espace est une préoccupation majeure

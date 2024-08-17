@@ -1,0 +1,144 @@
+[0]
+
+Condicionais
+
+[1]
+
+Condicionais
+● As expressões condicionais permitem que seus programas tomem decisões e sigam caminhos diferentes, dependendo dos valores das variáveis ou da entrada do usuário.
+● O C fornece algumas maneiras diferentes de implementar expressões condicionais (também conhecidas como ramificações) em seus programas, algumas das quais provavelmente parecem familiares do Scratch.
+
+[2]
+
+Condicionais
+if (expressão-booleana)
+{
+}
+• Se a expressão-booleana for verdadeira, todas as linhas de código entre as chaves serão executadas na ordem de cima para baixo.
+• Se a expressão-booleana for falsa, essas linhas de código não serão executadas.
+
+[3]
+
+Condicionais
+if (expressão-booleana)
+{
+}
+else
+{
+}
+• Se a expressão-booleana for verdadeira, todas as linhas de código entre o primeiro conjunto de chaves serão executadas na ordem de cima para baixo.
+• Se a expressão-booleana for falsa, todas as linhas de código entre o segundo conjunto de chaves serão executadas na ordem de cima para baixo.
+
+[4]
+
+Condicionais
+if (boolean-expr1)
+{
+// primeira ramificação
+}
+else if (boolean-expr2)
+{
+// segunda ramificação
+}
+else if (boolean-expr3)
+{
+// terceira ramificação
+}
+else
+{
+// quarta ramificação
+}
+• Em C, é possível criar uma cadeia if-else if-else.
+• No Scratch, isso exigia blocos aninhados.
+• Como você esperaria, cada ramificação é mutuamente exclusiva.
+
+[5]
+
+Condicionais
+if (boolean-expr1)
+{
+// primeira ramificação
+}
+if (boolean-expr2)
+{
+// segunda ramificação
+}
+if (boolean-expr3)
+{
+// terceira ramificação
+}
+else
+{
+// quarta ramificação
+}
+• Também é possível criar uma cadeia de ramificações não mutuamente exclusivas.
+• Neste exemplo, apenas a terceira e a quarta ramificações são mutuamente exclusivas. O else se liga apenas ao if mais próximo.
+
+[6]
+
+Condicionais
+int x = GetInt();
+switch(x)
+{
+case 1:
+printf(“Um!\n”);
+break;
+case 2:
+printf(“Dois!\n”);
+break;
+case 3:
+printf(“Três!\n”);
+break;
+default:
+printf(“Sinto muito!\n”);
+}
+• A instrução switch() do C é uma instrução condicional que permite a enumeração de casos discretos, em vez de depender de expressões booleanas.
+• É importante fazer um break; entre cada caso, ou você “cairá” em cada caso (a menos que esse seja o comportamento desejado).
+
+[7]
+
+Condicionais
+int x = GetInt();
+switch(x)
+{
+case 5:
+printf(“Cinco, ”);
+case 4:
+printf(“Quatro, ”);
+case 3:
+printf(“Três, ”);
+case 2:
+printf(“Dois, ”);
+case 1:
+printf(“Um, ”);
+default:
+printf(“Descolagem!\n”);
+}
+• A instrução switch() do C é uma instrução condicional que permite a enumeração de casos discretos, em vez de depender de expressões booleanas.
+• É importante fazer um break; entre cada caso, ou você “cairá” em cada caso (a menos que esse seja o comportamento desejado).
+
+[8]
+
+Condicionais
+int x;
+if (expr)
+{
+x = 5;
+}
+else
+{
+x = 6;
+}
+int x = (expr) ? 5 : 6;
+• Esses dois trechos de código agem de forma idêntica.
+• O operador ternário (?:) é principalmente um truque fofo, mas é útil para escrever ramificações condicionais trivialmente curtas. Esteja familiarizado com ele, mas saiba que você não precisará escrevê-lo se não quiser.
+
+[9]
+
+Condicionais
+if (e if-else, e if-else if-…-else)
+● Use expressões booleanas para tomar decisões.
+switch
+● Use casos discretos para tomar decisões.
+?:
+● Use para substituir um if-else muito simples para fazer seu código parecer mais sofisticado.

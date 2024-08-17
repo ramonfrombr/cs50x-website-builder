@@ -1,0 +1,15 @@
+Resulta que es solo una convención humana describir las cantidades de rojo, verde y azul en un color en términos de dígitos hexadecimales, donde esto significa "sin rojo, sin verde, sin azul". Y si recuerdas desde la Semana 0, eso en realidad nos dará negro. Si no tienes ninguno de esos tres colores, es simplemente la ausencia de esos colores y obtienes negro.
+
+Sin embargo, si tienes FF, ¿cuánto es? 255 de rojo, eso es mucho rojo, y 0 verde, 0 azul. Entonces, si una computadora representara un píxel en tu pantalla como rojo, almacenaría FF0000. Eso es mucho rojo, sin verde, sin azul.
+
+Mientras tanto, si tuvieras esta representación, por eso esto es verde. Esto sería azul. Y si combinas los tres colores mucho, mucho rojo, mucho verde, mucho azul, así es como una computadora representaría blanco. Y volveremos a esto más adelante en el desarrollo de juegos, desarrollo web y móvil, si es de interés, pero nota que esto también es solo una convención común.
+
+Entonces, si reconsideramos cómo es nuestra memoria, es solo esta gran cuadrícula de bytes. Y podríamos describir el superior como 0 y el inferior en este caso como 1F. Y podemos seguir contando. Sin embargo, a primera vista podría ser un poco ambiguo. ¿Estoy viendo decimal? ¿Estoy viendo hexadecimal? ¿Estoy viendo algo completamente diferente?
+
+Entonces, hace años los humanos decidieron que solo para evitar ambigüedades, si estás usando hexadecimal, la convención humana es poner como prefijo cada dígito en la pantalla con 0x, solo arbitrariamente. El 0x no significa nada matemáticamente. Solo significa "aquí viene un valor hexadecimal". Así que puedes desambiguarlo de algo como el decimal en sí mismo. ¡Uf! OK.
+
+Eso fue una boca llena. Y eso es todo para los sistemas de bases. No hay más algo decimales aquí en adelante en este término. Una pequeña mentira piadosa, hay algo llamado octal, pero probablemente no lo veremos.
+
+¿Hay alguna pregunta en absoluto? No, muy bien.
+
+Entonces, ¿cómo podemos realmente usar esta información? Bueno, veamos ahora algunos ejemplos de lo que realmente está sucediendo dentro de la memoria de tu computadora. Y veremos dónde es relevante el hexadecimal y cómo ahora podemos empezar a manipular las cosas más cuidadosamente dentro de la memoria de la computadora.

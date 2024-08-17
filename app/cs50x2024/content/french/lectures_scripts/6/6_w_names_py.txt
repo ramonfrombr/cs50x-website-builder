@@ -1,0 +1,21 @@
+D'accord. Quels autres éléments constitutifs pourrions-nous aimer ? Et si on faisait... oh, ceci est intéressant pour moi. Là, continuons et ouvrons names.py, ou plutôt... voyons. En fait, faisons-le à partir de zéro.
+
+Je vais faire une recherche linéaire rapide dans un style d'algorithme, que j'appelle names.py. Permettez-moi d'importer from sys import exit afin de pouvoir renvoyer 0 ou 1 selon les besoins.
+
+Permettez-moi de me donner une liste de noms comme nous l'avons fait il y a quelques semaines. Emma, Rodrigo, Brian, et le mien. Tous en majuscules juste parce que, juste pour être cohérent avec il y a quelques semaines.
+
+Supposons que je ne veuille rechercher qu'un seul d'entre nous. Et supposons que ce programme ne recherche que Emma pour voir si elle figure dans une liste, comme nous l'avons fait il y a quelques semaines. Eh bien, auparavant, vous auriez utilisé une boucle for 4 fois. Vous auriez itéré sur chaque élément de la liste, en vérifiant s'il est égal à Emma ou stir comparant avec Emma.
+
+Oh mon dieu, non. Nous n'avons plus besoin de faire ça. Si vous voulez savoir si quelque chose figure dans une liste, dites simplement if Emma in names, print, found. Et puis je vais continuer et quitter 0 pour réussir.
+
+Et ici, je vais supposer que si j'arrive jusque-là, Not found. Et je vais quitter 1. Donc si j'exécute Python de names.py. Entrée. Emma est trouvée.
+
+Supposons que je lui change son nom pour Humphrey ici. Maintenant, elle ne sera plus trouvée car Emma n'est pas techniquement dans la liste. Emma Humphrey est dans la liste. Donc maintenant, si je le relance, elle n'est pas trouvée.
+
+Mais j'ai distillé en une seule ligne succincte toute la logique que nous avons utilisée pendant des semaines, comme les boucles for et autres. Bien. Des questions avant d'introduire de nouvelles capacités spécifiques à Python ? Ouais.
+
+PUBLIC : [INAUDIBLE]
+
+DAVID MALAN : Vraiment bonne question. Quelle serait la grande notation O pour faire cela ici ? Ceci est bien documenté. Donc, si vous lisez réellement la documentation de Python, pour chacune de ses structures de données, quelque chose comme une liste vous donnera un gros O de n. C'est bien défini.
+
+Un dictionnaire, aussi, est bien défini avec une probabilité élevée, et nous y reviendrons dans un petit moment. Vous liriez la documentation pour connaître exactement ces choses. Ainsi, le fait d'être familiarisé avec cette grande notation O peut également vous aider à répondre à ces questions à partir de documents.

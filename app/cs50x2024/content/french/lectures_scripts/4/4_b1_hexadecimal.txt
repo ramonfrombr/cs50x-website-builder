@@ -1,0 +1,39 @@
+[MUSIQUE] DAVID J. MALAN : Très bien, nous sommes dans CS50 et c'est le jour où nous enlevons les proverbiales roues d'entraînement, à savoir la bibliothèque CS50. Vous vous souvenez de la semaine dernière, nous nous étions concentrés sur les algorithmes, nous avions commencé à nous intéresser aux comparaisons et aux échanges. Et nous l'avons fait de façon relativement algorithmique, relativement conceptuelle la semaine dernière. mais aujourd'hui, nous allons nous concentrer sur la réalisation de tout cela de manière plus mécanique, plus méthodique. Et j'ai pensé qu'il serait plus facile d'enlever les petites roues et que, je l'espère, ce n'est pas une métaphore pour aujourd'hui. Ok. 
+
+Donc [RIRE] ce que nous allons faire en premier, c'est apprendre à compter d'une manière un peu différente. Vous vous souvenez de la semaine 0, nous l'avons déjà fait en introduisant non seulement le système décimal humain, avec lequel tout le monde est familier, mais aussi le système binaire. Il s'avère qu'il existe d'autres systèmes de base où vous n'utilisez pas seulement des puissances de 10 ou de 2, vous utilisez également d'autres systèmes de base dans leur intégralité. 
+
+Et c'est utile car aujourd'hui, lorsque nous nous concentrons vraiment sur la mémoire de l'ordinateur, et plus tard aujourd'hui sur les fichiers, la création et l'édition de fichiers, comme les images que vous pouvez avoir sur vos propres téléphones ou ordinateurs, il s'avère qu'il est très utile de pouvoir adresser la mémoire à l'intérieur de nos ordinateurs ou téléphones, c'est-à-dire attribuer un numéro, un identifiant unique, à chaque octet afin que l'on puisse simplement parler de l'endroit où se trouvent les choses en mémoire. 
+
+Vous pensez peut-être que nous ferions 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, mais il s'avère que ce n'est pas réellement la convention humaine. Il n'y a rien de mal à cela. C'est correct, mais vous êtes sur le point de voir aujourd'hui une syntaxe légèrement différente où nous comptons de 0 à 1, à 2, à 3, à 4, à 5, à 6, à 7, à 8, à 9, mais dans le monde non décimal, non binaire, mais hexadécimal - hex signifiant 16. Pouvez-vous réellement compter au-delà de neuf ? 
+
+Il y a les lettres A, B, C, D, E et F. Pourquoi ? En utilisant ces lettres alphabétiques individuelles, pouvez-vous effectivement compter non seulement de 0 à 9 - en utilisant des chiffres uniques - mais aussi 10, 11, 12, 13, 14, 15 - F, représentant 15. 
+
+Et donc je présente ceci parce que nous verrons ce schéma tout au long de la journée et dans les semaines à venir programmes où l'ordinateur vous affichera simplement de manière très conventionnelle des nombres non en décimal, non en binaire, mais parfois en hexadécimal. Mais nous verrons pourquoi dans un instant. 
+
+En effet, en binaire nous avions les chiffres 0 et 1, en décimal nous avions de 0 à 9, en hexadécimal - pour récapituler - nous avons de 0 à F, où encore, F est 15. Alors comment cela fonctionne-t-il réellement ? 
+
+Juste un rapide tourbillon, c'était notre notation en binaire. Et j'avais huit bits 0 ici, bit signifiant chiffre binaire. Et en se basant sur les colonnes, nous avions des puissances de 2, ou si nous multiplions cela, la place des uns là-bas, la place des 128 ici. Ceci bien sûr, si vous faites le calcul, est quel nombre en décimal ? 
+
+Donc juste 0 - juste - si vous multipliez les colonnes par les nombres dans lesquels ils sont. Mais qu'en est-il de ça ? Si je change tous ces 0 en 1, quel était le maximum que nous pouvions compter en binaire si nous avions huit bits ? 
+
+AUDITOIRE : 255 
+
+DAVID J. MALAN : Oui, 255 était le maximum que nous pouvions compter. Vous pourriez dire 256, mais encore une fois, si vous commencez à compter à 0, vous dépensez en quelque sorte l'un de ces nombres comme le 0. Donc 255 est le maximum que vous pouvez compter avec huit bits. Et nous pourrions faire le calcul si nous tenions à le faire. 128 fois 1 plus 64 fois 1, etc. Mais laissez-moi simplement stipuler que cela fait en effet 255. 
+
+En décimal, et en effet en décimal, nous représenterions les colonnes comme des puissances de 10 ou des unes, des dizaines, des centaines, etc. C'est donc tout le matériel de la semaine 0. Il s'avère cependant qu'il existe une autre façon de représenter 255 en décimal en utilisant l'hexadécimal, sauf que maintenant au lieu de puissances de 2 ou de puissances de 10, nous allons simplement utiliser des puissances de 16. 
+
+Et il s'avère que cela est pratique pour des raisons liées à l'informatique. Ainsi, la colonne la plus à droite sera notre 16e à zéro ou la première place. La deuxième colonne sera notre 16s place. Et rappelez-vous, F, représente individuellement 15 en décimal. Nous pouvons donc compter de manière assez similaire. 
+
+Donc ceci en hexadécimal serait juste 0. 16 fois 0, plus 1 fois 0, est bien sûr 0. C'est bien sûr, facile, quel est ce numéro ? 
+
+AUDITOIRE : 1 
+
+DAVID J. MALAN : 1 en décimal. Cela va être 2, 3, 4, 5, 6, 7, 8, 9. Et alors que dans le rôle décimal voudriez-vous dire 10 - ou 1, 0 -- ici nous pouvons en fait compter un peu plus haut à A, B, C, D, E, F -- et cela représente 15. Pourquoi ? 16 fois 0, plus 1 fois F - qui encore une fois, F est 15. Donc 1 fois F - ou 15 - vous donne 15. 
+
+Maintenant, comment comptez-vous jusqu'à 16 ? Eh bien, vous pouvez probablement le visualiser déjà, n'est-ce pas ? Vous transportez en quelque sorte le 1 comme en décimal et en binaire. Ainsi, en hexadécimal, 1, 0 est le nombre 16. Et c'est là que vous devez juste être prudent. Vous ne devriez plus dire 10. C'est un nombre décimal. C'est 1, 0 en hexadécimal. 
+
+Mais nous pouvons compter plus haut. Si c'est 16, c'est 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31. Et une fois que vous avez besoin de 32, cela va nécessiter un autre chiffre, si vous voulez. Donc très bas niveau. Et aucun d'entre nous au sein de l'équipe ne pense vraiment en hexadécimal, vous verrez juste les choses en hexadécimal. Et tout cela pour dire qu'il peut être reconverti au décimal plus familier ou à tout autre système également. 
+
+Plus haut que cela, nous irions 2, 0, ce qui bien sûr est 16 fois 2 - ce qui fait 32 - plus 0. Il s'avère donc que si vous avez quatre 1 et quatre 1, cela peut être représenté comme FF, vous avez effectivement vu FF et probablement 00 et d'autres caractères alphabétiques auparavant. 
+
+Combien d'entre vous ont déjà fait de la conception Web en utilisant HTML, CSS ? Donc au moins un tiers de la classe. Et pour ceux qui ne sont pas familiers, nous y arriverons si vous souhaitez poursuivre cette voie plus tard dans le semestre, mais souvenez-vous de RGB de la semaine 0. Le rouge, le vert et le bleu font référence à la façon dont les ordinateurs peuvent représenter les couleurs de chaque pixel en utilisant une certaine quantité de rouge, une certaine quantité de vert et une certaine quantité de bleu.

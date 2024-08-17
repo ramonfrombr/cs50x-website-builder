@@ -1,0 +1,70 @@
+[1]
+
+Hypertext Transfer Protocol (HTTP)
+• In addition to protocols that dictate how information is communicated from machine to machine and application to application (IP and TCP, respectively), it is frequently the case that the application itself has a system of rules for how to interpret the data that was sent.
+• HTTP is one such example of an application layer protocol, which specifically dictates the format by which clients request web pages from a server, and the format via which servers return information to clients.
+
+[2]
+
+Hypertext Transfer Protocol (HTTP)
+• Other application layer protocols include:
+• File Transfer Protocol (FTP)
+• Simple Mail Transfer Protocol (SMTP)
+• Data Distribution Service (DDS)
+• Remote Desktop Protocol (RDP)
+• Extensible Message and Presence Protocol (XMPP)
+
+[13]
+
+Hypertext Transfer Protocol (HTTP)
+• A line of the form
+method request-target http-version
+• Is a simple example of an HTTP request line, a crucial part of an overall HTTP request that a client may make to a server.
+
+[17]
+
+Hypertext Transfer Protocol (HTTP)
+• The host name (domain name of the server) is also included as a separate line of the overall HTTP request.
+• Taken together, the host name and the request target from the request line specify a specific resource being sought.
+• Based on whether the resource exists and whether the server is empowered to deliver that resource pursuant to the client’s request, a number of status codes can result.
+
+[18]
+
+Hypertext Transfer Protocol (HTTP)
+• A status code is part of the first line that a server will use to respond to an HTTP request.
+http-version status
+
+[20]
+
+Hypertext Transfer Protocol (HTTP)
+Class
+Code
+Text
+Comments
+Success
+200
+OK
+All is well, valid request and response.
+Redirection
+301
+Moved 
+Permanently
+Page is now at a new location, automatic redirects built in to most browsers.
+302
+Found
+Page is now at a new location temporarily.
+Client Error
+401
+Unauthorized
+Page typically requires login credentials.
+403
+Forbidden
+Server will not allow this request.
+404
+Not Found
+Server cannot find what was asked for.
+Server Error
+500
+Internal Server 
+Error
+Generic server failure in responding to the otherwise-valid request.

@@ -1,0 +1,11 @@
+Let's do one final example. This one is going to be called qr.py. And it turns out, if you're familiar with QR codes, those two-dimensional barcodes you sometimes see online and in the real world, you can import a library called QR code. 
+
+I can then generate an image using QR codes built-in function make. And let me go ahead and make a QR code containing, like, a link to one of the courses videos. Https://youtu.be/OHG5SJYRHA0. Let me just double check that there's no typos. OHG5SJYRHA0. 
+
+So that's going to embed in a two-dimensional barcode that URL. I'm then going to do image.save qr.ping, which is a graphic format-- indeed, a ping format. And that's it. Two lines of code. 
+
+I'm going to go ahead now and run for my final example homemade in Python, two lines of code, qr.py. That was super quick. And if I now go into my directory, you will see qr.ping. And if you'd like to take out your iPhone or Android, open your camera, point it at the code. You might need to zoom in. Hopefully this will work. 
+
+[MUSIC - RICK ASTLEY, "NEVER GONNA GIVE YOU UP"] 
+
+That's it for CS50. We'll see you next time. 

@@ -1,0 +1,41 @@
+So let's now see what a string really is and we'll ultimately conclude today with some domain specific problems. Indeed with problem set two will you be exploring a number of real-world problems, like assessing just how readable some text is, what grade level might a certain book or another be, and two, implementing some notion of cryptography, the art of scrambling information. And suffice it to say, in both of those domains, reading texts and also cryptography, strings are going to be the ingredient that we need. So let's take a look now at a few examples involving more and more strings. 
+
+I'm going to go ahead and create a program here called string dot c, just so I can play with this notion. I'm going to go ahead and include CS50 dot h. I'm going to go ahead and include standard Io dot h. I'll fix this up here-- int main void. And now let me go ahead and just play around with some strings for a moment. Let me go ahead and get myself a string from the user. So get string and ask for their input. Trying to type too fast now. 
+
+So let me go ahead and ask the user for their input via get string, and store the answer in a variable called s. Then let me go ahead and preemptively say that their output is going to be the following. And what I want to do is just print out the individual characters in that string. So for int i get to zero, I don't know what my condition is yet, so I'll come back to that-- i plus plus. I'm going to go ahead and print out the individual character at the i-th location in that string, and I'm going to end this whole program with a new line. 
+
+So I still have a blank to fill in, these question marks, but I ultimately just want to take as input a string, and then print it out as output, but not using percent s. I'm going to use percent c, one character at a time. So my question mark here is what question could I ask on every iteration before deciding whether or not I've printed every character in the string? Yeah? 
+
+AUDIENCE: Length of the string. 
+
+DAVID MALAN: Length of string. So I could say while i is less than the length of string. What else? 
+
+AUDIENCE: The null character. 
+
+DAVID MALAN: Or if it's equal to the null character. Let's try both of these. So if I know how strings are represented, I can just say while s bracket i does not equal backslash zero. Now this is a bit of a funky syntax, because even though it's two characters, I still have to use single quotes, because those two characters, just like backslash n, represent one idea, not two literal characters. But this is a literal translation of what we just discussed. Initialize i to zero, incremented on every iteration, but every time you do that check does the i-th character in the string equal the special null character, and if so, that's it for the loop. We only want to iterate through this for loop so long as it's not that special backslash zero. 
+
+So if I go ahead now and save this file and make string and run dot slash string and my input for instance is Emma, Enter, I'm going to see literally her name back. So this is kind of my way of re implementing the idea of percent s, but using only percent c. But I liked your suggestion. Why don't we use the string-- the length of the string, rather than this low-level implementation detail? It would be really nice if I could just say while i is less than the length of s-- so how do express this? Well, it turns out there's another file called string dot h inside of which are a bunch of string-related functions that I might like to use. 
+
+One of those is a function called str leng, for short, which means the length of a string. So I can take your suggestion and just say, I don't care how a string is implemented. I mean, my god, the whole point of programming ultimately is too abstract on those lower level implementation details. Let me just ask the computer what is your length, so that I don't count past it. Let me go ahead now and make string, dot slash string. Let's type in Emma again. And the output is the same. 
+
+But now, this is correct perhaps, but I argue it's not very well-designed. I'm being a little inefficient and I bet I can do this better. What do you see? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Go ahead. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Yeah, exactly. Remember in a for loop that the condition in the middle, in between the semicolons, is a question, a Boolean expression, that you ask again and again and again. And it turns out that calling a function is not without cost. It might take a split second, because computers are super fast, but why are you asking the same question again and again and again and again. The answer is never going to change, because Emma's name is not growing or shrinking, it's just Emma. So I can solve this in a couple of ways. 
+
+I could do something like this. Int n get str leng of s, and then I could just plug in n. My program is just as correct, but it's a little better designed now because I'm asking the question of string length once, remembering the answer, and then using that answer again and again. Now, yes, technically, now I'm wasting some space, because I now have another variable called n. So something's gotta give. I'm going to use more space or maybe more time, but that's a theme we'll come back to next week especially. 
+
+But it turns out there's some special syntax for this, too. If you know in a loop that you want to ask a question once and remember the answer, you can actually just say this and do this all in one line. It's no better or worse, it's just a little more succinct, stylistically. This has the same effect of initializing i to zero, and n to the length of string, and then never again asking that question. So I can save this. I can make string. I can then do dot slash string, and I'm going to see hopefully, Emma, Emma again. So a third and final version of this idea, but a little better Designed. Yeah? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: In this case, it's OK. This would be a common convention. When you are doing something especially to minimize the number of questions you're asking, this is OK, so long as it's still pretty tight. But there, too, reasonable people might disagree. Yeah? 
+
+AUDIENCE: Is the prototype string in library [INAUDIBLE]? 
+
+DAVID MALAN: Really good question. The prototype for string, its declaration, is in string dot h. I would get one of those cryptic error messages if I forgot to include string dot h, because clang would not know that str leng actually exists.

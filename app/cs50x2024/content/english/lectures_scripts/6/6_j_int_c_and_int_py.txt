@@ -1,0 +1,9 @@
+Well, recall in Python-- in C, we had this example, int.c. And this was a relatively simple example whose purpose in life was just to get an integer and then actually do some math by multiplying age by 365 to figure out roughly how many days old you are. 
+
+Well, in Python, we can do this pretty similarly. Let me go ahead and open up a file that I will call int.py. And on the top of this file, I'm going to do from cs50 import get_int, because that's the function I want to use this time. I'm going to go ahead and get the user's age with get_int and say, what's your age backslash n. And then, I'm going to go ahead and print out-- not printf-- but print out the same thing as last time-- you are at least-- let me go ahead and make it this a little more room-- you are at least-- I'll come back to this-- something days period. 
+
+So how do I now do this? Well, it turns out that you can plug in not just values, but expressions. I can actually say age times 365 inside the curly braces. So I don't need to, therefore, give myself another variable or use any commas. But of course, I'm missing one thing still. 
+
+AUDIENCE: F. 
+
+DAVID MALAN: The f to make this a format string, and you'll notice the IDE is smart. As soon as it notices, oh, that's a format string, it highlights in different colors the values that will be interpolated, the code inside your string that will be executed. So now, if I do Python of int.py and type in my age, for instance, 50, looks like I'm at least 18,000 days old, in this case.

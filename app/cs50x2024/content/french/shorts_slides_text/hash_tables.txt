@@ -1,0 +1,71 @@
+[1]
+
+Tables de hachage
+• Les tables de hachage combinent la possibilité d'accès aléatoire d'un tableau avec le dynamisme d'une liste liée.
+• Cela signifie (en supposant que nous définissions correctement notre table de hachage) :
+• L'insertion peut tendre vers q(1)
+• La suppression peut tendre vers q(1)
+• La recherche peut tendre vers q(1)
+• Nous profitons des avantages des deux types de structures de données, tout en atténuant les inconvénients.
+
+[2]
+
+Tables de hachage
+• Pour obtenir cette mise à niveau des performances, nous créons une nouvelle structure dans laquelle lorsque nous insérons des données dans la structure, les données elles-mêmes nous donnent un indice sur l'endroit où nous trouverons les données, si nous devons les rechercher ultérieurement.
+• Le compromis est que les tables de hachage ne sont pas très efficaces pour ordonner ou trier les données, mais si cela ne nous importe pas, alors c'est parfait !
+
+[3]
+
+Tables de hachage
+• Une table de hachage revient à une combinaison de deux choses que nous connaissons assez bien.
+• Premièrement, une fonction de hachage, qui renvoie une valeur entière non négative appelée code de hachage.
+• Deuxièmement, un tableau capable de stocker des données du type que nous souhaitons placer dans la structure de données.
+• L'idée est que nous exécutons nos données via la fonction de hachage, puis stockons les données dans l'élément du tableau représenté par le code de hachage renvoyé.
+
+[11]
+
+Tables de hachage
+• Comment définir une fonction de hachage ? Il n'y a vraiment aucune limite au nombre de fonctions de hachage possibles.
+• Une bonne fonction de hachage doit :
+• Utiliser uniquement les données hachées
+• Utiliser toutes les données hachées
+• Être déterministe
+• Distribuer uniformément les données
+• Générer des codes de hachage très différents pour des données très similaires
+
+[19]
+
+Tables de hachage
+• Une collision se produit lorsque deux éléments de données, lorsqu'ils sont exécutés via la fonction de hachage, produisent le même code de hachage.
+• Nous voulons probablement stocker les deux éléments de données dans la table de hachage. Nous ne devons donc pas simplement écraser les données qui s'y trouvaient en premier.
+• Nous devons trouver un moyen d'insérer les deux éléments dans la table de hachage tout en essayant de préserver l'insertion et la recherche rapides.
+
+[20]
+
+Tables de hachage
+• Résoudre les collisions : Sondage linéaire
+• Dans cette méthode, si nous avons une collision, nous essayons de placer les données dans l'élément consécutif suivant du tableau (en revenant au début si nécessaire) jusqu'à ce que nous trouvions une case vide.
+• De cette façon, si nous ne trouvons pas ce que nous recherchons au premier emplacement, au moins espérons que l'élément se trouve quelque part à proximité.
+
+[41]
+
+Tables de hachage
+• Résoudre les collisions : Sondage linéaire
+• Le sondage linéaire est soumis à un problème appelé regroupement. Une fois qu'il y a une erreur, deux cellules adjacentes contiendront des données, ce qui rend plus probable à l'avenir que la grappe grossisse.
+• Même si nous passons à une autre technique de sondage, nous sommes toujours limités. Nous ne pouvons stocker que autant de données que nous avons d'emplacements dans notre tableau.
+
+[42]
+
+Tables de hachage
+• Résoudre les collisions : Chaînage
+• Commençons à tout assembler.
+• Et si au lieu que chaque élément du tableau contienne une seule donnée, il contenait plusieurs données ?
+• Si chaque élément du tableau est un pointeur vers la tête d'une liste liée, alors plusieurs éléments de données peuvent produire le même code de hachage et nous serons en mesure de tout stocker !
+
+[43]
+
+Tables de hachage
+• Résoudre les collisions : Chaînage
+• Nous avons éliminé le regroupement.
+• Nous savons d'après notre expérience avec les listes liées que l'insertion (et la création, si nécessaire) dans une liste liée est une opération O(1).
+• Pour la recherche, nous n'avons besoin de rechercher que dans ce qui est, espérons-le, une petite liste, puisque nous distribuons ce qui serait autrement une énorme liste sur n listes.

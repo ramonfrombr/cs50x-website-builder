@@ -1,0 +1,13 @@
+All right. So let's see what more we have in Python. Well, it turns out we had conditions in C. Let me go ahead and open up, for instance, conditions.c from last time. And we had this program here, where we prompted the user for a couple of integers, x and y. 
+
+And then, we just compared the two and said x is less than y, or x is greater than y. Or x is equal to y. Well, this one I can type up pretty succinctly, too-- conditions.py-- let me go ahead and say from cs50 import get_int. Then, let me go ahead and get an int from the user. And I'm going to call it x. Let me go ahead and get another int from the user. And I'll call it-- oops-- get_int-- get_int. Let me go ahead and call that y. 
+
+And then, let's just ask the question. If x is less than y-- oops-- 
+
+[LAUGHS] 
+
+--if x is less than y, go ahead and print x is less than y. Else if or-- 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: --elif-- slightly more succinct-- so you'll have to get used to it. x is greater than y. Let's go ahead and print out x is greater than y else-- I'm going to go ahead and say by deduction, that x must be equal to y. I'll save that file. I'll go ahead and run Python on conditions.py. I'll give myself two numbers just to do a quick cursory test. And indeed, x is less than y. And I trust if I keep running it, hopefully it should bear out that the rest of it is correct, as well.

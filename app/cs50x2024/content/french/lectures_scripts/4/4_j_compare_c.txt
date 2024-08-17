@@ -1,0 +1,47 @@
+D'accord. Alors, qu'avons-nous en ce qui concerne les chaînes ? Eh bien, essayons maintenant d'apprendre de ces primitives et de trébucher sur certaines erreurs que nous pourrions autrement commettre. Je vais ouvrir un nouveau fichier. Je vais l'appeler compare. Nous allons donc l'enregistrer sous le nom compare dot c. Et cela rappellera quelque chose que nous avons commencé à faire la semaine dernière. Et vous l'avez fait la semaine dernière, en particulier pour implémenter le vote et comparer les chaînes.
+
+Je vais créer un programme rapide qui ne fait que comparer deux entiers. Je vais remettre les roues d'entraînement en place temporairement, juste pour que nous puissions obtenir des nombres de l'utilisateur assez facilement, y compris CS50 dot h et standard I/O dot h. Je vais faire int main void comme mon programme. Je vais obtenir un entier appelé i et le demander à l'humain. Je vais obtenir un autre entier appelé j, le demander à l'humain.
+
+Et puis je vais aller de l'avant et dire que si i est égal à j, alors j'avance et j'imprime avec printf qu'ils sont identiques. Sinon, si i n'est pas égal à j, je vais avancer tout simplement et imprimer différent backslash n. Donc si i est égal à j, il devrait dire, même. Sinon, s'il est différent, il devrait dire différent. Alors laissez-moi avancer et faire compare dot slash compare. Et j'espère voir, si je tape par exemple, 1, 2, ils sont différents. Et si je fais 1, 1, ils sont identiques.
+
+D'accord. Donc il va de soi que logiquement c'est assez simple quand on veut comparer des choses. Donc au lieu d'utiliser des nombres, laissez-moi avancer et changer cela. Laissez-moi avancer et faire, disons, string s obtient getString, comme avant mais en utilisant getString à la place et demander à l'humain pour s. Puis donnez-moi une autre chaîne, t, juste parce que c'est le suivant alphabétiquement. Et je vais demander à l'humain pour t. Et puis je vais avancer et poser cette question, si s est égal à t, imprimer identique, sinon, imprimer différent.
+
+Alors maintenant, laissez-moi avancer et faire à nouveau comparer. Je vais avancer et taper dot slash compare. Nous taperons Emma. Nous taperons ensuite Rodrigo. Et bien sûr, il dira différent. Mais si je le lance à nouveau et que je tape Emma et très bien, je tape à nouveau Emma-- hmm, différent. C'est peut-être une question de majuscules ? Non.
+
+Mais pourquoi aujourd'hui, sont-ils effectivement différents ? La semaine dernière, nous avons agité les mains et avons dit, ah, ce sont des tableaux, vous devez faire des choses. Mais pourquoi sont-ils différents ?
+
+AUDITOIRE : Ils sont stockés à des emplacements différents.
+
+DAVID J. MALAN : Exactement, ils sont stockés à des emplacements différents. Donc, lorsque vous obtenez une chaîne avec getString et que vous l'appelez s, puis que vous obtenez une autre chaîne avec t et que vous l'appelez t, vous obtenez deux blocs de mémoire différents. Et oui, peut-être que l'humain a tapé la même chose dans le clavier, mais cela ne signifie pas nécessairement qu'ils seront stockés exactement au même endroit.
+
+En fait, ce que nous avons vraiment ici, c'est une image qui n'est pas différente de celle-ci. Si j'ai une variable appelée s-- et je vais juste la dessiner comme une boîte là-bas --et si j'ai une variable appelée t-- je le dessinerai comme une autre boîte ici --et j'ai tapé Emma-- E-M-M-A --cela va me donner quelque part en mémoire, E-M-M-A backslash 0. Et je vais l'essayer comme un tableau réel, bien qu'un peu en désordre. Et puis ici, si je tape à nouveau EMMA en majuscules, ça va se retrouver-- grâce à getString, à un endroit différent en mémoire. De par la nature du fonctionnement de getString, il stockera tout ce que vous y tapez.
+
+Et qu'est-ce qui va être stocké dans s et t ? Eh bien, pour la discussion, supposons que ce morceau de mémoire avec la première entrée-- désolé --soit à 0x123. Et que le deuxième bloc de mémoire se trouve à 0x456, juste par hasard. Eh bien, que stocke-je techniquement dans s ? 0x123. Et que stocke-je dans t ? 0x456.
+
+Donc, quand vous dites, s est-il égal à t. L'est-il ? Eh bien, non. Vous comparez littéralement 123 contre 456. L'ordinateur ne va pas présomptueusement aller à cette adresse pour vous à moins que vous ne lui disiez de le faire. En d'autres termes, si je dessine ces boîtes, pas en tant que nombres réels, ce que nous avons vraiment, désolé, ce que nous avons vraiment, c'est ce que nous dessinerons comme une flèche plus généralement, juste un pointeur vers cette valeur. Qui se soucie vraiment de l'adresse ?
+
+C'est pourquoi la semaine dernière, nous avons agité la main et avons dit, eh, vous ne pouvez pas simplement comparer deux chaînes parce que vous devez probablement comparer chaque caractère. Et c'était vrai. Mais ce que vous comparez techniquement, c'est en effet les adresses de ces deux variables.
+
+Des questions alors à ce sujet ici ? Oui. Bien sûr, oui.
+
+AUDITOIRE : Donc tu as dit plus tôt que, je suppose, le pointeur, et la chose réelle vers laquelle il pointe sont comme quelque part dans la mémoire, pas dans un spécifique-- ils sont juste quelque part, n'est-ce pas ?
+
+DAVID J. MALAN : OK.
+
+AUDITOIRE : Avez-vous donc besoin de quelque chose qui pointe vers le point-- comment l'ordinateur sait-il où se trouve le pointeur ?
+
+DAVID J. MALAN : Oh, comment l'ordinateur sait-il où se trouvent ces pointeurs ? C'est une très bonne question. Et répondons-y tout de suite. Pendant tout ce temps où vous avez appelé getString pour obtenir une chaîne, vous l'avez probablement assignée à une variable comme je l'ai fait ici à la ligne six, avec la chaîne s. Mais nous savons aujourd'hui que si nous nous débarrassons de la bibliothèque CS50, techniquement, string est juste synonyme de char star.
+
+Et donc ici et avec t, avez-vous techniquement char star, n'est-ce pas ? C'est juste une recherche et un remplacement si nous nous débarrassons de cette roue d'entraînement. Char star signifie simplement que s stocke l'adresse d'un caractère. Et char star t signifie que t stocke l'adresse d'un caractère. Ergo, pendant tout ce temps depuis la semaine 1 de CS50, quel type de valeur getString renvoyait-il, même si nous ne l'avons jamais décrit comme tel ? Que doit renvoyer getString ? Oui.
+
+AUDITOIRE : L'indice de la première lettre.
+
+DAVID J. MALAN : Pas même l'indice en soi, mais plutôt le--
+
+AUDITOIRE : Il héberge la mémoire de cela.
+
+DAVID J. MALAN : L'adresse du premier caractère. Donc à chaque fois que vous appeliez getString, le code getString que nous avons écrit trouve dans la mémoire de votre ordinateur un espace libre, suffisamment d'octets pour contenir le mot qui a été tapé. getString ensuite, si nous examinions son code, est conçu pour renvoyer l'adresse du premier octet de ce morceau de mémoire. Donc getString, tout ce temps, a renvoyé, si vous voulez, ce qu'on appelle un pointeur. Mais encore une fois, des nuances que nous ne voulions pas aborder dans la toute première semaine, bien sûr, de la programmation C.
+
+D'accord. Eh bien, rendons cela un peu plus concret. Si je consulte ce code, je n'ai pas seulement à vérifier s'ils sont identiques ou différents, laissez-moi simplement les imprimer. Si je fais %p backslash n, je peux littéralement imprimer s. Et si je continue et que j'imprime la même chose pour t en utilisant %p, je peux imprimer la valeur de t.
+
+Alors laissez-moi avancer et faire comparer. Semble compiler OK. Et je ne connais pas les adresses à l'avance. Mais laissez-moi avancer et taper, par exemple, Emma et Emma. Donc, même si ces chaînes semblent identiques, notez, c'est un peu subtil cette fois, la première Emma est à 0xED76A0. La deuxième Emma est à 0xED76E0, qui est à quelques chiffres de la première Emma. Donc ça corrobore juste les instincts de la semaine dernière que nous ne pouvons pas simplement les comparer comme ça.

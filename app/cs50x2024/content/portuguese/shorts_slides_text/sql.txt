@@ -1,0 +1,170 @@
+[1]
+
+SQL
+• Muitas vezes, para conseguirmos construir um website o mais funcional possível, dependemos de um banco de dados para armazenar informações.
+• Se você já usou o Microsoft Excel ou o Google Spreadsheets (entre outros), provavelmente você esteja familiarizado com o conceito de banco de dados: um conjunto hierarquicamente organizado de tabelas, cada uma das quais contém um conjunto de linhas e colunas.
+
+[2]
+
+SQL
+• SQL (a Structured Query Language) é uma linguagem de programação cuja finalidade é consultar um banco de dados.
+• MySQL é uma plataforma de código aberto em que você pode estabelecer o tipo de banco de dados relacional com o qual o SQL tem mais aptidão para trabalhar.
+• Muitas instalações do MySQL vêm com uma ferramenta GUI chamada phpMyAdmin, que pode ser usada para executar consultas a banco de dados de forma mais fácil de usar.
+
+[3]
+
+SQL
+• Após criar um banco de dados, a próxima coisa que você provavelmente desejará fazer é criar uma tabela.
+• A sintaxe para fazer isso é na verdade um pouco estranha de fazer programaticamente, ao menos no começo, e é aí que o phpMyAdmin será útil.
+• Como parte do processo de criação de uma tabela, terá que especificar todas as colunas nessa tabela.
+• Posteriormente, todas as suas consultas farão referência a linhas da tabela.
+
+[13]
+
+SQL
+• Cada coluna da sua tabela SQL é capaz de armazenar dados de um tipo de dados específico.
+
+[14]
+
+SQL
+• Diferentemente do C, o tipo de dados CHAR em SQL não se refere a um único caractere. Em vez disso, é uma string de tamanho fixo.
+• Na maioria dos bancos de dados relacionais, incluindo MySQL, você especifica o tamanho fixo como parte da definição de tipo, por exemplo, CHAR(10).
+• Um VARCHAR se refere a uma string de tamanho variável.
+• VARCHARs também exigem que você especifique o possível comprimento máximo de uma string que possa ser armazenada nessa coluna, por exemplo, VARCHAR(99).
+
+[15]
+
+SQL
+• Outra consideração importante ao construir uma tabela no SQL é escolher uma coluna para ser sua chave primária.
+• Chaves primárias permitem que linhas de uma tabela sejam identificadas de forma exclusiva e rápida.
+• Escolher sua chave primária de forma apropriada pode tornar as operações subsequentes na tabela muito mais fáceis.
+• Também é possível estabelecer uma chave primária conjunta – uma combinação de duas colunas que, espera-se, sempre seja única.
+
+[16]
+
+SQL
+• SQL é uma linguagem de programação, mas seu vocabulário é bastante limitado. 
+• Vamos considerar apenas quatro operações que podem ser executadas em uma tabela.
+
+[20]
+
+SQL
+• SQL é uma linguagem de programação, mas seu vocabulário é bastante limitado. 
+• Vamos considerar apenas quatro operações que podem ser executadas em uma tabela.
+INSERT
+SELECT
+UPDATE
+DELETE
+
+[22]
+
+SQL
+• INSERT
+• Adicionar informações a uma tabela.
+
+[23]
+
+SQL
+• INSERT
+• Adicionar informações a uma tabela.
+INSERT INTO 
+<table>
+(<columns>)
+VALUES
+(<values>)
+
+[28]
+
+SQL
+• Ao definir a coluna que acabará sendo a chave primária da sua tabela, é uma boa ideia fazer com que essa coluna seja um inteiro.
+• Além disso, para eliminar a situação em que você poderá esquecer acidentalmente de especificar um valor real para a coluna de chave primária, você pode configurar essa coluna para autoincrementar, de modo que povoe automaticamente essa coluna para você quando linhas são adicionadas à tabela.
+
+[45]
+
+SQL
+• Os bancos de dados nos capacitam a organizar informações em tabelas de forma eficiente.
+• Nem sempre precisamos armazenar cada possível peça relevante de informação na mesma tabela, mas podemos usar relacionamentos entre as tabelas para podermos extrair informações de onde precisamos.
+
+
+[47]
+
+SQL
+• Os bancos de dados nos capacitam a organizar informações em tabelas de forma eficiente.
+• Nem sempre precisamos armazenar cada possível peça relevante de informação na mesma tabela, mas podemos usar relacionamentos entre as tabelas para podermos extrair informações de onde precisamos.
+• E se agora nos encontrarmos em uma situação em que precisamos obter o nome completo de um usuário (da tabela de usuários) e o nome da mãe dele (da tabela de mães)?
+
+[48]
+
+SQL
+• SELECT (JOIN)
+• Extrair informações de várias tabelas.
+
+[49]
+
+SQL
+• SELECT (JOIN)
+• Extrair informações de várias tabelas.
+SELECT 
+<columns>
+FROM
+<table1>
+JOIN
+<table2>
+ON
+<predicate>
+
+[62]
+
+SQL
+• DELETE
+• Remover informações de uma tabela.
+
+[63]
+
+SQL
+• DELETE
+• Remover informações de uma tabela.
+DELETE FROM 
+<table>
+WHERE
+<predicate>
+
+
+[67]
+
+SQL
+• Todas essas operações são muito fáceis de fazer na interface gráfica do phpMyAdmin.
+• Queremos uma forma de fazer isso programaticamente, não apenas digitando comandos SQL na aba “SQL” do phpMyAdmin.
+• Felizmente, o SQL integra-se muito bem ao PHP, através de funções como query().
+
+[73]
+
+SQL
+• Depois de conectar-se ao seu banco de dados com PHP (usando um processo chamado MySQLi ou PDO), você pode passar strings de consulta como argumentos para funções no PHP e armazenar o conjunto de resultados em uma matriz associativa.
+$results = query(“SELECT fullname FROM users WHERE idnum = ?”,
+$_SESSION[“id”]);
+print(“Obrigado por logar, {$results[‘fullname’]}!”);
+
+[74]
+
+SQL
+• Depois de conectar-se ao seu banco de dados com PHP (usando um processo chamado MySQLi ou PDO), você pode passar strings de consulta como argumentos para funções no PHP e armazenar o conjunto de resultados em uma matriz associativa.
+• Também é possível que seu conjunto de resultados seja composto de várias linhas, caso em que o conjunto de resultados seria uma matriz de matrizes associativas, então só precisará iterar por ela!
+
+
+[78]
+
+SQL
+<p>As mães de Seinfeld na TV:</p>
+<table>
+<?php
+$results = query(“SELECT mothers FROM moms”);
+if($results !== false)
+{
+foreach($results as $result)
+{
+print(“<tr><td>” . $result[‘mothers’] . “</td></tr>”);
+}
+}
+?>
+</table>

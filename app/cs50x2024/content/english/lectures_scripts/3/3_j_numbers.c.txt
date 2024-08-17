@@ -1,0 +1,27 @@
+So let's go in and make this a little more real. Let me go ahead and switch over to CS50 IDE. And let me go ahead and create a program here called numbers.c that's going to allow us to explore, for instance, linear search. So numbers.c is going to start off with our usual lines. 
+
+So I'm going to go ahead and include cs50.h. I'm going to go ahead and include standard io.h, int main void, so no command line arguments for now. And in here, let me go ahead and just declare some numbers, maybe six numbers total. And if I want to declare an array of six numbers, recall from last week, I can literally say this. 
+
+And if I want to initialize those numbers, I can do numbers bracket 0 gets, for instance, the number 4. Numbers bracket 1 gets the number, say, 8. Numbers bracket 2 gets the number 15. Numbers-- OK, so this is getting really tedious. 
+
+Turns out in C, there's a shorthand notation when you know in advance what values you want to put in an array. I can actually go up and do this, 4, 8, 15, 16, 23, 42 with curly braces on either side. So this is just what's called a statically initialized array. You just know in advance what the values are. 
+
+And so I can just save some lines of code that way. But it's the same thing as the road I was going down a moment ago. But the curly braces are new for that little feature. 
+
+Now I'm going to go ahead and iterate over these. So for int, i gets 0, i less than 6. And I'm going to cut some corners now so that we focus on the new stuff and not on the old. I'm hard coding 6 instead of using a constant or something like that. But all I want to do ultimately is search for the number 50. 
+
+So what code can I now write inside of this for loop to just ask the question, is 50 behind this door? Someone want to call it out? Yeah? If? 
+
+AUDIENCE: Number i [INAUDIBLE]. 
+
+SPEAKER 1: Numbers i equals and not just single equals, but equals equals 50. I can go ahead now and return some answer. So I'm going to go ahead [? and say ?] printf, for instance, found in a new line. And then if I want to say that, no 50 was found, recall, that I want to do this outside of the loop, just like in my pseudocode earlier. So not found can go way down there. 
+
+So just to be clear, what algorithm have I implemented here? 
+
+AUDIENCE: [INAUDIBLE]. 
+
+SPEAKER 1: Yeah. So this is linear search. This is the code incarnation of my pseudocode in Eric's actual execution of his algorithm. So let me go ahead and save this. Let me go ahead and make numbers, no error messages, which is good, dot slash numbers and Enter, or I should see what when I hit Enter here? 
+
+AUDIENCE: Not found. 
+
+SPEAKER 1: Hopefully not found because indeed 50 is not among those numbers.

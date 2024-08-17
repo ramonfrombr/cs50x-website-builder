@@ -1,0 +1,70 @@
+[1]
+
+Protocolo de transferencia de hipertexto (HTTP)
+• Además de los protocolos que establecen cómo se comunica la información entre máquinas y entre aplicaciones (IP y TCP, respectivamente), suele ocurrir que la propia aplicación tenga un sistema de reglas para interpretar los datos que se envían.
+• HTTP es un ejemplo de un protocolo de capa de aplicación que establece específicamente el formato que deben tener las solicitudes de páginas web que los clientes envían a un servidor y el formato mediante el cual los servidores devuelven la información a los clientes.
+
+[2]
+
+Protocolo de transferencia de hipertexto (HTTP)
+• Otros protocolos de capa de aplicación incluyen:
+• Protocolo de transferencia de archivos (FTP)
+• Protocolo simple de transferencia de correo (SMTP)
+• Servicio de distribución de datos (DDS)
+• Protocolo de escritorio remoto (RDP)
+• Protocolo de mensajería y presencia extensible (XMPP)
+
+[13]
+
+Protocolo de transferencia de hipertexto (HTTP)
+• Una línea con el formato
+método objetivo-de-la-solicitud versión-http
+• Es un ejemplo simple de una línea de solicitud HTTP, una parte crucial de una solicitud HTTP general que un cliente puede realizar a un servidor.
+
+[17]
+
+Protocolo de transferencia de hipertexto (HTTP)
+• El nombre de host (nombre de dominio del servidor) también se incluye como una línea separada de la solicitud HTTP general.
+• Juntos, el nombre de host y el objetivo de la solicitud de la línea de la solicitud especifican un recurso específico que se busca.
+• En función de si el recurso existe y si el servidor tiene la capacidad de entregar ese recurso según la solicitud del cliente, puede dar como resultado una serie de códigos de estado.
+
+[18]
+
+Protocolo de transferencia de hipertexto (HTTP)
+• Un código de estado es parte de la primera línea que un servidor usará para responder a una solicitud HTTP.
+versión-http estado
+
+[20]
+
+Protocolos de transferencia de hipertexto (HTTP)
+Clase
+Código
+Texto
+Comentarios
+Éxito
+200
+OK
+Todo está bien, solicitud y respuesta válidas.
+Redirección
+301
+Movido 
+Permanente
+La página ahora se encuentra en una nueva ubicación, redirecciones automáticas integradas en la mayoría de los navegadores.
+302
+Encontrado
+La página ahora se encuentra en una nueva ubicación temporal.
+Error del cliente
+401
+No autorizado
+La página normalmente requiere credenciales de inicio de sesión.
+403
+Prohibido
+El servidor no permitirá esta solicitud.
+404
+No encontrado
+El servidor no puede encontrar lo que se solicitó.
+Error del servidor
+500
+Error interno del 
+servidor
+Fallo genérico del servidor al responder a una solicitud válida.

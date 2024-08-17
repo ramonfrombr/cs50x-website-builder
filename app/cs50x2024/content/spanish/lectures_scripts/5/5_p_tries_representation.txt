@@ -1,0 +1,39 @@
+¿Entonces cómo se ve? Es un poco fuerte, porque necesitamos dejar espacio para nosotros mismos en el tablero con mucha memoria. Un trie es un árbol, cada uno de cuyos nodos es esencialmente un arreglo.
+
+Por lo tanto, observa el patrón aquí. Los científicos de la computación a lo largo del tiempo han sido bastante inteligentes tomando esta idea, esta idea, uniéndolas y creando alguna estructura de datos monstruosa, pero eso te da algunos ahorros de tiempo o espacio.
+
+Entonces, este arreglo en la parte superior representa las raíces de este trie, que nuevamente es un árbol cuyos nodos son arreglos. Y observa que el arreglo es de tamaño 26, por el bien de la discusión, A a Z, o 0 a 25.
+
+Un trie hace esto. Si deseas almacenar un nombre en un trie, lo que haces, en este caso, es mirar cada letra de la palabra en cuestión. Entonces, para Harry sería H-a-r-r-y. No solo estamos mirando el primero, el segundo y el tercero. Los estamos mirando a todos.
+
+Y lo que hacemos es esto. Supongamos que la primera letra en el nombre de la persona o su etiqueta de nombre o la palabra en general es una H. Adelante, ve a ese índice. Y si no hay un nodo hijo, aún no hay un árbol debajo de él, otra rama, por así decirlo, asignas otro nodo. Y otro nodo solo significa otro arreglo. Así que hemos dibujado dos arreglos en el tablero.
+
+Esto ahora tiene la letra A resaltada. Todas las letras están técnicamente allí, porque por supuesto es del 0 al 25. Pero solo estamos resaltando las letras que nos importan por el bien de este ejemplo.
+
+Aquí está H-a-g. Entonces, parece que la primera etiqueta de nombre que estoy tratando de instalar en esta estructura de datos es Hagrid. Observa ahora que g está dentro de ese arreglo. Ahora quiero ir a r para Hagrid. Eso me da otro arreglo. Ahora i, ahora d. d es el final de su nombre. Así que voy a colorear de verde, o puedo usar una bandera booleana en el código C que solo dice que el nombre de alguien termina aquí.
+
+Entonces observa, ahora he almacenado implícitamente el nombre de Hagrid en esta estructura de datos al almacenar un nodo, que es un arreglo, para cada letra en su nombre. Pero hay una ligera eficiencia aquí porque hay otras personas en esta historia además de Hagrid cuyos nombres son prefijos o comparten prefijos comunes.
+
+Entonces, por ejemplo, supongamos que quiero instalar a Harry en esta estructura de datos. Él es H-a-r-r-y. Y eso me da un par de nodos más. Y si ahora continúo e instalo a Hermione en esto, observa ahora tengo incluso más nodos en el árbol. Pero algunos de ellos son compartidos. Si comienzas desde la parte superior y miras la H, observa que tanto Hagrid como Harry y Hermione al menos comparten al menos un nodo en común.
+
+Ahora, ¿qué tiene de bueno esto en última instancia? Entonces, ¿cuál es el tiempo de ejecución de buscar a alguien en esta estructura de datos si ya hay n personas en ella? En este momento n es igual a 3 porque hay tres personas en él, aunque haya muchos nodos. Pero ¿cuál es el tiempo de ejecución para buscar en esta estructura de datos para ver si Harry ya recogió su etiqueta de nombre? ¿Ha recogido Hermione la suya? ¿Hagrid ha recogido la suya?
+
+Bueno, ¿cuántos pasos se necesitan para encontrar a Harry o Hermione o Hagrid en esta estructura de datos? Para Harry, es H-a-r-r-y. Por lo tanto, son cinco pasos como máximo. Para Hagrid es H-a-g-r-i-d. Son seis pasos como máximo. Y H-e-r-m-i-o-n-e, 8 pasos en total.
+
+Y probablemente sea el caso de que si leemos los libros, habrá algún límite superior en la longitud del nombre de alguien. No sé qué es. Probablemente sean 20 caracteres. Tal vez 30 si es muy largo. Pero hay algún valor fijo.
+
+Cada vez que tienes un valor fijo, eso es lo que por definición en CS y en matemáticas se llama una constante. Si es 20, es 30, no importa. Pero es fijo. Los nombres de las personas no aumentan de longitud cada año. Hay algún límite superior difícil.
+
+Y técnicamente, si solo te toma cinco pasos o seis pasos u ocho pasos para encontrar a Harry o Hagrid o Harry o Hermione, eso es técnicamente un tiempo constante o, como hemos dicho, Big O de 1. Entonces, en realidad podemos lograr, realmente para buscar en esta estructura de datos, para insertar esta estructura de datos, realmente lo que llamamos big O de k, donde k es una constante.
+
+Pero una constante es lo mismo, asintóticamente, según nuestra discusión en la Semana 3, de big O de 1. Estos son efectivamente tiempo constante, porque para encontrar a Harry, solo miras a H-a-r-r-y. No importa si ya hay 1 millón de otros caracteres en ese trie. No importa si están Hermione y Hagrid y todos los demás de los siete libros en la estructura de datos, porque los únicos nodos que estás mirando son los que representan a H-a-r-r-y.
+
+Y eso es algo poderoso. Cualquier otro algoritmo que hayamos discutido hasta ahora, ciertamente para buscar y ordenar, de alguna manera se ha ralentizado por la cantidad de otros nombres o números que hay en la estructura de datos. Ese no es el caso de este aquí.
+
+Sin embargo, se está pagando un precio. ¿Cuál parece ser el precio que estamos pagando para obtener ese tiempo de ejecución realmente bajo?
+
+AUDIENCIA: Memoria.
+
+DAVID MALAN: Memoria. Quiero decir, Dios mío, apenas cabe en la diapositiva. Y estos son solo tres nombres. Estás gastando 26 cantidades de memoria para almacenar un carácter.
+
+Ahora hay algunas optimizaciones. Con el tiempo, si insertas muchos nombres, algunos de estos nodos se compartirán. Pero esta es una estructura de datos muy amplia, muy densa, por así decirlo, porque utiliza mucha memoria para brindar ese tiempo de ejecución súper asombroso de tiempo teóricamente constante. Así que nuevamente, este tema de intercambios persistirá en las semanas restantes del semestre donde para obtener un recurso, tendremos que gastar otro. Así que hay un trie.

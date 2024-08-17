@@ -1,0 +1,9 @@
+Hagamos algo más poderoso. Y espero que me disculpen si nos pasamos dos minutos el día de hoy. Espero que valga la pena. Permítanme avanzar y en los ejemplos 2 de hoy para la semana 6, permítanme abrir algo como caras. 
+
+En este caso, por ejemplo, tenemos un montón de personal de Yale hace unas semanas. Así que verán aquí un montón de caras en Yale. Y ahora voy a pasar adelante y de manera anticipada, escribí un programa aquí llamado detectar para detectar caras. 
+
+Voy a seguir adelante y voy a ejecutar este programa llamado detect.py. Está escrito en Python pero les mostraremos el código en línea. Va a abrir ese archivo JPEG de Yale. Va a analizarlo buscando cosas que parezcan caras. Ojos, nariz y boca, por ejemplo. Y si las encuentra, va a abrir y extraer cada una de ellas, para bien o para mal. 
+
+Mejor aún, supongamos que tenemos esta foto que es una foto de la mayor parte del personal del CS50 aquí en Harvard este año. Y si ven, yo estoy entre ellos en alguna parte. Bueno, escribí otro programa gracias a un buen tutorial en línea, este se llama recognize.py, que va a analizar harvard.jpg esta vez y de hecho me encontrará, con suerte. 
+
+Porque también le he dado a este programa como entrada una foto mía del sitio web de CS50. Y en un momento, con suerte esto abrirá un archivo que contenga una versión analizada. Y de hecho, si buscamos a Waldo, ahí estoy yo en la parte de atrás. Y el programa en Python dibujó esa caja verde.

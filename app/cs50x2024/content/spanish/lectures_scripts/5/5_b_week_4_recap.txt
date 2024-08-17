@@ -1,0 +1,39 @@
+[MÚSICA DE FONDO] DAVID MALAN: Muy bien, este es CS50. Y así es como hoy vemos las estructuras de datos. Recordarán que la semana pasada nos proporcionamos algunos ingredientes nuevos y algo de sintaxis nueva en C. Presentamos los punteros, la capacidad de dirigir fragmentos de memoria por medio de direcciones reales: 0, 1, 2, 3 y así sucesivamente. También presentamos la notación del asterisco y algunas otras funciones, entre ellas malloc y free, para que puedan administrar la memoria de su computadora.
+
+Solo para enfatizar, veamos este pequeño ejemplo que es erróneo desde el principio. Este código es erróneo. Y dentro de poco veremos por qué. Pero revisemos paso a paso.
+
+Esta primera línea resaltada en amarillo en español, ¿qué hace según lo que entienden ahora? Si están un poco oxidados desde la semana pasada, ¿qué hace esa primera línea de código en español? ¿Algo? Sí.
+
+PÚBLICO: Está creando un punto hacia un int llamado x.
+
+DAVID MALAN: Perfecto. Está creando un puntero a un entero y asignándole a ese puntero o variable x. Permítanme proponer que la siguiente línea hace lo mismo y nos da otro puntero a un entero, pero esta vez se le llama y. La tercera línea de código, ¿qué está pasando en español con esta línea en específico? Sí.
+
+PÚBLICO: Crea una memoria del tamaño de int y la asigna a x, pero es más difícil de ejecutar si no es un puntero, no sé.
+
+DAVID MALAN: Ese no es el error. Pero la primera parte es correcta. malloc es la función que presentamos la semana pasada que asigna memoria para ustedes. Toma un argumento, la cantidad de bytes que desean asignar. Aunque no recuerden cuántos bytes necesitan para un entero, pueden llamar a este otro operador, sizeof, que vimos brevemente la semana pasada, que devolverá, en este caso, probablemente 4 dependiendo de la computadora que estén usando.
+
+Entonces, esto dice: hey computadora, dame 4 bytes de memoria. Y devuelve ese fragmento de memoria por medio de la primera dirección, y algo como ox, donde sea que estén esos 4 bytes. Y después almacena esa dirección en x, lo que de hecho está bien, porque como señalaron en un principio, x de hecho es un puntero. Es una dirección.
+
+Así que esto es todo lo que hace: declara una variable llamada x y almacena en ella la dirección de un fragmento legítimo de memoria. Por lo general, no asignarían un int de esta manera. Asignarían un int con solo int y un punto y coma tal como en la semana 1. Pero ahora que tenemos la capacidad de asignar direcciones y asignar memoria, podrían lograr la misma idea aquí.
+
+Ahora, esta línea aquí, la cuarta línea de código, ¿qué dice en español? Star x igual a 42 punto y coma. ¿Qué pasa ahí? Sí.
+
+PÚBLICO: Va a la dirección en x y luego la convierte en 42.
+
+DAVID MALAN: Bueno, va a la dirección en x y la convierte en 42. Así que el operador del asterisco es el operador de desreferenciación, que es una forma elegante de decir "ve a esa dirección". ¿Y qué quieren hacer? Bueno, según la semana 1, cuando hablamos sobre el operador de asignación, solo dice "pon el número 42 ahí". Entonces, en donde sea que malloc encontró 4 bytes de memoria disponible para mí, esta cuarta línea de código dice, "ve ahí y pon el número 42 colocando los ceros y unos apropiados".
+
+Esta última línea aquí, y aquí está el error, si es que finalmente lo revelamos: esta línea es errónea. ¿Alguien ve por qué? Sí, por aquí.
+
+PÚBLICO: Aún no has asignado memoria para esa variable.
+
+DAVID MALAN: Exacto. Aún no he asignado memoria para esa variable. Y debido a que aquí arriba solo mencioné int star y punto y coma. Solo pueden suponer con seguridad que tiene algún valor basura, algún valor desconocido, tal vez remanentes de otra parte del programa, que podría no ser necesariamente verdadero aquí al principio del programa. Pero por seguridad, supongan que si no le dan un valor a una variable, quién sabe qué contiene. Tiene alguna dirección falsa, de manera que si dicen que es igual a y vayan a esa dirección falsa, algo malo va a suceder.
+
+Y tal vez ya hayan experimentado esto en P Set 4 o antes, algún tipo de problema de memoria con su código, un fallo de segmentación o fallo seg, cosas malas suceden cuando van a direcciones que no existen o que ni siquiera saben dónde están.
+
+Así que esta línea de código es mala. Pero podemos hacerlo un poco mejor. ¿Qué tal si hago algo como esto? De hecho, le asigno a y x. Así que solo dice, "pon en y la misma dirección que está en x". Y después, con esta última línea de código, ¿qué tal si ahora digo que star y es igual a 13? ¿Qué es eso? Asientes con la cabeza. ¿Qué estoy haciendo correctamente ahora?
+
+PÚBLICO: Ahora hay memoria asignada para y.
+
+DAVID MALAN: Bien. Ahora, hay memoria asignada para y. Así que dicen "ve a esa dirección y pon 13". Sin embargo, ¿qué acabamos de necesitar para 42?, para dejarlo en claro. Lo destruimos. Lo sobrescribimos con el 13. Porque si x e y son la misma dirección, ambas dicen "ve a esa dirección y pon 42 ahí", pero luego, dos líneas después, decimos, "no, no, no, ve ahí y pon 13 ahí".
+
+Pero en resumen, cosas malas pasan cuando no necesariamente anticipan lo que hay en la memoria y no la asignan ustedes mismos, así que gracias a uno de nuestros amigos en Stanford, permítannos tomarnos un momento para darle play a un cortometraje, de plastilina por así decirlo, que describe el mismo cuadro de una manera tal vez más memorable. Si pudiéramos apagar las luces.

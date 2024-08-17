@@ -1,0 +1,69 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-3">Conjunto de Problemas 3</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>Não é permitida colaboração em conjuntos de problemas, exceto na medida em que você possa pedir ajuda a colegas ou outras pessoas, desde que esse auxílio não se reduza a outra pessoa fazendo seu trabalho para você, de acordo com a política do curso sobre
+      <a href="{{ url_for('cs50x2024.honesty') }}">honestidade acadêmica</a>.</p>
+
+    <p>A equipe realiza auditorias aleatórias de envios para o curso. Os alunos que violarem esta política serão removidos do curso. Os alunos que já concluíram o curso, caso sejam considerados em violação, terão o seu Certificado do curso permanentemente revogado.</p>
+  </div>
+
+  <h2 id="what-to-do">O que Fazer</h2>
+
+  <ol>
+    <li>Enviar
+      <a href="{{ url_for('cs50x2024.psets.pset3.sort') }}">Ordenar</a>
+    </li>
+    <li>Enviar
+      <a href="{{ url_for('cs50x2024.psets.pset3.plurality') }}">Pluralidade</a>
+    </li>
+    <li>Enviar
+      <strong>um</strong>
+      de:
+      <ul>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset3.runoff') }}">Segundo Turno</a>, se sentindo mais ou menos confortável</li>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset3.tideman') }}">Tideman</a>, se sentindo muito, muito, muito confortável</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p>Se você enviar os dois, Segundo Turno e Tideman, registraremos a maior das duas pontuações. Observe que
+    <strong>Tideman é opcional</strong>,
+    mas desafiador!</p>
+
+  <h2 id="when-to-do-it">Quando Fazer</h2>
+
+  <p>Até
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+  <h2 id="advice">Conselhos</h2>
+
+  <ul>
+    <li data-marker="*">Experimente quaisquer dos programas de David da aula através do
+      <a href="{{ url_for('cs50x2024.weeks.week3') }}">Código-fonte</a> da Semana 3.</li>
+    <li data-marker="*">Se você encontrar quaisquer erros ao compilar seu código com
+      <code class="language-plaintext highlighter-rouge">make</code>, concentre-se primeiro em corrigir o primeiro erro que você encontrar, rolando para cima conforme necessário. Se não tiver certeza do que isso significa, tente perguntar
+      <code class="language-plaintext highlighter-rouge">help50</code>
+      para obter ajuda. Por exemplo, se estiver tentando compilar
+      <code class="language-plaintext highlighter-rouge">pluralidade</code>, e
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>make plurality
+</code></pre>
+        </div>
+      </div>
+      <p>está gerando erros, tente executar</p>
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>help50 make plurality
+</code></pre>
+        </div>
+      </div>
+      <p>em vez disso!</p>
+    </li>
+  </ul>
+
+{% endblock %}

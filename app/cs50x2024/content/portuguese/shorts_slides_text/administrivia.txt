@@ -1,0 +1,88 @@
+[0]
+
+Administração
+
+[1]
+
+Administração
+● Há muito o que aprender neste curso, e para maximizar sua capacidade de fazer isso, há uma grande quantidade de recursos à sua disposição.
+● Fizemos o nosso melhor para elaborar um conjunto de recursos que acomodarão a todos.
+
+[2]
+
+Administração
+● Site do curso
+● Material da aula – cs50.harvard.edu/lectures
+●
+Transmissões ao vivo, vídeos, exemplos de códigos, slides, notas de escriba, links
+● Referência de funções – reference.cs50.net
+●
+Para aqueles menos confortáveis e mais confortáveis da mesma forma
+●
+Um conjunto consolidado e anotado de manuais.
+● Guia de estudo interativo – study.cs50.net
+●
+Slides de exemplo, exercícios práticos e mais sobre uma variedade de tópicos do curso.
+● Preparação do teste – cs50.harvard.edu/quizzes
+●
+Perguntas e respostas de teste antigas arquivadas para sua revisão.
+
+[3]
+
+Administração
+● Site do curso
+● Conjuntos de problemas – cs50.harvard.edu/psets
+●
+Especificações, código de distribuição
+●
+Orientações, autópsias
+● Seções – cs50.harvard.edu/sections
+●
+Cronograma de seções, vídeos, slides
+● Horário de monitoria – cs50.harvard.edu/hours
+●
+Horário de monitoria, geralmente disponível durante as noites de dias úteis
+● Fórum de discussão – cs50.harvard.edu/discuss
+●
+Quadro de avisos assíncronos para ajuda de TAs, TFs e colegas estudantes. 
+
+[4]
+
+Administração
+● Arquivos do curso
+● Desde 2007 – cs50.tv
+● Todos os recursos de outra forma disponíveis no site do curso postados lá no final do semestre.
+● Outra ajuda online
+● CS50 Slack – cs50x.slack.com
+● CS50 Stack Exchange – cs50.stackexchange.com
+● CS50 Facebook – facebook.com/groups/cs50
+● CS50 Twitter – @cs50, #cs50
+● CS50 Reddit – reddit.com/r/cs50
+
+[5]
+
+Administração
+● Classificação
+● As atribuições são classificadas em quatro eixos diferentes.
+● Escopo
+● Você se esforçou para concluir o conjunto de problemas?
+● Correção
+● Seu código funciona? Ele está livre de erros?
+● Design
+● Quão eficiente é o seu código? Quão bem escrito?
+● Estilo
+● Quão legível pelo ser humano é o seu código?
+
+[6]
+
+Administração
+● Classificação
+check50 é uma ferramenta de linha de comando que pode ser usada para ajudá-lo a melhorar sua pontuação de correção
+style50 é uma ferramenta de linha de comando que pode ser usada para ajudar você a melhorar sua pontuação de estilo
+Seu monitor de ensino fornecerá feedback qualitativo e baseado em comentários para ajudá-lo a melhorar sua pontuação de design
+0
+1
+2
+3
+4
+5

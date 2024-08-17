@@ -1,0 +1,17 @@
+All right , so just for now, even if that's a lot of code, let's consider now higher level takeaways from this, just so that we can then motivates an alternative approach that allows us to stitch together somewhat fancier data structures instead. So in general, a data structure is just a programming construct in C, C++, Java, Python-- we'll see them in different languages over the remainder of the term-- that allow you to store information differently in your computer's memory. 
+
+In C, everything we're about to do today is thanks to these three features of C. So even though this may feel like a lot of syntax, everything we do today boils down to three pieces of syntax that you have seen before. 
+
+Struct, this recall was a keyword in C that allows you to create your own structure. For instance, a couple of weeks ago, we created a person structure, who had a name and a number. And that gives us our own data type that is structured to contain two values, like name and number. 
+
+You use structures as well for the problem set involving bitmaps, the bitmap header and so forth. Those were data structures as well. 
+
+What do we use the dot notation for just to be clear? And you definitely use this when manipulating red and green and blue pixels recently. Yeah. 
+
+AUDIENCE: To access a property of a structure. 
+
+DAVID MALAN: Exactly. To access a property of a structure. So if you want to get at a person's name or get at a person's number, you use the variable's name and then a dot operator to get inside of that data structure. So we've seen that before. 
+
+Then last week and again today, we see the star operator, which can kind of mean different things in different contexts. But it's always related here to memory as of last week. This is the dereference operator that allows you to go to a chunk of memory by way of this thing called a pointer. 
+
+So even if today feels like a bit of that fire hose-- and again per my email, this is where things now begin to level off-- realize that it all boils down to first principles, or if you will sort of three scratch-like puzzle pieces that we're now going to assemble into more interesting solutions to problems. 

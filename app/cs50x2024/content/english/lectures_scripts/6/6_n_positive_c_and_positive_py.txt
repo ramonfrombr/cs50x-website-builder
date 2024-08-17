@@ -1,0 +1,41 @@
+A few more examples from week 1 before we'll take things up to the more interesting problems from week 2 onward. Let me go ahead and split my screen once more. Let me go ahead and on the left, open up positive.c, which was a program recall that allowed us to define a function getting a positive integer. 
+
+And we used a special-- a type of loop in week 1 when implementing this, that of a do while loop. Unfortunately, in Python, just as you don't have the plus plus operator, you also don't have a do while loop, which would seem problematic for very simple ideas like this, where you want the human to do something at least once and then maybe again and again and again. But that's OK, right? You have more than enough tools in the toolkit, both in C and Python, to do this without the more familiar, more comfortable structure. 
+
+So let me write a program called positive.py. Let me go ahead and from CS50 import get_int. Let me go ahead and define a main function, just as I did before just so I can demonstrate how you can get a positive int from the user and then print it out-- so super simple example that's equivalent, for the moment, to what I'm doing over here back from week 1. So nothing on the left is new. It's all back from week 1, even if it's a bit far back now. 
+
+Let me go ahead now and define also on the right-hand side def get_positive_int. It's not going to take any arguments. But I need to implement this notion of doing something while it's still true. And the most Pythonic or conventional way of doing this in Python is actually like this. Deliberately induce a infinite loop for yourself, because you can break out of it anytime you want. So this is a common Python paradigm. Go ahead, and at least once, get an int from the user asking them for positive integer. 
+
+And then, after that, under what circumstances do I probably want to break out of this infinite loop if the goal is to get positive_int? What questions should I ask myself? Yeah. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Yeah, quite simply, if n is greater than greater than 0-- no need for parentheses, but I do need the colon. I can, just as in C, use the break command, which breaks me out of the loop at which point now I can go ahead and return n. So it's different from what you see on the left. But it's logically the same. 
+
+And honestly you could go back in week 1 and implement this logic in C, because we had while loops. We had the word true, albeit in lowercase. And we had all of this same code, too, even though we had curly braces and semicolons and a few other things. This, though, is the equivalent Python way of doing it here. But there is, it seems, a bug. Or rather, there is what you would think is a bug. This is OK, not a problem there. That'll go away eventually hopefully. Go. 
+
+[LAUGHS] 
+
+Pay no attention to that. The code is right, I believe. So there seems to be a bug. And this one is super subtle. But in weeks 1 through 5 when we were writing in C-- oh, see? It went away. Just ignore the problem sometimes. It will go away. 
+
+[LAUGHTER] 
+
+There is a seemingly subtle bug here. But it's not actually a bug in Python. But it would have been in C., what am I doing wrong, at least in C, even though I claim this is going to work? And if you compare left and right, it might become more obvious. What am I doing? Is that a-- yeah, in back. 
+
+AUDIENCE: You're breaking before returning. 
+
+DAVID MALAN: I'm breaking before returning. That's OK, because this break statement if n is greater than 0 is going to break me out of the indentation, out of the loop. So that's OK. But I think your concern is related if we can put our finger on it a little more precisely. Yeah. 
+
+AUDIENCE: Like, you're not-- you're returning n, but n is [INAUDIBLE]. 
+
+DAVID MALAN: Yes, so this is maybe the second part of your claim. The n is being returned on line 12. And I claim this is actually fine. But n was declared albeit implicitly-- that is, without any data type in Python-- on line 9. If we had done that in C over here, would not have worked, because recall in C, there's this notion of scope, where when you define a variable, it only exists inside of the curly braces that encapsulate it. 
+
+Now, Python doesn't have curly braces. But there's still indentation, which implies the same. But in Python, your variables, even if they're declared under, under, under, under conditions or variables-- or loops, they will be accessible to you outside of those conditions and loops. So it's a nice feature. And it allows me, then, to run this program, Python of positive.py. Let me go ahead and provide-- oops-- hmm, turns out there is a bug. Yeah. 
+
+AUDIENCE: [INAUDIBLE] main. 
+
+DAVID MALAN: Yeah, so I have to call main at the bottom even though that looks a little silly. But now, let me go ahead and run the program now. Oh, now, it's prompting me for a positive integer. Let's not cooperate-- negative 1, 0, 1. Now, it, in fact, works. So again, sometimes you might have to think a little harder when it comes to implementing something in Python as opposed to C. But indeed, it is very much possible. Yeah. 
+
+AUDIENCE: Are variables identical accessible across functions? 
+
+DAVID MALAN: Good question-- are variables accessible across functions? No, they will be isolated to the function, but not to the indentation level in which they were defined.

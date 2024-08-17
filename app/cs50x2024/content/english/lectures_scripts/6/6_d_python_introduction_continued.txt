@@ -1,0 +1,75 @@
+It turns out that you can use print in a few different ways. You can, indeed, just concatenate one string with another by using that plus operator. Or if you read the documentation, it turns out that print takes multiple arguments. So the first one might be the first word you want to say. 
+
+The second argument might be the second thing you want to say. And by default, what print will do, per its documentation, is automatically join, or concatenate those two strings automatically by adding a space. So it's not a typo that I removed the space after the comma. I'm going to get that for free, so to speak, because print is going to do that for me. 
+
+Now, this one's about to be a little ugly. But it's an increasingly common approach in Python to do the same thing. And it's a little more reminiscent of C. But it turns out we'll see over time it's a little more powerful. You can also achieve the same result like this. 
+
+All right. So it's a little weird looking. But once you start to recognize the pattern, it's pretty straightforward. So it's still the function print. There's still a double quoted string, though it turns out you can use single quotes, as well in Python. Answer is the variable we want to print. So what's new now is these curly braces, which say interpolate the value in between those curly braces-- that is, substitute it in just like %s works. 
+
+But there's one more oddity, definitely worthy of a stress ball here, that's not a typo, but does distinguish this from C. Yeah. 
+
+AUDIENCE: The f. 
+
+DAVID MALAN: The f-- and this is one that-- here you go-- the weirdest features of-- oh, my bad. 
+
+[LAUGHS] 
+
+This is one of the weirdest things about recent versions of Python in recent years. This is what's called a format string, or f string. If you don't have this weird f in the beginning of the string immediately to the left of the double quotes, you will literally print on the screen H-E-L-L-O comma space curly brace ANSWER curly brace. And that's it. So f in front of this turns the string into an f string or format string, which tells Python, don't print this literally. Plug the value in that I've placed between the curly braces. So it's pretty powerful once you pick up the convention like that. 
+
+All right. Let's look at a few other examples. This, on the example-- on the left was an-- this on the left was an example of what type of programming feature? What do we call this-- the encounter? Yeah. 
+
+AUDIENCE: The variable. 
+
+DAVID MALAN: So this is just a variable. So a variable here and let me not-- well, this is getting a little easier for the stress balls. This is a variable. And in C, it corresponded to a line like this. So in Python, this, too, gets a little simpler. Instead of saying int counter equals zero semicolon, now, you want a variable called counter? Just make it so. Use the equals sign as the assignment operator. Set it equal to some value on the right-hand side, but no semicolon anymore. 
+
+This, on the left, for instance, was an example of Scratch updating the value of a variable by one, incrementing it, so to speak. In C, we achieve that same result by just saying counter equals counter plus 1 semicolon, assuming the variable already existed. We could also do this in another way. But in Python, we can do this like this. It's identical, but no semicolon. But in C, we could also do it like this-- counter plus equals 1 semicolon. That was just a little shorter than having to type the whole thing out. In Python, you can do the exact same thing. But it's going to look different how? 
+
+AUDIENCE: No semicolon. 
+
+DAVID MALAN: No semicolon for this one, as well-- what you cannot do, for better or for worse, in C, you have an even more succinct trick. What could you do in C to increment a variable? Yeah. 
+
+AUDIENCE: Type in plus plus. 
+
+DAVID MALAN: You could do the plus plus operator after the variable's name. That does not exist in Python. Here we go. That does not exist-- sorry. It exists in Python. It's simply not in the language. So you have to start using this approach to be the most succinct. 
+
+Well, what else do we have in Python? Here is, in Scratch, an example of a condition that only if x is less than y, does it say something on the screen like this. In C, a little ugly at first, but you've probably gotten used to this after multiple weeks of coding in C. 
+
+Now, in Python, this is going to get simpler, too. The semicolon's definitely going away. The backslash n is definitely going away. Printf is about to become print, but also going away is most everything else. So there's no curly braces anymore. There is now a colon after the condition, or the Boolean expression there. There is necessary indentation. 
+
+So those of you, who've been a little loose with style50 and favoring instead, just writing all of your code over on the left-hand side of the terminal, that has to stop now, even if style50 hasn't broken you of that habit already. Python is sensitive to whitespace, which means that if you want to use a condition and execute code inside of that condition, it must be indented consistently, by convention, four spaces. And it should always be four spaces or four more spaces and so forth. The curly braces, though, are now gone. 
+
+How about something like this? If we have an if else statement, just like we did in week 0, in week 1, we translated that to C as such, introducing if and else this time. That, too, gets simpler. Now, it can be distilled as this. The curly braces are gone. The backslash n's are gone. But we've, again, added some colons, some colons, and some explicit indentation that's now matters all the more. 
+
+How about an if else if else-- so a three-way fork in the road, if you will? In C, you just continue that same logic, asking if else if else. Python's not only going to get more succinct. It's also going to get a little weird, but not a typo. What jumps out at you here with Python that seems a little misleading? Yeah. 
+
+AUDIENCE: Else if becomes elif. 
+
+DAVID MALAN: Yeah, so else if was apparently too laborious for humans to type. And so now, in Python, that's just elif-- E-L-I-F-- but it means exactly the same thing. All right. How about this? This is a loop in Scratch. It does something forever. This wasn't super straightforward to convert to C, because in C, you don't really have a forever block. But we did decide that you can use while and just say true, true being a Boolean value that evaluates always to true by definition. So this would print out hello world forever. In Python, it's almost the same. But in Python, it's going to look like this. So the curly braces are gone. The semicolon is gone. The hand is already up. What's different here? 
+
+AUDIENCE: I have a question about if. 
+
+DAVID MALAN: Sure. What's the question about if? 
+
+AUDIENCE: We didn't use curly brackets to solve the if. So like, we just indent back to [INAUDIBLE]. 
+
+DAVID MALAN: Correct. But you don't-- because we don't have curly braces, it's not necessarily obvious at first glance where the code you want to execute conditionally begins and ends, unless you rely on the indentation. So if you wanted to do something outside of the condition, you just un-indent and move on your way. So it's identical to how you should have been writing C code. There's no curly braces. But now, the indentation matters. 
+
+So back to the for loop here-- this will loop infinitely in C. In Python, I claim it looks like this. And the only new difference here that's worth noting is-- is what? 
+
+AUDIENCE: True is capitalized. 
+
+DAVID MALAN: True is capitalized. Why? Just because, but in Python, the two Boolean values, true and false, are, indeed, capitalized as here. All right. So let's finish out with a few more blocks. Recall that we implemented a coughing cat early on. And this is how you might do that three times specifically. 
+
+In C, you can do this in a couple of ways. And the first way we proposed in week 1 was that you give yourself the counting variable like i, but you could call it anything. And then, you do something while i is greater than some target value, like 0. And then, you go ahead and cough again and again and again on each iteration decrementing-- that is, decreasing the value of i-- and then, keep checking that condition. 
+
+So in Python, we can do pretty much the same thing. This converts pretty tightly to just this, which is pretty equivalent, except for the semicolons, the curly braces, and so forth, noting this time that we have the colon after the word while. But you can do this in another way. And indeed, we implemented it using a for loop, which is probably something you've gotten pretty familiar with and hopefully pretty comfortable with by now. 
+
+These don't map directly to Python. You can do the same thing. But it's actually a little easier at least once you get used to it. So here, we had a variable called i incremented to 0. It kept getting incremented by a 1 up to but not including the value 3. And on each iteration, we printed cough, thereby achieving three coughs on the screen. 
+
+In Python, we can change this to the following. You still have the keyword for. But there's no parentheses. There are no semicolons. And you a little more casually say for i in the following list of values. So in Python, square brackets represent what we're going to start calling a list. It's pretty much the same thing as an array, but with many more features. You can grow and shrink these lists in C-- in Python. You could not do that in C. 
+
+And so in this case, this is, on the first iteration, going to set i equal to 0. And it's going to cough. It's then going to automatically set equal to 1 and then cough. It's then going to set i equal to 2 and then cough. And even though you're not doing anything with the value of i, because there is three values in this list-- 0, 1, 2-- it's going to cough three times. 
+
+But there's a way to do this even more succinctly, because how would you implement this same idea if you wanted to cough 10 times or 50 times? I mean, that would get pretty atrocious if you just had to make a really big list with 0 through 49. You don't have to. There's a special function in Python called range that does that work for you. If you want to iterate three times, you literally say range open paren 3 close paren. 
+
+And what that's going to do for your code is, essentially, hand you back three values from 0 to 1 to 2 automatically without you having to hard code them or write them explicitly. So now, if you want to call 50 times, you just change the 3 to a 50. You don't have to, of course, declare everything with square brackets. So this is a very common paradigm then in Python for loops. 

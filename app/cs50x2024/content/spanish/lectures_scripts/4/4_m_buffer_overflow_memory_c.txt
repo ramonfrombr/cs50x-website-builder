@@ -1,0 +1,19 @@
+Bueno, de hecho, permítanme intentar otra cosa. Se trata de un programa que escribí de antemano. Éste se llama memory.c. Como siempre, están todos en el sitio web del curso si desean echarles un vistazo más adelante. Pero carece un poco de sentido. Está diseñado solo con fines demostrativos.
+
+Aquí tenemos un programa. Y lo he copiado de este manual en línea de Valgrind, la herramienta que acabo de usar. Veamos qué ocurre. Aquí tengo main, en la parte inferior de mi código. Lo he copiado. No he utilizado un prototipo. Solo he copiado lo que han hecho. Y miren aquí, llama a una función denominada f y luego devuelve 0. Bueno, ¿qué hace f? f es esta función aleatoria de aquí arriba que no recibe ninguna entrada según void. Y en español, ¿cómo describirían lo que ocurre en la línea 7 --ya que hemos introducido malloc y asteriscos--, o punteros? ¿Qué hace esto? Sí.
+
+AUDITORIO: Está asignando memoria suficiente en [INAUDIBLE] para [INAUDIBLE].
+
+DAVID J. MALAN: Bien. Asigna memoria suficiente para 10 números enteros y, permítanme añadir, explayándome en sus palabras, y luego almacena la dirección de ese fragmento de memoria en un puntero denominado x, por así decirlo.
+
+Por lo tanto, sizeof es nuevo. Pero, literalmente, hace lo que dice. Si dice sizeof paréntesis abierto, paréntesis cerrado y luego el nombre de un tipo de datos, le indicará que un int tiene 4 bytes. Le indicará que un long tiene 8 bytes. Le indicará que un char tiene un byte. Es solo una forma dinámica de evitar tener que memorizar esos tipos de cosas.
+
+Por lo tanto, esto solo significa que me dé 10 veces el tamaño de un int, que resulta ser de 4 bytes. Por lo tanto, eso significa que me dé 10 veces 4, o 40 bytes de memoria. Eso es efectivamente una matriz de memoria en la que puedo almacenar números enteros. Y malloc, según su definición, me va a devolver la dirección del primer byte de esa memoria.
+
+En comparación, ¿qué es lo que ahora asusta de la línea 8? ¿Qué podría preocuparles de la línea 8, que desafortunadamente presenta errores? Sí.
+
+AUDITORIO: [INAUDIBLE]
+
+DAVID J. MALAN: Exacto. Estoy escribiendo x corchete 10 y simplemente almacenando arbitrariamente el número 0. ¿Por qué? Solo porque sí. Pero el 10 no existe. ¿Verdad? Si tengo un 10 int, es corchete 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, no corchete 10. Así que este es un ejemplo de desbordamiento de un búfer, por así decirlo. Siempre que hable de memoria, siempre que hable de una matriz de memoria --que es lo que esto es efectivamente, 10 números enteros, espacio para 10 números enteros uno tras otro--, si va un paso demasiado lejos, eso es lo que se denomina un desbordamiento de búfer, mediante el cual el búfer es la matriz.
+
+Y de hecho, esto lo dejaría incluso más claro. Supongamos que intentara ir allí, corchete 10 000. Definitivamente no está entre los bytes de memoria que he asignado. Definitivamente está yendo más allá de los límites de mi matriz. Pero también es cierto que el corchete 10 es un paso demasiado lejos.

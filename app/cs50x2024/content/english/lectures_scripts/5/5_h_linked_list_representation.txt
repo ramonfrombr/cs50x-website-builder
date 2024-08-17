@@ -1,0 +1,107 @@
+All right, so what can we do now with this structure? Well, let's go ahead and build something up here. All right, so this is about as scary as the code gets today. We'll focus primarily on pictures and concepts hereafter. But let's take a tour through one implementation of this same idea of a linked list. How would we go about representing a linked list initially? 
+
+Well, initially the list is empty. And if you want to represent something that's empty, we minimally need something. So let me draw it as this empty box. And this is just a pointer to a node, I claim. 
+
+So how do I implement the notion of a linked list that has no numbers in it yet? Well, why don't we just use this, which I can implement as follows. node star, and I'm going to call it list, but then set it equal to NULL. Right, if there's no numbers available-- there's no 1, there's no 2, there's no three-- I should at least have a variable that connotes there is no list. And the easiest way to do that is in the absence of a value, store 0, which has this new nickname as of last week and this, called null. 
+
+So this variable here represents this picture here. And notice, there's no numbers, because the list is empty. But we do initialize it to NULL so that we don't think that there's an arrow pointing to some specific chunk of memory yet. Because there isn't yet. 
+
+Now, suppose I want to go ahead and insert a number into this list. Suppose I want to insert the number 2. I can't just allocate space for 2 now. I have to allocate space for 2 and that pointer, otherwise known together as a node, per the previous slide. 
+
+So how do I go about doing this? Well, in code, I can borrow the same technique that we've used a couple times now, even though it's uglier than some past approaches, malloc then an integer. How many bytes do you want? I don't know how big a node is. I could probably do the math and add up the integer and then the pointer. But, you know what, size of node is just going to answer that question for me. 
+
+So this returns that chunk of memory that's big enough to store a node. And I'm going to store that just for temporarily in a variable called n, n for node, and that's going to just be a temporary variable, if you will. So, again, even though there's some new stuff going on here, this is just like before. 
+
+Previously, I wanted to allocate an integer. Now, I want more than an integer. I want an actual node. And malloc returns an address, which means I must assign it to a variable. That's an address on the left hand side. 
+
+All right, what should I always do? Slight spoiler because I clicked ahead a moment ago-- actually, we're going to forge ahead here. This is the ugliest thing we'll see. What is this second line of code doing here? What's going on here do you think? Yeah, what do you think? 
+
+AUDIENCE: It's setting the number of that node to 2. 
+
+DAVID MALAN: It is. It's setting the number of that node to 2. But why this crazy syntax, which we've never used before? Well, star n, we did see last week. That just means go there. The parentheses are just necessary for order of operations so that the compiler knows, OK, first go there. And then once you're there, what do you want to get access to? The number field. So use the same dot notation. 
+
+So it's super ugly. But it's just doing two different things that we've seen in isolation. Go to the address in n, which is that chunk of memory. And then access the number field and set it equal to 2. 
+
+Fortunately, C has some syntactic sugar, just an easier, prettier way of doing this. And it happens to look wonderfully like the actual thing we keep drawing-- this arrow notation. So if you ever see and you ever write this notation in C-- and I'm pretty sure this is the last new syntax we'll see-- this arrow, this very sort of hackish era where you hit a hyphen and then a greater than sign, this means the exact same thing as this. This is just annoying to type. It's ugly to look at. This is just slightly more pretty. And frankly, it's reminiscent of the pictures we've been drawing with the arrows pointing left and right. 
+
+What's the next thing I want to do? After allocating this new node for the number 2, what do I want to put as well in that node? 
+
+AUDIENCE: Put in the address. 
+
+DAVID MALAN: Sorry, a little louder. 
+
+AUDIENCE: The next address. 
+
+DAVID MALAN: The address of the next node. But there is no next node yet. So what value could I use as a placeholder? 
+
+AUDIENCE: Null. 
+
+DAVID MALAN: Null. And so indeed, I'm going to do this arrow notation as well. You never need to do the star and then the dots and the parentheses. Everyone just writes the code like this in the real world. So n arrow next gets null. 
+
+That now gives me that picture we were drawing. But, again, sanity check, if you ever use malloc, you should always check the return value. So just to be super precise, let me go ahead and add a couple more lines of code that just check if n is not null, go ahead and do the following. Conversely, I could check if n is null and then just exit or return depending on where I'm using this code. But you don't want to touch n and use this arrow notation unless you're sure n is not null. 
+
+So what have I just done? My picture now looks like this. But this, of course, is not a linked list, because there's no linkage going on. I really need to do the equivalent of pointing an arrow from this pointer to this structure. I need to implement an arrow that looks like this. 
+
+So how can we go about implementing that in code? Well, let me propose that this is what it ultimately looks like. We just need to draw that arrow. 
+
+How do I do that? Well, it's as simple as this. If list is a variable, and it's previously initialized to null-- it's just a place holder-- and n is my temporary variable storing the new node, it suffices to say, well, lists should not be null anymore. It should literally equal the address of that chunk of memory I just allocated. And that's how we get this picture now inside of the computer. 
+
+Now, let me do a couple of more operations. Suppose I want to add to the list the number 4. How do I add the number 4? Well, the number 4 is inside of its own node. So I have to go back to code like this. 
+
+I need to allocate another node that installs the number 4 there. But that's not all. You don't want to just create the node, because it's otherwise out there in no man's land, so to speak. We now need to add the arrow. 
+
+But now it gets a little non-obvious how you update the arrows, right, because I don't want to update list to point at 4, because that's going to sort of orphan, so to speak, number 2. And it just kind of float away conceptually. I really want to update 2's pointer to 4. So how can I do that? 
+
+Well, you know what I can do is I can kind of follow these breadcrumbs. If I declare a temporary pointer-- and I'll do it using a little extravagantly last week like this little pointer notation-- if I'm a variable called temp, TMP, I can go ahead and point at the same thing that list is pointing at. And I'm going to check is this next value null? If it is, I found the end of the list. 
+
+So really I can follow that arrow. Now, I know that I'm at a null pointer. So now, I just want to draw this number up here. And I accidentally advanced the screen. I want to actually draw this arrow up here. 
+
+So how do we go about doing that? Well, the code there might look like this. So if all I want to point at a node, as I just did with the big fuzzy hand, I can just initialize this pointer to equal whatever the list itself is pointing at. 
+
+Then, I can do like a while loop. And it's a little weird looking, because I'm using some of my new syntax. But this is just asking the question, while the next field I'm pointing at is not NULL, go ahead and follow it. So again, this is as complicated as the syntax today will get. But this is just saying, whatever I'm pointing at point specifically at the next field. While it is not NULL, go ahead and update yourself to point at whatever it is pointing at. 
+
+So if I advance to the next slide here, this is like I'm initially pointing at 2. I see an arrow. I'm going to follow that arrow. I'm going to follow that arrow. So however big the list is I just keep moving my temporary pointer to follow these breadcrumbs until I hit NULL. 
+
+So here in the story let me propose that we add another number, 5. And 5, of course, if we keep it sorted, it's got to go over here. And again, they're all over my computer's memory. They're not in a perfectly straight line, because who knows where there's available space. But now that I found this, I want to go ahead and create one more pointer using code very similar to what we just saw. 
+
+But now lastly, let's do one more here at the beginning and then one more in the middle and see what can go wrong. What is worrisome about 1 if we actually want to store this list in sorted order? What might I be mindful of now if the goal is to insert 1 into this linked list? Any thoughts? What do I want to do first? 
+
+Well, you know what, let me go ahead and just point-- you know what, it's obviously got to go to the start of the list if I want to keep it sorted, so that the arrows eventually go from left to right. So let me go ahead and just use code like this to allocate the new node. And let me go ahead and just move that arrow like this. This is wrong even though we've not seen the code for it. But why is this wrong? Yeah. 
+
+AUDIENCE: You're orphaning 2, 4, and 5. 
+
+DAVID MALAN: I'm orphaning 2, 4, 5. In what sense? I mean literally in my program, the only variables and the variables I have are those you see on the board here. So if nothing is pointing at 2 anymore, it doesn't matter that 2 is pointing at 4 and 4 is pointing at 5, we have orphaned 2 and transitively 4 and 5. So those are just lost. That is a memory leak. 
+
+If you recall using Valgrind and getting yelled at by Valgrind because you're leaking memory, it might be because, yes, you've forgotten to free memory. Or worse, you might have completely forgotten where the memory is that you were using. And by definition of your own code, you can never access that memory again. You've asked the computer for it, but you're never able to give it back because you have no variable remembering where it is. 
+
+So we don't want to do that. We instead want to do this probably. Let's point 1 to 2 first, which is kind of redundant, right? Now, we have sort of conflicting beginnings of the list. But once 1 is pointing to 2, what can your next update? 
+
+AUDIENCE: The list. 
+
+DAVID MALAN: List to point at 1. And you can do this in code if you'd like really with just two steps. You can update the next field of your new node, which is the one representing 1 that I just allocated, and you can initialize it to point at whatever list is pointing at. So if you want this thing to point at the same thing that this thing was pointing at, you literally just say in code n arrow x equals whatever list is pointing at and then you say the list should equal n itself. 
+
+And again, you'll see in section this week and in the upcoming problem set actual opportunities to apply these kinds of lines of code. But those are the kinds of thought processes that you should be mindful of. 
+
+Now, 3 is the only one that's particularly annoying. And we won't look at the code for this. If we actually want to put something in sorted order in the middle of the list, let's just consider conceptually what's got to happen. 
+
+We've got to allocate memory for the node. We then need to update what? We probably don't want to point 2 at 3 for the exact same reason you identified. We then orphan 4 and 5. So what should we update first conceptually? 
+
+AUDIENCE: 3 to 4. 
+
+DAVID MALAN: Update 3 to 4, so it is going to look like this. And now we can update 2 to 3. And I'm going to wave my hand at the code for this only because there's multiple steps now. You have to probably have some kind of loop that iterates over the existing list, finds the appropriate location using less than or greater than, trying to find the right spot. And then you have to manipulate the pointers to do that. You won't need to do something as complicated as that for the upcoming problem set 5. 
+
+But it is just boiling down to some loops, some inequality checks, and then some updates of the pointers. But it's easier generally to add stuff at the end and even easier to add things at the beginning, especially if you don't care about maintaining any kind of sorted order. Phew. Any questions on that? Yeah. 
+
+AUDIENCE: Back to the beginning, like the code you had, what's the difference between node with star and like a pointer n of type node? 
+
+DAVID MALAN: A pointer n of type-- let me just scroll back to the code, here? 
+
+AUDIENCE: Yeah. 
+
+DAVID MALAN: OK, so this is malloc is going to give us a chunk of memory that's big enough to store node. Node star n gives us a pointer that is the address of a node. And therefore we're going to assign the return value of malloc to that variable, so that n effectively represents a chunk of memory that's big enough to store a node. 
+
+AUDIENCE: So n is node, not a pointer? 
+
+DAVID MALAN: n is a pointer to a node. n is a node star, or a pointer to a node. And what does that mean? n is the address of a node. 
+
+And that should make sense, because malloc returns an address. But this is why we're now using arrow notation. n is not a node. You can't do n dot number and n dot next. You have to do the star thing and then the dot. Or more succinctly now, you do an arrow number and arrow next. Good question.

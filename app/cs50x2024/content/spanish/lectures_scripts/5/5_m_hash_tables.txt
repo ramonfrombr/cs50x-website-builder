@@ -1,0 +1,7 @@
+Bien, entonces, ¿cuál sería el ideal? Cada vez que hablamos del tiempo de ejecución, parece que queremos estar bajos en esta lista y no altos. n al cuadrado era lento. O grande de 1 es tiempo constante. Eso es rápido.
+
+¿No sería bueno a lo largo de esta historia si realmente encontráramos nuestro camino hacia una estructura de datos que nos diera un tiempo constante? Como, por Dios, si pudiéramos insertar algo en una estructura de datos con un paso y encontrar algo en una estructura de datos con un paso, eso es algo así como el santo grial, por así decirlo, porque no tienes que preocuparte por el gran O de n o el gran O de log n. Simplemente saltas inmediatamente al valor que deseas.
+
+Bueno, resulta que, teóricamente, hay algo que te permite lograr eso llamado tabla hash. Pero la forma en que lo implementas no es necesariamente obvia. Y se necesita algo de experiencia.
+
+Y, de hecho, en el problema 5 entre los objetivos a mano está implementar exactamente esta noción de una tabla hash que te permite revisar la ortografía de un documento súper rápido. Un programa de procesamiento de textos sería muy lento si cada vez que quisieras verificar una palabra para ver si está escrita correcta o incorrectamente, si tuvieras que buscar linealmente o incluso rítmicamente durante más tiempo un gran archivo de diccionario, en realidad podría ser muy lento para revisar la ortografía de un archivo. Pero usando una tabla hash, probablemente podamos hacerlo mucho mejor.

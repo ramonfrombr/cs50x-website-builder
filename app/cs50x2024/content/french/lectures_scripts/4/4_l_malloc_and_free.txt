@@ -1,0 +1,39 @@
+Très bien. Nous voici de retour. C'était costaud. Revenons un peu sur cette toute nouvelle fonctionnalité d'il y a un instant, cette notion de malloc, l'allocation de mémoire. Alors souvenez-vous, getString, comme je le dis depuis aujourd'hui, tout ce temps, se contente de vous renvoyer l'adresse de la chaîne qui a été obtenue par l'humain.
+
+Malloc, pareillement, a une valeur de retour. Et quand vous demandez à malloc autant d'octets -- peut-être cinq, pour emma, plus la terminaison null, tout le but de malloc dans la vie est de vous renvoyer l'adresse du premier octet de cette mémoire également. Donc l'allocation mémoire signifie, vas-me chercher un bloc de mémoire quelque part, renvoie-moi aussi un pointeur là-bas. Et j'ai la responsabilité de me souvenir de cette adresse, comme je le fais ici en la stockant dans t.
+
+Mais il se trouve que maintenant que nous nous débarrassons des petites roues, malheureusement, nous devons en quelque sorte faire un peu plus de travail nous-mêmes. Et il y a en réalité un bug latent dans ce programme. Il s'avère que je suis en train d'allouer mal la mémoire avec ça, mais que je ne la libère jamais réellement. L'opposé de malloc est une fonction appelée free, dont le but dans la vie est de rendre la mémoire que vous avez demandée de façon à ce que vous ayez plein de mémoire disponible pour d'autres parties de votre programme et ainsi de suite.
+
+Et pour résumer, si jamais vous avez -- sur votre Mac ou votre PC -- exécuté un programme qui était peut-être un peu buggé, vous avez peut-être remarqué que votre ordinateur devenait de plus en plus lent, ou qu'il pouvait même indiquer explicitement un manque de mémoire, dans un message d'erreur -- cela peut être tout simplement parce que le programmeur de ce programme a continué à utiliser malloc, et malloc, et malloc pour augmenter, augmenter, augmenter son utilisation de la mémoire, mais qu'il n'a libéré aucune partie de cette mémoire. Donc les programmes peuvent manquer de mémoire. Votre ordinateur peut manquer de mémoire.
+
+C'est donc une bonne habitude de libérer toute mémoire que vous n'utilisez pas. Cependant, comment trouvez-vous cette erreur ? Nous avons donc un dernier outil de débogage pour vous. Celui-ci n'est pas spécifique à CS50 comme debug50. Celui-ci s'appelle Valgrind. Malheureusement, ce n'est pas la chose la plus facile à comprendre au premier coup d'œil.
+
+Je vais donc y aller et faire ça. Je vais exécuter Valgrind sur ce programme, dot slash copy, et j'appuie sur Entrée. Et malh--
+
+AUDIENCE : [INAUDIBLE]
+
+[RICANEMENT]
+
+[TOUX]
+
+DAVID J. MALAN : Ah, d'accord. OK.
+
+Je vais y aller et -- voilà.
+
+AUDIENCE : [INAUDIBLE]
+
+Donc ce que vous avez manqué, c'était un message très effrayant. Je vais donc exécuter Valgrind sur dot slash copy. Nous voyons cette sortie ésotérique en haut et ensuite mon invite pour s -- parce que c'est le même programme. Il m'invite à entrer une chaîne -- donc je vais lui donner emma, en minuscules, et j'appuie sur Entrée. Et vous remarquerez maintenant qu'il y a un résumé en cours ici, mais aussi une mention d'erreur.
+
+Donc un résumé du tas -- nous reviendrons là-dessus dans un instant -- 5 octets dans 1 bloc sont définitivement perdus dans l'enregistrement de perte 1 sur 2. Récapitulatif des fuites, j'ai 5 octets qui fuient dans 1 bloc. Je veux dire, il s'agit d'un de ces programmes sous Linux -- le système d'exploitation que nous utilisons, qui est également très répandu dans l'industrie -- je veux dire, mon Dieu. Il y a tellement -- il y a tellement d'autres caractères à l'écran qui sont en réalité instructifs pour moi.
+
+Voyons si nous pouvons concentrer notre attention sur ce qui compte. Les fuites de mémoire, c'est mauvais. Alors comment faire pour savoir où la mémoire fuit ? Eh bien, comme précédemment, nous pouvons utiliser help50. Et en fait, help50 va analyser la sortie de Valgrind -- il va quand même m'inviter à entrer la première chaîne.
+
+Donc je vais à nouveau taper emma -- il va regarder ça. C'est pour demander de l'aide. Et voilà, surligné en jaune, un message que nous, help50, reconnaissons. Et regardez nos conseils, on dirait que votre programme a perdu 5 octets de mémoire. Avez-vous oublié de libérer la mémoire que vous avez allouée via malloc ? Regardez plus attentivement la ligne 10 de copy.c.
+
+Maintenant, une fois que vous avez fait ça deux ou trois fois et que vous avez fait la même erreur, vous pourrez probablement remonter et voir par vous-même où se trouve l'erreur. Nous ne révélons aucune information supplémentaire qui n'est pas juste devant vous. Et en fait, vous pouvez voir ici, ah, dans main sur copy.c, ligne 10, il y a une sorte de 5 octets dans 1 bloc qui sont définitivement perdus. Donc il y a beaucoup de mots ici, mais cela attire l'attention sur le bon endroit.
+
+Laissez-moi donc faire défiler vers le bas, me concentrer sur la ligne 10. Et en effet, la ligne 10 est celle où j'ai alloué la mémoire. Il s'avère que la solution pour cela est assez simple. Ici en bas, je vais simplement libérer t, l'adresse du bloc de mémoire que malloc m'a renvoyé. Donc je défais les effets de l'allocation de mémoire en désallouant de la mémoire.
+
+Donc laissez-moi maintenant exécuter copy. Et si j'exécute copy, ça n'aura pas l'air de s'exécuter différemment. Cela va toujours fonctionner correctement. Mais maintenant si je l'analyse pour les erreurs avec Valgrind, donc Valgrind de dot slash copy -- je vais encore taper emma en minuscules et je croise les doigts -- qu'en effet maintenant, le résumé des fuites, 0 octets dans 0 blocs. Donc malheureusement, même quand tout va bien, il sort toujours une envolée de mots. Mais maintenant je ne vois aucune mention de blocs qui fuient réellement, du moins dans la partie supérieure ici.
+
+Et nous en verrons plus au cours des deux prochaines semaines lorsque nous l'utiliserons pour chasser des bugs plus compliqués. Mais c'est juste un autre outil dans la boîte à outils qui nous permet de détecter ce genre d'erreurs.

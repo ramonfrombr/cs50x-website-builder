@@ -1,0 +1,37 @@
+D’accord. Alors maintenant, faisons quelque chose de plus amusant. Maintenant que nous avons Python, il s’avère que nous pouvons faire des choses plus intéressantes. Et il s’avère que vous pouvez même les faire sur votre propre Mac ou PC. J’ai utilisé l’IDE tout ce temps.
+
+Mais Python est encore plus facile que C pour travailler sur votre propre Mac et PC. Et donc en effet, avant le cours, j’ai littéralement téléchargé un programme appelé Python, je l’ai installé sur mon Mac -- et vous pouvez aussi le faire sur un PC -- qui me permet sur mon propre Mac d’utiliser quelque chose comme cette fenêtre de terminal pour exécuter des programmes Python sur mon propre Mac sans l’IDE.
+
+Ce que cela signifie en particulier, c’est que je peux utiliser le matériel sur mon propre Mac ou PC. Par exemple, comme le microphone intégré. Alors permettez-moi d’aller de l’avant et de créer un programme qui s’appellera, par exemple, voice. Permettez-moi d’ouvrir voice.py.
+
+Je vais utiliser un autre programme d’édition de texte. Ce n’est pas l’IDE, mais il va me permettre d’écrire du code. Et permettez-moi d’aller de l’avant et de le faire. Permettez-moi d’aller de l’avant et d’obtenir une entrée de l’utilisateur sans même utiliser la bibliothèque CS50.
+
+Mais je vais simplement demander à l’humain de dire quelque chose \n. Et ensuite, je vais forcer l’entrée de l’utilisateur en minuscules juste pour me faciliter un peu la vie.
+
+Et maintenant, je vais poser quelques questions. Si le mot bonjour est dans les mots de l’utilisateur, eh bien, permettez-moi d’aller de l’avant et de vous dire bonjour à vous aussi. C’est gentil. elif, par exemple, comment vas-tu en mots. Permettez-moi d’aller de l’avant et de dire quelque chose comme, print, par exemple, je vais bien. Merci.
+
+elif, et au revoir en mots. Permettez-moi d’aller de l’avant et d’imprimer au revoir à vous aussi. Mais je pourrais certainement dire presque tout ce que je veux ici. sinon, je ne sais pas ce qui se passe, donc je vais juste dire hein.
+
+Alors quelle est l’essence de ce programme ? Qu’ai-je fait ? Comme, c’est en quelque sorte, un peu, certainement un effort, mais les débuts de l’intelligence artificielle, si vous voulez. C’est un programme qui interagit avec moi. Et il y a bien longtemps, certains des premiers programmes en IA étaient simplement basés sur du texte comme celui-ci.
+
+L’intelligence artificielle consiste essentiellement à créer un humain qui est conscient et peut réellement répondre et réagir à un humain comme s’il était lui-même humain. Alors permettez-moi d’aller de l’avant et d’exécuter cela. Python voice.py comme si je lui parlais et disais bonjour.
+
+C’est grammaticalement faux, mais on s’en fout. Bonjour à toi aussi. Comment vas-tu ? Je vais bien, merci, c’est plutôt cool. Au revoir. Au revoir à toi aussi.
+
+Maintenant, pourquoi cela a-t-il fonctionné ? J’utilise simplement l’opérateur in de Python, en cherchant les mots de l’utilisateur qui sont simplement des chaînes qui ont été tapées via la fonction d’entrée. Et encore une fois, la fonction d’entrée est presque la même que get string mais c’est celle qui est fournie avec Python. Et je ne fais que faire if else, if else, if else, if else, en imprimant des choses.
+
+Mais il s’avère qu’avec Python -- et honnêtement, d’autres langages, mais Python en particulier -- il est facile de faire des choses encore plus sophistiquées. Permettez-moi d’aller de l’avant et de ne pas obtenir les mots de l’humain à partir du clavier, mais permettez-moi d’importer speech recognition, qui est une bibliothèque que j’ai installée sur mon ordinateur à l’avance.
+
+Et permettez-moi d’aller de l’avant et de changer cela un peu. Permettez-moi d’aller de l’avant et de dire quelque chose comme ça. Recognizer reçoit speech recognition.recognizer. Et je ne savais littéralement pas ce que je faisais. Je suivais simplement les instructions lorsque j’ai téléchargé la bibliothèque initialement.
+
+Mais j’ai appris que je peux dire speech recognition.microphone comme source. Imprimer. Maintenant, allons-y et disons quelque chose à l’humain pour qu’il fournisse une entrée. Ensuite, permettez-moi d’obtenir un peu d’audio de la part de l’utilisateur. Recognizer.listen, cette source étant le microphone.
+
+Et puis, ici, je vais dire, la reconnaissance vocale de Google pense aux choses que tu as dites. Puis imprimer recognizer.recognize Google audio.
+
+Donc ce n’est pas grave si nous ne comprenons pas chaque ligne. Je ne l’ai pas fait hier soir lorsque j’ai en quelque sorte expérimenté avec cet exemple. La clé, cependant, est que j’ai importé une bibliothèque très puissante qui est open source et librement disponible. Il se trouve qu’elle communique avec l’infrastructure back-end de Google où ils implémentent un certain nombre de fonctionnalités d’intelligence artificielle.
+
+Et si je ne me suis pas trompé, voyons comment cela fonctionne. Python of voices.py. Bonjour, monde. Comment vas-tu ? Au revoir, monde. OK. Très, très étonnant.
+
+[Applaudissements]
+
+Merci.

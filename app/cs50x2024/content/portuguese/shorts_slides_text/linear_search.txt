@@ -1,0 +1,38 @@
+[1]
+
+Pesquisa Linear
+• Na pesquisa linear, a ideia do algoritmo é iterar no array da esquerda para a direita, procurando um elemento especificado.
+Em pseudocódigo:
+• Repita, começando com o primeiro elemento:
+• Se o primeiro elemento for o que você está procurando (o destino), pare.
+• Do contrário, vá para o próximo elemento.
+
+[2]
+
+Pesquisa Linear
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+Em pseudocódigo:
+Repita, começando com o primeiro elemento:
+Se o primeiro elemento for o que você está procurando (o destino), pare.
+Do contrário, vá para o próximo elemento.
+Destino
+9
+
+[27]
+
+Pesquisa Linear
+• Pior cenário: precisamos percorrer o array inteiro com n elementos, porque o elemento de destino é o último elemento do array ou não existe no array.
+• Melhor cenário: o elemento de destino é o primeiro elemento do array, e podemos parar de procurar imediatamente após o início.
+
+[28]
+
+Pesquisa Linear
+O(n)
+Ω(1)

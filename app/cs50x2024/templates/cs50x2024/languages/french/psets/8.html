@@ -1,0 +1,36 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-8">Série de Problèmes 8</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>La collaboration sur les problèmes est interdite, sauf lorsque vous demandez de l'aide à vos camarades de classe et à d'autres personnes tant que cette aide ne se réduit pas à ce que quelqu'un d'autre fasse le travail à votre place, conformément à la politique du cours en matière de
+      <a href="{{ url_for('cs50x2024.honesty') }}">probité académique</a>.</p>
+
+    <p>Le personnel effectue des vérifications aléatoires des soumissions à CS50x. Les élèves reconnus coupables d'avoir enfreint cette politique seront exclus du cours. Les élèves qui ont déjà terminé CS50x, s'ils sont reconnus coupables d'infraction, se verront définitivement révoquer leur certificat CS50.</p>
+  </div>
+
+  <h2 id="what-to-do">Quoi Faire</h2>
+
+  <ol>
+    <li>Connectez-vous à
+      <a href="https://cs50.dev">cs50.dev</a>
+      en utilisant votre compte GitHub</li>
+    <li>Exécutez
+      <code class="language-plaintext highlighter-rouge">update50</code>
+      dans la fenêtre de terminal de votre espace de travail pour vérifier que votre espace de travail est à jour et, lorsque vous y êtes invité, cliquez sur
+      <strong>Reconstruire maintenant</strong>
+    </li>
+    <li>Soumettez
+      <a href="{{ url_for('cs50x2024.psets.pset8.trivia') }}">Culture Générale</a>
+    </li>
+    <li>Soumettez
+      <a href="{{ url_for('cs50x2024.psets.pset8.homepage') }}">Page d'Accueil</a>
+    </li>
+  </ol>
+
+  <h2 id="when-to-do-it">Quand Le Faire</h2>
+
+  <p>Avant le
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+{% endblock %}

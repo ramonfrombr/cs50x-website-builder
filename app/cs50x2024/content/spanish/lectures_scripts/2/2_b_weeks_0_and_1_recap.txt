@@ -1,0 +1,31 @@
+DAVID MALAN: De acuerdo. Esta es CS50, y hoy veremos todo lo que hay bajo el capó, por así decirlo, de la programación, lo que hemos estado haciendo en las últimas semanas, y de C en particular. De hecho, hoy vamos a intentar centrarnos también en algunas nuevas técnicas de programación, realmente en los primeros principios, para que lo que han estado viendo en las últimas semanas ya no les parezca tan mágico.
+
+Si estás escribiendo esas mágicas fórmulas y no estás seguro por qué funcionan las cosas, debes saber que con la práctica y la aplicación de estas ideas, entenderás todo mucho más y apreciarás más lo que estás haciendo. Pero hoy, vamos a volver a los primeros principios, como material de la semana 0, para asegurarnos de que entiendes que lo que hacemos ahora en la semana 2 es poco diferente de lo que hicimos en la semana 0.
+
+De hecho, echemos un vistazo a uno de los primeros programas que vimos en C, que era algo más o menos así. Este es nuestro código fuente, por así decirlo. Había unas cuantas características salientes de la semana pasada que encajaban con la primera semana, la semana 0. Y era esta cosa llamada main, que es sólo la función principal. Es el punto de entrada principal a tu programa. Es el equivalente a las rayitas cuando se hacía clic en la bandera verde.
+
+Por supuesto, este es un ejemplo de otra función, una que viene con C que te permite imprimir en la pantalla. Puede tomar entradas, al menos una entrada aquí, que suele ser una cadena entre comillas dobles, como el mensaje "hola mundo". Pero, por supuesto, para utilizar printf en primer lugar, necesitabas esta cosa de aquí arriba. ¿Y Standard io.h representa qué, tal y como lo entiendes ahora?
+
+¿Alguna idea sobre qué es Standard io.h? ¿Sí?
+
+AUDIENCIA: Una biblioteca sobre cómo [INAUDIBLE].
+
+DAVID MALAN: Sí, es una manifestación de lo que se llama una biblioteca, un código que alguien escribió hace años. Específicamente, Standard io.h es un archivo de encabezado. Es un archivo escrito en C pero con una extensión de archivo que termina en punto h que, entre otras cosas, declara que tiene el prototipo, por así decirlo, para printf para que Clang, cuando estés compilando tu código, sepa qué es realmente printf.
+
+Y, por supuesto, esta cosita de aquí atrás, probablemente ya te has acostumbrado a usar este /n que es una nueva línea. Y obliga al cursor a pasar a la siguiente línea. Así que esas eran algunas de las características más feas del código de la semana pasada, y vamos a separar int y void y algunas otras cosas en el transcurso de hoy y más allá.
+
+Así que cuando compilas tu código con Clang, hello.c, y luego ejecutas ese programa, ./a.out, lo cual probablemente no hayas hecho por tu cuenta desde entonces, porque te dimos una forma más sencilla de hacerlo, ese proceso consistía en crear un archivo que contenía ceros y unos que el ordenador entiende, llamado a.out que puedes ejecutar. Por supuesto, a.out es un nombre bastante estúpido para un programa. No es nada descriptivo, aunque sea el predeterminado.
+
+Así que el siguiente programa que escribimos y compilamos, usamos -ohhello, que es el llamado argumento de la línea de comandos para Clang. Es como una opción que viene con él y que sólo te permite especificar el nombre del archivo de salida. Así lo hiciste la semana pasada con el problema, con un par de programas que tú mismo escribiste.
+
+Pero, ¿qué está ocurriendo realmente cuando compilas tu código mediante ese proceso? Bueno, resulta que si hacemos que este programa sea un poco más interesante, esto se vuelve aún más importante con un código como este. Ahora he añadido un par de líneas de código. CS50.h, que es representativo de la biblioteca CS50. De nuevo, un código que otras personas escribieron, en este caso el personal hace algunos años, que declara que tiene prototipos para las líneas únicas de funciones como GetString, para que puedas usar más funciones de las que vienen con C por defecto.
+
+Y tiene cosas como la propia cadena, un tipo de datos. Así que GetString está declarado en ese archivo. Name es, por supuesto, una variable en la que almacené mi nombre la semana pasada. String es el tipo de variable en la que almacené un nombre. Y todo eso se emite entonces hola coma algo, donde el por ciento S recuerda que era un marcador de posición, name es la variable que enchufamos a ese código de formato, y luego todo eso es posible gracias a CS50.h, que declara la cadena y también nos da GetString.
+
+Así que ese es un paradigma que de momento es específico de CS50, pero es representativo de cualquier otra función que empecemos a usar hoy y en las próximas semanas. El proceso ahora va a ser el mismo. Sin embargo, cuando compilaste ese programa que utilizaba la biblioteca CS50, quizás recuerdes y te hayas quedado atascado en esto la semana pasada si usaste Clang y no otro programa, necesitas este -lcs50, y lo necesitas al final sólo porque sí. Es lo que espera Clang.
+
+Esta es una bandera especial que separaremos en sólo un par de minutos, un argumento para Clang que le dice que enlace, por así decirlo, todos los ceros y unos de la biblioteca de CS50. Pero lo veremos en un momento. Por supuesto, así es como probablemente deberías compilar tu código de aquí en adelante. Es muy simple, pero automatiza todo lo que acabamos de ver de forma más pedante, paso a paso.
+
+Así que hemos estado compilando nuestro código durante la última semana, y vamos a seguir haciéndolo durante las próximas semanas, hasta que --spoiler-- lleguemos a Python, y ya no tendrás que compilar nada más. Simplemente va a suceder automáticamente para ti. Pero hasta entonces, la compilación es en realidad una especie de simplificación excesiva de lo que ha estado sucediendo la semana pasada. Resulta que en realidad hay cuatro pasos distintos que todos ustedes han estado induciendo al ejecutar Make o incluso ejecutando Clang manualmente en la línea de comandos.
+
+Y para que, una vez más, podamos entender qué es lo que estás haciendo cuando ejecutas estos comandos, vayamos a los primeros principios, entendamos estos cuatro pasos, pero luego seguiremos adelante como en la semana 0 y estipulado, OK, lo tengo. No necesito pensar a este bajo nivel después de hoy. Pero espero que entiendas desde abajo estos cuatro pasos.

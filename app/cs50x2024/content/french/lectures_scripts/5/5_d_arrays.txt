@@ -1,0 +1,49 @@
+DAVID MALAN : Très bien, maintenant que nous avons cette puissance des pointeurs et des adresses où nous avons un accès de bas niveau à la mémoire de l'ordinateur, nous pouvons en fait résoudre les problèmes de manière beaucoup plus efficace et de manière beaucoup plus intéressante. Mais d'abord, motivons certains de ces problèmes.
+
+Donc, à la semaine 2, nous avons introduit des tableaux, qui étaient les premières de nos structures de données, si vous voulez. Avant cela, à la semaine 1, nous n'avions que des variables pour des éléments tels que les ints, les caractères, les flottants, etc. À la semaine 2, nous avons introduit des tableaux, ce qui signifiait que vous pouviez stocker deux entiers ensemble ou trois, 10 ou 100. Vous pouvez donc encapsuler beaucoup de données ensemble.
+
+Malheureusement, les tableaux ne sont pas aussi puissants qu'on pourrait le souhaiter. Donc, par exemple, si nous avons un tableau de taille 3 et que nous voulons y stocker trois valeurs - un, deux, trois - supposons que nous voulions maintenant stocker une quatrième valeur, mais nous ne l'avions pas prévu dès le départ. Rappelez-vous qu'après tout, avec les tableaux, vous devez déclarer leur taille au préalable. Vous devez donc coder en dur le nombre 3 ou une variable contenant le nombre 3.
+
+Mais supposons que nous voulions stocker le nombre 4. Vous pourriez penser que, eh bien, donnez-moi juste une autre boîte de mémoire juste à droite du nombre 3, pour que je puisse garder tous mes nombres ensemble. Mais malheureusement, depuis la semaine dernière, ce n'est pas vraiment une hypothèse fiable, car dans le contexte du reste de la mémoire de votre ordinateur, ces 1, 2, 3 pourraient être entourés d'autres octets. Et depuis la semaine dernière, ces octets pourraient être principalement remplis d'autres données provenant d'autres parties de votre programme.
+
+Et pourtant, vous penseriez qu'en voyant que 1, 2, 3 est en quelque sorte peint dans ce coin, pour ainsi dire, qu'il n'y a tout simplement pas de place pour le nombre 4, et donc vous ne pouvez pas ajouter le quatrième nombre à votre tableau, il y a une solution visible à ce problème néanmoins ? Où d'autre pourrions-nous le mettre ? Ouais.
+
+AUDIENCE : Déplacez-le vers une autre mémoire.
+
+DAVID MALAN : Dites-le un peu plus fort.
+
+AUDIENCE : Nous pouvons le déplacer vers une autre mémoire.
+
+DAVID MALAN : Oui, alors peut-être que nous pouvons le déplacer vers une autre mémoire. Donc, il y a beaucoup d'EMMA dans ma mémoire depuis la semaine dernière, mais il en reste encore, semble-t-il, d'après cette image, de la mémoire inutilisée. Donc, peut-être que nous pourrions redimensionner notre tableau, l'agrandir, non pas simplement en déplaçant toutes les EMMA parce que franchement cela prendrait beaucoup de temps si nous devions déplacer tous ces caractères, pourquoi ne pas simplement déplacer le 1, 2 , 3 ici en bas, et cela nous donne un espace supplémentaire pour au moins un numéro 4.
+
+Donc, même si vous utilisez des tableaux, vous pouvez atteindre ce résultat en déplaçant réellement la mémoire. Mais considérez ce que cela implique. Donc, si vous avez notre ancien tableau en haut à gauche et que nous avons notre nouveau tableau en bas à droite, celui-ci a une taille de 4. Nous avons donc beaucoup de place. Comment s'y prendre pour redimensionner le tableau ?
+
+Eh bien, c'est une sorte d'illusion. Vous ne pouvez pas simplement redimensionner le tableau quand nous avons toutes ces EMMA qui nous entourent. En fait, nous devons déplacer le tableau ou le copier. Donc, le 1 est déplacé vers la nouvelle mémoire. Le 2 est déplacé vers la nouvelle mémoire. Le 3 est déplacé vers la nouvelle mémoire. Et puis à ce moment-là, nous pouvons simplement jeter ou libérer la mémoire utilisée précédemment et maintenant aller de l'avant et ajouter notre 4.
+
+Malheureusement, ce n'est pas forcément la meilleure stratégie, n'est-ce pas, car si ces trois casiers représentent notre mémoire d'origine et que ces quatre casiers représentent notre nouvelle mémoire et qu'ils sont délibérément éloignés, c'est-à-dire que si je veux continuer et bouger comme ces mêmes numéros, je dois vraiment faire quelque chose comme ça, ce qui implique pas mal d'étapes. Maintenant, laissez-moi mettre le 1 là-dedans. Maintenant, laissez-moi aller de l'avant et obtenir le 2 ici. Et puis je peux aller de l'avant et le mettre ici. Donc maintenant j'ai le 2. Et puis enfin, je peux aller prendre le 3.
+
+Et donc même si je l'ai fait assez rapidement à l'écran, la réalité est qu'il y a beaucoup de travail à faire. Et puis je dois encore, bien sûr, aller de l'avant et ajouter le 4 au mélange, c'est-à-dire que j'ai pris au sens figuré et physiquement pas mal de mesures pour redimensionner un tableau de taille 3 à taille 4, ce qui est pour dire que si l'on considère maintenant l'efficacité ou, si l'on veut, l'inefficacité de cet algorithme, quel type de temps d'exécution est impliqué lors de l'insertion de nombres supplémentaires dans un tableau comme je l'ai fait ici ?
+
+Voici notre menu d'options il y a quelques semaines lorsque nous nous sommes concentrés sur les algorithmes. Quel est le temps d'exécution de l'insertion dans un tableau basé même sur cette simple démonstration, diriez-vous ? Quel est le temps d'exécution ? Ouais.
+
+AUDIENCE : O n au carré.
+
+DAVID MALAN : Dites-le à nouveau.
+
+AUDIENCE : O n au carré.
+
+DAVID MALAN : O n au carré. Donc peut-être O n au carré dans la mesure où il y avait beaucoup de va-et-vient et nous l'avons déjà vu. Nous avons vu le tri à bulles et le tri par sélection s'additionner. Ce n'est pas aussi grave que ça. Ce n'est pas aussi grave que ça. Ouais.
+
+AUDIENCE : O de n.
+
+DAVID MALAN : O de n. Et pourquoi dites-vous O de n ?
+
+AUDIENCE : Parce que comme il y a autant de casiers que dans le premier, il faut incrémenter la même quantité de processus pour les insérer.
+
+DAVID MALAN : Exactement. Quel que soit le nombre de casiers que vous avez ici - c'est donc trois spécifiquement - mais n plus généralement, il va me falloir n étapes pour transférer ces nombres ici. Ou techniquement, ça va me prendre 3 - peut-être que si je fais des allers-retours, c'est comme 6 étapes. Mais c'est un multiple de n.
+
+Donc ce n'est pas n au carré. C'est quand on continuait à itérer encore et encore. Cette fois, je dois simplement déplacer 3 nombres ici puis ajouter le quatrième nombre.
+
+C'est donc en effet, Grand O de n lorsque vous voulez continuer et insérer ou rechercher de manière équivalente un tableau qui est réellement implémenté - désolé, l'insertion va nous prendre du temps linéaire. Mais rappelez-vous la recherche - et c'était le puissant - quel est le temps d'exécution de la recherche tant que vous gardez votre nombre trié ? Il y a deux semaines, c'était logarithmique. Nous n'avons donc pas forcément sacrifié cela. Et c'est l'intérêt de stocker nos données dans un tableau trié. Vous pouvez utiliser la recherche binaire.
+
+Cependant, cela coûte cher et déplacer des choses n'est pas nécessairement l'approche idéale. Voyons donc à quoi cela pourrait ressembler dans le code.

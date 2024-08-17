@@ -1,0 +1,13 @@
+All right. Let's move now to where we left off in week 2, where we started introducing arrays that we're now going to start calling lists. Let me go ahead and split my window again. Let me go ahead and open from week 2 an example like scores2.c, which looked a little something like this. So it's been a while. But we did see this example a while back, which just initializes an array with three values-- 72, 73, 33-- and then computes the average using a bit of arithmetic down below. So a while back, but all it did was quite simply that. 
+
+Let me go ahead and create a file called scores.py on the right-hand side now in Python. And let me go ahead and just give myself an array now called a list. And it's a list in the sense, like a linked list, that it can grow and shrink automatically-- so no more alloc or realloc. 
+
+So in fact, if I want to add something to this list, I can literally say scores, which is the name of the variable, go inside of it just like a struct in C, and use a function, otherwise known now as a method that's inside of a structure, and just append a value like 72. I can then do this again and append 73. And I can then do this again and append 33. 
+
+And now, I can go ahead and print out an average. Let's go ahead and say average, just like before. And it turns out Python has some fancy functions that are useful here. I can take the sum of all of those scores and divide by the length of that list, thereby giving me, hopefully, the total count-- the total sum of the scores divided by the total count of scores and getting an average-- so python scores.py. Oh, no, I forgot what? 
+
+AUDIENCE: f. 
+
+DAVID MALAN: Just the f for an fstring. All right. So let me go ahead now and rerun that. And wala-- it looks like with those three values, the average out actually to, for instance, 59.33333. And if I actually started poking around, we would really see the imprecision. And we're starting to see it on the screen here already. 
+
+Well, let me go ahead make this more succinct. I don't need to use append, append, append. In Python, I can just say scores 72, 73, 33, not unlike the curly brace notation you might recall seeing at some points in C. But it's a little more commonly used here in Python. So this, too, is going to work exactly the same, the point being lists can grow and shrink. If you want a list, just use it. You don't have to think as hard anymore about using that type of structure. 

@@ -1,0 +1,55 @@
+D'accord, que pouvons-nous faire maintenant avec cette structure ? Eh bien, continuons et construisons quelque chose là-dedans. D'accord, c'est à peu près la partie la plus effrayante du code d'aujourd'hui. Nous allons nous concentrer principalement sur les images et les concepts ci-après. Mais faisons un tour à travers une implémentation de cette même idée de liste chaînée. Comment pourrions-nous représenter initialement une liste chaînée ?
+
+Eh bien, initialement la liste est vide. Et si vous voulez représenter quelque chose de vide, nous avons besoin de quelque chose au minimum. Donc laissez-moi le dessiner comme cette boîte vide. Et c'est juste un pointeur vers un nœud, je dis.
+
+Donc, comment implémenter la notion d'une liste chaînée qui n'a pas encore de chiffres ? Eh bien, pourquoi ne pas simplement utiliser cela, que je peux implémenter comme suit : node star, et je vais l'appeler list, puis l'égaler à NULL. C'est vrai, s'il n'y a pas de chiffres disponibles, il n'y a pas de 1, il n'y a pas de 2, il n'y a pas de trois ; je devrais au moins avoir une variable qui indique qu'il n'y a pas de liste. Et la manière la plus simple de le faire est, en l'absence de valeur, de stocker 0, qui a ce nouveau surnom depuis la semaine dernière et qui est appelé null.
+
+Donc, cette variable ici représente cette photo ici. Et remarquez qu'il n'y a pas de chiffres, car la liste est vide. Mais nous l'initialisons à NULL de sorte que nous ne pensions pas qu'il y a encore une flèche pointant vers une partie spécifique de la mémoire. Parce qu'il n'y en a pas encore.
+
+Maintenant, supposons que je veuille continuer et insérer un chiffre dans cette liste. Supposons que je veuille insérer le chiffre 2. Je ne peux pas simplement allouer de l'espace pour 2 maintenant. Je dois allouer de l'espace pour 2 et ce pointeur, autrement connu sous le nom de nœud, selon la diapositive précédente.
+
+Alors, comment faire ? Eh bien, dans le code, je peux emprunter la même technique que nous avons utilisée plusieurs fois maintenant, même si elle est plus moche que certaines approches passées, malloc puis un entier. Combien d'octets voulez-vous ? Je ne sais pas quelle est la taille d'un nœud. Je pourrais probablement faire le calcul et additionner l'entier puis le pointeur. Mais, vous savez quoi, size of node va juste répondre à cette question pour moi.
+
+Donc, ceci renvoie ce bloc de mémoire qui est suffisamment grand pour stocker un nœud. Et je vais juste le stocker temporairement dans une variable appelée n, n pour nœud, et ce sera juste une variable temporaire, si vous voulez. Donc, encore une fois, même s'il y a de nouvelles choses qui se passent ici, c'est comme avant.
+
+Auparavant, je voulais allouer un entier. Maintenant, je veux plus qu'un entier. Je veux un nœud réel. Et malloc renvoie une adresse, ce qui signifie que je dois l'attribuer à une variable. C'est une adresse sur le côté gauche.
+
+D'accord, que dois-je toujours faire ? Léger spoiler parce que je cliqué en avant il y a un instant ; en fait, nous allons continuer. C'est la chose la plus moche que nous verrons. Que fait cette deuxième ligne de code ici ? Que se passe-t-il ici d'après vous ? Ouais, qu'en pensez-vous ?
+
+AUDITOIRE : Elle définit le nombre de ce nœud sur 2.
+
+DAVID MALAN : C'est vrai. Elle définit le nombre de ce nœud sur 2. Mais pourquoi cette syntaxe folle, que nous n'avons jamais utilisée auparavant ? Eh bien, star n, nous l'avons vu la semaine dernière. Cela signifie simplement d'y aller. Les parenthèses sont juste nécessaires pour l'ordre des opérations afin que le compilateur sache, OK, allez-y en premier. Et puis une fois que vous y êtes, à quoi voulez-vous avoir accès ? Le champ du nombre. Donc, utilisez la même notation par points.
+
+Donc, c'est très moche. Mais elle fait juste deux choses différentes que nous avons vues séparément. Accédez à l'adresse dans n, qui est ce bloc de mémoire. Et puis accédez au champ du nombre et définissez-le comme égal à 2.
+
+Heureusement, C a un peu de simplification de la syntaxe, une manière plus facile et plus jolie de faire ceci. Et il se trouve qu'elle ressemble merveilleusement à la chose réelle que nous continuons à dessiner : cette notation de flèche. Donc, si jamais vous voyez et que vous écrivez cette notation en C (et je suis presque sûr que c'est la dernière nouvelle syntaxe que nous verrons), cette flèche, ce genre d'ère de piratage où vous appuyez sur un trait d'union puis sur un signe supérieur à, cela signifie exactement la même chose que ceci. C'est juste ennuyeux à taper. C'est moche à regarder. C'est juste un peu plus joli. Et, franchement, cela rappelle les images que nous dessinions avec les flèches pointant vers la gauche et vers la droite.
+
+Quelle est la prochaine chose que je veux faire ? Après avoir alloué ce nouveau nœud pour le nombre 2, que veux-je aussi mettre dans ce nœud ?
+
+AUDITOIRE : Mettre l'adresse.
+
+DAVID MALAN : Désolé, un peu plus fort.
+
+AUDITOIRE : L'adresse suivante.
+
+DAVID MALAN : L'adresse du nœud suivant. Mais il n'y a pas encore de nœud suivant. Donc, quelle valeur pourrais-je utiliser comme espace réservé ?
+
+AUDITOIRE : Null.
+
+DAVID MALAN : Null. Et donc, en effet, je vais aussi faire cette notation de flèche. Vous n'avez jamais besoin de faire l'étoile, puis les points et les parenthèses. Tout le monde écrit simplement le code comme ça dans le monde réel. Donc, n flèche next obtient null.
+
+Cela me donne maintenant cette image que nous dessinions. Mais, encore une fois, vérification de bon sens, si vous utilisez toujours malloc, vous devriez toujours vérifier la valeur de retour. Donc, juste pour être super précis, laissez-moi aller de l'avant et ajouter quelques lignes de code supplémentaires qui vérifient simplement si n n'est pas null, continuez et faites ce qui suit. Inversement, je pourrais vérifier si n est null, puis simplement quitter ou revenir en fonction de l'endroit où j'utilise ce code. Mais vous ne voulez pas toucher n et utiliser cette notation de flèche sauf si vous êtes sûr que n n'est pas null.
+
+Alors, qu'est-ce que je viens de faire ? Mon image ressemble maintenant à ceci. Mais ceci, bien sûr, n'est pas une liste chaînée, car il n'y a pas de lien qui se passe. J'ai vraiment besoin de faire l'équivalent de pointer une flèche de ce pointeur vers cette structure. J'ai besoin d'implémenter une flèche qui ressemble à ceci.
+
+Alors, comment pouvons-nous implémenter cela dans le code ? Eh bien, laissez-moi proposer que c'est à quoi cela ressemble finalement. Nous devons juste dessiner cette flèche.
+
+Comment est-ce que je fais ça ? Eh bien, c'est aussi simple que cela. Si list est une variable, et qu'elle était précédemment initialisée à null (c'est juste un espace réservé) et que n est ma variable temporaire stockant le nouveau nœud, il suffit de dire que les listes ne doivent plus être null. Cela doit littéralement être égal à l'adresse de ce bloc de mémoire que je viens d'allouer. Et c'est ainsi que nous obtenons cette image maintenant dans l'ordinateur.
+
+Maintenant, laissez-moi faire quelques autres opérations. Supposons que je veuille ajouter à la liste le nombre 4. Comment ajouter le nombre 4 ? Eh bien, le nombre 4 est à l'intérieur de son propre nœud. Je dois donc revenir au code comme ça.
+
+Je dois allouer un autre nœud qui installe le nombre 4 là-bas. Mais ce n'est pas tout. Vous ne voulez pas simplement créer le nœud, car il est autrement là-bas dans le no man's land, pour ainsi dire. Nous devons maintenant ajouter la flèche.
+
+Mais maintenant, il devient un peu moins évident de savoir comment vous mettez à jour les flèches, n'est-ce pas, parce que je ne veux pas mettre à jour list pour pointer sur 4, car cela va en quelque sorte rendre orphelin, pour ainsi dire, le numéro 2. Et ça flotte juste conceptuellement. Je veux vraiment mettre à jour le pointeur de 2 sur 4. Alors, comment puis-je faire ça ?
+
+Eh bien, vous savez ce que je peux faire, c'est que je peux en quelque sorte suivre ces miettes de pain. Si je déclare un pointeur temporaire (et je le ferai en utilisant un peu extravagamment

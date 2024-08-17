@@ -1,0 +1,99 @@
+[0]
+
+Tableaux
+
+[1]
+
+Tableaux
+● Les tableaux sont une structure de données fondamentale, et ils sont extrêmement utiles !
+● Nous utilisons des tableaux pour contenir des valeurs du même type dans des emplacements mémoire contigus.
+● Une façon d'analogiser la notion de tableau est de penser à votre bureau de poste local, qui dispose généralement d'une grande banque de boîtes postales.
+
+[6]
+
+Tableaux
+Tableaux
+Boîtes postales
+Un tableau est un bloc d'espace contigu en mémoire...
+Une banque postale est un grand espace sur le mur du bureau de poste...
+...qui a été partitionné en petits blocs d'espace de taille identique, appelés éléments...
+...qui a été partitionné en petits blocs d'espace de taille identique, appelés boîtes postales...
+...chacun d'entre eux pouvant stocker une certaine quantité de données...
+...chacun d'entre eux pouvant contenir une certaine quantité de courrier...
+...tous du même type de données, comme int ou char...
+...tous d'un type similaire, comme des lettres ou des petits colis...
+...et auquel on peut accéder directement par un index.
+...et auquel on peut accéder directement par un numéro de boîte aux lettres.
+
+[7]
+
+Tableaux
+● En C, les éléments d'un tableau sont indexés à partir de 0.
+● C'est l'une des principales raisons pour lesquelles nous comptons à partir de zéro !
+● Si un tableau est constitué de n éléments, le premier élément est situé à l'index 0. Le dernier élément est situé à l'index (n-1).
+● Le C est très indulgent. Il ne vous empêchera pas de sortir des limites de votre tableau ; soyez prudent !
+
+[8]
+
+Tableaux
+● Déclarations de tableaux
+● Le type indique le type de variable que sera chaque élément du tableau.
+● Le nom est ce que vous voulez appeler votre tableau.
+● La taille indique le nombre d'éléments que vous souhaitez que votre tableau contienne.
+type nom[taille];
+
+[9]
+
+int notes_étudiants[40];
+
+[10]
+
+double prix_menu[8];
+
+[11]
+
+Tableaux
+● Si vous considérez un seul élément d'un tableau du type type_données comme identique à n'importe quelle autre variable du type type_données (ce qui est effectif), alors toutes les opérations familières ont un sens.
+bool table_de_vérité[10];
+table_de_vérité[2] = faux;
+if(table_de_vérité[7] == vrai)
+{
+printf("VRAI !\n") ;
+}
+table_de_vérité[10] = vrai;
+
+[13]
+
+Tableaux
+● Lors de la déclaration et de l'initialisation simultanées d'un tableau, une syntaxe spéciale peut être utilisée pour remplir le tableau avec ses valeurs de départ.
+// syntaxe d'instanciation
+bool table_de_vérité[3] = { faux, vrai, vrai };
+// syntaxe d'élément individuel
+bool table_de_vérité[3] ;
+table_de_vérité[0] = faux;
+table_de_vérité[1] = vrai;
+table_de_vérité[2] = vrai;
+
+[15]
+
+Tableaux
+● Les tableaux peuvent comporter plus d'une dimension. Vous pouvez avoir autant de spécificateurs de taille que vous le souhaitez.
+● Vous pouvez choisir de considérer cela comme une grille de cellules de 10 x 10.
+● En mémoire, cependant, il s'agit simplement d'un tableau unidimensionnel de 100 éléments.
+● Les tableaux multidimensionnels sont de grandes abstractions qui permettent de visualiser des plateaux de jeu ou d'autres représentations complexes.
+bool bataille_navale[10][10] ;
+
+[16]
+
+Tableaux
+● Bien que nous puissions traiter les éléments individuels des tableaux comme des variables, nous ne pouvons pas traiter les tableaux entiers eux-mêmes comme des variables.
+● Nous ne pouvons pas, par exemple, affecter un tableau à un autre à l'aide de l'opérateur d'affectation. Ce n'est pas du C légal.
+● À la place, nous devons utiliser une boucle pour copier les éléments un par un.
+
+[20]
+
+Tableaux
+● Rappelez-vous que la plupart des variables en C sont passées par valeur dans les appels de fonction.
+● Les tableaux ne suivent pas cette règle. Au contraire, ils sont passés par référence. Le destinataire reçoit le tableau réel, et non une copie de celui-ci.
+● Qu'est-ce que cela signifie lorsque le destinataire manipule des éléments du tableau ?
+● Pour l'instant, nous allons passer sous silence la raison pour laquelle les tableaux ont cette propriété particulière, mais nous y reviendrons assez tôt !

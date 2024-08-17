@@ -1,0 +1,43 @@
+All right. Can I do one last demo that's a little arcane and then we'll make things more-- more real? All right. So it turns out if all that's going on underneath the hood is just addresses, watch what I can do here. If I want to go ahead and print out what is at the address s, what will I find in memory if I go to the address in s? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID J. MALAN: Sorry, a little louder. 
+
+AUDIENCE: The first letter. 
+
+DAVID J. MALAN: The first letter in Emma's name, right? If we can all agree-- even if it's a little unfamiliar still --that s is just the address of a character, and I say, go to s, what should I see specifically? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID J. MALAN: Probably E in Emma Right? If s is the address of the first character of her name, star s would mean go to that character. So let me go ahead and print that as a char. So let me go ahead now and make address dot slash address, enter. There is the E because I can say, go to that address and print what's there. 
+
+And I can actually do this for all of her letters in her name. Let me go ahead and print out another one here. So how do I get at the second letter in Emma's name? Previous-- normally, like last week, we would have done this. And that just magically gets you to the second letter in her name. But I can do it a little differently. What if I go to s and then, from where do I want to go from s to get the second letter? 
+
+AUDIENCE: Plus one. 
+
+DAVID J. MALAN: Plus one, right? I mean, maybe we can literally just do arithmetic here. If s is the address of her first letter, it stands to reason that s plus 1 is the address of her second letter. So make address now dot slash address. And I should see EM. And I can do this twice more maybe and go ahead and do this and then this. But this time add 2 and this time add 3, just doing some simple arithmetic. Make address dot slash address, there is Emma but in a much lower level detail. 
+
+So what is this bracket symbol? In computer science, this is what's called syntactic sugar. It's kind of a silly name. But it just refers to a handy feature so that you, the programmer, can say, s bracket 0 or bracket 1. But what the computer is actually doing underneath the hood-- the compiler, Clang --it's actually converting all of your uses of square brackets since Week 1 to this format here. It's just doing arithmetic underneath the hood. 
+
+Now you don't have to do this moving forward. But I point out this low level detail just to give you a sense of, there really is no magic. When you say, go print an address or go do this, the computer is taking you literally. Whew. 
+
+OK, that was a lot. Yes, question. 
+
+AUDIENCE: So [INAUDIBLE] 
+
+DAVID J. MALAN: Star s would mean go to the address in s. 
+
+AUDIENCE: So why for instance, if you [INAUDIBLE] character [INAUDIBLE] 
+
+DAVID J. MALAN: Really good question. Why, when you print out s, does it print out the whole string and not just the character? That's what the printf format code is doing for you. When you tell printf to use percent s, that has special meaning to printf. And it knows to go to the first address and not just print the second-- the first char, but print every character thereafter until it sees what? 
+
+AUDIENCE: The null terminator. 
+
+DAVID J. MALAN: The null terminating character. So printf and percent s are special and have been special since the Week 1. They just know to do exactly what you've described. So pointer arithmetic, to be clear, is just taking addresses and like, doing arithmetic with them, adding 1, adding 2, adding 3, or any other manipulation like that. All right. 
+
+So [CHUCKLE] let's take another stab at a meme here. 
+
+[CHUCKLE] 
+
+OK, a few of us. All right. All right, it's trying too hard. 

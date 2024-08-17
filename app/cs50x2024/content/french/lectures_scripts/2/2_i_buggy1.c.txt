@@ -1,0 +1,15 @@
+Laissez-moi ouvrir un autre fichier ici, ou améliorer celui-là comme buggy one dot c, et faire une erreur similaire, mais qui génère un message d’erreur différent. Dans ce cas, je vais y aller et le faire correctement cette fois, inclure standard Io dot h. Et ensuite je vais y aller et faire int main void, et puis comme avant, je vais faire ce programme canonique. String name gets get string. Et je demanderai à l’utilisateur, quel est votre nom - antislash, n. Et puis j’irai de l’avant et je lui dirai bonjour avec un %s, name.
+
+Ça a l’air bien aussi. Je vais remonter en arrière ici, et faire buggy one cette fois. Mais bien sûr, on dirait que, mon dieu, comme avant, j’ai deux lignes de code, mais bizarrement, cinq ou six erreurs. Concentrez-vous toujours sur le haut. Donc c’est probablement lié à quelque chose comme ça, mais celui-là est plus déroutant. L’identificateur non déclaré string - vouliez-vous dire standard Io ? Eh bien, non. Donc si vous ne comprenez pas vraiment ça, continuez et lancez la même commande, help 50, make buggy one. Et cette fois, on verra la sortie de cette commande, espérons-le, après avoir demandé de l’aide, un indice sur ce que l’on recherche réellement.
+
+Et en effet, maintenant on remarque que oh, par identificateur non déclaré, clang veut dire que vous avez utilisé le nom string dans la ligne 5 de buggy one dot c, qui n’a pas été défini. Avez-vous oublié d’inclure cs50 dot h, à ce stade. Donc en bref, chaque fois que vous avez un problème pour exécuter une commande et que vous voyez des messages énigmatiques, utilisez help 50 comme commande pour vous l’expliquer réellement. Et ensuite, vous n’aurez probablement pas à exécuter à nouveau la même commande.
+
+Mais qu’en est-il d’un autre ? Laissez-moi ouvrir un programme que j’ai écrit à l’avance ici, et je vais l’ouvrir. Ouais ? Bien sûr.
+
+AUDIENCE : [INAUDIBLE] appuyez simplement sur plus de boutons.
+
+DAVID MALAN : Pour relancer la même commande ?
+
+AUDIENCE : Pas pour la supprimer, mais pour [INAUDIBLE]
+
+DAVID MALAN : Oh oui, donc juste pour que les choses restent propres en classe, j’ai l’habitude d’appuyer beaucoup sur Contrôle l, qui efface simplement ma fenêtre de terminal. Ça n’a aucun impact fonctionnel. Ça supprime juste le fouillis de l’écran. Vous pouvez aussi taper littéralement, par exemple, effacer, Entrée. C’est juste un peu plus verbeux que d’appuyer sur Contrôle l. Donc il y a beaucoup de petits raccourcis clavier, et interrompez-moi à tout moment si vous avez des questions à leur sujet.

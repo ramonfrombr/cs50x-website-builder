@@ -1,0 +1,11 @@
+DAVID J. MALAN : Donc, avec ça dit, allons-nous comprendre encore plus comment fonctionnent les images cette semaine ? Et ici, par exemple, il y a une photo de la Charles River. Et pour la première partie de l'ensemble de problèmes, nous implémentons un certain nombre de filtres de type Instagram, en comprenant comment est représentée une image et comment vous pouvez donc la transformer. Par exemple, tout d'abord, en niveaux de gris, en écrivant votre propre filtre de niveaux de gris, en sépia, en recopiant-le à l'envers de gauche à droite, en floutant une image, même encore. Et si vous vous sentez plus à l'aise, pour faire quelque chose appelé détection des arêtes, qui trouve toutes les arêtes dans une image particulière.
+
+Plus encore, pourriez-vous réellement implémenter le code qui récupérera les fichiers JPEG ? Nous avons pris quelques photos de personnes, de lieux et de choses. Malheureusement, nous avons accidentellement supprimé ces photos, mais avons d'abord fait une image médico-légale de la carte mémoire depuis l'appareil photo, que nous vous fournirons alors pour que vous puissiez écrire du code en C qui récupérera tous les JPEG apparemment perdus de cette image médico-légale.
+
+Enfin et surtout, ce ne serait pas une classe de CS sans un petit peu d'humour CS. Nous pensions qu'on terminerait sur cette note-là, une plaisanterie que vous saisirez peut-être maintenant.
+
+[RIRES]
+
+Très bien. Ça suffit pour CS50. On se reverra la prochaine fois.
+
+[MUSIQUE]

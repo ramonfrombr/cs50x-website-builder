@@ -1,0 +1,29 @@
+ Donc, graphiquement, ce que je veux vraiment faire, c'est ça. Si j'essaie encore une fois, je vais relancer main et initialiser x et y comme 1 et 2. Je vais maintenant appeler swap. Mais ce que je veux vraiment faire, en utilisant des images cette fois, c'est que a pointe vers x et b vers y. Je ne veux pas qu'ils soient égaux à x et y parce que maintenant je peux suivre les miettes de pain, ou l'idée des échelles et des tobbogans, quelle que soit la métaphore qui vous convient. Vous pouvez aller de a à x, de b à y, et interchanger les données. 
+
+Donc, le code que je vais utiliser maintenant a l'air un peu effrayant, mais il ne fait que revenir aux premiers principes du début de la journée. Je dois mettre des astérisques partout, malheureusement. Mais voyons pourquoi. Tout d'abord, je vais revenir en arrière un instant et proposer que le code swap que je vais utiliser maintenant ne soit pas celui de no swap dot c mais dans un programme appelé swap dot c. 
+
+Donc, dans swap dot C, j'ai presque le même code, sauf ceci. Tout d'abord, à la ligne 13, je ne passe plus un x et un y, je passe l'adresse de x et l'adresse de y. C'était le détail clé plus tôt dans la journée, lorsque nous avons introduit l'esperluette. Cela signifie donc que voici l'adresse de x, l'adresse de y. C'est comme fournir une carte à swap afin qu'il puisse y aller. 
+
+Malheureusement, la syntaxe pour définir une fonction qui accepte des adresses est un peu cryptique, mais le nom de la fonction, comme swap, le type de pointeur et le type de pointeur. Donc, int Star a signifie que j'accepte l'adresse d'un int et que je l'appelle a. J'accepte également l'adresse d'un autre int et je l'appelle b. C'est donc tout ce que signifie l'étoile dans ce contexte. C'est un pointeur vers un int. C'est un pointeur vers un int, à la fois b et a. 
+
+En bas, ça a juste l'air un peu effrayant, mais c'est exactement la même chose. Que signifie étoile a ? Eh bien, étoile signifie aller à cette adresse. Donc, étoile a signifie suivre la flèche vers tout ce vers quoi a pointe. Et vers quoi a pointait ? Il pointait vers x. Cela signifie donc aller à l'adresse dans a et cela mènera à x, dont la valeur, je crois, est 1. Et cela va stocker le nombre 1 dans temp. 
+
+La deuxième ligne de code signifie aller à b. Donc, si vous suivez l'adresse dans b, où cela vous mène-t-il ? Cela devrait vous mener à ce que nous avons appelé y. Et ce y était 2. Et étoile a signifie aller à l'adresse dans a et mettre tout ce qui se trouve à l'adresse dans b là aussi. Et puis, enfin, prenez temp, qui n'est que le numéro un, je le prétends, et mettez-le à l'adresse dans b. 
+
+C'est difficile de voir ça dans le code. Donc, visualisons-le plutôt. Au lieu de cela, si je reviens ici à ces trois lignes de code, voici maintenant une version correcte. La première ligne de code indique d'aller à, peu importe, d'aller à l'adresse dans a et de l'enregistrer dans temp. Donc, dans un instant, je vais aller à l'adresse dans a en suivant cette flèche jusqu'à x. Et je vais stocker dans temp le nombre 1. 
+
+Deuxième ligne de code, je vais aller à l'adresse dans b. C'est donc comme suivre la flèche, ce qui me mène au 2 ; je suis ensuite l'adresse et a, ce qui me mène à x. Et je mets 2 dans x. 
+
+Dernière ligne, je vais à temp. C'est simple. C'est juste le numéro 1. Je dis ensuite d'aller à l'adresse dans b et d'y stocker temp. Donc, allons à l'adresse dans b en suivant la flèche et changeons-la en temp. 
+
+Et maintenant, j'ai encore appelé une autre fonction. J'utilise toujours des variables locales, mais ces variables locales sont par définition désormais des pointeurs, des adresses ou des sortes de cartes au trésor qui me mènent, comme ces flèches, aux valeurs en mémoire qui m'intéressent réellement. Et donc maintenant, lorsque la fonction swap s'exécute, peu importe que a, b et temp disparaissent, j'ai en réalité fondamentalement changé ce qu'étaient eux-mêmes x et y. 
+
+Des questions ? Oui. 
+
+AUDITOIRE : [INAUDIBLE] 
+
+DAVID J. MALAN : Bonne question. Donc, dans ce cas, il n'y a rien à libérer parce que nous n'avons pas utilisé malloc. Vous pouvez donc utiliser des adresses sans utiliser malloc. Dans ce cas, j'utilise l'adresse de l'opérateur, qui me dit simplement où se trouvent x et y ou... 
+
+AUDITOIRE : Pas avec ce [INAUDIBLE], en général, utiliseriez-vous malloc [INAUDIBLE] 
+
+DAVID J. MALAN : Très bonne question. Donc, si vous utilisez malloc dans une fonction et qu'il renvoie un bloc de mémoire, comment le gérez-vous ? Il vous appartient de vous rappeler d'appeler free sur ce même bloc de mémoire. Par exemple, getString fait cela. Pour faire court, getString alloue de la mémoire à l'aide de malloc. Et vous, jusqu'à ce jour, vous n'avez jamais eu à appeler free sur des chaînes, cela est dû en fait à l'une des fonctionnalités de la bibliothèque CS50 qui s'appelle le ramasse-miettes, où nous remarquons si votre programme quitte sans libérer la mémoire de getString. Nous le faisons pour vous comme par magie. Mais vous pouvez voir dans la bibliothèque CS50 comment vous pouvez faire exactement ce que vous demandez. Et, ou demandez-moi juste après aussi.

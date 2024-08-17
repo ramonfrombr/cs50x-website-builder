@@ -1,0 +1,9 @@
+Eh bien, rappelons-nous en Python - dans C, nous avions cet exemple int.c. Et c’était un exemple relativement simple dont le but était simplement d’obtenir un entier puis de faire des calculs en multipliant l’âge par 365, afin de savoir à peu près quel âge vous avez en jours.
+
+Eh bien, nous pouvons faire cela de manière assez similaire en Python. Permettez-moi d'aller de l'avant et d'ouvrir un fichier que j'appellerai int.py. Et en haut de ce fichier, je vais faire from cs50 import get_int, parce que c'est la fonction que je veux utiliser cette fois. Je vais aller de l'avant et obtenir l'âge de l'utilisateur avec get_int et dire : quel est votre âge \n. Et puis, je vais aller de l'avant et imprimer, non pas printf, mais imprimer la même chose que la dernière fois, vous êtes au moins, permettez-moi d'aller de l'avant et de faire un peu plus de place pour cela, vous êtes au moins, j'y reviendrai, quelque chose jours point.
+
+Alors, comment est-ce que je fais cela maintenant ? Eh bien, il s’avère que vous pouvez brancher non seulement des valeurs, mais aussi des expressions. Je peux réellement dire l’âge multiplié par 365 dans les accolades. Je n’ai donc pas besoin de me donner une autre variable ni d’utiliser de points en virgule. Mais bien sûr, il me manque encore une chose.
+
+PUBLIC : F.
+
+DAVID MALAN : Le f pour en faire une chaîne de format, et vous remarquerez que l’IDE est intelligent. Dès qu’il remarque, oh, c’est une chaîne de format, il met en évidence dans différentes couleurs les valeurs qui seront interpolées, le code à l’intérieur de votre chaîne qui sera exécuté. Donc maintenant, si je fais Python of int.py et que je tape mon âge, par exemple 50, on dirait que j'ai au moins 18 000 jours, dans ce cas.

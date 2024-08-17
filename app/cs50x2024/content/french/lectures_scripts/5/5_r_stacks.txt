@@ -1,0 +1,13 @@
+Il existe en quelque sorte la structure de données opposée à laquelle j'ai fait référence il y a un instant. Et elles sont généralement connues sous le nom de piles. Dans le monde réel, les piles peuvent se trouver dans la salle à manger, par exemple. Comme ici, il y a des plateaux. Et elles ont des propriétés fondamentalement différentes, de telle sorte que si le personnel nettoyait les plateaux et les mettait juste ici, ce serait assez odieux de devoir passer par une file d'attente en mode premier entré, premier sorti et de prendre le premier qu'ils ont déposé et de le sortir en premier. 
+
+Personne ne fait ça, en réalité. Si vous avez une grande pile de plateaux dans la salle à manger, vous appliquez probablement un ordre dernier entré, premier sorti. Donc si c'était le plateau le plus récemment installé ou nettoyé, vous allez probablement, en tant qu'humain, prendre celui du dessus, même si ce n'est pas vraiment juste pour ceux du dessous. Mais cela n'a pas d'importance dans ce cas particulier. 
+
+Une pile vous donne donc la propriété opposée. Et où d'autre pouvez-vous les voir ? Eh bien, votre boîte de réception Gmail. Si vous utilisez Gmail, votre boîte de réception est très probablement configurée par défaut comme une pile. Où arrivent vos e-mails les plus récents ? 
+
+PUBLIC : En haut. 
+
+DAVID MALAN : En haut. Maintenant, c'est merveilleux parce que c'est une fonctionnalité qui vous permet de toujours voir votre courrier le plus récent. Mais c'est aussi un peu dommage pour vos amis qui vous ont envoyé un courriel il y a une heure et dont les courriels sont maintenant ici, sur la page 2 de votre courriel. 
+
+Il y a donc aussi des compromis à faire ici. Les piles peuvent avoir des propriétés souhaitables, comme obtenir votre plateau rapidement, voir votre courriel le plus récent. Mais si vous êtes comme moi, dès qu'un courriel tombe sur la page 2, il se peut que vous n'y reveniez jamais si la pile de plateaux n'est jamais épuisée. Franchement, il se peut qu'il y ait dans une salle à manger du campus un endroit qui n'a jamais été utilisé depuis des années, parce qu'on continue à remplir la pile et qu'on continue à prendre par le haut. Ce serait donc une mauvaise propriété pour beaucoup de contextes, mais pas nécessairement pour tous. 
+
+Il s'avère donc qu'il existe une autre structure de données, oh, et les opérations ne sont pas appelées enqueue et dequeue. Par convention, elles sont appelées push et pop, ce qui signifie pousser un élément sur la pile. Même si c'est très doux, c'est pousser. Pop signifie retirer l'élément supérieur. Il s'agit donc simplement d'une nomenclature signifiant l'ajout et la suppression d'éléments.

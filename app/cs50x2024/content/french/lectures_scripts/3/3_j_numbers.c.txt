@@ -1,0 +1,27 @@
+Alors, commençons et rendons cela un peu plus concret. Allons-y et passons à CS50 IDE. Je vais créer un programme appelé numbers.c qui va nous permettre d'explorer, par exemple, la recherche linéaire. Donc, numbers.c va commencer par nos lignes habituelles.
+
+Donc, je vais inclure cs50.h. Je vais inclure standard io.h, int main void, donc aucun argument de ligne de commande pour le moment. Et ici, laissez-moi déclarer quelques nombres, peut-être six nombres au total. Si je veux déclarer un tableau de six nombres, je peux le dire littéralement, comme je l'ai appris la semaine dernière.
+
+Et si je veux initialiser ces nombres, je peux le faire : numbers[0] reçoit, par exemple, le nombre 4. numbers[1] reçoit le nombre 8. numbers[2] reçoit le nombre 15. Numbers... OK, ça devient vraiment fastidieux.
+
+Il s'avère qu'en C, il existe une notation abrégée lorsque vous savez à l'avance quelles valeurs vous souhaitez placer dans un tableau. En effet, je peux faire cela : {4, 8, 15, 16, 23, 42}. Cela s'appelle un tableau initialisé statiquement. Vous connaissez simplement les valeurs à l'avance.
+
+Et ainsi, je peux économiser quelques lignes de code de cette façon. Mais c'est la même chose que la route que j'empruntais il y a un moment. Cependant, les accolades sont nouvelles pour cette petite fonctionnalité.
+
+Maintenant, je vais parcourir ces éléments. Donc, pour int, i obtient 0, i inférieur à 6. Je vais réduire les étapes maintenant afin que nous nous concentrions sur les nouveautés et non sur les anciennes. Je code en dur 6 au lieu d'utiliser une constante ou quelque chose comme ça. Mais tout ce que je veux faire en fin de compte, c'est rechercher le nombre 50.
+
+Alors, quel code puis-je maintenant écrire à l'intérieur de cette boucle for pour simplement demander si 50 est derrière cette porte ? Quelqu'un veut-il le dire ? Oui ? Si ?
+
+AUDIENCE : Nombre i [INAUDIBLE].
+
+ORATEUR 1 : Numbers i est égal non seulement à un égal unique, mais à deux égaux : 50. Je peux maintenant continuer et retourner une réponse. Je vais donc dire printf, par exemple « Found » sur une nouvelle ligne. Après, si je veux dire que 50 n'a pas été trouvé, rappelez-vous que je veux le faire en dehors de la boucle, comme dans mon pseudo-code plus tôt. Donc, « Not found » peut descendre là-bas.
+
+Donc pour être clair, quel algorithme ai-je implémenté ici ?
+
+AUDIENCE : [INAUDIBLE].
+
+ORATEUR 1 : Oui. Donc, c'est une recherche linéaire. C'est l'incarnation en code de mon pseudo-code dans l'exécution réelle de son algorithme par Eric. Je vais donc sauvegarder cela. Je vais créer des nombres, pas de messages d’erreurs, ce qui est bien, dot slash numbers, puis Entrée. Ou devrais-je voir ce qui se passe lorsque j’appuie sur Entrée ici ?
+
+AUDIENCE : « Not found ».
+
+ORATEUR 1 : J’espère « Not found » parce qu’en effet, 50 n’est pas parmi ces nombres.

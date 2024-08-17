@@ -1,0 +1,43 @@
+Enlevons donc une dernière paire de petites roues d'entraînement, si vous le souhaitez, toutes ces fonctions que vous avez demandées plus tôt aujourd'hui. Toutes ces fonctions, getFloat, getString, getDouble, etc. -- de la bibliothèque CS50 -- gèrent en réalité des pointeurs pour vous et gèrent les adresses mémoire d'une manière qui vous permet de ne pas avoir à vous en préoccuper.
+
+Permettez-moi de continuer et de mettre en œuvre la même idée que getInt, mais la manière de bas niveau que vous auriez à faire si vous n'aviez pas réellement la bibliothèque CS50. Je vais continuer et créer un programme appelé scan f pour l'analyse formatée. Et je vais continuer et mettre en œuvre la logique suivante.
+
+Permettez-moi de continuer et de me donner d'abord include standard I/O dot h-- parce que je n'utiliserai pas du tout la bibliothèque CS50 ici --int main void-- j'ai donc une fonction par défaut --permettez-moi de me donner une variable x. Et permettez-moi de continuer et de demander à l'humain une valeur de x. Et puis normalement, j'aurais fait ceci, getInt et obtenir l'int de l'utilisateur. Si on enlève la bibliothèque CS50, on a besoin d'une alternative.
+
+Et il s'avère qu'il existe une fonction appelée scanf et scanf est un peu similaire à printf, où vous lui donnez un code de format, qui indique ce que vous voulez scanner à partir du clavier de l'utilisateur, pour ainsi dire. Et vous spécifiez l'adresse d'un morceau de mémoire dans laquelle vous souhaitez placer la saisie de l'utilisateur. Et puis je vais continuer, juste arbitrairement, et imprimer que l'humain ici a tapé, par exemple, cette valeur.
+
+Alors, quoi de neuf ici ? C'est cette ligne ici. Si nous n'avions pas la bibliothèque CS50 et à son tour, la fonction getInt, c'est la ligne de code que vous auriez utilisé à la place depuis la semaine 1 pour obtenir un entier de l'utilisateur. C'est à vous de déclarer la variable, comme x et int, à la ligne 5. C'est ensuite à vous de passer l'adresse de cette variable à scanf à la ligne 7, car le but de scanf dans la vie est de donner à l'humain une invite clignotante. Et si l'humain tape un nombre et appuie sur Entrée, ce nombre sera stocké à cette adresse pour vous.
+
+Et la raison pour laquelle vous devez appeler une fonction comme scanf ici-- ou plutôt, la raison pour laquelle vous devez passer à scanf l'adresse de x, est la même que pour les échanges. Si vous voulez utiliser une fonction d'assistance, quelque chose que vous avez écrit ou que quelqu'un d'autre a écrit, et que vous voulez qu'elle change la valeur d'une variable, vous ne pouvez pas la passer par valeur. Vous ne pouvez pas simplement passer un x parce qu'il obtiendra une copie. Et cela ne persistera pas. Vous devez plutôt utiliser l'esperluette x pour passer l'adresse de x afin que la fonction, swap-- ou dans ce cas, scanf --puisse aller à cette adresse et y mettre une valeur pour vous.
+
+Malheureusement, ce que scanf ne fait pas, c'est que si l'utilisateur tape Emma au lieu d'un int, il est fort possible que le programme se bloque, plante ou se comporte de manière imprévisible. Il n'y a pas de vérification des erreurs intégrée à scanf dans ce cas.
+
+Mais essayons autre chose. Ce n'est pas si intéressant de lire juste un int. Essayons de lire quelque chose comme une chaîne. Je pourrais donc me donner une chaîne s-- bien que nous sachions qu'il n'existe pas de chaîne. C'est techniquement un char star ou l'adresse d'un caractère appelé s --permettez-moi de continuer et d'inviter l'humain pour la chaîne s ici. Et permettez-moi de continuer et de lire dans cette chaîne en utilisant le code de formatage pour cent s, la valeur s. Et puis permettez-moi de continuer et d'imprimer ce que l'humain a tapé pour nous, s colon ça.
+
+Alors, que fais-je ici ? La ligne 5 dit, donnez-moi une variable appelée s qui va stocker l'adresse d'un caractère. La ligne 6 dit simplement, s colon, comme imprimer. C'est une invite pour l'humain, rien de trop intéressant là-dedans. scanf est cette fonction qui prend le code de format, donc elle sait quoi lire à partir du clavier de l'utilisateur et l'adresse d'un endroit où le mettre. Et char star-- c'est une adresse --je n'ai pas besoin d'utiliser l'esperluette parce que contrairement à un int, char star est déjà, par définition, un pointeur ou une adresse. Et puis enfin, j'imprime simplement ce que l'humain a tapé.
+
+Malheureusement, voyons ce qui se passe ici. Permettez-moi de continuer et de sauvegarder ceci. Faire scanf-- me donner une plus grande fenêtre de terminal --entrer. Oh, mon Dieu. D'accord. Alors, qu'est-ce qui ne va pas ici ? La variable s n'est pas initialisée lorsqu'elle est utilisée ici. Donc, Clang essaie de me protéger contre moi-même. Je n'ai pas initialisé s à une adresse. Où voulons-nous mettre le nom d'Emma ? Eh bien, peut-être pourrions-nous faire comme 0x123, ou quelque chose comme ça, ou en l'absence de cela-- si vous ne connaissez pas l'adresse à l'avance --null est la convention à laquelle il fait allusion. N-U-L-L est un pointeur spécial qui signifie qu'il n'y a pas de pointeur là. C'est tout des 0.
+
+Laissez-moi essayer à nouveau, faire scanf-- OK, ça semble avoir fonctionné --point slash scanf. Permettez-moi de continuer et de taper Emma.
+
+Hum. Emma est nulle. Permettez-moi d'essayer à nouveau. Alors Emma est la Head CA pour CS50-- tapons une chaîne plus longue --null. Donc rien ne semble même rentrer, même pas la première lettre de son nom. Alors pourquoi cela ? Et en fait, parfois nous pouvons faire planter le programme. Voyons, un peu bizarre mais, faisons-le.
+
+[RICANEMENTS]
+
+Donc une chaîne plus longue-- légèrement effrayante maintenant, peut-être. Mais, OK. --entrer. Zut. Emma introuvable. OK, ce n'est pas ce que j'avais prévu. Faisons-le encore une fois. Oh, mon Dieu. Maintenant, mon histori-- OK, point slash scanf, Emma, Emma, Emma, Emma, entrer. Zut.
+
+[RIRES]
+
+OK, eh bien, de toute façon c'est cassé, ce qui était la seule chose que j'essayais de faire.
+
+[RIRES]
+
+Alors pourquoi cela ne fonctionne pas réellement ? Eh bien, vous devez vous rappeler ce que signifie char star s. Cela signifie, donnez-moi une variable dans laquelle je peux stocker l'adresse d'un morceau de mémoire. Null, en ce moment, est un symbole qui signifie, comme, il n'y a pas encore de mémoire allouée. Donc, techniquement parlant, je n'ai en fait pas alloué de mémoire pour qu'Emma soit réellement stockée.
+
+Donc, ce que je devrais vraiment faire, c'est quelque chose comme ça. Si je sais à l'avance, un peu présomptueux, que l'humain va taper Emma, laissez-moi aller de l'avant et me donner un tableau appelé s de taille 5 puis le transmettre à la ligne 7. Donc, en bref, there's this-- there's this relationship between arrays and pointers that's sort of been latent throughout today's discussion.
+
+Un tableau est juste un morceau de mémoire dos à dos. Une chaîne est juste une séquence de caractères consécutifs. Une chaîne est techniquement une adresse du premier octet de cette mémoire. Et donc en quelque sorte par transitivité, un pointeur peut être considéré comme la même chose qu'un tableau, au moins dans ce contexte.
+
+Alors, permettez-moi de continuer et de m'allouer un tableau de cinq caractères. Il s'avère que Clang traitera le nom d'un tableau comme un pointeur si vous l'utilisez dans ce contexte à scanf, en transmettant l'adresse du premier octet dans ce tableau. Donc maintenant, si je vais de l'avant et que je fais scanf avec cette troisième version et que je fais dot slash scanf et que je tape Emma-- c'est quatre caractères. Je sais qu'en toute sécurité je laisse de la place pour le terminateur null --maintenant il stocke le nom d'Emma avec succès.
+
+Et si je continue et que je fais ça ici, emma, en minuscules, ça marche. Et si je suis un peu gourmand et que je fais comme Emma Humphrey, prénom, nom, Hmm. Ça n'a pas marché. Mais pourquoi cela pourrait-il être le cas ? Je n'ai pas alloué assez d'espace pour son nom. J'ai de la chance, franchement, que le programme

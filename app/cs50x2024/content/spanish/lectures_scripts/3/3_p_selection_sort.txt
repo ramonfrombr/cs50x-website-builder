@@ -1,0 +1,47 @@
+Y veamos, Brian, si no te importa echarnos una mano, veamos si podemos hacerlo mejor que tomando un enfoque fundamentalmente diferente para ordenar, como por ejemplo, presentando algo llamado "ordenación por selección" (selection sort).
+
+Así que en el tipo de ordenación por selección, tenemos un conjunto de números similar, pero no nos molestaremos en utilizar algo tan grande como 50. Brian los va a configurar amablemente en un orden aleatorio, pero tenemos una hoja de trucos en la pizarra para poder intentarlo de nuevo si lo necesitamos. Y estos números en este momento no están ordenados de izquierda a derecha. Y aquí tenemos 1, 2, 3, 4, 5, 6, 7, 8 números en total.
+
+La ordenación por burbuja fue buena porque aprovechó tu intuición, donde solo miraría a la izquierda, miraría a la derecha y solucionaría esos pequeños problemas. Pero, sinceramente, una forma fundamentalmente diferente de pensar en la ordenación sería, bueno, si sé que quiero de pequeño a grande, de izquierda a derecha, ¿por qué no lo hago así? ¿Cuál es el número más pequeño?
+
+Bueno, recuerda que estas cosas, si se implementan en una matriz, bien podrían estar en casilleros. No puedo usar simplemente una intuición humana en este caso. Tengo que mirar cada elemento individualmente. Pero no me voy a molestar en tirarlos de nuevo al casillero porque eso solo va a llevar tiempo innecesario. Pero miro el 6. 6 es el número más pequeño que he visto hasta ahora. Entonces, por el momento, este es el número más pequeño de la lista.
+
+Así que voy a recordarlo con una variable en mi mente. Ahora veo el 3. 3 es obviamente menor que 6, así que me olvidaré del 6 y recordaré por ahora que 3 es el elemento más pequeño que he visto. El 8 no es más pequeño. El 5 no es más pequeño. ¡Oh! El 2 es más pequeño. Voy a recordar que 2 es el más pequeño. Me olvidaré del 3.
+
+Mientras tanto sigo adelante, 7, 4, ¡oh, 1 es incluso más pequeño! Y así he llegado al final de la lista. El elemento más pequeño de esta lista es 1. Obviamente pertenece allí. Entonces, ¿qué puedo hacer con él?
+
+AUDIENCIA: [INAUDIBLE].
+
+ORADOR 1: Sí, lo ideal sería poder moverlo. Ahora bien, tal vez debería hacer espacio, ¿no? La mesa es un poco pequeña o mi matriz tiene un tamaño fijo. Entonces, podría comenzar a arrastrar todo hacia este lado. Pero ¿sabes qué? Francamente, eso va a llevar un tiempo, ¿verdad? [? Yo?] tengo que mover, como, siete elementos.
+
+¿Por qué no desalojo al 6 a la fuerza, lo pongo aquí, porque después de todo, estaba en orden aleatorio en primer lugar? ¿A quién le importa si lo muevo a otro lugar aún más aleatorio? Me ocuparé de eso más tarde. Así que puedes seguir cualquiera de los enfoques. Podrías cambiar todo. Pero parece que llevará algo de tiempo. O simplemente puedes desalojar lo que esté en el lugar donde quieres estar.
+
+Pero lo bueno ahora es que mi lista está más cerca de ordenarse. El 1 está en su lugar correcto. Así que ahora todo lo que tengo que mirar es n menos un elemento. Así que echemos un vistazo.
+
+¿Cuál es el siguiente elemento más pequeño? Por el momento, es 3, todavía 3, todavía 3. Oh, espera un minuto, parece que es 2. Ahora bien, es posible que desees abortar ahora y tirar el 2. Pero no sabes necesariamente, como computadora, si solo estás viendo un valor a la vez, a menos que tengas múltiples variables en tu mente, con las que no me voy a molestar. Déjame ver si hay algo más pequeño que 2. 7, 4, 6, no.
+
+Así que voy a tomar el 2. ¿Y dónde quiero ponerlo? Justo ahí. ¿Y sabes qué? Esto podría ser un negativo neto. Pero creo que va a promediar. Voy a mover el 3 a donde tengo espacio y voy a seguir adelante y afirmar que mi 2 ahora está ordenado. Y voy a hacer esto una y otra y otra vez.
+
+Y al igual que hizo Bonnie, lo voy a hacer un poco más rápido ahora, recorre la lista. OK, 3 es el más pequeño. Voy a seguir adelante y lo voy a poner en orden clasificado desalojando al 8. Ahora voy a seguir adelante. Muy bien, 5, 8, 7, 4 es ahora el más pequeño. Voy a seguir adelante y desalojar el 5, moverlo aquí y afirmar que está ordenado.
+
+Déjame hacerlo una vez más, 8, 7, 5, 6. 5 es claramente el más pequeño. Déjame seguir adelante y desalojar el 8 nuevamente, haz espacio para el 5. Pero solo me quedan tres pasos, 7, 8, 6. Déjame seguir adelante y mover el 7 aquí, poner el sexto en su lugar.
+
+8 es el más pequeño. No, el 7 es más pequeño. Déjame seguir adelante y ponerlo en su lugar, desalojar el 8. Voila, con suerte ahora, ¡uf!, listo pero un algoritmo fundamentalmente diferente, ¿verdad? No hubo intercambio de pares hacia adelante y hacia atrás y hacia adelante y hacia atrás. Cada vez que me fijaba una meta, obtenía el siguiente elemento más pequeño, obtenía el siguiente elemento más pequeño. Y eso es lo que llamaremos ordenación por selección, donde en cada iteración seleccionas el siguiente elemento más pequeño.
+
+Entonces, en pseudocódigo podríamos decir esto, para i de 0 a n menos 1. Y nuevamente, adopta este hábito ahora. En cualquier momento de la vida, y ciertamente en una clase de CS, cuando tiene n elementos, el primero es irónicamente 1, pero en este caso, 0. Y el último es n menos 1. De 0 a n menos 1 es cómo un científico informático cuenta del 1 al n en el mundo real.
+
+Así que esto sólo dice que haz lo siguiente n veces pero usa i. Comienza a contar desde 0. Encuentra el elemento más pequeño entre el i-ésimo elemento y el último elemento. ¿Qué estoy diciendo allí? Bueno, si inicialmente inicializo i a 0, eso solo significa encontrar el elemento más pequeño entre los ocho y tomarlo, intercambiar el elemento más pequeño con ese i-ésimo elemento.
+
+Entonces, dondequiera que haya encontrado el elemento más pequeño, sígue adelante e intercámbialo con ese. Y entonces este algoritmo, ¡vaya!, simplemente se repetirá una y otra y otra vez. Es casi un poco más conciso representarlo en pseudocódigo. Pero invita a la pregunta, entonces, ¿es esto mejor? ¿Es mejor la ordenación por selección?
+
+Bueno, ¿qué significaría que un algoritmo sea mejor? Tenemos dos reglas generales, Big O y Omega. Así que intentémoslo. Entonces, en notación Big O, ¿cuántos pasos se necesitan para ordenar una lista de números como lo hice yo, donde seleccionas una y otra y otra vez el elemento más pequeño, el más pequeño, el más pequeño? Bueno, ¿cómo empiezas siquiera a pensar en eso? ¿Sí?
+
+AUDIENCIA: [INAUDIBLE] n al cuadrado porque tienes en la iteración n [? una ?] n menos 1 [INAUDIBLE].
+
+ORADOR 1: Sí. Esa es la intuición correcta. Y déjame retroceder un paso hasta que lleguemos a eso. La propuesta fue su n al cuadrado. Y de hecho, ese va a ser el spoiler. ¿Pero por qué? Bueno, si realmente comenzaste a contar cuántos pasos estaba dando físicamente, para encontrar el elemento más pequeño, me va a llevar tal vez siete pasos encontrar el elemento más pequeño porque voy a mirar todos ellos.
+
+Entonces, en mi primer paso, estoy mirando los ocho elementos o dando casi n pasos para encontrar el número más pequeño, como el 1. Pero después de eso, el 1 estaba en su lugar. Y encendí sus bombillas, y eso dejó siete números restantes. ¿Y cuántos pasos di entonces? Bueno, n menos 1.
+
+Luego, una vez que el 2 estuvo en su lugar, ¿cuántos pasos? n menos 2 y luego n menos 3, n menos 4, punto, punto, punto, hasta que solo quede un número. Así que eso invita a la pregunta, ¿a qué asciende esto entonces? Y de hecho, saltaste a la intuición correcta. Si empiezas con n, y sumas los pasos n menos 1, y sumas a eso los pasos n menos 2, punto, punto, punto, un paso final una vez que llegas al final de la lista, ¿a qué suma realmente?
+
+En realidad no es obvio. Y esta es una de esas cosas en la vida, a menos que seas un estudiante de matemáticas, probablemente mirarías en la parte posterior de un libro de texto de matemáticas o de física para buscar esas pequeñas hojas de trucos que solían traer, al menos en la escuela secundaria. Permítanme proponerles que por el bien de hoy, si realmente hacen este cálculo o lo buscan al final de un libro, termina siendo esto, n por n más 1 dividido por 2.

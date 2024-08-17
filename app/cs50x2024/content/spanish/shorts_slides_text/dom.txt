@@ -1,0 +1,60 @@
+[1]
+
+Modelo del Objeto del Documento
+• Como hemos visto, los objetos de JavaScript son increíblemente flexibles y pueden contener varios campos, incluso cuando esos campos son otros objetos.
+• El objeto del documento es una forma de emplear este paradigma, mediante el cual ese objeto organiza todo el contenido de una página web.
+• Al organizar una página entera en un objeto de JavaScript, podemos manipular los elementos de la página mediante programación.
+
+[11]
+
+Modelo del Objeto del Documento
+• El objeto del documento en sí, así como todos los objetos contenidos en él, tienen una serie de propiedades y una serie de métodos que pueden usarse para profundizar en una parte muy específica de su sitio web.
+• Al restablecer esas propiedades o llamar a ciertos métodos, el contenido de nuestras páginas web puede cambiar sin que necesitemos actualizar la página.
+
+[19]
+
+Modelo del Objeto del Documento
+• Propiedades del DOM
+Propiedad del DOM
+Descripción
+innerHTML
+Contiene el HTML dentro de un conjunto de etiquetas HTML.
+nodeName
+El nombre de un elemento HTML o el atributo de un elemento.
+id
+El atributo "id" de un elemento HTML.
+parentNode
+Una referencia al nodo un nivel más arriba en el DOM.
+childNodes
+Una matriz de referencias a los nodos un nivel más abajo en el DOM.
+attributes
+Una matriz de atributos de un elemento HTML.
+style
+Un objeto que encapsula el estilo CSS/HTML de un elemento.
+
+[25]
+
+Modelo del Objeto del Documento
+• Métodos del DOM
+Método del DOM
+Descripción
+getElementById(id)
+Obtiene el elemento con una ID dada debajo de este punto en el DOM.
+getElementsByTagName(tag)
+Obtiene todos los elementos con la etiqueta dada debajo de este punto en el DOM.
+appendChild(node)
+Añade el nodo dado al DOM debajo de este punto.
+removeChild(node)
+Elimina el nodo hijo especificado del DOM.
+
+[26]
+
+Modelo del Objeto del Documento
+• Si partimos del documento, podemos llegar a cualquier parte de nuestra página web que elijamos, mediante un uso cuidadoso de las propiedades y métodos del DOM.
+
+[27]
+
+Modelo del Objeto del Documento
+• jQuery
+• Debido a que la manipulación del DOM es tan común con JavaScript, y debido a que el JavaScript para hacerlo puede ser bastante largo, la gente quería alternativas.
+• jQuery es una popular biblioteca de código abierto, lanzada en 2006, que está diseñada para simplificar las secuencias de comandos del lado del cliente (como las manipulaciones del DOM).

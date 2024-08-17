@@ -1,0 +1,11 @@
+Pero ahora consideremos por un momento cuán eficiente o ineficiente pudo haber sido ese código en comparación con el segundo algoritmo, [? Nizari, ?] donde ella dividió la conquista en mitades tres veces. Por supuesto, a eso se le llamó búsqueda binaria. Y podemos escribir esto también de varias maneras. Pero en pseudocódigo, podría proponer esto.
+
+Mire justo en el medio, tal como ella lo hizo. Y si ese número es 50, ¿qué debería haber devuelto o generado?
+
+AUDIENCIA: Verdadero.
+
+ORADOR 1: Tan verdadero como nuestro valor booleano. Y podríamos haber hecho esto también, si 50 fuera menor que el elemento del medio. Probablemente ella quería una búsqueda hacia la izquierda, tal como cuando yo estaba buscando a Mike Smith, podría haberme dirigido hacia la izquierda o hacia la derecha. Entonces, si 50 es menor que el elemento del medio, tal vez ella querría buscar en la mitad izquierda.
+
+Mientras tanto, si 50 es mayor que el elemento del medio, entonces ella podría querer buscar en la mitad derecha. Pero existe una cuarta posibilidad, solo para estar seguros. ¿Qué otra cosa podría suceder? No está en el medio, no está a la izquierda y no está a la derecha. Por lo tanto, simplemente no está allí. Y entonces, en realidad hay un cuarto caso, y podemos expresarlo de manera diferente.
+
+Voy a seguir adelante y simplemente diré en la parte superior que si no hay elementos en la lista, permítanme seguir adelante y simplemente afirmar que devuelvo falso. No hay nada ahí. Después de todo, si sigo dividiendo una lista por la mitad una y otra vez, eventualmente no quedará ninguna lista. Llegará el momento, en el que yo debería simplemente concluir, oh, claramente no estaba allí. Si la dividí en mitades tantas veces, no queda nada a la derecha o a la izquierda.

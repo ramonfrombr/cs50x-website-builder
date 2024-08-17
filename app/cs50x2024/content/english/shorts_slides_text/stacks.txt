@@ -1,0 +1,44 @@
+[1]
+
+Stacks (Data Structure)
+• A stack is a special type of structure that can be used to maintain data in an organized way.
+• This data structure is commonly implemented in one of two ways: as an array or as a linked list.
+• In either case, the important rule is that when data is added to the stack, it sits “on top,” and so if an element needs to be removed, the most recently added element is the only element that can legally be removed.
+• Last in, first out (LIFO)
+
+[2]
+
+Stacks (Data Structure)
+• There are only two operations that may legally be performed on a stack.
+• Push: Add a new element to the top of the stack.
+• Pop: Remove the most recently-added element from the top of the stack.
+
+[11]
+
+Stacks (Data Structure)
+• Array-based implementation
+• Push: Add a new element to the top of the stack. In the general case, push() needs to:
+• Accept a pointer to the stack.
+• Accept data of type VALUE to be added to the stack.
+• Add that data to the stack at the top of the stack.
+• Change the location of the top of the stack.
+
+[22]
+
+Stacks (Data Structure)
+• Array-based implementation
+• Pop: Remove the most recent element from the top of the stack. In the general case, pop() needs to:
+• Accept a pointer to the stack.
+• Change the location of the top of the stack.
+• Return the value that was removed from the stack.
+
+[35]
+
+Stacks (Data Structure)
+• Just make sure to always maintain a pointer to the head of the linked list!
+• To push, dynamically allocate a new node, set its next pointer to point to the current head of the list, then move the head pointer to the newly-created node.
+
+[41]
+
+Stacks (Data Structure)
+• To pop, traverse the linked list to its second element (if it exists), free the head of the list, then move the head pointer to the (former) second element.

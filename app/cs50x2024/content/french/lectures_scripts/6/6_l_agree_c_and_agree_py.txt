@@ -1,0 +1,51 @@
+Très bien. Donc, très belle correspondance un à un ici -- commençons maintenant à faire quelque chose d'un peu plus intéressant. Vous vous rappelez peut-être de la semaine 1, nous avions ce programme d'accord simple, où nous demandions un caractère à l'utilisateur. Et puis, nous demandions à l'utilisateur de taper y ou -- Y ou y ou N ou n. Et nous disions d'accord ou pas d'accord, en conséquence, comme un programme qui vous demande d'accepter certains termes et conditions, par exemple.
+
+Eh bien, allons-y et créons un autre fichier ici appelé agree.py et faisons-le d'une manière ou d'une autre. Permettez-moi de continuer et de faire from cs50 import get_char. C'est subtil. Mais qu'est-ce qu'il n'y a pas dans le rappel de Python ?
+
+AUDIENCE : Des caractères.
+
+DAVID MALAN : Des caractères -- alors selon vous, quelle est la meilleure approximation d'un caractère dans une langue qui n'a pas de caractères, en soi ?
+
+AUDIENCE : Une chaîne.
+
+DAVID MALAN : Une chaîne -- et nous devrons juste nous assurer que les chaînes que nous utilisons ne contiennent qu'un seul caractère. Donc, je vais continuer et continuer à utiliser get_string pour ce cas. Et je vais continuer et demander une chaîne à l'utilisateur. Et je vais lui demander, êtes-vous d'accord, point d'interrogation ?
+
+Et puis, je vais poser la question si s est égal à Y -- ce serait une possibilité. Je vais continuer et dire print("Agreed.") elif s est égal à N -- je vais continuer et imprimer("Not agreed.") comme dans la version C. Alors, est-ce identique ? Ou quelle fonctionnalité manque encore ?
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID MALAN : Oui, les minuscules, non ? Donc, évidemment, les minuscules -- vous pourriez donc être enclin à faire, bien, ou s est égal à y. Mais non, en Python, si vous voulez dire quelque chose ou autre chose, vous pouvez littéralement simplement dire ou maintenant. Et en C -- Python ici, nous pouvons dire ou s est égal à n. On peut faire la même chose ici.
+
+Maintenant, si je continue et exécute Python sur agree.py et que je tape quelque chose comme Y -- j'ai l'air d'avoir accepté. Si je tape quelque chose comme y -- oups -- refaisons-le. Si je le fais à nouveau et que je tape y, cela devrait également fonctionner. Et puis, juste pour faire bonne mesure, disons non avec un N -- Pas d'accord. Je vérifie donc de plusieurs façons.
+
+Mais il y a d'autres façons de faire cela, n'est-ce pas ? Nous avons vu un aperçu d'autres fonctionnalités ici. Cela devient un peu verbeux. Je pourrais en fait dire quelque chose comme ça. Si s est dans la liste suivante de valeurs possibles, je pourrais poser la question comme ça à la place, et je pourrais faire la même chose ici. Si s est n -- si s dans N et n, je pourrais également déterminer que l'utilisateur n'a pas accepté. Mais maintenant, les choses deviennent plus puissantes sans devenir super longues et verbeuses.
+
+Supposons que je veuille prendre en charge non seulement Y ou y, mais Yes ou yes en majuscules et minuscules. Eh bien, je pourrais en fait énumérer d'autres possibilités, comme celle-ci. Mais vous savez quoi ? En termes de conception, je parie que je peux faire mieux que ça. Je parie que je peux le réduire. Et diable, je peux continuer -- non. Et non. Comment pourrais-je améliorer la conception de cela, même si vous n'avez jamais vu Python avant aujourd'hui ? Comment pourrais-je éviter de taper explicitement autant de valeurs, dont certaines sont assez similaires ? Oui.
+
+AUDIENCE : En utilisant, par exemple, quelque chose de similaire aux deux minuscules.
+
+DAVID MALAN : Oui, quelque chose de similaire aux deux minuscules -- rappelez-vous qu'en C, vous pouviez mettre en minuscules des caractères individuels. Mais il y a quelques instants seulement, lorsque nous avons réimplémenté le vérificateur orthographique pour Pset5, nous avons pu mettre en minuscules un mot entier. Alors vous savez quoi ? Je pourrais simplement dire si s.lower.
+
+Cela traite s comme la chaîne qu'elle est. Mais comme en C, il y a ces choses appelées strucs, donc les types de données en Python comme les chaînes sont également des structures en elles-mêmes. Et à l'intérieur de ces structures ne se trouvent pas seulement des valeurs, comme les caractères individuels qui les composent, mais aussi des fonctions intégrées, autrement appelées méthodes. Et donc vous pouvez dire s.lower et simplement mettre en minuscule toute la chaîne automatiquement.
+
+Alors maintenant, je peux me débarrasser de ça. Je peux me débarrasser de ça, même si je peux ?
+
+AUDIENCE : Non.
+
+DAVID MALAN : Non, je vais probablement -- si je force tout en minuscules, je dois laisser les choses correspondre. Je vais donc continuer et faire la même chose ici -- s.lower. Et je vais vérifier, dans ce cas, si c'est égal à n ou no comme ça. Alors maintenant, si je continue et que j'enregistre cela, relance le programme et que je tape non seulement y, mais peut-être quelque chose comme Oui, je suis d'accord. Et même si je fais quelque chose de bizarre comme ceci -- Y, S, mais e pour une raison accidentelle, cela aussi est toléré. Vous pouvez ainsi rendre vos programmes plus conviviaux pour l'utilisateur.
+
+Très bien. Avant d'aller de l'avant, des questions sur ce que nous avons fait jusqu'à présent ou sur la syntaxe que nous avons vue ? Oui.
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID MALAN : Oui, pouvons-nous -- donc pour reformuler la question, pouvons-nous encore simplement vérifier si la première lettre de l'entrée de l'utilisateur est y ? Nous le pourrions absolument. Et je pense qu'il y a des arguments pour et contre. Vous ne voulez pas nécessairement tolérer un mot qui commence par y ou un mot qui commence par n. Mais permettez-moi d'y revenir dans un peu de temps -- il s'avère qu'en Python, il existe une fonctionnalité connue sous le nom d'expressions régulières, où vous pouvez réellement définir un modèle de caractères que vous recherchez. Et je pense que cela nous permettra de résoudre cela encore plus élégamment. Nous y reviendrons donc bientôt. Très bien. Eh bien, allons-y -- oui, devant.
+
+AUDIENCE : La différence entre Python et C est-elle juste une programmation [INAUDIBLE] en C, ou y a-t-il quelque chose que vous pouvez faire dans une langue que vous ne pouvez pas faire dans l'autre ?
+
+DAVID MALAN : Vraiment bonne question -- y a-t-il quelque chose que vous pouvez faire en Python que vous ne pouvez pas faire en C ou vice versa ? Réponse courte -- non. Les langages que nous regardons dans ce cours peuvent tous être utilisés efficacement pour résoudre les mêmes problèmes. Cependant, certains langages sont conçus pour ou mieux adaptés à certains domaines. Honnêtement, même les quelques exemples que nous avons faits maintenant étaient tellement plus agréables à écrire en Python qu'ils ne l'ont jamais été en C, sans parler de l'exemple de filtre et de l'exemple de vérificateur orthographique et d'un tas d'autres que nous allons voir bientôt.
+
+De même, avec C, ce serait un cauchemar d'implémenter une application Web en C, car vous devez implémenter vous-même une grande partie de la plomberie, pour ainsi dire, le code sous-jacent. Cependant, utiliser quelque chose comme Python ou Ruby ou PHP ou Java de nos jours vous donne beaucoup plus de fonctionnalités prêtes à l'emploi. Mais vous payez le prix.
+
+Et cela, dans le cas de C, par exemple, est la performance. Vous abandonnez un peu de temps. Mais vous gagnez également d'autres fonctionnalités. Et le fait que Python n'ait pas de pointeurs est une caractéristique, pas seulement parce que les pointeurs étaient difficiles, mais aussi parce qu'il est si facile de faire des erreurs avec les pointeurs, comme vous l'avez probablement vécu vous-même.
+
+Les pannes de segmentation ont disparu. Et les pointeurs nuls ont disparu, car le langage vous protège de vous-même. Et la raison pour laquelle les humains ont des dizaines, des centaines de langages de programmation dans la nature aujourd'hui est parce que beaucoup de gens continuent d'essayer d'améliorer les langages d'antan. Nous verrons donc d'autres fonctionnalités qui distinguent les deux dans un peu.

@@ -1,0 +1,7 @@
+Now what can we actually use that information for? Well it turns out what we'll be doing now, this coming week and beyond, is exploring a number of features here of what's called file I/O. Long story short, if you've ever wondered really what an image is-- we talked briefly about this in Week 0 --this is an image. But it's in binary, 0s and 1s. Does anyone know what this image is of? 
+
+AUDIENCE: A smiley face. 
+
+DAVID J. MALAN: Well, how did you-- are a nonzero number of you looking ahead on the slides? Because yes, it's a smiley face. And you would only know this by assuming that 1 represents a white pixel, 0 represents a black pixel, and if we effectively have a grid of bits-- 1's and 0's --this from far back kind of looks like the simplest possible smiley face. So that's an image, or a bitmap, a map of bits, that represent the pixels in an image. 
+
+So with problem set four, what we're going to start to do is explore the world of forensics, first and foremost. 

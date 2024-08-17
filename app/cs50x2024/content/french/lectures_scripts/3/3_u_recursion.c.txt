@@ -1,0 +1,61 @@
+Essayons donc une fois de plus. Laissez-moi commencer et créer un autre fichier appelé recursion.c. Je vais de nouveau continuer et inclure [? cs50.h. ?] Et je vais continuer et inclure la norme [? io.h. ?] Et ensuite je vais continuer et commencer int main void encore.
+
+Et dans ce programme ici, je vais à nouveau demander à l'utilisateur la hauteur d'intérêt pour sa pyramide en utilisant int height obtient get int et lui demande la hauteur. Je ne vais pas prendre la peine de vérifier les erreurs ici. Je vais continuer et dessiner une pyramide de cette hauteur. Et donc ce qui va changer cette fois, c'est ma fonction de dessin, void draw int h comme avant. Et c'est là que les choses deviennent intéressantes.
+
+Mon objectif n'est plus simplement d'utiliser des boucles imbriquées, mais de définir une pyramide plus grande en fonction d'une petite pyramide. Alors supposons que le but recherché soit de dessiner une pyramide de taille 4. Que dois-je faire en premier, selon cette définition d'une pyramide ? Comment dessiner une pyramide de taille 4 en anglais ? Ouais ?
+
+PUBLIC : Dessinez une pyramide de taille 4 moins 1.
+
+ORATEUR 1 : Oui, dessinez une pyramide de taille 4 moins 1, ou une pyramide de taille 3. Alors comment exprimer cela dans le code ? Eh bien, à merveille dans le code, c'est super simple, h moins 1. Cela me dessinera une pyramide de hauteur h moins 1, ou 3 dans ce cas précis. Maintenant, ce n'est pas le programme fait, n'est-ce pas ? Je ne peux pas simplement compiler ceci et m'attendre à ce que cela fonctionne parce qu'il semble que cela va s'appeler sans fin.
+
+Eh bien, qu'est-ce qu'une pyramide de taille 3, 2, 1, 0, moins 1, moins 2, non ? Cela continuerait indéfiniment si je soustrayais simplement 1 aveuglément. Donc j'ai besoin de ce cas de base. Dans quelles circonstances ne devrais-je rien dessiner ?
+
+PUBLIC : [INAUDIBLE]
+
+ORATEUR 1 : Oui. Donc peut-être que si h est égal à 0, vous savez quoi ? Revenez. Ne faites rien, d'accord ? J'ai besoin d'un cas de base, une condition codée en dur qui dit arrêtez de faire ça, cette [? cyclicité ?] hallucinante encore et encore.
+
+Mais je dois faire une autre chose. Donc, ceci n'est qu'une vérification d'erreur pour m'assurer que je ne fais pas cela pour toujours. C'est ce saut de la foi, où d'une manière ou d'une autre je n'ai même pas encore écrit la fonction, et d'une manière ou d'une autre elle va comme par magie dessiner ma pyramide. Mais quelle est la deuxième étape du dessin d'une pyramide de hauteur 4, si je peux demander à nouveau ?
+
+PUBLIC : Eh bien, en termes de [INAUDIBLE] ?
+
+ORATEUR 1 : Ouais, alors qu'est-ce qui vient après ? Je viens de dessiner une pyramide de hauteur 3.
+
+PUBLIC : Oh, alors vous dessinez une pyramide de hauteur 2.
+
+ORATEUR 1 : Maintenant, j'en dessine une... dites-le encore une fois.
+
+PUBLIC : Pyramide de hauteur 2.
+
+ORATEUR 1 : Pas tout à fait. Prenez cela littéralement. Si je viens de dessiner dans le code une pyramide de hauteur 3, comment arriver à une pyramide de hauteur 4 maintenant ?
+
+PUBLIC : Oh, vous ajoutez [INAUDIBLE].
+
+ORATEUR 1 : Oui, j'ajoute cette ligne supplémentaire, n'est-ce pas ? [? Parce que, ?] encore une fois, selon notre diagramme, qu'est-ce qu'une pyramide de hauteur 4 ? Eh bien, c'est vraiment juste une pyramide de hauteur 3 avec une rangée supplémentaire. Donc, si nous sommes tous d'accord, un acte de foi, que d'une manière ou d'une autre j'ai la possibilité de dessiner des pyramides de hauteur h moins 1, vous permet à vous et à moi de faire le plus dur dans le code de dessiner cette rangée supplémentaire.
+
+Donc, si je reviens dans le code ici, après avoir dessiné une pyramide de hauteur h moins 1, je dois continuer et pour int i obtient 0, i est inférieur à h, i plus plus. Il semblerait que j'ai juste besoin d'imprimer, par exemple, ici en haut un hachage suivi d'une nouvelle ligne après cela, n'est-ce pas ? Donc j'ai besoin d'une boucle for, mais juste une, pas imbriquée.
+
+Et quel est l'effet de cela ? Eh bien, sur la quatrième rangée, où h est égal à 4, combien de hachages vais-je imprimer ? 1, 2, 3, 4, si j'itére de 0 jusqu'à h, 0, 1, 2, 3, 4. Ainsi, ces lignes de code, dans l'histoire en question, vont imprimer quatre hachages.
+
+Cette ligne de code, étonnamment, va imprimer tout le reste au-dessus, la pyramide de hauteur 3. Et la ligne de code ci-dessus ne fera que s'assurer que nous n'appelons pas aveuglément draw pour toujours en les nombres négatifs. Je vais littéralement dire, si h est égal à 0, arrêtez de faire cette magie.
+
+Alors allons-y et mettons mon prototype en haut, comme avant, même s'il est le même, enregistrons le fichier, faisons recursion, Entrée. Il compile OK. Laissez-moi maintenant continuer et exécuter une récursivité d'une hauteur de 4. Et, oh mon dieu, j'ai écrit une fonction qui s'appelait elle-même et qui a en quelque sorte imprimé une pyramide par magie. Et pourtant, tout ce que j'ai jamais fait explicitement, c'est d'imprimer quoi ? Une rangée de briques moi-même. Et la récursivité vient du fait que je m'appelle moi-même. Mais comme avec la recherche binaire, comme avec n'importe quelle approche de division et de conquête, je m'appelle sur un problème plus petit que celui qui m'a été remis. Les bits rongent à nouveau le problème encore et encore et encore.
+
+Des questions sur cette technique, une fonction qui s'appelle elle-même est récursive ? Ouais ?
+
+PUBLIC : Une question rapide. [INAUDIBLE]. Donc [INAUDIBLE] boucle, comment revient-il [INAUDIBLE] ?
+
+ORATEUR 1 : Très bonne question, après la boucle for, comment revient-elle et imprime-t-elle ? Ça ne le fait pas. Cela arrive en premier. Donc, si vous deviez réellement utiliser le débogage 50 dans le [? IDE, ?] vous verriez que lorsque cette ligne 20 est appelée, et que vous appelez le tirage d'une pyramide de hauteur 3, draw est encore appelée. Et puis il est de nouveau appelé à hauteur 2. Puis il est de nouveau appelé à hauteur 1.
+
+Mais devinez ce qui se passe sur une pyramide de hauteur 1 ? Il imprime un seul hachage. Alors si vous revenez en arrière, que se passe-t-il ensuite ? Vous imprimez une rangée de deux hachages. Que se passe-t-il ensuite ? Vous imprimez une rangée de trois hachages. Que se passe-t-il ensuite ? Vous imprimez une rangée de quatre hachages.
+
+Et nous en verrons davantage très bientôt. Mais parce que j'imprime, j'appelle draw avant d'imprimer la base, je ne sais pas encore comment cela fonctionne. C'est le saut de la foi auquel je n'arrête pas de faire allusion. Mais cela continue de se produire parce que, 1, j'ai ce cas de base qui empêche que cela ne se produise pour toujours. Et j'ai cet autre cas qui s'ajoute à ma pyramide encore et encore. Ouais ?
+
+PUBLIC : C'est un peu comme une superposition de [INAUDIBLE] pour les itérations. Mais au lieu d'aller de haut en bas, ça va [? vers le haut. ?]
+
+ORATEUR 1 : C'est le cas. Ça va vers le haut. Et vous faites en fait référence à un [? concept ?] dont nous parlerons dans une semaine ou deux appelé la pile. Nous verrons réellement comment cette magie fonctionne. Pour l'instant, permettez-moi simplement de stipuler que les fonctions peuvent s'appeler elles-mêmes, tant que ce que vous leur transmettez est une entrée plus petite que celle qui vous a été remise au départ.
+
+Et maintenant, juste pour montrer que les informaticiens ont le sens de l'humour, si nous Google récursivité, comme vous pourriez le faire actuellement pour comprendre ce que c'est, vous remarquerez...
+
+[RIRE]
+
+Vous avez compris ? Genre, OK, peu importe. Google a littéralement codé cela dans son code source de google.com

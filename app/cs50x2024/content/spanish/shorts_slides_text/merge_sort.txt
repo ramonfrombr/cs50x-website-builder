@@ -1,0 +1,29 @@
+[1]
+
+Ordenamiento por combinación
+• En el ordenamiento por combinación, la idea del algoritmo es ordenar arreglos más pequeños y luego combinar esos arreglos (fusionarlos) en orden ordenado.
+• El ordenamiento por combinación aprovecha algo llamado recursión, que trataremos con más detalle en un video futuro.
+En pseudocódigo:
+• Ordena la mitad izquierda del arreglo (suponiendo que n > 1)
+• Ordena la mitad derecha del arreglo (suponiendo que n > 1)
+• Combina las dos mitades
+
+[37]
+
+Ordenamiento por combinación
+1
+2
+3
+4
+5
+6
+En pseudocódigo:
+Ordena la mitad izquierda del arreglo (suponiendo que n > 1)
+Ordena la mitad derecha del arreglo (suponiendo que n > 1)
+Combina las dos mitades
+
+[38]
+
+Ordenamiento por combinación
+• Escenario del peor caso: Tenemos que dividir n elementos y luego recombinarlos, duplicando efectivamente los subarreglos ordenados a medida que los creamos. (combinando arreglos ordenados de 1 elemento en arreglos de 2 elementos, combinando arreglos ordenados de 2 elementos en arreglos de 4 elementos...)
+• Escenario del mejor caso: El arreglo ya está perfectamente ordenado. Pero todavía tenemos que dividirlo y recombinarlo con este algoritmo.

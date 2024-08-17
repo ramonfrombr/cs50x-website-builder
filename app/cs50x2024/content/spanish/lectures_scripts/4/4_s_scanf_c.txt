@@ -1,0 +1,43 @@
+Entonces quitémonos un último juego de ruedas de entrenamiento, por así decirlo, todas estas funciones que preguntaste antes hoy. Todas estas funciones, getFloat, getString, getDouble, etc., de la biblioteca CS50, en realidad tratan con punteros para ti y con direcciones de memoria de una manera que te permite no tener que preocuparte por ellas.
+
+Déjame continuar e implementar la misma idea que getInt, pero la forma de bajo nivel en la que tendrías que hacerlo si en realidad no tuvieras la biblioteca CS50. Voy a seguir adelante y crearé un programa llamado scan f para escaneo formateado. Y voy a seguir adelante e implementar la siguiente lógica.
+
+Déjame seguir adelante y primero darme include standard I/O dot h, porque no voy a utilizar la biblioteca CS50 aquí en absoluto, int main void, así que tengo una función predeterminada, déjame darme una variable x. Y déjame seguir adelante y pedirle al humano un valor de x. Y luego normalmente, habría hecho esto, getInt y obtendría el int del usuario. Si quitamos la biblioteca CS50, necesitamos una alternativa.
+
+Y resulta que hay una función llamada scanf y scanf es algo similar a printf, donde le das un código de formato, que significa qué es lo que quieres escanear del teclado del usuario, por así decirlo. Y especificas la dirección de un fragmento de memoria en el que quieres poner la entrada del usuario. Y luego voy a seguir adelante, simplemente de forma arbitraria, e imprimiré que el humano aquí escribió, por ejemplo, ese valor.
+
+Entonces, ¿qué hay de nuevo aquí? Es esta línea aquí. Si no tuviéramos la biblioteca CS50 y, a su vez, la función getInt, esta es la línea de código que habrías estado usando desde la Semana 1 para obtener un número entero del usuario. Depende de ti en la línea 5 declarar la variable, como x e int. Entonces depende de ti en la línea 7 pasar la dirección de esa variable a scanf porque el propósito de scanf en la vida es darle al humano un mensaje parpadeante. Y siempre que el humano escriba un número y presione enter, ese número se almacenará en esa dirección por ti.
+
+Y la razón por la que necesitas llamar a una función como scanf aquí, o más bien, la razón por la que necesitas pasarle a scanf, la dirección de x, es por el mismo motivo que el intercambio. Si quieres utilizar una función auxiliar, algo que escribiste o que alguien más escribió, y quieres que cambie el valor de una variable, no puedes pasarlo por valor. No puedes simplemente pasar una x porque obtendrá una copia. Y eso no persistirá. En su lugar, tienes que utilizar ampersand x para pasar la dirección de x para que la función, swap, o en este caso, scanf, pueda ir a esa dirección y poner algún valor allí por ti.
+
+Desafortunadamente, lo que scanf no hace es que si el usuario escribe Emma en lugar de un int, es muy posible que el programa se ahogue, se bloquee o se comporte de forma impredecible. No hay comprobación de errores incorporada en scanf en este caso.
+
+Pero intentemos otra cosa. No es tan interesante leer solo un int. Intentemos leer algo como una cadena. Entonces podría darme una cadena s, aunque sabemos que no existe tal cosa como una cadena. Eso es técnicamente un char star o la dirección de un personaje llamado s, déjame seguir adelante y pedirle al humano la cadena s aquí. Y déjame continuar y leer esa cadena usando el código de formato por ciento s, el valor s. Y luego déjame seguir adelante e imprimir lo que el humano escribió por nosotros, s dos puntos eso.
+
+Entonces, ¿qué estoy haciendo aquí? La línea 5 dice, dame una variable llamada s que almacenará la dirección de un personaje. La línea 6 solo dice, s dos puntos, como imprimir. Es un mensaje para el humano, nada demasiado interesante allí. scanf es esta función que toma el código de formato para que sepa qué leer del teclado del usuario y la dirección de un lugar donde ponerlo. Y char star (este es una dirección), no necesito usar ampersand porque, a diferencia de un int, char star ya es, por definición, un puntero o una dirección. Y por último, simplemente imprimo lo que el humano escribió.
+
+Desafortunadamente, veamos qué pasa aquí. Déjame seguir adelante y guardar esto. Hacer scanf, darme una ventana de terminal más grande, enter. Oh, Dios mío. Muy bien. Entonces, ¿qué está mal aquí? La variable s no está inicializada cuando se utiliza aquí. Así que Clang está intentando protegerme de mí mismo. No he inicializado s a una dirección. ¿Dónde queremos poner el nombre de Emma? Bueno, quizás podríamos hacer algo como 0x123, o algo así, o en ausencia de eso, si no conoces la dirección de antemano, null es la convención a la que alude. N-U-L-L es un puntero especial que significa que no hay ningún puntero allí. Son todos 0.
+
+Déjame intentar esto de nuevo, hacer scanf, OK, parecía funcionar, punto slash scanf. Déjame seguir adelante y escribir Emma.
+
+Hmm. Emma es nula. Déjame intentar eso de nuevo. Así que Emma es la jefa de CA para CS50, escribamos una cadena más larga, nula. Entonces nada parece encajar, ni siquiera la primera letra de su nombre. Entonces, ¿por qué es eso? Y, en realidad, a veces podemos hacer que el programa se bloquee. Veamos, un poco raro pero, hagamos esto.
+
+[RISAS]
+
+Así que una cadena más larga, ligeramente espeluznante ahora, quizás. Pero, OK. --entrar. Maldita sea. Emma no encontrada. OK, no es lo que pretendía. Hagamos esto una vez más. Oh, Dios mío. Ahora, mi histor-- OK, punto slash scanf, Emma, Emma, Emma, Emma, enter. Maldita sea.
+
+[RISAS]
+
+OK, bueno, de cualquier manera está roto, que era el único punto que intentaba plantear.
+
+[RISAS]
+
+Entonces, ¿por qué esto no funciona realmente? Bueno, tienes que recordar lo que significa char star s. Esto significa, dame una variable en la que pueda almacenar la dirección de un fragmento de memoria. Null, por el momento, es un símbolo que significa, como, aún no hay memoria asignada. Así que, técnicamente hablando, en realidad no he asignado ninguna memoria para que Emma se almacene realmente.
+
+Así que realmente lo que debería estar haciendo es algo como esto. Si sé de antemano, un poco presuntuosamente, que el humano va a escribir Emma, permíteme seguir adelante y dame un array llamado s de tamaño 5 y luego pásalo en la línea 7. Entonces, en resumen, existe esta, existe esta relación entre arrays y punteros que ha estado latente a lo largo de la discusión de hoy.
+
+Un array es solo un fragmento de memoria consecutivo. Una cadena es solo una secuencia de caracteres consecutivos. Una cadena es técnicamente una dirección del primer byte de esa memoria. Y así, por transitividad, un puntero puede verse como lo mismo que un array, al menos en este contexto.
+
+Así que déjame seguir adelante y asignarme un array de cinco caracteres. Resulta que Clang tratará el nombre de un array como un puntero si lo usas en este contexto para scanf, pasando la dirección del primer byte en ese array. Así que ahora, si sigo adelante y hago scanf con esta tercera versión y hago punto slash scanf y escribo Emma, son cuatro caracteres. Sé que con seguridad estoy dejando espacio para el terminador nulo, ahora está almacenando el nombre de Emma correctamente.
+
+Y si sigo adelante y hago esto aquí, emma, en minúsculas, eso funciona. Y si soy un poco codicioso y hago como Emma Humphrey, nombre, apellido, Hmm. No funcionó. ¿Pero por qué podría ser eso? No he asignado suficiente espacio para su nombre. Francamente, tengo suerte de que el programa no se esté bloqueando. Pero si cargara, como estaba tratando de hacer, un párrafo de texto lo suficientemente grande, mi programa podría bloquearse directamente o fallar, por así decirlo, un mensaje de error que probablemente verás esta semana o la próxima mientras continuamos usando memoria.

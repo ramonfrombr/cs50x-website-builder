@@ -1,0 +1,43 @@
+So let's take off one final set of training wheels, if you will, all of these functions that you asked about earlier today. All of these functions, getFloat, getString, getDouble, and so forth-- from the CS50 library --actually deal with pointers for you and deal with memory addresses in a way that allows you not to have to worry about them. 
+
+Let me go ahead and implement the same idea as getInt, but the low level way that you would have to do it if you didn't actually have CS50's library. I'm going to go ahead and create a program called scan f for formatted scan. And I'm going to go ahead and implement the following logic. 
+
+Let me go ahead and first give myself include standard I/O dot h-- because I'm not going to use the CS50 library here at all --int main void-- so I have a default function --let me give myself a variable x. And let me go ahead and ask the human for a value of x. And then normally, I would have done this, getInt and get the int from the user. If we're taking away the CS50 library, we need an alternative. 
+
+And it turns out there's a function called scanf and scanf is kind of similar to printf, where you give it a format code, which signifies what it is you want to scan from the user's keyboard, so to speak. And you specify the address of a chunk of memory that you want to put the user's input in. And then I'm going to go ahead, just arbitrarily, and print out that the human here typed in, for instance, that value. 
+
+So what's new here? It's this line here. If we did not have the CS50 library and in turn, the getInt function, this is the line of code you would instead have been using since Week 1 to get an integer from the user. It's up to you on line 5 to declare the variable, like x and int. It's then up to you on line 7 to pass the address of that variable to scanf because scanf's purpose in life is to give the human a blinking prompt. And provided the human types in a number and hits enter, that number will get stored at that address for you. 
+
+And the reason why you need to call a function like scanf here-- or rather, the reason that you need to pass to scanf, the address of x, is for the same reason as swapping. If you want to use a helper function, something you wrote or someone else wrote, and you want it to change the value of a variable, you cannot pass it by value. You can't just pass an x because it will get a copy. And that will not persist. You have to instead use ampersand x to pass the address of x so that the function, swap-- or in this case, scanf --can go to that address and put some value there for you. 
+
+Unfortunately, what scanf does not do is if the user types in Emma instead of an int, it's quite possible the program will choke, or crash, or behave in some unpredictable way. There's no error checking built in to scanf in this case. 
+
+But let's try another thing. It's not that interesting to read in just an int. Let's try to read in something like a string. So I could give myself a string s-- although we know that there is no such thing as string. That's technically a char star or the address of a character called s --let me go ahead and prompt the human for string s here. And let me go ahead and read into that string using the percent s format code, the value s. And then let me go ahead and print out what the human typed for us, s colon that. 
+
+So what am I doing here? Line 5 is saying, give me a variable called s that's going to store the address of a character. Line 6 just says, s colon, like print. It's a prompt for the human, nothing too interesting there. scanf is this function that takes the format code so it knows what to read from the user's keyboard and the address of a place to put it. And char star-- this is an address --I don't need to use ampersand because unlike an int, char star is already, by definition, a pointer or an address. And then lastly, I just print out whatever the human typed in. 
+
+Unfortunately, let's see what happens here. Let me go ahead and save this. Make scanf-- give myself a bigger terminal window --enter. Oh, my goodness. All right. So what's wrong here? Variable s is uninitialized when used here. So Clang is trying to protect me from myself. I haven't initialized s to an address. Where do we want to put Emma's name? Well, maybe we could do like 0x123, or something like this, or in the absence of that-- if you don't know the address in advance --null is the convention to which it's alluding to. N-U-L-L is a special pointer that means there is no pointer there. It's all 0s. 
+
+Let me try this again, make scanf-- OK, it seemed to work --dot slash scanf. Let me go ahead and type in Emma. 
+
+Hmm. Emma is null. Let me try that again. So Emma is the Head CA for CS50-- let's type a longer string --null. So nothing even seems to fit, not even the first letter of her name. So why is that? And actually, sometimes we can get the program to crash. Let's see, a little weird but, let's do this. 
+
+[CHUCKLES] 
+
+So a longer string-- slightly creepy now, perhaps. But, OK. --enter. Dammit. Emma not found. OK, not what I intended. Let's do this once more. Oh, my god. Now, my histor-- OK, dot slash scanf, Emma, Emma, Emma, Emma, enter. Dammit. 
+
+[LAUGHTER] 
+
+OK, well, either way it's broken, which was the only point I'm trying to make. 
+
+[LAUGHTER] 
+
+So why is this not actually working? Well, you have to remember what char star s means. This means, give me a variable in which I can store the address of a chunk of memory. Null, at the moment is a symbol that means, like, there is no memory allocated yet. So technically speaking, I've not actually allocated any memory for Emma to actually be stored in. 
+
+So really what I should be doing is something like this. If I know in advance, a little presumptuously, that the human's going to type in Emma, let me go ahead and give myself an array called s of size 5 and then pass this in on line 7. So in short, there's this-- there's this relationship between arrays and pointers that's sort of been latent throughout today's discussion. 
+
+An array is just a chunk of memory back-to-back-to-back. A string is just a sequence of characters back-to-back-to-back. A string is technically an address of the first byte of that memory. And so sort of by transitivity, a pointer can be viewed as the same thing as an array, at least in this context. 
+
+So let me go ahead and allocate myself an array of five characters. It turns out that Clang will treat the name of an array just like a pointer if you use it in this context to scanf, passing in the address of the first byte in that array. So now if I go ahead and make scanf with this third version and do dot slash scanf and type in Emma-- that's four characters. I know safely I'm leaving room for the null terminator --now it's storing Emma's name successfully. 
+
+And if I go ahead and do this here, emma, in lower case, that works. And if I get a little greedy and do like Emma Humphrey, first name, last name, Hmm. It didn't work. But why might that be? I haven't allocated enough space for her name. I'm lucky frankly, that the program's not crashing. But if I loaded as I was trying to do, a big enough paragraph of text, my program outright might crash or segfault, so to speak-- an error message that you'll likely see this week or next as we continue to use memory.

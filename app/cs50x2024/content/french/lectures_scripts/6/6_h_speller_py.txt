@@ -1,0 +1,19 @@
+Donc pourquoi avons-nous fait ce que nous avons fait ? Eh bien, prenons un exemple concret. J'ai donc deux fenêtres ouvertes maintenant -- deux fenêtres de terminal -- à gauche et à droite. À gauche, se trouve mon implémentation de l'orthographe en C d'il y a quelques semaines. Laissez-moi avancer et exécuter l'orthographe sur l'un des fichiers les plus volumineux, comme Shakespeare qui était l'un des fichiers les plus volumineux.
+
+Alors allons-y et voyons tous les mots mal orthographiés dans Shakespeare, et en utilisant une table de hachage il y a deux semaines, il semble qu'il m'a fallu 0,51 seconde pour rechercher les fautes d'orthographe dans Shakespeare.txt. Et en Python ? Eh bien, ici, j'ai une copie de ce que nous venons d'écrire. Cela utilise également un programme appelé speller.py, que je n'ai pas affiché, mais que j'ai écrit à l'avance. Et ce n'est pas le code qui est chronométré. Seuls dictionary.c et dictionary.py sont chronométrés.
+
+Je vais donc aller de l'avant et exécuter ma version Python de l'orthographe, qui va utiliser le dictionnaire.py que je viens d'écrire sur Shakespeare.txt -- le même fichier, sur le côté droit. Vous verrez les mêmes mots défiler rapidement sur l'écran, mais vous remarquerez peut-être déjà quelque chose.
+
+Donc, il y a toujours un compromis en informatique et certainement en programmation. Il y a toujours un prix à payer. Étonné que vous soyez par la rapidité de cette méthode, relativement parlant, et plus convaincant que le nombre de secondes qu'il m'a fallu pour implémenter Pset5 en Python et probablement le nombre d'heures qu'il vous a fallu pour implémenter Pset5 en C, cela aussi, le temps du développeur est une ressource, une ressource humaine. Mais nous payons un prix. Et d'après la sortie de C à gauche et de Python à droite, quel est apparemment l'un des prix payés ?
+
+PUBLIC : C'est lent.
+
+DAVID MALAN : Dites-le à nouveau.
+
+PUBLIC : Plus lent.
+
+DAVID MALAN : C'est plus lent, n'est-ce pas ? Alors que cela prenait 0,51 seconde en C, le même problème résolu en Python prenait 1,45 seconde en Python. Maintenant, franchement, en repensant aux deux semaines et aux nombreuses heures que vous avez probablement passées sur Pset5, qui s'en soucie ? Comme, oh mon Dieu. Bien sûr. C'est trois fois plus lent. Mais mon Dieu, le nombre d'heures qu'il a fallu pour implémenter cette solution -- mais cela dépend vraiment de vos objectifs, n'est-ce pas ?
+
+Si vous optimisez le temps passé sur un jeu de P, vous voudrez probablement utiliser Python. Mais si vous implémentez un correcteur orthographique utilisé quotidiennement par des milliers ou des millions de personnes, par exemple, sur Google ou Facebook ou même dans Google Docs et autres, vous savez quoi ?
+
+Vous ne voudrez probablement pas passer trois fois plus de secondes ou de fractions de secondes juste parce qu'il est plus facile de l'écrire en Python, parce que cette augmentation d'un facteur trois pourrait coûter plus de temps à vos utilisateurs. Cela pourrait vous coûter trois fois plus de matériel. Cela pourrait vous coûter trois fois plus d'argent pour acheter trois fois plus de serveurs pour faire exactement le même travail. Donc, encore une fois, cela va être représentatif des types de compromis en programmation, mais toutes mes excuses pour ne pas l'avoir mentionné il y a deux semaines.

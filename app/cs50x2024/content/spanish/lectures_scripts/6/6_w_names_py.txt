@@ -1,0 +1,21 @@
+Bien. ¿Qué otros componentes básicos podrían gustarnos? ¿Qué tal...? Esto es interesante para mí. Abramos names.py, o más bien... veamos. En realidad, hagámoslo desde cero.
+
+Voy a hacer un algoritmo rápido de estilo de búsqueda lineal, este llamado names.py. Importemos desde sys import exit para poder devolver 0 o 1 según sea necesario.
+
+Déjenme crear una lista de nombres como la que hicimos hace unas semanas. Emma, Rodrigo, Brian y el mío propio. Todo en mayúsculas solo por consistencia con lo de hace unas semanas.
+
+Supongamos que quiero buscar a uno de nosotros. Y supongamos que este programa solo busca a Emma para ver si está en la lista, igual que hicimos hace unas semanas. Bueno, en el pasado, haríamos un ciclo de 4. Iteraríamos sobre cada elemento en la lista, revisando si es igual a Emma o haciendo una comparación contra Emma.
+
+Dios mío, no. Ya no necesitamos hacer eso. Si quieres saber si algo está en una lista, solo di if Emma in names, print, found. Y luego voy a salir 0 para el éxito.
+
+Y aquí abajo, voy a asumir que si llego hasta aquí, no está encontrado. Y saldré 1. Así que si ejecuto Python of names.py. Entrar. Se encontró a Emma.
+
+Supongamos que le cambio el nombre a Humphrey aquí arriba. Ahora no se le va a encontrar porque Emma técnicamente no está en la lista. Emma Humphrey está en la lista. Así que ahora si la vuelvo a ejecutar, no se le encuentra.
+
+Pero reduje a un solo y sucinto enunciado toda la lógica que durante semanas hemos estado utilizando con cosas como ciclos for y similares. Bien. ¿Alguna pregunta antes de que presentemos algunas nuevas capacidades específicas de Python? Sí.
+
+AUDIENCIA: [ININTELIGIBLE]
+
+DAVID MALAN: Muy buena pregunta. ¿Cuál sería la notación O grande para hacer esto aquí? Está bien documentado. Entonces, si lees la documentación de Python, para sus estructuras de datos, algo como una lista te dará un O grande de n. Eso está bien definido.
+
+Un diccionario también tiene un O grande bien definido con alta probabilidad, y hablaremos de eso en un rato. Leerías la documentación para saber exactamente esas cosas. Así que estar familiarizado con esa notación O grande en realidad te puede ayudar a responder esas cosas también desde documentos.

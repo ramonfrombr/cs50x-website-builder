@@ -1,0 +1,37 @@
+Entonces, existen diferentes algoritmos en el mundo. Y aquí hay una especie de hoja de trucos sobre los tiempos de ejecución comunes. Un tiempo de ejecución es simplemente el tiempo que tarda en ejecutarse tu programa o tu algoritmo, cuántos segundos tarda, cuántos pasos da, sea cual sea tu unidad de medida. Y veremos algunos términos conocidos en la lista aquí.
+
+Si tuviera que etiquetar este gráfico ahora con un par de los algoritmos que hemos visto, la búsqueda lineal, diremos, está en el orden de n. En el peor de los casos, Eric tendrá que mirar todos los casilleros, como hace unas semanas tuve que mirar todas las páginas en la guía telefónica como máximo para encontrar a Mike Smith. Y solo para aclarar, ¿dónde estará la búsqueda binaria en esta lista de tiempos de ejecución?
+
+AUDIENCIA: Registro n.
+
+ORADOR 1: Registro n. Entonces, en realidad es mejor. Más abajo en esta tabla es mejor, al menos en términos de tiempo requerido, que cualquier cosa por encima de ella. Así que hemos visto esto hasta ahora. Y ahora esto invita a la pregunta, bueno, ¿qué algoritmos van aquí o aquí? ¿Cuáles son más lentos? ¿Cuáles son más rápidos? Esa será una de las cosas que veremos aquí hoy.
+
+Pero los científicos informáticos tienen otro tipo de herramienta en el kit de herramientas que queremos presentarles hoy. Y esto es solo una omega griega mayúscula, este símbolo aquí. Y esto solo se refiere a no ... es lo opuesto a la gran O, por así decirlo. La gran O es esencialmente un límite superior de cuánto tiempo podría tardar un algoritmo. Eric podría haber tomado n pasos, 7 casilleros, para encontrar el número 50 debido a la búsqueda lineal. Ese es un gran O de n, o del orden de n. Ese es un límite superior, el peor de los casos en este escenario.
+
+Sin embargo, puedes utilizar omega para describir cosas como los mejores casos. Entonces, por ejemplo, con el enfoque de búsqueda lineal de Eric en el peor de los casos, podría haber tomado y le tomó n pasos, o 7 específicamente. Pero en el mejor de los casos, ¿cuántos pasos podría haber tomado? Solo uno, ¿verdad? Podría haber tenido suerte y el 50 podría haber estado ahí mismo.
+
+De manera similar, cuando [¿Nizari?], cuando buscó el 50 en el medio, ¿cuántos pasos podría haber necesitado para encontrar el 50 entre sus 7 casilleros?
+
+AUDIENCIA: Uno.
+
+ORADOR 1: Un paso también. Podría haber tenido suerte porque Brian podría haber puesto el número 50 ahí por coincidencia o por diseño. Entonces, mientras que tienes este límite superior sobre cuántos pasos podría dar un algoritmo, a veces puedes tener suerte. Y si las entradas están en cierto orden, podrías tener suerte y tener un límite inferior en el tiempo de ejecución que es mucho, mucho mejor.
+
+Entonces, podríamos tener un gráfico que se ve así. Esta es la misma función, por así decirlo, la misma matemática. Pero ahora estoy usando omega en lugar de gran O. Y ahora apliquemos algunos de estos algoritmos al chat aquí, entonces. La búsqueda lineal está en omega de qué, por así decirlo, según esta definición?
+
+AUDIENCIA: Omega 1.
+
+ORADOR 1: Omega de 1, ¿verdad? En el mejor de los casos, el límite inferior de cuánto tiempo podría haberle tomado la búsqueda lineal a Eric sería solo un paso. Así que vamos a llamar a la búsqueda lineal omega de 1. Y mientras tanto, cuando hicimos la búsqueda binaria, en segundo lugar, no va a ser log n en el mejor de los casos. También podría ser omega de 1 porque podríamos tener suerte.
+
+Y ahora tenemos reglas generales útiles para describir qué tan bueno o malo podría ser tu algoritmo o tu código, dependiendo, al menos, de las entradas que se introducen en ese algoritmo. Eso es gran O, y eso es omega. ¿Alguna pregunta sobre estos dos principios, gran O u omega? ¿Sí?
+
+AUDIENCIA: [INAUDIBLE] no importa dónde comience [INAUDIBLE]?
+
+ORADOR 1: Muy buena pregunta. Y tocaremos algunos algoritmos de este tipo hoy. Pero por ahora la pregunta es, ¿cuál es un ejemplo de un algoritmo que podría ser omega de n, de modo que en el mejor de los casos, sin importar qué tan buena o mala sea tu entrada, tome n pasos? ¿Quizás contar el número de casilleros, verdad?
+
+¿Cómo hago eso? 1, 2, 3, 4, 5, 6, 7 - mi salida es 7. ¿Cuántos pasos tomó eso? Gran O de n porque en el peor de los casos, tuve que mirar todos ellos, pero también omega de n porque en el mejor de los casos, todavía tuve que mirarlos todos. De lo contrario, no podría haber dado una cuenta precisa. Ese sería un ejemplo de un algoritmo omega de n. Y veremos otros con el tiempo. ¿Otras preguntas? ¿Sí?
+
+AUDIENCIA: [INAUDIBLE] omega o [INAUDIBLE] mejor valor omega o mejor valor O?
+
+ORADOR 1: Muy buena pregunta. ¿Es mejor tener un valor omega realmente bueno o un valor O realmente bueno? Esto último, y lo veremos con el tiempo. Realmente de lo que los científicos informáticos tienden a preocuparse es de cómo se comporta su código en el peor de los casos, o tal vez ni siquiera eso, en el caso promedio.
+
+Por lo general, día a día, es bueno tener el mejor de los casos. Pero, ¿a quién le importa realmente si tu código es súper rápido cuando la entrada ya está ordenada para ti? Ese sería un caso extremo, por así decirlo. Por lo tanto, es una herramienta útil para describir tu algoritmo. Pero una gran O y un límite superior es normalmente de lo que nos ocuparemos un poco más.

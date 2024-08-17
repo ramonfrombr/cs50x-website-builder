@@ -1,0 +1,61 @@
+[1]
+
+Recursão
+• Podemos descrever uma implementação de um algoritmo como sendo particularmente "elegante" se ele resolver um problema de uma forma que seja interessante e fácil de visualizar.
+• A técnica de recursão é uma forma muito comum de implementar uma solução "elegante".
+• A definição de uma função recursiva é aquela que, como parte de sua execução, invoca a si mesma.
+
+[2]
+
+Recursão
+• A função fatorial (n!) é definida em todos os números inteiros positivos. 
+• n! é igual a todos os números inteiros positivos menores ou iguais a n, multiplicados entre si.
+• Pensando em termos de programação, vamos definir a função matemática n! como fato(n).
+
+[9]
+
+Recursão
+• Isso forma a base para uma definição recursiva da função fatorial.
+• Toda função recursiva tem dois casos que podem ser aplicados, dado qualquer entrada.
+• O caso base, que quando acionado, encerrará o processo recursivo.
+• O caso recursivo, que é onde a recursão ocorrerá de fato.
+
+
+[11]
+
+Recursão
+int fato(int n)
+{
+// caso base
+// caso recursivo
+}
+
+
+[18]
+
+Recursão
+• Em geral, mas nem sempre, as funções recursivas substituem os laços em funções não recursivas.
+
+[20]
+
+Recursão
+• Em geral, mas nem sempre, as funções recursivas substituem os laços em funções não recursivas.
+• Também é possível ter mais de um caso base ou recursivo, se o programa puder se recursar ou encerrar de diferentes maneiras, dependendo da entrada que está sendo passada.
+
+[21]
+
+Recursão
+• Múltiplos casos base: A sequência de Fibonacci é definida como segue:
+• O primeiro elemento é 0.
+• O segundo elemento é 1.
+• O n-ésimo elemento é a soma do (n-1)-ésimo e (n-2)-ésimo elementos.
+• Múltiplos casos recursivos: A conjetura de Collatz.
+
+[22]
+
+Recursão
+• A conjetura de Collatz aplica-se a inteiros positivos e especula que é sempre possível "voltar a 1" se seguirmos estes passos:
+• Se n for 1, pare.
+• Caso contrário, se n for par, repita este processo em n/2.
+• Caso contrário, se n for ímpar, repita este processo em 3n + 1.
+• Escreva uma função recursiva collatz(n) que calcula quantos passos são necessários para chegar a 1 se você começar de n e recursá-lo conforme indicado acima.

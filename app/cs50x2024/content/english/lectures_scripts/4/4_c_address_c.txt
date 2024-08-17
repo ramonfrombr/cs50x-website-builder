@@ -1,0 +1,35 @@
+This of course, is just a line of code involving creation of a variable called n. And that variable is having stored in it, the value 50. So let's go ahead and whip up a quick program that does exactly this. I'm going to go ahead and call this address dot c, just to convey that we're going to be playing with addresses in the computer's memory. And I'm going to go ahead and keep it simple at first, include standard I/O dot h and then int main void. And then down here, super simple, int n gets 50. And then I'm going to go ahead and print out, percent i comma n, thereby printing this value. 
+
+So this too is sort of Week 1 stuff, whereby when I run this program now after saving it, make address-- seems to compile OK --dot slash address, I should see of course, 50. All right, just the number 50 in that variable. 
+
+All right. So you're probably comfortable with these kinds of exercises thus far. But it turns out that we can now kind of infer what's going on inside the computer's memory. If this again is my computer's memory and somewhere in there I have a variable n, it might take up four bytes down there. An int recall is four bytes so I'm going to go ahead and use four squares on the screen. For consistency, I'm going to call it n and just put the number 50. 
+
+Now if you really look underneath the hood, that's not 50 per se, it's like 32 bits, 0s and 1s that represent the number 50. But again, we don't care about transistors in that low level detail now. But when I go ahead and print this, all I'm doing is printing the contents of that variable called n. But that variable technically does exist at a specific address in memory. Right? 
+
+If the top left hand corner was 0 and the bottom right hand corner was a bigger number-- and maybe this is out of context. I'm sort of zoomed out because you might have billions of bytes of memory in your computer. Suppose for the sake of discussion that that variable n and the value therein, 50 is technically at address 0x meaning hexadecimal 12345678, wherever that is. It's a big arbitrary number. But it indeed exists somewhere in your computer's memory so long as you have that many bytes of hardware to use. 
+
+Well it turns out that using C we can actually-- no pun intended --see this value as well. Let me go ahead and tweak this code slightly. I'm not going to go ahead and print out n this time, I'm going to go ahead and print out ampersand n, which happens to be a new piece of syntax for C. But it quite simply means the AddressOf operator. 
+
+So wherever n is, go ahead and figure out what its address is, it's location in memory. And it turns out C has a special format code for this. Instead of percent i, it's percent p, where percent p is going to print that address for us. So let me go ahead and save that make address again to recompile and then do dot slash address, enter. And voila. 
+
+Now it just so happens that in CS50 IDE running on this cloud server, it's not address 0x12345678. I just made that up for the sake of discussion. It's technically at 0x7FFE00B3ADBC, which has no meaning to us here in class but it is all hexadecimal because every digit there is 0 through F. 
+
+So it's kind of cool. This doesn't seem like useful information yet but you can in fact see where values are inside of your computer's memory. Well, what is that value? Well it turns out that as soon as you ask the computer for the address of some value, you are getting what's called a pointer to that value. A pointer is effectively an address in the computer's memory. And that's why it's percent p. This is telling printf, go ahead and print for me a pointer, the address of some value. And by convention again, it's displayed in hexadecimal like that. 
+
+Well, it turns out we can actually undo these effects. Let me go ahead and make one change here. Suppose that now I want to go ahead and print out 50 again. I can actually reverse the effects of this operator. So ampersand n means to go get the address of n. But it turns out there's another operator in C that's quite useful around now and that's this one here. So whereas ampersand is our so-called AddressOf operator, --star, or an asterisk-- we've seen before in multiplication. And today it has a different meaning in a different context. The star is the opposite of the AddressOf operator, it says go to a specific address. So whereas, an ampersand means what's the address, star means go to an address. 
+
+So if I want to print out now, not the address per se, but I literally want to print out the value in n, ergo using percent i, I can actually undo what I literally did, stupidly-- but for the sake of demonstration --by doing star ampersand n. Why? The ampersand says, what's the address? The star says, go to that address. So it effectively just undoes the operation. 
+
+So you wouldn't want to use this in practice but it just speaks to the sort of basic operations that we're doing here. So make address, let me go ahead and say now, dot slash address, enter. And what should I see this time? 50, because I'm not even showing the address. I'm getting the address and going to the address, thereby defeating the point. I again see 50. But this is only to say quite simply that even though things might seem a little cryptic today at first glance, syntactically, ampersand is get the address, star is go to that address, one way or the other. 
+
+Yeah? 
+
+AUDIENCE: Can you [INAUDIBLE] by typing the address in [INAUDIBLE] like a [INAUDIBLE]? 
+
+DAVID J. MALAN: Really good question, yes. So if I had remembered the address, maybe it was 0x12345678, I could actually hard code that address in my program and tell the computer to go there. The syntax is a little different. I would have to coerce it using a cast but I could make that happen, yes. 
+
+Yeah. 
+
+AUDIENCE: What happens if you don't know even the type of the variable? Can you [INAUDIBLE] without knowing that? 
+
+DAVID J. MALAN: Ah, really good question. What if you don't know the type of the variable, what format code would you therefore use? Short answer, you have to decide. To a computer, everything in memory is just bits, 0s and 1s, how you display them is entirely up to you. So if you don't know what they are, you can only guess, or tell the computer arbitrarily to say it's a char, a float, an int, or something else. It can't figure that out for you, at least in C.

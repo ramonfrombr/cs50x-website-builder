@@ -1,0 +1,3 @@
+Now let me take it up a notch and introduce, in this case, an example using regular expressions. So notice this. At quick glance, uses re.search. And it's searching for the words my name is, which is to say that hopefully this will detect if I have said my name is such and such. And it's then going to say hey to whatever matches. 
+
+You can use regular expressions to extract information from input. So I'm extracting with parentheses here whatever comes after the word is. So here we go again. Python, this time of voices.3. Hello, there. My name is David. Ho, ho, ho! Now your computer is indeed sentiment. 

@@ -1,0 +1,96 @@
+[1]
+Introducción a Internet
+• Llegamos al punto del curso en el que comenzamos la transición del mundo orientado a la línea de comandos de C y comenzamos a considerar el mundo basado en la web de PHP y similares.
+• Antes de sumergirnos de lleno en ese mundo, es una buena idea tener un conocimiento básico de cómo interactúan los humanos y las computadoras a través de Internet.
+
+[7]
+Introducción a Internet
+• Dirección IP
+• Para que tu máquina se identifique de forma única en Internet, necesita una dirección.
+• De esta manera, puede enviar información y recibirla en la ubicación correcta.
+• El esquema de direccionamiento utilizado por las computadoras se conoce como direccionamiento IP.
+
+[8]
+Introducción a Internet
+• Dirección IP
+• Según lo desarrollado originalmente, el esquema de direccionamiento IP asignaría eficazmente una dirección única de 32 bits a cada dispositivo con la esperanza de conectarse a Internet.
+• En lugar de representar estas direcciones de 32 bits como hexadecimales, las representamos como cuatro grupos de 8 bits utilizando notación decimal.
+
+[9]
+Introducción a Internet
+• Dirección IP
+w.x.y.z
+• Cada uno de w, x, y y z puede ser un valor no negativo en el rango [0, 255].
+
+[12]
+Introducción a Internet
+• Dirección IP
+• Si cada dirección IP tiene 32 bits, eso significa que hay aproximadamente 4 mil millones de direcciones para entregar.
+• La población mundial es de más de 7 mil millones, y la mayoría de las personas en el mundo occidental tienen más de 1 dispositivo capaz de conectarse a Internet.
+• Algunas soluciones nos han permitido abordar este problema (por ahora).
+
+[13]
+Introducción a Internet
+• Dirección IP
+• En los últimos años, hemos ido eliminando gradualmente este antiguo esquema (IPv4) y lo hemos reemplazado con un esquema más nuevo (IPv6) que asigna a las computadoras direcciones de 128 bits, en lugar de direcciones de 32 bits.
+4,294,967,296
+
+[15]
+Introducción a Internet
+• Dirección IP
+• En los últimos años, hemos ido eliminando gradualmente este antiguo esquema (IPv4) y lo hemos reemplazado con un esquema más nuevo (IPv6) que asigna a las computadoras direcciones de 128 bits, en lugar de direcciones de 32 bits.
+340,282,366,920,938,463,463,374,607,431,768,211,456
+
+[16]
+Introducción a Internet
+• Dirección IPv6
+s:t:u:v:w:x:y:z
+• Cada uno de s, t, u, v, w, x, y y z está representado por 1 a 4 dígitos hexadecimales en el rango [0,ffff].
+
+[20]
+Introducción a Internet
+• DHCP
+• ¿Pero cómo obtenemos una dirección IP en primer lugar? Seguramente no podemos simplemente elegir cualquiera que queramos. ¿Qué pasa si el que queremos ya está en uso?
+• En algún lugar entre tu computadora e Internet en general, existe un servidor de Protocolo de configuración dinámica de host (DHCP), cuya función es asignar direcciones IP a los dispositivos.
+
+[21]
+Introducción a Internet
+• DHCP
+• Antes de la amplia promulgación de DHCP, la tarea de asignar direcciones IP recaía en un administrador del sistema, que tenía que asignar manualmente dichas direcciones.
+
+[24]
+Introducción a Internet
+• DNS
+• Lo más probable es que nunca hayas intentado visitar un sitio web escribiendo su dirección IP en tu navegador.
+• El Sistema de nombres de dominio (DNS) existe para ayudarnos a traducir direcciones IP a nombres más fáciles de recordar y más comprensibles para los humanos.
+• De esta forma, el DNS es algo así como las páginas amarillas de la web.
+
+[29]
+Introducción a Internet
+• DNS
+• Al igual que no hay páginas amarillas del mundo, realmente no hay un registro DNS de toda Internet.
+• Más bien, los grandes sistemas de servidores DNS (como el de Google) son más como agregadores, que recopilan conjuntos más pequeños de información DNS y los combinan, y se actualizan con frecuencia.
+
+[30]
+Introducción a Internet
+• DNS
+• De esa manera, los grandes servidores DNS son como bibliotecas que almacenan muchos conjuntos diferentes de libros de páginas amarillas locales. Para tener los números de teléfono más actualizados para las empresas, las bibliotecas deben actualizar los libros que tienen a mano.
+• Por lo tanto, los conjuntos de registros DNS están bastante descentralizados.
+
+[33]
+Introducción a Internet
+• Puntos de acceso
+• Una de las formas en que hemos solucionado el problema de direccionamiento IPv4 es comenzar a asignar varias personas a la misma dirección IP.
+• La dirección IP está asignada a un enrutador, cuya función es actuar como un policía de tráfico que permite que las solicitudes de datos de todos los dispositivos en tu red local (tu hogar o negocio, por ejemplo) se procesen a través de una sola dirección IP.
+
+[34]
+Introducción a Internet
+• Puntos de acceso
+• Las redes domésticas modernas constan de puntos de acceso que combinan un enrutador, un módem, un conmutador y otras tecnologías en un solo dispositivo.
+• Las redes comerciales modernas o las redes de área amplia (WAN) de gran escala con frecuencia todavía las tienen como dispositivos separados para permitir que el tamaño de su red se escale más fácilmente.
+
+[37]
+Introducción a Internet
+• Este no es un curso sobre redes, por lo que está lejos de ser la historia completa, pero es suficiente para comenzar.
+• En casa o en el trabajo tenemos redes locales pequeñas, y estas redes se entrelazan para crear una red grande e interconectada: Internet.
+• Si piensas en cada una de estas pequeñas redes como comunidades aisladas con solo una vía de entrada o salida, la imagen se vuelve un poco más clara.

@@ -1,0 +1,87 @@
+A hash table is a combination of an array and linked lists inside of it. So I'm going to go ahead and just for convenience draw my array, this time vertically instead of horizontally. But it's the same thing. And it's just an artist's rendition anyway. 
+
+And suppose the goal at hand is to keep track efficiently of like a name tags. So maybe we're holding a big event. We've made some name tags in advance, which we indeed have. And we want people to be able to pick up these name tags super efficiently. 
+
+It would be really annoying and pretty dumb if we just made a big stack and name tags, even if it's alphabetical, A to Z, then had everyone in the room line up and look through all of the darn name tags looking for their name. That's not a very inefficient system. Fortunately, we've come prepared with some buckets, all of which are labeled, because wouldn't it be nice if you're looking for your name tag, you don't look through the whole darn list of name tags or stack? 
+
+You actually just go to your bucket. And you jump instantly to your name, where hopefully you're the only person with a name that starts with some letter. And then you can just reach in and get it. 
+
+Well, how do we implement this conceptually? Well, it's very common with a hash table if the inputs are things like words or names to look at the characters in those words to decide where to put those names or those name tags, if you will. 
+
+So here's an array of size 26, from 0 to 25. But, you know what, It's convenient to think of this array as maybe being indexed from A through Z. So still 26 buckets, but this array is really just of size 26, 0 through 25 ultimately. 
+
+And suppose the goal at hand now is to go ahead and store these name tags in advance. So this is what the staff and I would do in advance. And, Brian, if you wouldn't mind helping out with this. The goal at hand is quite simply to get the name tags ready for students to pick up. 
+
+And so where do I want to go ahead and put the first one? So Albus is the first one whose name tag we made. I'm going to go ahead and jump immediately to bucket 0 and put Albus's name right there in one step. 
+
+Meanwhile I've got Zacharias, and so even though it's taking me a bunch of steps to go over here, if this is an array, I have random access, as a human, and so I can immediately, instantly put Zacharias over there. It's a little laborious for my feet, but a computer could just jump to 0 or 25 or anything in between. 
+
+All right, so Hermione-- maybe you're noticing the pattern-- so Hermione is going to be H, or which is 7, which is going to be over here. Ginny is 6, which is over here. Ron is 17, which is over here. So think of each of my multiple steps taking actually one step. Fred is going to go over here. 
+
+As an aside, the staff and I discussed this morning how we probably should've put the buckets closer together. But that's OK. 
+
+Severus is going to go over here. Petunia is going to go over here. Draco is way over here, but doesn't matter, constant time, bracket 3. James is bracket 9. Cedric is bracket 2. Perhaps play this part in 2x speed. Luna is bucket 11. Neville bucket 13. Kingsley bucket 10. Kingsley, there we go. Minerva bucket 12. 
+
+Vernon-- ironically, we don't actually need this many names to make the point we're trying to make. But Vernon-- we got a little carried away with the names we recognized. 
+
+And now, the list is pretty full. All right, so that's a whole bunch of names. I filled up most of the buckets with a name tag. But-- why am I out of breath? But what's really convenient now is that if Cedric or Albus or Draco or Fred or Ginny come into the room, they can index instantly, randomly, to their pocket, get their name tag, and go. Nothing linear. They don't have to flip through the whole stack of name tags with which I actually began the story. 
+
+But there's a problem ahead. We very deliberately ordered the name tags thus far in such a way that we don't create a problem for ourselves. But among the more famous characters we've not heard from yet is Harry. So Harry's name tag is still here. Where does this go? 
+
+Well, Harry is going to go in bucket 7. But wait a minute, there's already someone there. So what do I do? 
+
+If I were only using an array, Harry's kind of out of luck. Like Hermione is already in that location in the array. And we would have to decide, either Hermione goes there or Harry, but we can't just put them both. 
+
+But if we implement this new data structure called a hash table using an array that's conceptually vertical, but that horizontally is a linked list, you know what, that's fine. We're just going to go ahead and link Hermione's and Harry's together. So, yes, it's going to take both of them or one of them at least two steps to find their name tag. But it's not going to take big O of n steps to find their name tag, at least if there's only two in this bucket. 
+
+All right, Hagrid, dammit, so he came in the door too. So now that linked list is getting a little longer. We now have a chain, if you will, a linked list of size 3. 
+
+Sirius is going to go over here in bucket 18. But Severus is already there too. Awkward. Remus is 17. Remus is going to go and link together with Ron there. George is going to go into bucket 6, which is over here. Lily is also going to collide, so to speak with Luna. 
+
+And this is a collision in computer science. Anytime you have a value that you're trying to put in one place but there's something there, you need to resolve the collision somehow. So I'm proposing that we actually just link these together. Or as we're doing here, to bucketize values in computer science conceptually means to throw the value into a bucket, or physically as we've done here. 
+
+Lucius finally is going to go in bucket 11 too. And lastly, Lavender goes in that same bucket. Phew. So thank you to Brian for helping choreograph that. 
+
+So this structure that you're looking at is what is called a hash table. It is an array that you index into using what's called a hash function. A hash function is like any function that we've seen thus far, any program we've seen thus far-- something that takes input and produces output. So if we consider our original picture from Week 0 of what computer science in itself is when it comes to solving problems, hash function for today's purpose it's just this function, this process, this algorithm in between that decides, given a name tag, what bucket to put that name tag in. 
+
+And quite obviously in the real world, what algorithm was I using to bucketize a name tag upon reading the name? 
+
+AUDIENCE: First letters. 
+
+DAVID MALAN: Looking at the first letter. Why? It's simple. It's pretty efficient. It means I can store a relatively small array of size 26 and just immediately put the name tags there. 
+
+So in this case, we might have fed in Albus to that hash function. And it might return 0, representing A, if we're 0 indexing the array. Or for someone like Zacharias, we might get out 25 just because the first letter of his name is z. 
+
+But this is kind of simplistic, right. And we've seen a problem. What is the problem with just looking, of course, at the users first letter of their name? What problem arose? Yeah. 
+
+AUDIENCE: There might be more than one name with the first letter. 
+
+DAVID MALAN: There might be more than one name with the first letter. And you know in the extreme-- and computer scientists and software engineers often think about the extreme. What is the corner case? What could go wrong? What if by chance there's just a lot of characters in this universe whose names start with h or l, and maybe all of their names just happened to start with h or l? 
+
+It doesn't matter how fancy your hash table is, it's pretty stupid if all of the name tags are stacked up in a bucket. So in that sense, a hash table, even though this feels like it's pretty efficient, in the worst case, big O of n, when it comes to inserting and searching, because you could just get unlucky and get a huge stack of names that by nature of the class just all start with the same letter. 
+
+So how can we mitigate this? How could we mitigate this? Well, you know what, rather than naively only looking at the first name, let's leverage some probabilities here. Why don't we look not at just the first letter, but maybe the first two letters? I bet if we look at the first two letters we're not going to get as many collisions as many people belonging to the same bucket. 
+
+So Hermione, Harry, and Hagrid was a problem we identified earlier, not to mention a few other names. But that was because we were looking only at h for the hash function, only at the first letter in their name. 
+
+What if instead we look at the first two, so we have a bucket for HA, HB, HC, HD, HE, HF? And so Hermione now goes in this bucket specifically. So we're going to need more buckets. And they're not pictured on the screen. And they're also not pictured here on stage. We need more than 26 buckets. Frankly, if we're looking at two letters, we need 26 times 26, like 676 buckets now. So more space, but we're hopefully going to decrease the probability of collisions. 
+
+Why? Well, the next name I might put in here is Harry. He's going to end up in a different bucket this time. That's great, because it would seem that now I can get access to his name tag in constant time. 
+
+Unfortunately, Hagrid is still in the story. And so we're going to have a collision with HA. So even looking at the first two letters is not ideal. So even though we have 676 buckets in this story, 26 times 26, which is a lot of buckets, we're still going to get collisions. 
+
+So what would maybe the next evolution of this idea be? Well, don't look at the first letter, don't look at the first two letters. Why don't we look at the first three letters. Surely, that's going to drive down the probability. 
+
+Unfortunately, that's going to drive up the number of cells in the array and buckets on stage to 10,000 plus buckets this time around. So that's a lot of buckets. But suppose we use not HA, but maybe HAA, HAB, HAC, HAD, HAE, HAF, HAG, dot dot dot, HAQ, HAR, HAS, dot dot dot, HEQ, HER, HES. So we have a lot of buckets and even more in between not pictured. Now we can go ahead and hash on Harry's name, Hagrid's name, Hermione's name. 
+
+And this time, by design, they're going to end up in different buckets, which seems to be an improvement. And indeed, it is, because now if I go searching for Hermione or Hagrid or Harry's name tag, or they do themselves, they're going to be able to find it in constant time. But that's assuming there's not a lot of other kids with the name starting with H. 
+
+And so a hash table still technically is big O of n because you could just get unlucky and have a big pile up of similar inputs, all of which produce the same output, even if you're using a fancier hash function like this. And there's a trade off too. My god, we're using like almost 20,000 buckets now just to store these names to speed things up. At some point, you know, it's probably cheaper to just let Harry and Hermione and Hagrid form a line and find their name tag more slowly. So there's this trade-off of time and space. 
+
+But if you have what's called an ideal hash function and you figure out some magical algorithm written in code that ensures uniqueness that no name tag will end up colliding with another, then you can achieve this holy grail of big O of one time, constant time for a hash function. So it's this sort of tension between how much space do you want to spend? How much effort do you want to spend figuring out what that ideal hash function is? 
+
+So in the real world, and we'll see this in Python, most computer systems give you a best effort, such that a hash table is not big O of n usually. It's actually, on average much much, much faster, even though there's a theoretical risk that it can be slow. And more on that too in a higher level CS course where you explore data structures and algorithms more formally. 
+
+So technically speaking, it feels like search could get down to big O of 1, constant time, if every name tag ends up in a unique bucket. But you could still get unlucky if there's a lot of H names or L names or the like. So technically speaking, a hash table is big O of n. 
+
+But, frankly, three names in a bucket, like Hermione, Hagrid, and Harry, is much better than n names in the same bucket. So even in the real world if you get rid of this asymptotic hand waviness, that's faster. That's much faster than putting everything in a linked list or an array itself.

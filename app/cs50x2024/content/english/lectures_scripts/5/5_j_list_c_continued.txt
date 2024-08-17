@@ -1,0 +1,59 @@
+All right, so during break, I whipped up one final example of our list program. This one uses all of those building blocks. And let's see if we can't follow along pictorially and code-wise what it is we just built with all of these humans on stage. 
+
+So here is list list3.c. It's available online. So you can follow along at home afterward if you'd like. And let's just walk through the lines that are written for us in advance. 
+
+One, I'm using standard I/O for printf. And I'm using stdlib for malloc and free, our new friends that give us dynamic memory. 
+
+Here is the definition of a node that again has a number inside of it and a pointer, specifically a pointer to another node structure. So that's what each of our humans represented, this time now in C. 
+
+What is my main program going to do? Just for the sake of demonstration, the goal at hand is just to write a program that initializes a linked list to nothing initially, then adds a node with 1, then adds a node with 2, then add a node with 3. We'll keep it simple and not add 4 or 5 this time. 
+
+So how am I going to do this? Well, on line 17, I propose that we create a variable called list and have it be the address of a node. So if I were to draw this now pictorially, it's going to be just like our demonstration a bit ago, where I have a rectangle here called list. And initially, it's not pointing to anything. So I'm just going to leave the box blank to represent NULL. So that's that line 17 right here. 
+
+Now, let me go ahead and do the following. Add a number to the list as follows. Line 20 just gives me enough memory for a node. And it stores that memory's address in a variable called n. 
+
+Lines 21 through 24 are just a safety check. Did anything go wrong? If so, just return 1 and stop the program. We ran out of memory for some reason. 
+
+But these two lines now should look a little more familiar. This now is going to go ahead and install 1 and NULL into that structure as follows. 
+
+So let's recap. This line here 20 is the same thing as allocating really a node that looks like this in memory that has two halves. One of those fields is called number, which I'll write there. The other field is called next. 
+
+And then if we go back to the code, these two lines are all about just installing values in that structure. So if I go ahead to number and put the number 1, I'm not going to bother drawing anything for next, because I'm going to leave it implicitly as NULL. So that's what's going on now. 
+
+What do I next want to do? Well, the last line of code here under this comment that says add number to list, I set list equal to n where n again is pointing at this new node. So that's the same thing as saying, well, list is going to go ahead and point at that new node. So after those lines of code, I've created a picture in memory that effectively looks like this. 
+
+Now, let's go ahead and add the number 2 to the list. It's almost the same. So here's the chunk of code that's going to go and add a second node to the list, this time containing 2. Let's do it step by step. 
+
+Line 30, I'm going to reuse n as my temporary variable. So I don't have to re-declare it. It's the same n as before, but it's now going to get a different address of memory thanks to malloc. 
+
+So that gives me another box like this that I'm going to go ahead and draw like that with nothing in it initially. I'm going to make sure per lines 31 to 34 that nothing went wrong. But that's just as before. 
+
+And now in lines 35 and 36, I'm going to put 2 in there and NULL. So let me go over there and let me go ahead and put 2 in there. And I'm going to leave NULL blank implicitly. That's the end of the list. 
+
+But now I, of course, conceptually have to link the node for 1 to the node for 2. And here's where C syntax, even though it's new, kind of finally makes sense. Notice here, I'm saying list arrow next equals NULL. That maps perfectly to the picture. List arrow x equals what? n. Well, n is this thing over here. So I just draw the arrow there. And so the code actually finally lines up even though it's new for today. So now I've drawn the picture as follows with 1 and 2. 
+
+Let's go ahead and add a third and final node. This one containing the number 3, using these lines here. So line 40 gives me a new node with malloc. So that's going to give me a new node. I'll draw it as a rectangle over here. I'm drawing it left to right, but these things could be all over the place in memory. It doesn't matter where they end up. 
+
+I'm going to go ahead and check as before that's it's not NULL, just to be safe. Then I'm going to go ahead and install the number 3 and NULL in there just as before. So that means let's go ahead and draw 3. I'm going to leave that blank because it's going to be NULL. 
+
+And then the last line, you wouldn't typically hard code this or write this explicitly in a program. This is a bit more verbose than you need to. Let me propose that you would probably use some kind of loop instead and walk through the data structure step by step as I proposed earlier. 
+
+But if we really want to do this just for demonstration's sake, notice, start at list, follow an arrow and go to next. Follow another arrow and go to next. We can literally do that with our picture. 
+
+So here we go. Let me start at list and follow an arrow and go to next. Follow an arrow, go to next. And now this is NULL. So what I want to update is exactly this, as with line 47, which said follow two arrows, look at two next fields interchangeably and then set it equal to n. 
+
+All right, so what remains here? Well, this program's whole purpose in life was just to print a list out. Here's a way where you can actually use a for loop to iterate over a linked list. It's kind of funky because we don't have i and ints and i++ and so forth. But a for loop doesn't need to use integers or i's. 
+
+Remember that before the first semicolon, you have initialization. In between the semicolons, you have a condition. And then you have an update that happens over here. So you'll get more experience with this with Problem Set 5 ultimately. 
+
+But for today's purposes, high level, notice that this gives me a temporary pointer, like my big red hand earlier. That's a node star pointer. And that's why I was able to point with the big fuzzy hand. And I set that equal to list. So whatever the list was pointing at so was my temporary fuzzy hand. I'm going to follow the following loop and so long as temp does not equal NULL. 
+
+So earlier when I was wearing the big fuzzy hand, I kept pointing, pointing, pointing. And I stopped once it equaled NULL. So this is saying keep doing the following until it equals NULL. 
+
+What do I want to do? I want to just print out the integer that's inside of whatever I'm pointing at inside of it's number field. So go to whatever I'm pointing at, follow the arrow, and go to the number field. That's how we get at the data inside. 
+
+Once I've printed that out, for loops say that you just update a variable. So what is that variable temp equals temp arrow next. So if my fuzzy hand is pointing at someone and I need to update it to point at temp arrow next, that means go to whatever I'm pointing at, follow the arrow. There's the next field and point at whatever the next field was pointing at. So you just keep updating what you're pointing at. 
+
+That prints out the list. And then-- and we'll defer this ultimately to Problem Set 5-- we will need to free this memory. And actually you have to be a little clever about how you free memory, but I'm going to use a while loop there, which turns out to be a little cleaner, a little easier, ultimately to free all of this mess I made in my computer's memory. I kind of need to do the equivalent of freeing things, but I need to free what's behind me, not what's in front of me. Once you free memory, you should not touch it, traverse it, and so forth. But again more on that final note in P Set 5. 
+
+All right, any questions on a high level on the code? It's fine if it looks quite new. We make it available so that you have a starting point when it comes to using this kind of code yourself. Any questions? 

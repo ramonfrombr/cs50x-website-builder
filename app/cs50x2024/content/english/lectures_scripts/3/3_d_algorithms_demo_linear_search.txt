@@ -1,0 +1,99 @@
+And so rather than my kind of poking around looking for this number, might I call on, say, two volunteers to kick us off with two, say, algorithms? Let's see. Over here? Yeah. And let's go over here in front, if we may. Come on up. And what are your names? 
+
+AUDIENCE: [? Nizari. ?] 
+
+SPEAKER 1: Lizari? 
+
+AUDIENCE: [? Nizari. ?] 
+
+SPEAKER 1: [? Nizari. ?] OK, David. Nice to meet you. Come on up, [? Nizari. ?] And over here, what's your name? 
+
+AUDIENCE: Eric. 
+
+SPEAKER 1: Eric, OK. David. And come on up, Brian, as well. Nice to meet you, Eric. Eric, [? Nizari. ?] [? Nizari, ?] Eric. 
+
+[APPLAUSE] 
+
+Come on over here. So you came on up the stage first. Would you like to go first or go second? 
+
+AUDIENCE: I'll go second. 
+
+SPEAKER 1: You're going to go second. So Eric, you're up first. Come on over here, if you would. So Eric, behind these seven doors we have placed, in advance, the number 50. And we would simply like you, the computer, to search this array for the number 50. 
+
+AUDIENCE: Is it sorted? 
+
+SPEAKER 1: I cannot answer that question at this time. Go. Oh, and so that the audience knows what's going on, if you wouldn't mind taking the numbers out to see. 
+
+AUDIENCE: This is seven. 
+
+SPEAKER 1: Excellent. Not 50. 
+
+AUDIENCE: Should I-- can I take it out? 
+
+SPEAKER 1: At this point, yes, you may do whatever you want now. Just find us 50. 
+
+AUDIENCE: Two. 
+
+[LAUGHTER] 
+
+SPEAKER 1: Very good. 
+
+AUDIENCE: One. 
+
+SPEAKER 1: Nice. 
+
+AUDIENCE: Six. 
+
+SPEAKER 1: Very good. 
+
+AUDIENCE: Three. 
+
+SPEAKER 1: Nice. 
+
+AUDIENCE: None of these are close to 50. 
+
+SPEAKER 1: No, none of them are close to 50. 
+
+AUDIENCE: Four. 
+
+SPEAKER 1: Four? And? 
+
+AUDIENCE: 50! 
+
+SPEAKER 1: Amazing! Very well done. 
+
+[APPLAUSE] 
+
+Very well done. Now, if I may, Eric, what was the algorithm via which you found us the number 50? 
+
+AUDIENCE: Linear search. 
+
+SPEAKER 1: OK, linear search, meaning what to you? 
+
+AUDIENCE: You just go in a line, starting from there until there. 
+
+SPEAKER 1: OK, that was a very sophisticated answer to a term we've not yet introduced. And that's great, linear search from left to right, so literally following a line. And was your algorithm correct, would you say? 
+
+AUDIENCE: Yes. 
+
+SPEAKER 1: OK, so it was correct. But there's these different parameters that we want to optimize solutions for not just correctness, but what other property as well? 
+
+AUDIENCE: Design. 
+
+SPEAKER 1: So maybe design, right, the efficiency. So was that the most efficient you could have done? 
+
+AUDIENCE: Actually, yeah, I think so. 
+
+[LAUGHTER] 
+
+SPEAKER 1: And why do you say that? 
+
+AUDIENCE: Because-- so the numbers are sorted. So at the end of the day, I have to look through every single one. 
+
+SPEAKER 1: Yeah. 
+
+AUDIENCE: And it's just by chance that the 50 was at last. 
+
+SPEAKER 1: Exactly. So it's unfortunate that they were all random. And I didn't want to tell you because I didn't want to bias your algorithm one way or the other. But not knowing if they're sorted and them not even being sorted means that that is the best you can do, look at all of the doors to find the number in question. And maybe you could have gotten lucky, if we had put 50 here. But in the worst case, Eric was, of course, going to have to do exactly that, searching all of the boxes. 
+
+So thank you, Eric. Stay on stage with us, if you would, for a moment.

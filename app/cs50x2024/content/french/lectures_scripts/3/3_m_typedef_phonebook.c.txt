@@ -1,0 +1,37 @@
+Cela ressemble donc à une opportunité pour une nouvelle fonctionnalité en C et dans les langages de programmation plus généralement, grâce à laquelle nous pouvons réellement conserver ces éléments de données, le nom et le numéro de quelqu'un, ensemble. Et aujourd'hui, nous nous donnons l'opportunité d'introduire nos propres types personnalisés. Nous avons vu des entiers, des booléens, des flottants, des longs et des chaînes. Et la chaîne, rappelons-le, est un type de données CS50 personnalisé. Et nous l'enlèverons dans quelques semaines comme une roue d'entraînement.
+
+Mais aujourd'hui, donnons-nous notre propre type de données comme suit. Typedef est notre nouveau mot-clé aujourd'hui. Et cela signifie littéralement définir un type. Ce va être une structure. Ainsi, struct en C est un mot-clé réel, et il fait référence à un conteneur dans lequel vous pouvez mettre plusieurs autres types de données. Struct est un conteneur pour plusieurs types de données.
+
+Que veux-je contenir ? Eh bien, je veux me donner un nom pour tout le monde. Et je veux me donner un numéro pour tout le monde, même s'il s'agit d'une chaîne car les numéros de téléphone peuvent avoir des tirets et des parenthèses, etc. Et vous savez quoi ? Le nom que je vais donner à cette structure sera personne.
+
+C'est une personne simple. Mais en utilisant cette syntaxe, je peux enseigner à mon compilateur, [INAUDIBLE] dans ce cas, que non seulement il existe des entiers, des flottants, des caractères, des booléens, etc. et des chaînes, mais qu'il existe également des types de personnes maintenant en C. Ils ne viennent pas avec la langue. Mais je les invente maintenant avec typedef struct person, à l'intérieur duquel, ou encapsulé, pour ainsi dire, à l'intérieur duquel va être deux choses, le nom et le numéro.
+
+Alors, que puis-je faire avec ça ? Eh bien, mon code devient un peu différent mais mieux conçu, dirais-je. En bas dans mon code maintenant, je vais me donner un tableau de personnes. Nous sommes quatre dans le personnel. Et je veux me donner un tableau de quatre personnes. Je pourrais donc adopter la même approche que j'ai toujours adoptée lors de la déclaration d'un type de données. De quel type de données voulez-vous ? Personne.
+
+Et comment devrait être appelé mon tableau ? Eh bien, je pourrais l'appeler personnes. Ou franchement, je pourrais simplement l'appeler des gens en anglais. Et combien de personnes veux-je représenter ? Quatre. Mon tableau s'appelle donc personnes. C'est une taille 4. Et chaque élément de ce tableau sera une personne. Cette syntaxe n'est donc pas nouvelle. Cette syntaxe ici est nouvelle.
+
+Mais à partir d'aujourd'hui, les personnes existent en C. Maintenant, ma syntaxe ici doit changer un peu, mais pas beaucoup. Maintenant, si je veux continuer et remplir ce tableau, je peux faire quelque chose comme ça. Emma sera notre 0ème personne. Mais je ne fais pas simplement quelque chose comme ça parce que, entre guillemets, "Emma" n'est pas une personne. Citation entre guillemets "Emma" est un nom. Et citation entre guillemets "617 555 0100" est un nombre.
+
+Je dois donc en fait être un peu plus précis. Je dois dire que les personnes 0 se nomment Emma. Et puis les personnes 0 numéro sont ce qu'était celui d'Emma, qui était 617 555 0100 point-virgule. Et maintenant je peux refaire la même chose, donc les personnes entre crochets 1 nom point obtiennent Rodrigo. Les personnes entre crochets 1 point nombre obtiennent 617 555 0101 point-virgule. Les personnes entre crochets 2 point name obtiennent Brian. Et les personnes entre crochets 2 point nombre obtient 617 555-- 555-- 0102.
+
+Et puis enfin, ça devient vite fastidieux. Mais dans un monde idéal, nous demanderions simplement à l'humain ces informations. Le nom sera le mien. Et enfin, les personnes entre crochets 3 point nombre sont égales, entre guillemets, "617 555 0103". Ouf.
+
+Il y a donc un peu plus à écrire dans ce cas. Et donc cela pourrait vous énerver dans ce sens. Mais notez que nous encapsulons maintenant tout ensemble. Nous n'avons que quatre valeurs, chacune étant une personne. Et chacune de ces personnes, en leur sein, pour ainsi dire, a un nom et un numéro. Et tout est intimement lié.
+
+Donc, même si je cherchais ces choses par leur nom, ils finiraient par avoir les mêmes associations entre les nombres et les noms. La dernière chose que j'ai à faire est donc de changer ma logique ici. Il ne suffit plus de comparer les noms entre crochets i contre Emma. À quoi dois-je comparer le nom d'Emma ?
+
+PUBLIC : [INAUDIBLE].
+
+INTERVENANT 1 : Nom du point. Et puis ici, les nombres ne l'ont même pas... oh, et c'était... ce sont des gens. Les nombres n'existent pas non plus. C'est des gens. Mais je veux imprimer son numéro ici. Je fais donc un point numéro.
+
+Encore une fois, nous avons ajouté un peu de complexité en ajoutant typedef et ces notations point. Mais si je vais de l'avant et que je fais mon annuaire maintenant, beaucoup trop d'erreurs. Oh, intéressant. L'index 4 du tableau est dépassé la fin du tableau, qui contient cinq éléments. J'ai donc fait une erreur stupide ici. Qu'est-ce que j'ai fais ?
+
+PUBLIC : [INAUDIBLE]
+
+INTERVENANT 1 : Oui. Je n'ai donc pas cessé d'incrémenter incorrectement. Laissez-moi enregistrer cela, lancer make phone book, Enter. Maintenant c'est bon. Dot slash phone book, Enter, et j'espère que je verrai le numéro d'Emma. Ce n'est donc pas plus correct qu'avant. Mais c'est sans doute mieux conçu/ et nous y reviendrons plus tard dans le semestre. [? As ?] vous choisissez votre choix de pistes et commencez à implémenter des applications pour le Web, les appareils mobiles ou les jeux, il sera assez courant d'encapsuler des informations associées comme ceci afin de conserver de nombreuses informations ensemble, en particulier lorsque vous utilisez quelque chose appelé base de données. Oui?
+
+PUBLIC : [INAUDIBLE]
+
+INTERVENANT 1 : Existe-t-il un raccourci pour écrire tout ce que j'ai fait ? Oui, vous pouvez en fait utiliser la notation des accolades. Ça devient un peu plus moche dans ce cas donc je ne vais pas me donner la peine de le faire. Mais oui, il existe un moyen de le faire. Cependant, ceci est, en fin de compte, réalisez, une sorte de programme idiot parce que j'écris un programme pour trouver Emma dans une liste de noms que j'ai déjà écrite. Ce n'est donc pas du tout dynamique. Donc, dans un monde idéal, nous utiliserions de toute façon get string ou quelque chose de plus sophistiqué.
+
+D'autres questions là-dessus ? Très bien.

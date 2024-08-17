@@ -1,0 +1,200 @@
+[0]
+
+Listas Enlazadas Singulares
+
+[1]
+
+Listas Enlazadas Singulares
+• Hasta ahora en el curso, solo hemos tenido un tipo de estructura de datos para representar colecciones de valores similares.
+• Las estructuras, de recordar, nos brindan "contenedores" para almacenar variables de diferentes tipos de datos, normalmente.
+• Las matrices son excelentes para la búsqueda de elementos, pero a menos que queramos insertar al final de la matriz, insertar elementos es bastante costoso. ¿Recuerdas la ordenación por inserción?
+
+[2]
+
+Listas Enlazadas Singulares
+• Las matrices también sufren de una gran inflexibilidad. ¿Qué sucede si necesitamos una matriz más grande de lo que pensábamos?
+• A través del uso inteligente de punteros, asignación de memoria dinámica y estructuras, podemos juntar esas dos piezas para desarrollar un nuevo tipo de estructura de datos que nos brinde la capacidad de hacer crecer y reducir una colección de valores similares para satisfacer nuestras necesidades.
+
+[3]
+
+Listas Enlazadas Singulares
+• Llamamos a esta combinación de elementos, cuando se usa de esta manera, una lista enlazada.
+• Un nodo de lista enlazada es un tipo especial de estructura con dos miembros:
+• Datos de algún tipo de datos (int, char, float...)
+• Un puntero a otro nodo del mismo tipo
+• De esta manera, un conjunto de nodos juntos puede pensarse como formando una cadena de elementos que podemos seguir de principio a fin.
+
+[7]
+
+Listas Enlazadas Singulares
+typedef struct sllist
+{
+    VALUE val;
+    struct sllist* next;
+}
+sllnode;
+
+[8]
+
+Listas Enlazadas Singulares
+• Para trabajar eficazmente con listas enlazadas, hay una serie de operaciones que debemos comprender:
+1. Crear una lista enlazada cuando aún no existe.
+2. Buscar en una lista enlazada para encontrar un elemento.
+3. Insertar un nuevo nodo en la lista enlazada.
+4. Eliminar un solo elemento de una lista enlazada.
+5. Eliminar una lista enlazada completa.
+
+[9]
+
+Listas Enlazadas Singulares
+• Crear una lista enlazada.
+sllnode* create(VALUE val);
+
+[10]
+
+Listas Enlazadas Singulares
+• Crear una lista enlazada.
+sllnode* create(VALUE val);
+• Pasos implicados:
+    a. Asignar espacio dinámicamente para un nuevo sllnode.
+    b. Comprobar para asegurarse de que no nos quedamos sin memoria.
+    c. Inicializar el campo val del nodo.
+    d. Inicializar el campo siguiente del nodo.
+    e. Devolver un puntero al sllnode recién creado.
+
+[16]
+
+Listas Enlazadas Singulares
+• Buscar en una lista enlazada para encontrar un elemento.
+bool find(sllnode* head, VALUE val);
+
+[17]
+
+Listas Enlazadas Singulares
+• Buscar en una lista enlazada para encontrar un elemento.
+bool find(sllnode* head, VALUE val);
+• Pasos implicados:
+    a. Crear un puntero de recorrido que apunte al encabezado de la lista.
+    b. Si el campo val del nodo actual es lo que estamos buscando, informe el éxito.
+    c. De lo contrario, establezca el puntero del recorrido en el siguiente puntero de la lista y vuelva al paso b.
+    d. Si ha llegado al final de la lista, informe del error.
+
+[18]
+
+Listas Enlazadas Singulares
+bool exists = find(lista, 6);
+2
+3
+5
+6
+8
+lista
+
+[29]
+
+Listas Enlazadas Singulares
+• Insertar un nuevo nodo en la lista enlazada.
+sllnode* insertar(sllnode* cabeza, VALOR val);
+
+[30]
+
+Listas Enlazadas Singulares
+• Insertar un nuevo nodo en la lista enlazada.
+sllnode* insertar(sllnode* cabeza, VALOR val);
+• Pasos implicados:
+    a. Asignar espacio dinámicamente para un nuevo sllnode.
+    b. Comprobar para asegurarse de que no nos quedamos sin memoria.
+    c. Llenar e insertar el nodo al principio de la lista enlazada.
+    d. Devolver un puntero al nuevo encabezado de la lista enlazada.
+
+[31]
+
+Listas Enlazadas Singulares
+• Insertar un nuevo nodo en la lista enlazada.
+sllnode* insertar(sllnode* cabeza, VALOR val);
+• Pasos implicados:
+    a. Asignar espacio dinámicamente para un nuevo sllnode.
+    b. Comprobar para asegurarse de que no nos quedamos sin memoria.
+    c. Llenar e insertar el nodo al principio de la lista enlazada.
+    d. Devolver un puntero al nuevo encabezado de la lista enlazada.
+
+[35]
+
+Listas Enlazadas Singulares
+• ¡Momento de decisión!
+• ¿Qué puntero debemos mover primero? ¿Debería ser el nodo "12" el nuevo encabezado de la lista enlazada, ya que ahora existe, o deberíamos conectarlo primero a la lista?
+• Esta es una de las cosas más difíciles con las listas enlazadas. ¡El orden importa!
+
+[42]
+
+Listas Enlazadas Singulares
+• Eliminar una lista enlazada completa.
+void eliminar(sllnode* head);
+
+[43]
+
+Listas Enlazadas Singulares
+• Eliminar una lista enlazada completa.
+void eliminar(sllnode* head);
+• Pasos implicados:
+    a. Si ha llegado a un puntero nulo, deténgase.
+    b. Eliminar el resto de la lista.
+    c.
+    Liberar el nodo actual.
+
+[44]
+
+Listas Enlazadas Singulares
+• Eliminar una lista enlazada completa.
+void eliminar(sllnode* head);
+• Pasos implicados:
+    a. Si ha llegado a un puntero nulo, deténgase.
+    b. Eliminar el resto de la lista.
+    c.
+    Liberar el nodo actual.
+
+[45]
+
+Listas Enlazadas Singulares
+12
+15
+9
+13
+10
+eliminar()
+eliminar()
+eliminar()
+eliminar()
+eliminar()
+eliminar()
+MARCOS DE PILA
+a. Si ha llegado a un puntero nulo, deténgase.
+b. Eliminar el resto de la lista.
+c. Liberar el nodo actual.
+eliminar(lista);
+lista
+
+[67]
+
+Listas Enlazadas Singulares
+eliminar()
+eliminar()
+eliminar()
+eliminar()
+eliminar()
+eliminar()
+MARCOS DE PILA
+a. Si ha llegado a un puntero nulo, deténgase.
+b. Eliminar el resto de la lista.
+c. Liberar el nodo actual.
+eliminar(lista);
+
+[68]
+
+Listas Enlazadas Singulares
+• Para trabajar eficazmente con listas enlazadas, hay una serie de operaciones que debemos comprender:
+1. Crear una lista enlazada cuando aún no existe.
+2. Buscar en una lista enlazada para encontrar un elemento.
+3. Insertar un nuevo nodo en la lista enlazada.
+4. Eliminar un solo elemento de una lista enlazada.
+5. Eliminar una lista enlazada completa.

@@ -1,0 +1,67 @@
+So allow me to introduce something called a linked list. A linked list, as we'll see is going to allow you to store a list of values. Now an array allows you to store a list of values. But what are some of the downsides with an array? 
+
+Well, an array is a fixed chunk of memory. And if you want to resize that array to add more values to it, what do you have to do? Well, you minimally have to allocate more memory. You need to copy all of those values from old to new. And then you can go about your business. 
+
+Now, realloc is a function that makes that a little simpler. But realloc is doing the exact same legwork that I was doing between the lockers of copying value, freeing memory, and so forth. So it needs to be done. And that's why insertion into an array is going to be big O of n, because it might take you that much time to copy the whole array into a new space. 
+
+So that feels kind of suboptimal, right? Arrays can be slow in that sense. But what was the appeal of an array? Like what's good about arrays? Because we don't want to abandon them entirely. Yeah. 
+
+AUDIENCE: You can index into them really easily. 
+
+DAVID MALAN: You can index into them really easily, not only syntactically with the square brackets, but you have constant time access-- this is known as random access. And it's not random in the sense that you just end up who knows where. You can just jump to bracket 0 or 1 or 2 instantly. It took me, the human, more time because I had to physically walk. But a computer is going to be able to jump to 0, 1, 2, 3 instantly. And so arrays are super fast. And they lend themselves to things like binary search as we've seen now for some time. 
+
+But what if we use the canvas that is our computer's memory like a little more cleverly? We don't have to just plop things next to each other, next to each other, next to each other, and then hope for the best hope that there's still more memory back to back to back. What if we instead are a bit more clever about it? 
+
+And suppose we want to store the number 1. And that happens to be an address 0x123. It's arbitrary. But recall from last week that every byte of memory in your computer is stored somewhere. So let's propose that 1 is stored at 0x123. 
+
+Suppose now that this represents an array of size 1 and you want to add a second value to this array. Or let's start calling things more generally a list. A list like in the real world is just a list of values. This list is of size 1. 
+
+Now maybe there's a lot of EMMAs in this memory that are getting in the way. But suppose that there is some free space a little lower in your computer's memory over there. So it's not here. It's not here. It's not available here or here or here. There's other stuff there. But suppose the computer does have some available memory over here in which you can store the number two, just because. And that address happens to be 456. 
+
+Finally, you want to store third value. And it turns out that the nearest possible location is down here, number 3. That happens to be at address 0x789. 
+
+So this is not an array by definition, because the 1, the 2, the 3 are not contiguous back to back to back. You cannot square bracket notation here because square bracket notation requires, per Week 2, that all of your values be next to each other, just like the lockers here. 
+
+This picture, where 1 is over here, 2 is over here, 3 is over here is more like, oh, maybe this is 0x123. Maybe this is 0x456. Maybe this is 0x789. They're kind of all over the place. And that's just because that's what's available in your computer's memory. 
+
+But what if I get a little extravagant and I start to use, not just one chunk of memory to store each value, like 1, 2, 3, what if I go ahead and give myself twice as much memory just to give myself some flexibility? So I now conceptual use this chunk of memory to represent one. This junk to represent 2, this chunk to represent 3. But you know what I'm going to use the latter half of each of those chunks for? Any thoughts? 
+
+AUDIENCE: Address to the next. 
+
+DAVID MALAN: An address to the next chunk of memory. So, for instance, if my goal is to keep this list sorted, so I want conceptually to have a list that stores 1, 2, 3, why don't I use this as sort of a map or a breadcrumb, if you will, that points to the next chunk of memory? And why don't I use this chunk of memory to point at the next one? And then this chunk of memory, you know what, I just need a special value here. What would be a good arbitrary way to say, mm, mm, there's nothing more in the list? 
+
+AUDIENCE: Null. 
+
+DAVID MALAN: It's something called null. And this technically is different from backslash 0, which is a char. This is something called-- well, this is in hexadecimal 0. Now, starting today-- and we saw the super briefly last week-- this is n-u-l-l with two L's-- this was stupid left hand not really talking to right hand-- n-u-l is backslash 0, which is a char. n-u-l-l is a pointer. But they both equal 0 underneath the hood. So you just store special value that says that's it for the list. 
+
+Now, we last week I proposed who really cares where things are in memory? So indeed, let's do that again. Let's just use pointers drawn as arrows in this artist's rendition to say this list of numbers, 1 2, 3, is now linked. A linked list is just a data structure containing multiple chunks of memory that are somehow linked together. And if underneath the hood, so to speak, they're just linked together by way of pointers, and the price we pay is that rather than now in a linked list storing just the numbers 1, 2, 3, which we could have in an array, now you have to store twice as much information, 1, 2, 3, as well as three pointers, two of which are in use, the other of which is ready to go if I want to add something to this list. 
+
+So this is to say we can now create structures that look like this in the computer's memory just by using this new feature of pointers. What might these structures look like individually? Well, any one of these numbers has two fields it seems. One is an integer. We'll call it number. And then there's another field here. That let's call it next by convention, but we could call it anything we want. It's just another chunk of memory that's pointing to the next element in the list. 
+
+Well a couple of weeks ago, we introduced persons. And a person had a name and a number. That's not relevant today, because we're not dealing with names and numbers. We're just dealing with integers. So let me propose that we back that up and still use the same syntax as a couple of weeks ago. But instead of defining a person, let's call this rectangle a node. So this is a term of art in computer science node-- n-o-d-e-- just represents this rectangular concept, a chunk of memory that you're using for interesting purposes. It's sort of a node in a graph if familiar from math. 
+
+But what do I want this know to store? Well, let me go ahead and store a couple of things in it. One, a number, and that's just going to be an int. And I'm going to go ahead and call it number. And then any guesses as to what the second field should be declared as? I want to call it next just because it's conventional. What should its data type be? Any thoughts? Yeah in back. 
+
+AUDIENCE: A pointer. 
+
+DAVID MALAN: A pointer. And a pointer to what would you say? 
+
+AUDIENCE: The next number. 
+
+DAVID MALAN: A pointer to the next number, and not quite the next number per se, because now we have not numbers only, we now have nodes. So those three yellow boxes, 1 2, 3, those are now nodes, I would say. So you know what? Let's go ahead and call this node star. 
+
+But you can't technically quite do this. It turns out that C, recall, takes you super literally. And notice, if you read this code top to bottom, left to right, at which point in the story does the word node come into existence? Like not until the very last line. That's where we mentioned person. This is where we mentioned node. 
+
+So, unfortunately, you can't use a node inside of a node, because it literally doesn't exist in the computer's mind until two lines later. So there's an alternative here. There is a solution. It's a little more verbose. 
+
+Instead of just saying typedef struct, you actually say typedef struct node. Just add the word that you want to use. And now down here, you can say struct node star next. It's kind of like a work around. This is the way C works. But this is the exact same idea. 
+
+This means that any node in the data structure, any yellow rectangular box has a number and a pointer. And that pointer by definition is a pointer to a node structure. We just have to express it more verbosely here, because the shorthand notation node doesn't exist until the bottom. It's just sort of an annoying reality of the syntax. 
+
+All right, any questions on that definition of struct? Yeah. 
+
+AUDIENCE: Do you have to put node twice? 
+
+DAVID MALAN: Do you have to put node twice? You don't have to put node twice. You can actually use any word here you want. You can call this x or y or z. But then you're going to have to make this be struct x or struct y or struct z. By convention, I would just reuse the same term. 
+
+So this is the formal name for this structure. It is a struct node. This is the nickname for the structure, more succinctly, node. And that's what typedef does. It gives you an alias from struct node to just node, just because it's easier to type elsewhere in the program. Other questions?

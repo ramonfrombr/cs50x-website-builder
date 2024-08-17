@@ -1,0 +1,39 @@
+[MUSIC PLAYING] DAVID MALAN: All right, this is CS50. And this is our look today at data structures. You'll recall last week that we gave ourselves a few new ingredients and some new syntax in C. We introduced pointers, the ability to address chunks of memory by actual addresses-- 0, 1, 2, 3 and on up. And we introduced the star notation and a few other functions, malloc among them, free among them, so that you can actually manage your computer's memory. 
+
+Just to hammer this home, let's take a look at just this small example that from the outset is buggy. This code is buggy. And we'll see in just a moment why. But let's just walk through it step by step. 
+
+This first line highlighted in yellow in English is doing what as you understand it now? If you're a little rusty since last week, what's that first line of code doing in English? Anything? Yeah. 
+
+AUDIENCE: It's creating a point to an int named x. 
+
+DAVID MALAN: Perfect. It's creating a pointer to an integer and calling that pointer or that variable x. And let me propose that the next line is doing the same thing giving us another pointer to an integer but this time calling it y. The third line of code, someone else, what's happening in English with this line here? Yeah. 
+
+AUDIENCE: It's creates a memory of size of int and assigns it to x, but it's more difficult to execute if it's not a pointer, I don't know. 
+
+DAVID MALAN: This is not the bug. But the first part is correct. malloc is the function we introduced last week that allocates memory for you. It takes one argument, the number of bytes that you want to allocate. Even if you don't recall how many bytes you need for an integer, you can call this other operator, sizeof, that we saw briefly last week, that will return, in this case, 4 most likely depending on the computer that you're on. 
+
+So this is saying, hey, computer give me 4 bytes of memory. And it returns that chunk of memory to conventionally by way of the first address, so ox something, wherever those 4 bytes happen to star. And then it stores that address in x, which is in fact OK, because as you noted initially, x is in fact a pointer. That is an address. 
+
+So all this is doing is it's declaring a variable called x and storing in it ultimately the address of a legitimate chunk of memory. You wouldn't typically allocate an int like this. You would allocate an int with just int and semicolon just like in week 1. But now that we have the ability to allocate addresses and allocate memory, you could achieve the same idea here. 
+
+This line here now, the fourth line of code, says what in English? Star x equals 42 semicolon. What's going on there? Yeah. 
+
+AUDIENCE: It goes to the address in the x and then sets it to 42. 
+
+DAVID MALAN: Good goes to the address in x and sets it to 42. So the star operator is the dereference operator, which is a fancy way of saying go to that address. And what do you want to do? Well, per week 1 when we discussed the assignment operator, it just says put the number 42 there. So wherever malloc found 4 bytes of available memory for me, this fourth line of code says, go there and put the number 42 by putting the appropriate zeros and ones. 
+
+This last line here-- and here's the bug, if we finally reveal it here-- this line is buggy. Does anyone see why? Yeah, over here. 
+
+AUDIENCE: You haven't allocated memory for that variable yet. 
+
+DAVID MALAN: Exactly. I haven't allocated memory for that variable yet. And because up here I've just said int star y semicolon. You can only assume safely that has some garbage value, some unknown value, maybe remnants from some other part of the program, that might not necessarily be true here at the beginning of the program. But for safety's sake assume that if you don't give a variable a value, who knows what it contains. It's got some bogus address, such that if you say star y go to that bogus address something bad is going to happen. 
+
+And maybe you experienced this already in P Set 4 or prior, some kind of memory problem with your code, or a segmentation fault or seg fault, bad things happen when you go to addresses that don't exist or that you don't even know where they are. 
+
+So this line of code is bad. But we can do a little better. What if instead I do something like this? I actually assign to y x. So that just says put in y the same address that's in x. And then with this last line of code, what if I now say star y equals 13? What is that-- you're nodding your head. What am I doing correctly now? 
+
+AUDIENCE: Now there's memory allocated for y. 
+
+DAVID MALAN: Good. Now, there's memory allocated for y. So you're saying go to that address and put 13 there. However, what did we just need to the 42, just to be clear? We clobbered it. We overwrote it with the 13. Because if x and y are the same address, both this says go to that address and put 42 there, but then two lines later, we say, no, no, no, go there and put 13 there instead. 
+
+But long story short, bad things happen when you don't necessarily anticipate what is in memory and you don't allocate it yourself, so thanks to one of our friends at Stanford, allow us to take a moment here to hit Play on a short film, a claymation if you will, that paints the same picture in a more memorable way perhaps. If we could dim the lights. 

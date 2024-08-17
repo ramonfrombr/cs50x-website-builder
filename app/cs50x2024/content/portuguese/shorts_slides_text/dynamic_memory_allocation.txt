@@ -1,0 +1,77 @@
+[1]
+
+Alocação Dinâmica de Memória
+• Vimos uma maneira de trabalhar com ponteiros, ou seja, apontar uma variável ponteiro para outra variável que já existe no nosso sistema.
+• Isso requer que saibamos exatamente quanta memória o nosso sistema precisará no momento em que nosso programa for compilado.
+• E se não soubermos quanta memória precisaremos no momento da compilação? Como obter acesso a uma nova memória enquanto nosso programa está sendo executado?
+
+[2]
+
+Alocação Dinâmica de Memória
+• Podemos usar ponteiros para obter acesso a um bloco de memória alocada dinamicamente no tempo de execução.
+• A memória alocada dinamicamente vem de um pool de memória conhecido como heap.
+• Antes disso, toda memória com a qual trabalhamos vinha de um pool de memória conhecido como pilha.
+
+[3]
+
+Alocação Dinâmica de Memória
+texto
+Dados inicializados
+Dados não inicializados
+heap
+stack
+variáveis de ambiente
+
+[5]
+
+Alocação Dinâmica de Memória
+• Obtemos essa memória alocada dinamicamente fazendo uma chamada para a função malloc() da biblioteca padrão C, passando como parâmetro a quantia de bytes solicitados.
+• Depois de obter memória para você (caso consiga), malloc() retornará um ponteiro para essa memória.
+• E se malloc() não conseguir te passar nenhuma memória? Ela lhe passará um NULL.
+
+[8]
+
+Alocação Dinâmica de Memória
+// obtém um número inteiro estaticamente
+int x;
+// obtém um número inteiro dinamicamente
+int *px = malloc(sizeof(int));
+
+[9]
+
+Alocação Dinâmica de Memória
+// obtém um número inteiro do usuário
+int x = GetInt();
+// array de floats na pilha
+float stack_array[x];
+// array de floats no heap
+float* heap_array = malloc(x * sizeof(float));
+
+[12]
+
+Alocação Dinâmica de Memória
+• Aqui está o problema: a memória alocada dinamicamente não é retornada automaticamente para o sistema para uso posterior quando a função em que ela é criada termina a execução.
+• Deixar de retornar memória para o sistema quando você terminar de usá-la resulta em um vazamento de memória que pode comprometer o desempenho do seu sistema.
+• Quando você terminar de trabalhar com a memória alocada dinamicamente, você deve free() ela.
+
+[14]
+
+Alocação Dinâmica de Memória
+char* word = malloc(50 * sizeof(char));
+// faz algo com word
+
+[15]
+
+Alocação Dinâmica de Memória
+char* word = malloc(50 * sizeof(char));
+// faz algo com word
+// agora terminamos de trabalhar com aquele bloco
+free(word);
+
+[16]
+
+Alocação Dinâmica de Memória
+• Três regras de ouro:
+1. Todo bloco de memória que você malloc() deve posteriormente ser free()d.
+2. Apenas memória que você malloc() deve ser free()d.
+3. Não free() um bloco de memória mais de uma vez.

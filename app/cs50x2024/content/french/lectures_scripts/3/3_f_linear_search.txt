@@ -1,0 +1,9 @@
+Bon, bien sûr, ce sont deux algorithmes. Mais maintenant, commençons à formaliser un petit peu cette discussion et à examiner comment chacun d'eux a réussi à résoudre le problème correctement et ensuite en fin de compte avec une meilleure conception. Donc, on pourrait résumer la recherche linéaire comme un pseudo-code comme celui-ci, et encore une fois, le pseudo-code, la syntaxe de type anglais, il n’y a pas qu’une seule façon d’écrire cela.
+
+Eric, si je peux me permettre de te citer, tu aurais pu faire cela. Tu aurais pu te dire, pour [? i ?] de 0 à n moins 1, de le faire correspondre très rapidement à l’idée de code, où c’est le casier 0, et c’est le casier n moins 1 ou 7 ou 6, précisément, dans ce cas, avec 7 casiers au total. Il a ensuite vérifié si les ièmes éléments (i signifiant simplement celui qu’il regarde actuellement) sont égaux à 50, alors il continue et renvoie vrai, le booléen qui était censé être le résultat de cet algorithme.
+
+Et il continuait à faire cela, encore et encore. Mais supposons que 50 ne soit pas là. Et supposons qu’il ait pu aller jusqu’au bout, là où il n’y a pas de casier. Que devrait-il finalement renvoyer ?
+
+LE PUBLIC : Faux.
+
+L’ORATEUR 1 : Donc, faux. Et donc, la toute dernière étape de cet algorithme, pas à l’intérieur de cette boucle, doit être une sorte de prise en charge de tous les cas, où l’on dit tout simplement, renvoie faux. Si je suis allé jusqu’au bout de cette boucle et que je ne l’ai pas trouvé, c’est que 50 n’y est tout simplement pas. Cela pourrait être une façon d’écrire le pseudo-code pour ce problème.
