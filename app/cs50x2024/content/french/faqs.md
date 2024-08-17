@@ -28,15 +28,16 @@ Voici des réponses aux questions les plus fréquentes à propos de ce cours. Po
   - [Pourquoi mon tableau de bord edX indique-t-il que je peux « reprendre » le cours alors que je l'ai terminé ?](#pourquoi-mon-tableau-de-bord-edx-indique-t-il-que-je-peux-reprendre-le-cours-alors-que-je-l-ai-terminé)
   - [GitHub a désactivé mon compte. Que dois-je faire ?](#github-a-désactivé-mon-compte-que-dois-je-faire)
 - [Exercices pratiques, devoirs et évaluations](#exercices-pratiques-devoirs-et-évaluations)
+
   - [Ce cours comporte-t-il un test ?](#ce-cours-comporte-t-il-un-test)
   - [Quelle est la différence entre les problèmes « moins à l’aise » et « plus à l’aise » ? Dois-je faire les deux ?](#quelle-est-la-différence-entre-les-problèmes-moins-à-l-aise-et-plus-à-l-aise-dois-je-faire-les-deux)
   - [Avez-vous reçu mon envoi ?](#avez-vous-reçu-mon-envoi)
   - [J'ai soumis un projet, mais rien n'apparaît encore dans mon bulletin de notes indiquant que je l'ai soumis. Pourquoi ?](#j-ai-soumis-un-projet-mais-rien-n-apparaît-encore-dans-mon-bulletin-de-notes-indiquant-que-je-l-ai-soumis-pourquoi)
-  - [Si j'ai soumis un problème et que je n'ai pas atteint la note de passage de 70 %, puis-je le soumettre à nouveau ?](#si-j-ai-soumis-un-problème-et-que-je-n-ai-pas-atteint-la-note-de-passage-de-70-puis-je-le-soumettre-à-nouveau)
+  - [Si j'ai soumis un problème et que je n'ai pas atteint la note de passage de 70%, puis-je le soumettre à nouveau ?](#si-j-ai-soumis-un-problème-et-que-je-n-ai-pas-atteint-la-note-de-passage-de-70-puis-je-le-soumettre-à-nouveau)
   - [Si mon score check50 n'est pas celui attendu, pourquoi ?](#si-mon-score-check50-n-est-pas-celui-attendu-pourquoi)
   - [Si mon score de style n'est pas celui attendu, pourquoi ?](#si-mon-score-de-style-n-est-pas-celui-attendu-pourquoi)
   - [Pourquoi n'ai-je pas réussi mon projet final ?](#pourquoi-n-ai-je-pas-réussi-mon-projet-final)
-  - [Si j'ai fait 70 % des problèmes, est-ce que j'obtiens un certificat ?](#si-j-ai-fait-70-des-problèmes-est-ce-que-j-obtiens-un-certificat)
+  - [Si j'ai fait 70% des problèmes, est-ce que j'obtiens un certificat ?](#si-j-ai-fait-70-des-problèmes-est-ce-que-j-obtiens-un-certificat)
   - [Est-ce que je triche ?](#est-ce-que-je-triche)
 
 - [Dates limites](#deadlines)
@@ -134,9 +135,9 @@ Non, votre vérification devrait être valable pendant une année entière, mais
 
 Votre [carnet de notes](https://cs50.me/cs50x) affiche le résultat de chaque devoir remis pour la version la plus récente du cours. Le haut de votre [carnet de notes](https://cs50.me/cs50x) indique votre statut actuel dans le cours, montrant le nombre de devoirs obligatoires que vous avez complétés. Si votre [carnet de notes](https://cs50.me/cs50x) indique que vous n'êtes pas inscrit dans le cours, il est préférable de vous inscrire et de commencer à faire les devoirs obligatoires.
 
-Ce cours nécessite la soumission de plusieurs devoirs certaines semaines, et d'un seul devoir les autres semaines. Lorsque vous avez rempli les conditions pour une semaine donnée (en obtenant un score de 70 % ou plus à tous les problèmes obligatoires), le numéro de la semaine apparaît en vert, et votre indicateur de progression est mis à jour pour refléter cela.
+Ce cours nécessite la soumission de plusieurs devoirs certaines semaines, et d'un seul devoir les autres semaines. Lorsque vous avez rempli les conditions pour une semaine donnée (en obtenant un score de 70% ou plus à tous les problèmes obligatoires), le numéro de la semaine apparaît en vert, et votre indicateur de progression est mis à jour pour refléter cela.
 
-Une fois que vous avez obtenu au moins 70 % à tous les devoirs obligatoires, vous verrez une bannière verte en haut de cette page, confirmant la réussite du cours.
+Une fois que vous avez obtenu au moins 70% à tous les devoirs obligatoires, vous verrez une bannière verte en haut de cette page, confirmant la réussite du cours.
 
 ### Qu'est-ce que le carnet de notes de ce cours et où le trouver ?
 
@@ -148,13 +149,13 @@ Il existe de nombreuses raisons potentielles à cela. Voici les raisons les plus
 
 ### Ce cours comporte-t-il des notes ?
 
-Non. Ce cours comporte des scores numériques. Un devoir qui obtient un score de 70 % ou plus est considéré comme réussi.
+Non. Ce cours comporte des scores numériques. Un devoir qui obtient un score de 70% ou plus est considéré comme réussi.
 
 ### Mon carnet de notes indique-t-il uniquement si j'ai obtenu un score suffisamment élevé pour réussir un problème ? Comment puis-je voir mes notes numériques réelles ?
 
 Votre [carnet de notes](https://cs50.me/cs50x) affiche une coche verte si vous avez réussi un devoir soumis et une coche rouge si vous n'avez pas réussi un devoir soumis.
 
-Votre score global pour un problème est pondéré à 75 % pour l'exactitude et à 25 % pour le style. Pour obtenir la coche verte indiquant la réussite, votre score global doit être de 70 % ou plus. Par exemple, si votre score check50 est de 7/8 et votre score de style de 0,95, votre score global sera (7/8 * 0,75) + (0,95 * 0,25) = 89 %. Vous pouvez cliquer sur le nom du problème dans votre [carnet de notes](https://cs50.me/cs50x) pour voir vos scores individuels check50 et style50.
+Votre score global pour un problème est pondéré à 75 % pour l'exactitude et à 25 % pour le style. Pour obtenir la coche verte indiquant la réussite, votre score global doit être de 70% ou plus. Par exemple, si votre score check50 est de 7/8 et votre score de style de 0,95, votre score global sera (7/8 _ 0,75) + (0,95 _ 0,25) = 89 %. Vous pouvez cliquer sur le nom du problème dans votre [carnet de notes](https://cs50.me/cs50x) pour voir vos scores individuels check50 et style50.
 
 ### J'ai complété un devoir ou ce cours l'année précédente. Pourquoi mon carnet de notes n'affiche-t-il plus mes progrès antérieurs ?
 
@@ -200,7 +201,7 @@ Une fois que vous exécutez la commande `submit50` avec le _slug_ approprié com
 
 À condition que vous ayez exécuté la commande `submit50` avec le slug approprié comme indiqué dans la spécification des devoirs, votre statut de réussite doit être immédiatement affiché sur votre [carnet de notes](https://cs50.me/cs50x). Tout d’abord, il est préférable d’exécuter `check50` sur votre devoir pour vous assurer qu’il remplit les conditions requises. Deuxièmement, si cela ne fonctionne toujours pas, assurez-vous que le nom d’utilisateur GitHub que vous utilisez pour vous connecter à [CS50.dev](https://cs50.dev) est le même nom d’utilisateur GitHub qui apparaît en haut de votre [carnet de notes](https://cs50.me/cs50x).
 
-### Si j’ai soumis un problème et que je n’ai pas atteint la note de passage de 70 %, puis-je le soumettre à nouveau ?
+### Si j’ai soumis un problème et que je n’ai pas atteint la note de passage de 70%, puis-je le soumettre à nouveau ?
 
 Oui ! Vous pouvez le soumettre à nouveau ; nous ne compterons que votre soumission la plus récente dans votre progression. Voir la section Notes ci-dessous pour plus de détails.
 
@@ -220,9 +221,9 @@ La raison la plus courante pour ne pas recevoir une note de passage dans votre p
 
 La deuxième raison la plus courante pour ne pas recevoir une note de réussite dans votre projet final est liée à votre documentation (le fichier README ou DESIGN de votre projet final). Lorsque votre documentation README ou DESIGN ne répond pas aux exigences indiquées, vous ne réussirez pas le projet final. Le fichier de documentation doit être assez robuste. Les étudiants qui ne remplissent pas un fichier de documentation robuste, comprenant DE NOMBREUX paragraphes, ne recevront pas la note de passage. Il est fortement conseillé de créer un fichier de documentation robuste, y compris les sections précises mentionnées par la [spécification du projet final](../projet/). De plus, notez que la [spécification du projet final](../projet/) inclut un nombre approximatif de mots pour votre documentation. Suivre ces spécifications vous assurera que votre fichier de documentation comprend tous les détails requis pour que vous puissiez réussir.
 
-### Si j’ai fait 70 % des problèmes, est-ce que j’obtiens un certificat ?
+### Si j’ai fait 70% des problèmes, est-ce que j’obtiens un certificat ?
 
-Non. Vous devez faire tous les devoirs requis et recevoir une note d’au moins 70 % sur chacun d’eux.
+Non. Vous devez faire tous les devoirs requis et recevoir une note d’au moins 70% sur chacun d’eux.
 
 ### Est-ce que je triche ?
 
@@ -248,39 +249,39 @@ Oui, toute progression que vous avez réalisée sur les problem sets des années
 
 Voici comment vous devez passer du cours 2023 au cours 2024 :
 
-| Terminé en 2023  | Reprenez vos études avec                                     |
+| Terminé en 2023    | Reprenez vos études avec                                     |
 | ------------------ | ------------------------------------------------------------ |
-| Zéro problem set    | [Semaine 0 et problem set 0](../weeks/0/) de CS50x 2024.       |
-| Problem set 0      | [Semaine 1 et problem set 1](../weeks/1/) de CS50x 2024.       |
-| Problem sets 0 – 1 | [Semaine 2 et problem set 2](../weeks/2/) de CS50x 2024.       |
-| Problem sets 0 – 2 | [Semaine 3 et problem set 3](../weeks/3/) de CS50x 2024.       |
-| Problem sets 0 – 3 | [Semaine 4 et problem set 4](../weeks/4/) de CS50x 2024.       |
-| Problem sets 0 – 4 | [Semaine 5 et problem set 5](../weeks/5/) de CS50x 2024.       |
-| Problem sets 0 – 5 | [Semaine 6 et problem set 6](../weeks/6/) de CS50x 2024.       |
-| Problem sets 0 – 6 | [Semaine 7 et problem set 7](../weeks/7/) de CS50x 2024.       |
-| Problem sets 0 – 7 | [Semaine 8 et problem set 8](../weeks/8/) de CS50x 2024.       |
-| Problem sets 0 – 8 | [Semaine 9 et problem set 9](../weeks/9/) de CS50x 2024.       |
+| Zéro problem set   | [Semaine 0 et problem set 0](../weeks/0/) de CS50x 2024.     |
+| Problem set 0      | [Semaine 1 et problem set 1](../weeks/1/) de CS50x 2024.     |
+| Problem sets 0 – 1 | [Semaine 2 et problem set 2](../weeks/2/) de CS50x 2024.     |
+| Problem sets 0 – 2 | [Semaine 3 et problem set 3](../weeks/3/) de CS50x 2024.     |
+| Problem sets 0 – 3 | [Semaine 4 et problem set 4](../weeks/4/) de CS50x 2024.     |
+| Problem sets 0 – 4 | [Semaine 5 et problem set 5](../weeks/5/) de CS50x 2024.     |
+| Problem sets 0 – 5 | [Semaine 6 et problem set 6](../weeks/6/) de CS50x 2024.     |
+| Problem sets 0 – 6 | [Semaine 7 et problem set 7](../weeks/7/) de CS50x 2024.     |
+| Problem sets 0 – 7 | [Semaine 8 et problem set 8](../weeks/8/) de CS50x 2024.     |
+| Problem sets 0 – 8 | [Semaine 9 et problem set 9](../weeks/9/) de CS50x 2024.     |
 | Problem sets 0 – 9 | [Semaine 10 et le projet final](../weeks/10/) de CS50x 2024. |
 
 ### Comment le travail que j’ai effectué dans le cadre de CS50x 2023 a-t-il été reporté sur CS50x 2024 ?
 
 Les crédits pour le travail réalisé dans CS50x 2023 ont été attribués comme suit. Veuillez noter que vous devez avoir complété **chaque ligne** d’une case de la colonne de gauche avant le 1er janvier 2024 pour recevoir les crédits pour les problem sets et les laboratoires correspondants dans la colonne de droite. Si vous n’avez complété que _certains_ des éléments d’une case de la colonne de gauche, aucun crédit ne sera attribué pour ce travail. (Le report s’effectue sur une base hebdomadaire, pas sur une base de problème.) Consultez votre [carnet de notes CS50x](https://cs50.me/cs50x) pour voir les semaines qui ont été créditées, le cas échéant.
 
-| Terminé dans CS50x 2023                                                                                                                                         | Équivalent crédits dans CS50x 2024 |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| Scratch                                                                                                                                                          | Problème Série 0                   |
-| Labo 1 : Population <br>Bonjour <br>Mario (Moins) _OU_ Mario (Plus) <br>Espèces _OU_ Crédit                                                                              | Semaine 1                          |
-| Labo 2 : Scrabble <br>Lisibilité <br>Ampoules _OU_ César _OU_ Substitution _OU_ Wordle50                                                                            | Semaine 2                          |
-| Labo 3 : Trier <br>Pluralité <br>Ruissellement _OU_ Tideman                                                                                                                | Semaine 3                          |
-| Labo 4 : Volume _OU_ Smiley <br>Filtrer (Moins) _OU_ Filtrer (Plus) <br>Récupérer _OU_ Inverser                                                                          | Semaine 4                          |
-| Labo 5 : Héritage <br>Épelage                                                                                                                                   | Semaine 5                          |
+| Terminé dans CS50x 2023                                                                                                                                                      | Équivalent crédits dans CS50x 2024 |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| Scratch                                                                                                                                                                      | Problème Série 0                   |
+| Labo 1 : Population <br>Bonjour <br>Mario (Moins) _OU_ Mario (Plus) <br>Espèces _OU_ Crédit                                                                                  | Semaine 1                          |
+| Labo 2 : Scrabble <br>Lisibilité <br>Ampoules _OU_ César _OU_ Substitution _OU_ Wordle50                                                                                     | Semaine 2                          |
+| Labo 3 : Trier <br>Pluralité <br>Ruissellement _OU_ Tideman                                                                                                                  | Semaine 3                          |
+| Labo 4 : Volume _OU_ Smiley <br>Filtrer (Moins) _OU_ Filtrer (Plus) <br>Récupérer _OU_ Inverser                                                                              | Semaine 4                          |
+| Labo 5 : Héritage <br>Épelage                                                                                                                                                | Semaine 5                          |
 | Labo 6 : Coupe du monde <br>Bonjour (Python) <br>Mario (Moins) (Python) _OU_ Mario (Plus) (Python) <br>Espèces (Python) _OU_ Crédit (Python) <br>Lisibilité (Python) <br>ADN | Semaine 6                          |
-| Labo 7 : Chansons <br>Fiftyville <br>Films                                                                                                                           | Semaine 7                          |
-| Labo 8 : Trivia <br>Page d'accueil                                                                                                                                       | Semaine 8                          |
-| Labo 9 : Anniversaires <br>Finances                                                                                                                                     | Semaine 9                          |
-| Projet final                                                                                                                                                    | Projet final                   |
+| Labo 7 : Chansons <br>Fiftyville <br>Films                                                                                                                                   | Semaine 7                          |
+| Labo 8 : Trivia <br>Page d'accueil                                                                                                                                           | Semaine 8                          |
+| Labo 9 : Anniversaires <br>Finances                                                                                                                                          | Semaine 9                          |
+| Projet final                                                                                                                                                                 | Projet final                       |
 
-1 Par « terminé », nous entendons que vous avez obtenu un score égal ou supérieur à 70 % sur le problème avant le 1er janvier 2024.
+1 Par « terminé », nous entendons que vous avez obtenu un score égal ou supérieur à 70% sur le problème avant le 1er janvier 2024.
 
 ### Le travail que j'effectue dans CS50x 2024 (ou avant) sera-t-il reporté dans CS50x 2025 ?
 
@@ -298,7 +299,7 @@ Une fois que vous avez terminé le cours et rempli toutes les conditions requise
 
 ### Comment obtenir mon certificat vérifié auprès d'edX ?
 
-Toutes les trois semaines, l'équipe de CS50 fournit à edX une liste des étudiants qui ont satisfait aux exigences du cours (en obtenant des notes d'au moins 70 % sur chacun des problèmes requis). En règle générale, dans la semaine qui suit, edX génère alors les certificats vérifiés des étudiants (pour les étudiants ayant une vérification active), auquel moment ils doivent apparaître automatiquement sur le [tableau de bord](https://courses.edx.org/dashboard) d'edX. Ainsi, une fois que vous avez satisfait aux exigences du cours, la génération de votre certificat vérifié par edX peut prendre jusqu'à 30 jours. Notez qu'edX ne vous **n'informera pas**, alors assurez-vous de vérifier votre tableau de bord régulièrement.
+Toutes les trois semaines, l'équipe de CS50 fournit à edX une liste des étudiants qui ont satisfait aux exigences du cours (en obtenant des notes d'au moins 70% sur chacun des problèmes requis). En règle générale, dans la semaine qui suit, edX génère alors les certificats vérifiés des étudiants (pour les étudiants ayant une vérification active), auquel moment ils doivent apparaître automatiquement sur le [tableau de bord](https://courses.edx.org/dashboard) d'edX. Ainsi, une fois que vous avez satisfait aux exigences du cours, la génération de votre certificat vérifié par edX peut prendre jusqu'à 30 jours. Notez qu'edX ne vous **n'informera pas**, alors assurez-vous de vérifier votre tableau de bord régulièrement.
 
 Si **plus de 30 jours** se sont écoulés depuis que vous avez rempli toutes les conditions requises et que vous n'avez toujours pas reçu votre certificat malgré une vérification active pendant tout ce temps, envoyez un e-mail à certificates@cs50.harvard.edu avec vos coordonnées. Veuillez ne pas envoyer d'e-mail plus tôt ; nous ne pouvons pas accepter les demandes de traitement accéléré des certificats vérifiés.
 
@@ -308,7 +309,7 @@ Non.
 
 ### Pourquoi n'ai-je pas reçu mon certificat vérifié après 30 jours ?
 
-Tout d'abord, rappelez-vous que votre certificat edX vérifié sera émis par edX jusqu'à 30 jours après que trois critères soient remplis : (a) votre [Carnet de notes](https://cs50.me/cs50x) indique que vous avez terminé toutes les tâches requises avec un score d'au moins 70 % ou plus sur chacune d'entre elles, (b) vous avez effectué un paiement à edX et terminé leur processus de vérification, ce qui a donné lieu à un badge vérifié sur votre tableau de bord edX ; et (c) vous avez lié votre [Carnet de notes](https://cs50.me/cs50x) à votre compte edX. Vous devez donc vous assurer que 30 jours se sont écoulés depuis que ces trois critères ci-dessus se sont produits.
+Tout d'abord, rappelez-vous que votre certificat edX vérifié sera émis par edX jusqu'à 30 jours après que trois critères soient remplis : (a) votre [Carnet de notes](https://cs50.me/cs50x) indique que vous avez terminé toutes les tâches requises avec un score d'au moins 70% ou plus sur chacune d'entre elles, (b) vous avez effectué un paiement à edX et terminé leur processus de vérification, ce qui a donné lieu à un badge vérifié sur votre tableau de bord edX ; et (c) vous avez lié votre [Carnet de notes](https://cs50.me/cs50x) à votre compte edX. Vous devez donc vous assurer que 30 jours se sont écoulés depuis que ces trois critères ci-dessus se sont produits.
 
 Deuxièmement, nous ne pouvons informer edX de votre réussite que si vous avez lié votre [Carnet de notes](https://cs50.me/cs50x) à edX. Consultez votre [Carnet de notes](https://cs50.me/cs50x) et assurez-vous qu'aucune barre dorée n'apparaît en haut de la page indiquant que vous devez lier votre [Carnet de notes](https://cs50.me/cs50x) à votre compte edX. Si vous voyez une telle barre dorée, terminez le processus de liaison. Ensuite, relisez ce qui précède concernant le délai dans lequel vous pouvez vous attendre à recevoir votre certificat.
 
@@ -386,4 +387,3 @@ Nous proposons de nombreux [cours](../courses/). Pour chacun, nous proposons des
 ### Puis-je enseigner ce cours à mes élèves ?
 
 Si vous êtes enseignant, vous pouvez adopter ou adapter ces supports pour votre propre cours, conformément à la [licence](../license/). Consultez également l’[atelier éducateur CS50](https://cs50.harvard.edu/x/workshop/).
-

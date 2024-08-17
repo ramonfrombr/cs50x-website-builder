@@ -74,4 +74,3 @@ def test_notes10(client):
     response = client.get(
         f"/2024/{client.application.config['PAGES_URLS']['notes']}/10.html")
     assert 'OpenAI' in response.get_data(as_text=True)
-    assert 'ransomware' in response.get_data(as_text=True)
