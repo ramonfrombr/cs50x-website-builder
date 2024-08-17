@@ -5,17 +5,30 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{{config['TITLE']}}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css')}}">
 
-    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="{{ url_for('static', filename='js/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/moment-timezone-with-data.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/luxon.min.js') }}"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="{{ url_for('static', filename='js/algoliasearchLite.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/instantsearch.production.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jekyll-theme-cs50.js') }}"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="{{url_for('static', filename='highlight/highlight.min.js')}}"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='highlight/styles/vs.min.css') }}"/>
     <script>
       hljs.initHighlightingOnLoad();
     </script>
-    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='highlight/styles/vs.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css')}}">
 
     <style>
       code {
