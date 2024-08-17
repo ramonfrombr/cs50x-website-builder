@@ -1,0 +1,69 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-3">Ensemble de problèmes n° 3</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>La collaboration sur les ensembles de problèmes n'est pas autorisée, sauf dans la mesure où vous pouvez demander de l'aide à vos camarades de classe et à d'autres personnes, tant que cette aide ne se résume pas à ce qu'une autre personne fasse votre travail à votre place, conformément à la politique du cours sur
+      <a href="{{ url_for('cs50x2024.honesty') }}">l'honnêteté académique</a>.</p>
+
+    <p>Le personnel effectue des vérifications aléatoires des soumissions à CS50x. Les étudiants qui enfreignent cette politique seront exclus du cours. Les étudiants qui ont déjà terminé CS50x, s'ils sont reconnus coupables d'infraction, verront leur certificat CS50 révoqué définitivement.</p>
+  </div>
+
+  <h2 id="what-to-do">Que faire</h2>
+
+  <ol>
+    <li>Soumettre
+      <a href="{{ url_for('cs50x2024.psets.pset3.sort') }}">Tri</a>
+    </li>
+    <li>Soumettre
+      <a href="{{ url_for('cs50x2024.psets.pset3.plurality') }}">Pluralité</a>
+    </li>
+    <li>Soumettre
+      <strong>un seul</strong>
+      des :
+      <ul>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset3.runoff') }}">Second tour</a>, si vous vous sentez plus ou moins à l'aise</li>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset3.tideman') }}">Tideman</a>, si vous vous sentez très, très, très à l'aise</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p>Si vous soumettez à la fois le second tour et Tideman, nous enregistrerons le score le plus élevé des deux. Notez que
+    <strong>Tideman est optionnel</strong>
+    mais difficile !</p>
+
+  <h2 id="when-to-do-it">Quand le faire</h2>
+
+  <p>Avant le
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">31/12/2024 à 23:59:00 -05:00</a>.</p>
+
+  <h2 id="advice">Conseils</h2>
+
+  <ul>
+    <li data-marker="*">Essayez l'un des programmes de David du cours via
+      <a href="{{ url_for('cs50x2024.weeks.week3') }}">le code source de la semaine 3</a>.</li>
+    <li data-marker="*">Si vous voyez des erreurs lors de la compilation de votre code avec
+      <code class="language-plaintext highlighter-rouge">make</code>, essayez d'abord de corriger la première erreur que vous voyez, en remontant si nécessaire. Si vous n'êtes pas sûr de ce que cela signifie, essayez de demander de l'aide à
+      <code class="language-plaintext highlighter-rouge">help50</code>
+      . Par exemple, si vous essayez de compiler
+      <code class="language-plaintext highlighter-rouge">plurality</code>, et que
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>make plurality
+</code></pre>
+        </div>
+      </div>
+      <p>génère des erreurs, essayez d'exécuter</p>
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>help50 make plurality
+</code></pre>
+        </div>
+      </div>
+      <p>à la place !</p>
+    </li>
+  </ul>
+
+{% endblock %}

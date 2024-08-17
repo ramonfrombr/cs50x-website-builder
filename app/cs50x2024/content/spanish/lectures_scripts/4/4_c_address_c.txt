@@ -1,0 +1,35 @@
+Por supuesto, esta es solo una línea de código que implica la creación de una variable llamada n. Y esa variable tiene almacenado en ella el valor 50. Entonces, sigamos adelante y preparemos un programa rápido que haga exactamente esto. Voy a proceder y llamar a esta dirección dot c, solo para transmitir que vamos a jugar con direcciones en la memoria de la computadora. Y voy a continuar y mantenerlo simple al principio, incluir estándar I/O dot h y luego int main void. Y luego aquí abajo, super simple, int n obtiene 50. Y luego voy a seguir adelante e imprimiré, por ciento i coma n, imprimiendo así este valor.
+
+Por lo tanto, esto también es algo de la Semana 1, por lo que cuando ejecuto este programa ahora después de guardarlo, hacer dirección-- parece compilar bien-- punto barra dirección, por supuesto, debería ver 50. Muy bien, solo el número 50 en esa variable. 
+
+Muy bien. Entonces probablemente te sientas cómodo con este tipo de ejercicios hasta el momento. Pero resulta que ahora podemos inferir qué está pasando dentro de la memoria de la computadora. Si esta nuevamente es la memoria de mi computadora y en algún lugar tengo una variable n, podría ocupar cuatro bytes allí. Una recuperación de int es de cuatro bytes, así que voy a seguir adelante y usaré cuatro cuadrados en la pantalla. Por coherencia, lo llamaré n y simplemente pondré el número 50. 
+
+Ahora, si realmente miras debajo del capó, eso no es 50 en sí, son como 32 bits, 0 y 1 que representan el número 50. Pero nuevamente, no nos importan los transistores en ese detalle de bajo nivel ahora. Pero cuando continúo e imprimo esto, todo lo que estoy haciendo es imprimir el contenido de esa variable llamada n. Pero esa variable técnicamente existe en una dirección específica en la memoria. ¿Correcto? 
+
+Si la esquina superior izquierda era 0 y la esquina inferior derecha era un número más grande--y tal vez esto esté fuera de contexto. Estoy un poco alejado porque es posible que tengas miles de millones de bytes de memoria en tu computadora. Supongamos, por el bien de la discusión, que esa variable n y el valor en ella, 50, está técnicamente en la dirección 0x, lo que significa hexadecimal 12345678, donde sea que esté. Es un gran número arbitrario. Pero de hecho existe en algún lugar de la memoria de tu computadora siempre que tengas tantos bytes de hardware para usar. 
+
+Bueno, resulta que usando C podemos realmente-- sin juego de palabras-- ver este valor también. Déjame seguir adelante y modificar ligeramente este código. No voy a continuar e imprimir n esta vez, voy a seguir adelante e imprimiré y n, que es una nueva pieza de sintaxis para C. Pero simplemente significa el operador AddressOf. 
+
+Entonces, donde sea que esté n, continúa y descubre cuál es su dirección, su ubicación en la memoria. Y resulta que C tiene un código de formato especial para esto. En lugar de por ciento i, es por ciento p, donde por ciento p va a imprimir esa dirección por nosotros. Así que déjame seguir adelante y guardar esa dirección nuevamente para recompilar y luego hacer punto barra dirección, ingresar. Y voilá. 
+
+Ahora, da la casualidad de que en CS50 IDE ejecutándose en este servidor en la nube, no es la dirección 0x12345678. Simplemente lo inventé por el bien de la discusión. Técnicamente está en 0x7FFE00B3ADBC, que no tiene ningún significado para nosotros aquí en clase, pero es todo hexadecimal porque cada dígito es de 0 a F. 
+
+Así que es algo genial. Esto no parece información útil todavía, pero de hecho puedes ver dónde están los valores dentro de la memoria de tu computadora. Bueno, ¿qué es ese valor? Bueno, resulta que tan pronto como le pides a la computadora la dirección de algún valor, obtienes lo que se llama un puntero a ese valor. Un puntero es efectivamente una dirección en la memoria de la computadora. Y es por eso que es por ciento p. Esto le está diciendo a printf, continúa e imprímeme un puntero, la dirección de algún valor. Y por convención nuevamente, se muestra en hexadecimal así. 
+
+Bueno, resulta que en realidad podemos deshacer estos efectos. Déjame seguir adelante y hacer un cambio aquí. Supongamos que ahora quiero continuar e imprimir 50 nuevamente. De hecho, puedo revertir los efectos de este operador. Entonces, y n significa ir a buscar la dirección de n. Pero resulta que hay otro operador en C que es bastante útil ahora y ese es este de aquí. Entonces, mientras que y es nuestro llamado operador AddressOf, --estrella o asterisco-- lo hemos visto antes en multiplicación. Y hoy tiene un significado diferente en un contexto diferente. La estrella es lo contrario del operador AddressOf, dice que vaya a una dirección específica. Entonces, mientras que y significa cuál es la dirección, estrella significa ir a una dirección. 
+
+Entonces, si quiero imprimir ahora, no la dirección en sí, sino que literalmente quiero imprimir el valor en n, por lo tanto, usando por ciento i, en realidad puedo deshacer lo que literalmente hice, estúpidamente-- pero por el bien de la demostración-- haciendo estrella y n. ¿Por qué? La y dice, ¿cuál es la dirección? La estrella dice, vaya a esa dirección. Por lo tanto, efectivamente anula la operación. 
+
+Por lo tanto, no querrías usar esto en la práctica, pero solo habla del tipo de operaciones básicas que estamos haciendo aquí. Así que hago dirección, déjame seguir adelante y decir ahora, punto barra dirección, entrar. ¿Y qué debería ver esta vez? 50, porque ni siquiera estoy mostrando la dirección. Estoy obteniendo la dirección y yendo a la dirección, derrotando así el punto. De nuevo veo 50. Pero esto solo quiere decir que, aunque las cosas pueden parecer un poco crípticas hoy a primera vista, sintácticamente, y es obtener la dirección, la estrella es ir a esa dirección, de una forma u otra. 
+
+¿Sí? 
+
+AUDIENCIA: ¿Puedes [INAUDIBLE] escribiendo la dirección en [INAUDIBLE] como una [INAUDIBLE]? 
+
+DAVID J. MALAN: Muy buena pregunta, sí. Entonces, si hubiera recordado la dirección, tal vez era 0x12345678, en realidad podría codificar esa dirección en mi programa y decirle a la computadora que vaya allí. La sintaxis es un poco diferente. Tendría que coaccionarlo mediante un molde, pero podría hacer que eso suceda, sí. 
+
+Sí. 
+
+AUDIENCIA: ¿Qué pasa si no conoces ni siquiera el tipo de la variable? ¿Puedes [INAUDIBLE] sin saber eso? 
+
+DAVID J. MALAN: Ah, muy buena pregunta. ¿Qué pasa si no conoces el tipo de variable, qué código de formato usarías entonces? En resumen, tienes que decidir. Para una computadora, todo en la memoria son solo bits, 0 y 1, cómo los muestra depende completamente de ti. Entonces, si no sabes lo que son, solo puedes adivinar o decirle a la computadora arbitrariamente que diga que es un car, un flotador, un int o algo más. No puede darse cuenta de eso por usted, al menos en C.

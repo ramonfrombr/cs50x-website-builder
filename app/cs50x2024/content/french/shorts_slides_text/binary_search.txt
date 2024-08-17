@@ -1,0 +1,31 @@
+[0]
+
+Recherche Binaire
+
+[1]
+
+Recherche Binaire
+• Dans la recherche binaire, l’idée de l’algorithme est de diviser pour régner, réduisant la zone de recherche de moitié à chaque fois, en essayant de trouver un nombre cible.
+• Toutefois, pour exploiter cette puissance, notre tableau doit d’abord être trié, sinon nous ne pouvons pas faire d’hypothèses sur le contenu du tableau.
+
+[2]
+
+Recherche Binaire
+En pseudocode :
+• Répéter jusqu’à ce que le (sous)tableau soit de taille 0 :
+• Calculer le point médian du (sous)tableau actuel.
+• Si la cible est au milieu, arrêter.
+• Sinon, si la cible est inférieure à celle qui est au milieu, répéter en faisant pointer le point final juste à gauche du milieu.
+• Sinon, si la cible est supérieure à celle qui est au milieu, répéter en faisant pointer le point de départ juste à droite du milieu.
+
+[30]
+
+Recherche Binaire
+• Scénario du pire des cas : nous devons diviser une liste de n éléments en deux à plusieurs reprises pour trouver l’élément cible, soit parce que l’élément cible sera trouvé à la fin de la dernière division, soit parce qu’il n’existe pas du tout dans le tableau.
+• Scénario du meilleur des cas : l’élément cible est au point médian du tableau complet, et nous pouvons donc arrêter de chercher immédiatement après avoir commencé.
+
+[31]
+
+Recherche Binaire
+O(log n)
+W(1)

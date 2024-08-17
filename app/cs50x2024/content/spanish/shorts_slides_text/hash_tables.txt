@@ -1,0 +1,71 @@
+[1]
+
+Tablas Hash
+• Las tablas hash combinan la capacidad de acceso aleatorio de una matriz con el dinamismo de una lista enlazada.
+• Esto significa (asumiendo que definimos nuestra tabla hash correctamente):
+• La inserción puede comenzar a tender hacia q(1)
+• La eliminación puede comenzar a tender hacia q(1)
+• La búsqueda puede comenzar a tender hacia q(1)
+• Obtenemos las ventajas de ambos tipos de estructura de datos, mientras mitigamos las desventajas.
+
+[2]
+
+Tablas Hash
+• Para obtener esta actualización de rendimiento, creamos una nueva estructura mediante la cual, cuando insertamos datos en la estructura, los datos mismos nos dan una pista sobre dónde encontraremos los datos, en caso de que necesitemos buscarlos más tarde.
+• La contrapartida es que las tablas hash no son muy buenas para ordenar o clasificar datos, ¡pero si eso no nos importa, entonces estamos listos!
+
+[3]
+
+Tablas Hash
+• Una tabla hash representa una combinación de dos cosas con las que estamos bastante familiarizados.
+• Primero, una función hash, que devuelve un valor entero no negativo llamado código hash.
+• En segundo lugar, una matriz capaz de almacenar datos del tipo que deseamos colocar en la estructura de datos.
+• La idea es que ejecutamos nuestros datos a través de la función hash y luego almacenamos los datos en el elemento de la matriz representada por el código hash devuelto.
+
+[11]
+
+Tablas Hash
+• ¿Cómo definir una función hash? Realmente no hay límite para la cantidad de funciones hash posibles.
+• Una buena función hash debe:
+• Usar solo los datos que se van a procesar
+• Usar todos los datos que se van a procesar
+• Ser determinística
+• Distribuir los datos uniformemente
+• Generar códigos hash muy diferentes para datos muy similares
+
+[19]
+
+Tablas Hash
+• Una colisión ocurre cuando dos fragmentos de datos, cuando se ejecutan a través de la función hash, producen el mismo código hash.
+• Es de suponer que queremos almacenar ambas partes de datos en la tabla hash, por lo que no debemos simplemente sobrescribir los datos que se colocaron allí primero.
+• Necesitamos encontrar una manera de introducir ambos elementos en la tabla hash mientras intentamos conservar la inserción y la búsqueda rápidas.
+
+[20]
+
+Tablas Hash
+• Resolución de colisiones: Sondeo lineal
+• En este método, si tenemos una colisión, tratamos de colocar los datos en el siguiente elemento consecutivo en la matriz (envolviendo hacia el principio si es necesario) hasta que encontramos una vacante.
+• De esa manera, si no encontramos lo que estamos buscando en la primera ubicación, al menos esperamos que el elemento esté cerca.
+
+[41]
+
+Tablas Hash
+• Resolución de colisiones: Sondeo lineal
+• El sondeo lineal está sujeto a un problema llamado agrupación en clústeres. Una vez que hay una omisión, dos celdas adyacentes contendrán datos, lo que hace más probable en el futuro que el clúster crezca.
+• Incluso si cambiamos a otra técnica de sondeo, todavía estamos limitados. Solo podemos almacenar tantos datos como ubicaciones tengamos en nuestra matriz.
+
+[42]
+
+Tablas Hash
+• Resolución de colisiones: encadenamiento
+• Empecemos a juntarlo todo.
+• ¿Qué pasaría si en lugar de que cada elemento de la matriz contuviera solo una pieza de datos, contuviera varias piezas de datos?
+• Si cada elemento de la matriz es un puntero al principio de una lista enlazada, entonces varias piezas de datos pueden producir el mismo código hash y podremos almacenarlo todo.
+
+[43]
+
+Tablas Hash
+• Resolución de colisiones: encadenamiento
+• Hemos eliminado la agrupación en clústeres.
+• Sabemos por experiencia con listas enlazadas que la inserción (y creación, si es necesario) en una lista enlazada es una operación O(1).
+• Para la búsqueda, solo necesitamos buscar en lo que esperamos que sea una lista pequeña, ya que estamos distribuyendo lo que de otro modo sería una lista enorme en n listas.

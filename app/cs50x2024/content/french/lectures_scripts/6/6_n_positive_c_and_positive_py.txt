@@ -1,0 +1,41 @@
+Voici encore quelques exemples de la semaine 1 avant d'aborder des problèmes plus intéressants à partir de la semaine 2. Je vais aller de l'avant et à nouveau diviser mon écran. Je vais à gauche, ouvrir positive.c, qui était un programme de rappel nous permettant de définir une fonction permettant d'obtenir un entier positif.
+
+Et nous avons utilisé une boucle spéciale - un type de boucle lors de la semaine 1 lors de l'implémentation, celle d'une boucle do while (faire tant que). Malheureusement, en Python, tout comme vous n'avez pas l'opérateur plus plus, vous n'avez pas non plus une boucle do while, ce qui semblerait problématique pour des idées très simples comme celle-ci, où vous voulez que l'humain fasse quelque chose au moins une fois et puis peut-être encore et encore et encore. Mais c'est bon, n'est-ce pas ? Vous avez plus qu'assez d'outils dans la boîte à outils, à la fois en C et en Python, pour le faire sans la structure plus familière et plus confortable.
+
+Donc, laissez-moi écrire un programme appelé positive.py. Je vais aller de l'avant et du CS50 importer get_int. Je vais définir une fonction principale, comme je l'ai fait avant, juste pour pouvoir démontrer comment vous pouvez obtenir un int positif de l'utilisateur, puis l'imprimer - donc un exemple super simple qui est équivalent, pour le moment, à ce que je suis en train de faire ici de retour de la semaine 1. Donc, rien à gauche n'est nouveau. Tout est de retour de la semaine 1, même si c'est un peu loin maintenant.
+
+Laissez-moi aller de l'avant maintenant et définissez également sur le côté droit def get_positive_int. Il ne va prendre aucun argument. Mais je dois mettre en œuvre cette notion de faire quelque chose alors que c'est encore vrai. Et la façon la plus pythonique ou conventionnelle de le faire en Python est en fait comme ça. Induire délibérément une boucle infinie pour vous-même, parce que vous pouvez en sortir quand vous le voulez. Il s'agit donc d'un paradigme Python commun. Allez-y, et au moins une fois, demandez un int à l'utilisateur en lui demandant un nombre entier positif.
+
+Et puis, après cela, dans quelles circonstances voudrais-je probablement sortir de cette boucle infinie si l'objectif est d'obtenir positive_int ? Quelles questions dois-je me poser ? Oui.
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID MALAN : Oui, tout simplement, si n est supérieur à 0 - pas besoin de parenthèses, mais j'ai besoin des deux points. Je peux, tout comme en C, utiliser la commande break, qui m'empêche de sortir de la boucle, moment auquel je peux aller de l'avant et retourner n. C'est donc différent de ce que vous voyez à gauche. Mais c'est logiquement la même chose.
+
+Et honnêtement, vous pourriez revenir en arrière dans la semaine 1 et implémenter cette logique en C, parce que nous avions des boucles while. Nous avions le mot vrai, bien qu'en minuscules. Et nous avions tout ce même code, aussi, même si nous avions des accolades et des points-virgules et quelques autres choses. Ceci est cependant l'équivalent Python de le faire ici. Mais il semble qu'il y ait un bug. Ou plutôt, il y a ce que vous penseriez être un bug. C'est bon, pas de problème là-bas. Ça finira par disparaître, j'espère. Allez.
+
+[RIRES]
+
+N'y prêtez aucune attention. Le code est correct, je crois. Il semble donc y avoir un bug. Et celui-ci est super subtil. Mais dans les semaines 1 à 5 où nous écrivions en C-- oh, voyez ? Il est parti. Ignorez parfois le problème. Ça va disparaître.
+
+[RIRES]
+
+Il y a un bug apparemment subtil ici. Mais ce n'est pas réellement un bug en Python. Mais ce serait en C., que fais-je de mal, au moins en C, même si je prétends que cela va fonctionner ? Et si vous comparez la gauche et la droite, cela pourrait devenir plus évident. Que fais-je ? Est-ce un-- oui, à l'arrière.
+
+PUBLIQUE : Vous êtes en train de rompre avant de revenir.
+
+DAVID MALAN : Je romps avant de revenir. C'est bon, parce que cette instruction break si n est supérieur à 0 va me sortir de l'indentation, hors de la boucle. Donc, c'est bon. Mais je pense que votre inquiétude est liée si nous pouvons mettre le doigt dessus un peu plus précisément. Oui.
+
+PUBLIQUE : Comme, vous n'êtes pas-- vous retournez n, mais n est [INAUDIBLE].
+
+DAVID MALAN : Oui, c'est peut-être la deuxième partie de votre demande. Le n est renvoyé à la ligne 12. Et je prétends que c'est en fait très bien. Mais n a été déclaré quoique implicitement - c'est-à-dire sans aucun type de données en Python - à la ligne 9. Si nous avions fait cela en C ici, cela n'aurait pas fonctionné, car rappelez-vous en C, il y a cette notion de portée, où lorsque vous définissez une variable, elle n'existe qu'à l'intérieur des accolades qui l'encapsulent.
+
+Maintenant, Python n'a pas d'accolades. Mais il y a toujours une indentation, ce qui implique la même chose. Mais en Python, vos variables, même si elles sont déclarées sous, sous, sous, sous conditions ou variables - ou boucles, elles vous seront accessibles en dehors de ces conditions et boucles. C'est donc une fonctionnalité intéressante. Et cela me permet alors d'exécuter ce programme, Python de positive.py. Laissez-moi aller de l'avant et fournir-- oups-- hmm, il s'avère qu'il y a un bug. Oui.
+
+PUBLIQUE : [INAUDIBLE] principale.
+
+DAVID MALAN : Oui, donc je dois appeler main en bas même si ça semble un peu idiot. Mais maintenant, laissez-moi aller de l'avant et exécuter le programme maintenant. Oh, maintenant, il me demande un entier positif. Ne coopérons pas - négatif 1, 0, 1. Donc, ça marche, en fait. Donc encore, parfois, vous devrez peut-être réfléchir un peu plus sérieusement lorsqu'il s'agit d'implémenter quelque chose en Python par opposition au C. Mais en effet, c'est tout à fait possible. Oui.
+
+PUBLIC : Les variables sont-elles accessibles à l'identique dans toutes les fonctions ?
+
+DAVID MALAN : Bonne question-- les variables sont-elles accessibles dans les fonctions ? Non, elles seront isolées à la fonction, mais pas au niveau d'indentation dans lequel elles ont été définies.

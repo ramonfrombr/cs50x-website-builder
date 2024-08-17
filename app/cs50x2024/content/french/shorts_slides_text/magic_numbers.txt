@@ -1,0 +1,71 @@
+[1]
+
+Nombres magiques
+● Certains des programmes que nous avons écrits dans CS50 contiennent des nombres bizarres.
+● La hauteur de la pyramide de Mario est plafonnée à 23, par exemple.
+● Que signifient ces nombres ? Si quelqu'un regarde votre programme, le sens de 23 est-il évident immédiatement ?
+● Directemetn écrire des constantes dans notre code fait parfois référence à l'utilisation de nombres magiques.
+
+[2]
+
+Nombres magiques
+● Nous avons un nombre magique ici. Le voyez-vous ?
+● Plus important encore, voyez-vous un problème potentiel ici ? En particulier si cette fonction n'est qu'une parmi tant d'autres dans une suite de programmes qui manipulent des jeux de cartes.
+carte deal_cards(nom du paquet)
+{
+pour (int i = 0; i < 52; i++)
+{
+// distribue la carte
+}
+}
+
+[3]
+
+Nombres magiques
+● Cela résout un problème, mais en introduit un autre.
+● Même si elle est déclarée globalement, que se passe-t-il si une autre fonction de notre suite manipule par inadvertance deck_size. Cela pourrait causer des problèmes.
+carte deal_cards(nom du paquet)
+{
+int deck_size = 52;
+pour (int i = 0; i < deck_size; i++)
+{
+// distribue la carte
+}
+}
+
+[4]
+
+Nombres magiques
+● C fournit une directive de préprocesseur (aussi appelée une macro) pour créer des constantes symboliques.
+● Au moment où votre programme est compilé, #define parcourt votre code et remplace NAME avec REPLACEMENT.
+● Si #include est similaire à copier/coller, alors #define est similaire à rechercher/remplacer.
+
+#define NAME REPLACEMENT
+
+[5]
+
+Nombres magiques
+● C fournit une directive de préprocesseur (aussi appelée une macro) pour créer des constantes symboliques.
+● Au moment où votre programme est compilé, #define parcourt votre code et remplace PI avec 3.14159265.
+● Si #include est similaire à copier/coller, alors #define est similaire à rechercher/remplacer.
+#define PI 3.14159265
+
+[6]
+
+Nombres magiques
+● C fournit une directive de préprocesseur (aussi appelée une macro) pour créer des constantes symboliques.
+● Au moment où votre programme est compilé, #define parcourt votre code et remplace COURSE avec “CS50”.
+● Si #include est similaire à copier/coller, alors #define est similaire à rechercher/remplacer.
+#define COURSE “CS50”
+
+[7]
+
+Nombres magiques
+#define DECKSIZE 52
+carte deal_cards(nom du paquet)
+{
+pour (int i = 0; i < DECKSIZE; i++)
+{
+// distribue la carte
+}
+}

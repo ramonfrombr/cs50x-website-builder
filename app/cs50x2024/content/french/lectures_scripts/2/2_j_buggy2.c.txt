@@ -1,0 +1,21 @@
+Voici donc un programme qui est également buggé. Je l'ai écrit à l'avance, et il s'appelle buggy two dot c. Il a une boucle for. Il imprime des hachages. Et le but de ce programme est d'imprimer quelque chose 10 fois. J'ai donc ma boucle for de zéro à 10. J'imprime un hachage avec un saut de ligne. Alors allons-y et exécutons ce programme, faisons un buggy two. Oups. Je ne suis pas dans ce répertoire. Permettez-moi de faire un buggy deux -- ça semble se compiler. Ce n'est donc pas encore un problème pour help 50, parce que ce serait lorsque la commande elle-même ne fonctionnerait pas. Buggy deux -- très bien, ça a l'air bon, mais soyons sûrs -- un, deux, trois, quatre, cinq, six, sept, huit, neuf, 10, 11.
+
+C'est donc défectueux, si mon objectif est d'imprimer seulement 10 hachages. Et évidemment, c'est très artificiel. Il est probable que vous puissiez simplement raisonner sur le problème ici, mais cela représente un autre type de problème qui n'est pas un bug syntaxique, en ce sens que vous avez tapé un mauvais symbole ou une mauvaise commande. C'est plutôt une erreur logique. Mon objectif est d'imprimer quelque chose 10 fois. Ce n'est évidemment pas le cas. Il imprime quelque chose 11 fois. Et supposons que l'objectif soit de comprendre pourquoi cela se produit.
+
+Eh bien, le prochain outil de débogage que nous vous proposons d'envisager est en fait tout simplement printf. C'est peut-être l'outil le plus simple que vous puissiez utiliser pour comprendre réellement ce qui se passe à l'intérieur de votre programme, et nous pourrions l'utiliser dans ce cas comme suit. J'imprime évidemment déjà le symbole dièse, mais laissez-moi aller de l'avant et dire quelque chose de plus délibéré, juste pour moi, quelque chose comme i est maintenant, %i, puis allons-y et mettons juste un espace, puis là-dedans, affichons i point-virgule. Ce n'est donc pas le but du programme. C'est juste un message de diagnostic temporaire, de sorte que maintenant, si je vais de l'avant et agrandis ma fenêtre de terminal, recompile buggy two, et réexécute dot slash buggy two-- [RIRES] buffy two-- buggy two-- Je vais maintenant voir, oh, une information un peu plus intéressante.
+
+Non seulement je continue à voir les hachages, mais je vois maintenant, en temps réel, la valeur de i. Et maintenant, cela devrait probablement vous sauter aux yeux, si ce n'était déjà le cas dans la boucle for seule, quelle est l'erreur que j'ai faite dans mon code ?
+
+AUDITOIRE : [INAUDIBLE]
+
+DAVID MALAN : Dites-le encore une fois.
+
+AUDITOIRE : [INAUDIBLE]
+
+DAVID MALAN : Oui, ma première valeur pour i était zéro, et c'est normalement OK. Les programmeurs ont tendance à commencer à compter à partir de zéro, mais si vous faites cela, vous ne pouvez pas continuer à compter jusqu'à 10. Vous devez apporter quelques ajustements ici. Alors, que peut-on faire pour réparer ?
+
+AUDITOIRE : [INAUDIBLE]
+
+DAVID MALAN : Oui, donc ce serait la manière canonique de faire. Ce n'est pas la seule façon, mais généralement commencez à zéro et allez jusqu'à moins que la valeur ne vous intéresse. Donc maintenant, si je relance ça, je peux aller de l'avant et relancer make buggy two, nettoyer mon écran, dot slash buggy two, Entrée. Et maintenant j'ai effectivement 10, même s'il n'indique jamais 10, mais c'est OK, parce que je commence à zéro, et maintenant que j'ai trouvé mon erreur logique, où ça ne fonctionne pas comme je le voulais, maintenant je peux aller de l'avant et supprimer cette ligne.
+
+Je peux aller de l'avant et faire un buggy deux une fois de plus, dot slash buggy deux, Entrée. Et voilà, je peux maintenant soumettre mon programme, ou l'envoyer à mon utilisateur actuel. Donc printf est en quelque sorte une façon très ancienne de comprendre ce qui se passe dans votre programme en fouinant. Utilisez printf pour voir ce qui se passe à l'intérieur de votre programme, afin de ne pas simplement fixer un écran en essayant de raisonner sans l'aide de l'ordinateur.

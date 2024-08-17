@@ -1,0 +1,114 @@
+[1]
+
+Opérateurs arithmétiques
+● Pour manipuler et travailler avec des variables et des valeurs en C, nous disposons de plusieurs opérateurs.
+● Voyons-en quelques-uns maintenant.
+
+[2]
+
+Opérateurs arithmétiques
+● En C, nous pouvons additionner (+), soustraire (-), multiplier (*) et diviser (/) des nombres, comme prévu.
+int x = y + 1 ;
+x = x * 5 ;
+● Nous avons également l'opérateur modulo (%) qui nous donne le reste lorsque le nombre à gauche de l'opérateur est divisé par le nombre à droite.
+int m = 13 % 4 ; // m est maintenant 1
+
+[3]
+
+Opérateurs arithmétiques
+● C fournit également un moyen abrégé d'appliquer un opérateur arithmétique à une seule variable.
+x = x * 5 ;
+x *= 5 ;
+● Cette astuce fonctionne avec les cinq opérateurs arithmétiques de base. C fournit un autre raccourci pour incrémenter ou décrémenter une variable de 1 :
+x++ ;
+x-- ;
+
+[4]
+
+Expressions booléennes
+● Les expressions booléennes sont utilisées en C pour comparer des valeurs.
+● Toutes les expressions booléennes en C sont évaluées à l'une des deux valeurs possibles : vrai ou faux.
+● Nous pouvons utiliser le résultat de l'évaluation d'une expression booléenne dans d'autres constructions de programmation, comme décider quelle branche d'une conditionnelle prendre, ou déterminer si une boucle doit continuer à s'exécuter.
+
+[5]
+
+Expressions booléennes
+● Parfois, lorsque nous travaillons avec des expressions booléennes, nous utilisons des variables de type bool, mais ce n'est pas obligatoire.
+● En C, toute valeur non nulle est équivalente à vrai, et zéro est faux.
+● Deux principaux types d'expressions booléennes : opérateurs logiques et opérateurs relationnels.
+
+[6]
+
+Expressions booléennes
+● Opérateurs logiques
+● Le ET logique (&&) est vrai si et seulement si les deux opérandes sont vrais, sinon faux.
+
+x
+y
+(x && y)
+true
+true
+true
+true
+false
+false
+false
+true
+false
+false
+false
+false
+
+[7]
+
+Expressions booléennes
+● Opérateurs logiques
+● Le OU logique (||) est vrai si et seulement si au moins un des opérandes est vrai, sinon faux.
+
+x
+y
+(x || y)
+true
+true
+true
+true
+false
+true
+false
+true
+true
+false
+false
+false
+
+[8]
+
+Expressions booléennes
+● Opérateurs logiques
+● Le NON logique (!) inverse la valeur de son opérant.
+
+x
+!x
+true
+false
+false
+true
+
+[9]
+
+Expressions booléennes
+● Opérateurs relationnels
+● Ils se comportent comme on pourrait s'y attendre, et leur apparence syntaxique ressemble à celle dont vous vous souvenez peut-être en arithmétique élémentaire.
+● Inférieur à (x < y)
+● Inférieur ou égal à (x <= y)
+● Supérieur à (x > y)
+● Supérieur ou égal à (x >= y)
+
+[10]
+
+Expressions booléennes
+● Opérateurs relationnels
+● C peut également tester deux variables pour l'égalité et l'inégalité.
+● Égalité (x == y)
+● Inégalité (x != y)
+● Attention ! C'est une erreur courante d'utiliser l'opérateur d'affectation (=) lorsque vous avez l'intention d'utiliser l'opérateur d'égalité (==).

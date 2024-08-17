@@ -1,0 +1,3 @@
+Ahora pasemos a un nivel superior y presentemos, en este caso, un ejemplo usando expresiones regulares. Observa esto. En un vistazo rápido, utiliza re.search. Y busca las palabras "mi nombre es", lo que quiere decir que con suerte se detectará si he dicho mi nombre es tal y tal. Entonces dirá "hey" a lo que coincida.
+
+Puedes usar expresiones regulares para extraer información de la entrada. Así que aquí estoy extrayendo entre paréntesis lo que venga después de la palabra "es". Así que aquí vamos otra vez. Python, esta vez de voces.3. Hola. Mi nombre es David. ¡Ho, ho, ho! Ahora tu ordenador es realmente sentimental.

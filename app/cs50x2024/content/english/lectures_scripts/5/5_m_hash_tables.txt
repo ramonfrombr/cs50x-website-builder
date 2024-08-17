@@ -1,0 +1,7 @@
+All right, so what would the ideal, though, be? Every time we talk about running time, it feels like we want to be low on this list and not high. n squared was slow. Big O of 1 is constant time. That's fast. 
+
+Wouldn't it be nice throughout this story if we actually found our way to a data structure that gave us constant time? Like, my god, if we could just insert something into a data structure with one step and find something in a data structure with one step, that's sort of the holy grail, so to speak, because you don't have to worry about big O of n or big O of log n. You just jump immediately to the value you want. 
+
+Well, it turns out, theoretically there's something that allows you to achieve that called a hash table. But how you implement that is not necessarily obvious. And it takes some expertise. 
+
+And indeed, in Problem Set 5 among the goals at hand is to implement exactly this notion of a hash table that lets you spell check a document super fast. A word processing program would be so slow if every time you wanted to check a word for whether it's spelled correctly or incorrectly, if you had to search linearly or even longer rhythmically a big dictionary file, it might actually be really slow to spell check a file. But using a hash table, we can probably do much better.

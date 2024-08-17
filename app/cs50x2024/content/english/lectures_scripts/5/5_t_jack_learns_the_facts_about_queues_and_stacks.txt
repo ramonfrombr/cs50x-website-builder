@@ -1,0 +1,27 @@
+But let's use our final minutes together to take a look at one final visual, one made by some of our other friends online who put together an animation that tells the story of the differences between stacks and queues personified as follows. 
+
+[VIDEO PLAYBACK] 
+
+NARRATOR: Once upon a time, there was a guy named Jack. When it came to making friends, Jack did not have the knack. So Jack went to talk to the most popular guy he knew. He went up to Lou and asked, what do I do? 
+
+Lou saw that his friend was really distressed. Well, Lou began, just look how you're dressed. Don't you have any with clothes with a different look? 
+
+Yes, said Jack, I sure do. Come to my house and I'll show them to you. 
+
+So they went off to Jack's. And Jack showed Lou the box where he kept all his shirts and his pants and his socks. 
+
+Lou said, I see you have all your clothes in a pile. Why don't you wear some others once in a while? 
+
+Jack said, well, when I remove and socks, I wash them and put them away in the box. Then comes the next morning and up I hop. I go to the box and get my off the top. 
+
+Lou quickly realized the problem with Jack. He kept clothes, CDs, and books in a stack. When he reached for something to read or to wear, he chose the top book or underwear. Then when he was done, he would put it right back. Back it would go, on top of the stack. 
+
+I know the solution, said a triumphant Lou. You need to learn to start using a queue. Lou took Jack's and hung them in a closet. And when he had emptied the box, he just tossed it. 
+
+Then he said, now Jack, at the end of day, put your clothes on the left when you put them away. Then tomorrow morning, when you see the sun shine, get your clothes from the right, from the end of the line. Don't you see, said Lou, it will be so nice. You'll wear everything once before you wear something twice. 
+
+And with everything in queues in his closet and shelf, Jack started to feel quite sure of himself, all thanks to Lou and his wonderful queue. 
+
+[END PLAYBACK] 
+
+DAVID MALAN: All right that's it for CS50. We'll see you next time. 

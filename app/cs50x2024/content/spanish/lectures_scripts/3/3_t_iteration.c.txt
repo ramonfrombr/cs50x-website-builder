@@ -1,0 +1,23 @@
+Entonces veamos esto en contexto. Así que volvamos a Mario, donde tenemos una pirámide ligeramente diferente que la que habíamos visto antes. Noten que está alineada a la izquierda y va hacia abajo a la derecha. De hecho, eliminemos el suelo y centrémonos solo en la pirámide. ¿Cómo puedo escribir código que implemente este tipo de pirámide de Mario?
+
+Bueno, voy a crear un nuevo archivo llamado Mario.c. O mejor aún, no, seamos aún más específicos esta vez. Llamémoslo iteration.c para dejar claro que se trata de un programa iterativo. Voy a incluir cs50.h. Y voy a incluir standard io.h. Y luego voy a hacer int main void. Y aquí voy a obtener la altura de la pirámide del usuario, usando nuestro viejo amigo get_int.
+
+No me voy a molestar, por hoy, en hacer un do while y asegurarme de que el humano coopere. Solo necesita comportarse y darnos un entero positivo aquí. Y luego voy a dibujar una pirámide de esa altura usando una función que aún no existe pero que se llamará draw.
+
+Voy a implementar esta función draw de la siguiente manera: void draw, porque no necesita devolver un valor, según nuestra discusión de la semana pasada. Simplemente va a imprimir algo. Pero va a tomar una entrada, como un número n. O mejor dicho, llamémoslo H para Altura. Eso representa la altura de la pirámide a dibujar.
+
+¿Y cómo dibujo una pirámide que se ve así? Pues bien, de nuevo, usa algo de intuición, como podrías haber hecho en el problema 1, aunque la pirámide allí era un poco más complicada. En la primera fila, quiero imprimir un bloque. En la segunda fila, quiero imprimir dos bloques. En la tercera fila, tres, en la cuarta fila, cuatro. Entonces resulta que esta es una pirámide más fácil que la que les hicimos hacer para el problema 1. Lo siento.
+
+Entonces, para int, i obtiene 0. i es menor que-- en realidad, ¿saben qué? Déjenme hacerlo un poco más claro y más parecido a mi pseudocódigo verbal. Inicialicemos i a 1 para la primera fila. Hagamos esto siempre que i sea menor o igual que la altura. Y hagamos i más más. Así que esto es lo mismo que empezar desde 0 pero con una sorpresa-- [RISAS] así que en realidad no cometí ese error, si no lo vieron.
+
+Así que voy a hacer for int, i obtiene 1 para representar mi primera fila. i es menor o igual que la altura, i más más. Esto es idéntico, una vez más, a empezar desde 0, pero a veces es agradable empezar a contar desde 1, como en este caso, para la primera fila. Y luego, cada vez que quieras hacer algo bidimensional, como en Mario, lo más probable es que, si eres como yo, tengas un bucle anidado interno, tal vez lo llames j, y hagas j es menor o igual que i y luego j más más. Y voy a ejecutar esto para que quede claro lo que estoy haciendo.
+
+Pero dentro de este bucle anidado, solo voy a imprimir un bloque. Y luego aquí abajo, voy a imprimir mi nueva línea backslash n. Así que, de nuevo, es una función de dibujo simple. Y ahora, como está al final de mi archivo, necesito poner su prototipo aquí arriba, una de las pocas veces que el copiar y pegar es razonable, diría yo.
+
+Entonces déjenme hacer la iteración, compila bien, punto barra iteración. Y ahora me piden la altura. Hagamos una pirámide de tamaño 4. Y ¡voilà!, parece que funciona. Y déjenme hacerlo una vez más. Intentaré, por ejemplo, una pirámide de altura 3. Eso funciona. Y déjenme hacer una pirámide de tamaño 5. Así que parece que funciona.
+
+Y este es un enfoque muy razonable, muy correcto para implementar esa pirámide de Mario usando iteración, es decir, usando bucles, en este caso, dos bucles. Pero saben qué es interesante de esta pirámide de Mario, así como de algunas de las otras que hemos visto, es que hay esta estructura común, ¿verdad? Y si miramos la pirámide de forma aislada, ¿cuál es la definición de una pirámide de altura 4? Pues bien, podría decirse que es una pirámide de altura 3 más 1 fila adicional.
+
+¿Cuál es la definición de una pirámide de altura 3? Pues bien, es una pirámide de altura 2 más 1 fila adicional. ¿Cuál es la definición de una pirámide de altura 2? Es una pirámide de altura 1 con una fila adicional. Esa es una definición recursiva de un objeto físico o virtual, mediante la cual puedes describir la estructura de algo en términos de sí mismo.
+
+Ahora bien, en algún momento, necesito un caso especial, al menos una altura. ¿Qué es una pirámide de altura 0? Nada, ¿verdad? Retornar o salir o abandonar, cualquiera que sea la terminología correcta para el algoritmo. Siempre que tengas un llamado caso base, donde digas manualmente, oh, en ese caso específico, simplemente no hagas nada, y no te llames recursivamente una y otra vez, podemos utilizar este principio de que el código se llame a sí mismo.

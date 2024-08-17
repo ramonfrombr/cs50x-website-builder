@@ -1,0 +1,13 @@
+De acuerdo. Veamos qué más tenemos en Python. Bueno, resulta que tuvimos condiciones en C. Permítanme continuar y abrir, por ejemplo, conditions.c de la última vez. Y teníamos este programa aquí, donde le solicitamos al usuario un par de números enteros, x e y.
+
+Y luego, simplemente comparamos los dos y dijimos que x es menor que y, o que x es mayor que y. O x es igual a y. Bueno, también puedo escribir este de manera bastante sucinta: conditions.py. Permítanme continuar y decir from cs50 import get_int. Entonces, permítanme continuar y obtener un int del usuario. Y lo llamaré x. Permítanme continuar y obtener otro int del usuario. Y lo llamaré --ups-- get_int-- get_int. Permítanme continuar y llamarlo y.
+
+Y luego, hagamos la pregunta. Si x es menor que y --ups--
+
+[RISAS]
+
+--si x es menor que y, continúe e imprima x es menor que y. Else if or--
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: --elif-- un poco más sucinta, así que tendrá que acostumbrarse. x es mayor que y. Vayamos por delante e imprimamos x es mayor que y else-- voy a continuar y decir por deducción, que x debe ser igual a y. Guardaré ese archivo. Continuaré y ejecutaré Python en conditions.py. Me daré dos números solo para hacer una prueba rápida y superficial. Y de hecho, x es menor que y. Y confío en que si sigo ejecutándolo, espero que también se confirme que el resto es correcto.

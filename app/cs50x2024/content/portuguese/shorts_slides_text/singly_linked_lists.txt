@@ -1,0 +1,199 @@
+[0]
+
+Listas Ligadas Simplesmente
+
+[1]
+Listas Ligadas Simplesmente
+• Até agora no curso, nós tivemos apenas um tipo de estrutura de dados para representar coleções de valores semelhantes.
+• structs, vamos relembrar, nos fornecem "contêineres" para manter variáveis de diferentes tipos de dados, normalmente.
+• Vetores são ótimos para pesquisa de elementos, mas a menos que queiramos inserir no final do vetor, inserir elementos é muito caro - lembra do algoritmo de ordenação por inserção?
+
+[2]
+
+Listas Ligadas Simplesmente
+• Vetores também sofrem de uma grande inflexibilidade - o que acontece se precisarmos de um vetor maior do que pensávamos?
+• Através do uso inteligente de ponteiros, alocação dinâmica de memória e structs, podemos unir essas duas partes para desenvolver um novo tipo de estrutura de dados que nos proporciona a capacidade de aumentar e diminuir uma coleção de valores semelhantes para atender às nossas necessidades.
+
+[3]
+
+Listas Ligadas Simplesmente
+• Chamamos esta combinação de elementos, quando usados desta forma, de lista ligada.
+• Um nó de lista ligada é um tipo especial de struct com dois membros:
+• Dados de algum tipo de dados (int, char, float...)
+• Um ponteiro para outro nó do mesmo tipo
+• Desta forma, um conjunto de nós juntos pode ser considerado como a formação de uma cadeia de elementos que podemos seguir do início ao fim.
+
+[7]
+
+Listas Ligadas Simplesmente
+typedef struct sllist
+{
+VALUE val;
+struct sllist* next;
+}
+sllnode;
+
+[8]
+
+Listas Ligadas Simplesmente
+• Para trabalhar com listas ligadas efetivamente, há uma série de operações que precisamos entender:
+1. Criar uma lista ligada quando ela ainda não existe.
+2. Pesquisar por um elemento em uma lista ligada.
+3. Inserir um novo nó em uma lista ligada.
+4. Deletar um único elemento de uma lista ligada.
+5. Deletar uma lista ligada inteira.
+
+[9]
+
+Listas Ligadas Simplesmente
+• Criar uma lista ligada.
+sllnode* create(VALUE val);
+
+[10]
+
+Listas Ligadas Simplesmente
+• Criar uma lista ligada.
+sllnode* create(VALUE val);
+• Passos envolvidos:
+a. Alocar dinamicamente espaço para um novo sllnode.
+b. Verificar se não ficamos sem memória.
+c. Inicializar o campo val do nó.
+d. Inicializar o campo next do nó.
+e. Retornar um ponteiro para o sllnode recém criado.
+
+[16]
+
+Listas Ligadas Simplesmente
+• Pesquisar por um elemento em uma lista ligada.
+bool find(sllnode* head, VALUE val);
+
+[17]
+
+Listas Ligadas Simplesmente
+• Pesquisar por um elemento em uma lista ligada.
+bool find(sllnode* head, VALUE val);
+• Passos envolvidos:
+a. Criar um ponteiro de travessia apontando para o head da lista.
+b. Se o campo val do nó atual é o que estamos procurando, retorne sucesso.
+c. Se não, defina o ponteiro de travessia para o próximo ponteiro na lista e volte para o passo b.
+d. Se você chegou ao final da lista, retorne falha.
+
+[18]
+
+Listas Ligadas Simplesmente
+bool exists = find(list, 6);
+2
+3
+5
+6
+8
+list
+
+[29]
+
+Listas Ligadas Simplesmente
+• Inserir um novo nó em uma lista ligada.
+sllnode* insert(sllnode* head, VALUE val);
+
+[30]
+
+Listas Ligadas Simplesmente
+• Inserir um novo nó em uma lista ligada.
+sllnode* insert(sllnode* head, VALUE val);
+• Passos envolvidos:
+a. Alocar dinamicamente espaço para um novo sllnode.
+b. Verificar se não ficamos sem memória.
+c. Popular e inserir o nó no início da lista ligada.
+d. Retornar um ponteiro para o novo head da lista ligada.
+
+[31]
+
+Listas Ligadas Simplesmente
+• Inserir um novo nó em uma lista ligada.
+sllnode* insert(sllnode* head, VALUE val);
+• Passos envolvidos:
+a. Alocar dinamicamente espaço para um novo sllnode.
+b. Verificar se não ficamos sem memória.
+c. Popular e inserir o nó no início da lista ligada.
+d. Retornar um ponteiro para o novo head da lista ligada.
+
+[35]
+
+Listas Ligadas Simplesmente
+• Hora da decisão!
+• Qual ponteiro devemos mover primeiro? O nó "12" deve ser o novo head da lista ligada, já que ele existe agora, ou devemos conectá-lo à lista primeiro?
+• Esta é uma das coisas mais complicadas com listas ligadas. A ordem é importante!
+
+[42]
+
+Listas Ligadas Simplesmente
+• Deletar uma lista ligada inteira.
+void destroy(sllnode* head);
+
+[43]
+
+Listas Ligadas Simplesmente
+• Deletar uma lista ligada inteira.
+void destroy(sllnode* head);
+• Passos envolvidos:
+a. Se você chegou a um ponteiro nulo, pare.
+b. Delete o resto da lista.
+c.
+Liberte o nó atual.
+
+[44]
+
+Listas Ligadas Simplesmente
+• Deletar uma lista ligada inteira.
+void destroy(sllnode* head);
+• Passos envolvidos:
+a. Se você chegou a um ponteiro nulo, pare.
+b. Delete o resto da lista.
+c.
+Liberte o nó atual.
+
+[45]
+
+Listas Ligadas Simplesmente
+12
+15
+9
+13
+10
+destroy()
+destroy()
+destroy()
+destroy()
+destroy()
+destroy()
+FRAMES DA PILHA
+a. Se você chegou a um ponteiro nulo, pare.
+b. Delete o resto da lista.
+c. Libere o nó atual.
+destroy(list);
+list
+
+[67]
+
+Listas Ligadas Simplesmente
+destroy()
+destroy()
+destroy()
+destroy()
+destroy()
+destroy()
+FRAMES DA PILHA
+a. Se você chegou a um ponteiro nulo, pare.
+b. Delete o resto da lista.
+c. Libere o nó atual.
+destroy(list);
+
+[68]
+
+Listas Ligadas Simplesmente
+• Para trabalhar com listas ligadas efetivamente, há uma série de operações que precisamos entender:
+1. Criar uma lista ligada quando ela ainda não existe.
+2. Pesquisar por um elemento em uma lista ligada.
+3. Inserir um novo nó em uma lista ligada.
+4. Deletar um único elemento de uma lista ligada.
+5. Deletar uma lista ligada inteira.

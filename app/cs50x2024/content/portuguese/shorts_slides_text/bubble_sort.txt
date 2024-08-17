@@ -1,0 +1,16 @@
+[1]
+
+Ordenação por bolhas
+• Na ordenação por bolhas, a ideia do algoritmo é mover os elementos de valor mais alto geralmente em direção à direita e os elementos de valor mais baixo geralmente em direção à esquerda.
+Em pseudocódigo:
+    • Defina o contador de trocas como um valor diferente de zero
+    • Repita até que o contador de trocas seja 0:
+    • Redefina o contador de trocas como 0
+    • Observe cada par adjacente
+    • Se dois elementos adjacentes não estiverem em ordem, troque-os e adicione um ao contador de trocas
+
+[27]
+
+Ordenação por bolhas
+• Pior cenário: o array está na ordem reversa; temos que "borbulhar" cada um dos n elementos ao longo do array, e como só podemos "borbulhar" totalmente um elemento em posição por passagem, devemos fazer isso n vezes.
+• Melhor cenário: o array já está perfeitamente ordenado e não fazemos nenhuma troca na primeira passagem.

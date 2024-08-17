@@ -1,0 +1,171 @@
+[1]
+
+SQL
+• Often times, in order for us to build the most functional website we can, we depend on a database to store information.
+• If you’ve ever used Microsoft Excel or Google Spreadsheets (among others), odds are you’re familiar with the notion of a database: a hierarchically organized set of tables, each of which contains a set of rows and columns.
+
+[2]
+
+SQL
+• SQL (the Structured Query Language) is a programming language whose purpose is to query a database.
+• MySQL is an open-source platform on which you can establish the type of relational database that SQL is most adept at working with.
+• Many installations of MySQL come with a GUI tool called phpMyAdmin which can be used to execute database queries in a more user-friendly way.
+
+[3]
+
+SQL
+• After you create a database, the next thing you’ll most likely want to do is create a table.
+• The syntax for doing this is actually a bit awkward to do programmatically, at least at the outset, and so this is where phpMyAdmin will come in handy.
+• As part of the process of creating a table, you’ll be asked to specify all of the columns in that table.
+• Thereafter, all your queries will refer to rows of the table.
+
+[13]
+
+SQL
+• Each column of your SQL table is capable of holding data of a 
+particular data type.
+
+[14]
+
+SQL
+• Unlike in C, the CHAR data type in SQL does not refer to a single character. Rather, it is a fixed-length string.
+• In most relational databases, including MySQL, you actually specify the fixed-length as part of the type definition, e.g. CHAR(10).
+• A VARCHAR refers to a variable-length string.
+• VARCHARs also require you to specify the maximum possible length of a string that could be stored in that column, e.g. VARCHAR(99).
+
+[15]
+
+SQL
+• One other important consideration when constructing a table in SQL is to choose one column to be your primary key.
+• Primary keys enable rows of a table to be uniquely and quickly identified.
+• Choosing your primary key appropriately can make subsequent operations on the table much easier.
+• It is also possible to establish a joint primary key – a combination of two columns that is always guaranteed to be unique.
+
+[16]
+
+SQL
+• SQL is a programming language, but its vocabulary is fairly limited. 
+• We will primarily consider just four operations that one may perform on a table.
+
+[20]
+
+SQL
+• SQL is a programming language, but its vocabulary is fairly limited. 
+• We will primarily consider just four operations that one may perform on a table.
+INSERT
+SELECT
+UPDATE
+DELETE
+
+[22]
+
+SQL
+• INSERT
+• Add information to a table.
+
+[23]
+
+SQL
+• INSERT
+• Add information to a table.
+INSERT INTO 
+<table>
+(<columns>)
+VALUES
+(<values>)
+
+[28]
+
+SQL
+• When defining the column that ultimately ends up being your table’s primary key, it’s usually a good idea to have that column be an integer.
+• Moreover, so as to eliminate the situation where you may accidentally forget to specify a real value for the primary key column, you can configure that column to autoincrement, so it will pre-populate that column for you automatically when rows are added to the table.
+
+[45]
+
+SQL
+• Databases empower us to organize information into tables efficiently.
+• We don’t always need to store every possible relevant piece of information in the same table, but can use relationships across the tables to let us pull information from where we need it.
+
+
+[47]
+
+SQL
+• Databases empower us to organize information into tables efficiently.
+• We don’t always need to store every possible relevant piece of information in the same table, but can use relationships across the tables to let us pull information from where we need it.
+• What if we now find ourselves in a situation where we need to get a user’s full name (from the users table) and their mother’s name (from the mother table).
+
+[48]
+
+SQL
+• SELECT (JOIN)
+• Extract information from multiple tables.
+
+[49]
+
+SQL
+• SELECT (JOIN)
+• Extract information from multiple tables.
+SELECT 
+<columns>
+FROM
+<table1>
+JOIN
+<table2>
+ON
+<predicate>
+
+[62]
+
+SQL
+• DELETE
+• Remove information from a table.
+
+[63]
+
+SQL
+• DELETE
+• Remove information from a table.
+DELETE FROM 
+<table>
+WHERE
+<predicate>
+
+
+[67]
+
+SQL
+• All of these operations are pretty easy to do in the graphical interface of phpMyAdmin.
+• We want a way to do this programmatically, not just typing SQL commands into the “SQL” tab of phpMyAdmin.
+• Fortunately, SQL integrates with PHP very well, by way of functions like query().
+
+[73]
+
+SQL
+• After you’ve connected to your database with PHP (using a process called MySQLi or PDO), you can make pass query strings as arguments to functions in PHP and store the result set in an associative array.
+$results = query(“SELECT fullname FROM users WHERE idnum = ?”,
+$_SESSION[“id”]);
+print(“Thanks for logging in, {$results[‘fullname’]}!”);
+
+[74]
+
+SQL
+• After you’ve connected to your database with PHP (using a process called MySQLi or PDO), you can make pass query strings as arguments to functions in PHP and store the result set in an associative array.
+• It’s also possible your result set might consist of multiple rows, in which case the result set would be an array of associative arrays, so just need to iterate through it!
+
+
+[78]
+
+SQL
+<p>The moms of TV’s Seinfeld:</p>
+<table>
+<?php
+$results = query(“SELECT mothers FROM moms”);
+if($results !== false)
+{
+foreach($results as $result)
+{
+print(“<tr><td>” . $result[‘mothers’] . “</td></tr>”);
+}
+}
+?>
+</table>

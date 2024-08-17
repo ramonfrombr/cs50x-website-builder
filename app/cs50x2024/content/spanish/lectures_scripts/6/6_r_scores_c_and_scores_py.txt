@@ -1,0 +1,13 @@
+Muy bien. Pasemos ahora a donde lo dejamos en la semana 2, donde empezamos a introducir arreglos que ahora empezaremos a llamar listas. Voy a dividir mi ventana de nuevo. Voy a abrir un ejemplo de la semana 2 como scores2.c, que se veía algo así. Ha pasado un tiempo. Pero ya vimos este ejemplo hace un tiempo, que solo inicializa un arreglo con tres valores; 72, 73, 33; y luego calcula el promedio usando un poco de aritmética en la parte inferior. Así que hace un tiempo, pero todo lo que hizo fue simplemente eso.
+
+Ahora voy a crear un archivo llamado scores.py en el lado derecho ahora en Python. Y voy a darme un arreglo ahora llamado una lista. Y es una lista en el sentido, como una lista enlazada, que puede crecer y encogerse automáticamente, así que no más alloc o realloc.
+
+Así que de hecho, si quiero agregar algo a esta lista, puedo decir literalmente puntuaciones, que es el nombre de la variable, entrar en ella como una estructura en C, y usar una función, de otro modo conocida ahora como un método que está dentro de una estructura, y simplemente anexar un valor como 72. Luego puedo hacer esto nuevamente y anexar 73. Y luego puedo hacer esto nuevamente y anexar 33.
+
+Y ahora, puedo continuar e imprimir un promedio. Digamos promedio, como antes. Y resulta que Python tiene algunas funciones sofisticadas que son útiles aquí. Puedo tomar la suma de todas esas puntuaciones y dividirla por la longitud de esa lista, dándome así, con suerte, el total de la cuenta; la suma total de las puntuaciones dividida por el total de la cuenta de puntuaciones y obteniendo un promedio; así que python.py. No, ¿qué olvidé?
+
+APOYO: f.
+
+DAVID MALAN: Solo la f para una fstring. Muy bien. Así que ahora voy a continuar y volver a ejecutar eso. Y wala, parece que con esos tres valores, el promedio en realidad es, por ejemplo, 59,33333. Y si realmente comenzara a curiosear, realmente veríamos la imprecisión. Y ya estamos empezando a verlo en la pantalla aquí.
+
+Bueno, permítanme resumir esto. No necesito usar append, append, append. En Python, puedo decir simplemente puntuaciones 72, 73, 33, no muy diferente de la notación de llaves que podrías recordar haber visto en algunos puntos en C. Pero es un poco más comúnmente usada aquí en Python. Así que esto también va a funcionar exactamente igual, siendo el punto que las listas pueden crecer y encogerse. Si quieres una lista, úsala. Ya no tienes que pensar tanto en usar ese tipo de estructura.

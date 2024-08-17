@@ -1,0 +1,41 @@
+Eh bien, revenons juste un instant à un endroit que nous avons vu il y a quelques semaines, qui était celui-ci.
+
+Vous vous souviendrez que dans Mario, nous avons fait quelques exemples au début, où nous voulions reproduire l'idée, en imprimant, par exemple, quatre points d'interrogation d'affilée ici. Et nous voulions imprimer quelque chose comme trois carrés dans une colonne. Et puis, nous avions aussi cette structure bidimensionnelle imprimant des briques. Voyons comment nous pouvons mettre en œuvre ces mêmes idées maintenant en utilisant Python un peu plus simplement qu'avant.
+
+Alors, laissez-moi y aller. Et je créerai un programme appelé mario.py dans lequel créer aussi ces éléments. Donc Mario.py-- le premier objectif est de faire quelque chose comme ça. Donc je veux y aller et imprimer quatre points d'interrogation dans le ciel ou simplement en termes ASCII simples, juste quatre points d'interrogation à l'écran.
+
+Je peux donc évidemment faire 1, 2, 3, 4. Mais ce n'est pas particulièrement bien conçu. Je peux le rendre un peu plus réutilisable, un peu plus dynamique en disant pour i dans la plage (4). Et puis, je peux aller de l'avant et imprimer, par exemple, un seul point d'interrogation à la place. Mais quelque chose va se retourner contre moi maintenant. Si j'exécute ceci, que vais-je voir que je ne veux pas voir ? Oui.
+
+PUBLIC : Ce sera un point d'interrogation [INAUDIBLE].
+
+DAVID MALAN : Exactement. Ce seront des points d'interrogation dans une rangée verticale. Pourquoi ? Eh bien, finalement, nous étions si heureux de se débarrasser des barres obliques inverses n. Maintenant, ça nous revient en boomerang, car parfois vous ne voulez pas les barres obliques inverses n. C'est là que les fonctions de Python sont paramétrables d'une manière un peu différente de celles de C.
+
+La plupart des fonctions que nous avons vues en C peuvent avoir pris zéro ou plusieurs arguments entre parenthèses, et vous les séparez simplement par des virgules. Python est un peu plus sophistiqué en ce qu'il comporte ce que l'on appelle des arguments nommés, où vous ne spécifiez pas simplement une virgule quelque chose, une virgule, quelque chose, une virgule, quelque chose. Vous pouvez, à la place, spécifier le nom d'un argument ou d'un paramètre, un signe égal, puis sa valeur.
+
+Vous ne le sauriez donc qu'à partir de la documentation de Python. Mais il s'avère que la fonction print prend un argument appelé end-- E-N-D-- dont la valeur peut être égale à tout ce que vous voulez. Par défaut, elle est littéralement égale à une barre oblique inverse n. Cela se produit automatiquement, mais vous pouvez le remplacer.
+
+Vous pouvez en fait, dire vous savez quoi ? Je ne veux rien à la fin de chaque chose que j'imprime. Alors laissez-moi simplement guillemeter. Laissez-moi relancer mario.py maintenant. Et maintenant, j'ai presque ce que je veux. Mais c'est un peu bâclé. Je veux toujours déplacer le curseur à la fin. Mais c'est bon. Je peux simplement n'imprimer rien, car j'aurai une nouvelle ligne gratuite au bas du programme. Voici donc comment je peux mettre en œuvre cette même idée.
+
+Mais vous pouvez mettre n'importe quoi ici. Ça pourrait être un peu bizarre. Mais je pourrais mettre des virgules entre les deux. Et puis, je pourrais relancer mario.py et obtenir maintenant le point d'interrogation virgule point d'interrogation virgule point d'interrogation virgule, parce que j'imprime une virgule après chacune. Mais pour nos objectifs, il suffit de passer outre cela, dans ce cas.
+
+Eh bien, comment puis-je faire cela un peu plus sophistiqué ? Eh bien, vous avez proposé-- ou le mème que vous avez vu a proposé que nous puissions faire cela à la place. Nous pouvons simplement imprimer, par exemple, imprimer un point d'interrogation 4 fois. Maintenant, nous pouvons relancer le programme maintenant. Et voilà-- encore plus Pythonic-- pas forcément aussi évident ou réutilisable, mais certainement plus concis.
+
+Faisons-en encore un cette fois-- que diriez-vous de ça ? Rappelez-vous que nous voulions imprimer une colonne de trois briques. Alors, comment pourrions-nous faire cela ? Eh bien, laissez-moi y aller et le faire de manière simpliste. Pour i dans la plage de 3, laissez-moi aller de l'avant et imprimer une brique comme ça. Laissez-moi exécuter le programme maintenant, mario.py.
+
+Et voilà, celui-là est assez facile. Mais je peux en fait faire ça un peu plus intelligemment si je fais ceci-- imprimer l'un d'entre eux-- barre oblique inverse n fois 3. Mais corrigeons également ce bogue survenu plus tôt. C'est presque juste. Mais je prétends que c'était un peu désordonné.
+
+Alors, quelle est la solution pour corriger ce bogue, où je suis juste un peu pointilleux ? Je ne veux pas cette ligne vide supplémentaire à la fin, que j'obtiens gratuitement grâce à l'impression elle-même. Les lignes vides-- les nouvelles lignes au milieu proviennent de la chaîne de caractères entre guillemets ici. Quelle est la solution pour se débarrasser de cette nouvelle ligne supplémentaire à la toute fin ? Oui.
+
+PUBLIC : Vous pouvez remplacer n par rien.
+
+DAVID MALAN : Oui, dites simplement égal guillemet guillemet. Donc la syntaxe commence à devenir un peu funky, n'est-ce pas ? C'est un peu plus difficile à analyser visuellement. Mais c'est, en effet, simplement le paradigme que nous avons vu auparavant. Voici un argument à gauche. Voici un autre argument à droite. La seule chose qui est différente en Python, c'est que maintenant, certains arguments peuvent avoir des noms explicites que vous ne connaissez que grâce à la documentation.
+
+Alors maintenant, si je relance cela après avoir enregistré, maintenant, j'ai l'effet que je veux réellement. Eh bien, faisons-en un de plus avec Mario ici, cette fois pour faire quelque chose d'un peu en deux dimensions et imprimer une brique qui est comme une brique de 3 sur 3 de haches à la place. Eh bien, revenons à mon code ici.
+
+Et laissez-moi vous donner un premier exemple en Python d'une boucle imbriquée. Alors laissez-moi y aller et faire pour i dans la plage de 3. Cela me donne mes lignes. Et puis, je peux simplement faire pour j dans la plage de 3 aussi. Et puis, ici, je peux aller de l'avant et imprimer juste un dièse. Mais je ne veux pas imprimer de nouvelles lignes à chaque fois. Sinon, ce sera une très haute colonne de haches.
+
+Mais après avoir imprimé une ligne, je veux imprimer une ligne vide. Donc je pense que cela suffit. Je vais un peu vite ici. Mais encore une fois, ceci-- la logique est de la semaine 1. La syntaxe est maintenant de la semaine 6. Laissez-moi relancer cela-- mario.py. Non. J'ai foiré. Qu'est-ce que j'ai mal fait ? Je n'ai pas vraiment remplacé ce que j'avais l'intention de faire. Quoi-- oui, là-bas à gauche.
+
+PUBLIC : Vous avez inclus la barre oblique inverse n.
+
+DAVID MALAN : Oui, et tout l'intérêt d'utiliser le paramètre n était de le remplacer. Alors laissez-moi le changer en cela, et voyons ce qui se passe maintenant. Voilà. Maintenant, j'ai mis en œuvre cette même idée. Ouf, je pense que des friandises au Rice Krispie nous attendent dans le hall. On se voit dans cinq minutes.

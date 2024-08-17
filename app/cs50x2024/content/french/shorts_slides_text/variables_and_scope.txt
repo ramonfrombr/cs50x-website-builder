@@ -1,0 +1,138 @@
+[0]
+
+Portée des variables
+
+[1]
+
+Portée des variables
+● La portée est une caractéristique d'une variable qui définit à partir de quelles fonctions cette variable peut être consultée.
+● Les variables locales ne sont consultables que dans les fonctions dans lesquelles elles sont créées.
+● Les variables globales sont consultables par n'importe quelle fonction dans le programme.
+
+[2]
+
+Portée des variables
+● Jusqu'ici dans le cours, vous n'avez pratiquement travaillé qu'avec des variables locales.
+● Ici, x est local à la fonction triple(). Aucune autre fonction ne peut se référer à cette variable, pas même main(). result est local à main().
+int triple(int x); // déclaration
+int main(void)
+{
+int result = triple(5);
+}
+int triple(int x)
+{
+return x * 3;
+}
+
+[3]
+
+Portée des variables
+● Les variables globales existent aussi. Si une variable est déclarée en dehors de toutes les fonctions, n'importe quelle fonction peut s'y référer.
+int triple(int x); // déclaration
+#include <stdio.h>
+float global = 0.5050;
+int main(void)
+{
+triple();
+printf(“%f\n”, global);
+}
+void triple(void)
+{
+global *= 3;
+}
+
+[4]
+
+Portée des variables
+● Pourquoi cette distinction est-elle importante ? Pour la plupart, les variables locales en C sont transmises par valeur dans les appels de fonction.
+● Lorsqu'une variable est transmise par valeur, le destinataire reçoit une copie de la variable transmise, pas la variable en elle-même.
+● Cela signifie que la variable dans l'appelant reste inchangée à moins d'être réécrite.
+
+[5]
+
+Portée des variables
+● Aucun effet sur foo. (Les déclarations de fonction sont omises pour des raisons d'espace.)
+int main(void)
+{
+int foo = 4;
+triple(foo);
+}
+int triple(int x)
+{
+return x *= 3;
+}
+
+[6]
+
+Portée des variables
+● Écrase foo. (Les déclarations de fonction sont omises pour des raisons d'espace.)
+int main(void)
+{
+int foo = 4;
+foo = triple(foo);
+}
+int triple(int x)
+{
+return x *= 3;
+}
+
+[7]
+
+Portée des variables
+● Les choses peuvent devenir particulièrement insidieuses si le même nom de variable apparaît dans plusieurs fonctions, ce qui est parfaitement correct tant que les variables existent dans des portées différentes.
+
+[8]
+
+Portée des variables
+int increment(int x);
+int main(void)
+{
+int x = 1;
+int y;
+y = increment(x);
+printf(“x est %i, y est %i\n”, x, y);
+}
+int increment(int x)
+{
+x++;
+return x;
+}
+
+[9]
+
+Portée des variables
+int increment(int x);
+int main(void)
+{
+int x = 1;
+int y;
+y = increment(x);
+printf(“x est %i, y est %i\n”, x, y);
+}
+int increment(int x)
+{
+x++;
+return x;
+}
+
+[10]
+
+Portée des variables
+int increment(int x);
+int main(void)
+{
+int xm = 1;
+int y;
+y = increment(xm);
+printf(“x est %i, y est %i\n”, xm, y);
+}
+int increment(int xi)
+{
+xi++;
+return xi;
+}
+
+[11]
+
+Portée des variables
+x est 1, y est 2

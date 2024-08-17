@@ -1,0 +1,37 @@
+So there are different algorithms, though, in the world. And here's kind of a cheat sheet of common running times. A running time is just how much time it takes for your program or your algorithm to run, how many seconds does it take, how many seconds does it take, how many steps does it make, whenever your unit of measure is. And we'll see on the list here some familiar terms. 
+
+If I were to label this chart now with a couple of the algorithms we've seen, linear search, we'll say, is in big O of n. In the worst case, Eric is going to have to look at all of the lockers, just like a few weeks ago I had to look at all of the pages in the phone book maximally to find Mike Smith. And just to be clear, where's binary search going to be in this list of running times? 
+
+AUDIENCE: Log n. 
+
+SPEAKER 1: Log n. So it's actually better. Lower on this chart is better, at least in terms of time required, than anything above it. So we've seen this thus far. And now this sort of invites the question, well, what algorithms kind of go here or here? Which ones are slower? Which ones are faster? That'll be one of the things we look at here today. 
+
+But computer scientist have another sort of tool in the toolkit that we want to introduce you today. And this is just a capital Greek omega, this symbol here. And this just refers to not a-- it's the opposite of big O, if you will. Big O is essentially an upper bound on how much time an algorithm might take. It might have taken Eric n steps, 7 lockers, to find the number 50 because of linear search. That's big O of n, or on the order of n. That's an upper bound, worst case in this scenario. 
+
+You can use omega, though, to describe things like best cases. So for instance, with Eric's linear search approach in the worst case, it could have and it did take him n steps, or 7 specifically. But in the best case, how few steps might it have taken him? Just one, right? He might have gotten lucky, and 50 might have been just there. 
+
+Similarly, when [? Nizari, ?] when she looked for 50 in the middle, how few steps might she have needed to find 50 among her 7 lockers? 
+
+AUDIENCE: One. 
+
+SPEAKER 1: One step, too. She might have just gotten lucky because Brian might have just, by coincidence or design, put the number 50 there. So whereas you have this upper bound on how many steps an algorithm might take, sometimes you can get lucky. And if the inputs are in a certain order, you might get lucky and have a lower bound on the running time that's much, much better. 
+
+So we might have a chart that looks like this. This is the same function, so to speak, the same math. But I'm just using omega now instead of big O. And now let's just apply some of these algorithms to the chat here, then. Linear search is in omega of what, so to speak, by this definition? 
+
+AUDIENCE: Omega 1. 
+
+SPEAKER 1: Omega of 1, right? In the best case, the lower bound on how much time linear search might have taken Eric would just be one step. So we're going to call linear search omega of 1. And meanwhile, when we did binary search, secondly, it's not going to be log n in the best case. It might be also omega of 1 because we might just get lucky. 
+
+And so now we have kind of useful rules of thumb for describing just how good or bad your algorithm or your code might be, depending on, at least, the inputs that are fed to that algorithm. So that's big O, and that's omega. Any questions on these two principles, big O or omega? Yeah? 
+
+AUDIENCE: [INAUDIBLE] no matter where it starts [INAUDIBLE]? 
+
+SPEAKER 1: Really good question. And we'll touch on a few such algorithms today. But for now the question is, what's an example of an algorithm that might be omega of n, such that in the best case, no matter how good or bad your input is, it takes n steps? Maybe counting the number of lockers, right? 
+
+How do I do that? 1, 2, 3, 4, 5, 6, 7-- my output is 7. How many steps did that take? Big O of n because in the worst case, I had to look at all of them, but also omega of n because in the best case, I still had to look at all of them. Otherwise, I couldn't have given you an accurate count. So that would be an example of an omega of n algorithm. And we'll see others over time. Other questions? Yeah? 
+
+AUDIENCE: [INAUDIBLE] omega or [INAUDIBLE] better omega value or a better O value? 
+
+SPEAKER 1: Really good question. Is it better to have a really good omega value or a really good O value? The latter, and we'll see this over time. Really what computer scientists tend to worry about is how their code performs in the worst case, or maybe not even that, in the average case. 
+
+Typically, day today, best case is nice to have. But who really cares if your code is super fast when the input happens to be sorted for you already? That would be a corner case, so to speak. So it's a useful tool to describe your algorithm. But a big O and upper bound is typically what we'll care about a little more.

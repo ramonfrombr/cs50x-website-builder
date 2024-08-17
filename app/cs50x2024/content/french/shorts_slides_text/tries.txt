@@ -1,0 +1,52 @@
+[1]
+
+Tries
+• Nous avons vu quelques structures de données qui gèrent le mappage des paires clé-valeur.
+• Tableaux : la clé est l’index de l’élément, la valeur est la donnée qui s'y trouve.
+• Tables de hachage : la clé est le code de hachage de la donnée, la valeur est une liste liée des données à hacher pour ce code de hachage.
+• Et qu’en est-il d’un type de structure de données légèrement différent dans lequel la clé sera obligatoirement unique et la valeur peut être aussi simple qu’un booléen indiquant si la donnée existe dans la structure ?
+
+[2]
+
+Tries
+• Les tries combinent des structures et des pointeurs pour stocker des données d’une manière intéressante.
+• Les données à rechercher dans le trie sont maintenant une feuille de route.
+• Si vous parvenez à suivre la carte du début à la fin, les données existent dans le trie.
+• Sinon, elles n’existent pas.
+• Contrairement à une table de hachage, il n’y a pas de collision et aucun élément de donnée (à moins qu’il ne soit identique) n’a le même chemin.
+
+[3]
+
+Tries
+• Maîtrisons les paires clé-valeur où les clés sont des années à quatre chiffres (AAAA) et les valeurs sont les noms des universités fondées pendant ces années.
+• Dans un trie, les chemins allant d’un nœud racine central vers un nœud feuille (où se trouveraient les noms de l’école) seraient étiquetés avec des chiffres de l’année.
+• Chaque nœud sur le chemin de la racine vers la feuille pourrait avoir 10 pointeurs en émanant, un pour chaque chiffre.
+
+[4]
+
+Tries
+• Pour insérer un élément dans le trie, construisez simplement le chemin correct de la racine à la feuille.
+
+[5]
+
+Tries
+typedef struct _trie
+{
+char university[20];
+struct _trie* paths[10];
+}
+trie;
+
+[6]
+
+Tries
+typedef struct _trie
+{
+char university[20];
+struct _trie* paths[10];
+}
+trie;
+[34]
+
+Tries
+• Pour rechercher un élément dans le trie, utilisez les chiffres successifs pour naviguer depuis la racine et, si vous parvenez à vous rendre jusqu’au bout sans atteindre une impasse (un pointeur NULL), vous l’aurez trouvé.

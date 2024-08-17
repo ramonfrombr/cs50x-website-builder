@@ -1,0 +1,39 @@
+Bon, passons à l'expérimentation avec cette chaîne, comme nous l'avons fait il y a un instant en utilisant le nom d'Emma au lieu d'un entier. Donc je vais effacer ces lignes précédentes. Et je vais revenir aux trucs de la semaine 1, où je dis simplement chaîne s égale guillemet, Emma. Et puis bien sûr, si je dois imprimer cela, je peux simplement le dire comme avant. Alors juste pour une vérification de sécurité rapide, je vais faire address à nouveau.
+
+Oups. Qu'est-ce que j'ai fait de mal ? Laissez-moi remonter jusqu'à la première erreur, de nombreuses erreurs semble-t-il.
+
+Ouais.
+
+LE PUBLIC : Vous utilisez une chaîne, [INAUDIBLE]
+
+DAVID J. MALAN : Ouais, je n'aurais pas dû enlever toutes les petites roues tout de suite. J'utilise toujours une chaîne. Alors laisse-moi remettre cela pour l'instant. Cela me donnera accès à ce typedef pour la chaîne. Laissez-moi le recompiler en faisant address. Ça a marché. C'était donc la solution, merci. Et puis address à nouveau. On voit juste Emma.
+
+Alors que pouvons-nous faire maintenant qui soit un peu différent ici ? Eh bien, une chose, tu sais ce que je peux faire en fait ? Je peux me débarrasser de ça, la solution il y a un instant, et dire que je n'ai plus besoin de chaîne. Je n'ai pas besoin de ces petites roues. Si s va représenter une chaîne, techniquement, s va simplement stocker l'adresse du premier caractère. Et il suffit en fait d'écrire ceci. Donc littéralement au lieu de chaîne, vous écrivez char étoile.
+
+Techniquement, vous n'avez pas besoin, vous pouvez avoir un espace supplémentaire à gauche ou à droite. Mais la plupart des programmeurs l'écrivent comme je l'ai fait ici, nom de variable char étoile. Cela semble plus effrayant maintenant, mais ce n'est pas différent de ce que nous faisons depuis des semaines. Si je fais maintenant make address sans la bibliothèque CS50, cela fonctionne toujours, car C sait de quoi je parle. Et si j'exécute address maintenant, je vois toujours Emma.
+
+Mais maintenant, je peux commencer à jouer. N'est-ce pas ? Si s est l'adresse d'un caractère, quel est le code de format que je peux utiliser pour imprimer une adresse ? Pas % i, mais
+
+LE PUBLIC : % p.
+
+DAVID J. MALAN : % p, un pointeur. Donc je vais recompiler cela maintenant. Faites address, ça compile aussi. Et quand j'exécute le point slash address, je ne vais pas voir Emma maintenant. Que devrais-je voir à la place ? Une adresse, n'est-ce pas ? Je n'ai aucune idée de ce que c'est. On dirait que le nom d'Emma est stocké à 0x42A9F2, quel que soit le nombre traduit en décimal, quelque part dans la mémoire de l'ordinateur.
+
+Mais il s'avère alors aussi, qu'en est-il de cela ? Laissez-moi ajouter une autre ligne de code et dire, vous savez quoi, je suis vraiment curieux maintenant. Quelle est l'adresse de la première lettre du nom d'Emma ? Comment exprimer en C, la première lettre uniquement du nom d'Emma si Emma est stocké dans s.
+
+LE PUBLIC : [INAUDIBLE]
+
+DAVID J. MALAN : s entre crochets zéro, n'est-ce pas ? Cela semblerait être cela. Mais qu'est-ce que c'est ? C'est un char. s entre crochets 0 est un char. Comment obtenir l'adresse de s entre crochets 0 ?
+
+LE PUBLIC : Et commercial.
+
+DAVID J. MALAN : Oui, je peux simplement dire et. N'est-ce pas ? C'est donc moche, mais ça va pour l'instant. Make address, entrée.
+
+Oups. C'est plus moche parce que j'ai oublié mon point-virgule.
+
+Laissez-moi faire address à nouveau, entrez. Semble compiler. Et quand j'exécute le point slash address maintenant, remarquez que j'obtiens la même chose. Et c'est parce que C me prend au pied de la lettre. Lorsque vous imprimez s, une chaîne, il s'agit techniquement uniquement de l'adresse du premier caractère. Et effectivement, je peux corroborer autant en exécutant s entre crochets zéro puis en obtenant l'adresse du premier caractère. Et ils sont en effet tous les deux identiques.
+
+Donc une chaîne est une sorte d'abstraction au-dessus d'un groupe de caractères. Mais encore une fois, s est juste une adresse. Et c'est tout ce que nous soulignons maintenant.
+
+Et si je deviens vraiment curieux, non pas que vous feriez nécessairement cela dans un vrai programme, et si j'imprime quelques caractères supplémentaires dans le nom d'Emma, comme s entre crochets 1, 2 et 3 ? Allez-y, juste par curiosité et faites ce programme et point slash address. Maintenant, remarquez ce que je vois, c'est encore une fois que l'adresse de s est à 42AB52. Le premier caractère dans s est à la même chose, par définition de ce qu'est une chaîne.
+
+Et puis remarquez ce qui est plutôt chouette, si ça l'est, pour une certaine définition de chouette, 53, 54, 55 est remarquable. Pourquoi ? Ils sont espacés d'un octet. Donc tout ce temps, chaque fois que vous implémentiez César, ou la substitution, ou un autre chiffrement dans le problème de la deuxième série, chaque fois que vous manipuliez des caractères individuels, vous ne le saviez pas, mais vous visitiez simplement des boîtes aux lettres différentes. Vous veniez simplement de visiter différentes adresses dans la mémoire de l'ordinateur afin de les manipuler d'une manière ou d'une autre.

@@ -1,0 +1,67 @@
+Bueno, veamos otro ejemplo ahora, esta vez con tres puntuaciones, por lo que se trata de tres enteros, en lugar de algo como tres caracteres. ¿Qué podría hacer yo con valores como este? Bueno, permítanme escribir un código, esta vez en un archivo denominado puntaje punto c. Voy a ir adelante y limpiaré mi terminal aquí y crearé un nuevo archivo denominado puntaje punto c. Y hagamos algunas líneas similares aquí. Permíteme incluir digamos, CS50 punto h, incluir io estándar punto h, int main nulo y ahora declararemos algunas variables. 
+
+Dame int puntuación uno. Y declararé mi puntuación en una asignación a ser 72, otra puntuación en una asignación a ser aproximadamente la misma, 73, y otra asignación lamentable a ser, digamos, 33. Así que ahora tengo tres variables llamadas enteros, y supongamos que solo quiero hacer algo como imprimir el promedio. Ciertamente puedo hacer esto con printf y algo de matemática. Por lo tanto, podría continuar y decir que el promedio es %i, donde ese será un marcador de posición, y luego una nueva línea. Y luego el promedio, por supuesto, será algo como puntuación uno, más puntuación dos, más puntuación tres, dividido entre tres en total y luego punto y coma. Entonces, nuevamente, ese es solo el promedio. Agrega tres números juntos, divídelo por el número total y, listo, deberíamos obtener un promedio. 
+
+Permíteme continuar y guardar el archivo, compilar esto con make scores (Calificación), Enter (Intro). Parece que se compila bien -- barra inclinada puntajes. Y debería obtener un promedio de 59 para esas tres puntuaciones de cuestionario o puntuaciones de asignación, en este contexto. Pero este no es el mejor diseño ahora. Ahora que estamos tratando con números y puntuaciones, especialmente en el contexto de una clase donde quizás tengas cuatro o cinco puntuaciones o más puntuaciones, en última instancia, semana a semana. ¿Qué le molesta sobre este diseño hasta ahora? 
+
+AUDIENCIA: [ININTELIGIBLE] 
+
+DAVID MALAN: Dilo otra vez. 
+
+AUDIENCIA: Yo 
+
+DAVID MALAN: Sí, está muy fijo. Es como escribir un programa al principio del semestre y decidir de antemano que solo habrá tres asignaciones y que si quieres una cuarta, es una pena. El software no lo admite. Por lo que ese no es el mejor diseño. ¿Qué más podrías criticar sobre este código, por más simple que sea? ¿Sí? 
+
+AUDIENCIA: [ININTELIGIBLE] 
+
+DAVID MALAN: Sí, potencialmente estoy engañando a los estudiantes con una puntuación parcial, especialmente si su promedio era como 59,5. Me gustaría redondear a 60, por ejemplo. Por lo que también tenemos algunos problemas de imprecisión. Y volveremos a eso también. ¿Alguna otra crítica? ¿Sí? 
+
+AUDIENCIA: [ININTELIGIBLE] 
+
+DAVID MALAN: Sí, aunque lo escribí manualmente, esto está peligrosamente cerca de simplemente copiar y pegar el mismo código una y otra vez. Entonces, solo con el ejemplo de hola, como con este, como con nuestro ejemplo de tos de la semana pasada y la semana anterior, simplemente hacer esto una y otra vez es realmente una oportunidad para un mejor diseño. Entonces resulta que existe esa oportunidad. Y en C, si sabes que quieres tener más que un solo valor, pero todos están relacionados, ¿cuál podría ser un buen nombre para una variable que contenga múltiples puntuaciones? 
+
+AUDIENCIA: [ININTELIGIBLE] 
+
+DAVID MALAN: Puntuaciones en plural en inglés. Entonces, ¿cómo podemos hacer eso? Bueno, desafortunadamente, si solo digo int scores (calificaciones), necesito decidir qué puntuación obtiene como valor. Ahora bien, aquellos de ustedes que tengan experiencia previa en programación, pueden saber hacia dónde vamos con esto y estamos a punto de llegar allí. Resulta que en C, si quieres tener una variable que pueda almacenar múltiples valores, usas lo que se llama una matriz. Una matriz es una lista de valores que pueden ser todos del mismo tipo en una variable del mismo nombre. Entonces, si quieres tres puntuaciones, cada una de las cuales es un int (entero) en C, literalmente usas corchetes, el número de puntuaciones que deseas y luego un punto y coma. Eso le dirá a la computadora: dame suficiente memoria para tres enteros. 
+
+Aquí abajo ahora, puedo cambiar mi sintaxis. No quiero puntuación uno, puntuación dos, puntuación tres. Quiero poner estas puntuaciones dentro de la matriz simplemente diciendo su nombre, usando corchetes, aunque un poco diferente esta vez, y colócalos en las ubicaciones uno, dos, tres, pero en realidad ese es mi primer error. Los informáticos suelen empezar a contar en uno, no, los informáticos suelen empezar a contar en cero, así que necesito indexar cero mi matriz. Las matrices tienen un índice cero, lo que simplemente significa que la primera ubicación es cero, la segunda es uno, la tercera es dos. Así que esto ahora, es código equivalente a darme tres variables, pero ahora me he deshecho del desorden de copiar y pegar el nombre una y otra vez, y puedo almacenarlas todas juntas. 
+
+AUDIENCIA: En las puntuaciones, el número tres representa tres variables, ¿verdad? ¿No representa cuatro? 
+
+DAVID MALAN: ¿El tres representa tres variables? Representa suficiente espacio para tres valores en una variable. Buena pregunta. Otros, ¿preguntas? ¿Sí? 
+
+AUDIENCIA: [ININTELIGIBLE] trayendo iguales y luego [ININTELIGIBLE] 
+
+DAVID MALAN: Muy buena pregunta. ¿Puedes hacer todo esto en una línea? Sí, pero permíteme provocarte diciendo algo como esto que implica llaves, pero no iremos allí hoy. Pero sí, hay formas de solucionar esto. Así que permíteme arreglar esto ahora. Si quiero calcular el promedio ahora, necesito agregar estos tres valores en esta matriz, puntuación cero, puntuaciones uno y puntuaciones dos. Pero aritméticamente, la respuesta, el código sigue siendo el mismo, así que si ahora hago puntuaciones y hago barra inclinada puntajes, mi promedio sigue siendo 59. Y declino, probablemente todavía haya un error matemático porque si estamos usando enteros, como se señaló, pero volveremos a eso en un momento. 
+
+Así que vamos a esforzarnos un poco más. Incluso si nunca antes has programado, ¿qué podría seguir estando mal en el diseño? El programa funciona, pero podemos hacerlo mejor. 
+
+AUDIENCIA: Todavía solo almacena tres. 
+
+DAVID MALAN: Todavía solo almacena tres. Entonces, ni siquiera hemos resuelto el primer problema. ¿Otras críticas? 
+
+AUDIENCIA: [ININTELIGIBLE] 
+
+DAVID MALAN: Tengo demasiado código en la última línea. Sí, se está volviendo un poco prolijo, por lo que será un poco más difícil de leer, bastante justo. ¿Sí? 
+
+AUDIENCIA: Yo 
+
+DAVID MALAN: Lo siento, dilo un poco más alto. 
+
+AUDIENCIA: Las puntuaciones están codificadas en el programa. 
+
+DAVID MALAN: Sí, las puntuaciones están codificadas en el programa, lo que significa que no importa lo que obtengas en tus asignaciones, todos obtendremos 59. Así que ese es otro problema también. ¿Y alguna otra crítica? ¿Sí? 
+
+AUDIENCIA: Si pudiera leer los datos de entrada, podría ser mejor. 
+
+DAVID MALAN: Si pudiera leer datos de entrada, sí, déjame combinar esas sugerencias. Sería genial si eventualmente este programa fuera dinámico. ¿Y algo más? ¿Sí? 
+
+AUDIENCIA: [ININTELIGIBLE] 
+
+DAVID MALAN: Definitivamente. Podemos incorporar el ciclo en la situación y obtener múltiples valores del usuario. 
+
+AUDIENCIA: Siempre dividiendo por tres, así que [ININTELIGIBLE] 
+
+DAVID MALAN: Sí, también siempre se divide por tres. Y esto es sutil, y todavía no es un gran problema, pero está este principio que estoy violando aquí conocido como no te repitas. Y me he repetido en al menos dos ubicaciones. ¿Qué valores aparecen en dos ubicaciones? Entonces, tres aquí arriba y luego también tres aquí abajo. Por muy poco importante que parezca este detalle, esta es la fuente de tantos errores comunes porque si simplemente decides por ti mismo, bueno, voy a codificar tres aquí arriba, voy a codificar tres aquí abajo, lo más probable es que mañana por la mañana, la próxima semana, el próximo mes, el próximo año y mucho menos un colega tuyo, nunca se dará cuenta de la sutileza de que este tres por contrato social tiene que ser el mismo que este tres. 
+
+Esa no es una restricción de código. Eso es solo una pequeña cosa que sabías y decidiste en ese momento. Así que permíteme solucionar esto de la siguiente manera. Resulta que en C podemos tener variables que solo tienen números como este, así que tal vez int n obtenga tres. Ahora puedo simplemente usar mi variable aquí y aquí. Eso es un poco mejor. Es un poco mejor. Pero hay otra característica en C, como también ocurre con otros lenguajes, en la que si sabes que quieres codificar un valor, al menos por ahora, pero no quieres que cambie, no lo cambiarás y quieres asegurarte de que no lo cambies accidentalmente, puedes hacer algo como esto e incluso hacerlo global si queremos, en la parte superior del archivo, puedo decir no solo int n, sino const int n

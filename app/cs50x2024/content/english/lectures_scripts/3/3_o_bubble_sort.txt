@@ -1,0 +1,29 @@
+Brian, here we have a stressful for each of you. And thank you so much. So let's see if we can't now formalize-- feel free to make your way off to either side. Let's see if we can't formalize exactly what it is these volunteers wonderfully did at Bonnie's direction to get this list sorted. 
+
+It turns out that what everyone did here has a name. It's an algorithm known as bubble sort because as you notice, the 8 initially kind of bubbled its way up from left to right, and then the 7 kind of bubbled its way up from left to right. And as they repeated, even though we did it more quickly at the [? end, ?] [? the ?] bigger numbers bubble their way all the way up until they were in the right place. 
+
+So in pseudocode, I'd argue that what we did was this. Bonnie directed our audience, at an increasing speed, to repeat the following n minus 1 times. Why n minus 1? Well, if you've got n people and they're comparing each other, you can only compare people n minus 1 times if you have n people. 
+
+So she told them to do this n minus 1 times in total for i from 0 to n minus 2. Now what's that actually referring to? So this i is our index. So it's kind of like treating our humans like an array. What did we do? If the ith person, starting at 0, and the ith plus 1 person are out of order, what did she tell them to do? Switch places or swap, so to speak. 
+
+And so this looks pretty technical. But it's really just a pseudocode way of distilling into more succinct English, with some numbers involved, what it is Bonnie was directing everyone to do. She said do the following n minus 1 times. That's why it went on for several rotations, quicker and quicker. She then pretty much treated the first person as bracket 0, the next person as bracket 1, bracket 2, just like an array, albeit of humans. 
+
+And then she compared them side by side, calling one person i and the person next to them i plus 1. And if they were out of order, it was swapped and again and again and again till this algorithm executed. Until finally, the whole thing was hopefully sorted. How many times did it-- how many steps did it take? How long did it take? 
+
+What's the running time in big O notation of bubble sort? Well, the outer loop takes n minus 1 steps. The inner loop also takes n minus 1 steps because it's 0 through n minus 2. And so if we go ahead and multiply that out, ala FOIL, we have n squared minus 1n minus 1n plus 1. If we combine like terms, we now have n squared minus 2n plus 1. 
+
+But at this point, what matters ultimately is that the highest order term, the n squared, is what ultimately dominates. The bigger n gets, the more impact that n squared has. And so a computer scientist would say that bubble sort is on the order of n squared. 
+
+So if we add to our list from before the algorithm's upper bounds, we can now put bubble sort way up at the top, unfortunately, which is to say that sorting numbers with bubble sort is apparently way more expensive than linearly searching or binary searching. And so it kind of invites the question, then, with Eric and [? Nizari ?] when they came up earlier. Yes, [? Nizari's ?] algorithm was better. But it was better in the sense that it ran faster. But it presupposed what, just to be clear? 
+
+AUDIENCE: [INAUDIBLE] 
+
+SPEAKER 1: That the numbers were sorted. And so it's a little misleading to say that binary search is better than linear search. Because if it costs you a huge amount of time to sort those elements so that, then, [? Nizari ?] can go ahead and execute binary search, it might be a wash, or it might even be a net negative. So it's really going to depend on, well, are you searching more often, more than once? Are you searching lots and lots and lots of times, such that it's worth it to sort it once and then benefit long term by much faster code? 
+
+Well, what about omega for bubble sort? Bubble sort's code, again, looked like this. And frankly, it doesn't really take into account at all good inputs, right? Like, the best possible input to any sorting algorithm most likely is it's already sorted for you, right? Because if it's already sorted, presumably there's no actual work to be done. How lucky would that be? 
+
+But bubble sort, as defined, is kind of stupid, right? It doesn't say if already sorted, quit. It just blindly does the following n minus 1 times and then inside of that does something n minus 2 times. So what's the lower bound on the running time of bubble sort, even if you get lucky and the whole thing is already sorted for you? 
+
+AUDIENCE: [? n squared. ?] 
+
+SPEAKER 1: It's still in squared because it's still going to take as many steps as before. And so bubble short as a lower bound, arguably, has omega of n squared.

@@ -1,0 +1,31 @@
+DAVID MALAN: All right. This is CS50, and today we look all the more underneath the hood, so to speak, of programming, which we've been doing the past couple of weeks, and of C in particular. And indeed, we're going to try to focus today in addition on some new programming techniques, really on first principles, so that what you've been seeing over the past couple of weeks no longer feels quite as much like magic. 
+
+If you're sort of typing these magical incantations and you're not quite sure why things work, know that you will understand and appreciate all the more with practice and with application of these ideas, what it is you're doing. But today, we're going to go back to first principles, sort of week 0 material, to make sure that you understand that what we're doing now in week 2 is little different from what we did back in week 0. 
+
+So in fact, let's take a look at one of the first programs we saw in C, which was a little something like this. This is our source code, so to speak. There were a few salient characteristics from last week that dovetailed with the first week, week 0. And that was this thing called main, which is just the main function. It's the main entry point to your program. It's the equivalent of scratches when green flag clicked. 
+
+This of course is an example of another function, one that comes with C that allows you to print on the screen. It can take inputs, at least one input here, which is typically a string in double quotes, like the message "hello world." But of course, in order to use printf in the first place, you needed this thing up here. And Standard io.h represents what, as you understand it now? 
+
+Any thoughts on what Standard io.h is? Yeah? 
+
+AUDIENCE: A library on how [INAUDIBLE]. 
+
+DAVID MALAN: Yeah, it's a manifestation of what's called a library, code that someone else wrote years ago. Specifically, Standard io.h is a header file. It's a file written in C but with a file extension ending in dot h that among other things declares that it has the prototype, so to speak, for printf so that Clang, when you're compiling your code, know what printf actually is. 
+
+And of course this little thing back here, you've probably now gotten in the habit of using this /n is new line. And it forces the cursor to go on the next line. So those were some of the uglier characteristics of code last week, and we'll tease apart int and void and a few other things over the course of today and beyond. 
+
+So when you compile your code with Clang, hello.c, and then run that program, ./a.out, which you probably haven't done on your own since, because we gave you a simpler way to do this, that process was all about creating a file containing zeros and ones that the computer understands, called a.out that you can run. Of course, a.out is a pretty stupid name for a program. It's hardly descriptive, even though it's the default. 
+
+So the next program we wrote and compiled, we used -ohhello, which is a so-called command line argument to Clang. It's like an option it comes with that just lets you specify the name of the file to output. So you did this past week with the problem set, with a couple of programs you yourself wrote. 
+
+But what is actually going on when you compile your code via that process? Well, it turns out that if we make this program a little more interesting, this becomes even more important with code like this. Now I've added a couple of lines of code. CS50.h, which is representative of the CS50 library. Again, code that other people wrote, in this case the staff some years ago, that declares that it has prototypes for the one liners for functions like GetString so that you can use more features than came with C by default. 
+
+And it has things like String itself, a data type. So GetString is declared in that file. Name is, of course, a variable in which we stored my name last week. String is the type of variable in which we stored a name. And all of that is then outputed hello comma something, where the percent S recall was a placeholder, name is the variable we plugged in to that format code, and then all of that is possible because of CS50.h, which declares string and also gives us GetString. 
+
+So that's a paradigm that's at the moment CS50 specific, but it's representative of any number of other functions we're going to start using today and in the weeks to come. The process now is going to be the same. However, when you compiled that program that used the CS50 library, you might recall and you might have gotten hung up on this past week if you used Clang and not another program, you need this -lcs50, and you need it at the end just because. That's the way Clang expects it. 
+
+This is a special flag that we'll tease apart in just a couple of minutes, an argument to Clang that tells it to link in, so to speak, link in all of the zeros and ones from CS50's library. But we'll see that in just a moment. This, of course, is how you should probably be compiling your code here on out. It's just super simple, but it automates everything we just saw more pedantically, step by step. 
+
+So we've been compiling our code for the past week now, and we're going to keep doing that for next several weeks, until-- spoiler-- we get to Python, and you're not going to have to compile anything anymore. It's just going to happen automatically for you. But until then, compilation is actually kind of an oversimplification of what's been happening the past week. Turns out there's like actually four distinct steps that you all had been inducing by running Make or even by running Clang manually at the command prompt. 
+
+And just so that, again, we can sort of understand what it is you are doing when you run these commands, let's go to first principles, understand these four steps, but then we'll move on just like in week 0 and stipulate, OK, I got that. I don't need to think at this low level after today. But hopefully you'll understand from the bottom up these four steps. 

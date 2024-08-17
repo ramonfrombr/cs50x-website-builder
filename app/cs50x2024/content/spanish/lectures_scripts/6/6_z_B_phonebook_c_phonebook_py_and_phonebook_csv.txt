@@ -1,0 +1,45 @@
+Ahora vamos a empezar a llevar las cosas en la dirección que lo hicimos en la semana 4 con la entrada y salida de archivos. Déjame abrir phonebook.c. Este fue otro ejemplo de manipulación de la agenda, donde recuerdo que abrimos un archivo llamado phonebook.csv que es como un archivo Excel liviano. Valores separados por comas. Archivo de texto simple. 
+
+Lo abrimos con fopen. Luego obtuvimos un nombre y un número de la persona. Y luego usamos esta nueva función fprintf - archivo printf - para imprimir algo por ciento s coma algo más. El nombre coma número al archivo. Y así es como pude añadir los nombres y números de las cabezas a ese CSV. 
+
+Bueno, en realidad podemos hacer lo mismo en Python, pero también un poco más simple. Aunque la sintaxis va a parecer un poco críptica a primera vista. Déjame seguir adelante y guardar este archivo también como phonebook.py, aunque ahora en una versión más elegante. 
+
+Déjame seguir adelante y abrir aquí phonebook.csv que ya he rellenado con nombre coma número, solo para que si lo abriéramos en Excel tuviéramos encabezados de columna. 
+
+Y voy a seguir adelante y hacer esto. En Python, si deseas trabajar con archivos CSV, en realidad hay un paquete llamado CSV. El paquete es una palabra de Python para una biblioteca. Y en ese paquete hay muchas funcionalidades relacionadas con CSV. Y también voy a importar de cs50 nuevamente get string. 
+
+Muy bien. ¿Qué quiero hacer? La primera línea va a ser bastante similar a C. Voy a abrir el archivo usando open en lugar de fopen. Y voy a llamar al archivo phonebook.csv. Y lo abriré en modo comillas, comillas. ¿Cuál era de nuevo? Anexar. Si se usa w, lo escribirá y lo seguirá cambiando una y otra vez. Un bolígrafo lo seguirá agregando al archivo. Para que podamos seguir añadiendo más archivos tfs al archivo. 
+
+Muy bien. Ahora déjame seguir adelante y solo obtener un nombre de alguien. Entonces get_string Name. Déjame seguir adelante y obtener su número a través de get_string también. Vaya. Número es igual a get string número. Y conseguir eso del humano. 
+
+Y ahora esta parte es un poco nueva. Pero una vez más, este es el tipo de cosas que buscas en Google cuando olvidas la sintaxis de algo como esto. Voy a declarar una variable llamada escritor, aunque podría llamarla como quisiera. El propósito de la vida será escribir cosas en el archivo. 
+
+Voy a entrar al paquete CSV, nuevamente, la biblioteca que importé arriba. Y voy a pasarle a una función de escritor el archivo. Entonces solo sabrías esto de la documentación. 
+
+Pero lo que he resaltado aquí significa oye, Python. Pasa el archivo abierto a esta biblioteca que me facilitará leerlo como un archivo CSV. Filas y columnas. Eso es todo. 
+
+Ahora déjame seguir adelante y hacer esto. Escritor - oh. Escritor.writerow. Entonces writerow es una función que está integrada en la funcionalidad de la biblioteca CSV que simplemente me permite escribir un nombre y un número en ese archivo. 
+
+Se encargará de las comas. Se encargará de citar cualquier cosa. Por otra parte, si alguno de nosotros tuviera una coma en nuestro nombre como Brian U, coma, Junior, esa coma podría ser problemática porque podría romper el supuesto implícito del CSV de que las comas separan valores. 
+
+Pero podrías poner comillas alrededor del nombre completo de Brian, incluso si tuviera una coma, Junior o lo que sea en su nombre. Esta biblioteca se encarga de todos esos dolores de cabeza por ti. 
+
+Pero hay una sutileza. Mencioné algo llamado tupla antes. Por razones de bajo nivel y poco interesantes ahora, en realidad necesitas doble paréntesis ahora. Entonces, técnicamente estás pasando una cosa entre paréntesis. Pero más sobre eso en otro momento. 
+
+Ahora déjame seguir adelante y cerrar el archivo. File.close. Así que déjame seguir adelante y ejecutar esto. Python phonebook.py. Vaya. Sintaxis inválida. Olvidé un signo igual. Y al igual que en C, verás que las cosas rojas aparecen a veces cuando sabe lo que has hecho mal, pero a veces tardan un poco en desaparecer. 
+
+Nombre. Sigamos adelante y agreguemos Emma, todas las mayúsculas solo para mayor consistencia. 617-555-0101 era su número. Muy bien. Ojalá, ojalá. Vamos. Vamos. 
+
+Oh, espera. Ese es el archivo equivocado. 
+
+[RISAS] 
+
+Aquí vamos. Porque creé uno nuevo. Entonces, haciendo trampa. Nombre, número. Ejecuté mi programa en un directorio diferente, lo que significó que se creó un nuevo archivo. Así que en realidad no estoy haciendo trampa allí. Yo solo estaba en el lugar equivocado. 
+
+Error de usuario. Ejecutémoslo una vez más. Rodrigo. 617-555-0101. Entrar. Ahí vamos. Ejecutémoslo de nuevo, esta vez con Brian. Brian, 617-555-0102, y así sucesivamente. 
+
+Entonces, este código ciertamente no es muy sencillo. Y honestamente, este es exactamente el tipo de cosas que busco en Google cuando olvido cómo manipular el CSV. Pero para eso está la documentación. 
+
+Y de hecho, déjame limpiar esto un poco. Resulta que puedes escribir este código de manera un poco diferente. Y en línea, verá enfoques ligeramente diferentes. Verá una palabra clave en Python llamada with que hace que sea un poco más estricto escribir su código. 
+
+Si usa esta palabra clave with como verá en la documentación y parte del código de muestra del personal, no tiene que cerrar el archivo. Se cerrará automáticamente por ti, ahorrándote así una línea de código.

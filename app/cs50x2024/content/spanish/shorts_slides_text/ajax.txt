@@ -1,0 +1,60 @@
+[0]
+
+Ajax
+
+[1]
+
+Ajax
+• Hasta ahora, nuestras interacciones con JavaScript se han limitado principalmente a: pulsar un botón, sucede algo.
+• No tenemos que seguir recargando por completo la página, pero aún existe cierto grado de interacción con el usuario.
+• Ajax (anteriormente JavaScript y XML asincrónicos) nos permite actualizar dinámicamente páginas web de manera aún más dinámica.
+• ¡Aunque, no nos vamos a volver locos por ahora!
+
+[3]
+
+Ajax
+• Fundamental para nuestra capacidad de actualizar asincrónicamente las páginas es el uso de un objeto JavaScript especial denominado 
+XMLHttpRequest.
+var xhttp = new XMLHttpRequest();
+
+[5]
+
+Ajax
+• Fundamental para nuestra capacidad de actualizar asincrónicamente las páginas es el uso de un objeto JavaScript especial denominado 
+XMLHttpRequest.
+• Tras obtener el nuevo objeto, es necesario definir su comportamiento onreadystatechange.
+• Esto es una función (normalmente una función anónima) que se llamará cuando la solicitud HTTP asincrónica se haya completado y, por lo tanto, normalmente define lo que se espera que cambie en tu sitio.
+
+[7]
+
+Ajax
+• Los XMLHttpRequests tienen dos propiedades adicionales que se utilizan para detectar cuando la página termina de cargar.
+• La propiedad readyState cambiará de 0 (solicitud aún no inicializada) a 1, 2, 3 y finalmente 4 (solicitud finalizada, respuesta lista).
+• La propiedad status será (¡esperemos!) 200 (OK).
+• A continuación, realiza la solicitud asincrónica mediante el método open() para definir la solicitud y el método send() para enviarla realmente.
+• ¡Hay una forma ligeramente distinta de hacer esto sintácticamente con jQuery!
+
+[14]
+
+Ajax
+function ajax_request(argument)
+{
+var aj = new XMLHttpRequest();
+aj.onreadystatechange = function() {
+if (aj.readyState == 4 && aj.status == 200)
+// haz algo con la página
+};
+aj.open("GET", /* url */, true);
+aj.send();
+}
+
+[15]
+
+Ajax
+• Más habitualmente, verás solicitudes de Ajax escritas mediante jQuery en lugar de JavaScript "sin formato".
+
+[16]
+
+Ajax
+• Más habitualmente, verás solicitudes de Ajax escritas mediante jQuery en lugar de JavaScript "sin formato".
+http://api.jquery.com/jquery.ajax/

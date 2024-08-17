@@ -1,0 +1,19 @@
+So why did we do what we did? Well, let's actually run an example here. So I've got two windows open now-- two terminal windows-- on the left and on the right. On the left is my implementation of speller in C from a couple of weeks ago. Let me go ahead and run speller on one of the bigger files, like Shakespeare was one of the bigger files. 
+
+So let's go ahead and see all of the misspelled words in Shakespeare, and using a hash table two weeks ago, looks like it took me 0.51 seconds to look for misspellings in Shakespeare.text. How about in Python? Well, over here, I have a copy of what we just wrote. This is also using a program called speller.py, which I didn't pull up, but I wrote in advance. And this is not the code that's timed. Only dictionary.c and dictionary.py are timed. 
+
+So I'm going to go ahead and run my Python version of speller, which is going to muse dictionary.py that I just wrote on Shakespeare.text-- same file, right-hand side. You'll see the same words quickly flying by on the screen, but you might notice something already. 
+
+So there's always a tradeoff in computer science and certainly in programming. There's always a price paid. Wowed as you were by how fast this is, relatively speaking, and more compellingly how many seconds it took me to implement Pset5 in Python and presumably how many hours it took you to implement Pset5 in C, that, too, developer time is a resource, a human resource. But we are paying a price. And based on the output of C on the left and Python on the right, what apparently is at least one of the prices paid? 
+
+AUDIENCE: It's slow. 
+
+DAVID MALAN: Say it again. 
+
+AUDIENCE: Slower. 
+
+DAVID MALAN: It's slower, right? Whereas this took 0.51 seconds in C, the same problem solved in Python took 1.45 seconds in Python. Now, frankly, thinking back two weeks and the many hours you probably spent on Pset5, who cares? Like, oh, my God. Sure. It's three times slower. But my God, the number of hours it took to implement that solution-- but it really depends on what your goals are, right? 
+
+If you're optimizing for spending as little time as possible on a P set, odds are you're going to want to go with Python. But if you're implementing a spell checker used every day by thousands or millions of people, for instance, on Google or Facebook or even in Google Docs and the like, you know what? 
+
+You probably don't want to spend three times as many seconds or fractions of seconds just because it's easier to write it in Python, because that three times increase might cost your users more time. It might cost you three times as much hardware. It might cost you three times as much money to buy three times as many servers to do the exact same work. So again, this is going to be representative of the types of tradeoffs in programming, but my apologies for not mentioning this two weeks ago. 

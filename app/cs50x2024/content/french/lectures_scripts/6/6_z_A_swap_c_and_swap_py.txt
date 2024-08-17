@@ -1,0 +1,9 @@
+D'accord. Qu'en est-il de cela ? Cela a été douloureux et a déclenché toute l'exploration du terrier du lapin concernant les pointeurs, les adresses et consorts. Supposez que vous souhaitiez simplement échanger deux valeurs, x et y initialisées il y a quelques semaines à 1 et 2.
+
+Mon Dieu, les cerceaux que nous devions franchir en C juste pour permuter deux valeurs. J'espère qu'à la fin, vous aurez compris pourquoi il y avait ce problème fondamental. Et cela, encore une fois, avait à voir avec la mémoire, le déplacement d'objets et la copie.
+
+Mais en Python, devinez quoi ? Laissez-moi aller de l'avant en Python et appeler un programme swap.py. Et permettez-moi d'aller de l'avant et de me donner deux variables. Cela seul est déjà plus rapide car vous n'avez pas à vous soucier des types de données ou des points-virgules.
+
+Permettez-moi d'aller de l'avant et de simplement déclarer que x est x, y, est y, juste pour que nous puissions voir quelles sont ces valeurs. Cependant, je pourrais simplement utiliser debug50. Vous pouvez également déboguer des programmes Python dans l'IDE.
+
+Je vais faire cela deux fois, rappelez-vous, l'objectif étant maintenant d'échanger deux valeurs. Donc, si je veux permuter x et y, devinez quoi ? En Python, ce n'est pas grave. Permuter. D'accord. Python. swap.py. oh mon Dieu. Vous l'obtenez gratuitement avec la langue.

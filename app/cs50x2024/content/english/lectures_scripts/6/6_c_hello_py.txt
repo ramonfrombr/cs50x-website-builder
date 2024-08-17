@@ -1,0 +1,55 @@
+So let's put this into context. Let me go over to CS50 IDE, which for Python, you can continue using, as well. Let me go ahead and create a new file called, for instance, hello.py. So instead of hello.c, I'll use hello.py-- py being the convention for Python-based programs. 
+
+And you know what? If I want to print "hello world," I'm just going to go ahead and say print("hello, world"). I'm going to go ahead and save my file. And then, in my terminal window, there's no need to compile. I can now run the program called Python, which is identically named to the language itself. And I'm going to go ahead and run the file called hello.py as input into that program. And voila, my very first program in Python. No curly braces, no int, no main, no void, no include-- you can just start to get real work done. 
+
+But to get more interesting real work done, let's start to bootstrap things from where we left off when there are comparisons between Scratch and C, doing the same thing, again, this time between Scratch and C, but now Python, as well. So in the world of Scratch, if you wanted to say "hello, world," you would use this purple block, a function, as it was called at the time. And we translated that a few weeks back now to the corresponding C code-- printf("hello,world"). 
+
+And there were a few nuances and things to trip over. It's printf. It's not print. You've got the backslash n and the semicolon. Today, in Python, if you want to achieve that same goal, as I just did in the IDE, you can simplify this to just that. So just to be super clear, what has changed from C to Python? What do you no longer need to worry about in Python-- some observations? Yeah. 
+
+AUDIENCE: Semicolons. 
+
+DAVID MALAN: No more semicolons-- those are officially gone. Other comments? 
+
+AUDIENCE: No more new lines. 
+
+DAVID MALAN: No more new lines-- print will actually give you one if you simply call print. Let me go over here. 
+
+AUDIENCE: Print instead of printf. 
+
+DAVID MALAN: And it's print instead of printf and-- this is going to end poorly today, because my arm will eventually fail. Are there any other differences that jump out? Maybe? 
+
+AUDIENCE: No more standard I/O. 
+
+DAVID MALAN: No more standard I/O-- so there's none of the overhead that we need. I'm not going to give you a stress ball, though, from that one just because it wasn't in the previous slide for C. But indeed, there's no overhead needed, the includes and so forth, just to get real work done. 
+
+AUDIENCE: No backslash [INAUDIBLE]. 
+
+DAVID MALAN: Oh, that was taken already. So I'm sorry. The stress ball's again given out. Yeah. 
+
+AUDIENCE: No %s. 
+
+DAVID MALAN: No %s, but not germane fear, because I'm not yet plugging anything in. So, in fact, let me just move on, because I'm pretty sure there's no other differences or stress balls for this one. So let's take a look, though, at a variant of this, where we wanted to do something more interesting than just print statically-- that is, hardcoded-- the same thing again and again-- hello, world-- something like this. And now, I'll come back to you in just a moment. 
+
+If you want to get users' input, in Scratch, we use this Ask block. That gave us access to a special return value or variable called answer. And then, we could use "join" and creatively use the Say block to concatenate, or join those two values together. In C, this ended up being this, where you declare a variable on the left. You assign it the return value on the right, as with the first line there. 
+
+And then, you go ahead and print out not just hello. But hello, %s, which then plugged in that value. In Python, you can achieve the same goal. But it's going to be a little simpler. We can now do it with just this. So what has disappeared clearly from the screen? What do we no longer need to worry about in Python? Yeah. 
+
+AUDIENCE: Well, you could just do plus answer instead of, like, having to do it with a comma and the %s answer. 
+
+DAVID MALAN: Exactly. So there's no %s. We're just using this comma operator, which is new in Python. This is actually now called the concatenation operator. And if you've studied Java or a few other languages, you know that this will join the string on the left with the string on the right. So we can sort of construct this phrase that we want. And because you called out the %s earlier-- 
+
+AUDIENCE: Oh. 
+
+DAVID MALAN: --let me be fair there. Yeah. 
+
+AUDIENCE: We didn't have to identify answer as a string. 
+
+DAVID MALAN: Good. We don't have to identify answer, which is, indeed, our variable as a string, because even though Python will see has data types-- and it does know what type of value you're storing-- you don't have to, pedantically as the programmer, tell the computer. The computer can figure it out from context. Any other distinctions? 
+
+AUDIENCE: No semicolons. 
+
+DAVID MALAN: No, no, semicolons, as well, and I was hoping no one would raise their hands from farther away. But here we go. Oh. 
+
+[LAUGHTER] 
+
+OK. My bad. Good. Good. Good. OK. So there's a few differences, but the short of it is that it's, indeed, simpler this time. Indeed, I don't need the %-- the backslash n either, because I'm going to get that for free. So let's fly through a few other comparisons, as well, not just on the string here or here, but now using a different approach. 

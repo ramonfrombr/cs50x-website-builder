@@ -1,0 +1,43 @@
+Très bien. Puis-je faire une dernière démonstration un peu arcanique et ensuite nous rendrons les choses plus... plus réelles ? Très bien. Donc, il s'avère que si tout ce qui se passe sous le capot n'est que des adresses, regardez ce que je peux faire ici. Si je veux continuer et imprimer ce qui se trouve à l'adresse s, que trouverai-je en mémoire si je vais à l'adresse dans s ?
+
+PUBLIC : [INAUDIBLE]
+
+DAVID J. MALAN : Désolé, un peu plus fort.
+
+PUBLIC : La première lettre.
+
+DAVID J. MALAN : La première lettre du nom d'Emma, n'est-ce pas ? Si nous pouvons tous convenir - même si c'est encore un peu peu familier - que s est juste l'adresse d'un caractère, et que je dis, aller à s, que devrais-je voir spécifiquement ?
+
+PUBLIC : [INAUDIBLE]
+
+DAVID J. MALAN : Probablement E dans Emma, n'est-ce pas ? Si s est l'adresse du premier caractère de son nom, étoile s signifierait aller à ce caractère. Alors laissez-moi aller de l'avant et imprimer cela comme un char. Alors laissez-moi aller de l'avant maintenant et faire adresse dot slash adresse, entrez. Il y a le E parce que je peux dire, aller à cette adresse et imprimer ce qu'il y a là-bas.
+
+Et je peux réellement faire cela pour toutes les lettres de son nom. Laissez-moi aller de l'avant et en imprimer une autre ici. Alors, comment puis-je obtenir la deuxième lettre du nom d'Emma ? Précédemment - normalement, comme la semaine dernière, nous aurions fait cela. Et cela vous amène simplement comme par magie à la deuxième lettre de son nom. Mais je peux le faire un peu différemment. Et si j'allais à s et puis, d'où veux-je aller depuis s pour obtenir la deuxième lettre ?
+
+PUBLIC : Plus un.
+
+DAVID J. MALAN : Plus un, n'est-ce pas ? Je veux dire, peut-être que nous pouvons littéralement simplement faire de l'arithmétique ici. Si s est l'adresse de sa première lettre, il va de soi que s plus 1 est l'adresse de sa deuxième lettre. Donc, faites maintenant l'adresse dot slash adresse. Et je devrais voir EM. Et je peux faire cela deux fois de plus peut-être et continuer et faire cela et puis cela. Mais cette fois, ajoutez 2 et cette fois ajoutez 3, en faisant simplement de l'arithmétique simple. Faites adresse dot slash adresse, il y a Emma mais dans un détail beaucoup plus bas.
+
+Alors c'est quoi ce symbole de crochet ? En informatique, c'est ce qu'on appelle du sucre syntaxique. C'est une sorte de nom ridicule. Mais cela fait simplement référence à une fonctionnalité pratique pour que vous, le programmeur, puissiez dire, s crochet 0 ou crochet 1. Mais ce que l'ordinateur fait réellement sous le capot - le compilateur, Clang - il convertit en fait toutes vos utilisations de crochets depuis la semaine 1 dans ce format ici. Il fait simplement de l'arithmétique sous le capot.
+
+Maintenant, vous n'êtes pas obligé de faire ça pour aller de l'avant. Mais je souligne ce détail de bas niveau juste pour vous donner une idée, il n'y a vraiment aucune magie. Lorsque vous dites, allez imprimer une adresse ou allez faire ça, l'ordinateur vous prend au pied de la lettre. Ouf.
+
+OK, c'était beaucoup. Oui, une question.
+
+PUBLIC : Donc [INAUDIBLE]
+
+DAVID J. MALAN : Étoile s signifierait aller à l'adresse dans s.
+
+PUBLIC : Alors pourquoi, par exemple, si vous [INAUDIBLE] caractère [INAUDIBLE]
+
+DAVID J. MALAN : Vraiment bonne question. Pourquoi, lorsque vous imprimez s, cela imprime-t-il la chaîne entière et pas seulement le caractère ? C'est ce que le code de format printf fait pour vous. Lorsque vous dites à printf d'utiliser le pourcentage s, cela a une signification particulière pour printf. Et il sait aller à la première adresse et pas seulement imprimer le deuxième - le premier char, mais imprimer chaque caractère par la suite jusqu'à ce qu'il voit quoi ?
+
+PUBLIC : Le terminateur nul.
+
+DAVID J. MALAN : Le caractère de terminaison nul. Donc printf et percent s sont spéciaux et sont spéciaux depuis la semaine 1. Ils savent simplement faire exactement ce que vous avez décrit. Donc l'arithmétique de pointeur, pour être clair, consiste simplement à prendre des adresses et, comme, à faire de l'arithmétique avec elles, à ajouter 1, à ajouter 2, à ajouter 3 ou toute autre manipulation de ce type. Très bien.
+
+Alors [RIRE] tentons un autre mème ici.
+
+[RIRE]
+
+OK, quelques-uns d'entre nous. Très bien. Très bien, ça essaie trop fort.

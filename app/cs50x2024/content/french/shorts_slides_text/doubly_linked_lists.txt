@@ -1,0 +1,64 @@
+[1]
+
+**Listes chaînées doublement liées**
+• Les listes chaînées monodirectionnelles accroissent réellement notre capacité à collecter et organiser des données, mais elles souffrent d'une limitation cruciale.
+• Nous ne pouvons nous déplacer que dans une seule direction au sein de la liste.
+• Réfléchissez aux implications que cela aurait si vous deviez essayer de supprimer un nœud.
+• Une liste chaînée doublement liée, en revanche, nous permet d'aller et venir dans la liste, tout simplement en ajoutant un pointeur supplémentaire à notre définition de structure.
+
+[3]
+
+**Listes chaînées doublement liées**
+• Pour pouvoir travailler efficacement avec les listes chaînées, nous devons comprendre un certain nombre d'opérations :
+1. Créer une liste chaînée lorsqu'elle n'existe pas encore.
+2. Effectuer une recherche dans une liste chaînée pour trouver un élément.
+3. Insérer un nouveau nœud dans une liste chaînée.
+4. Supprimer un élément individuel d'une liste chaînée.
+5. Supprimer une liste chaînée dans son intégralité.
+
+[5]
+
+**Listes chaînées doublement liées**
+• Insérer un nouveau nœud dans une liste chaînée :
+dllnode* insert(dllnode* head, VALUE val );
+
+[6]
+
+**Listes chaînées doublement liées**
+• Insérer un nouveau nœud dans une liste chaînée :
+dllnode* insert(dllnode* head, VALUE val );
+• Étapes impliquées :
+a. Allouer dynamiquement de l'espace pour un nouveau dllnode.
+b. Vérifier que nous n'avons pas épuisé la mémoire.
+c. Peupler et insérer le nœud au début de la liste chaînée.
+d. Corriger le pointeur prev de l'ancien en-tête de liste chaînée.
+e. Renvoyer un pointeur vers le nouvel en-tête de liste chaînée.
+
+[11]
+
+**Listes chaînées doublement liées**
+• Souvenez-vous que nous ne devons jamais casser la chaîne lorsque nous réorganisons les pointeurs.
+• Ce n'est pas grave si nous devons avoir temporairement des pointeurs redondants.
+
+[17]
+
+**Listes chaînées doublement liées**
+• Supprimer un nœud d'une liste chaînée :
+void delete(dllnode* target );
+
+[18]
+
+**Listes chaînées doublement liées**
+• Supprimer un nœud d'une liste chaînée :
+void delete(dllnode* target );
+• Étapes impliquées :
+a. Corriger les pointeurs des nœuds environnants pour « ignorer » target.
+b. Libérer target.
+
+[24]
+
+**Listes Chaînées**
+• Les listes chaînées, tant monodirectionnelles que bidirectionnelles, permettent l'insertion et la suppression d'éléments avec une très grande efficacité.
+• En fait, ces opérations peuvent être réalisées en temps constant.
+• Quel est l'inconvénient ? Souvenez-vous de comment nous avons dû trouver un élément ? Nous avons perdu la capacité d'accéder aléatoirement aux éléments de la liste.
+• L'accès à un élément souhaité peut désormais prendre un temps linéaire.

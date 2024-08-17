@@ -1,0 +1,64 @@
+[1]
+
+Listas doblemente enlazadas
+• Las listas vinculadas simples realmente extienden nuestra capacidad para recopilar y organizar datos, pero sufren de una limitación crucial.
+• Solo podemos movernos en una dirección a través de la lista.
+• Consideremos la implicación que tendría para intentar eliminar un nodo.
+• Una lista doblemente enlazada, por el contrario, nos permite movernos hacia adelante y hacia atrás a través de la lista, simplemente agregando un puntero adicional a nuestra definición de estructura.
+
+[3]
+
+Listas doblemente enlazadas
+• Para trabajar con listas vinculadas eficazmente, hay varias operaciones que necesitamos entender:
+1. Crear una lista vinculada cuando aún no existe.
+2. Buscar en una lista vinculada para encontrar un elemento.
+3. Insertar un nuevo nodo en la lista vinculada.
+4. Eliminar un solo elemento de una lista vinculada.
+5. Eliminar una lista vinculada completa.
+
+[5]
+
+Listas doblemente enlazadas
+• Insertar un nuevo nodo en la lista vinculada.
+dllnode* insert(dllnode* head, VALUE val);
+
+[6]
+
+Listas doblemente enlazadas
+• Insertar un nuevo nodo en la lista vinculada.
+dllnode* insert(dllnode* head, VALUE val);
+• Pasos involucrados:
+a. Asignar dinámicamente espacio para un nuevo dllnode.
+b. Verificar que no nos quedamos sin memoria.
+c. Completar e insertar el nodo al principio de la lista vinculada.
+d. Corregir el puntero prev del antiguo encabezado de la lista vinculada.
+e. Devolver un puntero al nuevo encabezado de la lista vinculada.
+
+[11]
+
+Listas doblemente enlazadas
+• Recuerda, nunca podemos romper la cadena al reorganizar los punteros.
+• Incluso si necesitamos tener punteros redundantes temporalmente, está bien.
+
+[17]
+
+Listas doblemente enlazadas
+• Eliminar un nodo de una lista vinculada.
+void delete(dllnode* target);
+
+[18]
+
+Listas doblemente enlazadas
+• Eliminar un nodo de una lista vinculada.
+void delete(dllnode* target);
+• Pasos involucrados:
+a. Corregir los punteros de los nodos circundantes para "saltar" sobre target.
+b. Liberar target.
+
+[24]
+
+Listas doblemente enlazadas
+• Las listas vinculadas, tanto las de una sola como las doblemente vinculadas, admiten una inserción y eliminación de elementos muy eficiente.
+• De hecho, estas operaciones se pueden realizar en tiempo constante.
+• ¿Cuál es la desventaja? Recuerda cómo tuvimos que encontrar un elemento. Hemos perdido la capacidad de acceder aleatoriamente a los elementos de la lista.
+• Acceder a un elemento deseado ahora puede tomar tiempo lineal.

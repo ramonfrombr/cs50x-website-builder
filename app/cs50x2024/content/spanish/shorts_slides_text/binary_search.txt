@@ -1,0 +1,31 @@
+[0]
+
+Búsqueda binaria
+
+[1]
+
+Búsqueda binaria
+• En la búsqueda binaria, la idea del algoritmo es dividir y vencer, reduciendo el área de búsqueda a la mitad cada vez, intentando encontrar un número objetivo.
+• Sin embargo, para aprovechar este poder, nuestro arreglo primero debe ordenarse, de lo contrario no podemos hacer suposiciones sobre el contenido del arreglo.
+
+[2]
+
+Búsqueda binaria
+En pseudocódigo:
+• Repite hasta que el (sub)arreglo tenga un tamaño de 0:
+• Calcula el punto medio del (sub)arreglo actual.
+• Si el objetivo está en el medio, detén.
+• De lo contrario, si el objetivo es menor que lo que hay en el medio, repite, cambiando el punto final para que quede justo a la izquierda del medio.
+• De lo contrario, si el objetivo es mayor que lo que hay en el medio, repite, cambiando el punto de inicio para que quede justo a la derecha del medio.
+
+[30]
+
+Búsqueda binaria
+• Escenario del peor de los casos: tenemos que dividir una lista de n elementos por la mitad repetidamente para encontrar el elemento objetivo, ya sea porque el elemento objetivo se encontrará al final de la última división o no existe en el arreglo.
+• Escenario del mejor de los casos: el elemento objetivo está en el punto medio del arreglo completo, por lo que podemos dejar de buscar inmediatamente después de comenzar.
+
+[31]
+
+Búsqueda binaria
+O(log n)
+W(1)

@@ -1,0 +1,83 @@
+[0]
+
+Transmission Control Protocol (TCP)
+
+[1]
+
+Transmission Control Protocol (TCP)
+• Si le protocole Internet (IP) est considéré comme un protocole permettant d'obtenir des informations d'un ordinateur émetteur vers un ordinateur destinataire, le protocole de contrôle de transmission (TCP) peut être considéré comme un protocole permettant d'orienter le paquet transmis vers le bon programme sur l'ordinateur destinataire.
+• Comme vous pouvez l'imaginer, il est important de pouvoir identifier à la fois l'emplacement du destinataire et l'objet du paquet. C'est pourquoi TCP et IP forment un couple presque inséparable : TCP/IP.
+
+[2]
+
+Transmission Control Protocol (TCP)
+• Chaque programme/utilitaire/service sur un ordinateur se voit attribuer un numéro de port. Associé à une adresse IP, nous pouvons désormais identifier de manière unique un programme spécifique sur un ordinateur spécifique.
+• L'autre fonction cruciale de TCP est de garantir la livraison des paquets, ce que l'IP ne fait pas à elle seule.
+• Pour ce faire, TCP inclut des informations sur le nombre de paquets que le destinataire doit s'attendre à recevoir, dans quel ordre, et transmet ces informations en même temps que les données.
+
+[3]
+
+Transmission Control Protocol (TCP)
+• Certains ports sont si couramment utilisés qu'ils ont été standardisés sur tous les ordinateurs.
+• FTP (transfert de fichiers) utilise le port 21.
+• SMTP (courrier électronique) utilise le port 25.
+• DNS utilise le port 53.
+• HTTP (navigation sur le Web) utilise le port 80.
+• HTTPS (navigation sécurisée sur le Web) utilise le post 443.
+
+[4]
+
+Transmission Control Protocol (TCP)
+• Étapes du processus TCP/IP
+1. Lorsqu'un programme envoie des données, TCP les divise en petits blocs et communique ces paquets au logiciel réseau de l'ordinateur, en ajoutant une couche TCP au paquet.
+2. IP achemine les paquets individuels de l'expéditeur au destinataire ; cette information fait partie de la couche IP entourant le paquet.
+3. Lorsque l'ordinateur de destination reçoit le paquet, TCP examine l'en-tête pour voir à quel programme il appartient ; et comme les chemins empruntés par les paquets peuvent varier, TCP doit également présenter ces paquets au programme de destination dans le bon ordre.
+
+[20]
+
+Transmission Control Protocol (TCP)
+Adresse IP du destinataire
+25 / 2 sur 4
+<DONNÉES>
+Adresse IP du destinataire
+25 / 2 sur 4
+<DONNÉES>
+A
+B
+C
+D
+A
+B
+C
+D
+EXPÉDIATEUR
+DESTINATAIRE
+Routage via IP
+
+[21]
+
+Transmission Control Protocol (TCP)
+A
+B
+C
+D
+EXPÉDIATEUR
+DESTINATAIRE
+A
+B
+C
+D
+
+[22]
+
+Transmission Control Protocol (TCP)
+Courrier électronique
+EXPÉDIATEUR
+DESTINATAIRE
+Courrier électronique
+
+[23]
+
+Transmission Control Protocol (TCP)
+• Si, à un moment donné, un routeur acheminant des informations à l'aide du protocole Internet supprimait un paquet, TCP utiliserait des informations supplémentaires contenues dans les en-têtes pour demander à l'expéditeur de transmettre le paquet supplémentaire afin de pouvoir terminer l'assemblage.
+• Une fois les paquets arrivés, TCP s'assure qu'ils sont organisés dans le bon ordre et peuvent ensuite être réassemblés en l'unité de données prévue et transmis au bon service.

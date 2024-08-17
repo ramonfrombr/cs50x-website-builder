@@ -1,0 +1,41 @@
+Bueno, regresemos por un momento a un lugar que vimos hace unas semanas, este.
+
+Recordarás que en Mario, hicimos algunos ejemplos al principio, donde queríamos replicar la idea, imprimiendo, por ejemplo, cuatro signos de interrogación en una fila aquí. Y queríamos imprimir algo como tres cuadrados en una columna. Y luego, también teníamos esta estructura bidimensional imprimiendo bloques. Veamos cómo podemos implementar esas mismas ideas ahora usando Python de manera un poco más simple que antes.
+
+Así que déjame seguir aquí. Y crearé un programa llamado mario.py, en el que también prepararé esto. Entonces Mario.py, el primer objetivo es hacer algo como esto. Así que quiero seguir adelante e imprimir cuatro signos de interrogación en el cielo o simplemente en términos ASCII simples, solo cuatro signos de interrogación en la pantalla.
+
+Así que obviamente puedo hacer 1, 2, 3, 4. Pero esto no está particularmente bien diseñado. Puedo hacerlo un poco más reutilizable, un poco más dinámico diciendo para i en el rango (4). Y luego, puedo seguir adelante e imprimir, por ejemplo, un solo signo de interrogación. Pero algo va a resultar contraproducente ahora. Si ejecuto esto, ¿qué voy a ver que no quiero ver? Sí.
+
+AUDIENCIA: Será un signo de interrogación [INAUDIBLE].
+
+DAVID MALAN: Exactamente. Van a ser signos de interrogación en una fila vertical. ¿Por qué? Bueno, finalmente, estábamos muy felices de deshacernos de las barras invertidas n. Ahora, ha vuelto a mordernos, porque a veces no quieres las barras invertidas n. Entonces, aquí es donde las funciones de Python son parametrizables en una forma un poco diferente a C.
+
+Casi todas las funciones que hemos visto en C pueden haber tomado cero o más argumentos dentro de los paréntesis, y simplemente los separas con comas. Python es un poco más elegante porque tiene lo que se llaman argumentos con nombre, donde no solo especificas una coma, coma, algo, coma, algo. En su lugar, puede especificar el nombre de un argumento o parámetro, un signo igual y luego su valor.
+
+Entonces, solo sabrías esto por la documentación de Python. Pero resulta que la función de impresión toma un argumento llamado end-- E-N-D-- cuyo valor puede ser igual a lo que quieras. Por defecto, es literalmente igual a la barra invertida n. Sucede automáticamente, pero puedes anular esto.
+
+De hecho, puedes decir ¿sabes qué? No quiero nada al final de cada cosa que estoy imprimiendo. Entonces déjame citar y sin citar. Déjame volver a ejecutar mario.py ahora. Y ahora, casi tengo lo que quiero. Pero es un poco descuidado. Todavía quiero mover el cursor al final. Pero esta bien. No puedo imprimir nada, porque obtendré una nueva línea gratis al final del programa. Así que ahora es cómo puedo implementar esta misma idea.
+
+Pero puedes poner cualquier cosa aquí. Podría ser un poco extraño. Pero podría poner comas en el medio. Y luego, podría volver a ejecutar mario.py y ahora obtener signo de interrogación, coma, signo de interrogación, coma, signo de interrogación, coma, porque estoy imprimiendo una coma después de cada uno. Pero para nuestros propósitos, basta con anular eso, en este caso.
+
+Bueno, ¿cómo puedo hacer esto un poco más elegante? Bueno, propusiste, o el meme que viste propuso que podemos hacer esto en su lugar. Simplemente podemos imprimir, por ejemplo, imprimir signo de interrogación por 4. Ahora, podemos volver a ejecutar el programa ahora. Y listo, aún más pitónico, no necesariamente tan obvio o reutilizable, pero ciertamente más sucinto.
+
+Hagamos uno más esta vez para, ¿qué tal esto? Recuerda que queríamos imprimir una columna de tres ladrillos. Entonces, ¿cómo podríamos hacer esto? Bueno, déjame seguir adelante y hacerlo de forma simplista. Por yo en el rango de 3, déjame seguir adelante e imprimir un ladrillo como ese. Déjame ejecutar el programa ahora, mario.py.
+
+Y listo, ese es bastante fácil. Pero realmente puedo hacer esto un poco más inteligentemente si hago esto, imprimir uno de estos de escape y n veces 3. Pero también arreglemos ese error que surgió antes. Eso es casi correcto. Pero afirmo que esto fue un poco desordenado.
+
+Entonces, ¿cuál es la solución para solucionar este error, en el que solo estoy siendo un poco quisquilloso? No quiero esta línea en blanco adicional al final, que estoy obteniendo gratis de la impresión en sí. Las líneas en blanco, las nuevas líneas en el medio provienen de la cadena entre comillas aquí. ¿Cuál es la solución para deshacerse de esa nueva línea adicional al final? Sí.
+
+AUDIENCIA: Podrías cambiar n a nada.
+
+DAVID MALAN: Sí, solo di iguala cita sin cita. Entonces la sintaxis está empezando a ponerse un poco rara, ¿verdad? Por ejemplo, es un poco más difícil de analizar visualmente. Pero este es, de hecho, el paradigma que hemos visto antes. Aquí hay un argumento a la izquierda. Aquí hay otro argumento a la derecha. Lo único que es diferente en Python es que ahora, algunos argumentos pueden tener nombres explícitos que solo conoces por la documentación.
+
+Entonces, ahora, si vuelvo a ejecutar esto después de guardarlo, ahora, tengo el efecto que realmente quiero. Bueno, hagamos uno más con Mario aquí, esta vez para hacer algo un poco bidimensional e imprimir un ladrillo que sea como un ladrillo de 3 por 3 hashes en su lugar. Bueno, volvamos a mi código aquí.
+
+Y déjame seguir adelante y hacer un primer ejemplo en Python de un bucle anidado. Así que déjame seguir adelante y hacer para i en el rango de 3. Eso me da mis filas. Y luego, puedo hacer para j en el rango 3 también. Y luego, aquí, puedo seguir adelante e imprimir solo una almohadilla. Pero no quiero imprimir nuevas líneas cada vez. De lo contrario, va a ser una columna súper alta de hashes.
+
+Pero después de imprimir una fila, sí quiero imprimir una línea en blanco. Así que creo que esto es suficiente. Voy un poco rápido aquí. Pero de nuevo, esto, la lógica es de la semana 1. La sintaxis es ahora de la semana 6. Déjame ejecutar esto de nuevo: mario.py. No. Cometí un error. ¿Que hice mal? En realidad, no anulé lo que pretendía. ¿Qué?, sí, allí a la izquierda.
+
+AUDIENCIA: Incluiste la barra invertida n.
+
+DAVID MALAN: Sí, y el objetivo de usar el parámetro n era anularlo. Así que déjame cambiarlo a eso, y veamos qué pasa ahora. Voila. Ahora he implementado esa misma idea. ¡Vaya, creo que Rice Krispie Treats nos espera en el lobby. ¡Nos vemos en cinco minutos!

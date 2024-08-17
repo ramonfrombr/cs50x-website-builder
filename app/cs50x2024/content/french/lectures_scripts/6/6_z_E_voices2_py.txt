@@ -1,0 +1,5 @@
+Laissez-moi entrer, et pour gagner du temps, laissez-moi ouvrir une variante de ce que j’ai écrit à l’avance. Celui-ci est désormais exactement le même. Mais notez maintenant que dans la mesure où Google me renvoie un tas de mots, je peux certainement simplement utiliser une syntaxe Python et dire : « Hello » est-il dans les mots de l’utilisateur ? « How are you » est-il dans les mots de l’utilisateur ? « Goodbye to you », « Goodbye » est-il dans les mots de l’utilisateur ?
+
+Donc laissez-moi exécuter cette version. Python voices2, qui est disponible, je ne peux pas parler pendant que je fais cette démo. Hello world. How are you today ? Goodbye, world. OK.
+
+[RIRES]

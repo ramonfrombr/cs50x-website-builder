@@ -1,0 +1,13 @@
+There's kind of the opposite data structure that I referred to a moment ago. And these are generally known as stacks. Stacks in the real world might be in the dining hall right. Like here is of trays. And they have this fundamentally different properties, such that if the staff go ahead and clean the trays and put them right here, it would be pretty obnoxious if to get your you had to go through a FIFO fashion and get the first they put down and take that out first. 
+
+No one does that, realistically. If you've got a big stack of trays in the dining hall, you probably enforce a LIFO order, last in, first out. So if this was the most recently installed or clean tray, you're probably, as the human, just going to take the top one, even though that's not really fair to the below. But it doesn't matter in this particular case. 
+
+So a stack gives you the opposite property. And where else might you see these? Well, your Gmail inbox. If you use Gmail, your inbox, most likely by default is configured as a stack. Where do your most recent emails end up? 
+
+AUDIENCE: At the top. 
+
+DAVID MALAN: At the top. Now, this is wonderful because it's a feature in that you always see your newest mail. Kind of a downside, though, to your friends who've emailed you an hour ago and whose emails are now down here are on page 2 of your email. 
+
+So there's trade-offs here too. Stacks might have desirable properties, like just get your tray quickly, see your most recent email. But if you're like me, as soon as email falls on the page 2, you might never get back to it if the stack of trays never actually gets exhausted. Frankly, there might be in some dining hall on campus some way down here that has never been used in years, because they keep refilling the stack, and we keep taking from the top. So that would be a bad property for a lot of context, but not necessarily all. 
+
+So it turns out there's another data structure too-- oh, and the operations there are not called enqueue and dequeue. By convention they're called push and pop, where this means pushing an element onto the stack. Even if it's very gentle, that's pushing. Popping means removing the top element. So it's just nomenclature meaning adding and removing elements.

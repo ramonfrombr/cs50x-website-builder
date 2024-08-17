@@ -1,0 +1,9 @@
+Faisons quelque chose d'encore plus fort. Et j'espère que vous excuserez si nous dépassons, comme, de deux minutes aujourd'hui. J'espère que ça en vaudra la peine. Laissez-moi continuer, et dans les exemples 2 d'aujourd'hui pour la 6e semaine, laissez-moi ouvrir quelque chose comme des visages.
+
+Dans ce cas-ci, nous avons, par exemple, tout un groupe de notre personnel Yale il y a quelques semaines. Donc, vous verrez ici tout un groupe de visages à Yale. Et maintenant, je vais continuer et, à l'avance, j'ai écrit un programme ici appelé détecter pour détecter les visages.
+
+Je vais aller de l'avant et exécuter ce programme appelé detect.py. C'est écrit en Python mais nous vous laisserons voir le code en ligne. Il va ouvrir ce fichier JPEG Yale. Il va l'analyser à la recherche de choses qui ressemblent à des visages. Les yeux, le nez, la bouche, et ainsi de suite. Et s'il les trouve, il va ouvrir et extraire chacun d'entre eux, pour le meilleur ou pour le pire.
+
+Mieux encore, supposons que nous ayons cette photo qui est une photo de la plupart du personnel CS50 ici à Harvard cette année. Et si vous voyez, je suis parmi eux quelque part. Eh bien, j'ai écrit un autre programme grâce à un bon tutoriel en ligne, celui-ci appelé recognize.py, qui va analyser harvard.jpg cette fois et effectivement trouver, je l'espère, moi.
+
+Parce que j'ai aussi donné à ce programme en entrée une photo de moi-même sur le site web de CS50. Et dans un instant, j'espère que cela ouvrira un fichier contenant une version analysée. Et en effet, si nous cherchons Waldo, me voilà à l'arrière. Et le programme en Python a dessiné cette boîte verte.

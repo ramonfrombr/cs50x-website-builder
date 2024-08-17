@@ -1,0 +1,94 @@
+[1]
+
+HTML
+• HTML (Hypertext Markup Language) est un composant fondamental de chaque site internet.
+• HTML est un langage, mais ce n'est pas un langage de programmation. Il ne comprend pas de concepts de variables, de logique, de fonctions, etc.
+• C'est plutôt un langage de balisage, en utilisant des balises à chevrons pour définir sémantiquement la structure d'une page Web, faisant ainsi que le texte brut à l'intérieur des balises soit interprété par les navigateurs Web de différentes manières.
+
+[8]
+
+HTML
+• Remarquez comment le balisage nous permet de transmettre des informations supplémentaires sur le texte que nous avons écrit.
+• Il existe plus de 100 balises HTML, et de nombreuses ressources en ligne pour les trouver. Nous ne les couvrirons pas toutes ici.
+• Une autre façon intéressante d'en savoir plus sur les balises HTML est de consulter la source d'un site Web que vous fréquentez en ouvrant les outils de développement du navigateur de votre choix.
+
+[9]
+
+HTML
+• Balises HTML courantes
+• <b>, </b>
+• Le texte entre ces balises sera rendu en gras par le navigateur.
+• <i>, </i>
+• Le texte entre ces balises sera rendu en italique par le navigateur.
+• <u>, </u>
+• Le texte entre ces balises sera rendu souligné par le navigateur.
+
+[10]
+
+HTML
+• Balises HTML courantes
+• <p>, </p>
+• Le texte entre ces balises sera rendu comme un paragraphe par le navigateur, avec un espace au-dessus et en dessous.
+• <hX>, </hX>
+• X = 1, 2, 3, 4, 5 ou 6
+• Le texte entre ces balises sera rendu comme un en-tête de section de niveau X.
+
+[11]
+
+HTML
+• Balises HTML courantes
+• <ul>, </ul>
+• Démarque le début et la fin d'une liste non ordonnée (à puces).
+• <ol>, </ol>
+• Démarque le début et la fin d'une liste ordonnée (numérotée).
+• <li>, </li>
+• Démarque les éléments de liste avec une liste ordonnée ou non ordonnée.
+
+[12]
+
+HTML
+• Balises HTML courantes
+• <table>, </table>
+• Démarque le début et la fin d'une définition de tableau.
+• <tr>, </tr>
+• Démarque le début et la fin d'une ligne dans un tableau.
+• <td>, </td>
+• Démarque le début et la fin d'une colonne dans une ligne dans un tableau.
+
+[14]
+
+HTML
+• Balises HTML courantes
+• <form>, </form>
+• Démarque le début et la fin d'un formulaire HTML.
+• <div>, </div>
+• Démarque le début et la fin d'une division de page HTML arbitraire.
+• <input name=X type=Y />
+• Définissez un champ dans un formulaire HTML. X est un identifiant unique pour ce champ, Y est le type de données qu'il accepte.
+
+[15]
+
+HTML
+• Balises HTML courantes
+• <a href=X>, </a>
+• Crée un hyperlien vers la page Web X, avec le texte entre les balises rendues et fonctionnel comme texte du lien.
+• <img src=X ... />
+• Une autre balise auto-fermante pour afficher une image située à X, avec des attributs supplémentaires possibles (tels que la spécification de la largeur et de la hauteur).
+• <!DOCTYPE html>
+• Spécifique à HTML5, informe le navigateur que c'est la norme que vous utilisez.
+
+[16]
+
+HTML
+• Balises HTML courantes
+• <!--, -->
+• Démarque le début et la fin d'un commentaire HTML.
+• Au-delà des balises expliquées ici, chacune peut également avoir plusieurs attributs qui modifient légèrement la balise.
+• Par exemple, vous pouvez généralement ajouter un attribut id=X pour identifier de manière unique une balise dans une page globale.
+
+[17]
+
+HTML
+• Il est important que le HTML que vous écrivez soit bien formé. Chaque balise que vous ouvrez doit être fermée (sauf s'il s'agit d'une balise auto-fermante), et les balises doivent être fermées dans l'ordre inverse de leur ouverture.
+• Contrairement à C, votre HTML n'échouera pas nécessairement avec des erreurs de syntaxe s'il n'est pas bien formé, c'est donc à vous d'être vigilant.
+• Parce que cela peut être une tâche ardue, assurez-vous d'utiliser des validateurs HTML en ligne pour vous aider !

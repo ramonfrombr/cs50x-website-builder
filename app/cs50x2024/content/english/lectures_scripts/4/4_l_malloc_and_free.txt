@@ -1,0 +1,39 @@
+All right. So we are back. That was a lot. Let me draw our attention to what the newest feature was just a moment ago, this notion of malloc, memory allocation. So recall that getString I claim as of today, all this time, it's just returning to you the address of the string that was gotten from the human. 
+
+malloc, similarly, has a return value. And when you ask malloc for this many bytes-- maybe it's five, for emma, plus the null terminator, malloc's purpose in life is to return to you the address of the first byte of that memory as well. So memory alloc means, go get me a chunk of memory somewhere, hand me back a pointer there too. And the onus is on me to remember that address, as I'm doing here, by storing it in t. 
+
+But it turns out, now that we're taking the training wheels off, unfortunately, we have to kind of do a bit more work ourselves. And there's actually a latent bug in this program. It turns out that I am mal-allocating memory with this but I'm never actually freeing it. The opposite of malloc is a function called free, whose purpose in life is to hand back the memory that you asked for so that you have plenty of memory available for other parts of your program and so forth. 
+
+And long story short, if you've ever-- on your Mac or PC --been running a program that maybe is a little bit buggy --you might notice your computer is getting slower, and slower, or maybe it even runs out of memory explicitly, per some error message --that might be quite simply, that the programmer of that program kept using mallc, and malloc, and malloc to grow, and grow, and grow their use of memory, but they never got around to freeing any of that memory. So programs can run out of memory. Your computer can run out of memory. 
+
+So it's good practice, therefore, to free any memory you're not using. However, how do you find this mistake? So we've got one final debugging tool for you. This one's not CS50 specific like debug50. This one is called Valgrind. Unfortunately, it's not the easiest thing to understand at first glance. 
+
+So I'm going to go ahead and do this. I'm going to run Valgrind on this program, dot slash copy, and hit Enter. And unfort-- 
+
+AUDIENCE: [INAUDIBLE] 
+
+[CHUCKLE] 
+
+[COUGH] 
+
+DAVID J. MALAN: Gotcha. OK. 
+
+I'm going to go ahead and-- there we go. 
+
+AUDIENCE: [INAUDIBLE] 
+
+So what you missed was a very scary message. So I'm going to go ahead and run Valgrind on dot slash copy. We see this esoteric output up top and then my prompt for s-- because it's the same program. It's prompting me for a string --so I'm going to give it emma, all lowercase, and enter. And you'll notice now, that there's some summary going on here but also some mention of error. 
+
+So heap summary-- we'll come back to that in a bit --5 bytes in 1 blocks are definitely lost in loss record 1 of 2. Leak summary, I've got 5 bytes leaking in 1 blocks. I mean, this is one of these programs in Linux-- the operating system that we use, that's quite common in industry too --I mean, my god. There's so-- there's so many more characters on the screen that are actually enlightening for me. 
+
+Let's see if we can focus our attention on what matters. Memory leaking, bad. So how do we go about chasing down where memory is leaking? Well, as before, we can use help50. And in fact, help50 will analyze the output of Valgrind-- it's still going to prompt me first string. 
+
+So I'm going to again, type in emma --it's going to look at that. It's to ask for help. And voila, highlighted in yellow, is a message that we, help50, recognize. And notice our advices, looks like your program leaked 5 bytes of memory. Did you forget to free memory that you allocated via malloc. Take a closer look at line 10 of copy dot C. 
+
+Now once you've done this a couple of times and made the same mistake, you can probably scroll up and glean for yourself where the error is. We're not revealing any more information than is right in front of you. And in fact, you can see here, ah, in main on copy dot C, line 10, there's some kind of 5 bytes in 1 blocks are definitely lost. So there's a lot of words there but it does draw attention to the right place. 
+
+So let me go ahead and scroll down, focus on line 10. And indeed, line 10 is where I allocated the memory. So it turns out the solution for this is quite simple. Down here, I'm just going to go ahead and free t, the address of the chunk of memory that malloc returned to me. So I'm undoing the effects of allocating memory by de-allocating memory. 
+
+So now let me go ahead and run copy. And if I run copy, it's not going to seem to run any differently. It's still going to work correctly. But now if I analyze it for mistakes with Valgrind, so Valgrind of dot slash copy-- I'm going to again type in emma in all lowercase and I cross my fingers --that indeed now, leaked summary, 0 bytes in 0 blocks. So unfortunately, even when all is well, it still spits out a mouthful. But now I see no mention of blocks that are actually leaked, at least in the top part here. 
+
+And we'll see more of this over the next couple of weeks as we use it to chase down more complicated bugs. But it's just another tool in the toolkit that allows us to detect these kinds of errors. 

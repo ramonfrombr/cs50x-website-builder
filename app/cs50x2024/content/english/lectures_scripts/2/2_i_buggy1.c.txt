@@ -1,0 +1,15 @@
+Let me go ahead and open up another file here, or enhance this as buggy one dot c, and make a similar mistake, but one that triggers a different error message. In this case, I'm going to go ahead and get this right this time, include standard Io dot h. And then I'm going to go ahead and do int main void, and then just as before, I'm going to do this canonical program. String name gets get string. And ask the user, what's your name-- backslash, n. And then I'm going to go ahead and say hello to them with a %s comma name. 
+
+So that too looks good. I'm going to go ahead and scroll back up here, do make buggy one this time. But of course, it looks like, my god, as before, I have two lines of code, yet somehow, five or six errors. Always focus on the top. So it probably relates to something like this, but this one's more confusing. The undeclared identifier string-- did you mean standard Io? Well, no. So if you don't quite grok that, go ahead and run the same command, help 50, make buggy one. And this time, we'll see the output of this command, hopefully, after asking for help, a clue as to what it is that we're actually looking for. 
+
+And indeed, now we notice that oh, by undeclared identifier, clang means you've used a name string on line five of buggy one dot c, which hasn't been defined. Did you forget to include cs50 dot h, at this point. So in short, anytime you're having a problem running a command and you're seeing cryptic messages, reach for help 50 as a command for actually explaining it to you. And thereafter, probably you won't have to run that same command again. 
+
+But what about another? Let me go ahead and open up a program I wrote in advance here, and go ahead and open this one. Yeah? Sure. 
+
+AUDIENCE: [INAUDIBLE] just press more buttons. 
+
+DAVID MALAN: To rerun the same command? 
+
+AUDIENCE: Not to delete that, but to [INAUDIBLE] 
+
+DAVID MALAN: Oh, yes, so just to keep things neat in class, I'm in the habit of hitting Control l a lot, which just clears my terminal window. It has no functional impact. It just gets the clutter off of the screen. You can also literally type, for instance, clear, Enter. That's just a little more verbose than hitting Control l. So there's a lot of little keyboard shortcuts, and interrupt at any point if you have questions about those. 

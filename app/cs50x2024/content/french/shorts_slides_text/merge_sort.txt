@@ -1,0 +1,29 @@
+[1]
+
+Tri fusion
+• Avec le tri fusion, l’idée de l’algorithme est de trier de plus petits tableaux, puis de combiner ces tableaux (les fusionner) dans un ordre trié.
+• Le tri fusion exploite quelque chose appelée récursivité, que nous approfondirons dans une prochaine vidéo.
+En pseudo-code :
+• Trier la moitié gauche du tableau (en supposant n > 1)
+• Trier la moitié droite du tableau (en supposant n > 1)
+• Fusionner les deux moitiés ensemble
+
+[37]
+
+Tri fusion
+1
+2
+3
+4
+5
+6
+En pseudo-code :
+Trier la moitié gauche du tableau (en supposant n > 1)
+Trier la moitié droite du tableau (en supposant n > 1)
+Fusionner les deux moitiés ensemble
+
+[38]
+
+Tri fusion
+• Pire scénario : nous devons diviser n éléments, puis les recombiner, doublant ainsi efficacement les sous-tableaux triés lorsque nous les construisons. (combiner les tableaux triés à 1 élément en tableaux à 2 éléments, combiner les tableaux triés à 2 éléments en tableaux à 4 éléments…)
+• Meilleur scénario : le tableau est déjà parfaitement trié. Mais nous devons encore le séparer et le recombiner à nouveau avec cet algorithme.

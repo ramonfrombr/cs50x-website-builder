@@ -1,0 +1,63 @@
+And let's see, Brian, if you wouldn't mind lending a hand, let's see if we can't do better than by taking maybe a fundamentally different approach to sorting, as by laying out something called selection sort. 
+
+So in selection sort, we have a similar set of numbers, but we won't bother using something as large as 50. Brian's going to kindly set them up in a random order, but we happen to have a cheat sheet on the board so that we can try this again if we need to. And these numbers right now are unsorted from left to right. And we have 1 2, 3, 4, 5, 6, 7, 8 numbers in total here. 
+
+So bubble sort was nice because it leveraged your intuition, where it will just look to the left, look to the right and fix those small problems. But honestly, a fundamentally different way to think about sorting would be, well, if I know I want small to large, left to right, why don't I just do that? What is the smallest number? 
+
+Well, recall that these things, if they're implemented in an array, might as well be in lockers. I can't just use a human intuition in this case. I have to look at each element individually. But I'm not going to bother throwing them back in the locker because that's just going to take unnecessary time. But I look at 6. 6 is the smallest number I have seen thus far. So at the moment, this is the smallest number in the list. 
+
+So I'm going to remember that with a variable in my mind. Now I see 3. 3 is obviously less than 6, so I'm going to forget about 6 and just remember for now that 3 is the smallest element I've seen. 8 is no smaller. 5 is no smaller. Ooh, 2 is smaller. I'm going to remember 2 is the smallest. I'm going to forget about the 3. 
+
+Meanwhile I keep going, 7, 4-- ooh, 1 is even smaller. And so I've gotten to the end of the list. The smallest element in this list is 1. It obviously belongs over there. So what can I do with it? 
+
+AUDIENCE: [INAUDIBLE]. 
+
+SPEAKER 1: Yeah, ideally I could just move it. Now, maybe I should make room, right? The table's a little small, or my array is a fixed size. So I could start scooching everything over this way. But you know what? Frankly, that's going to take a while, right? [? I ?] have to move, like, seven elements. 
+
+Why don't I just kind of forcefully evict the 6, put it over here, because after all, it was in random order in the first place. Who cares if I move it someplace else even more random? I'll deal with it later. So you could do either approach. You could shift everything. But that feels like it'll take some time. Or you can just evict whatever is in the place you want to be. 
+
+But what's nice now is that my list is closer to sorted. The 1 is in its correct place. So now all I have to look at is n minus one other element. So let's take a look. 
+
+What's the next smallest element? At the moment, it's 3, still 3, still 3. Oh, wait a minute, it looks like 2. Now, you might want to just abort now and rip out the 2. But you don't know necessarily, as the computer, if you're only looking at one value at a time, unless you have multiple variables in your mind, which I'm not going to bother with. Let me see if there's anything smaller than 2. 7, 4, 6-- no. 
+
+So I'm going to grab the 2. And where do I want to put it? Right over there. And you know what? This could be a net negative. But I think it's going to average out. I'm going to move the 3 to where I do have room and go ahead and claim that my 2 is now sorted. And I'm going to do this again and again and again. 
+
+And just like Bonnie did, I'm going to do it a little faster now, walk through the list. OK, 3 is the smallest. I'm going to go ahead and put it in sorted order by evicting the 8. Now I'm going to go ahead. All right, 5 8, 7-- 4 is now the smallest. I'm going to go ahead and evict the 5, move it over here, and claim that that's sorted. 
+
+Let me do it once more, 8, 7, 5, 6. 5 is clearly the smallest. Let me go ahead and evict the 8 again, make room for the 5. But I only have three steps left, 7, 8, 6. Let me go ahead and move the 7 over here, put the sixth in place. 
+
+8 is the smallest. No, 7 is smaller. Let me go ahead and put it in place, evicting the 8. Voila, hopefully now, oof, done but a fundamentally different algorithm, right? There was no pairwise swapping back and forth and back and forth. Each time I sort of set my mind on a goal, get the next smallest element, get the next smallest element. And that is what we shall call selection sort, where on each iteration you select the next smallest element. 
+
+So in pseudocode we might say this, for i from 0 to n minus 1. And again, just adopt this habit now. Any time in the life, and certainly a CS class, when you have n items, the first one is ironically 1 but in this case, 0. And the last one is n minus 1. 0 to n minus 1 is how a computer scientist counts from 1 to n in the real world. 
+
+So this just says do the following n times but use i. Start counting from 0. Find the smallest item between the ith item and the last item. What am I saying there? Well, if I initialize i initially to 0, that's just saying find the smallest element among all eight and grab it, swap the smallest item with that ith item. 
+
+So wherever I found the smallest element, go ahead and swap it with that one. And then this algorithm-- whoops-- is just going to repeat again and again and again. It's almost a little more succinct to represent in pseudocode. But it invites the question, then, is this better? Is selection sort better? 
+
+Well, what would it mean for an algorithm to be better? We have two rules of thumb, big O and omega. So let's try those. So in big O notation, how many steps does it take to sort a list of numbers like I did, where you just again and again and again select the smallest, the smallest, the smallest element? Well, how do you even begin to think about that? Yeah? 
+
+AUDIENCE: [INAUDIBLE] n squared because you have at iteration n [? an ?] n minus 1 [INAUDIBLE]. 
+
+SPEAKER 1: Yeah. That's the right intuition. And let me back up just one step until we get to that. The proposal was its n squared. And indeed, that's going to be the spoiler. But why? Well, if you actually started to count up how many steps I was taking physically, right, to find the smallest element, it's going to take me maybe seven steps to find the smallest element because I'm going to look at all of them. 
+
+So in my first pass, I'm looking at all eight elements, or taking almost n steps to find the smallest number, like 1. But after that, the 1 was in place. And I turned on its light bulbs, and that left seven numbers left. And how many steps did I then take? Well, n minus 1. 
+
+Then after the 2 was in place, how many steps? n minus 2 and then n minus 3, n minus 4, dot, dot, dot, until there was just one number left. So that invites the question, what, then, does this total up to? And indeed, you jumped to the right intuition. If you start with n, and you add to the n minus 1 steps, and you add to that n minus 2 steps, dot, dot, dot, one final step once you get to the end of the list, what does this actually sum up to? 
+
+It's actually not obvious. And this is one of those things in life, unless you're a math major, you probably would look at the back of a math textbook or a physics textbook for those little cheat sheets that they used to come with, at least in high school. Allow me just to propose for today's sake, if you actually do out this math or look it up at the back of a book, it ends up being this, n times n plus 1 divided by 2. And you can prove this mathematically. 
+
+But for our purposes, just trust me, if you will, that adding a number plus the smaller number plus the smaller number plus the smaller number all the way to 1, gives you this relationship, n times n plus 1 divided by 2. And it's fine if you just take that as fact. So let me just multiply this out. That's n squared plus n/2. That, of course, is n squared divided by 2 plus n/2. But, again, who cares? Big O notation would propose that we focus only on what? 
+
+AUDIENCE: n squared. 
+
+SPEAKER 1: n squared. This frankly, is on the order of n squared, exactly as you said, because as n gets large, the only factor in that mathematical expression that we're really going to care about is the one that gets bigger and bigger and bigger faster than everything else. So in terms of selection sort, it would seem that we have big O of n squared for it as well. So it's a fundamentally different algorithm, but mathematically and in the real world, it kind of works out to be the same. So we haven't really done better yet. 
+
+What about omega for selection sort? If the code for selection sort is this, does it benefit from the list being sorted already? Or is it just going to blindly do its order of n squared work again and again anyway, right? Like, this is opportune that the numbers are currently sorted because we can make a point, well, this is the best case scenario. I hand you the numbers 1 through 8. They're already sorted. And you try to use selection sort on it. 
+
+Well, you might think, ooh, it's in the right place. I'm just going to grab the smallest number. Now I'm going to grab the next smallest number and so forth. But that's not true. When I'm the computer, and I open the first locker, and I see the number 1, do I know anything more about my numbers yet? 
+
+AUDIENCE: No. 
+
+SPEAKER 1: No, right? You're using human intuition to see that, OK, obviously it's the smallest. I, the program, do not know that until I look at the other numbers in the list. And so again, if you just iterate through using selection sort, you only know what's in front of you, which means you're going to execute the exact same code again and again. And that means the math is the same. 
+
+Even in this best case, we are truly wasting our time now with selections sort because it is going to be omega of n squared, too.

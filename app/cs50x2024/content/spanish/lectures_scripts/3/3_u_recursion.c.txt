@@ -1,0 +1,61 @@
+Entonces vamos a intentar esto una vez más. Déjame seguir adelante y crear otro archivo llamado recursion.c. Voy a seguir adelante e incluir [? cs50.h. ?] Y voy a seguir adelante e incluir el estándar [? io.h. ?] Y luego voy a seguir adelante y tener int main void de nuevo.
+
+Y en este programa aquí, voy a pedirle nuevamente al usuario la altura de interés para su pirámide usando int height obtiene un int y le pregunta por la altura. No me voy a molestar en verificar el error aquí. Voy a seguir adelante y dibujaré una pirámide de esa altura. Entonces, lo que cambiará esta vez es mi función draw, void draw int h como antes. Y ahora es donde las cosas se ponen interesantes.
+
+Mi objetivo ahora no es solo usar bucles anidados, sino definir una pirámide más grande en términos de una pirámide pequeña. Entonces, supongamos que el objetivo en cuestión es dibujar una pirámide de tamaño 4. ¿Qué debo hacer primero, de acuerdo con esta definición de una pirámide? ¿Cómo dibujo una pirámide de tamaño 4 en español? ¿Sí?
+
+AUDIENCIA: Dibuja una pirámide del tamaño de 4 menos 1.
+
+ORADOR 1: Sí, dibuja una pirámide de tamaño 4 menos 1 o una pirámide de tamaño 3. Entonces, ¿cómo expreso esto en código? Bueno, maravillosamente en código, esto es muy simple, h menos 1. Eso me dibujará una pirámide de altura h menos 1, o 3 en este caso específico. Ahora, no está hecho el programa, ¿verdad? No puedo simplemente compilar esto y esperar que funcione porque parece que solo se va a llamar a sí mismo sin fin.
+
+Bueno, ¿qué es una pirámide de tamaño 3, 2, 1, 0, negativo 1, negativo 2, verdad? Continuaría sin fin si simplemente resto 1. Entonces, necesito ese caso base. ¿En qué circunstancias debería no dibujar nada?
+
+AUDIENCIA: [INAUDIBLE]
+
+ORADOR 1: Sí. Entonces, tal vez si h es igual a 0, ¿sabes qué? Simplemente regresa. No hagas nada, ¿de acuerdo? Necesito un caso base, una condición codificada que diga que deje de hacer esto, esta [? cycalidad ?] alucinante una y otra vez.
+
+Pero necesito hacer una cosa más. Así que esto es solo una verificación de errores para asegurarme de no hacer esto para siempre. Este es este acto de fe, donde de alguna manera ni siquiera he escrito la función todavía, y de alguna manera va a dibujar mi pirámide mágicamente. Pero, ¿cuál es el segundo paso para dibujar una pirámide de altura 4, si puedo preguntar de nuevo?
+
+AUDIENCIA: Bueno, en términos de [INAUDIBLE]?
+
+ORADOR 1: Sí, entonces, ¿qué sigue? Acabo de dibujar una pirámide de altura 3.
+
+AUDIENCIA: ¡Oh!, Entonces dibujas una pirámide de altura 2.
+
+ORADOR 1: Ahora dibujo una-- dilo una vez más.
+
+AUDIENCIA: Pirámide de altura 2.
+
+ORADOR 1: No del todo. Tómate esto literalmente. Si acabo de dibujar en código una pirámide de altura 3, ¿cómo llego ahora a una pirámide de altura 4?
+
+AUDIENCIA: ¡Oh!, Agregas [INAUDIBLE].
+
+ORADOR 1: Sí, agrego esa fila adicional, ¿verdad? [? Porque, ?] nuevamente, según nuestro diagrama, ¿qué es una pirámide de altura 4? Bueno, en realidad es solo una pirámide de altura 3 más una fila adicional. Entonces, si todos estamos de acuerdo, un acto de fe, de que de alguna manera tengo la capacidad de dibujar pirámides de altura h menos 1, nos permita a ti y a mí hacer la parte difícil en código de dibujar esa fila adicional.
+
+Entonces, si regreso al código aquí, después de dibujar una pirámide de altura h menos 1, necesito seguir adelante y para int i obtener 0, i es menor que h, i más más. Parecería que sólo necesito imprimir, por ejemplo, aquí arriba un hash seguido de una nueva línea después de eso, ¿verdad? Entonces necesito un bucle for, pero solo uno no anidado.
+
+¿Y qué efecto tiene esto? Bueno, en la cuarta fila, donde h es igual a 4, ¿cuántos hash voy a imprimir? 1, 2, 3, 4, si estoy iterando de 0 a h, 0, 1, 2, 3, 4. Entonces, estas líneas de código, en la historia en cuestión, van a imprimir cuatro hash.
+
+Esta línea de código, sorprendentemente, imprimirá todo lo demás encima, la pirámide de altura 3. Y la línea de código anterior solo se asegurará de que no llamemos ciegamente a dibujar para siempre en los números negativos. Voy a decir literalmente, si h es igual a 0, deja de hacer esta magia.
+
+Así que vamos a seguir adelante y poner mi prototipo arriba, como antes, aunque sea el mismo, guardar el archivo, hacer recursión, Entrar. Se compila bien. Ahora déjame seguir adelante y ejecutar la recursión a una altura de 4. Y, oh, Dios mío, escribí una función que se llamó a sí misma y de alguna manera imprimió mágicamente una pirámide. Y sin embargo lo único que hice explícitamente fue imprimir ¿qué? Una fila de ladrillos yo mismo. Y la recursión proviene del hecho de que me estoy llamando a mí mismo. Pero al igual que con la búsqueda binaria, al igual que con cualquier enfoque de divide y vencerás, me estoy llamando a mí mismo en un problema más pequeño que el que me dieron. Las mordidas están carcomiendo el problema una y otra y otra vez.
+
+¿Alguna pregunta sobre esta técnica, una función que se llama a sí misma es recursiva? ¿Sí?
+
+AUDIENCIA: Una pregunta rápida. [INAUDIBLE]. Entonces, [INAUDIBLE] loop, ¿cómo regresa [INAUDIBLE]?
+
+ORADOR 1: Muy buena pregunta, después del bucle for, ¿cómo retrocede e imprime? No lo hace. Eso sucede primero. Entonces, si realmente usara la depuración de 50 en el [? IDE, ?] vería que cuando se llama a esta línea 20, y usted llama al dibujo de una pirámide de altura 3, se vuelve a llamar a draw. Y luego se vuelve a llamar a una altura 2. Luego se vuelve a llamar a una altura 1.
+
+Pero, ¿adivina qué pasa en una pirámide de altura 1? Imprime un solo hash. Entonces, si rebobinas la historia, ¿qué sucede después? Imprimes una fila de dos hash. ¿Qué pasa después? Imprimes una fila de tres hash. ¿Qué pasa después? Imprimes una fila de cuatro hash.
+
+Y veremos más de esto en poco tiempo. Pero porque estoy imprimiendo, estoy llamando a draw antes de imprimir la base, no sé cómo funciona esto todavía. Ese es el acto de fe al que sigo aludiendo. Pero sigue sucediendo porque, 1, tengo este caso base que evita que esto suceda para siempre. Y tengo este otro caso que se suma a mi pirámide una y otra vez. ¿Sí?
+
+AUDIENCIA: Es como una capa de [INAUDIBLE] para iteraciones. Pero en lugar de ir de arriba hacia abajo, va [? abajo hacia arriba. ?]
+
+ORADOR 1: Sí, lo es. Se está acabando. Y en realidad te estás refiriendo a un [? concepto ?] del que hablaremos dentro de una o dos semanas llamado pila. Veremos realmente cómo funciona esta magia. Por ahora, permítanme simplemente estipular que las funciones pueden llamarse a sí mismas, siempre que lo que les pases sea una entrada más pequeña que la que te entregaron inicialmente.
+
+Y ahora, solo para demostrar que los científicos informáticos tienen sentido del humor, si buscamos recursión en Google, como probablemente estés haciendo actualmente para entender qué es esto, notarás--
+
+[RISAS]
+
+¿Lo entiendes? Algo así como-- Vale, de todos modos. Google ha codificado esto literalmente en su código fuente de google.com.

@@ -1,0 +1,33 @@
+[1]
+
+Définir des types de données personnalisés
+• Le mot-clé typedef de C permet de créer un raccourci ou de réécrire le nom des types de données.
+• L’idée de base est de d’abord définir un type de manière normale, puis de le donner en alias à quelque chose d’autre.
+
+[2]
+
+Définir des types de données personnalisés
+typedef <ancien nom> <nouveau nom>;
+
+[9]
+
+Définir des types de données personnalisés
+struct car
+{
+int year;
+char model[10];
+char plate[7];
+int odometer;
+double engine_size;
+};
+typedef struct car car_t;
+
+[16]
+
+Définir des types de données personnalisés
+// déclaration de variable
+car_t mycar;
+// accès au champ
+mycar.year = 2011;
+strcpy(mycar.plate, “CS50”);
+mycar.odometer = 50505;

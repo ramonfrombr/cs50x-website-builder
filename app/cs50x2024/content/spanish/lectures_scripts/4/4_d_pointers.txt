@@ -1,0 +1,31 @@
+Vale. Vayamos adelante y dejemos más claro dónde podemos almacenar información aquí. Déjame continuar y cambiar este código como sigue. Resulta que puedes, de hecho, almacenar direcciones y variables en sí mismas. No solo tengo que hacer esta cosa de la arroba aquí. 
+
+Déjame continuar y cambiar el programa como sigue. Déjame continuar y declarar otra variable llamada p y almacenar la dirección de n en ella. Entonces, nuevamente, nada nuevo aquí, solo dice arroba n, ve y toma la dirección de n. Pero tengo que hacer algo diferente aquí. En el lado izquierdo está el nombre de mi variable. La llamé p, por puntero. Pero si quieres almacenar la dirección de algún valor en una variable tienes que especificar no solo el tipo de valor que hay en esa otra variable, sino que también tienes que especificar con este operador de asterisco en un contexto muy confuso, desafortunado y diferente, que este es un puntero. 
+
+Así que mientras que n tiene un tipo de datos int (tal como lo tenía desde la semana 0), lo único nuevo ahora es que resulta que hay otro tipo de dato que puedes describir como puntero. Y un puntero se denota con este asterisco y el int solo significa que es el puntero a un int o es la dirección de un int. Y más adelante veremos que podemos hacer flotantes y flotantes y caracteres y un montón de otros tipos de datos también. Esto solo significa que p es una variable que contendrá un puntero a un int, también conocida como la dirección de un int. 
+
+Bien. Entonces, ¿qué puedo hacer ahora con esta información? Bueno, déjame continuar e imprimir cualquiera de estas. Si quiero continuar e imprimir ahora, por ejemplo, esa dirección, puedo continuar e imprimir % p e imprimir p así como está. Déjame continuar y hacer dirección, entrar; parece que se compila bien; ejecutar dirección. Y voy a ver algo críptico nuevamente, 0x 7FFF3977662C, el cual es diferente al anterior, pero eso se debe a que una de las características de las computadoras modernas es realmente mover cosas en la memoria por ti, lo cual es una función de seguridad. Pero quizás más sobre eso más adelante. Pero aún es una gran dirección hexadecimal críptica. 
+
+Sin embargo, ¿qué pasaría si, solo por el bien de la demostración, no quisiera imprimir la dirección porque rara vez después de hoy vamos a preocuparnos por las direcciones específicas en las que están las cosas? ¿Cómo podría cambiar la línea 7 aquí para imprimir, no el valor de p sino lo que está en la ubicación p? ¿Cómo voy a la ubicación en p? 
+
+Vale. Escuché asterisco p. Así que en lugar de imprimir p en sí, digo asterisco p. Cambio el código de formato solo para que sea un int. 
+
+Vale. Siri está intentando ayudar. 
+
+Pero ahora estoy diciendo que continúes e imprime un entero. Y el entero que quiero que imprimas es el en p. Asterisco significa ir a esa dirección, la cual es p. Así que déjame guardar esto, hacer dirección. Bien, parece que se compila. Punto barra inclinada dirección, veamos qué pasa. Y de regreso a 50. 
+
+Así que solo estamos pasando por aros en este momento, sin lograr nada real hasta ahora. Pero de nuevo, solo haciendo una demostración, y aplicando, y revirtiendo los efectos de estos dos operadores. 
+
+¿Alguna pregunta hasta ahora sobre estas direcciones, o punteros, o cosas por el estilo? Sí. 
+
+AUDIENCIA: Así que hay seis líneas en las que almacenas la dirección de n-- 
+
+DAVID J. MALAN: Mm hmm. 
+
+AUDIENCIA: --puntero de p. 
+
+DAVID J. MALAN: Almacenaste la dirección de n en p y p es un puntero, específicamente un puntero a un entero. Dicho de otra forma, p es la dirección a un entero. ¿Qué entero? n 
+
+AUDIENCIA: ¿Puedo escribir, qué pasaría si solo escribo int p en lugar de int asterisco p? 
+
+DAVID J. MALAN: Buena pregunta. Si dijeras int p igual a arroba n punto y coma, en lugar de int asterisco p, Clang (el compilador) en realidad te gritaría porque se da cuenta de que, espera un minuto, estás intentando almacenar una dirección, no un entero como tú y yo lo conocemos, 12345678. Aunque técnicamente son números, Clang es lo suficientemente inteligente como para darse cuenta de que si estás obteniendo una dirección de algo, debes almacenarla en un puntero. No puedes almacenarla solo en un entero.

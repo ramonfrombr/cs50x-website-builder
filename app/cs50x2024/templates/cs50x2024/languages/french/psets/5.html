@@ -1,0 +1,62 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-5">Problem Set 5</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>La collaboration pour les Problem Sets n'est pas autorisée à moins que vous demandiez de l'aide à des camarades de classe ou à d'autres personnes, tant que cette aide ne se résume pas à ce que quelqu'un fasse le travail à votre place, conformément à la politique du cours sur
+      <a href="{{ url_for('cs50x2024.honesty') }}">l'honnêteté académique</a>.</p>
+
+    <p>Le personnel effectue des vérifications aléatoires des soumissions pour CS50x. Les étudiants reconnus coupables d'avoir enfreint cette politique seront exclus du cours. Les étudiants ayant déjà terminé CS50x, s'ils sont reconnus coupables d'infraction, verront leur certificat CS50 révoqué définitivement.</p>
+  </div>
+
+  <h2 id="what-to-do">À faire</h2>
+
+  <ol>
+    <li>Connectez-vous sur
+      <a href="https://cs50.dev">cs50.dev</a>
+      en utilisant votre compte GitHub</li>
+    <li>Exécutez
+      <code class="language-plaintext highlighter-rouge">update50</code>
+      dans la fenêtre Terminale de votre espace de codage pour vous assurer que celui-ci est à jour, puis, lorsque vous y êtes invité, cliquez sur
+      <strong>Rebuild now</strong>
+    </li>
+    <li>Soumettez
+      <a href="{{ url_for('cs50x2024.psets.pset5.inheritance') }}">Inheritance</a>
+    </li>
+    <li>Soumettez
+      <a href="{{ url_for('cs50x2024.psets.pset5.speller') }}">Speller</a>
+    </li>
+  </ol>
+
+  <h2 id="when-to-do-it">Quand le faire</h2>
+
+  <p>Avant
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+  <h2 id="advice">Conseils</h2>
+
+  <ul>
+    <li data-marker="*">Essayez l'un des programmes de David de
+      <a href="{{ url_for('cs50x2024.weeks.week5') }}">Week 5</a>.</li>
+    <li data-marker="*">
+      <p>Si vous voyez des erreurs lors de la compilation de votre code avec
+        <code class="language-plaintext highlighter-rouge">make</code>, concentrez-vous d'abord à corriger la toute première erreur que vous voyez, en remontant au besoin. Si vous n'êtes pas sûr de ce que cela signifie, essayez de demander de l'aide à
+        <code class="language-plaintext highlighter-rouge">help50</code>. Par exemple, si vous essayez de compiler
+        <code class="language-plaintext highlighter-rouge">speller</code>, et que</p>
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>make speller
+</code></pre>
+        </div>
+      </div>
+      <p>génère des erreurs, essayez d'exécuter</p>
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>help50 make speller
+</code></pre>
+        </div>
+      </div>
+      <p>à la place !</p>
+    </li>
+  </ul>
+{% endblock %}

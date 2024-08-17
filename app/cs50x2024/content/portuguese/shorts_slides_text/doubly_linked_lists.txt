@@ -1,0 +1,64 @@
+[1]
+
+Listas duplamente vinculadas
+• Listas vinculadas individualmente realmente ampliam nossa capacidade de coletar e organizar dados, mas sofrem de uma limitação crucial.
+• Podemos nos mover em somente uma direção pela lista.
+• Considere a implicação que isso teria ao tentar excluir um nó.
+• A lista duplamente vinculada, ao contrário, nos permite nos mover para frente e para trás na lista, simplesmente adicionando um ponteiro extra à nossa definição de estrutura.
+
+[3]
+
+Listas duplamente vinculadas
+• Para trabalhar com listas vinculadas efetivamente, há uma série de operações que precisamos entender:
+1. Criar uma lista quando ela ainda não existe.
+2. Pesquisar em uma lista vinculada para encontrar um elemento.
+3. Inserir um nó novo na lista vinculada.
+4. Excluir um elemento único de uma lista vinculada.
+5. Excluir uma lista vinculada inteira.
+
+[5]
+
+Listas duplamente vinculadas
+• Inserir um novo nó na lista vinculada.
+dllnode * inserir(dllnode * head, VALOR val);
+
+[6]
+
+Listas duplamente vinculadas
+• Inserir um novo nó na lista vinculada.
+dllnode * inserir(dllnode * head, VALOR val);
+• Etapas envolvidas:
+a. Alocar dinamicamente espaço para um novo dllnode.
+b. Verificar para garantir que não ficamos sem memória.
+c. Preencher e inserir o nó no início da lista vinculada.
+d. Corrigir o ponteiro prev do cabeçalho antigo da lista vinculada.
+e. Retornar um ponteiro para o novo cabeçalho da lista vinculada.
+
+[11]
+
+Listas duplamente vinculadas
+• Lembre-se, nunca podemos quebrar a cadeia ao reorganizar os ponteiros.
+• Mesmo que precisemos ter ponteiros redundantes temporariamente, tudo bem.
+
+[17]
+
+Listas duplamente vinculadas
+• Excluir um nó de uma lista vinculada.
+void excluir(dllnode * target);
+
+[18]
+
+Listas duplamente vinculadas
+• Excluir um nó de uma lista vinculada.
+void excluir(dllnode * target);
+• Etapas envolvidas:
+a. Corrigir os ponteiros dos nós envolventes para "pular" o target.
+b. Liberar o target.
+
+[24]
+
+Listas duplamente vinculadas
+• Listas vinculadas, de ambos os tipos vinculadas simples e duplamente, aceitam inserção e exclusão de elementos extremamente eficientes.
+• Na verdade, essas operações podem ser feitas em tempo constante.
+• Qual é a desvantagem? Lembra-se de como tínhamos que encontrar um elemento? Perdemos a capacidade de acessar elementos da lista aleatoriamente.
+• Acessar um elemento desejado agora pode levar tempo linear.

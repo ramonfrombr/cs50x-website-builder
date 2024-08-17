@@ -1,0 +1,114 @@
+[1]
+
+Introdução à Internet
+• Chegamos ao ponto do curso em que começamos a transição do mundo orientado para linha de comando do C e começamos a considerar o mundo baseado na web do PHP e coisas do tipo.
+• Antes de mergulharmos de cabeça nesse mundo, é uma boa ideia ter um entendimento básico de como seres humanos e computadores interagem pela internet.
+
+[7]
+
+Introdução à Internet
+• Endereço IP
+• Para que sua máquina se identifique de forma única na Internet, ela precisa de um endereço.
+• Assim, ela pode enviar informações e também receber informações de volta para o local correto.
+• O esquema de endereçamento usado por computadores é conhecido como endereçamento IP.
+
+[8]
+
+Introdução à Internet
+• Endereço IP
+• Como originalmente desenvolvido, o esquema de endereçamento IP alocaria efetivamente um endereço exclusivo de 32 bits a cada dispositivo que desejasse se conectar à internet.
+• Em vez de representar esses endereços de 32 bits como hexadecimais, nós os representamos como quatro clusters de 8 bits usando notação decimal.
+
+[9]
+
+Introdução à Internet
+• Endereço IP
+w.x.y.z
+• Cada um de w, x, y e z pode ser um valor não negativo no intervalo
+[0, 255].
+
+[12]
+
+Introdução à Internet
+• Endereço IP
+• Se cada endereço IP tem 32 bits, isso significa que há aproximadamente 4 bilhões de endereços para distribuir.
+• A população do mundo é um pouco maior que 7 bilhões e a maioria das pessoas no mundo ocidental tem mais de 1 dispositivo capaz de se conectar à Internet.
+• Algumas soluções alternativas nos permitiram lidar com esse problema (por enquanto).
+
+[13]
+
+Introdução à Internet
+• Endereço IP
+• Nos últimos anos, temos faseado gradualmente este esquema antigo (IPv4) e o substituído por um esquema mais novo (IPv6) que atribui endereços de 128 bits a computadores, em vez de endereços de 32 bits.
+4.294.967.296
+
+[15]
+
+Introdução à Internet
+• Endereço IP
+• Nos últimos anos, temos faseado gradualmente este esquema antigo (IPv4) e o substituído por um esquema mais novo (IPv6) que atribui endereços de 128 bits a computadores, em vez de endereços de 32 bits.
+340.282.366.920.938.463.463.374.607.431.768.211.456
+
+[16]
+
+Introdução à Internet
+• Endereço IPv6
+s:t:u:v:w:x:y:z
+• Cada um de s, t, u, v, w, x, y e z é representado por 1 a 4
+dígitos hexadecimais no intervalo [0,ffff].
+
+[20]
+
+Introdução à Internet
+• DHCP
+• Como obtemos um endereço IP? Certamente não podemos escolher qualquer um que quisermos. E se o que queremos já estiver em uso?
+• Em algum lugar entre seu computador e a Internet em geral, existe um Servidor de Protocolo de Configuração Dinâmica de Host (DHCP), cujo papel é atribuir endereços IP a dispositivos.
+
+[21]
+
+Introdução à Internet
+• DHCP
+• Antes da ampla distribuição do DHCP, a tarefa de atribuir endereços IP era de um administrador de sistemas, que precisaria atribuir manualmente esses endereços.
+
+[24]
+
+Introdução à Internet
+• DNS
+• Provavelmente, você nunca tentou visitar um site digitando seu endereço IP em seu navegador.
+• O Sistema de Nomes de Domínio (DNS) existe para nos ajudar a traduzir endereços IP em nomes mais memoráveis que são mais compreensíveis para humanos.
+• Dessa forma, o DNS é um pouco como as páginas amarelas da web.
+
+[29]
+
+Introdução à Internet
+• DNS
+• Assim como não há páginas amarelas do mundo, não há um registro DNS de toda a internet.
+• Na verdade, os grandes sistemas de servidores DNS (como o do Google) são mais como agregadores, coletando conjuntos menores de informações DNS, reunindo-os e atualizando-os com frequência.
+
+[30]
+
+Introdução à Internet
+• DNS
+• Dessa forma, os grandes servidores DNS são como bibliotecas que têm muitos conjuntos diferentes de livros de páginas amarelas locais. Para ter os números de telefone mais atualizados das empresas, as bibliotecas precisam atualizar os livros disponíveis.
+• Os conjuntos de registros DNS são, portanto, bastante descentralizados.
+
+[33]
+
+Introdução à Internet
+• Pontos de acesso
+• Uma das maneiras como lidamos com o problema de endereçamento do IPv4 é começar a atribuir várias pessoas ao mesmo endereço IP.
+• O endereço IP é atribuído a um roteador, cujo trabalho é atuar como um policial de trânsito que permite que as solicitações de dados de todos os dispositivos em sua rede local (sua casa ou empresa, por exemplo) sejam processadas por meio de um único endereço IP.
+
+[34]
+
+Introdução à Internet
+• Pontos de acesso
+• As redes domésticas modernas consistem em pontos de acesso que combinam um roteador, um modem, um switch e outras tecnologias em um único dispositivo.
+• As redes empresariais modernas ou redes de longa distância em larga escala (WANs) ainda as têm frequentemente como dispositivos separados para permitir que o tamanho de sua rede seja escalonado mais facilmente.
+
+[37]
+
+Introdução à Internet
+• Este não é um curso sobre redes, portanto, isto está longe de ser a história completa, mas é o suficiente para começarmos.
+• Em casa ou no trabalho, temos redes locais e pequenas, e essas redes são tecidas juntas para criar uma rede interconectada de grande porte — uma Internet.
+• Se você pensar em cada uma dessas redes pequenas como comunidades isoladas com apenas uma estrada de entrada ou saída, a imagem fica um pouco mais clara.

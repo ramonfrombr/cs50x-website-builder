@@ -1,0 +1,121 @@
+Muy bien, veamos si podemos hacer que esto se vuelva un poco más real con quizás una demostración aquí. Permítanme continuar y poner en la pantalla el punto final al que queremos llegar, que está aquí con todo en orden, creo que para esto necesitamos tal vez cinco voluntarios si es posible. Permítanme ir un poco más atrás. OK, uno allá. Tal vez dos allá. Ahora las manos están... OK, 3 aquí si podemos ir atrás allí. OK, 4 siendo voluntario de su amigo. Y 5 siendo voluntario de sus amigos.
+
+¿Quieren subir? De acuerdo, suban. Brian va a ayudarme a ejecutar esta demostración. Si los cinco pudieran acercarse, vengan aquí donde tenemos algo de espacio. Muy bien, permítanme conseguirles algunos micrófonos e introductions. Muy bien, gracias.
+
+Dos de ellos fueron valientemente ofrecidos como voluntarios por las personas sentadas junto a ellos. Entonces felicitaciones a los dos. Quieren saludar y decir algo acerca de ustedes mismos.
+
+AUDIENCIA: Hola. Mi nombre es [? Siobhana. ?]
+
+DAVID MALAN: [? Siobhana. ?] Y año o...
+
+AUDIENCIA: Soy estudiante de segundo año.
+
+DAVID MALAN: De segundo año. Está bien. Encantado de conocerte.
+
+AUDIENCIA: Hola. Soy estudiante de último año.
+
+DAVID MALAN: Es un placer tenerte aquí también. Sí.
+
+AUDIENCIA: Hola, soy Athena de segundo año en FOHO.
+
+DAVID MALAN: Athena.
+
+AUDIENCIA: Hola. Soy Anurag. Soy primer año en Matthews.
+
+AUDIENCIA: Soy Ethan. Soy primer año en Weld.
+
+DAVID MALAN: OK, y...
+
+AUDIENCIA: Soy Sarika. Soy primer año en Thayer.
+
+DAVID MALAN: Maravilloso. De acuerdo, gracias a todos por ofrecerse como voluntarios. Sigamos adelante y hagamos esto. Ustedes, por el momento, representan un montón de memoria, por así decirlo. Entonces, si tal vez pudieran retroceder hacia aquí solo para tener espacio disponible. Vamos a necesitar que uno de ustedes represente la lista. ¿Fue Siobhan?
+
+AUDIENCIA: [? Siobhana. ?]
+
+DAVID MALAN: [? Siobhana, ?] sube. [? Siobhana, ?] ¿Quieres seguir adelante y representar la lista? Y para representar nuestra lista real, tenemos... o Brian... sí, tenemos una etiqueta con nombre, hola, mi nombre es lista. Entonces vas a representar el rectángulo de la izquierda que representa la lista vinculada en sí.
+
+Y ahora inicialmente vamos a continuar inicializándote a nulo. Así que puedes seguir adelante y poner eso detrás de ti. Entonces no estás apuntando a nada. Pero representas la lista. Y no hay nada en la lista, no hay números en la lista.
+
+¿Cuál fue el siguiente paso? Si el objetivo en cuestión es insertar 2, 4, 5, 1, 3, queremos hacer qué primero, ¿qué operación de nivel inferior para obtener 2 allí? ¿Cuál fue la primera línea de código?
+
+AUDIENCIA: malloc.
+
+DAVID MALAN: malloc. Entonces queremos malloc para un nodo para 2. Así que sigamos adelante y malloc. OK, sube. Entonces malloc. ¿Y cómo te llamas nuevamente?
+
+AUDIENCIA: Ethan.
+
+DAVID MALAN: Ethan. Está bien. ¿Y qué necesitamos darle a Ethan? Ethan tiene dos valores o dos campos. El primero es el número 2. Gracias. El siguiente es un puntero llamado next.
+
+Ahora, no estás apuntando a nadie más. Entonces lo pondrás detrás de ti. ¿Y ahora qué queremos hacer con? [? Siobhana, ?] ¿Qué tenemos que hacer?
+
+AUDIENCIA: Apuntar a...
+
+DAVID MALAN: ¿Apuntar a?
+
+AUDIENCIA: 2.
+
+DAVID MALAN: Él, sí, número 2. OK, entonces ahora esto representa la imagen donde tenemos la lista aquí, 2 aquí, pero también el puntero nulo.
+
+Muy bien, luego queríamos agregar 4 a la lista. ¿Cómo seguimos adelante y hacemos esto? Bueno, con 4, vamos a seguir adelante y malloc. malloc, de acuerdo. Y ahora, Brian tiene un hermoso número 4 para ti y un puntero. ¿Qué queremos hacer con tu puntero?
+
+AUDIENCIA: No apuntar.
+
+DAVID MALAN: No apuntar a nada. Ahora, es un poco más de trabajo. Y necesito una variable temporal. Entonces desempeñaré este papel. Voy a seguir adelante y señalaré donde sea que Siobhana esté señalando de manera poco natural de esta manera. Eso está bien. No pudimos conseguir manos que señalaran hacia otro lado físicamente. Entonces señalaremos lo mismo aquí. Ambas apuntan a 2. ¿Y qué estoy buscando para decidir dónde poner 4?
+
+AUDIENCIA: Si es mayor que.
+
+DAVID MALAN: Si es mayor que algún valor. Así que voy a comprobar. Bueno, 4 es mayor que 2. Así que voy a seguir adelante. ¿Y tu nombre era Eric?
+
+AUDIENCIA: Ethan.
+
+DAVID MALAN: Ethan, lo siento. Entonces, Ethan, ¿a qué estás apuntando? Nada. Entonces esa es una oportunidad. No hay nada a su derecha. Entonces déjame seguir adelante y hacer que Ethan apunte a... ¿Cómo te llamas nuevamente?
+
+AUDIENCIA: Athena.
+
+DAVID MALAN: Athena. También, de forma poco natural, pero está bien. Y ahora ¿Athena necesita actualizar su puntero? No, ella está bien. Ella representa el final de la lista. Entonces su puntero puede quedarse detrás de ella.
+
+Muy bien, sigamos adelante con malloc 5. ¿Quieres ser nuestro 5? Entonces ahora necesitamos un 5. Entonces tenemos que darte el número 5. ¿Y cómo te llamas nuevamente?
+
+AUDIENCIA: Sarika.
+
+DAVID MALAN: Sarika. Muy bien, entonces Sarika tiene el número 5. Ella también obtendrá un puntero llamado next. ¿A qué debería apuntar Sarika?
+
+AUDIENCIA: Nada.
+
+DAVID MALAN: Nada. ¿Y ahora cómo la inserto en el lugar correcto? Bueno, tengo que hacer lo mismo. Entonces me involucraré nuevamente y seré una variable temporal. Voy a señalar lo mismo que [? Siobhana ?] está señalando, que es Ethan. Voy a seguir esto y ver, oh, espera un minuto, en realidad está apuntando a alguien más. Así que voy a seguir eso. Sigue siendo el número 4. Entonces quiero seguir adelante.
+
+Oh, espera un minuto. Athena no está apuntando a nadie. Esta es una oportunidad para que Athena apunte a 5 y listo. ¿Pero vas a cambiar tu puntero todavía? No.
+
+Ahora las cosas se ponen un poco más interesantes. ¿Podríamos seguir adelante con malloc 1? ¿Y cómo te llamas nuevamente?
+
+AUDIENCIA: Emma.
+
+DAVID MALAN: Emma. OK, Emma, tenemos el número 1 para ti de Brian. Tienes un puntero, que también debe inicializarse a nulo. Y ahora tenemos un par de pasos involucrados aquí. ¿Qué queremos hacer primero? ¿Cuál es tu propuesta?
+
+AUDIENCIA: Puntero temporal.
+
+DAVID MALAN: Puntero temporal. Entonces voy a señalar las mismas cosas que [? Siobhana ?] está señalando, que es Ethan aquí. Pero veo que 2 es mayor que 1. Entonces, ¿qué es lo que realmente quiero hacer?
+
+Bueno, déjenme incorrectamente por un momento... [? Siobhana, ?] ¿podrías apuntar al número 1? ¿Qué hemos hecho mal? Hemos dejado huérfanos a todos los demás. Y ahora es aún más visible, nadie está apuntando a Ethan ni más allá, lo que significa que acabamos de filtrar esa memoria, para nunca recuperarla o liberarla. Entonces no queremos hacer eso. Deshacer, Control-Z.
+
+¿Qué queremos hacer en su lugar? ¿Cómo te llamas nuevamente?
+
+AUDIENCIA: Emma.
+
+DAVID MALAN: Emma. ¿A qué quieres apuntar?
+
+AUDIENCIA: Quiero apuntar a [? Siobhana. ?]
+
+DAVID MALAN: A lo mismo, [? Siobhana ?] está apuntando, que es equivalente a Ethan. Entonces sigue adelante y haz eso con tu... OK, algo así como Twister ahora. Eso está bien. Y luego [? Siobhana, ?] ¿a qué quiero apuntar? Perfecto.
+
+Entonces, nuevamente, hay muchos pasos involucrados, pero en realidad son solo dos o tres pasos dependiendo de qué punteros queremos actualizar. Y luego, por último, vamos a dirigirnos a malloc 3. ¿Y tu nombre era nuevamente?
+
+AUDIENCIA: Anurag.
+
+DAVID MALAN: Anurag. Entonces tenemos un 3 para ti de Brian. Tenemos un puntero para ti. Se inicializa inicialmente a nulo. Entonces puedes poner eso detrás de ti. Voy a señalar lo mismo que [? Siobhana. ?] Y aquí vamos.
+
+1 es más pequeño. 2 es más pequeño. 4 es más grande. Entonces hagamos esto bien. ¿Y quién queremos que apunte a quién primero?
+
+AUDIENCIA: 3 apunta a 4.
+
+DAVID MALAN: 3 debería apuntar a 4. Entonces sigue adelante y haz eso. Y puedes dar un paso adelante solo para que se vea un poco menos incómodo. Y luego, por último

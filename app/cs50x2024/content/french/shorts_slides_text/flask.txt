@@ -1,0 +1,120 @@
+[1]
+
+Flask
+• Python n'est pas uniquement utilisé pour la programmation en ligne de commande, bien qu'il s'agisse d'un cas d'utilisation majeur.
+• Python contient des fonctionnalités natives pour prendre en charge la mise en réseau et plus encore, permettant d'écrire des backends de site en Python.
+
+[2]
+
+Flask
+• Les frameworks Web rendent ce processus beaucoup plus facile, en extrayant les détails de la syntaxe Python et en fournissant des fonctions d'assistance.
+• Parmi les plus populaires figurent : Django, Pyramid et Flask.
+• Nous utilisons Flask dans CS50 car il est léger pour une utilisation facile dans CS50 IDE, tout en disposant de nombreuses fonctionnalités.
+
+[3]
+
+Flask
+• Nous savons que nous pouvons utiliser HTML pour créer des sites Web, mais les sites Web créés à l'aide de HTML pur souffrent d'une limitation sérieuse.
+• Imaginez que nous voulions créer un site Web qui affiche l'heure actuelle à Cambridge, MA, en l'affichant jusqu'à la dernière minute.
+
+[4]
+
+Flask
+<html>
+<head>
+<title>Heure actuelle à Cambridge</title>
+</head>
+<body>
+Il est actuellement 14 : 08 à Cambridge
+</body>
+</html>
+
+[8]
+
+Flask
+• Les sites Web qui sont en HTML pur sont complètement statiques. La seule façon de mettre à jour le contenu de nos pages est d'ouvrir manuellement nos fichiers source, de les modifier et de les enregistrer, puis la prochaine fois que l'utilisateur visitera ou actualisera la page, il obtiendra le contenu.
+• L'incorporation de Python dans notre code peut rendre notre code un peu plus flexible et introduire un moyen pour nos pages de se mettre à jour ou d'être dynamiques sans nécessiter notre intervention.
+
+[9]
+
+Flask
+from flask import Flask
+from datetime import datetime
+from pytz import timezone
+app = Flask(__name__)
+@app.route("/")
+def time():
+now = datetime.now(timezone('America/New_York'))
+return "La date et l'heure actuelles à Cambridge sont {}".format(now)
+
+[17]
+
+Flask
+• Il est assez simple de commencer à utiliser Flask dans CS50 IDE.
+• Après avoir importé le module Flask, nous devons lancer une application Flask.
+• À partir de là, il s'agit simplement d'écrire des fonctions qui définissent le comportement de notre application.
+
+[19]
+
+Flask
+@app.route("/")
+def index():
+return "Vous êtes sur la page d'accueil !"
+@app.route("/sample")
+def sample():
+return "Vous êtes sur la page d'exemple !"
+
+[20]
+
+Flask
+• Les lignes qui viennent d'être ajoutées sont appelées « décorateurs ». Elles sont utilisées, dans Flask, pour associer une fonction particulière à une URL particulière.
+• Les décorateurs ont également une utilisation plus générale en Python, mais cela dépasse le cadre de CS50.
+
+[21]
+
+Flask
+• Il est également assez simple d'exécuter notre application Flask dans CS50 IDE.
+export FLASK_APP=application.py
+export FLASK_DEBUG=1
+flask run
+
+[25]
+
+Flask
+• Les données peuvent être transmises via des URL, comme avec HTTP GET.
+@app.route("/show/<number>")
+def show(number):
+return "Vous avez entré {}".format(number)
+
+[29]
+
+Flask
+• Les données peuvent être transmises via des formulaires HTML, comme avec HTTP POST, mais nous devons indiquer explicitement que Flask doit répondre aux requêtes HTTP POST.
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+if not request.form.get("username")
+return apology("must provide username")
+
+[30]
+
+Flask
+• Nous pouvons également faire varier le comportement de notre fonction en fonction du type de requête HTTP reçue :
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+if request.method == "POST":
+# faire une chose
+autre :
+# faire une autre chose
+
+[33]
+
+Flask
+• Flask dispose d'un certain nombre de fonctions dans son module qui seront utiles pour le développement d'applications.
+
+[38]
+
+Flask
+• Plus d'informations disponibles dans le guide de démarrage rapide Flask :
+http://flask.pocoo.org/docs/0.12/quickstart/
+• Vous trouverez plus d'informations sur l'utilisation de Jinja à l'adresse :
+http://jinja.pocoo.org/

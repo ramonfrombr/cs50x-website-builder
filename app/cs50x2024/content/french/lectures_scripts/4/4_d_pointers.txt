@@ -1,0 +1,31 @@
+D’accord. Donc continuons maintenant et clarifions où nous pouvons stocker des informations. Laissez-moi modifier ce code ainsi : Il s’avère que vous pouvez en fait stocker des adresses et des variables elles-mêmes. Je n’ai pas à faire cette esperluette ici.
+
+Laissez-moi modifier le programme ainsi. Laissez-moi déclarer une autre variable appelée p pour y stocker l’adresse de n. Donc, encore une fois, rien de nouveau ici, cela indique simplement : esperluette n, récupérez l’adresse de n. Mais je dois faire quelque chose de différent ici. Sur le côté gauche se trouve le nom de ma variable. Je l’ai appelée p, pour pointeur. Mais si vous souhaitez stocker l’adresse d’une valeur dans une variable, vous devez spécifier non seulement le type de valeur de cette autre variable, mais vous devez préciser à l’aide de cet opérateur étoile dans un contexte très déroutant, malheureux et différent, qu’il s’agit d’un pointeur.
+
+Alors que n a un type de donnée int, comme il en a depuis la semaine 0, la seule nouveauté est qu’il s’avère qu’il existe un autre type de données que vous pouvez décrire comme un pointeur. Et un pointeur est indiqué par cette étoile et l’int signifie simplement qu’il s’agit d’un pointeur vers un int ou de l’adresse d’un int. Et nous verrons plus tard que nous pouvons également faire des flottants, des flotants, des caractères et bien d’autres types de données. Cela signifie simplement que p est une variable qui va contenir un pointeur vers un int, alias l’adresse d’un int.
+
+D’accord. Alors que puis-je faire maintenant avec ces informations ? Laissez-moi vous présenter l’une ou l’autre. Si je veux aller de l’avant et imprimer cette adresse maintenant, par exemple, je peux aller de l’avant et imprimer % p et imprimer p comme ça. Laissez-moi aller de l’avant et faire une adresse, entrer -- semble compiler OK -- exécuter l’adresse. Et je vais voir à nouveau quelque chose de cryptique, 0x 7FFF3977662C, qui est différent de ce qu’il était auparavant, mais c’est parce que l’une des caractéristiques des ordinateurs modernes est en fait de déplacer les choses dans la mémoire, ce qui est une fonction de sécurité. Mais nous en reparlerons peut-être plus tard. Mais c’est toujours une grande adresse hexadécimale cryptique.
+
+Et si, juste pour la démonstration, je ne voulais pas imprimer l’adresse parce que rarement, après aujourd’hui, allons-nous nous soucier des adresses spécifiques où se trouvent les choses ? Comment pourrais-je modifier la ligne 7 ici pour imprimer, non pas la valeur de p, mais ce qui se trouve à l’emplacement p ? Comment accéder à l’emplacement dans p ?
+
+OK. Étoile p, j’ai entendu. Donc au lieu d’imprimer p lui-même, je dis étoile p. Je change le code de format pour qu’il soit un int.
+
+OK. Siri essaie d’être utile ici.
+
+Mais maintenant, je dis, allez-y et imprimez-moi un entier. Et l’entier que je veux que vous imprimiez est celui de p. Étoile signifie aller à cette adresse, qui est p. Alors laissez-moi sauvegarder cela, créez une adresse. D’accord, cela semble compiler. Barre oblique adresse, voyons ce qui se passe. Et retour à 50.
+
+Donc, nous ne faisons que sauter dans les cerceaux en ce moment, sans encore rien accomplir de réel. Mais encore une fois, il suffit de démontrer, d’appliquer et d’inverser les effets de ces deux opérateurs.
+
+Des questions jusqu’à présent sur ces adresses, pointeurs ou autres ? Oui.
+
+PUBLIC : Donc, il y a six lignes où vous avez stocké l’adresse de n --
+
+DAVID J. MALAN : Mm hmm.
+
+PUBLIC : -- pointeur de p.
+
+DAVID J. MALAN : Vous avez stocké l’adresse de n dans p et p est un pointeur, plus précisément un pointeur vers un entier. En d’autres termes, p est l’adresse d’un entier. Quel entier ? n
+
+PUBLIC : Pourrais-je simplement écrire -- que se passerait-il si j’écrivais simplement int p au lieu de int star p ?
+
+DAVID J. MALAN : Bonne question. Si vous disiez int p est égal à esperluette n point-virgule, au lieu de int star p, Clang -- le compilateur -- vous crierait dessus parce qu’il réalise cela, attendez une minute, vous essayez de stocker une adresse, pas un entier comme vous et moi le savons, 12345678. Même s’il s’agit techniquement de nombres, Clang est suffisamment intelligent pour réaliser que si vous obtenez l’adresse de quelque chose, vous devez le stocker dans un pointeur. Vous ne pouvez pas le stocker simplement dans un entier.

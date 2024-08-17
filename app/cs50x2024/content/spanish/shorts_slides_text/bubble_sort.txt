@@ -1,0 +1,16 @@
+[1]
+
+Bubble Sort
+• En el bubble sort, la idea del algoritmo es mover elementos de mayor valor generalmente hacia la derecha y elementos de menor valor generalmente hacia la izquierda.
+En pseudocódigo:
+• Establecer el contador de intercambios en un valor diferente de cero
+• Repetir hasta que el contador de intercambios sea 0:
+• Restablecer el contador de intercambios a 0
+• Buscar cada par adyacente
+• Si dos elementos adyacentes no están en orden, intercambiarlos y añadir uno al contador de intercambios
+
+[27]
+
+Bubble Sort
+• El peor de los casos: El array está en orden inverso; tenemos que "hacer burbuja" con cada uno de los n elementos en todo el array, y como solo podemos hacer burbuja con un elemento en posición por pasada, debemos hacerlo n veces.
+• Mejor de los casos: El array ya está perfectamente ordenado, y no hacemos intercambios en la primera pasada.

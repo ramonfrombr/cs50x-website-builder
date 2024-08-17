@@ -1,0 +1,51 @@
+All right. So pretty one-to-one mapping here-- let's now start to do something that's a little more interesting. You might recall from week 1, we had this simple agreement program, where we prompted the user for a char. And then, we asked did the user type in y or-- Y or y or N or n. And we said agreed or not agreed, accordingly , just like a program that prompts you to agree to some terms and conditions, for instance. 
+
+Well, let's go ahead and create another file over here called agree.py and do this in one or more ways. Let me go ahead and do from cs50 import get_char. This is subtle. But what is there not in Python recall? 
+
+AUDIENCE: Chars. 
+
+DAVID MALAN: Chars-- so what do you think the best approximation of a char is in a language that does not have chars, per se? 
+
+AUDIENCE: A string. 
+
+DAVID MALAN: A string-- and we'll just have to enforce on ourselves that the strings we're using are only going to be one character. So I'm going to go ahead and keep using get_string for this case. And I'm going to go ahead now and prompt the user for a string. And I'm going to ask them, do you agree question mark? 
+
+And then, I'm going to ask the question if s equals equals Y-- that would be one possibility. I'm going to go ahead and say print("Agreed.") elif s equals equals N-- I'm going to go ahead and print("Not agreed.") just as in the C version. So is this identical? Or what feature is missing still? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Yeah, the lower case, right? So obviously, the lower case-- so you might be inclined to do, well, or s equals equals y. But no, in Python, if you want to say something or something else, you can literally just say or now. And in C-- Python here, we can say or s equals equals n. We can do the same here. 
+
+Now, if I go ahead and run Python on agree.py and I type something like Y-- I seem to have agreed. If I type something like y-- oops-- let's do this again. If I do it again and type y, it should work, as well. And then, just for good measure, let's say no with a N-- Not agreed. So I'm checking in a couple of ways. 
+
+But there's other ways you can do this, right? We've seen a hint of other features here. This gets a little verbose. I could actually say something like this. If s is in the following list of possible values, I could ask the question like this instead, and I could do the same down here. If s is n-- if s in N and n, I could similarly now determine that the user has not agreed. But now, things get more powerful without getting super long and verbose. 
+
+Suppose I wanted to support not just Y or y, but Yes or yes in uppercase and lowercase. Well, I could actually enumerate other possibilities, like this. But you know what? Design-wise, I bet I can do better than this. I bet I can shrink this. And heck, I can keep going-- nope. And nope. How could I improve the design of this, even if you've never seen Python before today? How could I avoid explicitly typing so many values, a few of them quite similar? Yeah. 
+
+AUDIENCE: By using, like, something similar to two lower case. 
+
+DAVID MALAN: Yeah, something similar to two lower case-- recall that in C, you were able to lower case individual characters. But just a few moments ago when we re-implemented speller for Pset5, we could lowercase a whole word. So you know what? I could just say if s.lower. 
+
+This treats s as the string that it is. But just like in C, there are these things called strucs, so are the data types in Python like strings also structures themselves. And inside of those structures are not only values, like the individual characters that compose them, but also built-in functions, otherwise known as methods. And so you can say s.lower and just lowercase the whole string automatically. 
+
+So now, I can get rid of this. I can get rid of this, although can I? 
+
+AUDIENCE: No. 
+
+DAVID MALAN: No, I probably-- if I'm forcing everything to lowercase, I have to let things match up. So I'm going to go ahead and do the same thing down here-- s.lower. And I'm going to check, in this case, if it's equal to n or no like this. So now, if I go ahead and save that, rerun the program, and type in not just y, but maybe something like Yes, I'm agreed. And even if I do something weird like this-- Y, S, but e for whatever accidental reason, that, too, is tolerated, as well. So you can make your programs more user friendly in this way. 
+
+All right. Before we forge ahead, any questions on what we've done thus far or syntax we've seen? Yeah. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Yes, can-- so to restate the question, can we alternatively still simply check if the first letter of the user's input is y? We absolutely could. And I think there's arguments for and against. You don't want to necessarily tolerate any word that starts with y or any word that starts with n. But let me come back to that in a little bit of time-- turns out in Python, there's a feature known as regular expressions, where you can actually define a pattern of characters that you're looking for. And I think that will let us solve that even more elegantly. So we'll come back to that before long. All right. Well, let's-- yeah, over in front. 
+
+AUDIENCE: Is the difference between Python and C just C [INAUDIBLE] programming, or is there anything you can do in one language that you can't in the other? 
+
+DAVID MALAN: Really good question-- is there anything you can do in Python that you can't do in C or vice versa? Short answer-- no. The languages we're looking at in this course can all effectively be used to solve the same problems. However, some languages are designed for or better suited for certain domains. Honestly, even the few examples we've done now were so much more pleasant to write in Python than they ever were in C, not to mention the filter example and the speller example and a bunch more that we're going to see before long. 
+
+Similarly, with C, it would be a nightmare to implement a web-based application in C, because you have to implement so much of the plumbing, so to speak, the underlying code yourself. However, using something like Python or Ruby or PHP or Java these days gives you a lot more features out of the box. But you do pay a price. 
+
+And that, in this case of C, for instance, is performance. You give up some bit of time. But you gain other features, as well. And the fact truly that Python does not have pointers is a feature not just because pointers were, hard but because it's so easy with pointers to make mistakes, as you probably experienced yourself. 
+
+Segfaults are gone. And null pointers are gone, because the language protects you from yourself. And the reason why humans have dozens, hundreds of programming languages in the wild today is because a lot of people keep trying to improve upon languages from yesteryear. So we'll see other features distinguishing the two in a bit. 

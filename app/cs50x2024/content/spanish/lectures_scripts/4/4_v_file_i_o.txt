@@ -1,0 +1,7 @@
+Ahora, ¿para qué podemos realmente usar esa información? Bueno, resulta que lo que estaremos haciendo ahora, esta semana próxima y más allá, es explorar varias características de lo que se llama E/S de archivos. En resumen, si alguna vez te has preguntado realmente qué es una imagen, hablamos brevemente sobre esto en la Semana 0, esta es una imagen. Pero está en binario, 0s y 1s. ¿Alguien sabe de qué es esta imagen?
+
+AUDIENCIA: Una cara sonriente.
+
+DAVID J. MALAN: Bueno, ¿cómo... algunos de ustedes están adelantados en las diapositivas? Porque sí, es una cara sonriente. Y solo lo sabrías asumiendo que 1 representa un píxel blanco, 0 representa un píxel negro, y si tenemos efectivamente una cuadrícula de bits, unos y ceros, desde lejos esto parece la cara sonriente más simple posible. Entonces, esa es una imagen, o un mapa de bits, un mapa de bits que representan los píxeles en una imagen.
+
+Así que con el conjunto de problemas cuatro, lo que vamos a comenzar a hacer es explorar el mundo de la informática forense, en primer lugar.

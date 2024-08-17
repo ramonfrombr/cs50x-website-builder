@@ -1,0 +1,9 @@
+All right. What about this? This one was painful and sparked the whole exploration down the rabbit hole of pointers and addresses and the like. Suppose you just want to swap two values, x and y initialized a couple weeks ago to 1 and 2. 
+
+My god, the hoops we had to jump through in C just to swap two values. Hopefully by the end, you understood why there was this fundamental issue. And that, again, had to do with memory and moving things around and copying. 
+
+But in Python, guess what? Let me go ahead in Python and call a program swap.py. And let me go ahead and give myself two variables. That alone is already faster because you don't have to worry about data types or semicolons. 
+
+Let me go ahead and just declare that x is x, y, is y, just so we can see what these values are. However, I could just use debug50. You can also debug Python programs in the IDE is well. 
+
+I'm going to do this twice, recall, the goal now being to swap two values. So if I want to swap x and y, guess what? In Python, no big deal. Swap. All right. Python. swap.py. oh, my god. You get it for free with the language.

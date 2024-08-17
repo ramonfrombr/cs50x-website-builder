@@ -1,0 +1,55 @@
+Alors, quelles sont les implications dans ce cas ? Faisons un autre exemple ici. Laissez-moi sauvegarder ceci en tant que copy.c. Et essayons un objectif très raisonnable. Si je veux obtenir l'entrée de l'utilisateur et copier réellement une chaîne et mettre cette chaîne en majuscule en partant de l'utilisateur, voyons cela. Alors, laissez-moi réutiliser les petites roues d'entraînement, juste pour pouvoir obtenir une chaîne de l'humain. Laissez-moi inclure standard I/O.h, puis un int main vide.
+
+Laissez-moi faire un exemple simple, dont le but maintenant est d'obtenir une chaîne de l'utilisateur et de mettre en majuscule une copie de celle-ci. Alors, je vais faire string s gets getString et l'appeler s, comme avant. Je vais ensuite faire string t égale s pour faire une copie de la variable. Et ensuite, je vais dire quoi ? Laissez-moi mettre la copie en majuscule.
+
+Et pour mettre la copie en majuscule, je peux simplement changer le premier caractère dans t, donc t crochet 0, pour quoi ? Je crois que nous avions toupper il y a un moment. Est-ce que cela vous semble familier ? Vous pouvez appeler la fonction toupper. Et la fonction toupper, si vous ne vous en souvenez pas, doit techniquement utiliser C type.h. Cela pourrait rappeler le deuxième problème de l'ensemble C, où vous pourriez l'avoir utilisé en César, ou la substitution, ou quelque chose du genre.
+
+Très bien. Et maintenant, laissez-moi imprimer ces deux chaînes. Laissez-moi imprimer s. Et laissez-moi imprimer t. Encore une fois, tout ce que j'ai fait dans ce programme, c'est obtenir une chaîne de l'utilisateur, copier cette chaîne, mettre la copie en majuscule en l'appelant t. Et imprimons simplement les résultats finaux.
+
+Alors, laissez-moi enregistrer le fichier. Laissez-moi avancer et faire une copie. Cela semble compiler correctement. Laissez-moi lancer copy. Et tapez emma, tout en minuscules, délibérément, car je veux voir que t est en majuscule mais pas s.
+
+Hmm. Mais, d'une certaine façon, elles sont toutes les deux en majuscules. Remarquez qu'emma, tout en minuscules, a fini par être en majuscules dans s et en majuscules dans t selon les deux lignes de sortie. Est-ce un bogue ? N'est-ce pas ? J'ai seulement mis t en majuscules, comment ai-je pu mettre accidentellement s en majuscules, selon vous ? Des idées ?
+
+Peu importe si j'éteins les lumières, je ne vois toujours pas de mains. OK, et ici à l'avant ? Oui.
+
+AUDITOIRE : Donc, lorsque vous dites t égal s, vous devez [INAUDIBLE]
+
+DAVID J. MALAN : Exactement. Lorsque je dis t égale s sur cette ligne, je récupère une deuxième variable appelée t. Et je copie s. Mais je copie s littéralement. s en ce moment, est une adresse. Après tout, string est la même chose que char star, pour s et t. Et donc, techniquement, je copie seulement une adresse.
+
+Alors, si je reviens à mon image de tout à l'heure, cette fois, si j'ai tapé un tableau d'emma, tout en minuscules -- e-m-m-a -- et ensuite une barre oblique 0, quelque part dans la mémoire en utilisant getString, et j'ai fait initialement et stocké cela dans une variable appelée s -- et je ne me préoccupe plus des adresses. Je vais simplement utiliser des flèches désormais pour le représenter graphiquement. Lorsque j'ai créé une deuxième variable appelée t et défini t égale à s, c'est comme copier littéralement la flèche dans s et la stocker dans t, ce qui veut dire que t pointe aussi vers la même chose.
+
+Parce qu'encore une fois, si je n'avais pas fait cette notation de flèche ondulée à la main, j'aurais littéralement écrit 0x123. J'aurais simplement écrit 0x123 dans s et t. Alors, dans mon code, je dis, eh bien, allez au premier caractère dans t, puis mettez-le en majuscules. Devinez quel est le premier caractère dans t ? Eh bien, c'est ce e. Mais devinez quel est le premier caractère dans s, littéralement le même e.
+
+Alors, cela ne suffit pas de copier une chaîne en disant simplement t égale s, comme cela a été le cas jusqu'à présent avec toutes les autres variables. Chaque fois que vous aviez besoin d'une variable temporaire ou d'une copie de quelque chose, cela fonctionnait. Intuitivement, que devons-nous probablement faire à la place pour vraiment copier Emma dans deux endroits différents en mémoire ? Oui.
+
+AUDITOIRE : Probablement créer un char ou créer une variable ayant exactement la même taille et copier chaque caractère individuellement.
+
+DAVID J. MALAN : Bien. Alors, peut-être devrions-nous nous donner une variable ayant plus de mémoire, la même quantité de mémoire étant stockée pour l'Emma originale, puis copier les caractères de s dans l'espace que nous avons alloué pour t. Et nous pouvons en fait faire cela.
+
+Laissez-moi supprimer tout sauf la première ligne, où j'ai obtenu s comme avant. Et je vais faire cela, je vais dire que t est une chaîne -- mais vous savez, nous n'avons plus besoin de cette petite roue d'entraînement. Chaîne, char star, même si cela semble plus laid. Laissez-moi m'allouer plus de mémoire. Comment je fais cela ?
+
+Eh bien, il s'avère que -- nous n'avons jamais utilisé cela avant -- il existe une fonction C appelée malloc, pour l'allocation de mémoire. Et tout ce qu'elle demande en entrée, c'est le nombre d'octets souhaités.
+
+Alors, combien d'octets est-ce que je veux pour qu'Emma stocke son nom ?
+
+AUDITOIRE : [INAUDIBLE]
+
+DAVID J. MALAN : J'ai entendu 4, 5. Pourquoi 5 ?
+
+AUDITOIRE : [INAUDIBLE]
+
+DAVID J. MALAN : Nous avons donc besoin du caractère de fin de chaîne, e-m-m-a puis barre oblique 0. Donc, cela fait 5. Je pourrais donc littéralement coder cela ici. Bien sûr, cela semble un peu fragile car je demande n'importe quelle chaîne via getString. Je ne sais pas que ça va être Emma. Alors, vous savez quoi, laissez-moi poser une question ? Quelle que soit la longueur de l'entrée de l'humain dans s, ajoutez-y 1 pour le caractère nul, puis allouez autant d'octets. Alors, mon programme est désormais plus dynamique.
+
+Et une fois que je l'ai, comment je peux en faire une copie ? Eh bien, laissez-moi simplement faire une boucle à l'ancienne. Donc, pour int I, j'obtiens 0, i est inférieur à la longueur de la chaîne s, i plus plus -- c'est donc simplement une boucle standard parcourant une chaîne -- et je crois que je peux simplement faire t crochet i égale s crochet i afin de copier les deux chaînes.
+
+Il y a un petit bogue et une petite inefficacité cependant. Quelqu'un veut-il critiquer comment j'ai procédé pour copier s dans t ? Oui.
+
+AUDITOIRE : [INAUDIBLE] getString [INAUDIBLE].
+
+DAVID J. MALAN : Oui. C'était inefficace. Nous avons dit il y a quelques semaines que c'était une mauvaise conception de continuer à poser la question, quelle est la longueur de s ? Quelle est la longueur de s ? Alors, rappelez-vous que nous avions fait une petite optimisation il y a quelques semaines. Déclarons simplement n pour égaler la longueur de la chaîne de s, puis utilisons la condition i est inférieure à n. Nous avons donc amélioré la conception ici. C'est un peu plus efficace. Nous perdons moins de temps. Il y a encore un petit bogue ici. Combien d'octets -- oui.
+
+AUDITOIRE : Vous ne copiez pas le caractère de fin de chaîne
+
+DAVID J. MALAN : Je ne copie pas le caractère de fin de chaîne. Alors, chaque fois que nous avons parcouru une chaîne, c'était correct. Parcourez jusqu'à la longueur mais pas au-delà de la longueur de cette chaîne. Mais, techniquement, je veux aller une fois de plus cette fois, ou de manière équivalente, une étape de plus. Parce que je veux aussi copier non seulement e-m-m-a, dont la longueur de chaîne est 4 -- e-m-m-a est 4 -- je veux aussi le faire une cinquième fois pour le caractère nul.
+
+Alors, dans ce cas, je vais délibérément aller une étape plus loin que là où je veux habituellement aller pour m'assurer de copier 5 octets pour Emma, pas seulement 4. Très bien. Passons maintenant à la mise en majuscule d'Emma. Donc, t crochet 0 obtient toupper du

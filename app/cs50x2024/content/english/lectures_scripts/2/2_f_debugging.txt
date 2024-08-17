@@ -1,0 +1,13 @@
+But for a program like hello.c, which involved a few different files. For instance, this code again involved my code that we wrote last week. It involves the CS50 library, which the staff wrote years ago. And it involves standard io.h. That's yet another file. That's like three different files that Clang frankly has to compile for you. 
+
+Now it would be super tedious if we had to run Clang like three times to do all this compilation. Thankfully we don't. It all happens automatically. So the last step in compiling a program after it's been pre-processed, after it's been compiled, after it's been assembled, is to combine all of the zeros and ones from the files involved into one big file, like Hello or a.out. 
+
+So if hello.c started as source code, as did CS50.C, somewhere on the computer's hard drive, as did Standard IO.C, somewhere on the computer's hard drive, turns out the printf is actually in its own file within Standard IO. the library. But these are the three files involved for the program I just described. 
+
+So once we actually go ahead and assemble this one, it becomes a whole bunch of zeros and ones. We assemble this one, a whole bunch of zeros and ones. This one, a whole bunch of zeros and ones. That's like three separate files that then get linked together, sort of commingled, into one big file called Hello, or called a.out. 
+
+And my god, like that's a lot of complexity. But that's what humans have been building and developing for the past many decades when it comes to writing software. Back in the day, it started off as zeros and ones. That was no fun. Assembly language, scary though it looks, was actually a little easier, a little more accessible for humans to write. 
+
+But eventually we humans got tired of that, and thus were born languages like C and C++ and Python and PHP and Ruby and others. It's been an evolution of languages along the way. So this now we can just abstract away into compiling. When you compile your code, all of that stuff happens. But all we really care about at the end of the day is the input, your source code, the output as machine code. 
+
+But those are the various steps happening. And if you ever see cryptic-looking commands on the screen, it might relate indeed to some of those intermediate steps. All right, any questions then on what compiling is or pre-processing, compiling, assembling, or linking? Anything at all?

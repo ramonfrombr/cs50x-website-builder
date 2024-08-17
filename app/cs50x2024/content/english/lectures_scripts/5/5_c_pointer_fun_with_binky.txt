@@ -1,0 +1,59 @@
+[VIDEO PLAYBACK] 
+
+NARRATOR: Hey, Binky, wake up. It's time for pointer fun. 
+
+BINKY: What's that? Learn about pointers? Oh, goody. 
+
+NARRATOR: Well, to get started, I guess we're going to need a couple pointers. 
+
+BINKY: OK, this code allocates two pointers, which can point to integers. 
+
+NARRATOR: OK, well, I see the two pointers. But they don't seem to be pointing to anything. 
+
+BINKY: That's right, initially pointers don't point to anything. The things they point to are call pointees. And setting them up is a separate step. 
+
+NARRATOR: Oh, right, right. I knew that. The pointees are separate. So how do you allocate a pointee? 
+
+BINKY: OK, well, this code allocates a new integer pointee. And this part sets x to point to it. 
+
+NARRATOR: Hey, that looks better. So make it do something. 
+
+BINKY: OK, I'll dereference the pointer x to store the number 42 into its pointee. For this trick, I'll need my magic wand of y dereferencing. 
+
+NARRATOR: Your magic wand of dereferencing. That-- that's great. 
+
+BINKY: This is what the code looks like. I'll just set up the number. And-- 
+
+NARRATOR: Hey, look, there it goes. So doing a dereference on x, follows the arrow to access its pointee, in this case, the store 42 in there. Hey, try using it to store the number 13 through the other pointer, y. 
+
+BINKY: OK. I'll just go over here to y and get the number 13 set up and then take the wand of dereferencing and just-- [BUZZER SOUND] oh. 
+
+NARRATOR: Oh, hey, that didn't work. Say, Binky, I don't think dereferencing y is a good idea, because, you know, setting up the pointee is a separate step. And I don't think we ever did it. 
+
+BINKY: Oh, good point. 
+
+NARRATOR: Yeah, we allocated the pointer y. But we never set it to point to a pointee. 
+
+BINKY: Mm, very observant. 
+
+NARRATOR: Hey, you're looking good there, Binky. Can you fix it so that y points to the same pointee as x? 
+
+BINKY: Sure. I'll use my magic wand of pointer assignment. 
+
+NARRATOR: Is that going to be a problem like before? 
+
+BINKY: No, this doesn't touch the pointees. It just changes one pointer to point to the same thing as another. 
+
+NARRATOR: Oh, I see. Now y points to the same place as x. So, wait, now y is fixed. It has a pointee. So you can try the wand of dereferencing again to send the 13 over. 
+
+BINKY: Uh-- OK, here goes. 
+
+NARRATOR: Hey, look at that. Now dereferencing works on y. And because the pointers are sharing that one pointee, they both see the 13. 
+
+BINKY: Yeah, sharing, whatever. So are we going to switch places now? 
+
+NARRATOR: Oh, look, we're out of time. 
+
+BINKY: But-- 
+
+[END PLAYBACK] 

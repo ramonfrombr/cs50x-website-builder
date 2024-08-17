@@ -1,0 +1,37 @@
+Así que esto se siente como una oportunidad para una nueva función en C y en los lenguajes de programación en general, por la cual podemos realmente mantener estos datos, el nombre y el número de alguien, juntos. Y hoy nos damos la oportunidad de presentar nuestros propios tipos personalizados. Hemos visto ints, bools, floats, longs y strings. Y string, recuerden, es un tipo de datos CS50 personalizado. Y quitaremos ese en un par de semanas como una rueda de entrenamiento.
+
+Pero hoy vamos a darnos nuestro propio tipo de datos de la siguiente manera. Typedef es nuestra nueva palabra clave hoy. Y literalmente significa definir un tipo. Va a ser una estructura. Y struct en C es una palabra clave real, y se refiere a un contenedor, dentro del cual puedes poner múltiples tipos de datos. Struct es un contenedor para múltiples tipos de datos.
+
+¿Qué quiero contener? Bueno, quiero darme un nombre para todos. Y quiero darme un número para todos, aunque sea una cadena porque los números de teléfono pueden tener guiones y paréntesis, etc. ¿Y sabes qué? El nombre que le voy a dar a esta estructura va a ser persona.
+
+Es una persona simple. Pero usando esta sintaxis, puedo enseñarle a mi compilador, [INAUDIBLE] en este caso, que no solo hay ints, floats, chars, bools, etc. y strings, ahora también hay tipos de persona en C. No vinieron con el lenguaje. Pero los estoy inventando ahora con typedef struct person, dentro del cual, o encapsulado, por así decirlo, dentro del cual va a haber dos cosas, nombre y número.
+
+Entonces, ¿qué puedo hacer con esto? Bueno, mi código se vuelve un poco diferente pero mejor diseñado, yo diría. Ahora en mi código, voy a darme una matriz de personas. Somos cuatro en el personal. Y quiero darme una matriz de cuatro personas. Entonces podría hacer literalmente el mismo enfoque que siempre he hecho al declarar un tipo de datos. ¿Qué tipo de datos quieres? Persona.
+
+¿Y cómo debería llamarse mi matriz? Bueno, podría llamarlo personas. O francamente, podría llamarlo gente en inglés. ¿Y cuántas personas quiero representar? Cuatro. Entonces mi matriz se llama personas. Tiene un tamaño de 4. Y cada elemento en esa matriz va a ser una persona. Entonces esta sintaxis no es nueva. Esta sintaxis aquí arriba es nueva.
+
+Pero a partir de hoy, las personas existen en C. Ahora, mi sintaxis aquí tiene que cambiar un poco, pero no tanto. Ahora, si quiero seguir adelante y llenar esta matriz, puedo hacer algo como esto. Emma será nuestra persona número 0. Pero no hago algo como esto porque, entre comillas, "Emma" no es una persona. Entre comillas, "Emma" es un nombre. Y entre comillas, "617 555 0100" es un número.
+
+Así que realmente necesito ser un poco más específico. Necesito decir que la persona 0 se llama Emma. Y luego número de persona 0 es lo que sea que sea de Emma, que era 617 555 0100 punto y coma. Y ahora puedo hacer lo mismo de nuevo, así que personas corchete 1 punto nombre recibe a Rodrigo. Personas corchete 1 punto número recibe 617 555 0101 punto y coma. Personas corchete 2 nombre recibe a Brian. Y personas corchete 2 número recibe 617 555-- 555-- 0102.
+
+Y luego, por último, se está volviendo tedioso rápidamente. Pero en un mundo ideal, simplemente le pediríamos al humano estos datos. El nombre será mío. Y por último, personas corchete 3 punto número igual, entre comillas, "617 555 0103". Vaya.
+
+Así que hay un poco más para escribir en este caso. Y, en ese sentido, podría molestarte. Pero observe que ahora estamos encapsulando todo junto. Solo tenemos cuatro valores, cada uno de los cuales es una persona. Y cada una de esas personas, dentro de ellos, por así decirlo, tiene un nombre y un número. Y todo está intrincadamente relacionado.
+
+Entonces, incluso si busqué estas cosas por nombre, van a terminar teniendo las mismas asociaciones entre números y nombres. Así que ahora lo último que tengo que hacer es cambiar mi lógica aquí. Ya no es suficiente comparar nombre corchete i con Emma. ¿Con qué debo comparar nombre contra Emma?
+
+AUDIENCIA: [INAUDIBLE].
+
+ORADOR 1: Punto nombre. Y aquí abajo, los números ni siquiera... oh, y esto fue... esto es gente. Los números tampoco existen. Es gente. Pero quiero imprimir su número aquí. Así que hago punto número.
+
+Entonces, nuevamente, hemos agregado un poco de complejidad al agregar typedef y estas notaciones de puntos. Pero si continúo y hago mi directorio telefónico ahora, demasiados errores. Oh, interesante. El índice de la matriz 4 está más allá del final de la matriz, que contiene cuatro elementos. Así que cometí un error estúpido aquí. ¿Qué hice?
+
+AUDIENCIA: [INAUDIBLE]
+
+ORADOR 1: Sí. Así que seguí incrementando incorrectamente. Déjame guardar eso, ejecutar hacer directorio telefónico, entrar. Ahora está bien. Punto barra directorio telefónico, entrar, y espero ver el número de Emma. Así que no es más correcto que antes. Pero podría decirse que está mejor diseñado y volveremos a esto más adelante en el semestre. [? Como?] A medida que eliges tu elección de pistas y comienzas a implementar aplicaciones para la web o dispositivos móviles o juegos, será bastante común encapsular información relacionada como esta para que mantengas mucha información junta, especialmente cuando usas algo que se llama una base de datos. ¿Sí?
+
+AUDIENCIA: [INAUDIBLE]
+
+ORADOR 1: ¿Hay algún atajo para escribir todo lo que hice? Sí, en realidad puedes usar la notación de llaves. Se pone un poco más feo en este caso, así que no me voy a molestar en hacerlo. Pero, sí, hay una manera de hacerlo. Sin embargo, esto es, al final del día, darte cuenta, de una especie de programa tonto porque estoy escribiendo un programa para encontrar a Emma en una lista de nombres que ya escribí. Así que no es nada dinámico. Entonces, en un mundo ideal, estaríamos usando get string o algo más elegante de todos modos.
+
+¿Otras preguntas sobre esto? De acuerdo.

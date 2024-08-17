@@ -1,0 +1,11 @@
+Bien. Bueno, esto solamente para decir que, está bien, después de toda la presunción de la semana pasada respecto a que en realidad podríamos intercambiar valores, de hecho, podemos hacerlo. Entonces, ¿cómo podemos empezar ahora a resolver problemas más interesantes y más reales? Vamos a pasar de aquí a algo del poder que tenemos ahora que comprendemos este tipo de primitivas.
+
+En primer lugar, habrás notado o anticipado esto: no era necesariamente el mejor diseño. ¿No es cierto? ¿Qué te preocupa en este momento sobre esta imagen?
+
+AUDIENCIA: Se van a estrellar.
+
+DAVID J. MALAN: Correcto, van a chocar entre sí. ¿Verdad? Si sigo llamando malloc, malloc, malloc, malloc, según la flecha, afirmo que seguirás usando cada vez más memoria. Pero resulta que seguirás usando también la pila. Si llamas a la función, la función, la función, la función, vas a chocar o de alguna manera sobrepasar cada uno de estos fragmentos de memoria. Y, de hecho, recuerda la recursión de la semana pasada. Si no tienes el caso base y una función se llama a sí misma para siempre, lo que realmente tienes es lo que se llama un desbordamiento de pila.
+
+Y aquellos de ustedes que están familiarizados con el popular sitio web para programadores, stack overflow, deriva su nombre exactamente de esa idea, el hecho de que una computadora si ejecuta un programa que tiene algún error --en el que, la función se llama a sí misma de nuevo, una y otra y otra y otra vez, y nunca se detiene-- puede desbordar la pila. Y también hay otras encarnaciones de eso. Pero esa es una de las formas de las que el sitio web obtiene su nombre.
+
+El desbordamiento de la pila es lo contrario. Cuando sigues llamando malloc, malloc, malloc, malloc, y simplemente pides tanta memoria que sobrescribes la memoria que están usando algunas de tus funciones. Lamentablemente, así es la vida. Si tienes una cantidad finita de memoria, existe este riesgo. Y esta es la razón por la que las computadoras solo pueden usar una cierta cantidad de memoria antes de que realmente no puedan, cargar más archivos para ti, no pueden abrir más imágenes para ti, o simplemente bloquearse o congelarse si el problema no fue previsto. Esos se conocen generalmente como desbordamientos de búfer.

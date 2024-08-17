@@ -1,0 +1,35 @@
+[1]
+
+**Tri par sélection**
+* Avec le tri par sélection, l'idée de l'algorithme est de trouver l'élément non trié le plus petit et de l'ajouter à la fin de la liste triée.
+
+En pseudo-code :
+* Répéter jusqu'à ce qu'il ne reste plus d'éléments non triés :
+* Rechercher dans la partie non triée des données la plus petite valeur
+* Échanger la plus petite valeur trouvée avec le premier élément de la partie non triée
+
+[18]
+
+**Tri par sélection**
+1
+2
+3
+4
+5
+6
+En pseudo-code :
+Répéter jusqu'à ce qu'il ne reste plus d'éléments non triés :
+Rechercher dans la partie non triée des données la plus petite valeur
+Échanger la plus petite valeur trouvée avec le premier élément de la partie non triée
+
+[19]
+
+**Tri par sélection**
+* Cas de figure le plus défavorable : Nous devons parcourir chacun des n éléments du tableau (pour trouver le plus petit élément non trié) et nous devons répéter ce processus n fois, dans la mesure où un seul élément est trié à chaque passage.
+* Cas de figure le plus favorable : Exactement la même chose ! Il n'y a aucun moyen de garantir que le tableau est trié jusqu'à ce que nous ayons parcouru ce processus pour tous les éléments.
+
+[20]
+
+**Tri par sélection**
+O(n2)
+Ω(n2)

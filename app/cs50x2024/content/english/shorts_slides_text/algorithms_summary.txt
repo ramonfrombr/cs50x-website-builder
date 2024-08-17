@@ -1,0 +1,42 @@
+
+[0]
+
+Algorithms Summary
+
+[1]
+
+Algorithms Summary
+• There are many different types of searching and sorting algorithms, and we’ll only skim the surface in CS50.
+• Let’s see if we can’t distill each algorithm down to its core elements, so you can remember the most important information about each.
+
+[7]
+
+Algorithms Summary
+Algorithm Name
+Basic Concept
+O
+Ω
+Selection Sort
+Find the smallest unsorted element in an array and swap it with the first unsorted element of that array.
+n2
+n2
+Bubble Sort
+Swap adjacent pairs of elements if they are out of order, effectively “bubbling” larger elements to the right and smaller ones to the left.
+n2
+n
+Insertion Sort
+Proceed once through the array from left-to-right, shifting elements as necessary to insert each element into its correct place.
+n2
+n
+Merge Sort
+Split the full array into subarrays, then merge those subarrays back together in the correct order.
+n log n
+n log n
+Linear Search
+Iterate across the array from left-to-right, trying to find the target element.
+n
+1
+Binary Search
+Given a sorted array, divide and conquer by systematically eliminating half of the remaining elements in the search for the target element.
+log n
+1

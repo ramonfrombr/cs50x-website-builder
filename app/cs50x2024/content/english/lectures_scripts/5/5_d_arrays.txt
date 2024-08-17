@@ -1,0 +1,49 @@
+DAVID MALAN: All right, so now that we do have this power of pointers and addresses where we have low level access to the computer's memory, we can actually solve problems a lot more powerfully and in a lot more interesting ways. But first, let's motivate some of these problems. 
+
+So back in Week 2, we introduced arrays, which was the first of our data structures, if you will. Before then in Week 1, all we had was variables for things like ints and chars and floats and so forth. In Week 2, we introduced arrays, which meant you could store two ints altogether or three or 10 or 100. So you can kind of encapsulate lots of data together. 
+
+So unfortunately, though, arrays aren't quite as powerful as might be ideal. So, for instance, if we have an array with size 3 and we actually want to go ahead and store three values in it-- one, two, three-- suppose that we actually want to now store a fourth value, but we didn't anticipate that from the get go. Recall after all that with arrays you have to declare their size upfront. So you've got to hard code the number 3 or a variable containing the number 3. 
+
+But suppose that we want to store the number 4. You might think that, well, just give me another box of memory just to the right of the number 3, so that I can keep all of my numbers together. But unfortunately, per last week, that's not really a reliable assumption, because in the context of the rest of your computer's memory, that 1, 2, 3, might be here surrounded by other bytes. And per last week those bytes might be mostly filled with other data from some other parts of your program. 
+
+And yet you would think that in seeing that 1, 2, 3 is kind of painted into this corner, so to speak, that there's just no room for the number 4, and therefore you can't add the fourth number to your array, is there a solution visibly to this problem nonetheless? Where else could we put it? Yeah. 
+
+AUDIENCE: Move it to off of other memory. 
+
+DAVID MALAN: Say that a little louder. 
+
+AUDIENCE: We can move it off to other memory. 
+
+DAVID MALAN: Yeah, so maybe we can move it off to other memory. So there's a lot of EMMAs in my memory per last week, but there is still, it would seem, based on this picture, some unused memory. So maybe we could resize our array, grow it, not by just moving all of the EMMAs because frankly that would seem to take a lot of time if we had to shift all of these characters, why don't we just relocate the 1, 2, 3 down here, and that gives us an extra space for at least a number 4. 
+
+So indeed even if you're using arrays, you can achieve this outcome by actually moving memory around. But consider what's involved in that. So if you've got our old array at top left, and we've got our new array at bottom right, that is of size 4. So we have plenty of room. How do we go about resizing the array? 
+
+Well, it's kind of an illusion. You can't just resize the array when we have all of these EMMAs surrounding us. Instead, we actually have to move the array or copy it. So the 1 gets moved to the new memory. The 2 gets moved to the new memory. The 3 gets moved to the new memory. And then at that point, we can just throw away or free the previously used memory and now go ahead and add our 4. 
+
+Unfortunately, this isn't necessarily the best strategy, right, because if these three lockers represent our original memory and these four lockers represents our new memory and they're deliberately far apart, that is to say that if I want to go ahead and move like these same numbers, I really have to do something like this, which involves quite a few steps. Let me go ahead and put the 1 in there now. Now, let me go ahead and get the 2 here. And then I can go ahead and put this in here. So now I've got the 2. And then lastly, I can go grab the 3. 
+
+And so even though I did this pretty quickly on the screen, the reality is there's a decent amount of work to do. And then I still, of course, have to go ahead and add the 4 to the mix, which is to say that I've taken figuratively and physically quite a few steps in order to resize an array from size 3 to size 4, which is to say if we now consider the efficiency or, if you will, inefficiency of that algorithm, what kind of running time is involved when inserting additional numbers into an array as I've done here? 
+
+Here's our menu of options from a couple of weeks ago when we focused on algorithms. What's the running time of insertion into an array based even on that simple demonstration would you say? What's the running time? Yeah. 
+
+AUDIENCE: O n squared. 
+
+DAVID MALAN: Say it again. 
+
+AUDIENCE: O n squared. 
+
+DAVID MALAN: O n squared. So maybe O n squared in that there was a lot of back and forth and we've seen that before. We've seen bubble sort and selection sort add up. It's not quite as bad as that. It's not quite as bad as that. Yeah. 
+
+AUDIENCE: O of n. 
+
+DAVID MALAN: O of n. And why do you say O of n? 
+
+AUDIENCE: Because for as like as many lockers there are in the first one, you have to increment the same amount of processes to insert them. 
+
+DAVID MALAN: Exactly. Whatever number of lockers you have here-- so that's three specifically-- but n more generally, it's going to take me n steps to transfer those numbers over here. Or technically, it's going to take me 3-- maybe if I go back and forth, it's like 6 steps. But it's some multiple of n. 
+
+So it's not n squared. That's when we kept iterating again and again and again. This time I just have to move 3 numbers to here and then add the fourth number. 
+
+So it's indeed, Big O of n when you want to go ahead and insert or search equivalently an array that's actually implemented-- sorry, insert is going to take us linear time. But search recall-- and this was the powerful thing-- what's the running time of search so long as you keep your number sorted? Per two weeks ago, that was logarithmic. So we haven't necessarily sacrificed that. And that's the appeal of storing our data in an array that's sorted. You can use binary search. 
+
+However, this is expensive and moving things around isn't necessarily the ideal approach. So let's just consider what this might look like in code.

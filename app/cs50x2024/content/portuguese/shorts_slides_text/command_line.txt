@@ -1,0 +1,78 @@
+[0]
+
+Utilizando a Linha de Comando do Linux
+
+[1]
+
+Utilizando a Linha de Comando do Linux
+● O IDE do CS50 é uma máquina baseada em nuvem executando o Ubuntu, um dos muitos sabores do sistema operacional Linux.
+● Muitas distribuições modernas do Linux possuem interfaces gráficas de usuário (GUI) para permitir fácil navegação com o mouse.
+● Ainda assim, como programador, você provavelmente usará sua janela de terminal com frequência, e você pode realizar muitas das mesmas tarefas com comandos de teclado.
+
+[2]
+
+Utilizando a Linha de Comando do Linux
+● Vamos dar uma olhada em alguns dos comandos baseados em teclado mais importantes para trabalhar no IDE ou qualquer sistema baseado em UNIX.
+
+[3]
+
+Utilizando a Linha de Comando do Linux
+ls
+● Abreviação de "list", este comando fornecerá uma leitura de todos os arquivos e pastas no seu diretório atual.
+
+[4]
+
+Utilizando a Linha de Comando do Linux
+cd <diretório>
+● Abreviação de "change directory", este comando altera seu diretório atual para <diretório>, que você especifica, em seu ambiente de trabalho ou em seu sistema operacional.
+● O nome abreviado para o diretório atual é .
+● O nome abreviado para o diretório pai do diretório atual é ..
+● Se alguma vez ficar curioso sobre o nome do diretório atual, embora o prompt do terminal geralmente informará, você pode digitar pwd (present working directory).
+
+[5]
+
+Utilizando a Linha de Comando do Linux
+mkdir <diretório>
+● Abreviação de "make directory", este comando criará um novo subdiretório chamado <diretório> localizado no diretório atual.
+
+[6]
+
+Utilizando a Linha de Comando do Linux
+cp <origem> <destino>
+● Abreviação de "copy", este comando permitirá que você crie uma duplicata do arquivo que você especificar como <origem>, que será salvo em <destino>.
+● Se você deseja copiar diretórios inteiros, você precisará modificar o comando ligeiramente:
+cp –r <diretório de origem> <diretório de destino>
+O "-r" significa recursivo e informa ao cp para mergulhar no diretório e copiar tudo dentro dele (incluindo quaisquer subdiretórios que ele possa conter).
+
+[7]
+
+Utilizando a Linha de Comando do Linux
+rm <arquivo>
+● Abreviação de "remove", este comando excluirá <arquivo> depois de pedir para você confirmar (s/n) se deseja excluí-lo.
+● Você pode pular a confirmação digitando:
+rm –f <arquivo>
+Mas use por sua conta e risco! Não há como desfazer.
+● Para excluir diretórios inteiros, você precisa usar o sinalizador -r, assim como no caso do cp.
+rm –r <diretório>
+● Você também pode combinar os sinalizadores -r e -f em -rf. Novamente, cuidado! Não há como desfazer!
+
+[8]
+
+Utilizando a Linha de Comando do Linux
+mv <origem> <destino>
+● Abreviação de "move", este comando permitirá que você renomeie efetivamente um arquivo, movendo-o de <origem> para <destino>.
+
+[9]
+
+Utilizando a Linha de Comando do Linux
+● Com certeza, há muitos outros utilitários básicos de linha de comando à sua disposição, e discutiremos muitos deles no futuro no CS50.
+● Se você deseja explorar outros interessantes antes de vê-los em aula, leia sobre:
+chmod
+ln
+touch
+rmdir
+man
+diff
+sudo
+clear
+telnet

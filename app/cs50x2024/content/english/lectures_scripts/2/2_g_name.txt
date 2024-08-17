@@ -1,0 +1,7 @@
+All right. So beyond that, I'm sure you've encountered now, after just one week, bugs in your software. And in fact, one of the greatest skills you can acquire from programming class is not only how to write code, but how to debug code, most likely your own. And if you've ever wondered where this phrase comes from, this notion of debugging, so this is actually part of the mythology. 
+
+So this is actually a notebook kept by Grace Hopper, a very famous computer scientist, working years ago with some colleagues on what was called the Mark 2 system. If you've ever walked through Harvard Science Center, there's a big part of a machine in the ground floor of the Science Center. That's the Mark 1, the precursor. 
+
+Well, the Mark 2 at some point was discovered as having literally a bug inside of it, which was causing a problem. A moth of sorts. And Grace Hopper actually made this record here, if we zoom in, the first actual case of bug being found. And even though other people had used the expression bug before to refer to mistakes or problems in systems, this is really sort of the lore that folks in computer science look back on. 
+
+So bugs are just mistakes in programs, things that you surely did not intend. And we'll consider today now how we can empower you, much more so than this past week, to solve your own problems and actually debug your software.

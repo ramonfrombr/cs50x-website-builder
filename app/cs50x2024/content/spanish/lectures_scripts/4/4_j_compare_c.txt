@@ -1,0 +1,47 @@
+De acuerdo. Entonces, ¿qué tenemos cuando se trata de cadenas? Bueno, intentemos ahora aprender de estas primitivas y cometer algunos errores que de otro modo podríamos cometer. Voy a seguir adelante y abrir un archivo nuevo. Seguiré adelante y lo llamaré, compare. Así que lo guardaremos como compare punto c. Y esto nos recordará algo que empezamos a hacer la semana pasada. Y lo has hecho la semana pasada, sobre todo para implementar la votación y comparar cadenas.
+
+Voy a seguir adelante y hacer un programa rápido que simplemente compara dos enteros. Voy a volver a poner las ruedas de entrenamiento temporalmente, solo para poder obtener algunos números del usuario con bastante facilidad, incluidos CS50 punto h y estándar I/O punto h. Voy a hacer int main void como mi programa. Voy a obtener un entero llamado i y preguntarle al humano por él. Voy a obtener otro entero llamado j, preguntarle al humano por él.
+
+Y luego voy a seguir adelante y decir si i es igual a j, entonces seguir adelante e imprimir con printf que son iguales. De lo contrario, si i no es igual a j, seguiré adelante, muy simple, e imprimiré backslash n diferente. Entonces, si i es igual a j, debería decir igual. De lo contrario, si es diferente, debería decir diferente. Así que déjame seguir adelante y hacer compare punto barra compare. Y debería ver, con suerte, si escribo, digamos, 1, 2, que son diferentes. Y si en cambio hago 1, 1, son iguales.
+
+Muy bien. Entonces, es lógico que esto sea bastante sencillo cuando se desea comparar cosas. Así que en lugar de utilizar números, permítanme seguir adelante y cambiar esto. Déjame seguir adelante y hacer, digamos, la cadena s obtiene getString, igual que antes pero usando getString en su lugar y preguntar al humano por s. Entonces dame otra cadena, t, solo porque alfabéticamente es la siguiente. Y le preguntaré al humano por t. Y luego voy a seguir adelante y hacer esta pregunta, si s es igual a t, imprimir igual; de lo contrario, imprimir diferente.
+
+Así que ahora déjame seguir adelante y hacer compare otra vez. Voy a seguir adelante y escribir punto barra compare. Escribiremos Emma. Luego escribiremos Rodrigo. Y, por supuesto, va a decir diferente. Pero si en cambio lo vuelvo a ejecutar y escribo Emma y está bien, escribiré Emma de nuevo, hmm, diferente. ¿Quizás sea una cuestión de mayúsculas? No.
+
+Pero ¿por qué a partir de hoy son realmente diferentes? La semana pasada, saludamos con la mano y dijimos: ah, son arreglos, hay que hacer algo. Pero ¿por qué son diferentes?
+
+AUDIENCIA: Están almacenados en diferentes ubicaciones.
+
+DAVID J. MALAN: Exactamente, están almacenados en diferentes ubicaciones. Entonces, cuando obtienes una cadena con getString y la llamas s, y luego obtienes otra cadena con t y la llamas t, estás obteniendo dos fragmentos de memoria diferentes. Y sí, tal vez el humano haya escrito lo mismo en el teclado, pero eso no significa necesariamente que se vayan a almacenar exactamente en el mismo lugar.
+
+De hecho, lo que realmente tenemos aquí es una imagen muy diferente. Si tengo una variable llamada s, y solo la voy a dibujar como una caja allí, y si tengo una variable llamada t, la dibujaré como otra caja aquí, y escribí Emma, E-M-M-A, eso me dará en algún lugar de la memoria, E-M-M-A backslash 0. Y lo intentaré como un arreglo real, aunque un poco desordenado. Y luego aquí, si escribo EMMA de nuevo en mayúsculas, terminará, gracias a getString, en una ubicación diferente en la memoria. Por la naturaleza de cómo funciona getString, almacenará todo lo que escribas en él.
+
+¿Y qué se almacenará en s y t? Bueno, en aras de la discusión, supongamos que este fragmento de memoria con la primera entrada, lo siento, está en 0x123. Y el segundo fragmento de memoria resulta estar en 0x456, por casualidad. Bueno, ¿qué estoy almacenando técnicamente en s? 0x123. ¿Y qué estoy almacenando en t? 0x456.
+
+Entonces, cuando dices, es s igual a t. ¿Lo es? Bueno, no. Estás comparando literalmente 123 versus 456. La computadora no irá presuntuosamente a esa dirección por ti a menos que de alguna manera le digas que lo haga. Dicho de otra manera, si en cambio dibujo estas cajas, no como números reales, lo que realmente tenemos, lo siento, lo que realmente tenemos es lo que dibujaremos como una flecha más generalmente, solo un puntero a ese valor. ¿A quién le importa realmente dónde está la dirección?
+
+Por eso la semana pasada saludamos con la mano y dijimos: eh, no puedes comparar dos cadenas porque probablemente tengas que comparar cada carácter. Y eso era cierto. Pero lo que técnicamente estás comparando son de hecho las direcciones de esas dos variables.
+
+¿Alguna pregunta sobre esto aquí? Sí. Claro, sí.
+
+AUDIENCIA: Dijiste antes que, supongo, el puntero y la cosa real que está apuntando son como si estuvieran en algún lugar de la memoria, no en un lugar específico, simplemente están en algún lugar, ¿verdad?
+
+DAVID J. MALAN: Ok.
+
+AUDIENCIA: Entonces, ¿necesitas algo que apunte al punto; ¿cómo sabe la computadora dónde está el puntero?
+
+DAVID J. MALAN: Oh, ¿cómo sabe la computadora dónde están estos punteros? Así que esa es una muy buena pregunta. Y respondámosla aquí mismo. Todo este tiempo, cuando has estado llamando a getString para obtener una cadena, probablemente la has estado asignando a una variable como la que tengo aquí en la línea seis, con la cadena s. Pero sabemos que a partir de hoy que si nos deshacemos de la biblioteca CS50, técnicamente, la cadena es simplemente sinónimo de estrella char.
+
+Así que tanto aquí como con t, ¿tienes técnicamente char star, verdad? Es solo un buscar y reemplazar si nos deshacemos de esa rueda de entrenamiento. Char star solo significa que s está almacenando la dirección de un carácter. Y char star t significa que t está almacenando la dirección de un carácter. Ergo, todo este tiempo desde la Semana 1 de CS50, ¿qué tipo de valor ha estado devolviendo getString, aunque nunca lo hayamos descrito como tal? ¿Qué debe estar devolviendo getString? Sí.
+
+AUDIENCIA: El índice de la primera letra.
+
+DAVID J. MALAN: Ni siquiera el índice en sí, sino más bien la...
+
+AUDIENCIA: Alberga el recuerdo de eso.
+
+DAVID J. MALAN: La dirección del primer carácter. Así que cada vez que llamabas a getString, el código de getString que escribimos está buscando en la memoria de tu computadora algún espacio libre, suficientes bytes para que quepan las palabras que se escribieron. Luego, getString, si miramos su código, está diseñado para devolver la dirección del primer byte de ese fragmento de memoria. Entonces, getString, todo este tiempo, ha estado regresando, por así decirlo, lo que se llama un puntero. Pero, de nuevo, matices en los que ciertamente no queríamos entrar en la primera semana de programación en C.
+
+Muy bien. Bueno, sigamos adelante y hagamos esto un poco más concreto. Si subo este código, no tengo que comprobar si son iguales o diferentes, déjame seguir adelante e imprimirlos. Si hago por ciento p backslash n, puedo imprimir literalmente s. Y si sigo adelante e imprimo lo mismo para t usando por ciento p, puedo imprimir el valor de t.
+
+Así que déjame seguir adelante y hacer compare. Parece que se compila bien. Y no sé cuáles son las direcciones de antemano. Pero déjame seguir adelante y escribir, por ejemplo, Emma y Emma. Entonces, aunque esas cadenas se ven iguales, nota, es un poco sutil esta vez, la primera Emma está en 0xED76A0. La segunda Emma está en 0xED76E0, que está a unos números de la primera Emma. Así que eso solo corrobora los instintos de la semana pasada de que no podemos compararlos así como así.

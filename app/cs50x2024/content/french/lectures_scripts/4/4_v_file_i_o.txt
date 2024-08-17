@@ -1,0 +1,7 @@
+Maintenant, comment pouvons-nous utiliser réellement cette information ? Eh bien, il s'avère que nous allons maintenant, cette semaine prochaine et au-delà, explorer ici un certain nombre de caractéristiques de ce que l'on appelle les E/S de fichier. Pour résumer, si vous vous êtes déjà demandé ce qu'était vraiment une image — nous en avons brièvement parlé lors de la semaine 0 — eh bien voilà une image. Mais elle est en binaire, en 0 et 1. Quelqu'un sait-il ce que représente cette image ?
+
+PUBLIC : Un visage souriant.
+
+DAVID J. MALAN : Eh bien, comment avez-vous… êtes-vous un nombre non nul de personnes qui regardent les diapositives ? Parce que oui, c'est un visage souriant. Et vous ne le sauriez qu'en supposant que 1 représente un pixel blanc, 0 représente un pixel noir et que si nous avons effectivement une grille de bits — 1 et 0 — cela ressemble de loin au visage souriant le plus simple possible. C'est donc une image, ou une image matricielle, une carte de bits représentant les pixels d'une image.
+
+Donc, avec le quatrième ensemble de problèmes, nous allons commencer à explorer le monde de la criminalistique, avant tout.

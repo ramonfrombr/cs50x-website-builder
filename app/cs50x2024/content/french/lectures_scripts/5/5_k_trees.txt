@@ -1,0 +1,5 @@
+D'accord, donc quelqu'un est venu pendant la pause et a remarqué que cela semble être en fait une régression dans la mesure où les tableaux nous donnaient la possibilité de redimensionner, même si c'était un peu coûteux car il fallait tout copier d'un endroit à un autre. Mais nous avions un accès aléatoire et donc une recherche binaire et un temps d'exécution logarithmique pour des choses comme la recherche de listes assorties. Nous semblons avoir abandonné cela.
+
+Les listes chaînées nous donnent du dynamisme là où nous pouvons rétrécir des choses sans perdre de temps en les déplaçant. Mais nous avons perdu l'accès aléatoire. Mais vous savez quoi ? Maintenant que nous avons cette capacité à utiliser des pointeurs et des structures de données pour assembler des choses en mémoire, connecter des choses avec des flèches, vous savez quoi, nous pouvons construire des choses plus élaborées.
+
+La plupart d'entre vous connaissent probablement l'idée d'un arbre généalogique, qui est cette structure hiérarchique bidimensionnelle. Et en effet, c'est notre inspiration ici.

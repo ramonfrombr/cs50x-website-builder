@@ -1,0 +1,169 @@
+[1]
+
+Fonctions
+● Jusqu'à présent, tous les programmes que nous avons écrits pendant ce cours l'ont été à l'intérieur de la fonction main().
+● Cela n'a pas encore posé de problème, mais cela pourrait être le cas si nos programmes deviennent difficiles à manipuler.
+● C et presque tous les langages développés depuis nous permettent d'écrire des fonctions, parfois aussi appelées procédures, méthodes ou sous-programmes.
+● Voyons donc ce que sont les fonctions.
+
+[2]
+
+Fonctions
+● Qu'est-ce qu'une fonction ?
+● Une boîte noire avec un ensemble de 0+ entrées et 1 sortie.
+
+[7]
+
+Fonctions
+● Pourquoi l'appelle-t-on une boîte noire ?
+● Si nous n'écrivons pas les fonctions nous-mêmes, nous n'avons pas besoin de connaître l'implémentation sous-jacente.
+mult(a, b) :
+définir le compteur sur 0
+répéter b fois
+ajouter a au compteur
+afficher le compteur
+
+[8]
+
+Fonctions
+● Pourquoi l'appelle-t-on une boîte noire ?
+● Si nous n'écrivons pas les fonctions nous-mêmes, nous n'avons pas besoin de connaître l'implémentation sous-jacente.
+● Cela fait partie du contrat d'utilisation des fonctions. Le comportement est généralement prévisible en fonction de ce nom. C'est pourquoi la plupart des fonctions ont des noms clairs et évidents, et sont bien documentées.
+
+[9]
+
+Fonctions
+● Pourquoi utiliser des fonctions ?
+● Organisation
+● Les fonctions permettent de décomposer un problème complexe en sous-parties plus faciles à gérer.
+● Simplification
+● Les composants plus petits sont généralement plus faciles à concevoir, à implémenter et à déboguer.
+● Réutilisabilité
+● Les fonctions peuvent être recyclées ; vous n'avez besoin de les écrire qu'une seule fois, mais vous pouvez les utiliser aussi souvent que nécessaire !
+
+[10]
+
+Fonctions
+● Déclaration de fonctions
+● La première étape de la création d'une fonction est de la déclarer. Cela indique au compilateur qu'une fonction écrite par l'utilisateur apparaît dans le code.
+● Les déclarations de fonctions doivent toujours figurer au début de votre code, avant que vous ne commenciez à écrire main().
+● Toutes les déclarations de fonctions suivent un modèle standard.
+
+[11]
+
+Fonctions
+● Déclaration de fonctions
+● Le type de retour est le type de variable que la fonction retournera.
+● Le nom est ce que vous voulez appeler votre fonction.
+● La liste d'arguments est l'ensemble séparé par des virgules des entrées de votre fonction, chacune ayant un type et un nom.
+type_retour nom(liste_arguments) ;
+
+[12]
+
+Fonctions
+● Une fonction pour additionner deux entiers.
+● La somme de deux entiers sera également un entier.
+● En fonction de ce que fait cette fonction, assurez-vous de lui donner un nom approprié.
+● Cette fonction a deux entrées, et nous devons donner un nom à chacune d'elles pour les besoins de la fonction. Rien d'important à propos de ces entrées pour autant que nous le sachions, donc leur donner des noms simples est acceptable.
+int add_two_ints(int a, int b) ;
+
+[13]
+
+Fonctions
+● Une fonction pour multiplier deux nombres à virgule flottante.
+
+[14]
+
+Fonctions
+● Une fonction pour multiplier deux nombres à virgule flottante.
+● Le produit de deux nombres à virgule flottante est également un nombre à virgule flottante.
+● Assurons-nous de lui donner un nom pertinent.
+● Encore une fois, les noms de ces entrées particulières ne semblent pas importants, nous pouvons donc les appeler n'importe quoi de simple.
+float mult_two_reals(float x, float y) ;
+
+[16]
+
+Fonctions
+● Définition de fonctions
+● La deuxième étape de la création d'une fonction est de la définir. Cela permet d'obtenir un comportement prévisible lorsque la fonction est appelée avec des entrées.
+● Essayons de définir mult_two_reals(), datant d'il y a un moment.
+
+[17]
+
+Fonctions
+● Une définition de fonction ressemble presque exactement à une déclaration de fonction, avec une petite modification.
+● Comment rempliriez-vous cette boîte noire ?
+float mult_two_reals(float x, float y) ;
+float mult_two_reals(float x, float y)
+{
+float product = x * y ;
+return product ;
+}
+
+[20]
+
+Fonctions
+● Maintenant, prenez un moment et essayez de définir 
+add_two_ints(), datant d'il y a un moment.
+int add_two_ints(int a, int b) ;
+int add_two_ints(int a, int b)
+{
+int sum ;      // déclarer la variable
+sum = a + b ;  // calculer la somme
+return sum ;   // renvoyer le résultat
+}
+
+[21]
+
+Fonctions
+● Maintenant, prenez un moment et essayez de définir add_two_ints(), datant d'il y a un moment.
+int add_two_ints(int a, int b) ;
+int add_two_ints(int a, int b)
+{
+int sum = a + b ;  // calculer la variable
+return sum ;       // renvoyer le résultat
+}
+
+[23]
+
+Fonctions
+● Appel de fonctions
+● Maintenant que vous avez créé une fonction, il est temps de l'utiliser !
+● Pour appeler une fonction, il suffit de lui passer les arguments appropriés et d'affecter sa valeur de retour à quelque chose du type correct.
+● Pour illustrer cela, jetons un œil à adder-1.c
+
+[24]
+
+Fonctions
+● Divers concernant les fonctions
+● Rappelez-vous, d'après notre discussion sur les types de données, que les fonctions peuvent parfois ne prendre aucune entrée. Dans ce cas, nous déclarons que la fonction a une liste d'arguments vide.
+● Rappelez-vous également que les fonctions n'ont parfois pas de sortie. Dans ce cas, nous déclarerons que la fonction a un type de retour vide.
+
+[25]
+
+Fonctions
+● Problème pratique
+● Déclarez une fonction appelée valid_triangle qui prend trois nombres réels représentant les longueurs des trois côtés d'un triangle comme arguments, et renvoie vrai ou faux, selon que ces trois longueurs sont capables de former un triangle.
+● Notez les règles suivantes concernant les triangles :
+● Un triangle ne peut avoir que des côtés de longueur positive.
+● La somme des longueurs de deux côtés du triangle doit être supérieure à la longueur du troisième.
+
+[26]
+
+Fonctions
+bool valid_triangle(float x, float y, float z) ;
+bool valid_triangle(float x, float y, float z)
+{
+// vérifier tous les côtés positifs
+if (x <= 0 || y <= 0 || z <= 0)
+{
+return false ;
+}
+// vérifier que la somme de deux côtés est supérieure au troisième
+if ((x + y <= z) || (x + z <= y) || (y + z <= x))
+{
+return false ;
+}
+// Si nous avons passé les deux tests, c'est bon !
+return true ;
+}

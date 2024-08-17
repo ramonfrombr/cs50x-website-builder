@@ -1,0 +1,53 @@
+Permítanme presentarles algo llamado lista enlazada. Una lista enlazada, como veremos, le permitirá almacenar una lista de valores. Ahora bien, un arreglo le permite almacenar una lista de valores. ¿Pero cuáles son algunas de las desventajas de un arreglo?
+
+Bueno, un arreglo es un fragmento fijo de memoria. Y si desea cambiar el tamaño de ese arreglo para agregarle más valores, ¿qué tiene que hacer? Bueno, como mínimo, tiene que asignar más memoria. Necesita copiar todos esos valores de lo antiguo a lo nuevo. Y luego puede continuar con su negocio.
+
+Ahora bien, realloc es una función que lo hace un poco más simple. Pero realloc está haciendo exactamente el mismo trabajo duro que yo estaba haciendo entre los casilleros para copiar valores, liberar memoria, etc. Así que debe hacerse. Y es por eso que la inserción en un arreglo va a ser grande O de n, porque podría llevarle mucho tiempo copiar todo el arreglo en un espacio nuevo.
+
+Entonces, eso se siente algo subóptimo, ¿verdad? Los arreglos pueden ser lentos en ese sentido. ¿Pero cuál era el atractivo de un arreglo? ¿Qué tienen de bueno los arreglos? Porque no queremos abandonarlos por completo. Sí.
+
+AUDIENCIA: Puede indexarlos realmente fácil.
+
+DAVID MALAN: Puede indexarlos realmente fácil, no solo sintácticamente con los corchetes, sino que tiene acceso en tiempo constante; esto se conoce como acceso aleatorio. Y no es aleatorio en el sentido de que termine donde sabe quién. Puede saltar al corchete 0 o 1 o 2 instantáneamente. Me tomó a mí, el humano, más tiempo porque tuve que caminar físicamente. Pero una computadora podrá saltar a 0, 1, 2, 3 al instante. Y por eso los arreglos son súper rápidos. Y se prestan para cosas como la búsqueda binaria, como hemos visto durante algún tiempo.
+
+Pero, ¿qué pasa si usamos el lienzo que es la memoria de nuestra computadora como algo más inteligente? No tenemos que simplemente dejar caer cosas una al lado de la otra, una al lado de la otra, una al lado de la otra y luego esperar lo mejor, esperando que aún haya más memoria de atrás hacia adelante. ¿Qué pasa si en cambio somos un poco más listos al respecto?
+
+Y supongamos que queremos almacenar el número 1. Y resulta que es una dirección 0x123. Es arbitrario. Pero recuerde de la semana pasada que cada byte de memoria en su computadora se almacena en algún lugar. Entonces, propongamos que 1 se almacene en 0x123.
+
+Supongamos ahora que esto representa un arreglo de tamaño 1 y desea agregar un segundo valor a este arreglo. O comencemos a llamar a las cosas de manera más general una lista. Una lista como en el mundo real es solo una lista de valores. Esta lista es de tamaño 1.
+
+Ahora bien, tal vez haya muchas Emmas en esta memoria que se están interponiendo en el camino. Pero suponga que hay algo de espacio libre un poco más abajo en la memoria de su computadora. Entonces no está aquí. No está aquí. No está disponible aquí, aquí o aquí. Hay otras cosas ahí. Pero suponga que la computadora tiene algo de memoria disponible aquí, en la cual puede almacenar el número dos, simplemente porque sí. Y esa dirección es 456.
+
+Finalmente, desea almacenar el tercer valor. Y resulta que la ubicación posible más cercana está aquí abajo, el número 3. Eso es en la dirección 0x789.
+
+Entonces, esto no es un arreglo por definición, porque 1, 2, 3 no son contiguos de atrás hacia adelante. No se puede usar la notación de corchetes aquí porque la notación de corchetes requiere, según la Semana 2, que todos sus valores estén uno al lado del otro, al igual que los casilleros aquí.
+
+Esta imagen, donde 1 está aquí, 2 está aquí, 3 está aquí, es más como, oh, tal vez esto es 0x123. Tal vez esto es 0x456. Tal vez esto es 0x789. Están algo por todas partes. Y eso es solo porque eso es lo que está disponible en la memoria de su computadora.
+
+Pero, ¿qué pasa si me vuelvo un poco extravagante y empiezo a usar, no solo un fragmento de memoria para almacenar cada valor, como 1, 2, 3, qué pasa si sigo adelante y me doy el doble de memoria solo para darme algo de flexibilidad? Entonces ahora conceptualmente uso este fragmento de memoria para representar uno. Esta basura para representar 2, esta basura para representar 3. Pero ¿para qué voy a utilizar la segunda mitad de cada uno de esos fragmentos? ¿Alguna idea?
+
+AUDIENCIA: Dirección a la siguiente.
+
+DAVID MALAN: Una dirección al siguiente fragmento de memoria. Entonces, por ejemplo, si mi objetivo es mantener esta lista ordenada, por lo que quiero conceptualmente tener una lista que almacene 1, 2, 3, ¿por qué no uso esto como una especie de mapa o miga de pan, por así decirlo, que apunta a la siguiente fragmento de memoria? ¿Y por qué no utilizo este fragmento de memoria para apuntar al siguiente? Y luego este fragmento de memoria, ¿saben qué? Solo necesito un valor especial aquí. ¿Cuál sería una buena forma arbitraria de decir, mm, mm, no hay nada más en la lista?
+
+AUDIENCIA: Nulo.
+
+DAVID MALAN: Es algo llamado nulo. Y esto técnicamente es diferente de la barra invertida 0, que es un carácter. Esto es algo llamado, bueno, esto está en hexadecimal 0. Ahora, a partir de hoy, y lo vimos muy brevemente la semana pasada, esto es n-u-l-l con dos L, esto fue una mano izquierda estúpida que no hablaba realmente con la mano derecha, n-u-l es barra invertida 0, que es un carácter. n-u-l-l es un puntero. Pero ambos son iguales a 0 debajo del capó. Por lo tanto, simplemente almacena un valor especial que dice que eso es todo para la lista.
+
+Ahora bien, la semana pasada propuse a quién realmente le importa dónde están las cosas en la memoria. Así que, de hecho, hagámoslo de nuevo. Simplemente usemos punteros dibujados como flechas en la representación de este artista para decir que esta lista de números, 1 2, 3, ahora está vinculada. Una lista enlazada es solo una estructura de datos que contiene varios fragmentos de memoria que de alguna manera están vinculados entre sí. Y si debajo del capó, por así decirlo, simplemente están vinculados por medio de punteros, y el precio que pagamos es que en lugar de en una lista enlazada que almacena solo los números 1, 2, 3, que podríamos tener en un arreglo, ahora debe almacenar el doble de información, 1, 2, 3, así como tres punteros, dos de los cuales están en uso, el otro está listo para funcionar si quiero agregar algo a esta lista.
+
+Esto quiere decir que ahora podemos crear estructuras que se ven así en la memoria de la computadora con solo usar esta nueva característica de los punteros. ¿Cómo podrían verse estas estructuras individualmente? Bueno, cualquiera de estos números parece tener dos campos. Uno es un entero. Lo llamaremos número. Y luego hay otro campo aquí. Que por convención llamemos siguiente, pero podríamos llamarlo como queramos. Es solo otro fragmento de memoria que apunta al siguiente elemento de la lista.
+
+Bueno, hace un par de semanas, presentamos a las personas. Y una persona tenía un nombre y un número. Eso no es relevante hoy, porque no estamos tratando con nombres y números. Solo estamos tratando con números enteros. Así que permítanme proponer que retrocedamos y sigamos usando la misma sintaxis que hace un par de semanas. Pero en lugar de definir una persona, llamemos a este rectángulo un nodo. Entonces, este es un término técnico en la ciencia de la computación, nodo, n-o-d-o, solo representa este concepto rectangular, un fragmento de memoria que está utilizando con fines interesantes. Es una especie de nodo en un gráfico si es familiar en matemáticas.
+
+¿Pero qué quiero que almacene este conocimiento? Bueno, déjame seguir adelante y almacenar un par de cosas en él. Uno, un número, y eso solo va a ser un int. Y voy a seguir adelante y lo llamaré número. Y luego, ¿alguna conjetura sobre cómo se debe declarar el segundo campo? Quiero llamarlo siguiente solo porque es convencional. ¿Cuál debería ser su tipo de datos? ¿Alguna idea? Sí, atrás.
+
+AUDIENCIA: Un puntero.
+
+DAVID MALAN: Un puntero. ¿Y un puntero a qué diría?
+
+AUDIENCIA: El siguiente número.
+
+DAVID MALAN: Un puntero al siguiente número, y no exactamente al siguiente número per se, porque ahora no solo tenemos números, ahora tenemos nodos. Entonces, esas tres cajas amarillas, 1 2, 3, esas ahora son nodos, yo diría. Entonces, ¿sabes qué? Sigamos adelante y llamemos a este nodo estrella.
+
+Pero técnicamente no se puede hacer esto. Resulta que C, recuerde, lo toma súper literalmente. Y fíjese que si lee este código de arriba a abajo, de izquierda a derecha, ¿en qué momento de la historia aparece la palabra nodo? Como

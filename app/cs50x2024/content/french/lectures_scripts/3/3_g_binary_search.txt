@@ -1,0 +1,11 @@
+Mais considérons maintenant un instant à quel point le code peut être efficace ou inefficace par rapport au second algorithme, [? Nizari, ?] où elle a réellement divisé le conquer par deux, par deux, par deux. Cela, bien sûr, a été appelé recherche binaire. Et nous pouvons également écrire ceci de différentes manières. Mais en pseudo-code, je pourrais proposer ceci. 
+
+Comme elle l'a fait, regardez en plein milieu. Et si ce nombre est 50, qu'aurait-elle dû renvoyer ou sortir ? 
+
+AUDIENCE : Vrai. 
+
+ORATEUR 1 : Tellement vrai comme notre bool. Et nous aurions donc pu faire cela, sinon si 50 était inférieur à l'élément du milieu. Elle voulait probablement une recherche à gauche, comme lorsque je cherchais Mike Smith, j'aurais pu aller à gauche ou à droite. Donc, si 50 est inférieur à l'élément du milieu, elle voudra peut-être rechercher la moitié gauche. 
+
+En attendant, si 50 est supérieur à l'élément du milieu, alors elle voudra peut-être rechercher à la place la moitié droite. Mais il y a une quatrième possibilité, juste pour être prudent ici. Quel autre pourrait être le cas ? Ce n'est pas au milieu, ni à gauche, ni à droite. Donc, ce n'est tout simplement pas là. Et donc il y a en fait un quatrième cas, et on peut l'exprimer différemment. 
+
+Je vais aller de l'avant et dire tout de suite s'il n'y a aucun élément dans la liste, laissez-moi aller de l'avant et simplement prétendre renvoyer faux. Il n'y a rien là. Après tout, si je continue à diviser une liste par deux, par deux, par deux, par deux, il ne restera finalement plus de liste. À ce stade, je devrais simplement conclure, oh, ce n'était clairement pas là. Si je l'ai divisé par deux tant de fois, il ne reste plus rien à droite ou à gauche.

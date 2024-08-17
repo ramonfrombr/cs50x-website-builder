@@ -1,0 +1,23 @@
+But let me do one final example now that will motivate this coming week's problem set challenges. So I'm going to go ahead now and write a final program that-- whose purpose in life is to detect this. I have here in front of me a picture of Brian [LAUGHTER] in JPEG format. And I have a cat in GIF format-- which doesn't work in the IDE but let me go ahead and download it locally --does look like this. So it's this guy from a couple of weeks ago. But both-- one is in GIF format, one is in JPEG, which if you're familiar from file formats are just different types of images. 
+
+Let me go ahead and write a program real quick that is called JPEG dot c. And its purpose in life is just to check if a file passed by its name at the command line is a JPEG or not. I'm going to go ahead and include standard I/O dot h. I'm going to call my function int main, but not void. This time I'm going to use int argc, like last week, and string argv open paren-- open bracket closed bracket. 
+
+But you know what? We don't need strings anymore. This is actually what you've been typing sort of unknowingly the past week when you were using command line arguments, or the past couple of weeks. 
+
+Now I'm going to go ahead and do a quick error check. If argc does not equal 2, I'm just going to. quit. I want the human to type, not just the program's name, but one other word as well. I then want to go ahead and open up the file that the human typed in at the prompt-- which I claim is going to be the second word they type --so argv 1. And I want to read it this time, not append line-by-line, I just want to read it from the beginning. And the key-- keyword for that is r. 
+
+And then I'm going to go ahead and actually do a little error check. If file equals equals null-- we haven't seen this before --but if fopen, if malloc, if getString return error conditions, they actually return the special value null. But for now, let me just go ahead and say, something went wrong. I'm going to return 1. But we won't worry too much more about it for now. 
+
+So at this point I have opened file. I have ensure user ran program with two words at prompt, that's our argc use there. Now let's go ahead and do this. I'm going to go ahead and give myself an array of 3 bytes. And I'm going to go ahead and use a function called fread-- And we'll see more of this in the assignment. So this is deliberately quick. --I pass in his argument, the array, the number of bytes I want to read, how many times I want to read those bytes, and then the file from which I want to read those bytes. 
+
+So that was a mouthful. But collectively, these two lines of code read 3 bytes from file. It just literally reads the first 24 bits, or 3 bytes-- each of which is 8 bits --from the file. And why am I doing this? Well, it turns out, check if bytes are 0xFF, 0xD8, 0xxFF. 
+
+So again, coming full circle to hexadecimal, it turns out that in the documentation for the JPEG image format, the first 3 bytes of any JPEG in the world-- any photograph you've ever taken with your camera-- start with FF, then D8, then FF. This is a so-called magic number that the designers of the JPEG format just decided, use this as a sort of clue at the beginning of the file that hey, here comes a JPEG image. 
+
+So how do I do this? It's actually pretty simple, if bytes 0 equals equals 0xFF-- I can literally type hexadecimal in C --or byte-- rather, and bytes 1 equals 0xD8, and bytes 2 equals equals 0xFF, then it turns out, it's probably a JPEG. There are some conditions. We'll explore in the problem set. So I'm just going to say maybe it's a JPEG. But if that's not true, I am going to say with confidence, no, it's not a JPEG if those first 3 bytes are not that. 
+
+And then for arcane reasons, I technically need to make this what's called unsigned, which means it's a number from 0 to 255, instead of negative 128 to 127. But let me wave my hands at that, just so that we get this code right for now. 
+
+I'm going to go ahead and run JPEG and fail miserably. What did I do wrong? fopen is the name of that function-- sorry-- make JPEG, good. And now I'm going to run JPEG on my Brian image, which is in my source for directory on the course's website. He is maybe a JPEG. 
+
+And then I'm going to go ahead and do JPEG on source for cat dot GIF, which is no, not a GIF, which is to say that once you have the ability to express pointers, we now have the programmatic capabilities, not only to write files, but read them as well.

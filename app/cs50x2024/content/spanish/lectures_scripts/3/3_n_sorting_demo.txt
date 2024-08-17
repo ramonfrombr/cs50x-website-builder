@@ -1,0 +1,155 @@
+Así que esto solo es para decir que claramente tenemos la habilidad, en código, de implementar estas ideas, como [? Nizari ?] y Eric implementaron más físicamente, usando algo como este conjunto de casilleros. Entonces, ¿hacia dónde vamos desde aquí? 
+
+Bueno, desafortunadamente, [? Nizari ?] se benefició del hecho de que los casilleros ya estaban, por supuesto, ordenados más o menos detrás de ella por Brian. Pero se pagó un precio, ¿verdad? De hecho, incluso nosotros tuvimos que esperar un poco para que todos esos números se ordenaran en los casilleros antes de poder proceder a ejecutar ese algoritmo. Entonces, una pregunta, entonces, razonable de hacerse es, bueno, ¿qué tan caro es ordenar números? ¿Y deberías ordenar números y luego buscar? ¿O deberías simplemente empezar a buscar y no preocuparte por ordenar los números, especialmente si uno puede ser más costoso que el otro? Estos van a ser, finalmente, intercambios. 
+
+Así que considerémoslos de la siguiente manera. Si ahora el problema en cuestión es proporcionar como entrada a nuestro problema una lista de números sin ordenar, cuyo objetivo es obtener una lista de números ordenados, ¿cómo lo hacemos? Por ejemplo, si los números son 7, 2, 1, 6, 3, 4, 50 en ese orden, ese orden sin ordenar, el objetivo en cuestión es obtener 1, 2, 3, 4, 6, 7, 50 en orden ordenado de izquierda a derecha, de menor a mayor. Entonces, ¿cómo podemos implementar esa idea? 
+
+Bueno, déjame ir y ver. Nos quedan algunas pelotas antiestrés. Y quizás podríamos hacer esto un poco dramáticamente con ocho voluntarios, si quieres. De acuerdo, ese es un plan. De acuerdo, entonces 1, aproximadamente 2, 3, si pudiéramos, vale, 4 en el medio allí, 5, 6, 7, y veamos-- y veamos, [INAUDIBLE] puede venir aquí. ¿Podemos hacerlo después? Vale, gracias. ¿Y qué tal-- espera, vi una mano en el medio. ¿Qué tal ocho, ofrecido por tus amigos? Sube. 
+
+Así que sube, si quieres. Y Brian, si pudiéramos seguir adelante y equipar a nuestros voluntarios con un número. Vamos a seguir adelante y ver si no podemos resolver juntos la idea de encontrar un algoritmo para ordenar los números a mano. 
+
+Así que en un momento, cada uno de ustedes recibirá un número. Mientras tanto, sigamos adelante y presentemos una breve introducción, quién eres y quizás tu casa. 
+
+AUDIENCIA: [? Crus, ?] Dudley House, de Alemania. 
+
+AUDIENCIA: Curtis, solo estoy de visita. 
+
+ORADOR 1: Maravilloso. 
+
+AUDIENCIA: Ali, estudiante de primer año, [INAUDIBLE], de Turquía. 
+
+AUDIENCIA: Farah [? Foho, ?] de Detroit. 
+
+ORADOR 1: Bien. 
+
+AUDIENCIA: Allison, Hollis porque soy de primer año, de Cleveland. 
+
+AUDIENCIA: Soy Claude. Estoy en Mauer. Y soy de Virginia. 
+
+AUDIENCIA: Soy [? Rohil. ?] Estoy en Wigglesworth. Y soy de Atlanta. 
+
+AUDIENCIA: Soy [? Yowell. ?] También soy de Wigglesworth. Y soy de Nueva York. 
+
+AUDIENCIA: Soy Bonnie. Estoy en Lowell. Soy de Beijing y [? Ann ?] [? Arbor. ?] 
+
+ORADOR 1: Maravilloso. Y ahora estoy notando, como tú también podrías hacerlo, que tenemos nueve voluntarios en el escenario. Así que vamos a seguir adelante y resolver esto. Esta bien. ¿Cuál es tu nombre otra vez? 
+
+AUDIENCIA: Bonnie. 
+
+ORADOR 1: Bonnie, ven aquí. Vas a ser mi asistente, si puedes, mientras buscamos estos elementos. Vamos a seguir adelante y darte el micrófono aquí. A cada uno de ustedes se le ha entregado un número que coincide con esto, que es solo una lista de números sin ordenar. 
+
+Y déjame pedirles que nuestros ocho voluntarios aquí se ordenen. Adelante. 
+
+[VOCES INTERCALADAS] 
+
+ORADOR 1: Y haré que los dirijas después de esto. Excelente. Muy bien hecho. 
+
+[APLAUSOS] 
+
+De acuerdo. Así que déjame preguntarles a cualquiera de ustedes, y les entregaremos el micrófono, si es necesario, ¿cuál fue el algoritmo que usaron para ordenarse? 
+
+AUDIENCIA: Intuición humana. 
+
+ORADOR 1: Intuición humana, está bien. 
+
+[RISAS] 
+
+Agradable. 
+
+[APLAUSOS] 
+
+Bien. ¿Otras formulaciones? ¿Sí? 
+
+AUDIENCIA: Acabo de comprobar si la persona que me dejó, que se supone que es más grande que yo, es más grande que yo. Y si él era más grande que yo, entonces me quedé allí. Y si yo era más grande que él, simplemente intercambiaba lugares con él. 
+
+ORADOR 1: Vale, me gusta eso. Es una especie de enfoque de óptimo local, en el que simplemente miras a la izquierda y a la derecha y arreglas cualquier transposición o desajuste. Y, de hecho, intentemos aplicar esa misma idea. ¿Pueden los ocho reordenarse, así como así, para que estén parados debajo de su número, de modo que estemos deshaciendo la intuición humana que acabamos de ejecutar? 
+
+Y ahora sigamos adelante y digamos, está bien, entonces, Bonnie, si no te importa ayudarnos a dirigirnos allí-- dirigirnos aquí, claramente tenemos ahora una lista de números sin ordenar. Vamos a resolver este problema poco a poco. Entonces, por ejemplo, ustedes dos, ¿sus nombres de nuevo? 
+
+AUDIENCIA: Tris. 
+
+ORADOR 1: Tris. 
+
+AUDIENCIA: Curtis. 
+
+ORADOR 1: Y Curtis. Así que claramente ustedes están fuera de orden. Entonces, ¿cuál sería la solución óptima local aquí? 
+
+AUDIENCIA: Cambiarían de orden. 
+
+ORADOR 1: Bien, hagan eso por favor. Muy bien, ahora consideremos 6 y 8. 
+
+AUDIENCIA: Están bien. 
+
+ORADOR 1: ¿8 y 5? 
+
+AUDIENCIA: Cambiemos otra vez. 
+
+ORADOR 1: Por favor, cambien de nuevo. ¿8 y 2? 
+
+AUDIENCIA: Cambiar. 
+
+ORADOR 1: Bien. ¿8 y 7? 
+
+AUDIENCIA: Cambiar. 
+
+ORADOR 1: ¿8 y 4? 
+
+AUDIENCIA: Cambiar. 
+
+ORADOR 1: ¿8 y--? 
+
+AUDIENCIA: 1. 
+
+ORADOR 1: --¿1? 
+
+AUDIENCIA: Cambiar. 
+
+ORADOR 1: Muy bien. Así que ¿hemos resuelto el problema? 
+
+AUDIENCIA: No. 
+
+ORADOR 1: De acuerdo, no, obviamente no, pero ¿es mejor? ¿Estamos más cerca de la solución? Yo diría que estamos más cerca porque, correcto, como que 8 de alguna manera llegó hasta el destino correcto, aunque todavía tenemos una especie de lío que arreglar aquí. Pero note que la solución mejoró en esta dirección y un poco mejor en esta dirección. Pero vamos a hacer esto de nuevo. 
+
+Entonces, Bonnie, ¿puedes dirigirnos una vez más? 
+
+AUDIENCIA: Sí. Entonces, si procedieran de este orden, ustedes dos cambiarían. 
+
+ORADOR 1: ¿5 y 6? 
+
+AUDIENCIA: Cambiemos otra vez. 
+
+ORADOR 1: ¿6 y 2? 
+
+AUDIENCIA: Mantenerse, y luego la siguiente persona-- 
+
+ORADOR 1: ¿7 y 4? 
+
+AUDIENCIA: Cambiar 7 y 4. 
+
+ORADOR 1: Bien. ¿7 y 1? 
+
+AUDIENCIA: Cambiar 1 y 7. Y luego-- 
+
+ORADOR 1: Entonces, ¿ahora hemos terminado? 
+
+AUDIENCIA: No. 
+
+ORADOR 1: Así que no, pero mira, el problema está mejorando. Está más cerca de la solución porque ahora tenemos 8 en su lugar y 7 en su lugar. Así que le hemos dado un mordisco al problema, por así decirlo. Ahora, podemos hacer esto un poco más rápido. Así que si quieres decirle a todos qué hacer por pares, bastante rápido. Adelante. 
+
+AUDIENCIA: Entonces, todos, solo si están-- 
+
+[RISAS] 
+
+ORADOR 1: Intuición humana, por favor. Pero hagámoslo por pares. 
+
+AUDIENCIA: Bien. Seguro. ¿Podría todo el mundo, si la persona a su derecha es más pequeña que usted, cambiar con ellos y luego hacer eso de nuevo? 
+
+ORADOR 1: Bien. 
+
+AUDIENCIA: Hazlo de nuevo, de nuevo. 
+
+ORADOR 1: Bien. 
+
+AUDIENCIA: De nuevo. Y luego una última vez. 
+
+ORADOR 1: Sí. Entonces, aunque permitimos que se volviera un poco orgánico

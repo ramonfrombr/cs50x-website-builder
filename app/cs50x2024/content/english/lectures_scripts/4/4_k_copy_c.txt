@@ -1,0 +1,103 @@
+So what are the implications then? Let's do one other example here. Let me go ahead and save this as copy dot C. And let's try a very reasonable goal. If I want to go ahead and get the user's input and actually copy a string and capitalize the string from the user, let's see this. So let me go ahead and give myself the temporary training wheels again, just so I can get a string from the human. Let me go ahead and include standard I/O dot h and then an int main void. 
+
+Let me do a simple example, the goal of which now, is to get a string from the user and capitalize a copy thereof. So I'm going to go ahead and do string s gets getString and call it s, as before. I'm going to go ahead and then do string t equals s to make a copy of the variable. And then I'm going to go ahead and say what? Let me go ahead and capitalize the copy. 
+
+And to capitalize the copy, I can just change the first character in t, so t bracket 0, to what? I think we had toupper a while back. Does this seem familiar? You can call the toupper function. And the toupper function, if you don't recall, you technically have to use C type dot h. This might be reminiscent of the second c problem set, where you might have used this in Caesar, or substitution, or the like. 
+
+All right. And now, let me go ahead and print out these two strings. Let me go ahead and print out s. And let me go ahead and print out t. So again, all I've done in this program is get a string from the user, copy that string, capitalize the copy called t. And let's just print out the end results. 
+
+So let me go ahead and save the file. Let me go ahead and make copy. Seems to compile OK. Let me go ahead and run copy. And let me go ahead and type in emma, in all lowercase, deliberately, because I want to see that t is capitalized but not s. 
+
+Hmm. But somehow they're both capitalized. Notice, that emma in all lowercase ended up being both capitalized in s and capitalized in t per the two lines of output. That's a bug? Right? I only capitalized t, how did I accidentally also capitalize s do you think? Any thoughts? 
+
+Doesn't matter if I avert the lights, I still can't see any hands. OK, how about here in front? Yeah. 
+
+AUDIENCE: So when you say t equal s you have to [INAUDIBLE] 
+
+DAVID J. MALAN: Exactly. When I say t equals s on this line, I am getting a second variable called t. And I am copying s. But I'm copying s literally. s as of today, is an address. After all, string is the same thing as char star for both s and t. And so technically, all I'm doing is copying an address. 
+
+So if I go back to my picture from before, this time, if I've gone ahead and typed in an array of emma, with all lowercase-- e-m-m-a --and then a backslash 0, somewhere in memory using getString, and I've gone ahead initially and stored that in a variable called s-- and I don't care about the addresses anymore. I'm just going to use arrows now to depict it graphically. When I created a second variable called t and I set t equal to s, that's like literally copying the arrow that's in s and storing it in t, which means t is also pointing at the same thing. 
+
+Because again, if I didn't do this hand wavy arrow notation, I literally wrote out 0x123. I would have just written out 0x123 in both s and t. So when, in my code, I go ahead and say, you know what, go to the first character in t and then go ahead and uppercase it. Guess what the first character in t is? Well, it's this e. But guess what the first character in s is, literally that same e. 
+
+So this does not suffice to copy a string by just saying t equals s, as it has up until now with every other variable. Any time you've needed a temporary variable or a copy of something this worked. Intuitively, what do we have to do probably instead to truly copy Emma into two different places in memory? Yeah. 
+
+AUDIENCE: Probably create a char or create a variable exactly the same size and copy each character individually. 
+
+DAVID J. MALAN: Nice. So maybe we should give ourselves a variable that has more memory, the same amount of memory being stored for the original Emma, and then copy the characters from s into the space we've allocated for t. And so we can actually do this. 
+
+Let me go ahead and get rid of all but that first line, where I've gotten s as before. And I'm going to go ahead and do this, I'm to say that t is a string-- but you know, we don't need that training wheel anymore. String, char star, even though it looks uglier. Let me go ahead and allocate more memory for myself. How do I do that? 
+
+Well, it turns out-- we've not used this before --there's a C function called malloc, for memory alloca. And all it asks as input is how many bytes you want. 
+
+So how many bytes do I want for Emma to store her name? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID J. MALAN: I heard 4, 5. Why, 5? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID J. MALAN: So we need the null terminating character, e-m-m-a and then backslash 0. So that's 5. So I could literally hard code this here. Of course, this feels a little fragile because I'm asking for any string via getString. I don't know it's going to be Emma. So you know what, let me go ahead and ask a question? Whatever the length is of the human's input in s, go ahead and add 1 to it for the null character and then allocate that many bytes. So now my program's more dynamic. 
+
+And once I have this, well, how can I go ahead and copy this? Well, let me just do old school loop. So for int I get 0, i is less than the string length of s, i plus plus-- so this is just a standard for loop iterating over a string --and I think I can just do t bracket i equals s bracket i in order to copy the two strings. 
+
+There's a subtle bug and a subtle inefficiency though. Anyone want to critique how I've gone about copying s into t? Yeah. 
+
+AUDIENCE: [INAUDIBLE] getString [INAUDIBLE]. 
+
+DAVID J. MALAN: Yeah. This was inefficient. We said a couple of weeks ago this is bad design to just keep asking the question, what's the length the s? What's the length of s? So remember that we had a little optimization a couple of weeks ago. Let's just declare n to equal the string length of s and then do a condition of i is less than n. So we've improved the design there. It's a little more efficient. We're wasting less time. There's still a subtle bug here. How many byte-- yeah. 
+
+AUDIENCE: Aren't you not copying the null terminator 
+
+DAVID J. MALAN: I'm not copying the null terminator. So every other time we've iterated over a string, this has been correct. Iterate up to the length but not through the length of that string. But I technically do want to go one more step this time, or equivalently, one more step. Because I also want to copy not just e-m-m-a, which is str length 4-- e-m-m-a is 4 --I also want to do it a fifth time for the null character. 
+
+So in this case, I'm deliberately going one step past where I usually want to go to make sure I copy 5 bytes for Emma, not just 4. All right. Let's go ahead now and capitalize Emma. So t bracket 0 gets toupper of Emma's first character in the copy. And now let's go ahead and print out both strings s and t, just as before, with percent s of t. 
+
+And let me make one change, I use strlen now. So I know I'm going to get an error if I don't do this. I need to use string dot h-- recall --anytime you use string length. So I'm going to go proactively add that. 
+
+So what's different? This line is the same as before. I'm getting a string from the user. This line is the same as before. I'm capitalizing the first letter. And these two lines are the same. I'm just printing out s and t. So the new idea here is, with my malloc, am I allocating as many bytes as I need to store a copy of Emma, and then with this for loop am I actually doing the actual copy? 
+
+Let me go ahead and do make copy again. Seems to run OK. Run dot slash copy. Type e-m-m-a in all lowercase. And voila, now I've capitalized t but not s. Yeah? 
+
+AUDIENCE: When you use malloc, it's just allocating number of bytes, it doesn't matter where? 
+
+DAVID J. MALAN: It is just allocating that many bytes for you. It does not matter where. You indeed should not care where it is because you're just being handed the address and using C code, can you just go there as you want. All right. 
+
+Let's clean this up too. Surely, people copy strings for years. And in fact, we don't need to do this for loop ourself. It turns out we can simplify this code a little bit by enhancing this as follows. It turns out, if you look in the manual page for strings, you can actually use something called strcopy-- no-- without any vowels. And you can copy into t, the contents of s. strcpy is a function written a long time ago by some other human. And they went ahead and implemented, probably, that loop for us. And it tightens up our code here a little bit more. 
+
+AUDIENCE: Professor? 
+
+DAVID J. MALAN: Yeah. 
+
+AUDIENCE: What if I forgot to copy in the null character at the end? 
+
+DAVID J. MALAN: Really good question. What if you forgot to copy in the null character at the end? It is unclear what would happen. If there just happened to be some bits in that location in memory from earlier-- from some other part of your program --and you try printing out s and printing out t, you might print out many more characters than you actually intended-- if there's no backslash 0 actually there. 
+
+We'll see this more and more. Anytime you don't initialize the value of a variable, it's what's called a garbage value, which means who knows what 0s and 1s are there. You might get lucky and it's all 0s. But most likely it's going to print some garbage value instead. 
+
+All right. Any questions on this? Yeah. 
+
+AUDIENCE: Is the string length function only in the CS50 library? 
+
+DAVID J. MALAN: Is the-- which function? 
+
+AUDIENCE: String length. 
+
+DAVID J. MALAN: Oh, strlen, no, that's in string dot h. That is a standard C thing. 
+
+AUDIENCE: OK. If string length is a standard function but strings are not-- 
+
+DAVID J. MALAN: So what's the dichotomy here then? If strings don't exist-- as I've noted multiple times. And yet, there's functions like strcpy and strlen --what's going on? C calls them char stars. It is c that does not call them strings. We, CS50, and the world in general, calls addresses of sequences of characters, strings. So the only training wheel here, really is the semantics. We gave you a data type called string so that in the first week of C and CS50, you don't have to see or type char star, which would arguably be a lot more cryptic so early on. It's arguably a bit cryptic today too. 
+
+Other questions? All right, yeah. 
+
+AUDIENCE: So is char star ID type [INAUDIBLE] 
+
+DAVID J. MALAN: Is-- say that once more. 
+
+AUDIENCE: Char star ID type [INAUDIBLE]. 
+
+DAVID J. MALAN: Not all of them, but any of them that take a string, yes. In fact, any time you have seen us or TF in CS50 say string, you can literally, starting today, change that expression to char star and it will be one and the same. Phew. 
+
+OK. That was a lot. Let's take our five minute break here with cookies outside.

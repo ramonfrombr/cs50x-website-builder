@@ -1,0 +1,13 @@
+Entonces, ¿qué más podemos hacer? Pues resulta que acabamos de darnos poder a nosotros mismos con un par de características nuevas, una de las cuales es, de nuevo, llamada argumentos de línea de comandos. Ya hemos visto esto antes. ¿Qué describí hoy anteriormente y la semana pasada como un argumento de línea de comandos? ¿Qué ejemplo puse? Alguien, lo escuché aquí.
+
+AUDIENCIA: El guion o.
+
+DAVID MALAN: El guion o. Recuerda que clang puede tener su comportamiento predeterminado, que era un poco molesto, por el que genera un archivo llamado un punto hacia afuera, anulado al decir guion o hola, o guion o cualquier cosa, para cambiar la salida a un archivo de tu elección. Ese era un ejemplo de un argumento de línea de comandos. Lo escribías literalmente después del comando, en una línea, y es un argumento en el sentido que es una entrada al programa. Entonces, un argumento de línea de comandos, más generalmente, es solo una o más palabras que escribes en la solicitud después del programa que te interesa ejecutar.
+
+Entonces, ¿dónde son estos pertinentes aquí? Pues finalmente, ¿podemos ahora explicar de qué trata un poco más este programa canónico? Ya hablamos hoy anteriormente de que incluye io estándar punto h. Solo contiene los prototipos para cosas como printf, y ese se copia y se pega durante el preprocesamiento en el archivo, y demás. Pero lo que no hemos explicado aún, qué vacío hay aquí, y mucho menos qué int hay aquí. Hemos copiado y pegado esto desde hace poco más de una semana.
+
+Pues resulta que en C, no necesitas escribir solo la palabra vacío dentro de esos paréntesis. También puedes escribir, maravillosamente, int arg c, cadena arg v, abrir corchete, cerrar corchete. Ahora, ¿por qué esto es convincente? Pues nota que hay un patrón aquí, y es bastante similar a mi función media hace un momento. Aparentemente, toma dos argumentos principales. Uno es un int, y uno es ¿qué? No es una cadena per se. Es:
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: —una matriz de cadenas. Ahora bien, arg v es una convención para los humanos. Significa vector de argumentos, que es una forma elegante de decir una matriz de argumentos. Y la forma en que sabes que esto es una matriz es por el hecho de que tienes corchetes abiertos y cerrados. Y es una matriz de cadenas porque a la izquierda está la palabra cadena. Este es solo un entero de la vieja escuela llamado int arg c, que representa, por convención, el conteo de argumentos. Sin embargo, podríamos llamar a estos argumentos como quisiéramos. Los humanos por décadas los han llamado arg c y arg v, justo como mi función media tomaba la longitud de una matriz y el número de puntuaciones dentro de ella.

@@ -1,0 +1,13 @@
+Pero para un programa como hello.c, que involucraba unos cuantos archivos diferentes. Por ejemplo, este código volvía a implicar mi código que escribimos la semana pasada. Implica la biblioteca CS50, que el personal escribió hace años. E implica io.h estándar. Ese es otro archivo. Son como tres archivos diferentes que Clang, francamente, tiene que compilar por ti.
+
+Ahora sería muy tedioso si tuviéramos que ejecutar Clang como tres veces para hacer toda esta compilación. Afortunadamente, no lo hacemos. Todo sucede automáticamente. Entonces, el último paso para compilar un programa después de haber sido preprocesado, después de haber sido compilado, después de haber sido ensamblado, es combinar todos los ceros y unos de los archivos involucrados en un archivo grande, como Hello o a.out.
+
+Entonces, si hello.c comenzó como código fuente, al igual que CS50.C, en algún lugar del disco duro de la computadora, al igual que Standard IO.C, en algún lugar del disco duro de la computadora, resulta que printf está realmente en su propio archivo dentro de la E/S estándar. la biblioteca. Pero estos son los tres archivos involucrados para el programa que acabo de describir.
+
+Entonces, una vez que seguimos adelante y ensamblamos este, se convierte en un montón de ceros y unos. Ensamblamos este, un montón de ceros y unos. Este, un montón de ceros y unos. Son como tres archivos separados que luego se vinculan entre sí, algo mezclados, en un gran archivo llamado Hello o llamado a.out.
+
+Y Dios mío, eso es mucha complejidad. Pero eso es lo que los seres humanos han estado construyendo y desarrollando durante las últimas décadas en lo que respecta a la escritura de software. En el pasado, empezó como ceros y unos. Eso no fue divertido. El lenguaje ensamblador, por muy aterrador que parezca, en realidad era un poco más fácil, un poco más accesible para que los humanos escribieran.
+
+Pero finalmente, los humanos nos cansamos de eso, y así nacieron lenguajes como C y C++ y Python y PHP y Ruby y otros. Ha sido una evolución de los lenguajes a lo largo del camino. Así que ahora podemos abstraernos en la compilación. Cuando compila su código, suceden todas esas cosas. Pero todo lo que realmente nos importa al final del día es la entrada, su código fuente, la salida como código de máquina.
+
+Pero esos son los diversos pasos que ocurren. Y si alguna vez ves comandos de aspecto críptico en la pantalla, puede que en efecto se relacionen con algunos de esos pasos intermedios. Muy bien, ¿alguna pregunta sobre qué es compilar o preprocesar, compilar, ensamblar o vincular? ¿Algo en absoluto?

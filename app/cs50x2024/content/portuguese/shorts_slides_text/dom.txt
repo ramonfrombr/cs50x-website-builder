@@ -1,0 +1,60 @@
+[1]
+
+Modelo de Objeto de Documento
+• Como vimos, os objetos do JavaScript são incrivelmente flexíveis e podem conter vários campos, mesmo quando esses campos são outros objetos.
+• O objeto documento é uma maneira de empregar esse paradigma, por meio do qual esse objeto organiza todo o conteúdo de uma página da Web.
+• Ao organizar uma página inteira em um objeto JavaScript, podemos manipular os elementos da página programaticamente.
+
+[11]
+
+Modelo de Objeto de Documento
+• O objeto documento em si, assim como todos os objetos nele contidos, têm várias propriedades e vários métodos que podem ser usados para detalhar uma parte muito específica de seu site.
+• Ao redefinir essas propriedades ou chamar determinados métodos, o conteúdo de nossas páginas da Web pode mudar sem que precisemos atualizar a página.
+
+[19]
+
+Modelo de Objeto de Documento
+• Propriedades do DOM
+Propriedade do DOM
+Descrição
+innerHTML
+Contém o HTML dentro de um conjunto de tags HTML.
+nodeName
+O nome de um elemento HTML ou o atributo de um elemento.
+id
+O atributo “id” de um elemento HTML.
+parentNode
+Uma referência ao nó um nível acima no DOM.
+childNodes
+Um conjunto de referências aos nós um nível abaixo no DOM.
+attributes
+Um conjunto de atributos de um elemento HTML.
+style
+Um objeto que encapsula o estilo CSS/HTML de um elemento.
+
+[25]
+
+Modelo de Objeto de Documento
+• Métodos de DOM
+Método de DOM
+Descrição
+getElementById(id)
+Obtém o elemento com uma determinada ID abaixo deste ponto no DOM.
+getElementsByTagName(tag)
+Obtém todos os elementos com a determinada tag abaixo deste ponto no DOM.
+appendChild(node)
+Adiciona o determinado nó ao DOM abaixo deste ponto.
+removeChild(node)
+Remove o nó filho especificado do DOM.
+
+[26]
+
+Modelo de Objeto de Documento
+• Se começarmos do documento, podemos chegar a qualquer parte de nossa página da Web que escolhermos, por meio do uso cuidadoso de propriedades e métodos de DOM.
+
+[27]
+
+Modelo de Objeto de Documento
+• jQuery
+• Como a manipulação de DOM é tão comum no JavaScript e como o JavaScript para fazer isso pode ficar bem extenso, as pessoas queriam alternativas.
+• O jQuery é uma biblioteca de código aberto popular, lançada em 2006, projetada para simplificar a criação de scripts do lado do cliente (como manipulações de DOM).

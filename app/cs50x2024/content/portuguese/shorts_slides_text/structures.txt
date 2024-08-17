@@ -1,0 +1,69 @@
+[1]
+
+Estruturas
+• Estruturas fornecem uma maneira de unificar diversas variáveis de diferentes tipos em um novo tipo de variável, que pode ser alocada em seu próprio nome de tipo.
+• Nós usamos estruturas (structs) para agrupar elementos de uma variedade de tipos de dados que têm uma conexão lógica.
+• Pense em uma estrutura como uma “supervariável”.
+
+[6]
+
+Estruturas
+struct carro
+{
+int ano;
+char modelo[10];
+char placa[7];
+int hodômetro;
+double tamanho_motor;
+};
+
+[7]
+
+Estruturas
+• Depois de definir uma estrutura, o que normalmente fazemos em arquivos .h separados ou no começo de nossos programas fora de quaisquer funções, criamos um novo tipo de fato.
+• Isso significa que podemos criar variáveis desse tipo usando a sintaxe familiar.
+• Também podemos acessar os diversos campos (conhecidos também como membros) da estrutura usando o operador de ponto (.)
+
+[11]
+
+Estruturas
+// declaração de variável
+struct carro meu_carro;
+// acesso ao campo
+meu_carro.ano = 2011;
+strcpy(meu_carro.placa, “CS50”);
+meu_carro.hodômetro = 50505;
+
+[12]
+
+Estruturas
+• Estruturas, como variáveis de todos os outros tipos de dados, não precisam ser criadas na pilha. Podemos alocar estruturas dinamicamente em tempo de execução se o programa exigir.
+• Para acessar os campos de nossas estruturas nessa situação, primeiro precisamos desreferenciar o ponteiro para a estrutura e então podemos acessar seus campos.
+
+[16]
+
+Estruturas
+// declaração de variável
+struct carro *meu_carro = malloc(sizeof(struct carro));
+// acesso ao campo
+(*meu_carro).ano = 2011;
+strcpy((*meu_carro).placa, “CS50”);
+(*meu_carro).hodômetro = 50505;
+
+[17]
+
+Estruturas
+• Isso é meio incômodo. Então, como você poderia esperar, há uma maneira mais curta!
+• O operador de seta (->) torna este processo mais fácil. É um operador que faz duas coisas em sucessão:
+• Primeiro, desreferencia o ponteiro no lado esquerdo do operador.
+• Segundo, acessa o campo no lado direito do operador.
+
+[19]
+
+Estruturas
+// declaração de variável
+struct carro *meu_carro = malloc(sizeof(struct carro));
+// acesso ao campo
+meu_carro->ano = 2011;
+strcpy(meu_carro->placa, “CS50”);
+meu_carro->hodômetro = 50505;

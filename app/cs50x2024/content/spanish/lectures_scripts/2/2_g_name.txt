@@ -1,0 +1,7 @@
+Muy bien. Así que más allá de eso, estoy seguro de que ya te has encontrado, después de solo una semana, con errores en tu software. Y de hecho, una de las mayores habilidades que puedes adquirir en una clase de programación no es solo cómo escribir código, sino cómo depurar código, probablemente el tuyo. Y si alguna vez te has preguntado de dónde viene esta frase, esta noción de depuración, en realidad es parte de la mitología.
+
+Esta es una libreta escrita por Grace Hopper, una científica informática muy famosa que trabajó hace años con algunos colegas en lo que se llamó el sistema Mark 2. Si alguna vez has caminado por el Harvard Science Center, hay una gran parte de una máquina en la planta baja del Science Center. Ese es el Mark 1, el precursor.
+
+Bueno, se descubrió que el Mark 2 en algún momento tenía literalmente un error en su interior, lo que estaba causando un problema. Una especie de polilla. Y Grace Hopper en realidad hizo este registro aquí, si hacemos zoom, el primer caso real de encontrar un error. Y aunque otras personas habían usado la expresión "error" antes para referirse a errores o problemas en los sistemas, esta es realmente la tradición que la gente de ciencias de la computación recuerda.
+
+Entonces, los errores son solo errores en los programas, cosas que seguramente no pretendías. Y hoy consideraremos cómo podemos capacitarte, mucho más que la semana pasada, para que resuelvas tus propios problemas y depures tu software.

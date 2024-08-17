@@ -1,0 +1,39 @@
+So what does it look like? It's a little strong, because we need to leave room for ourselves on the board with lots of memory. A trie is a tree, each of whose nodes is essentially an array. 
+
+So notice the pattern here. Computer scientists over time have been kind of clever taking this idea, this idea, mashing them together and creating some monster data structure, but that gives you some savings of time or space. 
+
+So this array at the very top represents the roots of this trie, which again is a tree whose nodes are arrays. And notice that the array is of size 26, for the sake of discussion, A through Z, or 0 through 25. 
+
+A trie does this. If you want to store a name in a trie, what you do, in this case, is look at every letter in the word in question. So for Harry' it would be H-a-r-r-y. We're not just looking at the first, the second, and third. We're looking at all of them. 
+
+And what we do is this. Suppose the first letter in the person's name or their name tag or the word more generally is an H. You go ahead and go to that index. And if there's no child node, there's no tree yet below it, another branch, if you will, you allocate another node. And another node just means another array. And so we've drawn two arrays on the board. 
+
+This now has the letter A highlighted. All of the letters are technically there, because it's of course 0 through 25. But we're only highlighting the letters we care about for the sake of this example. 
+
+Here is H-a-g. So it looks like the first name tag I'm trying to install into this data structure is Hagrid. Notice now that g is inside of that array. I want to go now to r for Hagrid. That gives me another array. Now i, now d. d is the end of his name. So I'm going to just color in green, or I can use like a Boolean flag in C code that just says someone's name ends here. 
+
+So notice, I've implicitly stored Hagrid name now in this data structure by storing one node, that is one array, for every letter in his name. But there's this slight efficiency here because there's other people in this story besides Hagrid whose names are prefixes or share common prefixes. 
+
+So, for instance, suppose I want to install Harry into this data structure. He is H-a-r-r-y. And so that gives me a couple of more nodes. And if I go ahead now and install Hermione in this, notice now I have even more nodes in the tree. But some of them are shared. If you start at the very top and look at the H, notice that both Hagrid and Harry and Hermione at least share at least one node in common. 
+
+Now, what's cool about this ultimately? So what is the running time of searching for someone in this data structure if there's n people already in it? Right now n equals 3 because there's three people in it, even though there's a lot of nodes. But what's the running time for searching this data structure to see has Harry picked up his name tag already? Has Hermione picked up hers? Has Hagrid picked up his? 
+
+Well, how many steps does it take to find Harry or Hermione or Hagrid in this data structure? For Harry, it's H-a-r-r-y. So it's five steps maximally. For Hagrid it's H-a-g-r-i-d. It's six steps maximally. And H-e-r-m-i-o-n-e, 8 steps total. 
+
+And it's probably the case that if we read through the books, there is going to be some upper bound on the length of someone's name. I don't know what it is. It's probably 20 characters. Maybe 30 if it's crazy long. But there is some fixed value. 
+
+Anytime you have a fixed value, that's what you by definition in CS and in math call a constant. If it's 20, it's 30, it doesn't matter. But it's fixed. People's names aren't growing every year in length. There's some hard upper bound. 
+
+And so technically, if it only takes you five steps or six steps or eight steps to find Harry or Hagrid or Harry or Hermione, that is technically constant time or, as we've said, Big O of 1. So we can actually then achieve, truly for searching this data structure, for inserting this data structure, truly what we call big O of k where k is some constant. 
+
+But a constant is the same thing, asymptotically, per our discussion in Week 3, of big O of 1. These are effectively constant time, because to find Harry, you look only at H-a-r-r-y. It doesn't matter if there's 1 million other characters in that trie already. It doesn't matter if there's Hermione and Hagrid and everyone else from the seven books in the data structure, because the only nodes you're looking at are the ones representing H-a-r-r-y. 
+
+And that's a powerful thing. Every other algorithm we've discussed thus far, certainly for searching and sorting, has somehow been slowed down by how many other names or numbers are in the data structure. That is not the case for this one here. 
+
+However, there is a price being paid. What appears to be the price that we're paying to gain that really low running time? 
+
+AUDIENCE: Memory. 
+
+DAVID MALAN: Memory. I mean, my god, it barely fits on the slide. And this is just three names. You're spending 26 amount of the memory to store one character. 
+
+Now there's some optimizations. Over time, if you insert a lot of names, some of these nodes will be shared. But this is a very wide, very dense data structure, so to speak, because it's using so much memory to give you that super amazing running time of theoretically constant time. So again this theme of trade-offs is going to persist in the remaining weeks of the semester where to gain one resource, we're going to have to spend another. So that there is a trie.

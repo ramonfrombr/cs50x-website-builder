@@ -1,0 +1,118 @@
+[1]
+Pointeurs de fichiers
+• La capacité à lire et écrire des données dans des fichiers est le principal moyen de stocker des données persistantes, des données qui ne disparaissent pas lorsque votre programme s'arrête.
+• L'abstraction des fichiers fournie par C est implémentée dans une structure de données appelée FILE.
+• Presque universellement lorsque nous travaillons avec des fichiers, nous utilisons des pointeurs vers eux, FILE*.
+
+[2]
+Pointeurs de fichiers
+• Toutes les fonctions de manipulation de fichiers se trouvent dans stdio.h.
+• Toutes acceptent FILE* comme l'un de leurs paramètres, à l'exception de la fonction fopen(), qui est utilisée pour obtenir un pointeur de fichier en premier lieu.
+• Voici quelques-unes des fonctions d'entrée/sortie (I/O) de fichiers les plus courantes avec lesquelles nous allons travailler :
+fopen()
+fclose()
+fgetc()
+fputc()
+fread()
+fwrite()
+
+[3]
+Pointeurs de fichiers
+• fopen()
+• Ouvre un fichier et renvoie un pointeur de fichier vers celui-ci.
+• Vérifiez toujours la valeur de retour pour vous assurer que vous n'obtenez pas NULL.
+FILE* ptr = fopen(<filename>, <operation>);
+
+[7]
+Pointeurs de fichiers
+• fclose()
+• Ferme le fichier pointé par le pointeur de fichier donné.
+fclose(<file pointer>);
+
+[9]
+Pointeurs de fichiers
+• fgetc()
+• Lit et renvoie le caractère suivant dans le fichier pointé.
+• Remarque : L'opération du pointeur de fichier passé en paramètre doit être "r" pour la lecture, sinon vous subirez une erreur.
+char ch = fgetc(<file pointer>);
+
+[11]
+Pointeurs de fichiers
+• La capacité d'obtenir des caractères uniques dans des fichiers, s'ils sont encapsulés dans une boucle, signifie que nous pourrions lire tous les caractères d'un fichier et les imprimer à l'écran, un par un, essentiellement.
+• Nous pourrions mettre cela dans un fichier appelé cat.c, d'après la commande Linux "cat" qui fait essentiellement cela.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+printf(“%c”, ch);
+
+[12]
+Pointeurs de fichiers
+• La capacité d'obtenir des caractères uniques dans des fichiers, s'ils sont encapsulés dans une boucle, signifie que nous pourrions lire tous les caractères d'un fichier et les imprimer à l'écran, un par un, essentiellement.
+• Nous pourrions mettre cela dans un fichier appelé cat.c, d'après la commande Linux "cat" qui fait essentiellement cela.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+printf(“%c”, ch);
+
+[14]
+Pointeurs de fichiers
+• fputc()
+• Écrit ou ajoute le caractère spécifié au fichier pointé.
+• Remarque : L'opération du pointeur de fichier passé en paramètre doit être "w" pour l'écriture ou "a" pour l'ajout, sinon vous subirez une erreur.
+fputc(<character>, <file pointer>);
+
+[17]
+Pointeurs de fichiers
+• Maintenant, nous pouvons lire des caractères à partir de fichiers et y écrire des caractères. Élargissons notre exemple précédent pour copier un fichier vers un autre, au lieu d'imprimer à l'écran.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+printf(“%c”, ch);
+
+[18]
+Pointeurs de fichiers
+• Maintenant, nous pouvons lire des caractères à partir de fichiers et y écrire des caractères. Élargissons notre exemple précédent pour copier un fichier vers un autre, au lieu d'imprimer à l'écran.
+• Nous pourrions mettre cela dans un fichier appelé cp.c, d'après la commande Linux "cp" qui fait essentiellement cela.
+char ch;
+while((ch = fgetc(ptr)) != EOF)
+fputc(ch, ptr2);
+
+[19]
+Pointeurs de fichiers
+• fread()
+• Lit <qty> unités de taille <size> dans le fichier pointé et les stocke en mémoire dans un tampon (généralement un tableau) pointé par 
+<buffer>.
+• Remarque : L'opération du pointeur de fichier passé en paramètre doit être "r" pour la lecture, sinon vous subirez une erreur.
+fread(<buffer>, <size>, <qty>, <file pointer>);
+
+[24]
+Pointeurs de fichiers
+• fwrite()
+• Écrit <qty> unités de taille <size> dans le fichier pointé en les lisant à partir d'un tampon (généralement un tableau) pointé par <buffer>.
+• Remarque : L'opération du pointeur de fichier passé en paramètre doit être "w" pour l'écriture ou "a" pour l'ajout, sinon vous subirez une erreur.
+fwrite(<buffer>, <size>, <qty>, <file pointer>);
+
+[25]
+Pointeurs de fichiers
+• fwrite()
+• Écrit <qty> unités de taille <size> dans le fichier pointé en les lisant à partir d'un tampon (généralement un tableau) pointé par <buffer>.
+• Remarque : L'opération du pointeur de fichier passé en paramètre doit être "w" pour l'écriture ou "a" pour l'ajout, sinon vous subirez une erreur.
+int arr[10];
+fwrite(arr, sizeof(int), 10, ptr);
+
+[30]
+Pointeurs de fichiers
+• De nombreuses autres fonctions utiles abondent dans stdio.h pour que vous puissiez les utiliser. Voici quelques-unes de celles que vous pourriez trouver utiles !
+Fonction
+Description
+fgets()
+Lit une chaîne complète dans un fichier.
+fputs()
+Écrit une chaîne complète dans un fichier.
+fprintf()
+Écrit une chaîne formatée dans un fichier.
+fseek()
+Vous permet de rembobiner ou d'avancer rapidement dans un fichier.
+ftell()
+Vous indique à quelle position (octet) vous vous trouvez dans un fichier.
+feof()
+Vous indique si vous avez lu jusqu'à la fin d'un fichier.
+ferror()
+Indique si une erreur s'est produite lors du travail avec un fichier.

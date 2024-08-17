@@ -1,0 +1,13 @@
+Hay un tipo de estructura de datos opuesta a la que mencioné hace un momento. Y por lo general se conocen como pilas. Las pilas en el mundo real pueden estar en el comedor, ¿verdad? Como aquí, con bandejas. Y tienen propiedades fundamentalmente diferentes, como que si el personal limpia las bandejas y las pone aquí, sería bastante detestable que para obtener la tuya tuvieras que seguir un orden FIFO y obtener la primera que pusieron y sacarla primero.
+
+Nadie hace eso, siendo realistas. Si tienes una gran pila de bandejas en el comedor, probablemente impongas un orden LIFO, el último que entra, el primero que sale. Así que si esta es la bandeja más reciente o limpia, es probable que tú, como humano, simplemente cojas la de arriba, aunque eso no sea realmente justo para las que están debajo. Pero no importa en este caso particular.
+
+Así que una pila te da la propiedad opuesta. ¿Y dónde más puedes ver esto? Bueno, en tu bandeja de entrada de Gmail. Si usas Gmail, tu bandeja de entrada, lo más probable es que por defecto esté configurada como una pila. ¿Dónde terminan tus correos electrónicos más recientes?
+
+AUDIENCIA: Arriba.
+
+DAVID MALAN: Arriba. Esto es estupendo porque es una función en la que siempre ves tu correo más reciente. Sin embargo, hay un inconveniente para tus amigos que te enviaron un correo electrónico hace una hora y cuyos correos electrónicos están ahora aquí, en la página 2 de tu correo electrónico.
+
+Así que aquí también hay compensaciones. Las pilas pueden tener propiedades deseables, como obtener tu bandeja rápidamente, ver tu correo electrónico más reciente. Pero si eres como yo, tan pronto como un correo electrónico cae en la página 2, es posible que nunca vuelvas a él si la pila de bandejas nunca se agota. Francamente, puede que haya en algún comedor del campus alguna bandeja por aquí abajo que no se haya usado en años, porque siguen rellenando la pila y nosotros seguimos cogiendo de arriba. Esa sería una mala propiedad para muchos contextos, pero no necesariamente para todos.
+
+Así que resulta que también hay otra estructura de datos... oh, y las operaciones allí no se llaman enqueue y dequeue. Por convención se llaman push y pop, donde esto significa introducir un elemento en la pila. Incluso si es muy suave, eso es empujar. Sacar significa quitar el elemento superior. Así que es solo una nomenclatura que significa añadir y quitar elementos.

@@ -1,0 +1,53 @@
+Bien, d'accord, et si je voulais aller plus loin et combiner ces deux idées en un programme final, à savoir, un annuaire téléphonique ? Alors laissez-moi fermer ces fichiers. Laissez-moi créer un nouveau fichier. 
+
+Je l'appellerai phonebook.c. Et intégrons en fait tous ces blocs de construction comme suit, cs50.h à nouveau. Je vais continuer et inclure standard io.h. Je vais continuer et inclure string.h comme précédemment. Et maintenant, je vais faire int main void. 
+
+Et maintenant, je veux implémenter l'idée de rechercher un annuaire téléphonique, comme dans la semaine 0, mais maintenant en le faisant en C. Alors faisons simple. Et nous n'aurons que quatre noms dans cet annuaire téléphonique, donc string names 4 equals. Et je vais utiliser ma même nouvelle astuce juste pour m'épargner quelques lignes de code, Emma, Rodrigo, puis, "Brian" entre guillemets, "moi-même" entre guillemets. 
+
+Mais ensuite nos numéros. Alors, comment devrions-nous stocker un numéro de téléphone, quel type de données proposeriez-vous ? 
+
+PUBLIC : [INAUDIBLE] 
+
+INTERVENANT 1 : Pardon ? 
+
+PUBLIC : String. 
+
+INTERVENANT 1 : String ? Pourquoi string ? J'ai l'impression que les numéros de téléphone sont des nombres et des chaînes de caractères -- 
+
+PUBLIC : Peut-être que si vous le stockez sous forme de [INAUDIBLE] ou d'entier, cela implique que vous devez faire beaucoup de [INAUDIBLE]. Vous n'avez pas [INAUDIBLE] le [INAUDIBLE], comme, [? add ?] [INAUDIBLE] numéro un tiret ou quelque chose comme ça. Il serait très difficile de manipuler un entier. 
+
+INTERVENANT 1 : Exactement. Donc, pour résumer, si un numéro de téléphone contient des tirets, des parenthèses ou peut-être des signes plus à l'étranger, ce sont des caractères. Ce ne sont pas des chiffres. Ainsi, ils ne rentreront pas dans des ints ou des longs. Donc, même si nous l'appelons un numéro de téléphone, maintenant que vous êtes programmeur, ce n'est pas vraiment un nombre à proprement parler, mais plutôt une chaîne de caractères qui ressemble à un nombre. 
+
+Donc string est probablement le meilleur pari ici. Et si vous considérez également que dans certaines zones géographiques, vous devez parfois composer le 0 pour composer le numéro de quelqu'un s'il est local. Mais s'il s'agit d'un 0, il va être supprimé mathématiquement parce que les zéros non significatifs n'ont pas d'importance. Donc, encore une fois, modéliser des choses qui ressemblent à des nombres mais qui n'en sont pas vraiment sous forme d'entiers est probablement la mauvaise décision. 
+
+Alors faisons effectivement des chaînes de caractères numériques. Et je vais me donner quatre chiffres ici. Et faisons 617 555 et quoi, 0100. Nous ferons 617 555 comme dans les films, 0101. Laissez-moi corriger ça. Ensuite, nous ferons 617 555 [? 0102. ?] Et enfin mon numéro, qui sera -- oups -- qui sera 617 555 0103. 
+
+Et je fais le même genre d'astuce, mais cela me donne maintenant deux tableaux, un appelé noms, un appelé nombres. Et c'est parti, pour int i gets 0, i moins de 4 i plus plus, donc même boucle rapide que précédemment. Je vais continuer et comparer maintenant. Je recherche Emma. Et plus précisément maintenant je recherche son numéro et pas seulement son nom. Donc, je veux imprimer son numéro cette fois, pas seulement trouvé ou pas trouvé. 
+
+Donc, comme précédemment, je peux dire que si l'on compare les deux chaînes à names bracket i et, entre guillemets, "Emma" est égale à 0, je sais que j'ai trouvé Emma. Et si je veux continuer et imprimer le numéro de téléphone d'Emma, que dois-je faire ici ? Ce n'est pas des noms. Ce ne sont pas des nombres. Que doit-il y avoir entre les guillemets ? 
+
+PUBLIC : [INAUDIBLE]. 
+
+INTERVENANT 1 : Oui, donc [? %s, ?] rappelez-vous, juste notre espace réservé familier pour les chaînes de caractères. Et ensuite, pas de noms ici parce que je sais que je cherche Emma. Ici, je veux continuer et mettre un numéro. C'est donc un tableau séparé, mais c'est au même endroit, crochet 1. Laissez-moi enregistrer cela. 
+
+Et ici, je vais continuer et dire printf introuvable, si nous ne trouvons pas Emma, même si nous le ferons sûrement dans ce cas. Et je vais apprendre ma leçon. Je vais renvoyer 0 pour la réussite et renvoyer 1 pour l'échec dans ce cas. Laissez-moi enregistrer le fichier, faire défiler un peu ma fenêtre de terminal vers le haut, faire un téléphone et entrer, compiler OK point barre oblique téléphone. Et que dois-je voir lorsque je lance le programme maintenant ? 
+
+PUBLIC : [INAUDIBLE] 
+
+INTERVENANT 1 : 617 555 0100, espérons-le. Donc ce code est correct. Et c'est l'occasion maintenant pour nous de le critiquer, mais dans une autre perspective. C'est correct. J'ai deux tableaux, tous deux de taille 4, l'un avec des noms, l'autre avec des nombres, le code trouve Emma, imprime son numéro, renvoie 0. J'ai l'impression d'avoir tout fait correctement. 
+
+Mais est-ce que quelque chose vous contrarie peut-être dans la conception de ce code ? Pourrions-nous faire mieux ? Y a-t-il quelque chose d'un peu arbitraire, d'un peu artificiel, d'un peu dangereux dans ce code ? Des aperçus ? Oui, ici ? 
+
+PUBLIC : [INAUDIBLE]. 
+
+INTERVENANT 1 : Désolé, un peu plus fort. 
+
+PUBLIC : [INAUDIBLE] [? deux ?] [? nombre à un chiffre ?] [? des deux côtés ?] [INAUDIBLE]. 
+
+INTERVENANT 1 : Nous pourrions donc utiliser un tableau à deux dimensions pour stocker des données comme celle-ci. Je proposerais que ce ne soit pas strictement nécessaire, et cela pourrait rendre les choses un peu plus compliquées, mais c'est aussi une alternative raisonnable. D'autres réflexions ? 
+
+PUBLIC : [INAUDIBLE] le numéro d'Emma [INAUDIBLE]. 
+
+INTERVENANT 1 : Oui, cela suppose que le numéro d'Emma est le premier. Et cela semble raisonnable, non ? Le nom d'Emma est le premier. Donc vraisemblablement son numéro est le premier. Le nom de Rodrigo est le deuxième. Donc vraisemblablement son numéro est le deuxième. Et c'est peut-être vrai. 
+
+Mais franchement, c'est ça le problème, ce genre de système d'honneur que j'ai promis de garder les noms dans le bon ordre, et je promets de garder les numéros dans le bon ordre, alors qu'en réalité, c'est juste une sorte d'accord tacite entre moi et moi-même, ou si je travaille avec des collègues ou des camarades de classe, que nous acceptons tous de garder ces choses synchronisées. Et c'est dangereux, n'est-ce pas ? Si vous aviez plus de nombres que quatre, vous pourriez imaginer que les choses se dérèglent très vite légèrement. Ou, Dieu nous en préserve, vous triez les noms par ordre alphabétique, comment faites-vous pour trier également les nombres et garder les choses ensemble ?

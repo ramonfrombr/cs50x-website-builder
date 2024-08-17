@@ -1,0 +1,33 @@
+[1]
+Ordenamiento por selección
+• En el algoritmo de ordenamiento por selección, la idea es encontrar el elemento sin ordenar más pequeño y agregarlo al final de la lista ordenada.
+En pseudocódigo:
+• Repetir hasta que no queden elementos sin ordenar:
+• Buscar el valor más pequeño en la parte sin ordenar
+• Intercambiar el valor más pequeño encontrado con el primer elemento de la parte sin ordenar
+
+[18]
+
+Ordenamiento por selección
+1
+2
+3
+4
+5
+6
+En pseudocódigo:
+Repetir hasta que no queden elementos sin ordenar:
+Buscar el valor más pequeño en la parte sin ordenar
+Intercambiar el valor más pequeño encontrado con el primer elemento de la parte sin ordenar
+
+[19]
+
+Ordenamiento por selección
+• Escenario de caso peor: Tenemos que iterar sobre cada uno de los n elementos de la matriz (para encontrar el elemento sin ordenar más pequeño) y debemos repetir este proceso n veces, ya que en cada pasada se ordena un solo elemento.
+• Escenario de mejor caso: ¡Exactamente lo mismo! No hay garantía de que la matriz esté ordenada hasta que pasemos por este proceso todos los elementos.
+
+[20]
+
+Ordenamiento por selección
+O(n2)
+Ω(n2)

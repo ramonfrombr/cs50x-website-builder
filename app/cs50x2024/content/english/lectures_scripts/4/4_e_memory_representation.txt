@@ -1,0 +1,35 @@
+All right. So let's make this a little more visual. So if this is again my computer's memory, let me go ahead and pull up the slide from before. And the goal at hand is to visualize really these two lines of code. Give me a variable called n and store in it 50-- just like Week 1 --then also give me a variable called p and store in it the address of n. That's now in Week 4. What does this look like? 
+
+Well, my computer's memory. Let's go ahead and put n on the screen again. And n might be down there arbitrarily somewhere in memory. And it's called n, the value is 50. Technically, that 50 is somewhere. And let's just arbitrarily for discussion sake, say it address 0x 12345678, so somewhere arbitrary. 
+
+What does p look like in this picture? Well p is a variable, which means it's a bunch of bits that can store information. And let's just propose that they're up here in the middle. This variable is called p. What value is p storing? It's literally storing 0x12345678, which is again, the address of the value n. So that's all that's going on here. 
+
+But honestly, this is getting so low level. And even my sort of eyes are glazing over as we start talking about these low level details. Turns out that pointers lend themselves to abstraction. And in fact, we can start to do that already. 
+
+Let's just focus now in the absence of memory, just on these two values. This big rectangle here represents a variable called p, which stores an address. This rectangle here represents another variable called n that storing the number 50. Technically speaking, I don't really want to care moving forward what address of n is. I just want you to know that I can access it. 
+
+And so would a computer scientist would typically do is never talk about specific addresses-- certainly never write them down like I have thus far --but instead, just literally draw an arrow that conceptually says that this variable p is pointing at the number 50. And we can very quickly start to move away from the actual addresses in question. 
+
+And in fact, we can visualize this even a little metaphorically. So for instance, here is, for instance, a mailbox. And suppose that this is address 123. What is in address 123? Well it's a variable of type int, called n, looks like it's storing the number 50. Right? We saw these letters-- these numbers last week. So here's the number 50, which is an integer inside of this variable, today, represented as a mailbox instead of as a locker. 
+
+Well suppose that this mailbox over here is not n but suppose this is p. And it happens to be an address 456. But who really cares? If this variable p is a pointer to an integer, namely that one over there, when I open this door, what am I going to find? Well I'm hoping I find the equivalent of-- we picked these up at the Coop earlier --the equivalent of a conceptual pointer saying the number n is over there. 
+
+But what specifically, at a lower level, is actually inside this mailbox if that variable n is at location 0x123? What's probably inside this mailbox? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID J. MALAN: Yeah, the address, indeed, 123. So it's sort of like a treasure map if you will. Oh, I have to go to 123 to get this value. Oh, the integer in question is indeed 50. And that's the fundamental difference. This is the int that happens to be inside of this variable of type int. This is the address that's a pointer that's in this other variable, p, but that is conceptually, simply pointing from one variable to another, thereby giving any sort of conceptual breadcrumbs. 
+
+And we'll see-- frankly, in one week --how amazingly powerful it is. When you can have one piece of memory pointing at another, pointing at another, pointing at another, you can start to construct very sophisticated data structures, as they're called, things like family trees, and lists, and other data structures that you might have heard of. Or even if you haven't, these will be the underpinnings next week of all of today's fanciest algorithms used by, certainly the Googles, and the Facebooks, and the Microsofts of the world to manage large data sets. That's where we're going next week, in terms of application. 
+
+So questions about that representation? Yeah, in the middle. 
+
+AUDIENCE: Does that mean that your memory has to be twice as big? 
+
+DAVID J. MALAN: Sorry can you say it once more? 
+
+AUDIENCE: Is that to say your memory has to be twice as big to store pointers? 
+
+DAVID J. MALAN: Ah, really good question. Is it the case that your pointers need to be twice as big? Not necessarily, just, this is the way life is these days. On most modern Macs and PCs, pointers use 64 bits-- the equivalent of a long, if you recall that brief discussion in Week 1. So I deliberately drew my pointer on the screen here as taking up 8 bytes or 64 bits. 
+
+I've deliberately drawn my integer n as taking up 4 bytes or 32 bits. That is convention these days on modern hardware. But it's not necessarily the case. Frankly, I could not find a bigger mailbox at Home Depot, so we went with two identical different colored ones. So metaphor is imperfect.

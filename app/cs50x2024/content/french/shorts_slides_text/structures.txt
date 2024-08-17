@@ -1,0 +1,70 @@
+[1]
+
+Structures
+• Les structures offrent un moyen d'unifier plusieurs variables de différents types dans un nouveau type de variable unique à laquelle peut être assigné son propre nom de type.
+• Nous utilisons les structures (structs) pour regrouper des éléments de différentes sortes de types de données qui ont une connexion logique.
+• Considérez une structure comme une « super variable ».
+
+[6]
+
+Structures
+struct voiture
+{
+int année;
+char modèle[10];
+char plaque[7];
+int odomètre;
+double cylindrée;
+};
+
+[7]
+
+Structures
+• Une fois que nous avons défini une structure, ce que nous faisons généralement dans des fichiers .h distincts ou en haut de nos programmes en dehors des fonctions,
+nous avons véritablement créé un nouveau type.
+• Cela signifie que nous pouvons créer des variables de ce type en utilisant la syntaxe habituelle.
+• Nous pouvons également accéder aux différents champs (également appelés membres) de la structure en utilisant l'opérateur point (.)
+
+[11]
+
+Structures
+// déclaration de la variable
+voiture macar;
+// accès au champ
+mavoiture.année = 2011;
+strcpy(mavoiture.plaque, "CS50");
+mavoiture.odomètre = 50505;
+
+[12]
+
+Structures
+• Les structures, comme les variables de tous les autres types de données, n'ont pas besoin d'être créées sur la pile. Nous pouvons allouer dynamiquement des structures au moment de l'exécution si notre programme l'exige.
+• Afin d'accéder aux champs de nos structures dans cette situation, nous devons d'abord déréférencer le pointeur vers la structure, puis nous pouvons accéder à ses champs.
+
+[16]
+
+Structures
+// déclaration de la variable
+voiture *mavoiture = malloc(sizeof(struct voiture));
+// accès au champ
+(*mavoiture).année = 2011;
+strcpy((*mavoiture).plaque, "CS50");
+(*mavoiture).odomètre = 50505;
+
+[17]
+
+Structures
+• C'est un peu ennuyeux. Donc, comme vous pouvez vous y attendre, il existe une façon plus courte !
+• L'opérateur flèche (->) simplifie ce processus. C'est un opérateur qui fait deux choses à la suite :
+• Premièrement, il déréférence le pointeur à gauche de l'opérateur.
+• Deuxièmement, il accède au champ à droite de l'opérateur.
+
+[19]
+
+Structures
+// déclaration de la variable
+voiture *mavoiture = malloc(sizeof(struct voiture));
+// accès au champ
+mavoiture->année = 2011;
+strcpy(mavoiture->plaque, "CS50");
+mavoiture->odomètre = 50505;

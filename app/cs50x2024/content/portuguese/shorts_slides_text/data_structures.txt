@@ -1,0 +1,56 @@
+[1]
+
+Resumo de estruturas de dados
+• Até aqui nós já examinamos quatro formas diferentes de armazenar conjuntos de dados :
+• Matrizes
+• Listas vinculadas
+• Tabelas hash
+• Tries
+• Existem ainda algumas variações destas (árvores e pilhas, bastante semelhantes a tries, pilhas e filas bastante semelhantes a matrizes ou listas vinculadas etc.), mas isto geralmente abrangerá a maior parte do que estamos observando em C.
+
+[2]
+
+Resumo de estruturas de dados
+• Como todas estas estruturas de dados se comparam? Como você sabe qual escolher para a sua situação?
+• Geralmente é uma questão de pesar os prós contra os contras. Vamos considerar algumas das métricas importantes para cada um.
+
+[3]
+
+Resumo de estruturas de dados
+• Matrizes
+• Inserção é ruim – muita mudança para encaixar um elemento no meio
+• A exclusão é ruim – muita mudança após remover um elemento
+• A pesquisa é ótima – acesso aleatório, tempo constante
+• Relativamente fácil de classificar
+• Relativamente pequeno em termos de tamanho
+• Preso a um tamanho fixo, sem flexibilidade
+
+[4]
+
+Resumo de estruturas de dados
+• listas vinculadas
+• Inserção é fácil – basta fixar na frente
+• Exclusão é fácil – uma vez que você encontra o elemento
+• Pesquisa é ruim – tem que confiar na pesquisa linear
+• Relativamente difícil de classificar – a menos que você esteja disposto a comprometer a inserção super rápida e, em vez disso, classifique conforme constrói
+• Relativamente pequeno em termos de tamanho (não tão pequeno quanto as matrizes)
+
+[5]
+
+Resumo de estruturas de dados
+• Tabelas hash
+• Inserção é um processo de duas etapas – hash, depois adicionar
+• A exclusão é fácil – uma vez que você encontra o elemento
+• A pesquisa é, em média, melhor do que com as listas vinculadas porque você tem o benefício de um fator constante do mundo real
+• Não é uma estrutura de dados ideal se a meta for classificação – basta usar uma matriz
+• Pode executar a gama de tamanho
+
+[6]
+
+Resumo de estruturas de dados
+• Tries
+• Inserção é complexa – muita alocação de memória dinâmica, mas fica mais fácil conforme você avança
+• A exclusão é fácil – basta liberar um nó
+• A pesquisa é rápida – não tão rápida quanto uma matriz, mas quase
+• Já classificado – classifica à medida que você constrói em quase todas as situações
+• Rapidamente se torna enorme, mesmo com muito poucos dados presentes, não é ótimo se o espaço for escasso

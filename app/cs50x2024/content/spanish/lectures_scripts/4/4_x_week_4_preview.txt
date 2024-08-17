@@ -1,0 +1,11 @@
+DAVID J. MALAN: Por lo tanto, dicho esto, ¿entenderemos aún más cómo funcionan las imágenes esta semana? Y aquí, por ejemplo, hay una toma del río Charles. Y para la primera parte del conjunto de problemas, implementamos varios filtros tipo Instagram, entendiendo cómo se representa una imagen y cómo, por lo tanto, puedes transformarla. Por ejemplo, primero, en escala de grises, escribiendo tu propio filtro de escala de grises, en sepia, en lo contrario, reflejándola de izquierda a derecha, desenfocando una imagen, incluso estando quieta. Y si te sientes más cómodo, para hacer algo llamado detección de bordes, que encuentra todos los bordes dentro de una imagen particular.
+
+Además, ¿implementarás realmente el código que recupera archivos JPEG? Hemos estado tomando algunas fotografías de personas, lugares y cosas. Desafortunadamente, borramos accidentalmente esas fotos, pero primero hicimos una imagen forense de la tarjeta de memoria de la cámara, que luego te proporcionaremos para que puedas escribir código en C que recupere todos los JPEG aparentemente perdidos de esa imagen forense.
+
+Y por último, pero no menos importante, no sería una clase de CS sin un poco de humor de CS. Pensamos que terminaríamos con esta nota, un chiste que quizás ahora entiendas.
+
+[RISAS]
+
+Muy bien. Eso es todo para CS50. Te veremos la próxima vez.
+
+[REPRODUCCIÓN DE MÚSICA]

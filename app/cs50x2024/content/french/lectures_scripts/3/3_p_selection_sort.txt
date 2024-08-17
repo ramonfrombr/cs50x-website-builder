@@ -1,0 +1,45 @@
+Voyons voir, Brian. Si tu pouvais donner un coup de main, voyons si nous pouvons faire mieux qu'en adoptant une approche différente, fondamentalement, pour trier des éléments, en utilisant ce qu'on appelle le tri par sélection.
+
+Donc, dans le tri par sélection, nous avons un ensemble de nombres similaire, mais nous ne prendrons pas la peine d'utiliser quelque chose d'aussi grand que 50. Brian va gentiment les mettre dans un ordre aléatoire, mais nous avons une feuille de triche sur le tableau pour que nous puissions réessayer si nécessaire. Et ces nombres sont actuellement non triés de gauche à droite. Nous avons 1, 2, 3, 4, 5, 6, 7, 8 nombres au total ici.
+
+Le tri par bulle était pratique car il tirait parti de votre intuition, où il suffit de regarder à gauche, de regarder à droite et de résoudre ces petits problèmes. Mais honnêtement, une façon fondamentalement différente de penser au tri serait, eh bien, si je sais que je veux du plus petit au plus grand, de gauche à droite, pourquoi ne le ferais-je pas simplement ? Quel est le plus petit nombre ?
+
+Eh bien, rappelez-vous que ces choses, si elles sont implémentées dans un tableau, pourraient aussi bien être dans des casiers. Je ne peux pas simplement utiliser une intuition humaine dans ce cas. Je dois regarder chaque élément individuellement. Mais je ne vais pas prendre la peine de les remettre dans le casier car cela va simplement prendre un temps inutile. Mais je regarde 6. 6 est le plus petit nombre que j'ai vu jusqu'à présent. Donc pour l'instant, c'est le plus petit nombre de la liste.
+
+Je vais donc m'en souvenir avec une variable dans mon esprit. Maintenant je vois 3. 3 est évidemment inférieur à 6, je vais donc oublier 6 et me rappeler pour l'instant que 3 est le plus petit élément que j'ai vu. 8 n'est pas plus petit. 5 n'est pas plus petit. Oh, 2 est plus petit. Je vais me rappeler que 2 est le plus petit. Je vais oublier le 3.
+
+Pendant ce temps, je continue, 7, 4 ; oh, 1 est encore plus petit. Et ainsi je suis arrivé à la fin de la liste. Le plus petit élément de cette liste est 1. Il appartient évidemment à cet endroit. Alors que puis-je en faire ?
+
+PUBLIC : [INAUDIBLE].
+
+INTERVENANT 1 : Oui, idéalement, je pourrais simplement le déplacer. Maintenant, peut-être devrais-je faire de la place, n'est-ce pas ? La table est un peu petite ou mon tableau est de taille fixe. Je pourrais donc commencer à tout déplacer de cette façon. Mais vous savez quoi ? Franchement, ça va prendre un certain temps, n'est-ce pas ? Je dois déplacer, genre, sept éléments.
+
+Pourquoi ne pas simplement expulser de force le 6, le mettre ici, parce qu'après tout, il était dans un ordre aléatoire au départ ? Qui se soucie si je le déplace dans un endroit encore plus aléatoire ? Je m'en occuperai plus tard. Vous pouvez donc adopter l'une ou l'autre approche. Vous pouvez tout déplacer. Mais on dirait que ça va prendre du temps. Ou vous pouvez simplement expulser tout ce qui se trouve à l'endroit où vous voulez être.
+
+Mais ce qui est bien maintenant, c'est que ma liste est plus proche d'être triée. Le 1 est à sa place. Donc, tout ce que j'ai à regarder maintenant, c'est n moins un autre élément. Voyons donc.
+
+Quel est le prochain plus petit élément ? En ce moment, c'est 3, toujours 3, toujours 3. Oh, attendez une minute, on dirait que c'est 2. Maintenant, vous voudrez peut-être simplement abandonner maintenant et supprimer le 2. Mais vous ne savez pas nécessairement, en tant qu'ordinateur, si vous ne regardez qu'une seule valeur à la fois, sauf si vous avez plusieurs variables en tête, ce dont je ne vais pas m'embêter. Laissez-moi voir s'il y a quelque chose de plus petit que 2. 7, 4, 6... non.
+
+Alors je vais prendre le 2. Et où est-ce que je veux le mettre ? Juste là. Et vous savez quoi ? Cela pourrait être un net négatif. Mais je pense que ça va s'arranger. Je vais déplacer le 3 là où j'ai de la place et prétendre que mon 2 est maintenant trié. Et je vais faire ça encore et encore et encore.
+
+Et tout comme l'a fait Bonnie, je vais le faire un peu plus vite maintenant, parcourir la liste. OK, 3 est le plus petit. Je vais aller de l'avant et le mettre dans l'ordre trié en expulsant le 8. Maintenant je vais y aller. D'accord, 5, 8, 7... 4 est maintenant le plus petit. Je vais aller de l'avant et expulser le 5, le déplacer ici et prétendre que c'est trié.
+
+Laissez-moi le faire encore une fois, 8, 7, 5, 6. 5 est clairement le plus petit. Laissez-moi aller de l'avant et expulser le 8 à nouveau, faire de la place pour le 5. Mais il ne me reste plus que trois étapes, 7, 8, 6. Laissez-moi aller de l'avant et déplacer le 7 ici, mettre le sixième en place.
+
+8 est le plus petit. Non, 7 est plus petit. Laissez-moi aller de l'avant et le mettre en place, en expulsant le 8. Voilà, j'espère maintenant, ouf, c'est fait, mais un algorithme fondamentalement différent, n'est-ce pas ? Il n'y a pas eu d'échange par paires dans les deux sens, encore et encore. Chaque fois, je me fixe un objectif, obtiens le prochain plus petit élément, obtiens le prochain plus petit élément. Et c'est ce que nous appellerons le tri par sélection, où à chaque itération, vous sélectionnez le prochain plus petit élément.
+
+Donc, dans du pseudo-code, nous pourrions dire ceci, pour i de 0 à n moins 1. Et encore une fois, adoptez simplement cette habitude maintenant. À tout moment de la vie, et certainement dans un cours d'informatique, lorsque vous avez n éléments, le premier est ironiquement 1 mais dans ce cas, 0. Et le dernier est n moins 1. De 0 à n moins 1, c'est ainsi qu'un informaticien compte de 1 à n dans le monde réel.
+
+Cela dit donc simplement de faire n fois ce qui suit, mais utilisez i. Commencez à compter à partir de 0. Trouvez le plus petit élément entre l'élément ième et le dernier élément. Qu'est-ce que je dis là ? Eh bien, si j'initialise i initialement à 0, cela signifie simplement trouver le plus petit élément parmi les huit et le saisir, échanger le plus petit élément avec cet ième élément.
+
+Donc, où que j'aie trouvé le plus petit élément, allez-y et échangez-le avec celui-là. Et puis cet algorithme... oups... va simplement se répéter encore et encore et encore. C'est presque un peu plus concis à représenter en pseudo-code. Mais cela invite à la question, alors, est-ce mieux ? Le tri par sélection est-il meilleur ?
+
+Eh bien, que signifierait-il pour un algorithme d'être meilleur ? Nous avons deux règles empiriques, Big O et Omega. Essayons donc ceux-là. Donc, en notation Big O, combien d'étapes faut-il pour trier une liste de nombres comme je l'ai fait, où vous sélectionnez encore et encore et encore le plus petit, le plus petit, le plus petit élément ? Eh bien, comment même commencer à y penser ? Ouais ?
+
+PUBLIC : [INAUDIBLE] n au carré parce que tu as à l'itération n [inaudible] n moins 1 [INAUDIBLE].
+
+INTERVENANT 1 : Oui. C'est la bonne intuition. Et laissez-moi reculer d'un pas jusqu'à ce que nous y arrivions. La proposition était n au carré. Et en effet, ça va être le spoiler. Mais pourquoi ? Eh bien, si vous commenciez réellement à compter le nombre d'étapes que je franchissais physiquement, n'est-ce pas, pour trouver le plus petit élément, il me faudra peut-être sept étapes pour trouver le plus petit élément parce que je vais les regarder tous.
+
+Donc, dans mon premier passage, je regarde les huit éléments, ou je fais presque n étapes pour trouver le plus petit nombre, comme 1. Mais après cela, le 1 était en place. Et j'ai allumé ses ampoules, ce qui a laissé sept nombres. Et combien d'étapes ai-je alors prises ? Eh bien, n moins 1.
+
+Puis après que le 2 ait été en place, combien d'étapes ?

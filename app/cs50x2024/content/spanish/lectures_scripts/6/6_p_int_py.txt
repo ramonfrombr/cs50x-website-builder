@@ -1,0 +1,13 @@
+Muy bien. Volvemos. Y echemos un vistazo a dónde comenzamos con esta conversación de comparar C con Python. Y recordemos que uno de los primeros ejemplos que vimos hoy involucró cadenas y usar la biblioteca CS50. Pero vamos a quitar la biblioteca CS50 muy rápidamente, de hecho, justo después de algunos problemas que implementaste en el conjunto de problemas 6. Pero veremos ahora qué tan fácil se puede hacer eso.
+
+Resulta que en Python, no necesitas utilizar get_string o la biblioteca CS50 en sí, porque en realidad existe una función llamada input. Y de hecho puedo deshacerme de get_string, reemplazarla con esta función llamada input y de hecho almacenar el valor de retorno en s. Y en su mayor parte, se comportará de forma idéntica a get_string.
+
+Si sigo adelante y ejecuto Python en string.py, puedo continuar y escribir mi nombre. Y todavía funciona como se esperaba. Pero ahora debo tener en cuenta que input, por definición, en la documentación de Python, siempre devuelve una cadena, lo que significa que si voy a deshacerme de get_int y tal vez get_float, otra función que quizás quieras usar para el conjunto de problemas 6, y usar input en su lugar, ya no es suficiente solo llamar a input y almacenar la respuesta en una variable llamada age. ¿Por qué? Aunque no he especificado el tipo de age en la línea 1, ¿cuál será aparentemente su tipo tal como lo acabo de definir?
+
+AUDIENCIA: Va a ser una cadena.
+
+DAVID MALAN: Va a ser una cadena. Input, por definición en Python, devuelve una cadena. Entonces, si quieres convertirlo en un entero, necesitas saber cómo. Y la forma más sencilla de hacerlo es simplemente convertirlo con una función llamada int. Así que esto es en realidad muy similar a la conversión en C. Pero está un poco al revés.
+
+En C, dirías paréntesis int paréntesis de cierre. En Python, dices int abre paréntesis, lo que sea que quieras convertir y luego cierras paréntesis. Lo llamas como una función real. Pero esto va a ser un poco frágil. Resulta que si simplemente pasas ciegamente la entrada del usuario a esta función int, si no parece un int, sucederán cosas malas. Verás algún tipo de rastro o mensaje de error en la pantalla.
+
+Es por eso que, para esta primera semana, usamos la biblioteca CS50 y get_int, get_string y get_float simplemente porque es un poco más difícil usar la biblioteca para maltratar la entrada accidentalmente. Pero no necesitas utilizar esto. Y no necesitas, no lo usarás después de aproximadamente una semana más.

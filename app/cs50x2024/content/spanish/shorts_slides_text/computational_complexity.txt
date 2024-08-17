@@ -1,0 +1,319 @@
+[0]
+
+Complejidad Computacional
+
+[1]
+
+Complejidad Computacional
+• Para hacer un uso más eficiente de nuestros recursos computacionales, es importante tener las habilidades para analizar la complejidad de los algoritmos, así sabemos qué recursos requieren esos algoritmos.
+• Ser capaz de analizar un algoritmo nos permite tener una idea de qué tan bien se escala cuando le lanzamos conjuntos de datos cada vez más grandes.
+
+[2]
+
+Complejidad Computacional
+• Cuando hablamos de la complejidad de un algoritmo, generalmente nos referimos al peor escenario posible.
+• Nos referimos a esto como O.
+• A veces también nos importa el mejor escenario posible (también conocido como Ω)
+• En CS50, dejaremos de lado el análisis riguroso y nos centraremos más en justificar la complejidad con sentido común.
+
+[3]
+
+Complejidad Computacional
+• ¿Qué es un conjunto de datos?
+• Cualquier cosa que tenga más sentido en el contexto.
+• Podemos medir un algoritmo en función de cómo maneja estas entradas. Llamemos a esta medida f(n).
+• En realidad, no nos importa qué es f(n) precisamente. Más bien, solo nos importa su tendencia, que está determinada por su término de orden más alto.
+
+[4]
+
+Complejidad Computacional
+n
+f(n) = n3
+f(n) = n3 + n2
+f(n) = n3 – 8n2 + 20n
+1
+1
+2
+13
+10
+1,000
+1,100
+400
+1,000
+1,000,000,000
+1,001,000,000
+992,020,000
+1,000,000
+1.0 x 1018
+1.000001 x 1018
+9.99992 x 1017
+
+[5]
+
+Complejidad Computacional
+n
+f(n) = n3
+f(n) = n3 + n2
+f(n) = n3 – 8n2 + 20n
+1
+1
+2
+13
+10
+1,000
+1,100
+400
+1,000
+1,000,000,000
+1,001,000,000
+992,020,000
+1,000,000
+1.0 x 1018
+1.000001 x 1018
+9.99992 x 1017
+
+[6]
+
+Complejidad Computacional
+n
+f(n) = n3
+f(n) = n3 + n2
+f(n) = n3 – 8n2 + 20n
+1
+1
+2
+13
+10
+1,000
+1,100
+400
+1,000
+1,000,000,000
+1,001,000,000
+992,020,000
+1,000,000
+1.0 x 1018
+1.000001 x 1018
+9.99992 x 1017
+
+[7]
+
+Complejidad Computacional
+n
+f(n) = n3
+f(n) = n3 + n2
+f(n) = n3 – 8n2 + 20n
+1
+1
+2
+13
+10
+1,000
+1,100
+400
+1,000
+1,000,000,000
+1,001,000,000
+992,020,000
+1,000,000
+1.0 x 1018
+1.000001 x 1018
+9.99992 x 1017
+
+[8]
+
+Complejidad Computacional
+n
+f(n) = n3
+f(n) = n3 + n2
+f(n) = n3 – 8n2 + 20n
+1
+1
+2
+13
+10
+1,000
+1,100
+400
+1,000
+1,000,000,000
+1,001,000,000
+992,020,000
+1,000,000
+1.0 x 1018
+1.000001 x 1018
+9.99992 x 1017
+
+[9]
+
+Complejidad Computacional
+O(1)
+tiempo constante
+O(log n)
+tiempo logarítmico
+O(n)
+tiempo lineal
+O(n log n)
+tiempo linealítmico
+O(n2)
+tiempo cuadrático
+O(nc)
+tiempo polinómico
+O(cn)
+tiempo exponencial
+O(n!)
+tiempo factorial
+O(∞)
+tiempo infinito
+
+[10]
+
+Complejidad Computacional
+• O(1)
+• Siempre toma una sola operación en el peor de los casos.
+int four_for_you(int array[1000])
+{
+return 4;
+}
+int add_two_nums(int a, int b)
+{
+return a + b;
+}
+
+[11]
+
+Complejidad Computacional
+• O(n)
+• Siempre toma n operaciones en el peor de los casos.
+2
+5
+4
+1
+3
+
+[12]
+
+Complejidad Computacional
+• O(n)
+• Siempre toma n operaciones en el peor de los casos.
+2
+5
+4
+1
+3
+
+[13]
+
+Complejidad Computacional
+• O(n)
+• Siempre toma n operaciones en el peor de los casos.
+1
+2
+3
+4
+5
+
+[14]
+
+Complejidad Computacional
+• O(n)
+• Siempre toma n operaciones en el peor de los casos.
+1
+2
+3
+4
+5
+
+[15]
+
+Complejidad Computacional
+• O(n)
+• Siempre toma n operaciones en el peor de los casos.
+2
+6
+1
+3
+4
+5
+
+[16]
+
+Complejidad Computacional
+• O(n)
+• Siempre toma n operaciones en el peor de los casos.
+2
+6
+1
+3
+4
+5
+
+[17]
+
+Complejidad Computacional
+• O(n)
+• Siempre toma n operaciones en el peor de los casos.
+3
+1
+6
+7
+4
+2
+5
+
+[18]
+
+Complejidad Computacional
+• O(n)
+• Siempre toma n operaciones en el peor de los casos.
+3
+1
+6
+7
+4
+2
+5
+
+[19]
+
+Complejidad Computacional
+• ¿Cuál es el tiempo de ejecución?
+for (int j = 0; j < m; j++)
+{
+// cuerpo del bucle que se ejecuta en O(1)
+}
+
+[20]
+
+Complejidad Computacional
+• ¿Cuál es el tiempo de ejecución?
+for (int j = 0; j < m; j++)
+{
+// cuerpo del bucle que se ejecuta en O(1)
+}
+O(m)
+
+[21]
+
+Complejidad Computacional
+• ¿Cuál es el tiempo de ejecución?
+for (int j = 0; j < p; j++)
+{
+for (int k = 0; k < p; k++)
+{
+// cuerpo del bucle que se ejecuta en O(1)
+}
+}
+
+[22]
+
+Complejidad Computacional
+• ¿Cuál es el tiempo de ejecución?
+for (int j = 0; j < p; j++)
+{
+for (int k = 0; k < p; k++)
+{
+// cuerpo del bucle que se ejecuta en O(1)
+}
+}
+O(p2)

@@ -1,0 +1,21 @@
+Let me try another example here and see what kind of power we have now that we actually are controlling-- now that we actually understand what a string actually is. Let me go ahead and whip this up real fast. So up here in my program, called uppercase dot c, me give myself the CS50 library. Let me give myself standard Io dot h. And now let me give me string dot h, just so I can use str leng. Let me give myself the name of a function main. 
+
+And then in here, let's do the same thing. String s gets get string. But this time, let me just ask the human for the string before I'm going to do something to it. Then I'm going to go ahead and say after I want the following to happen. And I'm going to do this-- for int i get zero, n equal str leng s as before. Do this so long as i is less than n, and on each iteration, i plus plus. So copy-paste from before. I just retyped out the same thing. Now let me go ahead and in this for loop, let me change this string, whatever it is, all to uppercase. 
+
+So how might I do this? So let me go ahead and say, well, if the current character at s bracket i is greater than or equal to lower case a, and that same character is less than or equal to lowercase z. So I'm using some week one style stuff, even though we didn't really use this much syntax last week. I'm just asking a simple question. Is the i-th character in s greater than or equal to lowercase a and-- double ampersand means and-- logically, is that character less than or equal to z? So is it a, b, c, all the way through z-- is it a lowercase letter? If so, I want to do something like convert to uppercase. But we'll come back to that in just a moment. Else what do I want to do if the character is not lowercase and my goal is to uppercase the whole input? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Yeah, just leave it alone. So you know what? I'm just-- fine, I'm just going to leave it alone. I'm going to print it back out, just as I would with printf like that. So now even though this is not obvious from the get go how I'm going to solve this, I've now left myself a placeholder, pseudocode if you will. I just now need to answer this question. Well, it turns out a popular place to go for this answer would be AsciiChart.com And there's different ways to solve this, but this is just a free website that shows us all of the decimal numbers that correspond to letters. And recall from week zero, 65 is a, 66 is b, and so forth. 
+
+Notice that 65 is-- capital A is 65. What is lowercase a? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: 97. And then look-- 66 to 98, 67 to 99, 68 to 100-- what's the difference between these? Yeah, it's 32. If you add 32 to 65, you get 97. If you add 32 to 66, you get 98, and so forth. So it seems that the lowercase letters, wonderfully conveniently, are all 32 values away from the uppercase letters. Or conversely, if I have a lowercase letter, logically, what could I do to it in order to convert it from uppercase to lowercase-- Sorry-- from lowercase to uppercase? Subtract, right? 
+
+So why don't I try printing out printf, percent c, then go ahead and print out not the actual character, but just subtract 32 from it. I know these are integers underneath the hood. And frankly, if I want to be really explicit, I can convert it to an integer, the Ascii code, and then subtract 32, but that can be done implicitly-- we saw earlier. So let me go ahead and save this file and run uppercase, make uppercase, dot slash uppercase. And this time, let me write Emma's name in all lowercase, and voila, I see it here. Now it's a little ugly. What did I forget? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: A new line. So I'm going to go ahead and do that at the very end of the program, so I get it only once at the very end. Let me rerun-- make uppercase, dot slash uppercase, Emma in lowercase. Voila, I've got it uppercase. So this is like a very low-level implementation of the notion of upper casing something. So if you've ever done this in Google Docs or Microsoft Word-- convert this all to uppercase for whatever reason, that's all the computer is doing underneath the hood-- iterating over the characters and presumably subtracting off of that. But this, too, is at a low-level detail that we probably don't want to have to think about too much, and so it turns out there's functions that can solve this problem for us. 

@@ -1,0 +1,39 @@
+[MUSIQUE] DAVID MALAN : Bon, c'est CS50. Et aujourd'hui, nous allons nous pencher sur les structures de données. Vous vous souvenez que, la semaine dernière, nous nous sommes donnés quelques nouveaux outils et une nouvelle syntaxe en C. Nous avons introduit les pointeurs, la possibilité d'adresser des blocs de mémoire par leurs adresses réelles : 0, 1, 2, 3, etc. Et nous avons introduit la notation étoile et quelques autres fonctions, notamment malloc et free, qui vous permettent de gérer la mémoire de votre ordinateur.
+
+Juste pour bien comprendre, regardons ce petit exemple qui est bogué dès le départ. Ce code est bogué. Et nous verrons dans quelques instants pourquoi. Mais parcourons-le étape par étape.
+
+Cette première ligne, surlignée en jaune, que fait-elle d'après vous ? Si vous êtes un peu rouillé depuis la semaine dernière, que fait cette première ligne de code ? Quelque chose ? Oui.
+
+LE PUBLIC : Elle crée un pointeur vers un int nommé x.
+
+DAVID MALAN : Parfait. Elle crée un pointeur vers un entier et appelle ce pointeur ou cette variable x. Et je vous propose que la ligne suivante fasse la même chose, en nous donnant un autre pointeur vers un entier, mais cette fois en l'appelant y. La troisième ligne de code, quelqu'un d'autre, que se passe-t-il en français dans cette ligne ici ? Oui.
+
+LE PUBLIC : Elle crée une mémoire de la taille de int et l'attribue à x, mais c'est plus difficile à exécuter si ce n'est pas un pointeur, je ne sais pas.
+
+DAVID MALAN : Ce n'est pas le bogue. Mais la première partie est correcte. malloc est la fonction que nous avons introduite la semaine dernière et qui alloue de la mémoire pour vous. Elle prend un argument, le nombre d'octets que vous voulez allouer. Même si vous ne vous souvenez pas du nombre d'octets nécessaires à un entier, vous pouvez appeler cet autre opérateur, sizeof, que nous avons vu brièvement la semaine dernière, qui renverra, dans ce cas, 4 très probablement selon l'ordinateur que vous utilisez.
+
+Donc, cela dit, hé, ordinateur, donne-moi 4 octets de mémoire. Et il renvoie ce bloc de mémoire à la manière conventionnelle par la première adresse, donc ox quelque chose, où que se trouvent ces 4 octets. Et puis il stocke cette adresse dans x, ce qui est en fait OK, parce que, comme vous l'avez noté initialement, x est en fait un pointeur. C'est une adresse.
+
+Donc, tout ce que cela fait, c'est déclarer une variable appelée x et y stocker finalement l'adresse d'un bloc de mémoire légitime. Vous n'alloueriez généralement pas un int comme ça. Vous alloueriez un int avec juste int et point-virgule, comme dans la semaine 1. Mais maintenant que nous avons la possibilité d'allouer des adresses et de la mémoire, vous pourriez obtenir la même chose ici.
+
+Cette ligne ici maintenant, la quatrième ligne de code, dit quoi en français ? Star x equals 42 point-virgule. Que se passe-t-il là-bas ? Oui.
+
+LE PUBLIC : Elle va à l'adresse dans x et la définit à 42.
+
+DAVID MALAN : Bien, va à l'adresse dans x et la définit à 42. Donc, l'opérateur étoile est l'opérateur de déréférencement, ce qui est une façon chic de dire aller à cette adresse. Et que voulez-vous faire ? Eh bien, par semaine 1, quand nous avons discuté de l'opérateur d'affectation, il dit simplement de mettre le nombre 42 là. Donc, où que malloc ait trouvé 4 octets de mémoire disponibles pour moi, cette quatrième ligne de code dit, va là-bas et met le nombre 42 en mettant les zéros et les uns appropriés.
+
+Cette dernière ligne ici - et voici le bogue, si nous le révélons enfin ici - cette ligne est boguée. Est-ce que quelqu'un voit pourquoi ? Oui, ici.
+
+LE PUBLIC : Vous n'avez pas encore alloué de mémoire pour cette variable.
+
+DAVID MALAN : Exactement. Je n'ai pas encore alloué de mémoire pour cette variable. Et parce qu'ici, j'ai juste dit int star y point-virgule. Vous pouvez seulement supposer en toute sécurité que cela a une valeur poubelle, une valeur inconnue, peut-être des restes d'une autre partie du programme, qui ne sont pas nécessairement vrais ici au début du programme. Mais par sécurité, supposez que si vous ne donnez pas de valeur à une variable, qui sait ce qu'elle contient. Elle a une adresse bidon, de sorte que si vous dites à y d'aller à cette adresse bidon, quelque chose de mauvais va se produire.
+
+Et peut-être que vous avez déjà vécu cela dans P Set 4 ou avant, une sorte de problème de mémoire avec votre code, ou un segmentation fault ou seg fault, de mauvaises choses se produisent lorsque vous allez à des adresses qui n'existent pas ou que vous ne savez même pas où elles se trouvent.
+
+Donc cette ligne de code est mauvaise. Mais nous pouvons faire un peu mieux. Et si, à la place, je faisais quelque chose comme ça ? J'attribue en fait à y x. Donc cela dit simplement mettre dans y la même adresse que celle qui est dans x. Et puis avec cette dernière ligne de code, et si je dis maintenant que star y est égal à 13 ? Qu'est-ce que c'est--vous hochez la tête. Qu'est-ce que je fais correctement maintenant ?
+
+LE PUBLIC : Maintenant, il y a de la mémoire allouée pour y.
+
+DAVID MALAN : Bien. Maintenant, il y a de la mémoire allouée pour y. Donc vous dites d'aller à cette adresse et d'y mettre 13. Cependant, qu'est-ce que nous venons de devoir au 42, pour être clair ? Nous l'avons remplacé. Nous l'avons remplacé par le 13. Parce que si x et y sont la même adresse, tous deux disent aller à cette adresse et y mettre 42, mais deux lignes plus tard, nous disons, non, non, non, allons-y et mettons-y 13 à la place.
+
+En résumé, de mauvaises choses se produisent lorsque vous n'anticipez pas nécessairement ce qui est en mémoire et que vous ne l'allouez pas vous-même. Grâce à l'un de nos amis à Stanford, permettez-nous de prendre un moment pour appuyer sur Play sur un court-métrage, une animation en pâte à modeler si vous voulez, qui peint peut-être la même image de façon plus mémorable. Si nous pouvions baisser les lumières.

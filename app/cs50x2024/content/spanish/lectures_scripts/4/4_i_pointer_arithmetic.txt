@@ -1,0 +1,43 @@
+Muy bien. ¿Puedo hacer una última demostración que es un poco abstrusa y luego haremos las cosas más-- más reales? Muy bien. Resulta que si todo lo que sucede debajo de lo visible son solo direcciones, miren lo que puedo hacer aquí. Si quiero seguir adelante e imprimir lo que hay en la dirección s, ¿qué encontraré en la memoria si voy a la dirección en s?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID J. MALAN: Perdón, un poco más fuerte.
+
+AUDIENCIA: La primera letra.
+
+DAVID J. MALAN: La primera letra del nombre de Emma, ¿cierto? Si todos podemos estar de acuerdo-- incluso si todavía es un poco inusual --que s es solo la dirección de un carácter, y yo digo, ir a s, ¿qué debería ver específicamente?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID J. MALAN: Probablemente E de Emma ¿cierto? Si s es la dirección del primer carácter de su nombre, estrella s significaría ir a ese carácter. Así que voy a seguir adelante e imprimirlo como un carácter. Así que voy a seguir adelante ahora y hacer dirección punto barra dirección, entrar. Ahí está la E porque puedo decir, ir a esa dirección e imprimir lo que haya allí.
+
+Y realmente puedo hacer esto para todas las letras de su nombre. Voy a seguir adelante e imprimir otra aquí. Entonces, ¿cómo llego a la segunda letra del nombre de Emma? Antes-- normalmente, como la semana pasada, habríamos hecho esto. Y eso simplemente te lleva mágicamente a la segunda letra de su nombre. Pero puedo hacerlo un poco diferente. ¿Qué pasa si voy a s y luego, desde dónde quiero ir desde s para obtener la segunda letra?
+
+AUDIENCIA: Más uno.
+
+DAVID J. MALAN: Más uno, ¿cierto? Quiero decir, tal vez podamos literalmente hacer aritmética aquí. Si s es la dirección de su primera letra, es lógico pensar que s más 1 es la dirección de su segunda letra. Entonces, haz dirección ahora punto barra dirección. Y debería ver EM. Y puedo hacer esto dos veces más tal vez y seguir adelante y hacerlo y luego hacerlo. Pero esta vez agregar 2 y esta vez agregar 3, simplemente haciendo algo de aritmética simple. Hacer dirección punto barra dirección, ahí está Emma pero con un detalle de nivel mucho más bajo.
+
+Entonces, ¿qué es este símbolo de corchete? En la informática, esto es lo que se llama azúcar sintáctico. Es un nombre un poco tonto. Pero solo se refiere a una función útil para que tú, el programador, puedas decir, s corchete 0 o corchete 1. Pero lo que realmente está haciendo la computadora debajo de lo visible-- el compilador, Clang --en realidad está convirtiendo todos tus usos de corchetes desde la Semana 1 a este formato aquí. Simplemente está haciendo aritmética debajo de lo visible.
+
+Ahora no tienes que hacer esto en el futuro. Pero señalo este detalle de bajo nivel solo para darte una idea de que, realmente no hay magia. Cuando dices, ir a imprimir una dirección o ir a hacer esto, la computadora te está tomando literalmente. Uf.
+
+Está bien, eso fue mucho. Sí, pregunta.
+
+AUDIENCIA: Entonces [INAUDIBLE]
+
+DAVID J. MALAN: Estrella s significaría ir a la dirección en s.
+
+AUDIENCIA: Entonces, por ejemplo, si [INAUDIBLE] carácter [INAUDIBLE]
+
+DAVID J. MALAN: Muy buena pregunta. ¿Por qué, cuando imprimes s, imprime toda la cadena y no solo el carácter? Eso es lo que está haciendo el código de formato printf. Cuando le dices a printf que use por ciento s, eso tiene un significado especial para printf. Y sabe que debe ir a la primera dirección y no solo imprimir el segundo-- el primer carácter, sino imprimir cada carácter a partir de entonces hasta que vea ¿qué?
+
+AUDIENCIA: El terminador nulo.
+
+DAVID J. MALAN: El carácter de terminación nulo. Así que printf y por ciento s son especiales y han sido especiales desde la Semana 1. Simplemente saben hacer exactamente lo que describes. Entonces, la aritmética de punteros, para ser claros, simplemente está tomando direcciones y, como, haciendo aritmética con ellas, agregando 1, agregando 2, agregando 3 o cualquier otra manipulación como esa. Muy bien.
+
+Entonces [RISITAS] intentemos otro meme aquí.
+
+[RISAS]
+
+Está bien, algunos de nosotros. Muy bien. Muy bien, se está esforzando demasiado.

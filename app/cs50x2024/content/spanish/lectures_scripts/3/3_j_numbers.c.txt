@@ -1,0 +1,27 @@
+Entonces entremos y hagamos que esto sea un poco más real. Déjenme continuar y cambiar a la IDE CS50. Y déjenme continuar y crear un programa aquí llamado numbers.c que nos permitirá explorar, por ejemplo, la búsqueda lineal. Así que numbers.c comenzará con nuestras líneas habituales. 
+
+Entonces continuaré e incluiré cs50.h. Continuaré e incluiré standard io.h, int main void, por lo que por ahora no hay argumentos de línea de comandos. Y aquí, permítanme continuar y declarar algunos números, tal vez un total de seis números. Y si quiero declarar una matriz de seis números, recuerden lo de la semana pasada, literalmente puedo decir esto. 
+
+Y si quiero inicializar esos números, puedo hacer que el corchete 0 de números obtenga, por ejemplo, el número 4. El corchete 1 de números obtiene el número, digamos, 8. El corchete 2 de números obtiene el número 15. Números-- De acuerdo, esto se está volviendo realmente tedioso. 
+
+Resulta que en C, hay una notación abreviada cuando sabes de antemano qué valores quieres poner en una matriz. De hecho, puedo subir y hacer esto, 4, 8, 15, 16, 23, 42 con llaves a cada lado. Así que esto es lo que se llama una matriz estáticamente inicializada. Solo sabes de antemano cuáles son los valores. 
+
+Y así puedo ahorrar algunas líneas de código de esa manera. Pero es lo mismo que el camino por el que iba hace un momento. Pero las llaves son nuevas para esa pequeña función. 
+
+Ahora voy a seguir adelante y voy a iterar sobre estos. Entonces, para int, i obtiene 0, i menos de 6. Y ahora voy a tomar algunos atajos para que nos centremos en las cosas nuevas y no en las viejas. Estoy codificando 6 en lugar de usar una constante o algo así. Pero todo lo que quiero hacer en última instancia es buscar el número 50. 
+
+Entonces, ¿qué código puedo escribir ahora dentro de este bucle for para simplemente hacer la pregunta, es 50 detrás de esta puerta? ¿Alguien quiere decirlo? ¿Sí? ¿Si? 
+
+AUDIENCIA: Número i [ININTELIGIBLE]. 
+
+ORADOR 1: Números i iguales y no solo iguales simples, sino iguales a 50. Puedo seguir adelante y devolver alguna respuesta. Así que voy a seguir adelante [? y decir ?] printf, por ejemplo, encontrado en una nueva línea. Y luego, si quiero decir que no se encontró el número 50, recuerda, que quiero hacer esto fuera del bucle, tal como en mi pseudocódigo anterior. Entonces no se puede encontrar puede ir hasta allí. 
+
+Entonces, para que quede claro, ¿qué algoritmo he implementado aquí? 
+
+AUDIENCIA: [ININTELIGIBLE]. 
+
+ORADOR 1: Sí. Entonces esta es una búsqueda lineal. Esta es la encarnación del código de mi pseudocódigo en la ejecución real del algoritmo de Eric. Así que déjenme continuar y guardar esto. Déjenme continuar y hacer números, sin mensajes de error, que es bueno, punto barra números y Enter, o debería ver qué cuando presiono Enter aquí. 
+
+AUDIENCIA: No se encontró. 
+
+ORADOR 1: Espero que no se encuentre porque, de hecho, 50 no se encuentra entre esos números.

@@ -1,0 +1,57 @@
+Ok, donc durant la pause, je vous ai préparé un dernier exemple de notre programme de liste. Il utilise tous ces modules de base. Et voyons si nous ne pouvons pas le suivre pas à pas, en dessin et en code, et voir ce que nous venons de construire avec tous ces êtres humains sur scène.
+
+Donc voici la liste list3.c. Elle est disponible en ligne. Vous pouvez donc la suivre tranquillement à la maison si vous le souhaitez. Et parcourons ensemble simplement les lignes qui sont écrites à l'avance pour nous.
+
+Premièrement, j'utilise les E/S standards pour printf. Et j'utilise stdlib pour malloc et free, nos nouveaux amis qui nous offrent la mémoire dynamique.
+
+Voici la définition d'un nœud qui, encore une fois, contient un nombre et un pointeur, plus précisément un pointeur vers un autre nœud. C'est donc ce que chacun de nos êtres humains représentait, cette fois-ci en C.
+
+Que va faire mon programme principal ? Juste pour la démonstration, le but est simplement d'écrire un programme qui initialise une liste chaînée à rien initialement, puis ajoute un nœud avec 1, puis un nœud avec 2, puis un nœud avec 3. Nous allons rester simples et n'ajouterons pas 4 ou 5 cette fois-ci.
+
+Alors, comment vais-je m'y prendre ? Eh bien, sur la ligne 17, je propose que nous créions une variable appelée list et que nous lui donnions l'adresse d'un nœud. Donc si je devais dessiner cela maintenant, ce serait comme notre démonstration il y a un moment, où j'ai un rectangle ici appelé list. Et initialement, il ne pointe vers rien. Je vais donc simplement laisser la case vide pour représenter NULL. C'est donc la ligne 17 ici.
+
+Maintenant, laissez-moi faire ce qui suit. Ajoutez un nombre à la liste comme suit. La ligne 20 me donne juste assez de mémoire pour un nœud. Et elle stocke l'adresse de cette mémoire dans une variable appelée n.
+
+Les lignes 21 à 24 ne sont qu'un contrôle de sécurité. Est-ce que quelque chose s'est mal passé ? Si c'est le cas, il suffit de renvoyer 1 et d'arrêter le programme. Nous avons manqué de mémoire pour une raison quelconque.
+
+Mais ces deux lignes devraient maintenant vous sembler un peu plus familières. Cela va maintenant installer 1 et NULL dans cette structure comme suit.
+
+Résumons donc. Cette ligne ici, 20, est la même chose que d'allouer un nœud qui ressemble à ceci en mémoire, et qui a deux moitiés. L'un de ces champs s'appelle nombre, que j'écrirai ici. L'autre champ s'appelle suivant.
+
+Et si nous revenons au code, ces deux lignes consistent simplement à installer des valeurs dans cette structure. Donc si je vais au nombre et que je mets le nombre 1, je ne vais pas me soucier de dessiner quoi que ce soit pour suivant, parce que je vais le laisser implicitement comme NULL. C'est donc ce qui se passe maintenant.
+
+Que veux-je faire ensuite ? Eh bien, la dernière ligne de code ici sous ce commentaire qui dit ajouter un nombre à la liste, je définis list égal à n, où n pointe à nouveau vers ce nouveau nœud. C'est donc la même chose que de dire que list va aller pointer vers ce nouveau nœud. Donc après ces lignes de code, j'ai créé une image en mémoire qui ressemble effectivement à ceci.
+
+Maintenant, allons-y et ajoutons le nombre 2 à la liste. C'est presque la même chose. Voici donc le morceau de code qui va ajouter un deuxième nœud à la liste, contenant cette fois-ci 2. Faisons-le étape par étape.
+
+Ligne 30, je vais réutiliser n comme variable temporaire. Je n'ai donc pas besoin de le redéclarer. C'est le même n qu'avant, mais il va maintenant obtenir une adresse mémoire différente grâce à malloc.
+
+Cela me donne donc une autre case comme celle-ci, que je vais dessiner comme ça avec rien dedans initialement. Je vais m'assurer, par les lignes 31 à 34, que rien ne s'est mal passé. Mais c'est comme avant.
+
+Et maintenant, dans les lignes 35 et 36, je vais y mettre 2 et NULL. Alors laissez-moi aller là-bas et y mettre 2. Et je vais laisser NULL vide implicitement. C'est la fin de la liste.
+
+Mais maintenant, je dois bien sûr, conceptuellement, lier le nœud pour 1 au nœud pour 2. Et c'est là que la syntaxe C, même si elle est nouvelle, a finalement un sens. Remarquez ici, je dis que list flèche suivant est égal à NULL. Cela correspond parfaitement à l'image. List flèche x est égal à quoi ? n. Eh bien, n est cette chose ici. Donc je dessine simplement la flèche ici. Et ainsi, le code s'aligne enfin, même s'il est nouveau pour aujourd'hui. J'ai donc maintenant dessiné l'image comme suit avec 1 et 2.
+
+Allons-y et ajoutons un troisième et dernier nœud. Celui-ci contenant le nombre 3, en utilisant ces lignes ici. Donc la ligne 40 me donne un nouveau nœud avec malloc. Cela va donc me donner un nouveau nœud. Je vais le dessiner comme un rectangle ici. Je le dessine de gauche à droite, mais ces choses pourraient être partout dans la mémoire. Peu importe où ils finissent.
+
+Je vais vérifier, comme avant, que ce n'est pas NULL, juste pour être sûr. Ensuite, je vais installer le numéro 3 et NULL à l'intérieur, comme avant. Cela signifie donc allons-y et dessinons 3. Je vais le laisser vide parce qu'il va être NULL.
+
+Et puis la dernière ligne, vous n'écririez pas normalement cela en dur ou explicitement dans un programme. C'est un peu plus verbeux que nécessaire. Je vous propose plutôt d'utiliser une sorte de boucle à la place et de parcourir la structure de données étape par étape, comme je l'ai proposé plus tôt.
+
+Mais si nous voulons vraiment le faire juste pour la démonstration, remarquez que nous commençons par list, suivons une flèche et allons à suivant. Suivons une autre flèche et allons à suivant. Nous pouvons littéralement le faire avec notre image.
+
+Alors voici. Laissez-moi commencer par list, suivre une flèche et aller à suivant. Suivre une flèche, aller à suivant. Et maintenant, c'est NULL. Donc ce que je veux mettre à jour, c'est exactement cela, comme avec la ligne 47, qui dit de suivre deux flèches, de regarder deux champs suivant de manière interchangeable et de les définir égaux à n.
+
+Bon, qu'est-ce qui reste ici ? Eh bien, le but de ce programme était simplement d'imprimer une liste. Voici une façon d'utiliser une boucle for pour parcourir une liste chaînée. C'est un peu bizarre parce que nous n'avons pas i et les ints et i++ et ainsi de suite. Mais une boucle for n'a pas besoin d'utiliser des entiers ou des i.
+
+N'oubliez pas qu'avant le premier point-virgule, vous avez une initialisation. Entre les points-virgules, vous avez une condition. Et puis vous avez une mise à jour qui se produit ici. Vous en ferez l'expérience avec le problème 5.
+
+Mais pour les besoins d'aujourd'hui, à haut niveau, notez que cela me donne un pointeur temporaire, comme ma grande main rouge tout à l'heure. C'est un pointeur d'étoile de nœud. Et c'est pour cela que j'ai pu pointer avec la grande main floue. Et j'ai défini cela comme égal à list. Donc tout ce sur quoi pointait la liste était également ma main floue temporaire. Je vais suivre la boucle suivante et tant que temp n'est pas égal à NULL.
+
+Donc tout à l'heure, quand je portais la grande main floue, j'ai continué à pointer, pointer, pointer. Et je me suis arrêté une fois qu'il était égal à NULL. Cela signifie donc qu'il faut continuer ce qui suit jusqu'à ce qu'il soit égal à NULL.
+
+Que veux-je faire ? Je veux simplement imprimer l'entier qui se trouve à l'intérieur de ce que je pointe à l'intérieur de son champ numérique. Donc allez à ce que je pointe, suivez la flèche et allez au champ numéro. C'est ainsi que nous accédons aux données à l'intérieur.
+
+Une fois que j'ai imprimé cela, les boucles for disent que vous venez de mettre à jour une variable. Alors qu'est-ce que cette variable temp est égale à temp flèche suivante. Donc si ma main floue pointe vers quelqu'un et que je dois la mettre à jour pour qu'elle pointe vers temp flèche suivante, cela signifie qu'il faut aller vers ce que je pointe, suivre la flèche. C'est le champ suivant et pointer vers ce vers quoi le champ suivant pointait. Donc vous continuez simplement à mettre à jour ce que vous pointez.
+
+Cela imprime la liste. Et puis - et nous reporterons cela au problème 5 en fin de compte - nous devrons

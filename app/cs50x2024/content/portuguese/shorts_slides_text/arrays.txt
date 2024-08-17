@@ -1,0 +1,99 @@
+[0]
+
+Matrizes
+
+[1]
+
+Matrizes
+● Matrizes são uma estrutura de dados fundamental e são extremamente úteis!
+● Usamos matrizes para conter valores do mesmo tipo em locais de memória contíguos.
+● Uma maneira de analogizar a noção de matriz é pensar em seus correios locais, que normalmente tem uma grande rede de caixas postais.
+
+[6]
+
+Matrizes
+Matrizes
+Caixas Postais
+Uma matriz é um bloco de espaço contíguo na memória…
+Uma rede de correios é um grande espaço na parede dos correios…
+… que foi particionado em blocos pequenos e de tamanho idêntico chamados elementos…
+… que foi particionado em blocos pequenos e de tamanho idêntico chamados caixas postais…
+… cada um dos quais pode armazenar uma determinada quantidade de dados…
+… cada um dos quais pode conter uma determinada quantidade de correspondência…
+… todos do mesmo tipo de dados, como int ou char…
+… todos de um tipo semelhante, como cartas ou pequenas encomendas…
+… e que pode ser acessado diretamente por um índice.
+… e que pode ser acessado diretamente por um número de caixa postal.
+
+[7]
+
+Matrizes
+● Em C, os elementos de uma matriz são indexados a partir de 0.
+● Este é um dos principais motivos pelo qual contamos a partir do zero!
+● Se uma matriz consiste em n elementos, o primeiro elemento está localizado no índice 0. O último elemento está localizado no índice (n-1).
+● C é muito tolerante. Ele não o impedirá de sair "fora dos limites" da sua matriz; tome cuidado!
+
+[8]
+
+Matrizes
+● Declarações de matriz
+● O tipo é o tipo de variável que cada elemento da matriz será.
+● O nome é como você deseja chamar sua matriz.
+● O tamanho é quantos elementos você gostaria que sua matriz contivesse.
+tipo nome[tamanho];
+
+[9]
+
+int nota_alunos[40];
+
+[10]
+
+double preco_menu[8];
+
+[11]
+
+Matrizes
+● Se você pensar em um único elemento de uma matriz do tipo tipo_de_dados da mesma forma que faria com qualquer outra variável do tipo tipo_de_dados (o que, efetivamente, é) todas as operações familiares farão sentido.
+bool tabela_verdade[10];
+tabela_verdade[2] = falso;
+if(tabela_verdade[7] == verdadeiro)
+{
+printf("VERDADEIRO!\n");
+}
+tabela_verdade[10] = verdadeiro;
+
+[13]
+
+Matrizes
+● Ao declarar e inicializar uma matriz simultaneamente, há uma sintaxe especial que pode ser usada para preencher a matriz com seus valores iniciais.
+// sintaxe de instanciação
+bool tabela_verdade[3] = { falso, verdadeiro, verdadeiro };
+// sintaxe de elemento individual
+bool tabela_verdade[3];
+tabela_verdade[0] = falso;
+tabela_verdade[1] = verdadeiro;
+tabela_verdade[2] = verdadeiro;
+
+[15]
+
+Matrizes
+● Matrizes podem consistir em mais de uma dimensão. Você pode ter quantos especificadores de tamanho desejar.
+● Você pode escolher pensar nisso como uma grade de células 10x10.
+● Na memória, no entanto, é realmente apenas uma matriz unidimensional de 100 elementos.
+● Matrizes multidimensionais são ótimas abstrações para ajudar a visualizar tabuleiros de jogos ou outras representações complexas.
+bool batalha_naval[10][10];
+
+[16]
+
+Matrizes
+● Embora possamos tratar elementos individuais de matrizes como variáveis, não podemos tratar matrizes inteiras como variáveis.
+● Não podemos, por exemplo, atribuir uma matriz a outra usando o operador de atribuição. Isso não é C legal.
+● Em vez disso, devemos usar um loop para copiar os elementos um de cada vez.
+
+[20]
+
+Matrizes
+● Lembre-se de que a maioria das variáveis em C são passadas por valor em chamadas de função.
+● Matrizes não seguem esta regra. Em vez disso, eles são passados por referência. A função chamada recebe a matriz real, não uma cópia dela.
+● O que isso significa quando a função chamada manipula elementos da matriz?
+● Por enquanto, vamos ignorar por que as matrizes têm essa propriedade especial, mas voltaremos a ela em breve!

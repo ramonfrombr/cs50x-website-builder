@@ -1,0 +1,45 @@
+Laissez-moi passer à l'EDI CS50 ici. Et laissez-moi aller de l'avant et créer un nouveau fichier appelé list.c. Et voyons si nous ne pouvons pas représenter exactement cette idée dans le code.
+
+Donc laissez-moi aller de l'avant et inclure pour moi-même la norme stdio.h juste pour que nous puissions finalement imprimer des valeurs. Laissez-moi alors aller de l'avant et déclarer main-- int main void. Et ensuite ici, commençons tout simplement arbitrairement là où nous avons commencé avec trois entiers, appelés list et size 3. Donc je ne fais que mimer exactement là où nous avons commencé de manière illustrée en ayant un tableau qui était fixe à la taille 3.
+
+Et ensuite si j'allais de l'avant et initialisais cette liste, je pourrais simplement coder en dur-- c'est-à-dire taper dans le programme lui-même-- ces trois valeurs dans les crochets 0, 1 et 2 les nombres 1, 2, 3 respectivement. Donc j'initialise manuellement ce tableau à trois valeurs.
+
+Et ensuite juste pour que ce programme ait un but dans la vie, laissez-moi aller de l'avant et faire int i égaux à 0, i inférieur à 3, i++. Et puis, imprimons simplement ces éléments juste pour faire bonne mesure. Chacun d'eux est un int. Nous utiliserons donc %i. Et ensuite je vais aller de l'avant et imprimer list bracket i.
+
+Donc une sorte de programme de style Semaine 2, où tout ce que je fais est de coder en dur un tableau de taille 3, de l'initialiser avec trois valeurs, 1, 2, 3 ; indexé 0, puis de les imprimer. Donc si je vais de l'avant et enregistre ceci et fais ma liste puis continue et compile ceci avec ./list, je devrais voir, j'espère, 1, 2, 3.
+
+Mais il y a un problème avec cette implémentation fondamentalement parce que j'ai codé en dur-- c'est-à-dire tapé explicitement-- la taille de ce tableau, comment puis-je faire pour ajouter un quatrième élément ? Que devrais-je faire ?
+
+Eh bien, je pourrais changer le code ici à 4. Et ensuite je pourrais ajouter une autre ligne ici. Et ensuite je pourrais changer ça. Mais ensuite je dois le recompiler. Et donc ce n'est certainement pas dynamique. Mais nous avons bien vu une fonction la semaine dernière qui vous permet d'allouer plus de mémoire dynamiquement. Et juste pour être sûr, quelle était cette fonction ?
+
+Donc malloc. N'est-ce pas ? Maintenant que nous avons malloc, vous n'avez pas à taper dans le code source de votre programme dès le début un nombre fixe. Vous pouvez en fait allouer dynamiquement une certaine quantité de mémoire. Maintenant, ici juste pour la démonstration, nous allons le faire pour atteindre le même objectif, mais d'une manière qui va évoluer un peu plus efficacement.
+
+Rappelez-vous de la semaine dernière que si vous voulez obtenir un segment de mémoire à partir de malloc, il va renvoyer l'adresse de ce segment de mémoire. Cela suggère donc que je peux déclarer un pointeur vers un entier appelé list. Et ensuite permettez-moi d'aller de l'avant et d'allouer, que diriez-vous, trois entiers initialement multipliés par la taille d'un entier.
+
+Donc c'est un peu étrange, mais considérez ce que cela fait. On demande à malloc 3 fois la taille d'un int. Donc donnez-moi assez de mémoire pour contenir trois entiers. Par définition, cela renvoie un pointeur, par dernière semaine. Nous devons donc l'attribuer à un pointeur sur la gauche. Donc list est maintenant une variable, tout comme x et y de notre exemple précédent, qui stocke l'adresse de ce morceau de mémoire.
+
+Mais ce qui est cool avec C, c'est que maintenant que vous savez que list est un morceau de mémoire, nous pouvons en fait emprunter la même notation de crochets de la semaine 2. Et ce code ici n'a pas vraiment besoin de changer. Si vous utilisez la notation des crochets à côté du nom d'un pointeur, ce qui va se passer pour vous automatiquement, c'est que l'ordinateur va aller au premier octet de ce morceau de mémoire. Cet index va aller au morceau de mémoire suivant. Cela va aller au morceau de mémoire suivant, le tout dans le cadre de ce que malloc vous a renvoyé.
+
+Et juste comme ça, combien y a-t-il d'octets dans un entier ?
+
+AUDIENCE : 4.
+
+DAVID MALAN : 4. Et rappelez-vous que j'ai brièvement mentionné l'expression la semaine dernière arithmétique de pointeur. Ce que vous obtenez aussi en quelque sorte comme par magie avec cette notation de crochets, c'est que le crochet 0 se trouve être l'octet 0. Le crochet 1 n'est pas le deuxième octet. C'est en fait 4 octets de plus. Et le crochet 2 n'est pas le troisième octet. C'est en fait 8 octets de plus, car vous avez alloué 4 plus 4 plus 4, 12 octets. Et donc cette notation de crochets vous permet simplement de sauter au bon endroit dans ce morceau de mémoire, afin que vous puissiez insérer int, int, int. Ouais.
+
+AUDIENCE : Pourquoi allouez-vous un pointeur vers un int plutôt qu'un pointeur vers un tableau d'int ?
+
+DAVID MALAN : Pourquoi allouez-vous un pointeur vers un int et non un pointeur vers un tableau d'int ? Dans ce contexte, les tableaux et les pointeurs sont en quelque sorte identiques. Un pointeur est une adresse de mémoire. Un tableau n'est qu'un morceau de mémoire. Et donc même si nous avons utilisé des morceaux de mémoire dans la semaine 2 en les appelant simplement des tableaux, ils ne sont en réalité que des morceaux de mémoire plus généraux qui prennent en charge la notation des crochets.
+
+Mais maintenant que nous pouvons allouer autant de mémoire que nous voulons, nous pouvons en quelque sorte utiliser ces deux concepts de manière interchangeable. Et il y a quelques subtilités en C. Mais cela a maintenant le même effet que la semaine 2. Et voici la seule nouvelle ligne de cette semaine.
+
+Mais maintenant, si vous utilisez malloc, même si je ne vais pas le faire dans un programme plus compliqué ici, vous pouvez imaginer maintenant le code s'exécutant en boucle et peut-être allouant plus de mémoire et plus de mémoire et plus de mémoire lorsque vous en avez besoin, car malloc vous permet de faire exactement cela.
+
+Et nous devons faire quelques vérifications de sécurité ici. Il s'avère, par la semaine dernière, que malloc peut parfois manquer de mémoire. Si votre Mac, votre PC ou le cloud manque de mémoire pour votre compte, vous voudrez peut-être vérifier la valeur de retour. Et donc une bonne pratique serait, attendez une minute, si la liste est égale à égale à null, laissez-moi aller de l'avant et renvoyer 1, quelque chose s'est mal passé, car mon ordinateur est à court de mémoire pour une raison quelconque. La meilleure pratique serait donc de dire qu'à chaque fois que vous allouez de la mémoire, vérifiez toujours si vous avez récupéré la valeur null.
+
+Maintenant, laissez-moi juste faire quelque chose pour la démonstration. Laissez-moi déplacer ma fenêtre ici. Laissez-moi mettre en évidence ces lignes de code et affirmer simplement que la mise en évidence ici entre les lignes 5 et 13 sont des lignes de code qui allouent simplement une liste de taille 3 et y stockent trois valeurs. C'est l'histoire où nous nous sommes arrêtés il y a un instant.
+
+Supposons maintenant que je change d'avis et que je décide après la ligne 13 ou peut-être ailleurs dans ce programme s'il était plus grand, vous savez quoi, je veux en fait un autre entier. Je veux redimensionner ce tableau. Eh bien, comment puis-je faire ? Eh bien, permettez-moi d'aller de l'avant et de faire ceci. Permettez-moi d'aller de l'avant et d'allouer, par exemple, une autre adresse et de dire de stocker à cette adresse un morceau de mémoire correspondant à quatre entiers en utilisant la taille de l'opérateur comme précédemment.
+
+Donc temporairement, permettez-moi d'aller de l'avant et de me donner un nouveau morceau de mémoire qui est suffisamment grand pour contenir quatre entiers au lieu de trois. Laissez-moi mettre en pratique les meilleures pratiques et dire, vous savez quoi, au cas où, si temp est égal à égale à null parce que je n'ai plus de mémoire, oubliez ça, j'en ai fini avec le programme. Nous n'allons pas procéder de toute façon. Mais c'est juste une bonne pratique maintenant.
+
+Mais maintenant que veux-je faire ? Si j'ai maintenant deux morceaux de mémoire, celui-ci est de taille 3, celui-ci est de taille 4, qu'avons-nous fait la dernière fois que nous voulions déplacer quelque chose dans la mémoire de l'ordinateur, qu'ai-je physiquement fait

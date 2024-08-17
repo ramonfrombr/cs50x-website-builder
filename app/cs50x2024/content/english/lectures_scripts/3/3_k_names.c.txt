@@ -1,0 +1,43 @@
+So that's interesting, but it's mostly warm up from last week. Why don't we consider a different problem, where now we might want to search not just for numbers, but maybe names. Like, if the goal is to search a phone book, let me go ahead and create names.c that allows me to search now for names in an array. 
+
+So let me go ahead and include cs50.h. Let me go ahead and include standard io.h. Let me go ahead and do it int main void. And then down here let me go ahead and give myself an array, so an array of string called names. I'm going to go ahead and give myself four names. And just like last time, I can do names bracket 0 gets Emma. Or again, to save myself time, I can cut a few corners here and say Emma, Rodrigo, Brian, David, just like last week, capitalized just because. So that's another way of writing the same code as with more lines than that. 
+
+Now I'm going to do int i gets 0. i is less than 5, in this case, i plus plus. And now things get a little interesting because I might want to say if names bracket i equals equals-- let's not search for 50 now. Let's search for Emma, just like last week. I want to go ahead and say found if I find Emma, else down here I want to say not found. 
+
+The catch is that this will not work. Sorry. It's a little warm up here today. The catch is this will not work, even though I'm pretty much doing exactly what I did last time. What might the intuition be, especially if you've never studied C before, as to why line 10 here won't actually work as easily as numbers did a moment ago? Yeah? 
+
+AUDIENCE: Difference in data type. 
+
+SPEAKER 1: Difference in data type, and what do what are the differences, to be clear? 
+
+AUDIENCE: [INAUDIBLE] 
+
+SPEAKER 1: Yeah. 
+
+AUDIENCE: [INAUDIBLE] of the array [INAUDIBLE]. 
+
+SPEAKER 1: Exactly. You can't use equals equals 4 strings because, remember, a string is not a data type, like a char, a bool, a float, an int. Remember, it's actually an array and an array that likely has multiple characters. And odds if you want to compare two strings, you probably intuitively need to compare all of the characters in those strings, not just the whole thing at once. 
+
+In other languages, if you use Python or Java, you can actually do this in one line, just like this. But in C, everything is much more low level. If you want to compare strings, you can't use equal equals. 
+
+However, it turns out there's a function, and you might have even used this in p-set 2, if you took this approach, where you can actually compare two strings. So I'm going to delete this line and instead say, str comp, for string comparison, names bracket i being the first string I want to compare and then, quote unquote, "Emma" being the second string that I want to compare. And you would only know this from having been told it or reading in the documentation. This function str compare returns 0 if two strings are the same. 
+
+It happens to return a positive number if one comes after the other alphabetically or negative number if one comes before the other alphabetically. But for today, we're just using it to test equality of strings, so to speak. So let me go ahead and save this. Let me go ahead and scroll up here and do make names this time. 
+
+And unfortunately, I can't just use this function, it seems. And while it's fine certainly to keep using help 50 to understand these messages, any thoughts as to what I've done wrong? 
+
+AUDIENCE: [INAUDIBLE] 
+
+SPEAKER 1: Yeah. I mean, I can't quite understand all of the words on the screen, frankly, at first glance. But string.h is something we've seen before. And indeed, if you read the documentation or the manual page, you'll see that str compare, indeed, comes in string.h so I need to put this up here. And now if I save my file and recompile my code down here with make names, now it compiles. And if I do dot slash names, I should see, hmm, interesting, a mixed message, literally. 
+
+So is Emma there or not there in my array? She's obviously there. And yet she's somehow not there. So what have I done wrong logically. Yeah? 
+
+AUDIENCE: Do you have [INAUDIBLE] if it's found or not. So [INAUDIBLE] is not found [INAUDIBLE]. 
+
+SPEAKER 1: Yeah. So it's this not found that I'm just blindingly printing at the end as a sort of catch all. But really, if I execute found or print found up here, what should I really be doing maybe right after that? Returning. And we looked at this last week. Recall that if you want to go ahead and return a successful outcome, the convention is to return 0. And actually down here, if you're unsuccessful, what should be perhaps returned instead? 
+
+AUDIENCE: 1. 
+
+SPEAKER 1: 1. And again, these are totally arbitrary conventions. You just kind of learn them as you go. But 0 mean success. 1 tends to mean failure. And that now lines up. So now my function main will essentially exit early. So if I go ahead and run make names and then do dot slash names, now if I'm searching for Emma in that array of four names, she's found and only found. 
+
+Any questions, then, on this here?

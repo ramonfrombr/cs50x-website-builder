@@ -1,0 +1,21 @@
+All right. Someone asked during the break about command line arguments, the things you can type after the word at the prompt. Well, it's a little weird with Python, because you're running a program called Python whose command line argument is the name of your program. But you can still provide command line arguments to your own program after the name of the file. So it's kind of offset by one. But you can, nonetheless, do this. 
+
+So let me go ahead and open up from week 2, say, argv1.c. And this is from a few weeks back. And the purpose of this program in C was just to print each command line argument one at a time. In Python, today, I'm going to call this argv.py. And this is a little different. If you want to access command line arguments, you can't just use argv and argc because there is no int main void, or specifically, int main argc, string argv, as there was in c. That's gone. 
+
+But argv and command line arguments more generally are exposed to you in another library. It happens to be called sys for system. And you can literally just import argv if you want. So it's a little different, but same exact idea. 
+
+And if I want to print each of those, I can say for i in range-- now I want to say argc. My goal at hand, again, per the left, is just to print each command line argument and be done with it. 
+
+But I don't have argc. And you might like to do this, but that doesn't exist. But that's OK. How do you think I could get the number of arguments in argv? The number of strings in argv? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Yeah, go with your instincts. 
+
+We've only seen a few building blocks today. But if argv is a list of all command line arguments, it stands to reason that the length of that list is the same thing as argc. In c, the length of something and the something were kept separate in separate variables. In Python, you only need the thing itself because you can just ask it, what is your length? 
+
+So if I go ahead and do this, I can now go ahead and print out argv of bracket i. And let's see. Python of argv.py. Enter. Nothing printed except the program's name. 
+
+But what if I type in foo? What if I type in bar? What if I type in baz? These are just weird go-to words that computer scientists use when they need a placeholder like xyz. It's indeed printing all of the words after my program's name. 
+
+Of course, I don't need to get into the weeds. As before, if you want to iterate over all of the words in a list for i and/or, let's say, for arg in argv, just go ahead and print it. Voila. Python. Much faster to do the same thing. So it reads a lot more like English even though it's a little terse, but the end result is going to be the same thing here.

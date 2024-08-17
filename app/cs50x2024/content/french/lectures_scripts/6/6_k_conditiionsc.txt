@@ -1,0 +1,13 @@
+Très bien. Voyons ce que nous avons d'autre en Python. Eh bien, il s'avère que nous avions des conditions en C. Laissez-moi ouvrir, par exemple, conditions.c de la dernière fois. Et nous avions ce programme ici, où nous avons demandé à l'utilisateur deux entiers, x et y.
+
+Et puis, nous avons simplement comparé les deux et dit que x est inférieur à y, ou que x est supérieur à y. Ou que x est égal à y. Eh bien, je peux aussi taper celui-ci assez succinctement : conditions.py — laissez-moi dire : from cs50 import get_int. Ensuite, laissez-moi obtenir un entier de l'utilisateur. Et je vais l'appeler x. Laissez-moi obtenir un autre entier de l'utilisateur. Et je vais l'appeler — oups — get_int — get_int. Laissez-moi l'appeler y.
+
+Et puis, posons la question. Si x est inférieur à y — oups —
+
+[RIRES]
+
+ — si x est inférieur à y, imprimez x est inférieur à y. Sinon :
+
+PUBLIC : [INAUDIBLE]
+
+DAVID MALAN : — elif — un peu plus succinct — vous devrez donc vous y habituer. x est supérieur à y. Imprimons x est supérieur à y ; sinon — je vais dire par déduction que x doit être égal à y. Je vais enregistrer ce fichier. Je vais exécuter Python sur conditions.py. Je vais me donner deux nombres juste pour faire un test rapide et superficiel. Et en effet, x est inférieur à y. Et je crois que si je continue à l'exécuter, j'espère qu'il devrait confirmer que le reste est également correct.

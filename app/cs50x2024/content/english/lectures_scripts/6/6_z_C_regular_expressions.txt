@@ -1,0 +1,43 @@
+All right. Any questions on that? All right. And now if we can, enough with the sort of syntactic details. Like, that's Python. That's going to get you like 80%, 90% of the way through learning Python, even though you'll invariably have to lean on the slides and the notes and Google and Stack Overflow for a little syntactic details as you translate your C programs in problem set 6 to Python programs in problem set 6. 
+
+But regular expressions. Now let's introduce some new powerful features of this language that C did not have but other languages do have, too. Regular expressions I alluded to earlier as representative of a feature where you can define patterns when you're trying to detect patterns in users' input. 
+
+And it turns out in regular expressions, there's a few pieces of syntax that are useful to know. Dot in the examples we're about to do represents any character. So if you don't know what character you're expecting, you can just say dot to represent any character. 
+
+Dot star is going to mean zero or more characters. Dot plus is going to mean one or more characters. Question mark is going to mean something optional. And. there's some other syntax as well. 
+
+But let's make this more real first. If I go back from before into the very simple agreement example that we did a while back, you may recall that we had this code here where I enumerated explicitly yes and y and no and n. 
+
+But as someone noted, these already kind of follow a pattern. And it turns out it might be sufficient just to check for a word starting with y or maybe I could check a little more succinctly for multiple values at once. 
+
+So let me go ahead and do this. It turns out Python has a library called regular expressions, or RE. In this library, is a bunch of fancier functionality. I can change this if condition to be this instead. 
+
+I can go ahead and use re.search which is a function whose purpose in life is going to be to search a string for a pattern that you care about, like something starting with y. And the way I'm going to do this is search for initially yes. And the string I'm going to search is s. 
+
+And that is going to return effectively true or false. So I'm going to change my code to just quite simply be this. This says hey, Python. Search the string s for this word here. 
+
+All right. Let's test this out. So Python of agree-- whoops, now in this version. Whoops. I forgot my own-- let's see. I forgot my colons. So Python of agree. Enter. Do I agree? I'm going to go ahead and type in yes, agreed. 
+
+But at the moment, y by itself does not work. So let's make it work. Well, I could do this in a couple of ways. In regular expressions, you can say yes or some other value. 
+
+So a vertical bar just means or. So it's not the word or and it's not double bars in this context of patterns. It's just a single vertical bar. But now I can type y or yes. 
+
+But there's some cleverness here, right? Like, yes already starts with y. So I could actually say this. Let me arbitrarily put parentheses around es initially. But then put a question mark at the end. 
+
+This is funky syntax. And again, what we're talking about now is not Python per se. These or regular expressions, patterns of text. This just means look for a y and maybe an es but maybe not an es. 
+
+So the question mark means 0 or 1 instance of the thing to the left. It's optional. So now I can run this again and say yes. And that seems to work. Or I can say y and that seems to work. 
+
+But this does not work. So how could I fix this and make it case-insensitive? I could actually just say lower and just force everything to lowercase. Or it turns out, if you read the documentation-- this looks a little weird-- you can also pass in a third argument, which weirdly is all caps like you're yelling. 
+
+But this is regular expression IGNORECASE. And this will just force everything to be treated as lowercase or uppercase. It doesn't matter. But we'll see here this is actually going to make it a lot easier to search for certain patterns. 
+
+We can say no similarly here by just starting to construct patterns. And again, you don't sit down generally and write regular expressions that just work like this. You build them up piece by piece as I already am. 
+
+So let me fix this real quick. What did I just do wrong? Here we go. Let me do one last thing. Suppose I agree. Yes. OK. That's OK. Because I'm searching the whole string s 
+
+But if I want to search for literally the beginning of the string, I can use a caret symbol here. And to search all the way to the end of the string, you can use a dollar sign. Why these are the way they are I don't know. It's hideous. But caret means start of string. Dollar sign means end of string. 
+
+And if it's not crazy enough now, yes is not going to work. No agreement. But yes literally will. Because this means the human must type literally at the beginning of their input a y followed optionally by an es. 
+
+And then per the dollar sign, that's got to be it for their input. You can make it really tight around the user's input to control what they are typing in, especially for something like an agreement. 

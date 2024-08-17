@@ -1,0 +1,11 @@
+DAVID J. MALAN: So with that said, this week, will we understand all the more how images work? And here for instance, is a shot of the Charles River. And for the first part of the problem set, we implement a number of Instagram like filters, understanding how an image is represented and how you therefore can transform it. For instance, first, into grayscale, by writing your own grayscale filter, into sepia, into-- reflecting it on the opposite from left to right, blurring an image, even still. And if you're feeling more comfortable, to do something called edge detection, which finds all of the edges within a particular picture. 
+
+More than that, will you actually implement code that recovers JPEG files? We've been taking some photographs of people, places, and things. Unfortunately, we accidentally deleted those photos but first made a forensic image of the memory card from the camera, which we will then provide to you so that you can write code in C that recovers all of the seemingly lost JPEGs from that forensic image. 
+
+And last but not least, it would not be a CS class without a little bit of CS humor. We thought we'd end on this one note, a joke that you will perhaps now get. 
+
+[LAUGHTER] 
+
+All right. That's it for CS50. We'll see you next time. 
+
+[MUSIC PLAYING] 

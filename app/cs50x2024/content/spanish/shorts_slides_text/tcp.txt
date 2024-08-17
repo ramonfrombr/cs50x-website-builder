@@ -1,0 +1,83 @@
+[0]
+
+Protocolo de Control de Transmisión (TCP)
+
+[1]
+
+Protocolo de Control de Transmisión (TCP)
+• Si se piensa en el Protocolo de Internet (IP) como el protocolo para obtener información de un equipo emisor a un equipo receptor, entonces se puede considerar al Protocolo de Control de Transmisión (TCP) como el responsable de dirigir el paquete transmitido al programa correcto en el equipo receptor.
+• Como podrás imaginar, es importante poder identificar tanto el lugar en el que se encuentra el receptor como para qué sirve el paquete, por lo que el TCP y el IP forman prácticamente un par inseparable: TCP/IP.
+
+[2]
+
+Protocolo de Control de Transmisión (TCP)
+• A cada programa, utilidad o servicio de un equipo se le asigna un número de puerto. Acoplado con una dirección IP, ahora podemos identificar de forma única un programa específico en un equipo determinado.
+• Otra cosa para lo que el TCP es crucial es para garantizar la entrega de paquetes, lo que el IP por sí solo no hace.
+• El TCP hace esto al incluir información acerca de cuántos paquetes debería recibir el receptor, y en qué orden, y transmite esa información junto con los datos.
+
+[3]
+
+Protocolo de Control de Transmisión (TCP)
+• Algunos puertos se usan de forma tan común que se han estandarizado en todos los ordenadores.
+• El FTP (transferencia de archivos) utiliza el puerto 21.
+• El SMTP (correo electrónico) utiliza el puerto 25.
+• El DNS utiliza el puerto 53.
+• El HTTP (navegación web) utiliza el puerto 80.
+• El HTTPS (navegación web segura) utiliza el puerto 443.
+
+[4]
+
+Protocolo de Control de Transmisión (TCP)
+• Pasos del proceso TCP/IP
+1. Cuando un programa va a enviar datos, el TCP los divide en fragmentos más pequeños y comunica esos paquetes al software de red del ordenador, añadiendo una capa TCP al paquete.
+2. El IP dirige los paquetes individuales desde el emisor al receptor; esta información forma parte de la capa IP que rodea el paquete.
+3. Cuando el ordenador de destino recibe el paquete, el TCP mira el encabezado para ver a qué programa pertenece; y dado que las rutas que toman los paquetes pueden diferir, el TCP también debe presentar esos paquetes al programa de destino en el orden correcto.
+
+[20]
+
+Protocolo de Control de Transmisión (TCP)
+IP del receptor
+25 / 2 de 4
+<DATOS>
+IP del receptor
+25 / 2 de 4
+<DATOS>
+A
+B
+C
+D
+A
+B
+C
+D
+EMISOR
+RECEPTOR
+Enrutamiento a través de IP
+
+[21]
+
+Protocolo de Control de Transmisión (TCP)
+A
+B
+C
+D
+EMISOR
+RECEPTOR
+A
+B
+C
+D
+
+[22]
+
+Protocolo de Control de Transmisión (TCP)
+correo electrónico
+EMISOR
+RECEPTOR
+correo electrónico
+
+[23]
+
+Protocolo de Control de Transmisión (TCP)
+• Si en algún punto del camino un enrutador que entrega información utilizando el Protocolo de Internet dejara caer un paquete, el TCP utilizaría información adicional dentro de los encabezados para solicitar que el emisor pasara el paquete adicional para que pudiera completar el ensamblado.
+• Después de que los paquetes han llegado, el TCP se asegura de que están organizados en el orden correcto y luego pueden ser reensamblados en la unidad de datos prevista y entregados al servicio correcto.

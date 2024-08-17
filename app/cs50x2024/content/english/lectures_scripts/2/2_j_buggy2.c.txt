@@ -1,0 +1,21 @@
+So here's a program that also is buggy. I wrote it in advance, and it's called buggy two dot c. It's got a for loop. It's printing some hashes. And the goal of this program is to print something 10 times. So I've got my for loop from zero on up to 10. I'm printing a hash with a backslash n. So let's go ahead and run this, make buggy two. Oops. I'm not in this directory. Let me go ahead and make buggy two-- seems to compile. So this is not a problem for help 50 yet, because that would be when the command itself isn't working. Buggy two-- all right, it looks good, but let's just be super sure-- one, two, three, four, five, six, seven, eight, nine, 10, 11. 
+
+So it is flawed, if my goal is to print just 10 hashes. And obviously, this is very contrived. Odds are, you can just reason through what the problem here is, but this is representative of another type of problem that's not a bug syntactically, whereby you typed some wrong symbol or Command. This is more of a logical error. My goal is to print something 10 times. It's obviously not. It's printing something 11 times. And suppose that the goal at hand is to wrap your mind around, why is that happening? 
+
+Well, the next debugging tool that we'll propose that you consider, is actually quite simply printf. It's perhaps the simplest tool you can use to actually understand what's going on inside of your program, and we might use it in this case as follows. I'm obviously printing out already the hash symbol, but let me go ahead and say something more deliberate, just to myself, something like i is now, %i, and then let's go ahead and just put a space, and then in there, output i semicolon. So this is not the goal of the program. It's just a temporary diagnostic message, so that now, if I go ahead and increase my terminal window, recompile buggy two, and rerun dot slash buggy two-- [LAUGHS] buffy two-- buggy two-- I'll now see, oh, a little more interesting information. 
+
+Not only am I still seeing the hashes, I'm now seeing, in real time, the value of i. And now, it should probably jump out at you, if it didn't already in the for loop alone, what's the mistake I've made in my code? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Say again. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Yeah, my first value for i was zero, and that's normally OK. Programmers do tend to start counting from zero, but if you do that, you can't catch keep counting through 10. You have to make a couple of tweaks here. So what can we do to fix? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Yeah, so this would be the canonical way of doing this. It's not the only way, but generally start at zero and go up to less than the value you care about. So now if I rerun this, I can go ahead and run make buggy two again, clear my screen, dot slash buggy two, Enter. And now I indeed have 10, even though it never says 10, but that's OK, because I'm starting at zero, and now that I found my logical error, where it's just not working as I intended, now I can go ahead and delete that line. 
+
+I can go ahead and make buggy two once more, dot slash buggy two, Enter. And voila, I can now submit my program, or ship it out to my actual user. So printf is sort of a very old-school way of just wrapping your mind around what's going on in your program by just poking around. Use printf to see what's going on inside of your program, so you're not just staring at a screen trying to reason through without the help of the computer. 

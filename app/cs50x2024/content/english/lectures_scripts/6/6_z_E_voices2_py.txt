@@ -1,0 +1,5 @@
+Let me go in, and for time's sake, let me open up A variant of this that I wrote in advance. This one now is exactly the same. But now notice insofar as Google is handing me back a bunch of words, I can certainly just use some Python syntax and say, is hello in the user's words? Is how are you in the user's words? Goodbye to you, IS goodbye in the user's words? 
+
+So let me run this version. Python voices2, which is available-- I can't talk while I'm doing this demo. Hello world. How are you today? Goodbye, world. OK. 
+
+[LAUGHTER] 

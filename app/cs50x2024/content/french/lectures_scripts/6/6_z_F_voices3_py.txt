@@ -1,0 +1,3 @@
+Maintenant, je vais passer à une autre étape et introduire, dans ce cas, un exemple utilisant des expressions régulières. Remarquez cela. En un clin d'œil, utilise re.search. Et il recherche les mots my name is, c'est-à-dire qu'espérons-le, il détectera si j'ai dit my name is tel ou tel. Et puis il va dire hey à tout ce qui correspond.
+
+Vous pouvez utiliser des expressions régulières pour extraire des informations à partir d'une entrée. Donc, j'extrais ici entre parenthèses tout ce qui vient après le mot is. Nous y revoilà. Python, cette fois-ci des voix.3. Bonjour, là. Je m'appelle David. Ho, ho, ho ! Maintenant, votre ordinateur est vraiment sentimental.

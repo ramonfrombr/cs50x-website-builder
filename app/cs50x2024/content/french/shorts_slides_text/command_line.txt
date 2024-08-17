@@ -1,0 +1,78 @@
+[0]
+
+Utilisation de la ligne de commande Linux
+
+[1]
+
+Utilisation de la ligne de commande Linux
+● L'IDE CS50 est une machine basée sur le cloud exécutant Ubuntu, l'une des nombreuses versions du système d'exploitation Linux.
+● De nombreuses distributions Linux modernes disposent d'interfaces utilisateur graphiques (GUI) pour permettre une navigation facile à la souris.
+● Néanmoins, en tant que programmeur, vous utiliserez probablement fréquemment votre fenêtre de terminal, et vous pouvez effectuer de nombreuses tâches avec des commandes clavier.
+
+[2]
+
+Utilisation de la ligne de commande Linux
+● Examinons quelques-unes des commandes basées sur le clavier les plus importantes pour travailler au sein de l'IDE ou de tout système basé sur UNIX.
+
+[3]
+
+Utilisation de la ligne de commande Linux
+ls
+● Abréviation de « list », cette commande vous donnera une liste de tous les fichiers et dossiers de votre répertoire actuel.
+
+[4]
+
+Utilisation de la ligne de commande Linux
+cd <répertoire>
+● Abréviation de « change directory », cette commande modifie votre répertoire actuel en <répertoire>, que vous spécifiez, dans votre espace de travail ou sur votre système d'exploitation.
+● Le nom abrégé du répertoire actuel est .
+● Le nom abrégé du répertoire parent du répertoire actuel est ..
+● Si vous êtes curieux de connaître le nom du répertoire actuel, bien que l'invite du terminal vous le dise souvent, vous pouvez taper pwd (présent répertoire de travail).
+
+[5]
+
+Utilisation de la ligne de commande Linux
+mkdir <répertoire>
+● Abréviation de « make directory », cette commande créera un nouveau sous-répertoire appelé <répertoire> situé dans le répertoire actuel.
+
+[6]
+
+Utilisation de la ligne de commande Linux
+cp <source> <destination>
+● Abréviation de « copy », cette commande vous permettra de créer un duplicata du fichier que vous spécifiez comme <source>, qu'il enregistrera dans <destination>.
+● Si vous souhaitez copier des répertoires entiers, vous devrez modifier légèrement la commande :
+cp –r <répertoire source> <répertoire destination>
+Le « -r » signifie récursif et indique à cp de plonger dans le répertoire et de tout copier à l'intérieur (y compris tous les sous-répertoires qu'il peut contenir).
+
+[7]
+
+Utilisation de la ligne de commande Linux
+rm <fichier>
+● Abréviation de « remove », cette commande supprimera <fichier> après vous avoir demandé de confirmer (o/n) que vous souhaitez le supprimer.
+● Vous pouvez ignorer la confirmation en tapant :
+rm –f <fichier>
+Mais utilisez à vos risques et périls ! Il n'y a pas d'annulation possible.
+● Pour supprimer des répertoires entiers, vous devez utiliser l'indicateur –r, comme c'était le cas avec cp.
+rm –r <répertoire>
+● Vous pouvez également combiner les indicateurs –r et –f en –rf. Encore une fois, soyez prudent ! Il n'y a pas d'annulation possible !
+
+[8]
+
+Utilisation de la ligne de commande Linux
+mv <source> <destination>
+● Abréviation de « move », cette commande vous permettra de renommer efficacement un fichier, le déplaçant de <source> vers <destination>.
+
+[9]
+
+Utilisation de la ligne de commande Linux
+● Pour être sûr, il existe de nombreux autres utilitaires de ligne de commande de base à votre disposition, et nous en discuterons beaucoup à l'avenir dans CS50.
+● Si vous souhaitez en explorer d'autres intéressants avant de les voir en classe, lisez :
+chmod
+ln
+touch
+rmdir
+man
+diff
+sudo
+clear
+telnet

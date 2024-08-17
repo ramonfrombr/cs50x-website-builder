@@ -1,0 +1,41 @@
+Well, let's go back for just a moment to a place we saw some weeks ago, which was this here. 
+
+You'll recall that in Mario, we did a few examples early on, where we wanted to replicate the idea, printing out, like, four question marks in a row here. And we wanted to print out something like three squares in a column. And then, we also had this two-dimensional structure printing bricks. Let's see how we can implement those same ideas now using Python a bit more simply than before. 
+
+So let me go ahead here. And I'll create a program called mario.py In which to whip these up, as well. So Mario.py-- the first goal is to do something like this. So I want to go ahead and print out four question marks in the sky or just in simple ASCII terms, just four question marks on the screen. 
+
+So I can obviously just do 1, 2, 3, 4. But this is not particularly well designed. I can make it a little more reusable, a little more dynamic by saying for i in range (4). And then, I can go ahead and print out, for instance, a single question mark instead. But something's going to backfire now. If I run this, what am I going to see that I don't want to see? Yeah. 
+
+AUDIENCE: It will be a question mark [INAUDIBLE]. 
+
+DAVID MALAN: Exactly. It's going to be question marks in a vertical row. Why? Well, finally, we were so happy to get rid of the backslash n's. Now, it's come back to bite us, because sometimes you don't want the backslash n's. So here's where Python's functions are parameterizable in a little different way from C. 
+
+Most every function we've seen in C might have taken zero or more arguments inside the parentheses, and you just separate them with commas. Python's a little fancier in that it has what are called named arguments, where you don't just specify comma something, comma, something, comma, something. You can, instead, specify the name of an argument or a parameter, an equals sign, and then its value. 
+
+So you would only know this from Python's documentation. But it turns out that the print function takes an argument called end-- E-N-D-- whose value can equal whatever you want it to. By default, it literally equals backslash n. It sort of happens automatically, but you can override this. 
+
+You can actually, say you know what? I don't want anything at the end of each thing I'm printing. So let me just to quote unquote. Let me rerun mario.py now. And now, I almost have what I want. But it's a little sloppy. I still want to move the cursor to the end. But that's OK. I can just print nothing, because I'm going to get a new line for free at the bottom of the program. So now is how I can implement this same idea. 
+
+But you can put anything here. It might be a little weird. But I could put commas in between. And then, I could rerun mario.py and now get question mark comma question mark comma question mark comma, because I'm printing a comma after each one. But for our purposes, it suffices just to override that, in this case. 
+
+Well, how can I go about doing this a little fancier? Well, you proposed-- or the meme you saw proposed that we can instead do this instead. We can just print, for instance, print question mark times 4. Now, we can rerun the program now. And voila-- even more Pythonic-- not necessarily as obvious or reusable, but certainly more succinct. 
+
+Let's do one more this time for-- how about this? Recall that we wanted to print a column of three bricks. So how might we do this? Well, let me go ahead and do it the simplistic way. For i in range of 3, let me go ahead and print out a brick like that. Let me run the program now, mario.py. 
+
+And voila, that one's pretty easy. But I can actually do this a little more cleverly if I do do this-- print one of these-- backslash n times 3. But let's fix that bug that came up earlier, as well. That's almost right. But I claim that this was a little messy. 
+
+So what is the solution for fixing this bug, where I'm just being a little nit picky? I don't want this extra blank line at the end, which I'm getting for free from print itself. The blank lines-- the new lines in the middle are coming from the quoted string here. What's the fix to get rid of that extra new line at the very end? Yeah. 
+
+AUDIENCE: You could change n to nothing. 
+
+DAVID MALAN: Yeah, just say equals quote unquote. So the syntax is starting to get a little funky, right? Like, it's a little harder to parse visually. But this is, indeed, just the paradigm we've seen before. Here is one argument on the left. Here is another argument in the right. The only thing that's different in Python is that now, some arguments can have explicit names that you only know from the documentation. 
+
+So now, if I rerun this after saving, now, I've got the effect that I actually want. Well, let's do one more with Mario here, this time to do something a little two dimensional and print out a brick that's like a 3 by 3 brick of hashes instead. Well, let's go back to my code here. 
+
+And let me go ahead and do a first example in Python of a nested loop. So let me go ahead and do for i in range of 3. That gives me my rows. And then, I can just do for j in range 3 also. And then, in here, I can go ahead and print out just a hash mark. But I don't want to print out new lines every time. Otherwise, it's going to be a super tall column of hashes. 
+
+But after I print a row, I do want to print a blank line. So I think this suffices. I'm going a little quickly here. But again, this-- the logic is from week 1. The syntax is now from week 6. Let me run this again-- mario.py. Nope. I screwed up. What did I do wrong? I didn't actually override what I intended. Whats-- yeah, over there on the left. 
+
+AUDIENCE: You included the backslash n. 
+
+DAVID MALAN: Yeah, and the whole point of using the n parameter was to override it. So let me change it to that, and let's see what happens now. Voila. Now I've implemented that same idea. Whoo, I think Rice Krispie Treats await us in the lobby. We'll see you in five minutes.

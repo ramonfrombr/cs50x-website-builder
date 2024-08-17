@@ -3,8 +3,13 @@ from flask import render_template
 from . import weeks_bp as bp
 from ..content.english.language import week_page as english_week_page
 from ..content.spanish.language import week_page as spanish_week_page
+from ..content.french.language import week_page as french_week_page
+from ..content.portuguese.language import week_page as portuguese_week_page
 from ..content.english.language import weeks as english_weeks
 from ..content.spanish.language import weeks as spanish_weeks
+from ..content.french.language import weeks as french_weeks
+from ..content.portuguese.language import weeks as portuguese_weeks
+
 
 if os.environ['COURSE_LANGUAGE'] == 'english':
     weeks_content = {
@@ -15,6 +20,16 @@ elif os.environ['COURSE_LANGUAGE'] == 'spanish':
     weeks_content = {
         "week_page": spanish_week_page,
         "weeks": spanish_weeks
+    }
+elif os.environ['COURSE_LANGUAGE'] == 'french':
+    weeks_content = {
+        "week_page": french_week_page,
+        "weeks": french_weeks
+    }
+elif os.environ['COURSE_LANGUAGE'] == 'portuguese':
+    weeks_content = {
+        "week_page": portuguese_week_page,
+        "weeks": portuguese_weeks
     }
 
 

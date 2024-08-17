@@ -1,0 +1,11 @@
+All right. Let me open up one of the first problems, though, we encountered in week 2. And that was, for instance, in string2.c. In string2.c, recall that I simply wanted to iterate over all of the characters in a string. And this problem we were able to solve pretty straightforwardly in C by using the square bracket notation-- turns out in Python, we can do this a little more succinctly. Let me go ahead and call this string.py. 
+
+I'm going to go ahead and now import from CS50 the get_string library just to make user input a little easier today. I'm going to go ahead and get a string from the user, asking them for their inputs. And then, I'm just going to go ahead and print out output. And then, I'm going to suppress the new line, just to keep things all in the same line. 
+
+And then, I want to iterate now over the user's input and print it character for character. Well, in C, I did this with square bracket notation and a very verbose for loop. In Python, I can do something pretty similar-- for i in range length of s, because the length of the string is the total number of characters. If I pass that as input to range, that lets me iterate once for every character. And I can use the same notation. I can print s bracket i in Python. And let me get rid of the new lines so that I only have one at the very end. 
+
+So again, I'm typing quickly. But range just counts some number of times. How many times? However many characters there are, as per the length of the string, and on each iteration, print the i'th character of s. Let me go ahead and run this-- python of string.py. Let me type in, for instance-- oops. Do that again. 
+
+After I see the prompt for input, let me type Emma's name. And there's the output, right? It looks the same, even though I'm technically printing it character for character. But Python is kind of fancy. And you don't need all of this mechanical stuff, like counting numbers and square bracket notation. 
+
+If you want to iterate over a string character by character, you can just say for c in s, print c. And it will figure out how to get the character that you want. Technically, let me override the new line. But this is much more pleasant now. Now, if I want to type in the same thing, voila, works the same, less code, getting more work done, getting back to other things I really want to do instead. 

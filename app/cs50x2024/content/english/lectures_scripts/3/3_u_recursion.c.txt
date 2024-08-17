@@ -1,0 +1,61 @@
+So let's try this once more. Let me go ahead and create another file called recursion.c. I'm again going to go ahead and include [? cs50.h. ?] And I'm going to go ahead and include standard [? io.h. ?] And then I'm going to go ahead and have int main void again. 
+
+And in this program here, I'm going to again ask the user for the height of interest for their pyramid using int height gets get int and ask them for height. I'm not going to bother error checking here. I'm going to go ahead and draw a pyramid of that height. And so what's going to change this time is my draw function, void draw int h as before. And now's where things get interesting. 
+
+My goal now is not to just use nested loops, but to define a bigger pyramid in terms of a small pyramid. So suppose that the goal at hand is to draw a pyramid of size 4. What should I do first, according to this definition of a pyramid? How do I draw a pyramid of size 4 in English? Yeah? 
+
+AUDIENCE: Draw a pyramid of the size 4 minus 1. 
+
+SPEAKER 1: Yeah, draw a pyramid of size 4 minus 1, or a pyramid of size 3. So how do I express this in code? Well, wonderfully in code, this is super simple, h minus 1. That will draw me a pyramid of height h minus 1, or 3 in this specific case. Now, it's not done the program, right? I can't possibly just compile this and expect it to work because this seems like it's just going to call itself endlessly. 
+
+Well, what's a pyramid of size 3, 2, 1, 0, negative 1, negative 2, right? It would go on endlessly if I just blindly subtract 1. So I need that base case. Under what circumstances should I actually not draw anything? 
+
+AUDIENCE: [INAUDIBLE] 
+
+SPEAKER 1: Yeah. So maybe if h equals equals 0, you know what? Just return. Don't do anything, right? I need a base case, a hard-coded condition that says stop doing this, this mind-bending [? cyclity ?] again and again. 
+
+But I do need to do one more thing. So this is just an error check to make sure I don't do this forever. This is this leap of faith, where somehow I haven't even written the function yet, and somehow it's magically going to draw my pyramid. But what's the second step of drawing a pyramid of height 4, if I can ask again? 
+
+AUDIENCE: Well, in terms of [INAUDIBLE]? 
+
+SPEAKER 1: Yeah, so what comes next? I've just drawn a pyramid of height 3. 
+
+AUDIENCE: Oh, then you draw a pyramid of height 2. 
+
+SPEAKER 1: Now I draw a-- say it once more. 
+
+AUDIENCE: Pyramid of height 2. 
+
+SPEAKER 1: Not quite. Take this literally. If I have just in code drawn a pyramid of height 3, how do I get to a pyramid of height 4 now? 
+
+AUDIENCE: Oh, you add [INAUDIBLE]. 
+
+SPEAKER 1: Yeah, I add that additional row, right? [? Because, ?] again, per our diagram, what's a pyramid of height 4? Well, it's really just a pyramid of height 3 plus an additional row. So if we all just kind of agree, a leap of faith, that somehow or other I have the ability to draw pyramids of height h minus 1, lets you and I do the hard part in code of drawing that one additional row. 
+
+So if I go back in code here, after drawing a pyramid of height h minus 1, I need to go ahead and for int i gets 0, i is less than h, i plus plus. It would seem that I just need to print out, for instance, up here a hash followed by a new line after that, right? So I do need a for loop, but just one not nested. 
+
+And what does this have the effect of doing? Well, on the fourth row, where h equals 4, how many hashes am I going to print? 1, 2, 3, 4, if I'm iterating from 0 on up to h, 0, 1, 2, 3, 4. So these lines of code, in the story at hand, are going to print four hashes. 
+
+This line of code, amazingly, is going to print everything else above it, the pyramid of height 3. And the line of code above that is just going to make sure that we don't blindly call draw forever into the negative numbers. I'm literally going to say, if h equals equals 0, stop doing this magic. 
+
+So let's go ahead and put my prototype up top, just as before, even though it's the same, save the file, make recursion, Enter. It compiles OK. Now let me go ahead and run recursion a height of 4. And, oh, my god, I wrote a function that called itself and somehow magically printed a pyramid. And yet all I ever explicitly did was print what? A row of bricks myself. And the recursion comes from the fact that I'm calling myself. But just like with binary search, just like with any divide-and-conquer approach, I'm calling myself on a smaller problem than I was handed. The bites are eating into the problem again and again and again. 
+
+Any questions on this technique, a function that calls itself is recursive? Yeah? 
+
+AUDIENCE: A quick question. [INAUDIBLE]. So [INAUDIBLE] loop, how does it go back [INAUDIBLE]? 
+
+SPEAKER 1: Really good question, after the for loop, how does it go back and print? It doesn't. That happens first. So if you actually were to use debug 50 in the [? IDE, ?] you would see that when this line 20 is called, and you call draw of a pyramid of height 3, draw gets called again. And then it gets called again on height 2. Then it gets called again on height 1. 
+
+But guess what happens on a pyramid of height 1? It prints a single hash. Then if you rewind the story, what happens next? You print a row of two hashes. What happens next? You print a row of three hashes. What happens next? You print a row of four hashes. 
+
+And we'll see more of this before long. But because I'm printing-- I'm calling draw before I'm printing the base, I don't know how this works yet. That's the leap of faith to which I keep alluding. But it keeps happening because, 1, I have this base case that stops this from happening forever. And I have this other case that adds to my pyramid again and again. Yeah? 
+
+AUDIENCE: It's kind of like a layering of [INAUDIBLE] for iterations. But instead of going from top down, it's going [? down up. ?] 
+
+SPEAKER 1: It is. It's going down up. And you're referring actually to a [? concept ?] we'll talk about actually in a week or two's time called the stack. We'll see actually how this magic is working. For now let me just stipulate that functions can call themselves, so long as what you pass them is a smaller input than you were handed initially. 
+
+And now just to demonstrate that computer scientists have a sense of humor, if we Google recursion, as you might currently be doing to understand what this is, you'll notice-- 
+
+[LAUGHTER] 
+
+Get it? Kind of-- OK, anyhow. Google has literally hard-coded that into their source code of google.com.

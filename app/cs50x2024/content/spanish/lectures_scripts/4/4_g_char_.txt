@@ -1,0 +1,23 @@
+Si un asterisco representa una dirección y char representa el tipo de dirección al que se apunta, tal como int star puede hacer que apuntes a un valor como n-- que guarda 50 --así podría un char star --por esa misma lógica-- permitirte guardar la dirección de y, por consiguiente, apuntar a un carácter. Y por supuesto, como dijiste, desde la Semana 1, una cadena de caracteres es solo una secuencia de caracteres. Por lo que una cadena de caracteres parece ser solo la dirección del primer byte en la secuencia de caracteres. Y por convenio el último byte resulta ser todo 0, para ayudarnos a encontrar el final.
+
+Entonces, ¿qué es una cadena de caracteres de forma más técnica y cuál es la biblioteca CS50 de la que ahora empezaremos a deshacernos como ruedas de entrenamiento? Bueno, la semana pasada te presentamos el concepto typedef, con el que puedes crear tu propio tipo de datos personalizado que no existe en C pero sí existe en tu propio programa. Y presentamos esta palabra clave, typedef.
+
+La semana pasada propusimos que esto era útil porque en realidad podrías declarar una estructura ingeniosa que encapsula múltiples variables, como nombre y número, y luego llamamos a esta estructura de datos, la semana pasada, una persona. Ese fue el nuevo tipo de datos que inventamos. Bueno, resulta que puedes usar typedef del mismo modo, incluso de manera más simple que como lo hicimos la semana pasada al decir esto. Si dices typedef char star string-- typedef significa proporcionarme un nuevo tipo de datos, solo para mi propio uso. Char star significa que el tipo de valor será la dirección de un carácter. Y el nombre que quiero darle a ese tipo de datos va a ser string.
+
+Y así, literalmente, esta línea de código aquí, esta es una de las líneas de código en el archivo de encabezado cs50.h-- que has estado incluyendo durante varias semanas, en la que creamos un tipo de datos llamado string para que sea un sinónimo de char star. De modo que si así lo deseas, es una abstracción, una simplificación sobre la idea de una secuencia de caracteres a la que apunta una dirección.
+
+¿Alguna pregunta? Y, sinceramente, esta es la razón por la cual --y quizá esas miradas en blanco-- por la cual presentamos cadenas de caracteres en la Semana 1 como un tipo real en lugar de no existir en absoluto. Porque a quién le importan realmente las direcciones y los punteros y todo eso cuando todo lo que quieres hacer es, por ejemplo, imprimir, hola mundo, u hola, el nombre de fulano de tal?
+
+Sí, una pregunta.
+
+AUDIENCIA: ¿Qué otras funciones importantes creadas por CS50 no son intrínsecas a--?
+
+DAVID J. MALAN: Muy buena pregunta. Volveremos a esto más tarde hoy. Pero otras funciones que se definen en la biblioteca CS50 que son ruedas de entrenamiento que despegan hoy son getString, getInt, getFloat y las demás funciones get también. Pero eso es todo lo que hacemos por ti.
+
+¿Otras preguntas? Sí.
+
+AUDIENCIA: ¿Puedes definir todas estas palabras de nuevo? Como, es decir, string es como un puntero a carácter que apunta-- Estaba confundido sobre eso. ¿Puedes repetirlo?
+
+DAVID J. MALAN: Claro. Una cadena de caracteres, según esta definición, es un char star, como diría un programador. ¿Qué significa eso? Una cadena de caracteres es simplemente una variable que contiene la dirección de un carácter. Por nuestra convención humana, ese carácter podría ser el comienzo de una secuencia de múltiples caracteres. Pero eso es lo que llamamos cadenas de caracteres en la Semana 1. Entonces, una cadena de caracteres es solo la dirección de un único carácter. Y dejamos a la convención humana saber que el final de la cadena de caracteres simplemente estará demarcado por ocho bits 0, también conocido como el terminador nulo.
+
+Y este es el sentido en el que --especialmente si tienes alguna experiencia previa en programación-- C es mucho más básico. En Python, como verás pronto en unas pocas semanas, todo funciona de manera tan fácil y espléndida. Si quieres una cadena de caracteres, puedes tener una cadena de caracteres. No tienes que preocuparte por ninguno de estos detalles básicos. Pero eso se debe a que Python se construye aquí, conceptualmente, donde C se construye aquí abajo --por así decirlo-- más cerca de la memoria de la computadora. Pero no hay magia. Si quieres una cadena de caracteres, está bien. Solo recuerda dónde empieza, recuerda dónde termina. Y listo, ya está. El asterisco en la sintaxis de hoy es solo una forma de expresar esas ideas en código.

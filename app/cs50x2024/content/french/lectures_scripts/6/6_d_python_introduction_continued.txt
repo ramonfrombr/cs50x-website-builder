@@ -1,0 +1,57 @@
+Il s'avère que vous pouvez utiliser print de différentes façons. Vous pouvez, en effet, juste concaténer une chaîne avec une autre en utilisant l'opérateur plus. Ou si vous lisez la documentation, il s'avère que print prend plusieurs arguments. Le premier pourrait être le premier mot que vous voulez prononcer.
+
+Le deuxième argument pourrait être la seconde chose que vous voulez prononcer. Et par défaut, ce que print va faire, selon sa documentation, c'est joindre, ou concaténer automatiquement ces deux chaînes en ajoutant un espace. Ce n'est donc pas une erreur si j'ai retiré l'espace après la virgule. Je vais l'obtenir gratuitement, pour ainsi dire, car print va le faire pour moi.
+
+Maintenant, celui-ci va être un peu moche. Mais c'est une approche de plus en plus courante en Python pour faire la même chose. Et ça rappelle un peu C. Mais il s'avère que nous verrons au fil du temps que c'est un peu plus puissant. Vous pouvez également obtenir le même résultat comme ceci.
+
+Très bien. Ça a l'air un peu bizarre. Mais une fois que vous commencez à reconnaître le modèle, c'est assez simple. C'est toujours la fonction print. Il y a toujours une chaîne entre guillemets, bien qu'il s'avère que vous pouvez également utiliser des guillemets simples en Python. ANSWER est la variable que nous voulons imprimer. Ce qui est nouveau maintenant, ce sont ces accolades, qui signifient interpoler la valeur entre ces accolades, c'est-à-dire la substituer comme le fait %s.
+
+Mais il y a une autre bizarrerie, qui mérite certainement une balle antistress, ce n'est pas une faute de frappe, mais cela la distingue de C. Oui.
+
+AUDIENCE : Le f.
+
+DAVID MALAN : Le f — et c'est celui qui — voilà — la caractéristique la plus étrange de — oh, pardon.
+
+[RIRES]
+
+C'est l'une des choses les plus étranges dans les versions récentes de Python ces dernières années. C'est ce qu'on appelle une chaîne de format, ou chaîne f. Si vous n'avez pas cette étrange f au début de la chaîne immédiatement à gauche des guillemets, vous allez littéralement imprimer à l'écran H-E-L-L-O, virgule, espace, accolade ANSWER, accolade. Et c'est tout. Donc, f devant cela transforme la chaîne en chaîne f ou chaîne de format, ce qui indique à Python de ne pas l'imprimer littéralement. Insérez la valeur que j'ai placée entre les accolades. C'est donc assez puissant une fois que vous avez adopté cette convention.
+
+Très bien. Regardons quelques autres exemples. Ceci, sur l'exemple — à gauche était un — ceci à gauche était un exemple de quel type de fonctionnalité de programmation ? Comment appelons-nous cela — la rencontre ? Oui.
+
+AUDIENCE : La variable.
+
+DAVID MALAN : Donc, c'est juste une variable. Donc, une variable ici et permettez-moi de ne pas — bien, cela devient un peu plus facile pour les balles antistress. C'est une variable. Et en C, elle correspondait à une ligne comme celle-ci. Donc en Python, cela aussi devient un peu plus simple. Au lieu de dire int counter equals zero semicolon, maintenant, vous voulez une variable appelée counter ? Faites-le. Utilisez le signe égal comme opérateur d'affectation. Écrivez-le égal à une certaine valeur sur le côté droit, mais plus de point-virgule.
+
+Ceci, à gauche, par exemple, était un exemple de Scratch mettant à jour la valeur d'une variable de un, en l'incrémentant, pour ainsi dire. En C, nous obtenons le même résultat en disant simplement counter equals counter plus 1 semicolon, en supposant que la variable existe déjà. Nous pourrions également le faire d'une autre manière. Mais en Python, nous pouvons le faire comme ceci. C'est identique, mais sans point-virgule. Mais en C, nous pourrions aussi le faire comme ceci — counter plus equals 1 semicolon. C'était juste un peu plus court que d'avoir à taper le tout. En Python, vous pouvez faire exactement la même chose. Mais ça va être différent comment ?
+
+AUDIENCE : Pas de point-virgule.
+
+DAVID MALAN : Pas de point-virgule pour celui-ci non plus — ce que vous ne pouvez pas faire, en bien ou en mal, en C, vous avez une astuce encore plus succincte. Que pourriez-vous faire en C pour incrémenter une variable ? Oui.
+
+AUDIENCE : Taper plus plus.
+
+DAVID MALAN : Vous pouvez faire l'opérateur plus plus après le nom de la variable. Cela n'existe pas en Python. Voilà. Cela n'existe pas — désolé. Ça existe en Python. Ce n'est tout simplement pas dans le langage. Vous devez donc commencer à utiliser cette approche pour être le plus succinct.
+
+Et bien, qu'avons-nous d'autre en Python ? Voici, dans Scratch, un exemple d'une condition qui dit quelque chose à l'écran comme ceci uniquement si x est inférieur à y. En C, un peu moche au début, mais vous vous y êtes probablement habitué après plusieurs semaines de codage en C.
+
+Maintenant, en Python, cela va aussi devenir plus simple. Le point-virgule disparaît définitivement. La barre oblique inverse n disparaît définitivement. Printf va devenir print, mais aussi tout le reste va disparaître. Il n'y a donc plus d'accolades. Il y a maintenant un deux-points après la condition, ou l'expression booléenne. Il y a une indentation nécessaire.
+
+Donc, ceux d'entre vous qui ont été un peu laxistes avec style50 et qui ont préféré écrire tout leur code sur le côté gauche du terminal, cela doit s'arrêter maintenant, même si style50 ne vous a pas encore débarrassé de cette habitude. Python est sensible aux espaces, ce qui signifie que si vous voulez utiliser une condition et exécuter du code à l'intérieur de cette condition, il doit être indenté de manière cohérente, par convention, de quatre espaces. Et il doit toujours s'agir de quatre espaces ou quatre autres espaces, et ainsi de suite. Cependant, les accolades ont maintenant disparu.
+
+Et quelque chose comme ça ? Si nous avons une instruction if else, comme nous l'avons fait à la semaine 0, dans la semaine 1, nous l'avons traduit en C comme tel, en introduisant if et else cette fois. Cela aussi devient plus simple. Maintenant, cela peut être traduit comme ceci. Les accolades ont disparu. Les barres obliques inverses n ont disparu. Mais nous avons, encore une fois, ajouté des deux-points, des deux-points et une indentation explicite qui est maintenant d'autant plus importante.
+
+Et un if else if else — donc une fourche à trois voies, si vous voulez ? En C, vous continuez simplement cette même logique, en demandant if else if else. Python va non seulement devenir plus succinct. Cela va aussi devenir un peu étrange, mais pas une faute de frappe. Qu'est-ce qui vous saute aux yeux ici avec Python qui semble un peu trompeur ? Oui.
+
+AUDIENCE : Else if devient elif.
+
+DAVID MALAN : Oui, alors else if était apparemment trop laborieux à taper pour les humains. Et donc maintenant, en Python, c'est juste elif — E-L-I-F — mais cela signifie exactement la même chose. Très bien. Et ça ? C'est une boucle dans Scratch. Elle fait quelque chose pour toujours. Ce n'était pas très simple à convertir en C, car en C, vous n'avez pas vraiment de bloc pour toujours. Mais nous avons décidé que vous pouvez utiliser while et dire simplement true, true étant une valeur booléenne qui prend toujours la valeur true par définition. Cela imprimerait bonjour monde pour toujours. En Python, c'est presque pareil. Mais en Python, ça va ressembler à ça. Donc, les accolades ont disparu. Le point-virgule a disparu. La main est déjà levée. Qu'est-ce qui est différent ici ?
+
+AUDIENCE : J'ai une question sur if.
+
+DAVID MALAN : Bien sûr. Quelle est la question sur if ?
+
+AUDIENCE : Nous n'avons pas utilisé d'accolades pour résoudre le if. Donc, par exemple, nous avons simplement fait un retrait vers [INAUDIBLE].
+
+DAVID MALAN : Exact. Mais vous ne le faites pas — parce que nous n'avons pas d'accolades, il n'est pas forcément évident à première vue où commence et se termine le code que vous voulez exécuter conditionnellement, à moins que vous ne vous fiiez à l'indentation. Donc, si vous vouliez faire quelque chose en dehors de la condition, vous défaites simplement l'indentation et continuez votre chemin. C'est donc identique à la façon dont vous auriez dû écrire du code C. Il n'y a pas d'accolades. Mais maintenant, l'indentation compte.
+
+Revenons donc à la boucle for ici — cela va boucler infiniment en C. En Python, je prétends que ça ressemble à ça. Et la seule nouvelle différence ici qui mérite

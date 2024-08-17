@@ -1,0 +1,69 @@
+**[1]**
+
+**Estructuras**
+• Las estructuras proporcionan una forma de unificar varias variables de diferentes tipos en un solo tipo de variable nuevo que puede asignarse su propio nombre de tipo.
+• Usamos estructuras (structs) para agrupar elementos de una variedad de tipos de datos que tienen una conexión lógica.
+• Piensa en una estructura como una "súper variable".
+
+**[6]**
+
+**Estructuras**
+struct car
+{
+int year;
+char model[10];
+char plate[7];
+int odometer;
+double engine_size;
+};
+
+**[7]**
+
+**Estructuras**
+• Una vez que hemos definido una estructura, que normalmente hacemos en archivos .h separados o al principio de nuestros programas fuera de cualquier función, hemos creado de manera efectiva un tipo nuevo.
+• Eso significa que podemos crear variables de ese tipo usando la sintaxis habitual.
+• También podemos acceder a los diversos campos (también conocidos como miembros) de la estructura usando el operador de punto (.)
+
+**[11]**
+
+**Estructuras**
+// declaración de variable
+struct car mycar;
+// acceso al campo
+mycar.year = 2011;
+strcpy(mycar.plate, “CS50”);
+mycar.odometer = 50505;
+
+**[12]**
+
+**Estructuras**
+• Las estructuras, como las variables de todos los demás tipos de datos, no necesitan crearse en la pila. Podemos asignar estructuras dinámicamente en tiempo de ejecución si nuestro programa lo requiere.
+• Para acceder a los campos de nuestras estructuras en esa situación, primero necesitamos desreferenciar el puntero a la estructura, y luego podemos acceder a sus campos.
+
+**[16]**
+
+**Estructuras**
+// declaración de variable
+struct car *mycar = malloc(sizeof(struct car));
+// acceso al campo
+(*mycar).year = 2011;
+strcpy((*mycar).plate, “CS50”);
+(*mycar).odometer = 50505;
+
+**[17]**
+
+**Estructuras**
+• Esto es un poco molesto. Y como podrías esperar, ¡hay una forma más corta!
+• El operador de flecha (->) hace que este proceso sea más fácil. Es un operador que hace dos cosas una tras otra:
+• Primero, desreferencia el puntero en el lado izquierdo del operador.
+• Segundo, accede al campo en el lado derecho del operador.
+
+**[19]**
+
+**Estructuras**
+// declaración de variable
+struct car *mycar = malloc(sizeof(struct car));
+// acceso al campo
+mycar->year = 2011;
+strcpy(mycar->plate, “CS50”);
+mycar->odometer = 50505;

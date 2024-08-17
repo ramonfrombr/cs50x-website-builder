@@ -1,0 +1,60 @@
+[1]
+
+Document Object Model
+• Comme nous l'avons vu, les objets JavaScript sont particulièrement flexibles et peuvent contenir divers champs, y compris lorsque ces champs sont d'autres objets.
+• L'objet document est une façon de recourir à ce paradigme, par lequel cet objet organise l'intégralité du contenu d'une page Web.
+• En organisant une page entière dans un objet JavaScript, nous pouvons manipuler les éléments de la page par programmation.
+
+[11]
+
+Document Object Model
+• L'objet document lui-même, ainsi que tous les objets qu'il contient, disposent d'un certain nombre de propriétés et d'un certain nombre de méthodes qui peuvent être utilisées pour accéder à un élément très précis de votre site Web.
+• En réinitialisant ces propriétés ou en appelant certaines méthodes, le contenu de nos pages Web peut changer sans que nous ayons à rafraîchir la page.
+
+[19]
+
+Document Object Model
+• Propriétés du DOM
+Propriétés du DOM
+Description
+innerHTML
+Contient le code HTML à l'intérieur d'un ensemble de balises HTML.
+nodeName
+Le nom d'un élément HTML ou de l'attribut d'un élément.
+id
+L'attribut « id » d'un élément HTML.
+parentNode
+Une référence au nœud remontant d'un niveau dans le DOM.
+childNodes
+Un tableau de références aux nœuds descendant d'un niveau dans le DOM.
+attributes
+Un tableau d'attributs d'un élément HTML.
+style
+Un objet encapsulant le style CSS/HTML d'un élément.
+
+[25]
+
+Document Object Model
+• Méthodes du DOM
+Méthodes du DOM
+Description
+getElementById(id)
+Obtient l'élément avec un ID donné ci-dessous dans le DOM.
+getElementsByTagName(balise)
+Obtient tous les éléments avec la balise donnée ci-dessous dans le DOM.
+appendChild(nœud)
+Ajoute le nœud donné au DOM ci-dessous.
+removeChild(nœud)
+Supprime le nœud enfant spécifié du DOM.
+
+[26]
+
+Document Object Model
+• Si nous partons du document, nous pouvons accéder à n'importe quel élément de notre page Web que nous choisissons, grâce à une utilisation prudente des propriétés et des méthodes du DOM.
+
+[27]
+
+Document Object Model
+• jQuery
+• La manipulation du DOM étant tellement courante avec JavaScript, et le JavaScript pour ce faire pouvant être assez long, les gens voulaient des alternatives.
+• jQuery est une bibliothèque open source populaire, publiée en 2006, conçue pour simplifier les scripts du côté client (comme les manipulations du DOM).

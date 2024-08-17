@@ -1,0 +1,45 @@
+Et si l'on ne se contentait pas de créer des structures de données unidimensionnelles, telles que des tableaux qui vont de gauche à droite ou des listes chaînées qui vont en quelque sorte de gauche à droite ? Et si l'on utilisait également une notion verticale et que l'on organisait les choses de manière plus intéressante ? Qu'est-ce que cela nous apporterait ? Eh bien, permettez-moi de proposer que chaque fois que nous voyons un tableau, nous puissions en fait le réimplémenter, mais en tirant le meilleur parti des deux mondes : le meilleur des tableaux et le meilleur des listes chaînées, comme suit. Voici un tableau, qui nous ramène à la semaine 1 ou même à la semaine 0, lorsque nous cherchions derrière des portes. Et ici, à la semaine 2, alors que nous cherchions derrière des portes, notons que si nous devions effectuer une recherche binaire dessus pour trouver une certaine valeur, comme précédemment, il arrive souvent que vous commenciez par regarder au milieu.
+
+Et ensuite, vous décidez si vous allez à gauche ou à droite ? Et si vous allez à gauche ou à droite, vous regardez l'élément du milieu ici ou l'élément du milieu là-bas. Et ensuite, que faites-vous ? Vous allez à gauche ou à droite, en regardant l'élément du milieu ici ou là ou là ou là-bas.
+
+Vous savez quoi ? Laissez-moi faire éclater cette image, car tout cela se passe dans une seule dimension. Nous pouvons réellement imaginer que cela se passe dans deux dimensions. Laissez-moi dessiner mon même tableau, 1, 2, 3, 4, 5, 6, 7, mais laissez-moi le représenter à différents niveaux qui indiquent ce qui se passe.
+
+Je commence par le milieu. Et je vais à gauche ou à droite. Je regarde ensuite cet élément. Et ensuite, je vais à gauche ou à droite. C'est donc la même chose, mais c'est une représentation bidimensionnelle de ce que nous faisons depuis quelques semaines, chaque fois que nous effectuons une recherche binaire.
+
+Eh bien, à quoi cela ressemble-t-il ? Cela ressemble un peu à une liste chaînée, mais sans les flèches. Mais vous savez quoi, je ne pense pas que je veuille relier cela de 1 à 2 à 3 à 4 à 5 à 6 à 7, car cela va devenir une liste chaînée.
+
+Mais que se passe-t-il si j'utilise ma nouvelle familiarité avec les pointeurs et que j'en utilise quelques-uns de plus ? Je consacre donc plus d'espace et assemble cette structure de données en deux dimensions conceptuellement. Chaque nœud représenté ici est un rectangle. Il n'est pas obligé d'avoir un seul pointeur. Rien ne m'empêche de créer une nouvelle structure, une nouvelle définition de nœud qui possède deux pointeurs.
+
+Peut-être qu'on l'appellera left. Peut-être qu'on l'appellera right. Auparavant, nous n'en avions qu'un que nous appelions next. Mais rien ne nous empêche de créer une structure plus sophistiquée qui en possède deux.
+
+Et donc, nous pourrions ne pas en faire comme ça comme avant pour une liste chaînée, mais débarrassons-nous du pointeur suivant. Faisons un peu plus de place. Et donnons-nous deux pointeurs, gauche et droite. Et je prétends que cette structure pourrait maintenant être utilisée en C pour implémenter l'arbre que je viens de décrire, l'arbre de type familial, plus communément appelé arbre de recherche binaire, de la manière suivante.
+
+Il s'agit d'un arbre de recherche binaire. Un, parce que chaque nœud de l'arbre possède au plus deux enfants, d'où le bi dans binaire, ce qui signifie au maximum deux. Il n'a aucun enfant, comme ceux-là, en bas. Ou bien, il a au maximum deux enfants. D'où le bi dans arbre de recherche binaire. C'est un arbre de recherche dans le sens où je me suis occupé de cet arbre pour trier les choses correctement.
+
+Remarquez la définition suivante. Pour tout nœud de l'arbre, chaque élément à gauche est plus petit que lui. Et chaque élément à droite est plus grand que lui.
+
+C'est une définition récursive, parce que regardez, regardez ce nœud. Tout ce qui est à gauche est plus petit. Tout ce qui est à droite est plus grand.
+
+Regardons 6. Tout ce qui est à gauche est plus petit. Tout ce qui est à droite est plus grand. Donc, c'est récursif dans le sens où, quel que soit le nœud que vous regardez, quel que soit le rectangle que vous regardez, ce que je viens de dire est vrai à la fois pour le sous-arbre ou l'enfant de gauche et celui de droite.
+
+Donc, cela revient à dire que si vous avez une liste de nombres, par exemple, ou une liste de quoi que ce soit et que vous les stockez en utilisant des nœuds qui ressemblent à ça, mais que ce que vous faites réellement, c'est les assembler en deux dimensions comme ça, devinez quelle fonctionnalité nous venons de retrouver ? Qu'avons-nous amélioré ? J'ai entendu quelques murmures par ici.
+
+AUDITOIRE : La recherche binaire.
+
+DAVID MALAN : Nous avons retrouvé la recherche binaire. Nous avons donc toujours le dynamisme, comme une liste chaînée. Nous utilisons toujours des pointeurs. Et supposons que nous voulions ajouter le nombre 0 ou le nombre 8, vous imaginez 0 aller là-bas et 8 aller là-bas. Nous pourrions donc toujours les brancher sans avoir à tout déplacer comme nous le ferions pour un tableau. Mais parce que vous assemblez les choses avec des flèches supplémentaires où qu'elles se trouvent en mémoire, tant que vous gardez la trace de cette structure de données, appelée un arbre, avec un pointeur vers la soi-disant racine, la racine étant à l'envers dans ce monde de l'informatique, c'est la racine de cet arbre de recherche binaire, devinez ce que vous faites si vous cherchez le nombre 7 ?
+
+Eh bien, vous voyez 4. Vous savez qu'il est plus grand que 4. Alors, que faites-vous ? Vous vous déplacez vers la droite, en ignorant ainsi l'autre moitié de cet arbre, tout comme l'autre moitié de l'annuaire téléphonique de la semaine 0. Une fois que vous arrivez à 6, vous considérez que je recherche 7. Que sais-je ? Il doit être à droite. Et donc, vous y allez.
+
+La hauteur de cet arbre est logarithmique, pour ceux qui connaissent, log base 2 de n, ce qui signifie que j'ai 8 ou 7 éléments dans cet arbre. Mais il ne me faut que 1, 2, 3 étapes pour trouver la valeur. Cela ne prend pas grand O de n, ou un nombre linéaire d'étapes.
+
+Et si vous voulez vraiment embrouiller votre esprit, il se trouve que c'est en fait la meilleure application de la récursivité, qui peut avoir semblé un peu forcée auparavant lorsque nous avons construit la pyramide de Mario avec la récursivité, où vous avez fait une factorielle ou un produit ou une somme ou quelque chose comme ça en section de manière récursive. Il s'avère que maintenant que nous avons des structures de données qui existent conceptuellement en deux dimensions qui sont définies de manière récursive, et par définition récursive, je veux dire que pour tout nœud donné, la gauche est plus petite, la droite est plus grande, et vous pouvez faire cette affirmation pour n'importe quel nœud dans l'arbre, regardez ce que nous pouvons faire en termes d'implémentation de la recherche binaire.
+
+Si j'ai ici une fonction appelée search, dont le but dans la vie est de renvoyer vrai ou faux si le nombre 50 est dans l'arbre. Comment rechercher dans un arbre ? Eh bien, elle prend l'arbre comme entrée. Plus précisément, elle prend l'adresse de l'arbre. Plus précisément, elle prend l'adresse de la racine de l'arbre.
+
+C'est-à-dire que lorsque vous voulez rechercher dans un arbre, vous lui donnez littéralement l'adresse du tout premier nœud supérieur appelé la racine. Et à partir de là, vous pouvez aller partout ailleurs. Tout comme avec la liste, nous avons juste besoin du début de la liste.
+
+Alors, comment rechercher dans un arbre ? Eh bien, considérons d'abord le cas le plus simple. Supposons que l'adresse qui vous a été remise soit nulle, que devez-vous faire si vous cherchez 50, mais qu'on vous donne l'adresse vide, des zéros ?
+
+AUDITOIRE : Renvoyer false.
+
+DAVID MALAN : Probablement renvoyer faux, n'est-ce pas ? Si je ne vous donne aucun arbre et que je dis qu'il y a 50 dedans, c'est une réponse facile. Non, il n'y a pas de 50, car il n'y a pas d'arbre. C'est donc notre cas de base, si vous vous souvenez

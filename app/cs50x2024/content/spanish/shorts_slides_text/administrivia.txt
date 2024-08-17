@@ -1,0 +1,94 @@
+[0]
+
+Administrivia
+
+[1]
+
+Administrivia
+● Hay mucho que aprender en este curso, y para maximizar tu capacidad para hacerlo, hay una gran cantidad de 
+recursos a tu disposición.
+● Hemos hecho todo lo posible para diseñar un conjunto de recursos que se adapten a todos.
+
+[2]
+
+Administrivia
+● Sitio web del curso
+● Material de la clase – cs50.harvard.edu/lectures
+●
+Transmisiones en vivo, videos, ejemplo de código, diapositivas, notas de apuntes, enlaces
+● Referencia de funciones – reference.cs50.net
+●
+Tanto para los menos cómodos como para los más cómodos
+●
+Un conjunto consolidado y anotado de páginas de manual.
+● Guía de estudio interactiva – study.cs50.net
+●
+Ejemplos de diapositivas, ejercicios prácticos y más sobre los distintos temas del curso.
+● Preparación de pruebas – cs50.harvard.edu/quizzes
+●
+Preguntas y respuestas de pruebas antiguas archivadas para su revisión
+
+[3]
+
+Administrivia
+● Sitio web del curso
+● Conjuntos de problemas – cs50.harvard.edu/psets
+●
+Especificaciones, código de distribución
+●
+Tutoriales, evaluaciones posteriores
+● Secciones – cs50.harvard.edu/sections
+●
+Horario de secciones, videos, diapositivas
+● Horario de oficina – cs50.harvard.edu/hours
+●
+Horario de horario de oficina, generalmente disponible entre semana
+● Foro de discusión – cs50.harvard.edu/discuss
+●
+Tablero de anuncios asincrónico para ayuda de los AT, los TP y compañeros. 
+
+[4]
+
+Administrivia
+● Archivos del curso
+● Desde 2007 – cs50.tv
+● Todos los recursos disponibles en el sitio web del curso 
+publicados allí al final del otoño.
+● Otra ayuda en línea
+● CS50 Slack – cs50x.slack.com
+● CS50 Stack Exchange – cs50.stackexchange.com
+● CS50 Facebook – facebook.com/groups/cs50
+● CS50 Twitter – @cs50, #cs50
+● CS50 Reddit – reddit.com/r/cs50
+
+[5]
+
+Administrivia
+● Calificación
+● Las tareas se califican según cuatro ejes diferentes.
+● Alcance
+● ¿Hiciste un esfuerzo serio para completar el problema 
+conjunto?
+● Corrección
+● ¿Funciona tu código? ¿Está libre de errores?
+● Diseño
+● ¿Qué tan eficiente es tu código? ¿Qué tan bien está escrito?
+● Estilo
+● ¿Qué tan legible es tu código?
+
+[6]
+
+Administrivia
+● Calificación
+check50 es una herramienta de línea de comandos que se puede utilizar para ayudarte 
+a mejorar tu puntaje de corrección
+style50 es una herramienta de línea de comandos que se puede utilizar para ayudarte 
+a mejorar tu puntaje de estilo
+Tu auxiliar de docencia te proporcionará comentarios cualitativos basados ​​en comentarios para ayudarte a mejorar tu 
+puntaje de diseño
+0
+1
+2
+3
+4
+5

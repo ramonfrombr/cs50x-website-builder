@@ -1,0 +1,13 @@
+So what else then can we do? Well turns out, we've just empowered ourselves with a couple of new features, one of which is, again, called command line arguments. We've seen these before. What did I describe previously today and last week as a command line argument? What was an example? Anyone-- I heard here. 
+
+AUDIENCE: Dash o. 
+
+DAVID MALAN: Dash o. Remember that clang can have its default behavior, which was a little annoying, whereby it outputs a file called a dot out, overridden by saying dash o hello, or dash o anything, to change the output to a file of your choice. That was an example of a command line argument. You literally typed it after the command, on a line, and it's an argument in the sense that it's an input to the program. So a command line argument, more generally, is just one or more words that you type at the prompt after the program you care about running. 
+
+So where are these germane here? Well finally, can we now explain what a little more of this canonical program is about. We already discussed earlier today that includes standard Io dot h. It just contains your prototypes for things like printf, and that gets copied and pasted during pre processing into the file, and so forth. But what we've not explained yet, what void is here, let alone what int is here. We've just been copying and pasting this now for just over a week. 
+
+Well it turns out, that in C, you do not need to write only the word void inside of those parentheses. You can also write, wonderfully, int arg c, string arg v, open bracket, close bracket. Now why is that compelling? Well notice there's a pattern here, and it's quite similar to my average function a moment ago. It takes two arguments main, apparently. One is an int, and one is what? It's not a string, per se. It's-- 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: --an array of strings. Now arg v is a human convention. It means argument vector, which is a fancy way of saying an array of arguments. And the way you know this is an array is by the fact that you have open bracket closed bracket. And it's an array of strings because to the left is the word string. This is just an old-school integer called int arg c, which stands for by convention, argument count. However, we could call these arguments anything we want. Humans for decades have just called them arg c and arg v, just like my average function took in the length of an array and the number of scores inside of it. 

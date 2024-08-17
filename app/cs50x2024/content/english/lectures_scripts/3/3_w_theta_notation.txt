@@ -1,0 +1,15 @@
+Now, it turns out with some algorithms-- and I promise this is last Greek notation for the course. This is a capital theta in Greek. And it turns out that if an algorithm has an upper bound and a lower bound that are identical, you can describe it using, just for shorthand notation, theta. 
+
+So we've seen two algorithms that fit this criteria. Selection sort was pretty bad. It was big O of n squared. And it was omega of n squared because it just kept blindly looking for the smallest elements again and again. 
+
+Merge sort is in theta of n log n for the same reason. It just blindly does the same algorithm again and again, no matter whether the input is already sorted or completely unsorted. But on the whole, n log n is a pretty powerful, compelling feature. 
+
+So let me go ahead and turn our attention, finally, to a little visualization that might help this sink in as well. What you're about to see is a bunch of vertical bars, the top of which are 100 bars from left to right. Small bars equals small number. Big bar equals big number. 
+
+And the first algorithm up here is selection sort. The second algorithm down here is bubble sort. And the middle algorithm is merge sort. So if you will, we'll end on this note today. We'll time these algorithms with these simple inputs and see just how much better, I claim, merge sort is, which is to say, just how big of a difference does n squared versus n log n make, which is to say when you design algorithms, making things correct is not the ultimate goal. It's to make them well designed as well. 
+
+[MUSIC PLAYING] 
+
+That's it for C50 and merge sort. We will see you next time. 
+
+[APPLAUSE] 

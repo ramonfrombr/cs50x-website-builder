@@ -1,0 +1,65 @@
+Et une salve d'applaudissements, si nous pouvions, pour avoir trouvé le 50.
+
+[APPLAUDISSEMENTS]
+
+[? Nizari, ?] pourriez-vous venir ? Nous avons besoin que vous ne regardiez pas les nombres, car Brian doit faire un peu de magie. Et il va remettre quelques nombres dans le casier. Donc, tout le monde dans la salle saura ce qui se passe, sauf vous, pour le moment. Mais nous allons vous donner le bonus supplémentaire cette fois-ci de trier les nombres à l'avance.
+
+Alors Brian est en train de trier quelques nombres pour nous. Le but recherché, dans quelques instants, sera toujours de trouver le nombre 50. Je ne fais que gagner du temps pour le moment, car il continue de faire ça. Je n'ai donc rien d'intéressant à dire pour le moment.
+
+Brian est de retour. Attendez. Et souhaitez-vous peut-être vous présenter ?
+
+L'AUDIENCE : Je suis [? Nizari. ?]
+
+L'ORATEUR 1 : [? Nizari, ?] et en quelle année êtes-vous ?
+
+L'AUDIENCE : Je suis un lycéen, je suis en terminale.
+
+L'ORATEUR 1 : Magnifique. Dans quelle école ?
+
+L'AUDIENCE : Cambridge Rindge and Latin, c'est dans la rue.
+
+L'ORATEUR 1 : Juste en bas de la rue. Je suis très heureux que vous puissiez nous rejoindre aujourd'hui. Et un timing parfait, si vous me le permettez. Nous avons maintenant sept casiers ici derrière vous. Et le but maintenant est de toujours trouver le nombre 50. Mais je vais vous dire que les nombres sont triés. Alors, quel sera votre algorithme, si ce n'est pas le même qu'Eric ?
+
+L'AUDIENCE : Je vais commencer--
+
+L'ORATEUR 1 : Et voilà.
+
+L'AUDIENCE : Je vais commencer par le milieu.
+
+L'ORATEUR 1 : Très bien, allez-y et montrez-nous ce qu'il y a au milieu.
+
+L'AUDIENCE : Le nombre du milieu est sept.
+
+L'ORATEUR 1 : Très bien. Et maintenant, quelle va être votre prochaine étape ?
+
+L'AUDIENCE : Donc je veux arriver à 50. Donc en supposant qu'ils soient triés, je vais aller dans ce sens.
+
+L'ORATEUR 1 : On va vers la droite, OK. Il nous reste donc trois casiers à droite. Quel est votre instinct maintenant ?
+
+L'AUDIENCE : Mm, je vais commencer par ce casier.
+
+L'ORATEUR 1 : OK, celui-ci étant au milieu de ces trois. Et vous trouvez ?
+
+L'AUDIENCE : Et on a 81.
+
+L'ORATEUR 1 : 81.
+
+L'AUDIENCE : Donc je sais que c'est trop grand.
+
+L'ORATEUR 1 : Beaucoup trop loin.
+
+L'AUDIENCE : Hoo, alors je vais prendre celui-ci.
+
+L'ORATEUR 1 : Qui est maintenant au milieu des deux casiers.
+
+L'AUDIENCE : Et j'ai 50.
+
+L'ORATEUR 1 : Et une salve d'applaudissements, si nous le pouvions, pour [? Nizari. ?]
+
+[APPLAUDISSEMENTS]
+
+Félicitations et merci à vous deux. Merci donc à vous deux. Voici donc deux algorithmes, baptisés recherche linéaire et recherche binaire. Et c'est tout ce que nous avons pour vous pour le moment.
+
+[RIRES]
+
+Donc, la recherche linéaire et la recherche binaire sont bien nommées pour les raisons exactes que nous avons vues. Eric a littéralement marché en ligne à la recherche d'un élément, où [? Nizari, ?] au lieu de cela, a réellement utilisé la recherche binaire, "bi" signifiant deux, et rappelant beaucoup notre discussion sur les annuaires téléphoniques de la semaine 0, lorsque j'ai fait cette approche de division et de conquête. Cela aussi s'appelait, même si je ne l'ai peut-être pas étiqueté comme tel, recherche binaire parce que je n'arrêtais pas de diviser le problème en deux, d'où le "bi" dans binaire. La recherche binaire a été encore et encore, tout comme nous l'avons fait ici lorsque nous avons cherché 50 pour la deuxième fois.

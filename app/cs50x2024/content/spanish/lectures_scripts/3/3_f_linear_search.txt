@@ -1,0 +1,9 @@
+Por lo tanto, estos, por supuesto, son dos algoritmos. Pero ahora empecemos a formalizar un poco esta discusión y consideremos cómo cada uno de ellos pudo resolver el problema correctamente y luego en última instancia con un mejor diseño. Así que la búsqueda lineal, podríamos destilarla como pseudocódigo como este y, de nuevo, pseudocódigo, sintaxis similar al inglés, no hay una sola forma de escribir esto.
+
+Eric, si puedo poner palabras en tu boca, podría haber hecho esto. Podrías haber pensado en ti mismo por [?i?] de 0 a n menos 1, para rápidamente mapearlo a la idea de código, donde este es el casillero 0 y este es el casillero n menos 1, o 7 o 6, específicamente, en este caso, con 7 casilleros en total. Luego verificó si los elementos i, i solo significa aquel que está mirando actualmente, si es 50, entonces sigue adelante y regresa verdadero, el bool que estaba destinado a ser el resultado de este algoritmo.
+
+Y siguió haciendo eso y haciéndolo y haciéndolo. Pero supongamos que 50 no estuviera allí. ¿Y supongamos que llegó hasta aquí, hasta donde no hay casillero? ¿Qué debería finalmente devolver?
+
+AUDIENCIA: Falso.
+
+CONFERENCISTA 1: Es falso. Y así, el último paso de este algoritmo que no está dentro de ese bucle tiene que ser una especie de captura, donde dices, regresa falso. Si llegué hasta el final de este bucle y no lo encontré, debe ser el caso de que 50 simplemente no esté allí. Entonces, esa podría ser una forma de escribir el pseudocódigo para este problema.

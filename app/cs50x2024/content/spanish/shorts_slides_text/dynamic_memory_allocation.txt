@@ -1,0 +1,77 @@
+[1]
+
+Asignación dinámica de memoria
+• Hemos visto una forma de trabajar con punteros, principalmente señalando una variable de puntero a otra variable que ya existe en nuestro sistema.
+• Esto requiere que sepamos exactamente cuánta memoria necesitará nuestro sistema en el momento en que se compila nuestro programa.
+• ¿Qué pasa si no sabemos cuánta memoria necesitaremos en el momento de la compilación? ¿Cómo obtenemos acceso a nueva memoria mientras se ejecuta nuestro programa?
+
+[2]
+
+Asignación dinámica de memoria
+• Podemos usar punteros para obtener acceso a un bloque de memoria asignado dinámicamente en tiempo de ejecución.
+• La memoria asignada dinámicamente proviene de un grupo de memoria conocido como pila.
+• Antes de este punto, toda la memoria con la que hemos estado trabajando provenía de un grupo de memoria conocido como pila.
+
+[3]
+
+Asignación dinámica de memoria
+texto
+datos inicializados
+datos no inicializados
+pila
+pila de ejecución
+variables de entorno
+
+[5]
+
+Asignación dinámica de memoria
+• Obtenemos esta memoria asignada dinámicamente haciendo una llamada a la función de biblioteca estándar de C malloc(), pasando como parámetro el número de bytes solicitados.
+• Después de obtener memoria para usted (si puede), malloc() devolverá un puntero a esa memoria.
+• ¿Qué pasa si malloc() no puede darle memoria? Te devolverá NULL.
+
+[8]
+
+Asignación dinámica de memoria
+// obtiene un entero estáticamente
+int x;
+// obtiene un entero dinámicamente
+int *px = malloc(sizeof(int));
+
+[9]
+
+Asignación dinámica de memoria
+// obtiene un entero del usuario
+int x = GetInt();
+// matriz de flotantes en la pila
+float stack_array[x];
+// matriz de flotantes en la pila de ejecución
+float* heap_array = malloc(x * sizeof(float));
+
+[12]
+
+Asignación dinámica de memoria
+• Aquí está el problema: La memoria asignada dinámicamente no se devuelve automáticamente al sistema para uso posterior cuando la función en la que se crea finaliza su ejecución.
+• Si no devuelve la memoria al sistema cuando haya terminado con ella, se produce una pérdida de memoria que puede comprometer el rendimiento de su sistema.
+• Cuando termine de trabajar con memoria asignada dinámicamente, debe liberarla (free()).
+
+[14]
+
+Asignación dinámica de memoria
+char* word = malloc(50 * sizeof(char));
+// haz cosas con word
+
+[15]
+
+Asignación dinámica de memoria
+char* word = malloc(50 * sizeof(char));
+// haz cosas con word
+// ahora terminamos de trabajar con ese bloque
+free(word);
+
+[16]
+
+Asignación dinámica de memoria
+• Tres reglas de oro:
+1. Cada bloque de memoria que malloc() debe ser liberado posteriormente (free()).
+2. Solo la memoria que malloc() debe ser liberada.
+3. No liberes un bloque de memoria más de una vez.

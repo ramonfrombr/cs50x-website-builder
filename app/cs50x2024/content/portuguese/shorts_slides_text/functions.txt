@@ -1,0 +1,170 @@
+[1]
+
+Funções
+● Até o momento, todos os programas que escrevemos no curso foram escritos dentro da main().
+● Isso ainda não foi um problema, mas poderá ser se nossos programas começarem a ficar volumosos.
+● C e quase todas as linguagens desenvolvidas desde então nos permitem escrever funções, às vezes também conhecidas como procedimentos, métodos ou sub-rotinas.
+● Vejamos o que são as funções.
+
+[2]
+
+Funções
+● O que é uma função?
+● Uma caixa preta com um conjunto com 0+ entradas e 1 saída.
+
+[7]
+
+Funções
+● Por que chamá-la de caixa preta?
+● Se não estamos escrevendo as funções ourselves, nós não precisamos saber a implementação subjacente.
+mult(a, b):
+definir contador como 0
+repetir b vezes
+adicionar a ao contador
+saída do contador
+
+[8]
+
+Funções
+● Por que chamá-la de caixa preta?
+● Se não estamos escrevendo as funções ourselves, nós não precisamos saber a implementação subjacente.
+● Isso é parte do contrato ao usar funções. O comportamento é usualmente previsível com base nesse nome. É por isso que a maioria das funções tem nomes óbvios(ish) e bem documentados.
+
+[9]
+
+Funções
+● Por que usar funções?
+● Organização
+● Funções ajudam a quebrar um problema complicado em sub-partes mais gerenciáveis.
+● Simplificação
+● Componentes menores tendem a ser mais fáceis de projetar, implementar, e depurar.
+● Reutilização
+● Funções podem ser recicladas; você só precisa escrevê-las uma vez, mas pode usá-las quantas vezes precisar!
+
+[10]
+
+Funções
+● Declarações de Função
+● O primeiro passo para criar uma função é declará-la. Isso dá ao compilador um alerta de que uma função escrita pelo usuário aparece no código.
+● Declarações de função devem sempre ser no topo do seu código, antes de você começar a escrever a main().
+● Existe um formulário padrão que cada declaração de função segue.
+
+[11]
+
+Funções
+● Declarações de Função
+● O tipo de retorno é o tipo de variável que a função irá retornar.
+● O nome é como você deseja chamar sua função.
+● A lista de argumento é o conjunto de entradas separadas por vírgula para sua função, cada uma das quais tem um tipo e um nome.
+tipo de retorno nome(lista de argumentos);
+
+[12]
+
+Funções
+● Uma função para adicionar dois inteiros.
+● A soma de dois inteiros será um inteiro também.
+● Dado o que essa função faz, certifique-se de dar a ela um nome apropriado.
+● Existem duas entradas para essa função, e precisamos dar um nome para cada uma delas para propósitos da função. Não há nada importante sobre essas entradas até onde sabemos, portanto não há problema em dar a elas nomes simples.
+int add_two_ints(int a, int b);
+
+[13]
+
+Funções
+● Uma função para multiplicar dois números de ponto flutuante.
+
+[14]
+
+Funções
+● Uma função para multiplicar dois números de ponto flutuante.
+● O produto de dois números de ponto flutuante também é um número de ponto flutuante.
+● Certifique-se de dar a ela um nome relevante.
+● Novamente, os nomes dessas entradas particulares não parecem ser importantes, portanto podemos chamá-las de algo simples.
+float mult_two_reals(float x, float y);
+
+[16]
+
+Funções
+● Definições de Função
+● O segundo passo para criar uma função é defini-la. Isso permite um comportamento previsível quando a função for chamada com entradas.
+● Vamos tentar definir mult_two_reals(), a partir de um momento atrás.
+
+[17]
+
+Funções
+● Uma definição de função parece quase idêntica a uma declaração de função, com uma pequena alteração.
+● Como você preencheria esta caixa preta?
+float mult_two_reals(float x, float y);
+float mult_two_reals(float x, float y)
+{
+float produto = x * y;
+return produto;
+}
+
+[20]
+
+Funções
+● Agora, tire um tempo e tente definir 
+add_two_ints(), de um momento atrás.
+int add_two_ints(int a, int b);
+int add_two_ints(int a, int b)
+{
+int soma;      // declarar variável
+soma = a + b;  // calcular a soma
+return soma;   // devolve o resultado
+}
+
+[21]
+
+Funções
+● Agora, tire um tempo e tente definir 
+add_two_ints(), de um momento atrás.
+int add_two_ints(int a, int b);
+int add_two_ints(int a, int b)
+{
+int soma = a + b;  // calc variável
+return soma;       // devolve o resultado
+}
+
+[23]
+
+Funções
+● Chamadas de Função
+● Agora que você criou uma função, é hora de usá-la!
+● Para chamar uma função, simplesmente passe a ela argumentos apropriados e atribua seu valor de retorno a algo do tipo correto.
+● Para ilustrar isso, vamos dar uma olhada em adder-1.c
+
+[24]
+
+Funções
+● Diversos sobre Funções
+● Lembre-se da nossa discussão sobre tipos de dados, de que às vezes as funções não precisam de entrada. Nesse caso, declaramos a função como tendo uma lista de argumentos void.
+● Lembre-se também de que às vezes as funções não têm uma saída. Nesse caso, declaramos a função como tendo um tipo de retorno void.
+
+[25]
+
+Funções
+● Problema Prático
+● Declare uma função chamada valid_triangle que leve três números reais representando os comprimentos dos três lados do triângulo como seus argumentos e retorne verdadeiro ou falso, dependendo se esses três comprimentos são capazes de formar um triângulo.
+● Observe as seguintes regras sobre triângulos:
+● Um triângulo só pode ter lados com comprimento positivo.
+● A soma dos comprimentos de quaisquer dois lados do triângulo deve ser maior que o comprimento do terceiro lado.
+
+[26]
+
+Funções
+bool valid_triangle(float x, float y, float z);
+bool valid_triangle(float x, float y, float z)
+{
+// verificar todos os lados positivos
+if (x <= 0 || y <= 0 || z <= 0)
+{
+return false;
+}
+// verificar que a soma de quaisquer dois lados é maior que o terceiro
+if ((x + y <= z) || (x + z <= y) || (y + z <= x))
+{
+return false;
+}
+// se passamos nos dois testes, estamos bem!
+return true;
+}

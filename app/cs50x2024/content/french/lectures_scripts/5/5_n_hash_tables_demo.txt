@@ -1,0 +1,53 @@
+Une table de hachage est une combinaison d'un tableau et de listes liées à l'intérieur de celui-ci. Je vais donc prendre les devants et juste pour plus de commodité, dessiner mon tableau, cette fois verticalement au lieu d'horizontalement. Mais c'est la même chose. Et ce n'est de toute façon qu'une interprétation artistique.
+
+Et supposons que l'objectif soit de garder une trace efficace des étiquettes de nom, par exemple. Nous organisons peut-être un grand événement. Nous avons préparé des étiquettes de nom à l'avance, ce que nous avons effectivement fait. Et nous voulons que les gens puissent récupérer ces étiquettes de nom de manière très efficace.
+
+Ce serait vraiment ennuyeux et plutôt stupide si nous faisions juste une grosse pile d'étiquettes de nom, même si c'est alphabétique, de A à Z, puis que nous demandions à tout le monde dans la salle de faire la queue et de regarder toutes les étiquettes de nom pour chercher le sien. Ce n'est pas un système très efficace. Heureusement, nous sommes venus préparés avec des seaux, qui sont tous étiquetés, car ne serait-il pas agréable de pouvoir chercher son étiquette de nom sans avoir à fouiller dans toute la liste des étiquettes de nom ou dans la pile ?
+
+En fait, vous pouvez simplement aller dans votre seau. Et vous accédez instantanément à votre nom, où, avec un peu de chance, vous êtes la seule personne dont le nom commence par une certaine lettre. Vous pouvez ensuite simplement l'atteindre et le prendre.
+
+Et bien, comment implémentons-nous cela conceptuellement ? Et bien, c'est très courant avec une table de hachage si les entrées sont des choses comme des mots ou des noms pour regarder les caractères de ces mots afin de décider où mettre ces noms ou ces étiquettes de nom, si vous voulez.
+
+Voici donc un tableau de taille 26, de 0 à 25. Mais, vous savez quoi, il est pratique de considérer ce tableau comme étant peut-être indexé de A à Z. Donc toujours 26 seaux, mais ce tableau est vraiment juste de taille 26, de 0 à 25 en fin de compte.
+
+Et supposons que l'objectif soit maintenant d'aller de l'avant et de stocker ces étiquettes de nom à l'avance. C'est donc ce que le personnel et moi ferions à l'avance. Et, Brian, si cela ne te dérange pas, tu pourrais m'aider avec ça. L'objectif est tout simplement de préparer les étiquettes de nom pour que les élèves puissent les récupérer.
+
+Et alors, où est-ce que je veux aller de l'avant et mettre le premier ? Albus est donc le premier pour qui nous avons fait une étiquette de nom. Je vais tout de suite aller dans le seau 0 et mettre le nom d'Albus là, en une seule étape.
+
+En attendant, j'ai Zacharias, et même si cela me prend un tas d'étapes pour y arriver, s'il s'agit d'un tableau, j'ai un accès aléatoire, en tant qu'humain, et je peux donc immédiatement, instantanément mettre Zacharias là-bas. C'est un peu laborieux pour mes pieds, mais un ordinateur pourrait simplement sauter à 0 ou 25 ou n'importe quoi d'autre entre les deux.
+
+D'accord, donc Hermione -- vous remarquez peut-être le modèle -- Hermione va donc être H, ou qui est 7, qui va être ici. Ginny est 6, qui est là-bas. Ron est 17, qui est là-bas. Alors, imaginez que chacune de mes étapes multiples est en fait une seule étape. Fred va aller là-bas.
+
+En aparté, le personnel et moi avons discuté ce matin de la probabilité que nous aurions dû rapprocher les seaux. Mais ça va.
+
+Severus va aller là-bas. Pétunia va aller là-bas. Drago est loin là-bas, mais ça n'a pas d'importance, temps constant, parenthèse 3. James est parenthèse 9. Cedric est parenthèse 2. Peut-être jouer cette partie en vitesse 2x. Luna est le seau 11. Neville le seau 13. Kingsley le seau 10. Kingsley, nous y voilà. Minerva le seau 12.
+
+Vernon -- ironiquement, nous n'avons pas réellement besoin d'autant de noms pour faire valoir le point que nous essayons de faire. Mais Vernon -- nous avons été un peu emportés par les noms que nous avons reconnus.
+
+Et maintenant, la liste est presque pleine. D'accord, donc c'est tout un tas de noms. J'ai rempli la plupart des seaux avec une étiquette de nom. Mais -- pourquoi suis-je essoufflé ? Mais ce qui est vraiment pratique maintenant, c'est que si Cedric ou Albus ou Drago ou Fred ou Ginny entrent dans la pièce, ils peuvent indexer instantanément, aléatoirement, dans leur poche, obtenir leur étiquette de nom et partir. Rien de linéaire. Ils n'ont pas à feuilleter toute la pile d'étiquettes de nom avec laquelle j'ai en réalité commencé l'histoire.
+
+Mais il y a un problème à venir. Nous avons très délibérément ordonné les étiquettes de nom jusqu'à présent de telle manière que nous ne nous créions pas de problème. Mais parmi les personnages les plus célèbres dont nous n'avons pas encore entendu parler, il y a Harry. Donc l'étiquette de nom de Harry est toujours là. Où est-ce que ça va ?
+
+Et bien, Harry va aller dans le seau 7. Mais attendez une minute, il y a déjà quelqu'un là-bas. Alors, qu'est-ce que je fais ?
+
+Si je n'utilisais qu'un tableau, Harry n'aurait pas de chance. Comme si Hermione était déjà à cet endroit dans le tableau. Et nous devrions décider, soit Hermione y va, soit Harry, mais nous ne pouvons pas simplement les mettre tous les deux.
+
+Mais si nous implémentons cette nouvelle structure de données appelée une table de hachage en utilisant un tableau qui est conceptuellement vertical, mais qui horizontalement est une liste liée, vous savez quoi, c'est très bien. Nous allons simplement relier Hermione et Harry. Donc, oui, cela va prendre aux deux ou au moins à l'un d'eux au moins deux étapes pour trouver leur étiquette de nom. Mais cela ne va pas prendre un grand O de n étapes pour trouver leur étiquette de nom, du moins s'il n'y en a que deux dans ce seau.
+
+Très bien, Hagrid, bon sang, il est donc entré dans la porte aussi. Maintenant, cette liste liée devient un peu plus longue. Nous avons maintenant une chaîne, si vous voulez, une liste liée de taille 3.
+
+Sirius va aller là-bas dans le seau 18. Mais Severus est déjà là aussi. C'est gênant. Remus est 17. Remus va aller et se lier avec Ron là-bas. George va entrer dans le seau 6, qui est là-bas. Lily va aussi entrer en collision, pour ainsi dire, avec Luna.
+
+Et c'est une collision en informatique. Chaque fois que vous avez une valeur que vous essayez de mettre à un endroit mais qu'il y a quelque chose là-bas, vous devez résoudre la collision d'une manière ou d'une autre. Je propose donc que l'on les relie simplement. Ou comme nous le faisons ici, mettre en compartiments des valeurs en informatique signifie conceptuellement jeter la valeur dans un compartiment, ou physiquement comme nous l'avons fait ici.
+
+Lucius va finalement aller dans le seau 11 aussi. Et enfin, Lavande va dans ce même seau. Ouf. Merci donc à Brian pour son aide à la chorégraphie.
+
+Donc cette structure que vous regardez est ce qu'on appelle une table de hachage. C'est un tableau que vous indexez à l'aide de ce qu'on appelle une fonction de hachage. Une fonction de hachage est comme n'importe quelle fonction que nous avons vue jusqu'à présent, n'importe quel programme que nous avons vu jusqu'à présent -- quelque chose qui prend une entrée et produit une sortie. Donc si nous considérons notre image originale de la semaine 0 de ce que l'informatique est en soi lorsqu'il s'agit de résoudre des problèmes, la fonction de hachage pour le but d'aujourd'hui est juste cette fonction, ce processus, cet algorithme entre les deux qui décide, étant donné une étiquette de nom, dans quel seau mettre cette étiquette de nom.
+
+Et il est évident que dans le monde réel, quel algorithme utilisais-je pour mettre en seau une étiquette de nom après avoir lu le nom ?
+
+L'AUDITOIRE : Les premières lettres.
+
+DAVID MALAN : En regardant la première lettre. Pourquoi ? C'est simple. C'est assez efficace. Cela signifie que je peux stocker un tableau relativement petit de taille 26 et y mettre immédiatement les étiquettes de nom.
+
+Donc dans ce cas, nous avons peut-être introduit Albus dans cette fonction de hachage. Et il pourrait renvoyer 0, représentant A, si nous indexons le tableau à partir de 0. Ou pour quelqu

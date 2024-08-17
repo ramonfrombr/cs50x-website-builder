@@ -1,0 +1,64 @@
+[1]
+
+Colas
+• Una cola es un tipo especial de estructura que se puede utilizar para mantener los datos de una manera organizada.
+• Esta estructura de datos se implementa comúnmente de dos maneras: como una matriz o como una lista vinculada.
+• En cualquier caso, la regla importante es que cuando se agregan datos a la cola, se añaden al final, y por lo tanto, si es necesario eliminar un elemento, el elemento al frente es el único elemento que se puede eliminar legalmente.
+• El primero en entrar es el primero en salir (FIFO)
+
+[2]
+
+Colas
+•Solo hay dos operaciones que se pueden realizar legalmente en una cola.
+• Añadir a la cola: Añadir un nuevo elemento al final de la cola.
+• Eliminar de la cola: Eliminar el elemento más antiguo del frente de la cola.
+
+[12]
+
+Colas
+• Implementación basada en matriz
+• Añadir a la cola: Añadir un nuevo elemento al final de la cola. En el caso general, añadir a la cola() necesita:
+• Aceptar un puntero a la cola.
+• Aceptar datos de tipo VALOR para añadirlos a la cola.
+• Añadir esos datos a la cola al final de la cola.
+• Cambiar el tamaño de la cola.
+
+[23]
+
+Colas
+• Implementación basada en matriz
+• Eliminar de la cola: Eliminar el elemento más reciente del frente de la cola. En el caso general, eliminar de la cola() necesita:
+• Aceptar un puntero a la cola.
+• Cambiar la ubicación del frente de la cola.
+• Disminuir el tamaño de la cola.
+• Devolver el valor que se eliminó de la cola.
+
+[24]
+
+Colas
+• Implementación basada en matriz
+VALOR eliminar de la cola(queue* q);
+28 33 19
+0
+3
+q
+[36]
+
+Colas
+• Solo asegúrate de mantener siempre los punteros al principio y al final de la lista vinculada. (probablemente globales)
+• Para añadir a la cola:
+• Asigna dinámicamente un nuevo nodo;
+• Establece su siguiente puntero a NULL, establece su puntero anterior a la cola;
+• Establece el siguiente puntero de la cola en el nuevo nodo;
+• Mueve el puntero de la cola al nodo recién creado.
+
+[37]
+
+[43]
+
+Colas
+• Para eliminar de la cola:
+• Recorre la lista vinculada hasta su segundo elemento (si existe);
+• Libera el principio de la lista;
+• Mueve el puntero principal al (antiguo) segundo elemento;
+• Haz que el puntero anterior de ese nodo apunte a NULL.

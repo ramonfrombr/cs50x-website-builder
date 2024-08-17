@@ -1,0 +1,13 @@
+All right. Few final examples before we now make things more real world. You'll recall from week 4, the last past week that we'll look at, we had a few problems that we encountered, for instance, with comparing strings. 
+
+This is a couple of weeks back now. But recall that this example was initially problematic because you could not compare s equals equals t. You had to use stir compare. Why could you not just say if s equals equals t to compare two strings and see? Yeah. 
+
+AUDIENCE: We could [INAUDIBLE]. 
+
+DAVID MALAN: Exactly. They were pointer to chars or addresses of strings. And you would be comparing the addresses of those strings that might look the same but they are stored in different locations. 
+
+In Python, that nuance is now gone. If in Python you want to compare two strings, by god, just compare those two strings like this. Let me call this compare.py. Let me go ahead and from the cs50 library import get_string. 
+
+Let me go ahead and get two strings from the user. For instance, s and t, arbitrarily as before. get_string. Here we go. Quote, unquote t. And then if you want to check if s equals equals t, just ask the question and say Same if so. Else, go ahead and say Different. 
+
+Now if I run this program as compare.py, Python of compare.py, let me go ahead and type in, say, my name here and then my name again. Technically in C, s and t were stored in different locations. And in Python, they technically are, too. Doesn't matter. The equal equal operator in Python is going to compare literally what you intended.

@@ -1,0 +1,33 @@
+[1]
+
+Definindo Tipos de Dados Personalizados
+• A palavra-chave em C typedef fornece uma maneira de criar um nome abreviado ou reescrito para tipos de dados.
+• A ideia básica é primeiro definir um tipo da maneira normal e depois atribuir a ele outro nome (apelido).
+
+[2]
+
+Definindo Tipos de Dados Personalizados
+typedef <nome antigo> <nome novo>;
+
+[9]
+
+Definindo Tipos de Dados Personalizados
+struct car
+{
+int year;
+char model[10];
+char plate[7];
+int odometer;
+double engine_size;
+};
+typedef struct car car_t;
+
+[16]
+
+Definindo Tipos de Dados Personalizados
+// declaração de variável
+car_t mycar;
+// acessando campo
+mycar.year = 2011;
+strcpy(mycar.plate, “CS50”);
+mycar.odometer = 50505;

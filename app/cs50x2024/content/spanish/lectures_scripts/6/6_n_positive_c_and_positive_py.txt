@@ -1,0 +1,41 @@
+Algunos otros ejemplos de la semana 1 antes de que revisemos los problemas más interesantes de la semana 2 en adelante. Permítanme continuar y dividir mi pantalla una vez más. Permítanme continuar y a la izquierda, abrir positive.c, que fue un programa recordatorio que nos permitió definir una función para obtener un número entero positivo.
+
+Y utilizamos un especial, un tipo de bucle en la semana 1 al implementar esto, el de un bucle do while. Desafortunadamente, en Python, así como no tienes el operador más más, tampoco tienes un bucle do while, lo que parecería problemático para ideas muy simples como esta, donde deseas que los humanos hagan algo al menos una vez y luego quizás una y otra vez. vez. Pero está bien, ¿verdad? Tienes herramientas más que suficientes en el kit de herramientas, tanto en C como en Python, para hacer esto sin la estructura más familiar y más cómoda.
+
+Así que déjame escribir un programa llamado positive.py. Permítanme continuar e importar get_int de CS50. Permítanme continuar y definir una función principal, tal como lo hice antes, solo para poder demostrar cómo puedes obtener un int positivo del usuario y luego imprimirlo, por lo que es un ejemplo muy simple que es equivalente, por el momento, a lo que estoy haciendo aquí desde la semana 1. Entonces, nada a la izquierda es nuevo. Todo es de la semana 1, aunque ahora esté un poco atrasado.
+
+Permítanme continuar ahora y definir también en el lado derecho def get_positive_int. No va a tomar ningún argumento. Pero necesito implementar esta noción de hacer algo mientras aún sea verdad. Y la forma más pitónica o convencional de hacer esto en Python es en realidad así. Induce deliberadamente un bucle infinito para ti mismo, porque puedes salir de él cuando quieras. Así que este es un paradigma común de Python. Continúa y al menos una vez, obtén un int del usuario pidiéndole un número entero positivo.
+
+Y luego, después de eso, ¿en qué circunstancias probablemente quiero salir de este bucle infinito si el objetivo es obtener positive_int? ¿Qué preguntas debería hacerme? Si.
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Sí, simplemente, si n es mayor que mayor que 0, no es necesario paréntesis, pero sí necesito los dos puntos. Puedo, como en C, usar el comando break, que me saca del bucle en cuyo punto ahora puedo continuar y devolver n. Entonces, es diferente de lo que ves a la izquierda. Pero es lógicamente lo mismo.
+
+Y, sinceramente, podrías volver a la semana 1 e implementar esta lógica en C, porque teníamos bucles while. Tuvimos la palabra verdadera, aunque en minúscula. Y también teníamos todo este mismo código, aunque teníamos llaves y punto y coma y algunas otras cosas. Sin embargo, esta es la forma equivalente de Python de hacerlo aquí. Pero parece que hay un error. O mejor dicho, hay lo que pensarías que es un error. Esto está bien, no hay problema ahí. Eso desaparecerá eventualmente, espero. Ir.
+
+[RISAS]
+
+No le prestes atención a eso. Creo que el código es correcto. Entonces parece que hay un error. Y este es súper sutil. Pero en las semanas 1 a 5 cuando escribíamos en C, ¡oh, mira! ¿Se fue? Ignora el problema a veces. Se irá.
+
+[RISAS]
+
+Aquí hay un error aparentemente sutil. Pero en realidad no es un error en Python. Pero habría sido en C., ¿qué estoy haciendo mal, al menos en C, aunque afirmo que esto va a funcionar? Y si comparas izquierda y derecha, puede que resulte más obvio. ¿Qué estoy haciendo? Es eso un ... sí, atrás.
+
+AUDIENCIA: Estás rompiendo antes de regresar.
+
+DAVID MALAN: Me estoy rompiendo antes de regresar. Está bien, porque esta declaración de ruptura si n es mayor que 0 me sacará de la sangría, fuera del bucle. Así que está bien. Pero creo que su inquietud está relacionada si podemos ponerle el dedo un poco más precisamente. Si.
+
+AUDIENCIA: Tipo, no tienes ... estás regresando n, pero n es [INAUDIBLE].
+
+DAVID MALAN: Sí, entonces esta es quizás la segunda parte de tu reclamo. El n se devuelve en la línea 12. Y afirmo que esto está bien. Pero n fue declarado aunque implícitamente, es decir, sin ningún tipo de datos en Python, en la línea 9. Si hubiéramos hecho eso en C aquí, no habría funcionado, porque recuerda que en C, existe esta noción de alcance, donde cuando defines una variable, solo existe dentro de las llaves que la encapsulan.
+
+Ahora, Python no tiene llaves. Pero todavía hay sangría, lo que implica lo mismo. Pero en Python, sus variables, incluso si están declaradas bajo, bajo, bajo, bajo condiciones o variables, o bucles, serán accesibles para usted fuera de esas condiciones y bucles. Entonces es una buena característica. Y me permite, entonces, ejecutar este programa, Python de positive.py. Permítanme continuar y proporcionar, vaya, resulta que hay un error. Si.
+
+AUDIENCIA: [INAUDIBLE] principal.
+
+DAVID MALAN: Sí, entonces tengo que llamar a main en la parte inferior aunque eso parezca un poco tonto. Pero ahora, déjame continuar y ejecutar el programa ahora. Oh, ahora, me pide un número entero positivo. No cooperemos: negativo 1, 0, 1. Ahora, de hecho, funciona. Entonces, nuevamente, es posible que a veces tengas que pensar un poco más a la hora de implementar algo en Python en lugar de en C. Pero de hecho, es muy posible. Si.
+
+AUDIENCIA: ¿Son las variables idénticas accesibles en todas las funciones?
+
+DAVID MALAN: Buena pregunta: ¿son las variables accesibles en todas las funciones? No, estarán aisladas para la función, pero no para el nivel de sangría en el que fueron definidas.

@@ -1,0 +1,38 @@
+[1]
+
+Búsqueda lineal
+• En la búsqueda lineal, la idea del algoritmo es iterar a lo largo del array de izquierda a derecha, buscando un elemento especificado.
+En pseudocódigo:
+• Repetir, comenzando en el primer elemento:
+• Si el primer elemento es lo que estás buscando (el objetivo), detenerse.
+• De lo contrario, pasar al siguiente elemento.
+
+[2]
+
+Búsqueda lineal
+11 23
+8
+14 30
+9
+6
+17 22 28 25 15
+7
+10 19
+En pseudocódigo:
+Repetir, comenzando en el primer elemento:
+Si el primer elemento es lo que estás buscando (el objetivo), detenerse.
+De lo contrario, pasar al siguiente elemento.
+Objetivo
+9
+
+[27]
+
+Búsqueda lineal
+• Escenario de peor caso: tenemos que examinar todo el array de n elementos, ya sea porque el elemento objetivo es el último elemento del array o no existe en el array.
+• Escenario de mejor caso: el elemento objetivo es el primer elemento del array y, por lo tanto, podemos dejar de buscar inmediatamente después de comenzar.
+
+[28]
+
+Búsqueda lineal
+O(n)
+Ω(1)

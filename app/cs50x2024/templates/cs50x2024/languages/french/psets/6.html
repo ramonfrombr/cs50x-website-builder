@@ -1,0 +1,86 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-6">Ensemble de problèmes 6</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>La collaboration sur les ensembles de problèmes n’est pas autorisée, sauf dans la mesure où vous pouvez demander de l’aide à vos camarades de classe et à d’autres personnes, tant que cette aide ne se résume pas à ce qu’une autre personne fasse votre travail à votre place, conformément à la politique du cours sur
+      <a href="{{ url_for('cs50x2024.honesty') }}">l’honnêteté académique</a>.</p>
+
+    <p>Le personnel effectue des vérifications aléatoires des soumissions à CS50x. Les étudiants reconnus coupables de violation de cette politique seront exclus du cours. Les étudiants qui ont déjà terminé CS50x, s’ils sont reconnus coupables de violation, verront leur certificat CS50 révoqué de manière permanente.</p>
+  </div>
+
+  <h2 id="what-to-do">Que faire ?</h2>
+
+  <ol>
+    <li>Connectez-vous à
+      <a href="https://cs50.dev">cs50.dev</a>
+      à l’aide de votre compte GitHub</li>
+    <li>Exécutez
+      <code class="language-plaintext highlighter-rouge">update50</code>
+      dans la fenêtre de terminal de votre espace de codes pour vous assurer que votre espace de codes est à jour.</li>
+    <li>Envoyez
+      <a href="{{ url_for('cs50x2024.psets.pset6.python_hello') }}">Hello</a>
+      en Python</li>
+    <li>Envoyez l’une des opérations suivantes :
+      <ul>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset6.python_mario_less') }}">cette version de Mario</a>
+          en Python, si vous vous sentez moins à l’aise</li>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset6.python_mario_more') }}">cette version de Mario</a>
+          en Python, si vous vous sentez plus à l’aise</li>
+      </ul>
+    </li>
+    <li>Envoyez l’une des opérations suivantes :
+      <ul>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset6.python_cash') }}">Cash</a>
+          en Python, si vous vous sentez moins à l’aise</li>
+        <li data-marker="*">
+          <a href="{{ url_for('cs50x2024.psets.pset6.python_credit') }}">Credit</a>
+          en Python, si vous vous sentez plus à l’aise</li>
+      </ul>
+    </li>
+    <li>Envoyez
+      <a href="{{ url_for('cs50x2024.psets.pset6.python_readability') }}">Readability</a>
+      en Python</li>
+    <li>Envoyez
+      <a href="{{ url_for('cs50x2024.psets.pset6.dna') }}">DNA</a>
+      en Python</li>
+  </ol>
+
+  <p>Si vous envoyez les deux versions de Mario, nous enregistrerons la plus élevée de vos deux notes. Si vous envoyez à la fois Cash et Credit, nous enregistrerons la plus élevée de vos deux notes.</p>
+
+  <h2 id="when-to-do-it">Quand le faire</h2>
+
+  <p>D’ici le
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+  <h2 id="advice">Conseils</h2>
+
+  <ul>
+    <li data-marker="*">Essayez n’importe lequel des programmes de David dans
+      <a href="{{ url_for('cs50x2024.weeks.week6') }}">Semaine 6</a>.</li>
+  </ul>
+
+  <h2 id="academic-honesty">Intégrité académique</h2>
+
+  <ul>
+    <li data-marker="*">Pour Hello, Mario, Cash, Credit et Readability, il est
+      <strong>raisonnable</strong>
+      de consulter vos propres implémentations en C et les implémentations d’autres personnes
+      <em>en C</em>.</li>
+    <li data-marker="*">Il n’est
+      <strong>pas raisonnable</strong>
+      de consulter les implémentations d’autres personnes dans
+      <em>Python</em>.</li>
+    <li data-marker="*">Dans la mesure où un objectif de ces problèmes est de vous apprendre à devenir autonome dans un nouveau langage, gardez à l’esprit que ces actes sont non seulement
+      <strong>raisonnables</strong>, selon le programme, mais également encouragés à cette fin :
+      <ul>
+        <li data-marker="*">Incorporer quelques lignes de code que vous trouvez en ligne ou ailleurs dans votre propre code, à condition que ces lignes ne soient pas elles-mêmes des solutions aux problèmes assignés et que vous citiez les sources de ces lignes.</li>
+        <li data-marker="*">Vous tourner vers le Web ou une autre source pour obtenir des instructions au-delà de celles du cours, des références et des solutions à des difficultés techniques, mais pas des solutions directes aux problèmes de l’ensemble de problèmes ou à votre propre projet final.</li>
+      </ul>
+    </li>
+  </ul>
+
+{% endblock %}

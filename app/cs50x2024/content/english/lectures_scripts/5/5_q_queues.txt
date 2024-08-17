@@ -1,0 +1,17 @@
+So it turns out that now that we have arrays and linked lists and trees and tries and hash tables and yet other data structures out there, we can actually implement what are called abstract data structures, using any of those as building blocks. What we've kind of done today verbally and pictorially is invent more of those pink puzzle pieces in Scratch, those custom puzzle pieces. Now we have as building blocks arrays and linked lists and trees and hash tables that we can use to solve other problems. 
+
+And one of the problems out there in the real world is something called a queue. A queue and certainly in certain cultures immediately comes to mind, what's a queue in the real world or an example thereof? 
+
+AUDIENCE: A line. 
+
+DAVID MALAN: So a line, right, lining up at a store or a restaurant or a takeout place. So a queue actually has a technical meaning and computer science too. It's a data structure that is FIFO, first in, first out. A queue, by definition should have people hopefully pleasantly lining up one person in front of the other. And it maintains this FIFO property, first in, first out, such that if I'm at the front of the line I am going to be served my food first and then the person behind me and then the person behind them. It'd be really obnoxious if you walked up to Tasty Burger, placed your order, and whoever showed up most recently got their food first. 
+
+That would be an opposite data structure. That's LIFO. Last in, first out. Not fair in the real world. 
+
+So you might hope then that the software that companies like Tasty Burger use when they type in your order to the system actually send those orders to the team working in back cooking the food in a queue fashion, because it'd be pretty obnoxious too if people behind you were getting their food first. So hopefully in software, you're implementing that real world notion of a queue as well. 
+
+Printing, if you still print on campus sometimes, papers and whatnot on printers, they're often shared printers on campus. And so they have what are called printer queues. You might go to Command-P or Control-P print, but then hopefully, in fairness, if there's 10 people who are trying to print to the same Harvard printer, they are printed in the order in which they were requested. It would be pretty obnoxious, again, if the order were flipped. 
+
+Well, it turns out with queues in computer science, there's two fundamental operations, even though we humans don't really think in these terms, enqueue and dequeue. To enqueue means to get in line. To dequeue means to get out of line, hopefully once you've been served your printouts or your food or whatnot. 
+
+Using today's principles, arrays, linked lists, you could probably imagine conceptually using them as building blocks to implement this notion of a queue. The software that Tasty Burger or any fast food place uses probably has implemented in code some lines that are using an array that's maybe being dynamically resized or better yet a linked list that's growing and shrinking as people are placing orders and getting orders. So there's this one-to-one mapping between some of today's ideas and even the real world as well.

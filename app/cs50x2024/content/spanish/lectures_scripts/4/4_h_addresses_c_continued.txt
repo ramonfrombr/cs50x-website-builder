@@ -1,0 +1,39 @@
+Así que vamos a continuar y experimentaremos con esta cadena, tal como lo hicimos hace un momento usando el nombre de Emma ahora en lugar de un int. Así que déjame continuar y eliminar esas líneas anteriores. Y déjame volver al estilo de la Semana 1, donde solo digo cadena s igual comillas, Emma. Y luego, por supuesto, si imprimo esto, simplemente puedo decir esto como antes. Así que solo como una comprobación de seguridad rápida, permíteme continuar y hacer la dirección nuevamente.
+
+Vaya. ¿Qué hice mal? Déjame desplazarme hacia arriba hasta el primer error, de muchos al parecer.
+
+Sí.
+
+AUDIENCIA: Estás usando cadena, [inaudible]
+
+DAVID J. MALAN: Sí, en realidad no debería haber quitado todas las ruedas de entrenamiento todavía. Todavía estoy usando cadena. Así que permíteme continuar y volver a poner eso solo por ahora. Eso me dará acceso a ese typedef para cadena. Déjame recompilarlo como make address. Eso funcionó. Así que esa fue la solución, gracias. Y luego dirección nuevamente. Solo vemos a Emma.
+
+Entonces, ¿qué podemos hacer ahora que es un poco diferente aquí? Bueno, uno, ¿sabes lo que realmente puedo hacer? Puedo deshacerme de esto, la solución hace un momento, y decir que ya no necesito más cadena. No necesito esas ruedas de entrenamiento. Si s va a representar una cadena, técnicamente, s solo almacenará la dirección del primer carácter. Y de hecho, basta con escribir esto. Entonces, literalmente, en lugar de cadena, escribes char star.
+
+Técnicamente, no necesitas, puedes tener espacio adicional a la izquierda o derecha. Pero la mayoría de los programadores lo escriben tal como lo tengo aquí, nombre de variable char star. Eso parece más aterrador ahora, pero no es diferente de lo que hemos estado haciendo durante semanas. Si ahora hago make address sin la biblioteca CS50, aún funciona, porque C sabe de qué estoy hablando. Y si ejecuto la dirección ahora, todavía veo a Emma.
+
+Pero ahora puedo empezar a jugar. ¿Verdad? Si s es la dirección de un carácter, ¿cuál fue el código de formato que puedo usar para imprimir una dirección? No el porcentaje i, sino...
+
+AUDIENCIA: Porcentaje p.
+
+DAVID J. MALAN: Porcentaje p, un puntero. Así que déjame continuar y recompilar esto ahora. Make address, eso también se compila. Y cuando ejecuto dot slash address, no voy a ver a Emma ahora. ¿Qué debería ver en su lugar? Alguna dirección, ¿verdad? No tengo idea de qué se trata. Parece que el nombre de Emma está almacenado en 0x42A9F2, sea cual sea el número que se traduce a decimal, en algún lugar de la memoria de la computadora.
+
+Pero resulta que también, ¿qué pasa con esto? Déjame continuar y agregar otra línea de código y digamos, sabes qué, ahora tengo mucha curiosidad. ¿Cuál es la dirección de la primera letra del nombre de Emma? ¿Cómo expreso en C, solo la primera letra del nombre de Emma si Emma está almacenada en s?
+
+AUDIENCIA: [inaudible]
+
+DAVID J. MALAN: s entre corchetes cero, ¿verdad? Eso parecería ser eso. ¿Pero eso es qué? Eso es un char. s entre corchetes 0 es un char. ¿Cómo obtengo la dirección de s entre corchetes 0?
+
+AUDIENCIA: Ampersand.
+
+DAVID J. MALAN: Sí, puedo decir ampersand. ¿Verdad? Entonces es feo, pero está bien por ahora. Make address, enter.
+
+Vaya. Es más feo porque olvidé mi punto y coma.
+
+Déjame continuar y hacer la dirección nuevamente, enter. Parece compilarse. Y cuando ejecuto dot slash address ahora, noto que obtengo lo mismo. Y esto se debe a que C me está tomando literalmente. Cuando imprime s, una cadena, técnicamente es solo la dirección del primer carácter. Y de hecho, puedo corroborar eso ejecutando s entre corchetes cero, luego obteniendo la dirección del primer carácter. Y de hecho son uno y el mismo.
+
+Por lo tanto, una cadena es este tipo de abstracción sobre un grupo de caracteres. Pero de nuevo, s es solo una dirección. Y eso es todo lo que estamos enfatizando ahora.
+
+Y si realmente siento curiosidad, no es que necesariamente hagas esto en un programa real, ¿qué pasa si imprimo algunos caracteres más en el nombre de Emma, como s entre corchetes 1, 2 y 3? Déjame continuar, solo por curiosidad y hacer este programa y dot slash address. Ahora fíjate en lo que veo, de nuevo, la dirección de s está en 42AB52. El primer carácter en s está en la misma cosa, por definición de lo que es una cadena.
+
+Y luego observa lo que es algo ingenioso: si esto es, si, para alguna definición de ingenioso, 53, 54, 55 es digno de mención. ¿Por qué? Están separados por un byte. Así que todo este tiempo, cada vez que implementaste César, o sustitución, o algún otro cifrado en el conjunto de problemas dos, cada vez que manipulabas caracteres individuales, no lo sabías, pero solo estabas visitando diferentes buzones. Solo estabas visitando diferentes direcciones en la memoria de la computadora para manipularlas de alguna manera.

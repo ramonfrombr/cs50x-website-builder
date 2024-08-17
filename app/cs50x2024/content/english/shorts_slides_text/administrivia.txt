@@ -1,0 +1,96 @@
+
+[0]
+
+Administrivia
+
+[1]
+
+Administrivia
+● There’s a lot to learn in this course, and to maximize your ability to do so, there’s a wealth of 
+resources at your disposal.
+● We’ve done our best to design a suite of resources that will accommodate everyone.
+
+[2]
+
+Administrivia
+● Course website
+● Lecture material – cs50.harvard.edu/lectures
+●
+Live streams, videos, sample code, slides, scribe notes, links
+● Function reference – reference.cs50.net
+●
+For those less comfortable and more comfortable alike
+●
+A consolidated and annotated set of man pages.
+● Interactive study guide – study.cs50.net
+●
+Sample slides, practice exercises, and more on a variety of the course’s topics.
+● Quiz preparation – cs50.harvard.edu/quizzes
+●
+Old quiz questions and answers archived for your review
+
+[3]
+
+Administrivia
+● Course website
+● Problem sets – cs50.harvard.edu/psets
+●
+Specifications, distributon code
+●
+Walkthroughs, postmortems
+● Sections – cs50.harvard.edu/sections
+●
+Schedule of sections, videos, slides
+● Office hours – cs50.harvard.edu/hours
+●
+Schedule of office hours, usually available weeknights
+● Discussion forum – cs50.harvard.edu/discuss
+●
+Asynchronous bulletin board for help from TAs, TFs, and fellow students. 
+
+[4]
+
+Administrivia
+● Course archives
+● Since 2007 – cs50.tv
+● All resources otherwise available on the course website 
+posted there at the end of the fall.
+● Other online help
+● CS50 Slack – cs50x.slack.com
+● CS50 Stack Exchange – cs50.stackexchange.com
+● CS50 Facebook – facebook.com/groups/cs50
+● CS50 Twitter – @cs50, #cs50
+● CS50 Reddit – reddit.com/r/cs50
+
+[5]
+
+Administrivia
+● Grading
+● Assignments are graded on four different axes.
+● Scope
+● Did you make an earnest effort to complete the problem 
+set?
+● Correctness
+● Does your code work? Is it free of bugs?
+● Design
+● How efficient is your code? How well-written?
+● Style
+● How human readable is your code?
+
+[6]
+
+Administrivia
+● Grading
+check50 is a command line tool that can be used to help 
+you improve your correctness score
+style50 is a command line tool that can be used to help 
+your improve your style score
+Your teaching fellow will provide you with qualitative, 
+comment-based feedback to help you improve your 
+design score
+0
+1
+2
+3
+4
+5

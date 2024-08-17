@@ -1,0 +1,115 @@
+Ok, allons voir si on ne peut pas rendre ça un peu plus réel avec une petite démonstration. Laissez-moi afficher à l'écran le but que nous voulons atteindre, avec tout en ordre ; je pense que pour cela, il nous faut peut-être cinq volontaires. Laissez-moi aller un peu plus loin dans le fond. OK, une là-bas. Peut-être deux là-bas. Maintenant les mains sont… OK, 3 ici si nous pouvons aller dans le fond là-bas. OK, 4 est portée volontaire par votre ami. Et 5 est portée volontaire par vos amis.
+
+Vous voulez venir ? Très bien, venez. Venez. Brian va m'aider à faire cette démonstration. Si vous pouviez venir tous les cinq, venez ici où nous avons un peu de place. Très bien, laissez-moi vous donner des microphones et faire les présentations. OK, merci.
+
+Deux d'entre eux ont été courageusement désignés volontaires par les personnes assises à côté d'eux. Alors bravo à vous deux. Vous voulez dire bonjour et nous dire quelque chose sur vous-même.
+
+PUBLIC : Bonjour. Je m'appelle [? Siobhana. ?]
+
+DAVID MALAN : [? Siobhana. ?] Et ton année ou--
+
+PUBLIC : Je suis en deuxième année.
+
+DAVID MALAN : Deuxième année. OK. Ravie de te rencontrer.
+
+PUBLIC : Salut. Je suis en terminale.
+
+DAVID MALAN : C'est sympa de t'avoir aussi. Oui.
+
+PUBLIC : Salut, je suis Athena, en deuxième année à FOHO.
+
+DAVID MALAN : Athena.
+
+PUBLIC : Salut. Je suis Anurag. Je suis en première année à Matthews.
+
+PUBLIC : Je suis Ethan. Je suis en première année à Weld.
+
+DAVID MALAN : OK, et--
+
+PUBLIC : Je suis Sarika. Je suis en première année à Thayer.
+
+DAVID MALAN : Merveilleux. Très bien, merci à tous de vous porter volontaires. Allons-y. Tu représentes pour le moment un bloc de mémoire, si tu veux. Donc, si tu pouvais peut-être reculer juste là où nous avons de l'espace disponible. Nous allons avoir besoin de l'un d'entre vous pour représenter la liste. C'était Siobhan ?
+
+PUBLIC : [? Siobhana. ?]
+
+DAVID MALAN : [? Siobhana, ?] viens. [? Siobhana, ?] veux-tu représenter la liste. Et pour représenter notre vraie liste, nous avons -- ou Brian -- ouais, nous avons une étiquette de nom, bonjour, mon nom est liste. Donc tu vas représenter le rectangle de gauche qui représente la liste chaînée elle-même.
+
+Et maintenant, nous allons d'abord t'initialiser à null. Tu peux donc aller de l'avant et mettre ça derrière ton dos. Tu ne pointes donc vers rien. Mais tu représentes la liste. Et il n'y a rien dans la liste, aucun nombre dans la liste.
+
+Quelle était la prochaine étape ? Si le but est d'insérer 2, 4, 5, 1, 3, que voulons-nous faire en premier, quelle opération de niveau inférieur pour y mettre 2 ? Quelle était la première ligne de code ?
+
+PUBLIC : malloc.
+
+DAVID MALAN : malloc. Nous voulons donc malloc un nœud pour 2. Alors allons-y et malloc. OK, viens. Donc malloc. Et comment tu t'appelles déjà ?
+
+PUBLIC : Ethan.
+
+DAVID MALAN : Ethan. OK. Et que devons-nous donner à Ethan ? Ethan a deux valeurs ou deux champs. Le premier est le nombre 2. Merci. Le suivant est un pointeur appelé next.
+
+Maintenant, tu ne pointes vers personne d'autre. Donc tu vas le mettre derrière ton dos. Et maintenant que voulons-nous faire avec ? [? Siobhana, ?] qu'avons-nous à faire ?
+
+PUBLIC : Pointer vers--
+
+DAVID MALAN : Pointer vers ?
+
+PUBLIC : 2.
+
+DAVID MALAN : Lui, oui, le numéro 2. OK, donc cela représente maintenant l'image où nous avons la liste ici, 2 ici, mais aussi le pointeur nul.
+
+Bien, ensuite nous voulions ajouter 4 à la liste. Comment allons-nous faire ? Eh bien, avec 4, nous allons faire un malloc. malloc, très bien. Et maintenant, Brian a un joli chiffre 4 pour toi et un pointeur. Que voulons-nous faire avec ton pointeur ?
+
+PUBLIC : Ne pas le pointer.
+
+DAVID MALAN : Ne pas pointer vers quoi que ce soit. Maintenant, c'est un peu plus de travail. Et j'ai besoin d'une variable temporaire. Je vais donc jouer ce rôle. Je vais pointer vers l'endroit où Siobhana pointe de façon anormale. C'est OK. Nous ne pouvions pas avoir des mains qui pointent dans l'autre sens physiquement. Nous allons donc pointer vers la même chose ici. Vous pointez tous les deux vers 2. Et que cherché-je pour décider où mettre 4 ?
+
+PUBLIC : Si c'est supérieur à.
+
+DAVID MALAN : Si c'est supérieur à une certaine valeur. Je vais donc vérifier. Eh bien, 4 est supérieur à 2. Je vais donc continuer. Et tu t'appelais Eric ?
+
+PUBLIC : Ethan.
+
+DAVID MALAN : Ethan, désolé. Alors, Ethan, vers quoi pointes-tu ? Rien. C'est donc une opportunité. Il n'y a rien à sa droite. Alors laisse-moi aller de l'avant et faire pointer Ethan vers… comment t'appelles-tu déjà ?
+
+PUBLIC : Athena.
+
+DAVID MALAN : Athena. De façon anormale aussi, mais c'est pas grave. Et donc maintenant, Athena a-t-elle besoin de mettre à jour son pointeur ? Non, elle est bonne. Elle représente la fin de la liste. Donc son pointeur peut rester derrière son dos.
+
+Bien, allons-y et malloc 5. Tu veux être notre 5 ? Alors maintenant il nous faut un 5. Nous devons donc te remettre le numéro 5. Et comment t'appelles-tu déjà ?
+
+PUBLIC : Sarika.
+
+DAVID MALAN : Sarika. Très bien, donc Sarika tient le numéro 5. Elle va aussi avoir un pointeur appelé suivant. Vers quoi Sarika doit-elle pointer ?
+
+PUBLIC : Rien.
+
+DAVID MALAN : Rien. Et maintenant comment l'insérer au bon endroit ? Eh bien, je dois faire la même chose. Je vais donc m'impliquer à nouveau et être une variable temporaire. Je vais pointer vers la même chose que [? Siobhana ?] pointe, qui est Ethan. Je vais suivre cela et voir, ooh, attends une minute, en fait il pointe vers quelqu'un d'autre. Je vais donc suivre cela. C'est toujours le numéro 4. Je dois donc continuer.
+
+Oh, attends une minute. Athena ne pointe vers personne. C'est l'occasion pour Athena de pointer vers 5 et le tour est joué. Mais vas-tu changer de pointeur maintenant ? Non.
+
+Maintenant les choses deviennent un peu plus intéressantes. Pourrions-nous aller de l'avant et malloc 1 ? Et comment t'appelles-tu déjà ?
+
+PUBLIC : Emma.
+
+DAVID MALAN : Emma. OK, Emma, nous avons le numéro 1 pour toi de Brian. Tu as un pointeur, qui doit également être initialisé à null. Et maintenant nous avons quelques étapes impliquées ici. Que voulons-nous faire en premier ? Quelle est ta proposition ?
+
+PUBLIC : Pointeur temporaire.
+
+DAVID MALAN : Pointeur temporaire. Je vais donc pointer vers les mêmes choses que [? Siobhana ?] pointe, qui est Ethan ici. Mais je vois que 2 est supérieur à 1. Alors qu'est-ce que je veux vraiment faire ?
+
+Eh bien, laissez-moi incorrect pendant un moment -- [? Siobhana, ?] pourrais-tu pointer vers le numéro 1 ? Qu'est-ce que nous venons de faire de mal ? Nous avons rendu tout le monde orphelin. Et encore plus visiblement maintenant, personne ne pointe vers Ethan ou au-delà, ce qui signifie que nous venons de divulguer cette mémoire, pour ne jamais la récupérer ou la libérer. Donc nous ne voulons pas faire ça. Annuler, Contrôle-Z.
+
+Qu'est-ce qu'on veut faire à la place ? Comment t'appelles-tu déjà ?
+
+PUBLIC : Emma.
+
+DAVID MALAN : Emma. Sur quoi veux-tu pointer ?
+
+PUBLIC : Je veux pointer sur [? Siobhana. ?]
+
+DAVID MALAN : Ça revient au même, [? Siobhana ?] pointe vers Ethan. Alors vas-y et fais-le avec ton-- OK, un peu comme Twister maintenant. C'est OK. Et alors [? Siobhana, ?] vers quoi je veux pointer ? Parfait.
+
+Donc encore une fois, beaucoup d'étapes impliquées, mais il ne s'agit en réalité que de deux ou trois étapes selon les pointeurs que nous voulons mettre à jour. Et puis enfin, allons-y pour malloc 3. Et tu t'appelais encore une fois ?
+
+PUBLIC : Anurag.
+
+DAVID MALAN : Anurag. On a donc un 3 pour toi de Brian. Nous avons un pointeur pour toi. Il est initialisé initialement à null. Tu peux donc le mettre

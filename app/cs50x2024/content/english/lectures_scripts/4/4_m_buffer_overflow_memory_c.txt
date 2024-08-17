@@ -1,0 +1,17 @@
+Let me try one other thing actually. This is a program that I wrote in advance. This one is called memory dot C. And as always, these are all on the course's website if you'd like to tinker after. And it's a little pointless. It's just meant for demonstration purposes. 
+
+So here is a program. And it's copied from this online manual for Valgrind, the tool I just used. So let's see what's going on. Here I have main, at the bottom of my code. I copied it. I didn't use a prototype. I just copied what they did. And see here, it calls a function called f and then returns 0. Well what does f do? f is this random function up here that takes no inputs per the void. And in English, how would you describe what's happening in line 7 now-- that we've introduced malloc and stars-- or pointers? What's this doing? Yeah. 
+
+AUDIENCE: It's allocating enough memory in [INAUDIBLE] for [INAUDIBLE]. 
+
+DAVID J. MALAN: Good. Allocate enough memory for 10 integers-- and then let me add-- elaborate on your words --and then store the address of that chunk of memory in a pointer called x, if you will. 
+
+So sizeof is new. But it literally does what it says. If you say sizeof open paren, close paren, and then the name of a data type, it will tell you that an int is 4 bytes. It will tell you that a long is 8 bytes. It will tell you that a char is one byte. It's just a dynamic way of avoiding having to memorize those kinds of things. 
+
+So this just means give me 10 times the size of an int, which happens to be 4 bytes. So that means give me 10 times 4, or 40 bytes of memory. That's effectively an array of memory that I can store integers in. And malloc, per its definition, is going to return to me the address of the first byte of that memory. What is now scary about line 8, relatively speaking? What might worry you with line 8, which is buggy, unfortunately? Yeah. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID J. MALAN: Exactly. I'm doing x bracket 10 and just arbitrarily storing the number 0. Why? Just because. But 10 does not exist. Right? If I have 10 int, it's bracket 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, not bracket 10. So this is an example of overflowing a buffer, so to speak. Anytime you're talking about memory, any time you're talking about an array of memory-- which this effectively is, 10 integers, room for 10 integers back to back to back --if you go one step too far, that's what's called a buffer overflow, whereby the buffer is the array. 
+
+And in fact, this would make it even more clear. Suppose I tried to go there, bracket 10,000. That is definitely not among the bytes of memory I allocated. That's definitely going beyond the boundaries of my array. But so is it true that bracket 10 is one step too far.

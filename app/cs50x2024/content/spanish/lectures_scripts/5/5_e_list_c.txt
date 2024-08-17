@@ -1,0 +1,53 @@
+Permítanme pasar al IDE CS50 aquí. Y permítanme seguir adelante y crear un nuevo archivo llamado list.c. Y veamos si no podemos representar exactamente esta idea en código.
+
+Así que permítanme seguir adelante e incluir para mí el stdio.h estándar para poder imprimir algunos valores en última instancia. Déjenme seguir adelante entonces y declarar la función principal: int main void. Y luego aquí abajo, vamos a comenzar arbitrariamente donde comenzamos con tres enteros, llamados list y tamaño 3. Así que estoy imitando exactamente donde comenzamos pictóricamente al tener una matriz que tenía un tamaño fijo de 3.
+
+Y luego, si siguiera adelante e inicializara esa lista, podría simplemente codificar, es decir, escribir en el propio programa, esos tres valores entre corchetes 0, 1 y 2, los números 1, 2 y 3 respectivamente. Así que estoy inicializando manualmente esa matriz a tres valores.
+
+Y luego, para que este programa tenga algún propósito en la vida, permítanme seguir adelante y hacer int i igual a 0, i menor que 3, i++. Y luego, imprimamos estos elementos solo por si acaso. Cada uno de ellos es un int. Así que usaremos %i. Y luego voy a seguir adelante e imprimiré list bracket i.
+
+Así que es una especie de programa al estilo de la Semana 2, donde todo lo que estoy haciendo es codificar una matriz de tamaño 3, inicializándola con tres valores, 1, 2, 3; indexada en 0, y luego imprimirlos. Entonces, si sigo adelante y guardo esto y hago mi lista y luego sigo adelante y compilo esto con ./list, espero ver 1, 2, 3.
+
+Pero hay un problema con esta implementación fundamentalmente porque he codificado, es decir, escrito explícitamente, el tamaño de esta matriz, ¿cómo puedo hacer para agregar un cuarto elemento? ¿Qué tendría que hacer?
+
+Bueno, podría cambiar el código aquí arriba a 4. Y luego podría agregar otra línea aquí. Y luego podría cambiar esto. Pero luego tengo que recompilarlo. Y por lo tanto, ciertamente no es dinámico. Pero sí vimos una función la semana pasada que te permite asignar más memoria dinámicamente. Y solo para estar seguro ¿Cuál era esa función?
+
+Así que malloc. ¿Verdad? Ahora que tenemos malloc, no tienes que escribir en el código fuente de tu programa desde el principio un número fijo. En realidad, puede asignar cierta cantidad de memoria dinámicamente. Ahora, aquí solo para efectos de demostración, lo haremos para lograr el mismo objetivo, pero de una manera que se escalará un poco más eficazmente.
+
+Recuerde de la semana pasada que si desea obtener un fragmento de memoria de malloc, devolverá la dirección de ese fragmento de memoria. Eso sugiere que puedo declarar un puntero a un entero llamado lista. Y luego permítanme seguir adelante y asignar, ¿qué tal tres enteros inicialmente multiplicados por el tamaño de un entero?
+
+Así que esto se ve un poco extraño, pero considera lo que está haciendo. Se le pide a malloc tres veces el tamaño de un int. Así que dame suficiente memoria para que quepan tres enteros. Por definición, eso devuelve un puntero, según la semana pasada. Así que tenemos que asignarlo a un puntero a la izquierda. Entonces list es una variable ahora, al igual que x e y de nuestro ejemplo anterior, que almacena la dirección de ese fragmento de memoria.
+
+Pero lo bueno de C es que ahora que sabes que list es un fragmento de memoria, en realidad podemos tomar prestada la misma notación de corchetes de la Semana 2. Y este código aquí en realidad no necesita cambiar. Si usas la notación de corchetes junto al nombre de un puntero, lo que sucederá automáticamente es que la computadora irá al primer byte en ese fragmento de memoria. Este índice irá al siguiente fragmento de memoria. Este irá al siguiente fragmento de memoria, todo dentro del alcance de lo que malloc te devolvió.
+
+Y solo como curiosidad, ¿cuántos bytes hay en un entero?
+
+AUDIENCIA: 4.
+
+DAVID MALAN: 4. Y recuerda que mencioné brevemente la semana pasada la expresión aritmética de punteros. Lo que también estás obteniendo mágicamente con esta notación de corchetes es que el corchete 0, resulta ser el byte 0. El corchete 1 no es el segundo byte. En realidad, son 4 bytes más. Y el corchete 2 no es el tercer byte. En realidad, son 8 bytes más, porque asignaste 4 más 4 más 4, 12 bytes. Por lo tanto, esta notación de corchetes simplemente te lleva al lugar correcto en ese fragmento de memoria, para que puedas colocar int, int, int. Sí.
+
+AUDIENCIA: ¿Por qué asignas un puntero a un int en lugar de un puntero a una matriz de int?
+
+DAVID MALAN: ¿Por qué asignas un puntero a un int y no a un puntero a una matriz de int? En este contexto, los arreglos y los punteros son, en cierto sentido, lo mismo. Un puntero es una dirección de memoria. Una matriz es solo un fragmento de memoria. Y así, aunque usamos fragmentos de memoria en la Semana 2 simplemente llamándolos arreglos, en realidad son solo fragmentos de memoria más general que admiten la notación de corchetes.
+
+Pero ahora que podemos asignar toda la memoria que queramos, podemos usar estos dos conceptos indistintamente. Y hay algunas sutilezas en C. Pero esto ahora tiene el mismo efecto que la Semana 2. Y esta es la única línea nueva de esta semana.
+
+Pero ahora, si estás usando malloc, aunque no lo haré en un programa más complicado aquí, puedes imaginarte ahora el código ejecutándose en un bucle y tal vez asignando más memoria y más memoria y más memoria cuando la necesites, porque malloc te permite hacer precisamente eso.
+
+Y sí necesitamos hacer un par de verificaciones de seguridad aquí. Resulta que, según la semana pasada, malloc a veces puede quedarse sin memoria. Si su Mac, PC o la nube se queda sin memoria para su cuenta, bueno, es posible que desee verificar el valor de retorno. Por lo tanto, una buena práctica sería, bueno, espera un minuto, si list es igual a null, permítanme seguir adelante y devolver 1, algo salió mal, porque mi computadora se quedó sin memoria por alguna razón. Entonces, la mejor práctica diría que cada vez que asigne memoria, siempre verifique si ha obtenido la devolución de null.
+
+Ahora, permítanme hacer algo por el bien de la demostración. Déjame mover mi ventana aquí abajo. Permítanme resaltar estas líneas de código y simplemente afirmar que lo resaltado aquí entre las líneas 5 y 13 son líneas de código que simplemente asignan una lista de tamaño 3 y almacenan tres valores en ella. Esa es la historia donde nos detuvimos hace un momento.
+
+Supongamos que ahora cambio de opinión y decido después de la línea 13 o quizás en otra parte de este programa si fuera más grande, ya sabes, en realidad quiero otro entero. Quiero cambiar el tamaño de esa matriz. Bueno, ¿cómo puedo hacerlo? Bueno, permítanme seguir adelante y hacer esto. Permítanme seguir adelante y asignar, por ejemplo, otra dirección y decir que almacene en esa dirección un fragmento de memoria correspondiente a cuatro enteros usando el tamaño del operador como antes.
+
+Así que temporalmente, permítanme seguir adelante y darme un nuevo fragmento de memoria que sea lo suficientemente grande como para que quepan cuatro enteros en lugar de solo tres. Permíteme practicar las mejores prácticas y decir, ya sabes qué, por si acaso, si temp es igual a null porque me quedé sin memoria, olvídalo, terminé con el programa. No vamos a continuar de todos modos. Pero eso es simplemente una buena práctica ahora.
+
+Pero ahora, ¿qué quiero hacer? Si ahora tengo dos fragmentos de memoria, este es de tamaño 3, este es de tamaño 4, ¿qué hicimos la última vez que queríamos mover algo en la memoria de la computadora, qué hice físicamente con los casilleros? Creo que estás asintiendo. ¿Qué hice?
+
+AUDIENCIA: Pasaste por cada uno y moviste 1 al--
+
+DAVID MALAN: Sí, exactamente, pasé por cada uno y copié el valor de izquierda a derecha, de antiguo a nuevo. Y entonces permítanme seguir adelante y hacer exactamente eso. Creo que puedo hacer esto con un bucle for, para int i llegar a 0, i es menor que 3, porque ese es el tamaño de la matriz antigua, ese es el tamaño 3, i++. Y luego, en esta iteración, puedo hacer algo como esto: usar este nuevo fragmento de memoria como una matriz, porque dije que puedo usar mi notación de corchetes y almacenar la ubicación i lo que sea que esté en la lista original en la ubicación i.
+
+Así que este código aquí ahora, si quisiera comentarlo, copia enteros de la matriz antigua a la nueva matriz. Y eso también es simplemente usar un bucle for de lo antiguo a lo nuevo. Pero ahora eso no es todo lo que quiero hacer. También quiero almacenar en la ubicación 3, índice 0, lo que significa que es la cuarta ubicación, otro valor, el número 4. Por eso puse el número adicional 4 en esos casilleros.
+
+Así que ahora, con estas líneas de

@@ -1,0 +1,201 @@
+[0]
+
+Listes chaînées simples
+
+[1]
+
+Listes chaînées simples
+• Jusqu'à présent dans le cours, nous n'avions qu'un seul type de structure de données pour représenter des collections de valeurs similaires.
+• Les structures, souvenez-vous, nous donnent des « conteneurs » pour contenir des variables de différents types de données, généralement.
+• Les tableaux sont parfaits pour la recherche d'éléments, mais à moins que nous ne voulions les insérer à la toute fin du tableau, l'insertion d'éléments est assez coûteuse – n'est-ce pas ?
+
+[2]
+
+Listes chaînées simples
+• Les tableaux souffrent également d'une grande inflexibilité – que se passe-t-il si nous avons besoin d'un tableau plus grand que prévu ?
+• Grâce à une utilisation intelligente des pointeurs, de l'allocation dynamique et des structures, nous pouvons assembler ces deux éléments pour développer un nouveau type de structure de données qui nous donne la possibilité d'agrandir et de réduire une collection de valeurs similaires pour l'adapter à nos besoins.
+
+[3]
+
+Listes chaînées simples
+• Nous appelons cette combinaison d'éléments, lorsqu'elle est utilisée de cette manière, une liste chaînée.
+• Un nœud de liste chaînée est un type spécial de structure avec deux membres :
+• Données d'un certain type de données (int, char, float…)
+• Un pointeur vers un autre nœud du même type
+• De cette manière, un ensemble de nœuds ensemble peut être considéré comme formant une chaîne d'éléments que nous pouvons suivre du début à la fin.
+
+[7]
+
+Listes chaînées simples
+typedef struct sllist
+{
+VALEUR val;
+struct sllist* suivant;
+}
+nœud sllist ;
+
+[8]
+
+Listes chaînées simples
+• Pour travailler efficacement avec les listes chaînées, il existe un certain nombre d'opérations qu'il nous faut comprendre :
+1. Créer une liste chaînée lorsqu'elle n'existe pas encore.
+2. Rechercher un élément dans une liste chaînée.
+3. Insérer un nouveau nœud dans la liste chaînée.
+4. Supprimer un seul élément d'une liste chaînée.
+5. Supprimer une liste chaînée entière.
+
+[9]
+
+Listes chaînées simples
+• Créer une liste chaînée.
+sllnode* create(VALUE val);
+
+[10]
+
+Listes chaînées simples
+• Créer une liste chaînée.
+sllnode* create(VALUE val);
+• Étapes impliquées :
+a. Allouer dynamiquement de l'espace pour un nouveau sllnode.
+b. Vérifier que nous n'avons pas manqué de mémoire.
+c. Initialiser le champ val du nœud.
+d. Initialiser le champ suivant du nœud.
+e. Renvoyer un pointeur vers le nouveau sllnode créé.
+
+[16]
+
+Listes chaînées simples
+• Rechercher un élément dans une liste chaînée.
+bool trouver(sllnode* tête, VALEUR val);
+
+[17]
+
+Listes chaînées simples
+• Rechercher un élément dans une liste chaînée.
+bool find(sllnode* tête, VALEUR val);
+• Étapes impliquées :
+a. Créer un pointeur de parcours pointant vers la tête de la liste.
+b. Si le champ val du nœud actuel est ce que nous recherchons, signaler le succès.
+c. Sinon, définir le pointeur de parcours sur le pointeur suivant dans la liste et revenir à l'étape b.
+d. Si vous avez atteint la fin de la liste, signaler l'échec.
+
+[18]
+
+Listes chaînées simples
+bool existe = trouver(liste, 6) ;
+2
+3
+5
+6
+8
+liste
+
+[29]
+
+Listes chaînées simples
+• Insérer un nouveau nœud dans la liste chaînée.
+sllnode* insérer(sllnode* tête, VALEUR val);
+
+[30]
+
+Listes chaînées simples
+• Insérer un nouveau nœud dans la liste chaînée.
+sllnode* insérer(sllnode* tête, VALEUR val);
+• Étapes impliquées :
+a. Allouer dynamiquement de l'espace pour un nouveau sllnode.
+b. Vérifier que nous n'avons pas manqué de mémoire.
+c. Remplir et insérer le nœud au début de la liste chaînée.
+d. Renvoyer un pointeur vers la nouvelle tête de la liste chaînée.
+
+[31]
+
+Listes chaînées simples
+• Insérer un nouveau nœud dans la liste chaînée.
+sllnode* insérer(sllnode* tête, VALEUR val);
+• Étapes impliquées :
+a. Allouer dynamiquement de l'espace pour un nouveau sllnode.
+b. Vérifier que nous n'avons pas manqué de mémoire.
+c. Remplir et insérer le nœud au début de la liste chaînée.
+d. Renvoyer un pointeur vers la nouvelle tête de la liste chaînée.
+
+[35]
+
+Listes chaînées simples
+• Moment de décision !
+• Quel pointeur devons-nous déplacer en premier ? Le nœud « 12 » doit-il être la nouvelle tête de la liste chaînée, puisqu'il existe désormais, ou devons-nous d'abord le connecter à la liste ?
+• C'est l'une des choses les plus délicates avec les listes chaînées. L'ordre est important !
+
+[42]
+
+Listes chaînées simples
+• Supprimer une liste chaînée entière.
+void détruire(sllnode* tête);
+
+[43]
+
+Listes chaînées simples
+• Supprimer une liste chaînée entière.
+void détruire(sllnode* tête);
+• Étapes impliquées :
+a. Si vous avez atteint un pointeur nul, arrêtez.
+b. Supprimez le reste de la liste.
+c.
+Libérez le nœud actuel.
+
+[44]
+
+Listes chaînées simples
+• Supprimer une liste chaînée entière.
+void destroy(sllnode* tête);
+• Étapes impliquées :
+a. Si vous avez atteint un pointeur nul, arrêtez.
+b. Supprimez le reste de la liste.
+c.
+Libérez le nœud actuel.
+
+[45]
+
+Listes chaînées simples
+12
+15
+9
+13
+10
+détruire()
+détruire()
+détruire()
+détruire()
+détruire()
+détruire()
+TRAMES DE LA PILE
+a. Si vous avez atteint un pointeur nul, arrêtez.
+b. Supprimez le reste de la liste.
+c. Libérez le nœud actuel.
+détruire(liste);
+liste
+
+[67]
+
+Listes chaînées simples
+détruire()
+détruire()
+détruire()
+détruire()
+détruire()
+détruire()
+TRAMES DE LA PILE
+a. Si vous avez atteint un pointeur nul, arrêtez.
+b. Supprimez le reste de la liste.
+c. Libérez le nœud actuel.
+détruire(liste);
+
+[68]
+
+Listes chaînées simples
+• Pour travailler efficacement avec les listes chaînées, il existe un 
+certain nombre d'opérations qu'il nous faut comprendre :
+1. Créer une liste chaînée lorsqu'elle n'existe pas encore.
+2. Rechercher un élément dans une liste chaînée.
+3. Insérer un nouveau nœud dans la liste chaînée.
+4. Supprimer un seul élément d'une liste chaînée.
+5. Supprimer une liste chaînée entière.

@@ -1,0 +1,33 @@
+So what can we do with this information? Well, let's go ahead and get rid of the hardware and abstract away, so to speak, as we keep doing, and consider if we zoom in here, how the computer, last week and this week end forever here out, is storing the information in the programs that you write. Suppose for instance, that we've got a program like this, with just three characters in it. I'm going to go ahead and whip this up in a file called, let's say, hi dot c. And I'm going to go ahead and do include standard Io dot h, int main void-- learning. 
+
+Now in here, I'm going to go ahead and have those three lines of code. So give me one char called c1 arbitrarily and set it equal to a capital H. Give me another one called c2, set it equal to capital I. Give me a third called c3, and set that equal to the exclamation point. Now you'll notice one detail that I've not emphasized before, I don't think. What types of punctuation am I clearly using here? So single quotes or apostrophes here. Single quotes in C are necessary for chars. Chars or single characters, just one byte. 
+
+Whenever you want to hardcode them into a program like this, like I've done here, use single quotes. Of course for strings we used double quotes. Why? Just because. Like C requires that we distinguish those two. So let me just do something a little silly here. Now that I've got three variables, let me just go ahead and print them all out. What is the format code I can print-- I can use to print a char? Yeah, a percent-- 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Percent c for char, so percent c, and I want three of them. So I'm going to print all three at once, followed by a new line. And then if I want to print c1 first, c2, c3, that's the syntax with printf for just plugging in three place holders followed by three values, respectively left to right, and hopefully it's going to print presumably hi on the screen followed by a new line. So let me save the file. Let me do make hi. OK, no errors, which is good. Let me do dot slash hi, and indeed I see hi exclamation point, however with a space in between each character. But you know what? hi exclamation point are indeed chars, but what is a char, or a character? What is an Ascii character underneath the hood? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: It's ultimately binary. Everything is binary. And what's one step in between there, in some sense? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: It's just a number, an integer. Thanks to Ascii and Unicode in week zero, there's just a mapping from characters to numbers. So how do I print numbers? What format code do I use for printf? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Percent i, for integer. So suppose I want to actually see those values? Notice what I can do. I can tell the computer, you know what? Even though c1 is a char, please go ahead and treat it as an integer. And I can literally write int in parentheses before the variable, which is what's known as casting, C-A-S-T, which is just a verb describing the act of converting one data type to another so that I can actually see those numbers. So let me go ahead and save the file. Let me go ahead now and do make hi again. That seems to work fine. Dot slash hi, and now this old familiar 72, 73, 33. 
+
+And frankly, I don't need to be so pedantic here. Frankly, clang is smart enough to just know that if I pass it a char, but I ask it to format it is an int, it's going to implicitly, not explicitly, cast it for me. So if I go ahead and run make hi again, and do dot slash hi, I'm going to see the exact same thing. So this understanding of what's going on underneath the hood can allow me to kind of tinker now and play around with what's going on inside of my computer's memory. But let's now see this more visually. 
+
+If this is my computer's memory really magnified, such that there's like a billion squares somewhere available to me and this is zero, this is one, this is two. Suppose I have a program with three variables-- c1, c2, and c3-- what the computer is going to do is going to put the h in one of those boxes. It's going to put the i in another box, and it's going to put the exclamation point in a third box, and somehow or other it's going to label those with the names of the variables. It's going to sort of jot down as with a virtual pencil, this is c1, this is c2, this is c3. But it's the H-I exclamation point that's actually stored at that location. 
+
+But of course, it's not just a char. It's really technically a number. So really what's going on inside of my computer's memory is that 72, 73, and 33 is stored. But someone called out earlier it's actually binary. So what's really underneath the hood is this. Those zeros and ones are somehow implemented with transistors or light bulbs or whatever the technology is, but it's just storing a pattern of zeros and ones. And I did out the math before class. This indeed represents 72 in decimal, 73, and 33. 
+
+But here, too, we're getting to a low-level implementation detail that we generally don't need to care about. Abstraction, per week zero, is this beautiful thing because we could just, meh, tune all that out and just think of it at any higher level that we want, whether it's decimal or whether it's actual Ascii characters. But that's all that's going on underneath the hood. Yeah? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Really good question. If you declared three variables as integers and stored 72, 73, 33 in them and tried to print them then with percent c, yes, you could coerce that behavior as well, and literally do the opposite. At that point, you need to know what the Ascii codes are-- 72, 73, 33. And mostly, programmers don't care about that. All they do is know that there is some mapping underneath the hood, but absolutely. 

@@ -1,0 +1,39 @@
+Muy bien. Aquí vamos de nuevo. Eso fue mucho. Quisiera llamar la atención sobre cuál era la función más nueva hace solo un momento, esta noción de malloc, asignación de memoria. Así que recordemos que getString, según yo hasta hoy, todo este tiempo, solo te devuelve la dirección de la cadena que se obtuvo del humano.
+
+malloc, de forma similar, tiene un valor de retorno. Y cuando pides malloc por tantos bytes —quizás sean cinco, para emma, más el terminador nulo—, el propósito de malloc en la vida es devolverte la dirección del primer byte de esa memoria también. Por lo tanto, asignar memoria significa, ve y tráeme un trozo de memoria de algún lugar, entrégalo también con un puntero allí. Y la responsabilidad es mía recordar esa dirección, como lo hago aquí, almacenándola en t.
+
+Pero resulta que ahora que nos estamos quitando las ruedas de entrenamiento, por desgracia, tenemos que trabajar un poco más nosotros mismos. Y en realidad hay un error latente en este programa. Resulta que estoy asignando mal memoria pero en realidad nunca la libero. Lo contrario de malloc es una función llamada free, cuyo propósito en la vida es devolver la memoria que pediste para que tengas mucha memoria disponible para otras partes de tu programa, entre otras cosas.
+
+En resumen, si alguna vez —en tu Mac o PC— has estado ejecutando un programa que quizás esté un poco defectuoso, es posible que notes que tu computadora se vuelve cada vez más lenta, o quizás incluso se quede sin memoria explícitamente, según algunos mensajes de error, eso podría ser simplemente porque el programador de ese programa siguió usando malloc y malloc y malloc para aumentar, aumentar y aumentar su uso de memoria, pero nunca se dedicó a liberar nada de esa memoria. Por lo tanto, los programas se pueden quedar sin memoria. Tu computadora puede quedarse sin memoria.
+
+Por lo tanto, es una buena práctica liberar cualquier memoria que no estés usando. Sin embargo, ¿cómo encuentras este error? Tenemos una herramienta de depuración final para ti. Esta no es específica de CS50 como debug50. Esta se llama Valgrind. Desafortunadamente, no es lo más fácil de entender a primera vista.
+
+Así que voy a seguir adelante y hacer esto. Voy a ejecutar Valgrind en este programa, dot slash copy, y presionaré Enter. Y desafortunadamente...
+
+AUDIENCIA: [INAUDIBLE]
+
+[RISAS]
+
+[TOS]
+
+DAVID J. MALAN: Entendido. Bien.
+
+Voy a seguir adelante y... ahí vamos.
+
+AUDIENCIA: [INAUDIBLE]
+
+Entonces, lo que te perdiste fue un mensaje muy aterrador. Así que voy a seguir adelante y ejecutar Valgrind en dot slash copy. Vemos esta salida esotérica arriba y luego mi indicador para s... porque es el mismo programa. Me pide una cadena, así que le daré emma, todo en minúsculas, y Enter. Y notarás que ahora hay un resumen en curso aquí pero también una mención de error.
+
+Así que resumen de heap... volveremos a eso en un momento... definitivamente se perdieron 5 bytes en 1 bloque en registro de pérdidas 1 de 2. Resumen de pérdidas, tengo pérdidas de 5 bytes en 1 bloque. Es decir, este es uno de esos programas en Linux... el sistema operativo que usamos, que también es bastante común en la industria... quiero decir, Dios mío. Hay tantos... hay tantos caracteres más en la pantalla que en realidad son esclarecedores para mí.
+
+Veamos si podemos centrar nuestra atención en lo que importa. Pérdidas de memoria, malo. Entonces, ¿cómo nos acercamos a perseguir dónde se está perdiendo memoria? Bueno, como antes, podemos usar help50. Y de hecho, help50 analizará la salida de Valgrind... todavía me pedirá primero cadena.
+
+Así que voy a escribir de nuevo emma, lo buscará. Es para pedir ayuda. Y voilá, resaltado en amarillo, hay un mensaje que nosotros, help50, reconocemos. Y fíjate en nuestros consejos, parece que tu programa perdió 5 bytes de memoria. ¿Olvidaste liberar la memoria que asignaste a través de malloc? Mira más de cerca la línea 10 de copy dot C.
+
+Ahora, una vez que hayas hecho esto un par de veces y hayas cometido el mismo error, probablemente puedas desplazarte hacia arriba y descubrir por ti mismo dónde está el error. No estamos revelando más información de la que está justo frente a ti. Y de hecho, puedes ver aquí, ah, en main en copy dot C, línea 10, hay una especie de 5 bytes definitivamente perdidos en 1 bloque. Así que hay muchas palabras allí, pero llama la atención sobre el lugar correcto.
+
+Así que déjame desplazarme hacia abajo, enfocarme en la línea 10. Y de hecho, la línea 10 es donde asigné la memoria. Así que resulta que la solución para esto es bastante simple. Aquí abajo, voy a liberar t, la dirección del fragmento de memoria que malloc me devolvió. Entonces, estoy deshaciendo los efectos de asignar memoria desasignando memoria.
+
+Así que ahora déjame seguir adelante y ejecutar copy. Y si ejecuto copy, no parecerá que funcione de manera diferente. Seguirá funcionando correctamente. Pero ahora si lo analizo en busca de errores con Valgrind, entonces Valgrind de dot slash copy... voy a escribir de nuevo emma en minúsculas y cruzo los dedos... que de hecho ahora, resumen de pérdidas, 0 bytes en 0 bloques. Así que, por desgracia, incluso cuando todo está bien, todavía escupe un bocado. Pero ahora no veo ninguna mención de bloques que en realidad tengan pérdidas, al menos en la parte superior aquí.
+
+Y veremos más de esto durante las próximas semanas a medida que lo usemos para perseguir errores más complicados. Pero es solo otra herramienta en el kit de herramientas que nos permite detectar este tipo de errores.

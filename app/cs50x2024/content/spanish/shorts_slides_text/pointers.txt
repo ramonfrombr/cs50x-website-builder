@@ -1,0 +1,130 @@
+[1]
+
+Punteros
+Los punteros proporcionan una manera alternativa de pasar datos entre funciones.
+Recuerda que hasta este punto, hemos pasado todos los datos por valor, con una excepción.
+Cuando pasamos datos por valor, solo pasamos una copia de esos datos.
+Si en su lugar usamos punteros, tenemos el poder de pasar la propia variable real.
+Eso significa que un cambio que se haga en una función puede afectar a lo que ocurre en otra función diferente.
+¡Antes, esto no era posible!
+
+[2]
+
+Punteros
+Antes de profundizar en qué son los punteros y cómo trabajar con ellos, merece la pena volver a lo básico y echar un vistazo a la memoria de nuestro ordenador.
+
+[3]
+
+Punteros
+Cada archivo en tu ordenador vive en tu unidad de disco, ya sea un disco duro (HDD) o una unidad de estado sólido (SSD).
+Las unidades de disco son solo espacio de almacenamiento; no podemos trabajar directamente allí. La manipulación y el uso de los datos solo pueden tener lugar en la RAM, por lo que tenemos que mover los datos allí.
+La memoria es básicamente una enorme matriz de bytes de 8 bits de ancho.
+512 MB, 1 GB, 2 GB, 4 GB...
+
+[10]
+
+Punteros
+Volviendo a esta idea de la memoria como una gran matriz de celdas del tamaño de un byte.
+Recuerda de nuestro debate sobre matrices que no solo son útiles para almacenar información, sino también para el llamado acceso aleatorio.
+Podemos acceder a elementos individuales de la matriz indicando qué ubicación de índice queremos.
+Del mismo modo, cada ubicación en memoria tiene una dirección.
+
+[23]
+
+Punteros
+Solo hay algo crítico para recordar cuando empezamos a trabajar con punteros:
+LOS PUNTEROS SON SOLO DIRECCIONES
+
+[29]
+
+Punteros
+Cuando empecemos a trabajar con punteros, ten siempre en mente esta imagen:
+5
+k
+pk
+int k;
+k = 5;
+int* pk;
+pk = &k;
+
+[30]
+
+Punteros
+Por lo tanto, un puntero es un elemento de datos cuyo
+valor es una dirección de memoria
+tipo describe los datos ubicados en esa dirección de memoria
+Como tal, los punteros permiten que las estructuras de datos o las variables sean compartidas entre funciones.
+Los punteros hacen que el entorno de un ordenador sea más parecido al mundo real.
+
+[31]
+
+Punteros
+El puntero más simple disponible para nosotros en C es el puntero NULL.
+Como podrías esperar, este puntero no apunta a nada (¡un hecho que puede llegar a ser útil!)
+Cuando creas un puntero y no estableces su valor inmediatamente, deberías establecer siempre el valor del puntero a NULL.
+Puedes comprobar si un puntero es NULL usando el operando de igualdad (==).
+
+[32]
+
+Punteros
+Otra forma fácil de crear un puntero es simplemente extraer la dirección de una variable ya existente. Podemos hacer esto con el operando de extracción de dirección (&).
+Si x es una variable de tipo entero, entonces &x es un puntero a entero cuyo valor es la dirección de x.
+Si arr es una matriz de dobles, entonces &arr[i] es un puntero a doble cuyo valor es la dirección del i-ésimo elemento de arr.
+Por lo tanto, el nombre de una matriz es en realidad solo un puntero a su primer elemento; ¡has estado trabajando con punteros todo el tiempo!
+
+[33]
+
+Punteros
+El propósito principal de un puntero es permitirnos modificar o inspeccionar la ubicación a la que apunta.
+Lo hacemos desreferenciando el puntero.
+Si tenemos un puntero a caracter llamado pc, entonces *pc son los datos que viven en la dirección de memoria almacenada dentro de la variable pc.
+
+[34]
+
+Punteros
+Usado en este contexto, * se conoce como el operando de desreferenciación.
+"Va a la referencia" y accede a los datos en esa ubicación de memoria, lo que te permite manipularlos como quieras.
+Es como visitar a tu vecino. Tener su dirección no es suficiente. Tienes que ir a la dirección y solo entonces puedes interactuar con ellos.
+
+[37]
+
+Punteros
+¿Puedes adivinar qué podría pasar si intentamos desreferenciar un puntero cuyo valor es NULL?
+Error de segmentación
+¡Sorprendentemente, este es en realidad un buen comportamiento! Defiende frente a una manipulación peligrosa accidental de punteros desconocidos.
+Por eso recomendamos que establezcas tus punteros a NULL inmediatamente si no los vas a establecer a un valor conocido y deseado.
+
+[38]
+
+Punteros
+int* p;
+El valor de p es una dirección.
+Podemos desreferenciar p con el operando *.
+Si lo hacemos, lo que encontraremos en esa ubicación es un entero.
+
+[40]
+
+Punteros
+Una cosa más molesta con esas *. Son una parte importante tanto del nombre del tipo como del nombre de la variable.
+Se ilustra mejor con un ejemplo.
+int* px, py, pz;
+int* pa, *pb, *pc;
+
+[44]
+
+Punteros
+Tipo de datos
+Tamaño (en bytes)
+int
+4
+char
+1
+flotante
+4
+doble
+8
+long long
+8
+char*, int*, float*, 
+double*, _______*
+4 u 8

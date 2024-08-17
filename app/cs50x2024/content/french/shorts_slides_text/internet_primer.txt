@@ -1,0 +1,82 @@
+**Introduction à Internet**
+• Nous avons atteint le point du cours où nous commençons la transition vers le monde orienté ligne de commande de C et commençons à envisager le monde Web de PHP et autres.
+• Avant de plonger tête baissée dans ce monde, il est judicieux d'avoir une compréhension de base de la façon dont les humains et les ordinateurs interagissent sur Internet.
+
+**Introduction à Internet**
+• Adresse IP
+• Pour que votre ordinateur s'identifie uniquement sur Internet, il lui faut une adresse.
+• De cette façon, il peut envoyer des informations et recevoir également des informations au bon endroit.
+• Le schéma d'adressage utilisé par les ordinateurs est connu sous le nom d'adressage IP.
+
+**Introduction à Internet**
+• Adresse IP
+• Tel que développé à l'origine, le schéma d'adressage IP allouerait efficacement une adresse unique de 32 bits à chaque appareil souhaitant se connecter à Internet.
+• Au lieu de représenter ces adresses de 32 bits comme des nombres hexadécimaux, nous les représentons comme quatre groupes de 8 bits à l'aide de la notation décimale.
+
+**Introduction à Internet**
+• Adresse IP
+w.x.y.z
+• Chacun des éléments w, x, y et z peut être une valeur non négative dans la plage
+[0, 255].
+
+**Introduction à Internet**
+• Adresse IP
+• Si chaque adresse IP est de 32 bits, cela signifie qu'il y a environ 4 milliards d'adresses à distribuer.
+• La population mondiale est supérieure à 7 milliards et la plupart des gens du monde occidental ont plus d'un appareil capable de se connecter à Internet.
+• Certaines solutions de contournement nous ont permis de faire face à ce problème (pour l'instant).
+
+**Introduction à Internet**
+• Adresse IP
+• Ces dernières années, nous avons progressivement éliminé cet ancien schéma (IPv4) et l'avons remplacé par un nouveau schéma (IPv6) qui attribue aux ordinateurs des adresses de 128 bits, au lieu d'adresses de 32 bits.
+4,294,967,296
+
+**Introduction à Internet**
+• Adresse IP
+• Ces dernières années, nous avons progressivement éliminé cet ancien schéma (IPv4) et l'avons remplacé par un nouveau schéma (IPv6) qui attribue aux ordinateurs des adresses de 128 bits, au lieu d'adresses de 32 bits.
+340,282,366,920,938,463,463,374,607,431,768,211,456
+
+**Introduction à Internet**
+• Adresse IPv6
+s: t: u: v: w: x: y: z
+• Chacun des éléments s, t, u, v, w, x, y et z est représenté par 1 à 4
+chiffres hexadécimaux dans la plage [0,ffff].
+
+**Introduction à Internet**
+• DHCP
+• Mais comment obtenons-nous une adresse IP en premier lieu ? Il est certain que nous ne pouvons pas simplement choisir celui que nous voulons. Et si celui que nous voulons est déjà pris ?
+• Quelque part entre votre ordinateur et Internet dans son ensemble se trouve un serveur de protocole de configuration d'hôte dynamique (DHCP), dont le rôle est d'attribuer des adresses IP aux appareils.
+
+**Introduction à Internet**
+• DHCP
+• Avant la promulgation généralisée de DHCP, la tâche d'attribution des adresses IP incombait à un administrateur système, qui devait attribuer manuellement ces adresses.
+
+**Introduction à Internet**
+• DNS
+• Il est probable que vous n'ayez jamais essayé de visiter un site Web en saisissant son adresse IP dans votre navigateur.
+• Le système de noms de domaine (DNS) existe pour nous aider à traduire les adresses IP en des noms plus mémorables et plus compréhensibles pour l'homme.
+• De cette façon, le DNS ressemble un peu aux pages jaunes du Web.
+
+**Introduction à Internet**
+• DNS
+• Tout comme il n'existe pas de pages jaunes du monde, il n'existe en réalité aucun enregistrement DNS de l'ensemble d'Internet.
+• Au contraire, les grands systèmes de serveurs DNS (comme celui de Google) ressemblent davantage à des agrégateurs, collectant de plus petits ensembles d'informations DNS et les regroupant, en les mettant à jour fréquemment.
+
+**Introduction à Internet**
+• DNS
+• De cette façon, les grands serveurs DNS sont comme des bibliothèques qui stockent de nombreux ensembles différents de livres de pages jaunes locales. Afin d'avoir les numéros de téléphone les plus récents pour les entreprises, les bibliothèques doivent mettre à jour les livres qu'elles ont sous la main.
+• Les ensembles d'enregistrements DNS sont donc relativement décentralisés.
+
+**Introduction à Internet**
+• Points d'accès
+• L'une des façons dont nous avons résolu le problème d'adressage IPv4 consiste à commencer à attribuer plusieurs personnes à la même adresse IP.
+• L'adresse IP est attribuée à un routeur, dont le travail consiste à agir comme un agent de la circulation qui permet aux demandes de données de tous les appareils de votre réseau local (votre domicile ou votre entreprise, par exemple) d'être traitées via une seule adresse IP.
+
+**Introduction à Internet**
+• Points d'accès
+• Les réseaux domestiques modernes se composent de points d'accès qui combinent un routeur, un modem, un commutateur et d'autres technologies dans un seul appareil.
+• Les réseaux d'entreprise modernes ou les réseaux étendus (WAN) à grande échelle ont encore souvent ces derniers en tant qu'appareils distincts pour permettre à la taille de leur réseau d'évoluer plus facilement.
+
+**Introduction à Internet**
+• Ce n'est pas un cours sur la mise en réseau, c'est donc loin d'être toute l'histoire, mais c'est suffisant pour commencer.
+• À la maison ou au travail, nous avons des petits réseaux locaux, et ces réseaux sont tissés ensemble pour créer un grand réseau interconnecté, Internet.
+• Si vous pensez à chacun de ces petits réseaux comme à des communautés isolées avec une seule route d'entrée ou de sortie, l'image devient un peu plus claire.

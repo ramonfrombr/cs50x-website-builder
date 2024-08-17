@@ -1,0 +1,5 @@
+Veamos otro caso de la p-- de la semana 2, donde teníamos este código en mayúsculas. El objetivo aquí, como recordaremos, era tomar una cadena del usuario s y luego continuar y poner en mayúsculas todas las letras de la misma. Entonces, ¿cómo podría hacer esto en-- guau-- cómo podría hacer esto en Python? Bueno, ya hemos visto algunas pistas sobre esto.
+
+Déjame continuar y en un archivo llamado uppercase.py, voy a continuar e importar get_string de cs50 como antes. Luego, voy a continuar y obtener una cadena del usuario, pidiéndole la versión anterior. Y luego, aquí, voy a continuar e imprimir después. Y luego, voy a continuar e imprimir la línea conocida.
+
+¿Y sabes qué? Si quiero imprimir la cadena, simplemente voy a continuar e imprimir la cadena.upper y terminar con eso hoy. Entonces ahora, si hago Python upper-- up-- guau-- Python of uppercase, y escribamos el nombre de Emma esta vez en minúsculas-- wala-- listo. Y no tienes que preocuparte por meterte en las malas hierbas de cada carácter individual. Las variables de tipo cadena, como s en este caso, tienen funciones integradas, como upper. Y también vimos lower, anteriormente.

@@ -1,0 +1,52 @@
+[1]
+
+Tries
+• Hemos visto algunas estructuras de datos que manejan mapeo de pares clave-valor.
+• Matrices: La clave es el índice del elemento; el valor son los datos en esa ubicación.
+• Tablas hash: La clave es el código hash de los datos; el valor es una lista vinculada de hash de datos a ese código hash.
+• ¿Qué pasa con un tipo de estructura de datos ligeramente diferente donde se garantiza que la clave sea única y el valor podría ser tan simple como un valor booleano que indica si los datos existen en la estructura?
+
+[2]
+
+Tries
+• Las tries combinan estructuras y punteros para almacenar datos de una manera interesante.
+• Los datos a buscar en la trie ahora son una hoja de ruta.
+• Si puede seguir el mapa de principio a fin, los datos existen en la trie.
+• Si no puede, no existen.
+• A diferencia de las tablas hash, no hay colisiones y no hay dos partes de datos (a menos que sean idénticas) que tengan la misma ruta.
+
+[3]
+
+Tries
+• Vamos a mapear pares clave-valor donde las claves son años de cuatro dígitos (AAAA) y los valores son nombres de universidades fundadas durante esos años.
+• En una trie, las rutas desde un nodo raíz central hasta un nodo hoja (donde estarían los nombres de las escuelas), se etiquetarían con dígitos del año.
+• Cada nodo en la ruta desde la raíz hasta la hoja podría tener 10 punteros que emanan de él, uno para cada dígito.
+
+[4]
+
+Tries
+• Para insertar un elemento en la trie, simplemente construya la ruta correcta desde la raíz hasta la hoja.
+
+[5]
+
+Tries
+typedef struct _trie
+{
+char university[20];
+struct _trie* paths[10];
+}
+trie;
+
+[6]
+
+Tries
+typedef struct _trie
+{
+char university[20];
+struct _trie* paths[10];
+}
+trie;
+[34]
+
+Tries
+• Para buscar un elemento en la trie, use dígitos sucesivos para navegar desde la raíz y, si puede llegar al final sin llegar a un callejón sin salida (un puntero NULL), lo encontró.

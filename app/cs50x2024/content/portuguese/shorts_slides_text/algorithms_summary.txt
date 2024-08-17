@@ -1,0 +1,41 @@
+0
+
+Resumo de Algoritmos
+
+1
+
+Resumo de Algoritmos
+Existem muitos tipos diferentes de algoritmos de pesquisa e de classificação, e vamos apenas ter um vislumbre superficial em CS50.
+Vamos descobrir se não podemos reduzir cada algoritmo aos seus elementos centrais, para que você possa se lembrar das informações mais importantes sobre cada um.
+
+7
+
+Resumo de Algoritmos
+Nome do Algoritmo
+Conceito Básico
+O
+Ω
+Selection Sort (Classificação por Seleção)
+Encontra o menor elemento não classificado em uma matriz e o troca com o primeiro elemento não classificado dessa mesma matriz.
+n2
+n2
+Bubble Sort (Classificação por Bolha)
+Troca pares adjacentes de elementos se eles estiverem fora de ordem, efetivamente "borbulhando" elementos maiores para a direita e os menores para a esquerda.
+n2
+n
+Insertion Sort (Classificação por Inserção)
+Procede uma vez pela matriz de esquerda para a direita, trocando elementos conforme necessário para inserir cada elemento em seu local correto.
+n2
+n
+Merge Sort (Classificação por Mesclagem)
+Divide a matriz completa em submatrizes e, em seguida, mescla essas submatrizes novamente na ordem correta.
+n log n
+n log n
+Pesquisa Linear
+Itera pela matriz da esquerda para a direita, tentando encontrar o elemento de destino.
+n
+1
+Pesquisa Binária
+Dada uma matriz classificada, divide e conquista eliminando sistematicamente metade dos elementos restantes na pesquisa pelo elemento de destino.
+log n
+1

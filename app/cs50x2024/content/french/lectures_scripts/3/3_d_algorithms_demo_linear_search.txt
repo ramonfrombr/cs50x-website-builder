@@ -1,0 +1,99 @@
+Donc plutôt que de chercher ce nombre dans mon coin, puis-je faire appel à, disons, deux volontaires pour nous lancer avec deux algorithmes ? Voyons voir. Par ici ? Oui. Et allons-y là-devant, s'il vous plaît. Montez. Et comment vous appelez-vous ?
+
+PUBLIC : [? Nizari. ?]
+
+ORATEUR 1 : Lizari ?
+
+PUBLIC : [? Nizari. ?]
+
+ORATEUR 1 : [? Nizari. ?] OK, David. Ravi de vous rencontrer. Veuillez monter, [? Nizari. ?] Et là-bas, comment vous appelez-vous ?
+
+PUBLIC : Eric.
+
+ORATEUR 1 : Eric, OK. David. Et montez, Brian, également. Ravi de vous rencontrer, Eric. Eric, [? Nizari. ?] [? Nizari, ?] Eric. 
+
+[APPLAUDISSEMENTS]
+
+Venez ici. Vous êtes donc monté sur scène en premier. Souhaitez-vous y aller en premier ou en deuxième ?
+
+PUBLIC : Je passerai en deuxième.
+
+ORATEUR 1 : Vous passerez en deuxième. Donc Eric, c'est à vous de commencer. Venez ici, s'il vous plaît. Donc, Eric, derrière ces sept portes, nous avons placé au préalable le nombre 50. Et nous aimerions simplement que vous, l'ordinateur, recherchiez ce nombre 50 dans ce tableau.
+
+PUBLIC : Est-il trié ?
+
+ORATEUR 1 : Je ne peux pas répondre à cette question pour le moment. Allez-y. Oh, juste pour que le public sache ce qu'il se passe, si cela ne vous dérange pas, sortez les numéros pour voir.
+
+PUBLIC : Ça, c'est sept.
+
+ORATEUR 1 : Excellent. Pas 50.
+
+PUBLIC : Dois-je-- puis-je le retirer ?
+
+ORATEUR 1 : Oui, à présent, vous pouvez faire ce que vous voulez. Trouvez-nous simplement 50.
+
+PUBLIC : Deux.
+
+[RIRES]
+
+ORATEUR 1 : Très bien.
+
+PUBLIC : Un.
+
+ORATEUR 1 : Très bien.
+
+PUBLIC : Six.
+
+ORATEUR 1 : Très bien.
+
+PUBLIC : Trois.
+
+ORATEUR 1 : Très bien.
+
+PUBLIC : Aucun de ces nombres n'est proche de 50.
+
+ORATEUR 1 : Non, aucun n'est proche de 50.
+
+PUBLIC : Quatre.
+
+ORATEUR 1 : Quatre ? Et ?
+
+PUBLIC : 50 !
+
+ORATEUR 1 : Impressionnant ! Très bien joué.
+
+[APPLAUDISSEMENTS]
+
+Très bien joué. Maintenant, si vous me le permettez, Eric, quel algorithme avez-vous utilisé pour nous trouver le nombre 50 ?
+
+PUBLIC : Recherche linéaire.
+
+ORATEUR 1 : OK, recherche linéaire, qu'est-ce que cela signifie pour vous ?
+
+PUBLIC : Vous avancez en ligne droite, de là jusqu'à là.
+
+ORATEUR 1 : OK, c'était une réponse très sophistiquée à un terme que nous n'avons pas encore introduit. Et c'est très bien, recherche linéaire de gauche à droite, donc en suivant littéralement une ligne. Et diriez-vous que votre algorithme était correct ?
+
+PUBLIC : Oui.
+
+ORATEUR 1 : OK, donc il était correct. Mais il existe différents paramètres pour lesquels nous voulons optimiser les solutions, pas seulement la justesse, mais quelle autre propriété aussi ?
+
+PUBLIC : Le design.
+
+ORATEUR 1 : Donc peut-être le design, c'est vrai, l'efficacité. Donc, c'était le plus efficace que vous puissiez faire ?
+
+PUBLIC : En fait, oui, je pense.
+
+[RIRES]
+
+ORATEUR 1 : Et pourquoi dites-vous cela ?
+
+PUBLIC : Parce que-- les nombres sont donc triés. Donc finalement, je dois les examiner tous.
+
+ORATEUR 1 : Oui.
+
+PUBLIC : Et c'est juste par hasard que le 50 était à la fin.
+
+ORATEUR 1 : Exactement. Donc c'est dommage qu'ils soient tous aléatoires. Et je ne voulais pas vous le dire parce que je ne voulais pas influencer votre algorithme d'une manière ou d'une autre. Cependant, ne pas savoir s'ils sont triés et ne pas l'être même, signifie que c'est la meilleure chose que vous puissiez faire, examiner toutes les portes pour trouver le nombre en question. Et peut-être auriez-vous pu avoir de la chance, si nous avions mis 50 ici. Mais au pire, Eric allait bien sûr devoir faire exactement cela, fouiller dans toutes les boîtes.
+
+Donc merci, Eric. Restez avec nous sur scène encore un instant, s'il vous plaît.

@@ -1,0 +1,71 @@
+[1]
+
+Números mágicos
+● Algunos de los programas que hemos escrito en CS50 incluyen algunos números extraños.
+● La altura de la pirámide de Mario tiene un límite de 23, por ejemplo.
+● ¿Qué significan esos números? Si alguien revisa tu programa, ¿el significado de 23 es inmediatamente obvio?
+● Escribir constantes directamente en nuestro código se conoce a veces como usar números mágicos.
+
+[2]
+
+Números mágicos
+● Tenemos un número mágico aquí. ¿Ves cuál es?
+● Más importante aún, ¿ves un problema potencial aquí? Especialmente si esta función es solo una de muchas en un conjunto de programas que manipulan mazos de cartas.
+carta reparto_cartas(nombre_mazo)
+{
+para (int i = 0; i < 52; i++)
+{
+// reparte la carta
+}
+}
+
+[3]
+
+Números mágicos
+● Esto soluciona un problema, pero introduce otro.
+● Incluso si se declara globalmente, ¿qué pasa si alguna otra función en nuestro conjunto manipula inadvertidamente el mazo_cartas? Podría significar problemas.
+carta reparto_cartas(nombre_mazo)
+{
+int mazo_cartas = 52;
+para (int i = 0; i < mazo_cartas; i++)
+{
+// reparte la carta
+}
+}
+
+[4]
+
+Números mágicos
+● C proporciona una directiva del preprocesador (también llamada macro) para crear constantes simbólicas.
+● En el momento en que se compila tu programa, #define recorre tu código y reemplaza NOMBRE con REMPLAZO.
+● Si #include es similar a copiar/pegar, entonces #define es análogo a buscar/reemplazar.
+
+#define NOMBRE REMPLAZO
+
+[5]
+
+Números mágicos
+● C proporciona una directiva del preprocesador (también llamada macro) para crear constantes simbólicas.
+● En el momento en que se compila tu programa, #define recorre tu código y reemplaza PI con 3,14159265.
+● Si #include es similar a copiar/pegar, entonces #define es análogo a buscar/reemplazar.
+#define PI 3,14159265
+
+[6]
+
+Números mágicos
+● C proporciona una directiva del preprocesador (también llamada macro) para crear constantes simbólicas.
+● En el momento en que se compila tu programa, #define recorre tu código y reemplaza CURSO con “CS50”.
+● Si #include es similar a copiar/pegar, entonces #define es análogo a buscar/reemplazar.
+#define CURSO “CS50”
+
+[7]
+
+Números mágicos
+#define TAMANO_MAZO 52
+carta reparto_cartas(nombre_mazo)
+{
+para (int i = 0; i < TAMANO_MAZO; i++)
+{
+// reparte la carta
+}
+}

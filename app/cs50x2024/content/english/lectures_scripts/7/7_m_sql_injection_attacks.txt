@@ -1,0 +1,15 @@
+And one final example of this, because this one you can avoid throughout the coming weeks in CS50 and beyond. A SQL injection attack is when you write bad code that somehow allows some bad actor on the internet or an application to trick your code into running SQL code that you did not intend. For instance, this is how Yale students log on in New Haven. This, of course, is how Harvard students log on here in Cambridge. You're asked for a username and password, or a Harvard key and a password. Suppose, though, you as a user don't cooperate, and instead of typing in your email address and password, suppose you type something like this, like your email address, Malan@Harvard.edu, then maybe a single quote, and then a dash dash. 
+
+Well, it turns out in SQL, dash dash is how you start a comment, similar to hash in Python or in slash slash in C. But suppose that Harvard had implemented its website such that there's a query like this going on underneath the hood, if the Harvard key is implemented in Python, that says this, SELECT * FROM users WHERE username = placeholder AND password = placeholder, passing in username and password. That is good. That is correct code, because those place holders are important. 
+
+What the CS50 library does, and other libraries in the world like it, is it escapes user input. If a user tries to trick your code into inputting comments or single quotes, db execute and other libraries will sanitize the user's input and prevent the following from happening. If, however, you do this-- not good, but bad. Suppose that you really practice what we preach last week using f strings, this is now bad in the context of SQL. If you create a format string like this with a little f that is literally SELECT * from users WHERE username =, and then use the fancy Python notation for curly braces, and password = curly braces, this is a correct SQL construction so long as the human cooperates and puts their username here and password here. 
+
+But what if the user is malicious, like me, and actually includes a single quote in their input, and then dash dash? So Malan@Harvard.edu quote dash dash would have the effect of injecting that into the user's input. But dash dash I claim as a comment, so it's a way of tricking the computer into executing not SELECT * WHERE user-- SELECT * FROM users where username = this AND password = that, it has the effect of just saying SELECT * FROM users where username equals Malan@Harvard.edu. 
+
+And if-- and you'll see this in p set 7-- db.execute returns one or more rows from the table-- that's how you can actually select data using Python code-- and the number of rows equals 1, because it's selected Malan@Harvard.edu you could log in as me because you very simply tricked the computer into executing code that you injected. 
+
+And the biggest takeaway here is this is 100% solvable problem. You just need to know that it is solved and not do code like this using f strings in Python, but instead to use library code like db.execute, or after this course, anything like it. 
+
+With that said, we'll end with a joke. 
+
+OK. That's it for CS50. We'll see you next time. 

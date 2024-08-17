@@ -1,0 +1,29 @@
+So pictorially, what I really want to do is this. If I take another stab at this, I'm going to go ahead now and reinitialize main to have x and y equal to 1 and 2. I'm now going to call swap. But what I really want to do, using pictures this time, is I want a to point to x and b to point to y. I don't want them to equal x and y because now I can sort of follow the breadcrumbs, or the chutes and ladder idea, whatever metaphor works for you. You can go from a to x, you can go from b to y, and do the switcheroo There 
+
+So the code I'm actually going to use now is a little scary looking but it just goes back to those first principles from the very start today. I need to put, unfortunately, some asterisks all over the place here. But let's see why. First, let me actually back up for just a moment and propose that the swap code I'm going to use now is not that in no swap dot c but in a program called swap dot c. 
+
+So in swap dot C I have almost the same code, except this. First of all, on line 13, I'm no longer passing an x and y, I'm passing in the address of x and the address of y. That was the key detail from earlier today when we first introduced ampersand. So this means, here's the address of x, the address of y. It's like providing a map to swap so that it can go there. 
+
+The syntax for defining a function that accepts addresses is unfortunately a little cryptic but name of the function, like swap, the type of pointer, and the type of pointer. So, int Star a means, I accept the address of an int and call it a. I also accept the address of another int and I call it b. So that's all the star means in this context. It's a pointer to an int. It's a pointer to an int, both b and a. 
+
+Down here just gets a little scary looking but it's the same exact thing. What does star a mean? Well, star means go to that address. So star a means follow the arrow to whatever a is pointing at. And what was a pointing at? It was pointing at x. So this means go to the address in a and that will reach-- that will lead you to x, whose value I think is 1. And that's going to store the number 1 in temp. 
+
+The second line of code means go to b. So if you follow the address in b, where does it lead you? It should lead you to what we called y. And that y was a 2. And star a means go to the address in a and put whatever was at the address in b there as well. And then lastly, go ahead and take temp-- which is just the number one I claim --and go ahead and put it at the address in b. 
+
+It's hard to see this in code. So let's instead visualize it. Instead, if I go back here to these three lines of code, here now is a correct version. The first line of code here says go to-- whatever-- go to the address in a and store it in temp. So in a moment I'm going to go to the address in a by following this arrow down to x. And I'm going to store in temp the number 1. 
+
+Second line of code, I'm going to go to the address in b. so that's like following the arrow, which leads me to the 2 I then follow the address and a, which leads me to x. And I put 2 in x. 
+
+Last line, I go to temp. That's an easy one. It's just the number 1. Then I say, go to the address in b and store temp there. So let's go to the address in b by following the arrow and change it to temp. 
+
+And so now I've still called another function. I'm still using local variables but these local variables are by definition now, pointers, addresses, or sort of treasure maps that are leading me-- a la these arrows --to the values in memory that I actually care about. And so now when the swap function returns, it doesn't matter that a and b and temp go away, I have actually changed fundamentally, what x and y themselves were. 
+
+Any questions then on that code? Yeah. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID J. MALAN: Good question. So in this case, there is nothing to free because we did not use malloc. So you can use addresses without using malloc. In this case, I'm using the address of operator, which just tells me where x and y is-- or-- 
+
+AUDIENCE: Not with this [INAUDIBLE], in general, would you use malloc [INAUDIBLE] 
+
+DAVID J. MALAN: Really good question. So if you're using malloc in a function and it returns some chunk of memory, how do you deal with that? The onus is on you to remember to somehow call free on that same block of memory. Case in point, getString does this. Long story short, getString allocates memory using malloc. And you, up to this date have never had to call free on strings, that's actually because one of the features of the CS50 library is something called garbage collection, where we notice if your program quits without freeing memory from getString. We do it for you magically. But you can see in the CS50 library how you can do exactly what you're asking about. And, or just ask me after as well. 

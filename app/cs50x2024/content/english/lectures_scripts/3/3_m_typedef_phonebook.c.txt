@@ -1,0 +1,37 @@
+So this feels like an opportunity for one new feature in C and in programming languages more generally, whereby we can actually keep these pieces of data, someone's name and number, together. And today we give ourselves the opportunity to introduce our own custom types. We've seen ints and bools and floats and longs and strings. And string, recall, is a custom CS50 data type. And we'll take that one away in a couple of weeks as a training wheel. 
+
+But today let's give ourselves our own data type as follows. Typedef is our new keyword today. And it literally means define a type. It's going to be a structure. And so struct in C is an actual keyword, and it refers to a container, inside of which you can put multiple other data types. Struct is a container for multiple data types. 
+
+What do I want to contain? Well, I want to give myself a name for everyone. And I want to give myself a number for everyone, even though it's a string because phone numbers can have dashes and parentheses and so forth. And you know what? The name I'm going to give to this structure is going to be person. 
+
+It's a simple person. But using this syntax, I can teach my compiler, [INAUDIBLE] in this case, that not only are there ints and floats and chars and bools and so forth and strings, there are also person types now in C. They didn't come with the language. But I'm inventing them now with typedef struct person, inside of which, or encapsulated, so to speak, inside of which is going to be two things, name and number. 
+
+So what can I do with this? Well, my code gets a little different but better designed, I would argue. Down in my code now, I'm going to give myself an array of people. There's four of us on the staff. And I want to give myself an array of four people. So I might do literally the same approach I've always done when declaring a data type. What data type do you want? Person. 
+
+And what should my array be called? Well, I could call it persons. Or frankly, I could just call it people in English. And how many people do I want to represent? Four. So my array is called people. It's a size 4. And each element in that array is going to be a person. So this syntax is not new. This syntax up here is new. 
+
+But as of today now, persons exist in C. Now, my syntax here does have to change a little bit, but not all that much. Now, if I want to go ahead and fill this array, I can do something like this. Emma will be our 0th person. But I don't just do something like this because, quote unquote, "Emma" is not a person. Quote unquote "Emma" is a name. And quote unquote "617 555 0100" is a number. 
+
+So I actually need to be a little more specific. I need to say that people 0 name is Emma. And then people 0 number is whatever Emma's was, which was 617 555 0100 semicolon. And now I can do the same thing again, so people bracket 1 dot name gets Rodrigo. People bracket 1 dot number gets 617 555 0101 semicolon. People bracket 2 dot name gets Brian. And people bracket 2 dot number gets 617 555-- 555-- 0102. 
+
+And then lastly-- it's getting tedious quickly. But in an ideal world, we would just ask the human for these inputs. Name will be mine. And then lastly, people bracket 3 dot number equals, quote unquote, "617 555 0103." Whew. 
+
+So it's a little more to write in this case. And so it might rub you the wrong way in that sense. But notice that we're now kind of encapsulating everything together. We only have four values, each of which is a person. And each of those persons, inside of them, so to speak, have a name and a number. And everything is intricately related. 
+
+So even if I sought these things by name, they're going to end up having the same associations between numbers and names. So now the last thing I have to do is change my logic down here. It's not sufficient anymore to compare names bracket i against Emma. What should I compare name against Emma? 
+
+AUDIENCE: [INAUDIBLE]. 
+
+SPEAKER 1: Dot name. And then down here, numbers doesn't even-- oh, and this was-- this is people. Numbers doesn't exist either. It's people. But I want to print her number here. So I do dot number. 
+
+So again, we've add a little bit of complexity by adding typedef and these dot notations. But if I go ahead and make my phone book now, all too many errors. Oh, interesting. Array index 4 is past the end of the array, which contains four elements. So I made a stupid mistake here. What did I do? 
+
+AUDIENCE: [INAUDIBLE] 
+
+SPEAKER 1: Yeah. So I just kept incrementing incorrectly. Let me save that, run make phone book, Enter. Now it's good. Dot slash phone book, Enter, and hopefully I will see Emma's number. So it's no more correct than before. But it's arguably better designed/ and we'll come back to this later in the semester. [? As ?] you choose your choice of tracks and start implementing applications for the web or mobile devices or games, it's going to be quite common to encapsulate related information like this so that you keep lots of information together, especially when you use something called a database. Yeah? 
+
+AUDIENCE: [INAUDIBLE] 
+
+SPEAKER 1: Is there any shortcut for writing everything I did? Yes, you can actually use curly bracket notation. It gets a little uglier in this case so I'm not going to bother doing it. But, yes, there is a way to do it. However, this is, at the end of the day, realize, kind of a silly program because I'm writing a program to find Emma in a list of names I already wrote. So it's not dynamic at all. So in an ideal world, we would be using get string or something fancier anyway. 
+
+Other questions on this? All right.

@@ -1,0 +1,53 @@
+Très bien. Je vais créer un autre fichier appelé toux.py juste pour montrer comment on peut aussi construire une version meilleure conçue à partir de quelque chose de très simple et naïf en Python. Rappelez-vous de la semaine 0, nous voulions que le chat tousse trois fois. Et lors de la semaine 1, nous avons réimplémenté cette même idée avec un peu de copier-coller, mais d'une manière qui fonctionne.
+
+Donc, notez que c'est un programme Python. Et il va tousser trois fois. Et je ne vais pas continuer à exécuter chaque programme, car je vais simplement stipuler qu'il le fera. Mais dans ce cas précis, même si je prétends qu'il s'agit d'un programme qui va tousser trois fois, soyons très clairs. Avec cela, dans tous les exemples précédents, qu'est-ce que je n'ai pas mis non plus dans le fichier ? Par exemple, que manque-t-il par rapport aux programmes en C ?
+
+PUBLIC : [INAUDIBLE]
+
+DAVID MALAN : Non, quoi ?
+
+PUBLIC : Int main void.
+
+DAVID MALAN : Il n'y a pas d'int main void. Et il n'y a aucun main. Donc, une autre caractéristique de Python est que si vous voulez simplement écrire un programme, vous commencez simplement à écrire le programme. Vous n'avez pas besoin d'une fonction main. Maintenant, je vais un peu revenir sur cette affirmation, car il y a certaines situations dans lesquelles vous voulez une fonction main. Mais contrairement à C, ce n'est pas nécessaire.
+
+Maintenant, lors des semaines 0 et 1, de nombreuses personnes ont fait remarquer que nous pouvions sûrement mieux l'implémenter, sans utiliser trois instructions d'impression. Mais utilisons plutôt une boucle. Donc, en Python, vous pouvez déclarer for i in [0, 1, 2], puis afficher "toux", mais bien sûr, cela va devenir agaçant, car si vous voulez imprimer quatre fois ou - désolé - quatre fois ou cinq fois ou six fois ou sept fois avec un index zéro, vous devez continuer à énumérer les valeurs stupides. C'est pourquoi nous utilisons quelle fonction ?
+
+PUBLIC : Range.
+
+DAVID MALAN : Range -- c'est donc la même chose qui va maintenant imprimer la toux trois fois. Mais que se passe-t-il si nous voulions maintenant commencer à définir notre propre fonction de toux, n'est-ce pas ? L'objectif des semaines 1 et 2 et suivantes était de commencer à abstraire et à construire nos propres pièces de puzzle réutilisables, bien que dans une langue différente. Comment pourrais-je faire cela en Python ?
+
+Eh bien, supposons que je veuille faire ce qui suit. Pour i dans la plage 3, je veux juste tousser. Et je veux que la toux soit une abstraction, une fonction personnalisée ou une pièce de puzzle Scratch, que quelqu'un d'autre ou peut-être que j'ai écrite qui effectue cette notion de toux. Eh bien, en Python, quel est le mot-clé que nous pouvons utiliser pour nous donner une nouvelle fonction ?
+
+PUBLIC : Def.
+
+DAVID MALAN : Def pour définir - et je peux simplement dire que le nom de la fonction est toux. Et cela ne prend aucun argument. Donc, contrairement à C, je ne spécifie pas de type de retour. Et je ne spécifie pas les types d'entrées, mais dans ce cas, c'est sans objet, car il n'y a aucune entrée pour la toux.
+
+Cette fonction est très simple. Elle veut juste dire print("toux"). Et donc ici, j'ai maintenant une fonction qui va tout simplement faire ceci. Et c'est une abstraction dans le sens où elle peut être tout en bas ici, hors de vue, hors de l'esprit. Je ne me soucie plus de la façon dont elle est implémentée. Peut-être même un ami l'a implémenté. Et j'ai importé leur code. Mais le problème se pose maintenant comme suit.
+
+Laissez-moi enregistrer ceci sans tous les espaces blancs. Je semble pratiquer ce que je prêche - aucune fonction main. Commence juste à écrire le code, mais utilise def. Mais laissez-moi aller de l'avant et exécuter maintenant Python de toux.py. Je pense - oui, je vais voir la première de nos erreurs.
+
+Les erreurs Python semblent un peu différentes. Vous allez beaucoup voir ce mot tracebac, qui est comme une trace dans le temps de tout ce qui vient de se passer. Mais vous voyez quelques indices. Touss.py est le fichier. La ligne 2 est le problème. Le nom de la toux n'est pas défini. Mais attends une minute. Il l'est. La toux est définie littéralement avec le mot def juste ici à la ligne 4. Mais il y a un problème à la ligne 2, qui est ici. Donc, même si vous n'avez jamais programmé en Python auparavant, quelle est l'intuition de ce bug ? Pourquoi est-ce cassé ? Oui.
+
+PUBLIC : Vous n'avez pas défini votre fonction avant de l'utiliser.
+
+DAVID MALAN : Oui, je n'ai pas défini ma fonction avant de l'utiliser, ce qui était exactement un problème que nous avons rencontré en C. Malheureusement, en Python, il n'y a aucune notion de prototypes. Nous avons donc une ou deux solutions. Je peux simplement déplacer la fonction ici. Mais il y a des arguments contre cela.
+
+En ce moment, comme avec main, en général, c'est un peu ennuyeux de mettre, comme, toutes vos fonctions en haut, parce qu'alors, le lecteur ou vous devez aller pêcher dans des fichiers plus volumineux si vous avez écrit plus de lignes. Où est la partie principale de ce programme ? Donc, en général, il est préférable de placer le code principal en haut et le code d'aide en dessous.
+
+Donc, la façon de résoudre ce problème de manière conventionnelle va en fait être de définir une fonction main. Techniquement, elle n'a pas besoin d'être appelée main. Elle n'a pas une signification particulière comme en C. Mais les humains adoptent ce paradigme et se définissent simplement une fonction appelée main. Et ils le mettent en haut par convention aussi.
+
+Mais maintenant, j'ai introduit un nouveau problème. Python de toux.py pour entrer ne fait rien. Eh bien, pourquoi est-ce ? Python va vous prendre littéralement. Vous avez défini une fonction appelée main. Vous avez défini une fonction appelée toux. Qu'est-ce que je n'ai apparemment pas fait explicitement ?
+
+PUBLIC : Vous n'avez pas appelé main.
+
+DAVID MALAN : Je n'ai pas appelé main. Maintenant, en C, vous obtenez cette fonctionnalité gratuitement. Si vous écrivez main, elle sera appelée. Python - ces roues d'entraînement sont également décollées. Vous devez appeler main explicitement. Donc, cela semble un peu stupide. Mais c'est la solution conventionnelle à ce problème, où vous appelez littéralement main au bas de votre fichier, mais vous définissez main en haut. Et cela garantit que lorsque l'ordinateur lira la ligne 8, le programme Python, l'interpréteur, il réalisera que tout va bien. Vous avez défini main plus tôt. Je sais maintenant ce que c'est. Alors maintenant, si je l'exécute à nouveau, je vois toux, toux, toux.
+
+Très bien. Faisons un dernier ajustement ici maintenant afin que je puisse factoriser ma boucle ici et à la place modifier ma fonction de toux comme nous l'avons fait dans les semaines 0 et 1 pour tousser un certain nombre de fois. Comment définir une fonction Python qui prend une entrée ? C'est en fait relativement simple.
+
+Rappelez-vous que vous n'avez pas besoin de spécifier les types. Mais vous devez spécifier les noms. Et quel pourrait être un bon nom pour l'entrée à tousser pour un nombre ? n, d'accord, à moins que quelque chose d'autre - vous pourriez l'appeler comme vous le souhaitez. Mais n est en quelque sorte une solution idéale pour un entier.
+
+Donc, si vous allez tousser n fois, que veux-je faire ? Pour i dans la plage de n, je peux aller de l'avant et tousser n fois. Donc, ce programme est fonctionnellement le même. Mais maintenant, remarquez ma fonction personnalisée, tout comme dans les semaines 0 et 1, est plus puissante. Elle prend une entrée et produit une sortie. Donc maintenant, je peux abstraire la notion de toux pour simplement dire toux 3. Donc, encore une fois, exactement les mêmes idées que nous avons rencontrées il y a un moment, mais maintenant, nous avons la possibilité de le faire maintenant en Python. Des questions, alors, sur ces exemples jusqu'à présent ? C'est trop rapide. Par tous les moyens, repoussez. Et demandez maintenant. Oui.
+
+PUBLIC : Je [INAUDIBLE] pour Python, et je me souviens avoir dit comme, si [INAUDIBLE] toussait des fois [INAUDIBLE].
+
+DAVID MALAN : Oui, OK. Est-ce que tu aimerais que ton esprit soit vraiment époustouflé ici ? Oui, vous pouvez aussi le faire en Python. Si vous voulez tousser trois fois, vous pouvez simplement multiplier la chaîne par trois. Alors maintenant - et si vous êtes impressionné par cela

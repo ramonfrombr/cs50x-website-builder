@@ -1,0 +1,45 @@
+So now let's actually start to take things in the direction we did in week 4 with file IO. Let me open up phonebook.c. This was another example of phone book manipulation where, recall, we opened a file called phonebook.csv which is like a lightweight Excel file. Comma, separated values. Simple text file. 
+
+We opened it with fopen. We then got a name and a number from the human. And then we use this new function fprintf-- file printf-- to just print something percent s comma something else. The name comma number to the file. And this is how I was able to add the heads' names and numbers to that CSV. 
+
+Well, we can actually do the same thing in Python but a little more simply as well. Although the syntax is going to look a little cryptic at first glance. Let me go ahead and save this file also as phonebook.py, although a fancier version now. 
+
+Let me go ahead and open up here phonebook.csv which I've already populated with name comma number, just so that if we were to open it in Excel we would have column headings. 
+
+And I'm going to go ahead and do this. In Python, if you want to deal with CSV files, there's actually a package called CSV. Package is a Python word for a library. And in that package is a lot of CSV-related functionality. And I'm also going to import from cs50 again get string. 
+
+All right. What do I want to do? First line is going to be pretty similar to C. I'm going to open the file using open instead of fopen. And I'm going to call the file phonebook.csv. And I'm going to open it in quote, unquote, a mode. What was a again? append. If used w, It writes it and will just keep changing it again and again. A pen we'll keep adding to the file. So we can keep adding more tfs to the file. 
+
+All right. Now let me go ahead and just get a name from someone. So get_string Name. Let me go ahead and get their number via get_string as well. Whoops. Number equals get string number. And get that from the human. 
+
+And now this part's a little new. But again, this is the kind of thing that you just Google it when you forget the syntax for something like this. I'm going to declare a variable called writer, though I could call it anything I want. The purpose in life is going to be to write stuff to the file. 
+
+I'm going to go inside of the CSV package, again, the library that I imported up top. And I'm going to pass to a writer function the file. So you would only know this from the documentation. 
+
+But what I've highlighted here means hey, Python. Pass the open file to this library that's going to make it easier for me to read it as a CSV file. Rows and columns. That's all. 
+
+Now let me go ahead and do this. writer-- oops. writer.writerow. So writerow is a function that's built in to the CSV library's functionality that quite simply lets me write a name and a number to that file. 
+
+It will take care of the commas. It will take care of quoting anything. As an aside, if one of us were to have a comma in our name like Brian U, comma, Junior, that comma could be problematic because it could break the CSV's implicit assumption that commas separated values. 
+
+But you could put quotes around Brian's full name, even if he had a comma, Junior or whatever in his name. This library takes care of all of that headache for you. 
+
+But there is a subtlety. I mentioned something called a tuple before. For low-level, uninteresting reasons now, you actually need double parentheses now. So you're technically passing in one thing in parens. But more on that another time. 
+
+Now let me go ahead and close the file. file.close. So let me go ahead and run this. Python phonebook.py. Whoops. Invalid syntax. I forgot an equal sign. And just as in C, you'll see that the red things appear sometimes when it knows what you've done wrong, but it takes a little while for them to disappear sometimes. 
+
+Name. Let's go ahead and add Emma, all caps just for consistency. 617-555-0101 was her number. All right. Hopefully, hopefully. Come on. Come on. 
+
+Oh wait. That's the wrong file. 
+
+[LAUGHTER] 
+
+Here we go. Because I created a new one. So, cheating. Name, number. I ran my program in a different directory which meant it created a new file. So I'm not actually cheating there. I was just in the wrong place. 
+
+User error. Let's run it once more. Rodrigo. 617-555-0101. Enter. There we go. Let's run it again, this time with Brian. Brian, 617-555-0102, and so forth. 
+
+So this code admittedly is not super straightforward. And honestly, this is exactly the kind of stuff that I Google when I forget actually how to manipulate the CSV. But that's what the documentation indeed is there for you. 
+
+And in fact, let me clean this up a little bit. It turns out you can write this code a little differently. And online, you'll see slightly different approaches. You'll see a keyword in Python called with which this makes it a little tighter to write your code. 
+
+If you use this keyword with as you'll see in documentation and some of the staff sample code, you don't have to close the file. It will automatically be closed for you, thereby just saving you one line of code. 

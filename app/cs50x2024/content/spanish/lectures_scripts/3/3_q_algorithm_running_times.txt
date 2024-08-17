@@ -1,0 +1,33 @@
+Bueno, pues ahora resulta que tenemos dos malas soluciones para un problema. ¿Podemos conseguir algo mejor? Pues voy a proponer que volvamos a examinar el método de la burbuja. El método de la burbuja, repito, consiste en intercambiar elementos adyacentes una y otra vez hasta ordenarlos todos. Pero ¿cuándo podrías querer dejar de recorrer la lista? O sea, ¿cuándo podría haber querido Bonnie decir: bah, ya he trabajado bastante y he terminado?
+
+Si recorre la lista mirando a cada persona, i e i más 1 juntas, ¿cuándo podría concluir que ha terminado de ordenar? ¿Sí?
+
+PÚBLICO: [INAUDIBLE]
+
+PONENTE 1: Sí, si hubiera una pregunta que hacer o si hubiera pasado revisando a los voluntarios y no hubiera tenido que hacer nada. No tiene por qué seguir trabajando una y otra vez solo porque el algoritmo diga que lo repita n menos 1 veces. Queremos tener una condición aquí o algún modo de cerrar el algoritmo en corto para que lo paremos cuando estemos perdiendo el tiempo.
+
+Y el método de la burbuja se presta a ello porque podemos modificar la redacción de nuestro pseudocódigo así: repetir hasta que no haya intercambios. Una vez más, resulta oportuno que estos números ya estén ordenados. Probemos primero el método de la burbuja. Probablemente Bonnie habría dicho, compara 1 y 2. No están desordenados, así que no tenemos que intercambiarlos.
+
+2 y 3, 3 y 4, 4 y 5, 5 y 6, 6 y 7, 7 y 8, es evidente que no ha hecho ningún intercambio. Sería estúpido que lo volviera hacer solo porque el algoritmo diga que lo repita n menos 1 veces, porque va a recibir no, no, no, no, una y otra vez como respuesta. Así que al decir repetir hasta que no haya intercambios, ella puede abortar este algoritmo antes de tiempo y entonces ¿cuántos pasos habrá dado en el mejor de los casos?
+
+PÚBLICO: [INAUDIBLE]
+
+PONENTE 1: Sí, técnicamente n menos 1, ¿verdad? Porque si estos son n elementos, u 8, puedes comparar siete pares, 1, 2, 3, 4, 5, 6, 7, así que n menos 1. Por lo tanto, podría, en el mejor de los casos, tener un límite inferior en el tiempo de ejecución del método de selección (ya no del método de la burbuja) de n al cuadrado, sino de n. Así que parece que con un poco más de inteligencia podemos mejorar realmente el tiempo de ejecución de estos algoritmos.
+
+Bien, veamos si podemos ver esto ahora desde una perspectiva ligeramente diferente con esta visualización. Voy a abrir una visualización gráfica de cada uno de estos algoritmos por turnos. Lo que tienes aquí es un conjunto de números, cada uno de los cuales está representado por una barra vertical. Una barra corta es un número pequeño, como 0, 1, 2. Una barra larga es un número grande, como 99, 100 o cualquier cosa intermedia.
+
+Esta es una herramienta de visualización en línea. Y añadiremos un enlace a esta en el sitio web del curso para que podamos probar estos algoritmos. Vamos a probar el método de la burbuja, por ejemplo. Lo voy a iniciar poco a poco. Puedes ver resaltados dos elementos en rosa que se comparan uno junto al otro, i e i más 1 que se intercambian si están desordenados. Esta es la versión gráfica de las instrucciones que Bonnie les dio a nuestros voluntarios.
+
+Y ahora fíjate en que el método de la burbuja recibe su nombre porque observa lo que le pasa al mayor elemento. Está como burbujeando hasta llegar al final. Los elementos más pequeños están haciendo progresos. Como un 15 y un 12 que se han movido un poco hacia la izquierda. Pero no han terminado. Todavía no están en sus lugares correctos. Pero los elementos más grandes están empezando a burbujear hacia la derecha.
+
+Esto empieza a ser tedioso bastante rápido, así que voy a acelerar la velocidad de la animación. Y si lo miramos ahora (el mismo algoritmo, pero funcionando más rápido), puedes ver realmente que los elementos más grandes se están acumulando en el lado derecho. Es idéntico a nuestros ocho voluntarios. Simplemente cada humano está representado ahora por una barra. Y puedes ver realmente los números más grandes subiendo hasta la cima.
+
+Pero puedes ver quizá más visualmente que aquí hay mucho trabajo. Bonnie pronunciaba muchas frases. Estaba haciendo mucho trabajo de ida y vuelta, porque, tal y como sugiere esta barra rosa, está yendo y viniendo, haciendo mucho trabajo una y otra vez. Y vamos a ver. Va a empezar a acelerarse ahora porque nos estamos acercando a la segunda mitad.
+
+Pero como puedes ver, al final, es más o menos así como n al cuadrado, ¿verdad? Me estoy quedando sin palabras otra vez. Podría decir más cosas, pero en realidad se está estancando porque el algoritmo es bastante lento. n al cuadrado no es un buen límite superior en el tiempo de ejecución, especialmente cuando los [¿elementos?] están ordenados aleatoriamente.
+
+Así que probemos con otro. Hagamos, en este caso, el método de selección. Voy a desordenar los números de nuevo como al principio y ahora haré el método de selección. Y empiezo a una velocidad más rápida. Y está funcionando de forma un poco diferente. Fíjate que la línea rosa está recorriendo la lista de izquierda a derecha, buscando el elemento más pequeño. Y cuando lo encuentra, destaca la barra pequeña y la mueve a su sitio en la izquierda.
+
+Así que mientras que los elementos grandes del método de la burbuja burbujeaban hacia la derecha, el método de selección es mucho más enfático al tomar el elemento más pequeño y ponerlo en su sitio uno tras otro. Así que este tiene una sensación diferente. Pero aquí también voy a tener que improvisar un poco porque está tardando. Y puedes ver que las barras rosas realmente están yendo y viniendo, haciendo un poco de trabajo, un poco de trabajo, un poco de trabajo. Y ahora, por fin, ha terminado.
+
+Así que en un rato echaremos un vistazo a soluciones fundamentalmente más rápidas y veremos por qué n al cuadrado en realidad es pequeño. Pero primero vamos a tomarnos nuestro descanso de cinco minutos con mini cupcakes fuera.

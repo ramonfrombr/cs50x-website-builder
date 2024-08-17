@@ -1,0 +1,21 @@
+Très bien. Quelqu'un a posé une question pendant la pause à propos des arguments de ligne de commande, les choses que vous pouvez taper après le mot à l'invite. Eh bien, c'est un peu bizarre avec Python, car vous exécutez un programme appelé Python dont l'argument de ligne de commande est le nom de votre programme. Mais vous pouvez toujours fournir des arguments de ligne de commande à votre propre programme après le nom du fichier. Donc, c'est un peu décalé d'un. Mais vous pouvez néanmoins le faire.
+
+Alors laissez-moi vous montrer. Ouvrez week 2, disons, argv1.c. Et c'est de quelques semaines en arrière. Et le but de ce programme en C était juste d'imprimer chaque argument de ligne de commande un à la fois. Aujourd'hui, en Python, je vais appeler cela argv.py. Et c'est un peu différent. Si vous voulez accéder aux arguments de la ligne de commande, vous ne pouvez pas simplement utiliser argv et argc car il n'y a pas de void principal int, ou plus précisément, int main argc, string argv, comme il y en avait en c. C'est parti.
+
+Mais argv et les arguments de ligne de commande sont plus généralement exposés dans une autre bibliothèque. Il arrive qu'on l'appelle sys pour system. Et vous pouvez littéralement importer argv si vous le souhaitez. C'est donc un peu différent, mais la même idée exacte.
+
+Et si je veux imprimer chacun d'eux, je peux dire pour i dans la plage - maintenant je veux dire argc. Mon objectif immédiat, encore une fois, par la gauche, est simplement d'imprimer chaque argument de ligne de commande et d'en finir avec.
+
+Mais je n'ai pas d'argc. Et vous aimeriez peut-être le faire, mais cela n'existe pas. Mais c'est OK. Comment pensez-vous que je pourrais obtenir le nombre d'arguments dans argv ? Le nombre de chaînes dans argv ?
+
+AUDITOIRE : [INAUDIBLE]
+
+DAVID MALAN : Oui, suivez votre instinct.
+
+Nous n'avons vu que quelques éléments constitutifs aujourd'hui. Mais si argv est une liste de tous les arguments de ligne de commande, il va de soi que la longueur de cette liste est la même chose que argc. En c, la longueur de quelque chose et le quelque chose étaient séparés en variables séparées. En Python, vous n'avez besoin que de la chose elle-même, car vous pouvez simplement lui demander quelle est sa longueur.
+
+Donc si je fais ça, je peux maintenant continuer et imprimer argv du support i. Et voyons. Python of argv.py. Entrée. Rien n'a été imprimé sauf le nom du programme.
+
+Mais que se passe-t-il si je tape food ? Et si je tape bar ? Et si je tape baz ? Ce ne sont que des mots passe-partout étranges que les informaticiens utilisent lorsqu'ils ont besoin d'un espace réservé comme xyz. Il imprime en effet tous les mots après le nom de mon programme.
+
+Bien sûr, je n'ai pas besoin de me perdre dans les détails. Comme avant, si vous souhaitez itérer sur tous les mots d'une liste pour I et/ou, disons, pour arg dans argv, continuez et imprimez-le. Voila. Python. Beaucoup plus rapide pour faire la même chose. Donc, cela ressemble beaucoup plus à l'anglais même si c'est un peu concis, mais le résultat final sera le même ici.

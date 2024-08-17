@@ -1,0 +1,70 @@
+[1]
+
+Protocole de transfert hypertexte (HTTP)
+• Outre les protocoles qui régissent la manière dont les informations sont communiquées de machine à machine et d'application à application (IP et TCP, respectivement), l'application elle-même dispose souvent d'un système de règles déterminant comment interpréter les données qui ont été envoyées.
+• HTTP est un exemple de protocole de couche applicative, qui régit spécifiquement le format par lequel les clients demandent des pages web à un serveur, et le format par lequel les serveurs renvoient les informations aux clients.
+
+[2]
+
+Protocole de transfert hypertexte (HTTP)
+• D'autres protocoles de couche applicative incluent :
+• Protocole de transfert de fichiers (FTP)
+• Protocole simple de transfert de courrier (SMTP)
+• Service de distribution de données (DDS)
+• Protocole de bureau à distance (RDP)
+• Protocole extensible de messages et de présence (XMPP)
+
+[13]
+
+Protocole de transfert hypertexte (HTTP)
+• Une ligne du formulaire
+méthode cible-de-requête version-http
+• Est un exemple simple d'une ligne de requête HTTP, partie cruciale d'une requête HTTP globale qu'un client peut effectuer vers un serveur.
+
+[17]
+
+Protocole de transfert hypertexte
+• Le nom d'hôte (nom de domaine du serveur) est également inclus en tant que ligne distincte de la requête HTTP globale.
+• Ensemble, le nom d'hôte et la cible de requête depuis la ligne de requête spécifient une ressource spécifique recherchée.
+• En se basant sur le fait que la ressource existe et que le serveur est habilité à fournir cette ressource conformément à la demande du client, un certain nombre de codes de statut peuvent en résulter.
+
+[18]
+
+Protocole de transfert hypertexte (HTTP)
+• Un code de statut fait partie de la première ligne qu'un serveur utilisera pour répondre à une requête HTTP.
+version-http statut
+
+[20]
+
+Protocole de transfert hypertexte (HTTP)
+Catégorie
+Code
+Texte
+Commentaires
+Réussite
+200
+OK
+Tout va bien, requête et réponse valides.
+Redirection
+301
+Déplacé 
+de manière permanente
+La page se trouve désormais à un nouvel emplacement ; les redirections automatiques sont intégrées dans la plupart des navigateurs.
+302
+Trouvé
+La page se trouve désormais temporairement à un nouvel emplacement.
+Erreur client
+401
+Non autorisé
+La page nécessite généralement des identifiants de connexion.
+403
+Interdit
+Le serveur n'autorisera pas cette requête.
+404
+Introuvable
+Le serveur ne parvient pas à trouver ce qui a été demandé.
+Erreur serveur
+500
+Erreur interne du 
+serveur
+Échec générique du serveur à répondre à la requête autrement valide.

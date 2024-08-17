@@ -1,0 +1,47 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problem-set-7">Exercices 7</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>Les collaborations sur les exercices ne sont pas autorisées, à l'exception des demandes d'aide auprès de camarades de classe ou d'autres personnes, dans la mesure où cette aide ne se réduit pas à ce qu'une autre personne fasse votre travail à votre place, conformément à la politique du cours sur
+      <a href="{{ url_for('cs50x2024.honesty') }}">l'honnêteté intellectuelle</a>.</p>
+
+    <p>Le personnel effectue des audits aléatoires des devoirs soumis dans le cadre de CS50x. Les étudiants qui enfreindront cette politique seront exclus du cours. Pour les étudiants qui ont déjà terminé CS50x, leur certificat CS50 sera révoqué de manière permanente s'ils sont reconnus coupables d'infraction.</p>
+  </div>
+
+  <h2 id="what-to-do">Que faire</h2>
+
+  <ol>
+    <li>Connectez-vous à
+      <a href="https://cs50.dev">cs50.dev</a>
+      en utilisant votre compte GitHub</li>
+    <li>Exécutez
+      <code class="language-plaintext highlighter-rouge">update50</code>
+      dans la fenêtre de terminal de votre espace de code pour vous assurer que votre espace de code est à jour et, lorsque vous y serez invité, cliquez sur
+      <strong>Recompiler maintenant</strong>
+    </li>
+    <li>Soumettez
+      <a href="{{ url_for('cs50x2024.psets.pset7.songs') }}">Chansons</a>
+    </li>
+    <li>Soumettez
+      <a href="{{ url_for('cs50x2024.psets.pset7.movies') }}">Films</a>
+    </li>
+    <li>Soumettez
+      <a href="{{ url_for('cs50x2024.psets.pset7.fiftyville') }}">Fiftyville</a>
+    </li>
+  </ol>
+
+  <h2 id="when-to-do-it">Quand le faire</h2>
+
+  <p>Avant le
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+  <h2 id="advice">Conseils</h2>
+
+  <ul>
+    <li data-marker="*">Rendez-vous sur
+      <a href="https://www.w3schools.com/sql/">w3schools.com/sql</a>
+      pour une référence pratique !</li>
+  </ul>
+
+{% endblock %}

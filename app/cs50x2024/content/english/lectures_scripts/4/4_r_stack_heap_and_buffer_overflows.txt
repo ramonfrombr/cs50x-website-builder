@@ -1,0 +1,11 @@
+All right. So this is only to say that, OK, after all of last week's presumption that we could actually swap values, we can in fact do it. So how can we go about now solving more interesting, more real world problems? Well, let's transition from here to some of the power now that we gain by understanding these kinds of primitives. 
+
+First of all, you might have noticed or anticipated this wasn't necessarily the best design. Right? What strikes you as worrisome about this picture at the moment? 
+
+AUDIENCE: They're gonna crash. 
+
+DAVID J. MALAN: Right, they're going to collide with each other. Right? If I keep calling malloc, malloc, malloc, malloc, per the arrow, I claim that you're going to keep using more and more memory. But it turns out you're going to keep using the stack too. If you call function, function, function, function, you're going to collide or somehow overrun each of these chunks of memory. And in fact, recall recursion from last week. If you don't have that base case and a function calls itself forever, you have what's actually called a stack overflow. 
+
+And those of you familiar with the popular website for programmers, stack overflow derives its name from exactly that idea, the fact that a computer if running a program that has some bug-- whereby, function calls itself again, and again, and again, and again, and never stopping --you might overflow the stack. And there's other incarnations of that as well. But that's one of the forms from which the website gets its name. 
+
+Heap overflow is the opposite. When you keep calling malloc, malloc, malloc, malloc, and you just ask for so much memory that you overwrite memory that's being used by some of your functions. Unfortunately, this is just the way life is. If you have a finite amount of memory, there is this risk. And this is why computers can only use so much memory before they indeed can't oh, load more files for you, can't open more images for you, or simply crash or freeze if the problem wasn't anticipated. Those are generally known as buffer overflows.

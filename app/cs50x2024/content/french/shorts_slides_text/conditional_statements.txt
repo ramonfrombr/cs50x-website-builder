@@ -1,0 +1,144 @@
+[0]
+
+Conditionnelles
+
+[1]
+
+Conditionnelles
+● Les expressions conditionnelles permettent à vos programmes de prendre des décisions et de suivre des chemins différents, en fonction des valeurs des variables ou des entrées de l'utilisateur.
+● C propose différentes manières d'implémenter des expressions conditionnelles (également appelées branches) dans vos programmes, dont certaines vous rappelleront surement Scratch.
+
+[2]
+
+Conditionnelles
+if (expression booléenne)
+{
+}
+• Si l'expression booléenne est évaluée à vraie, toutes les lignes de code entre les accolades s'exécuteront dans l'ordre de haut en bas.
+• Si l'expression booléenne est évaluée à fausse, ces lignes de code ne s'exécuteront pas.
+
+[3]
+
+Conditionnelles
+if (expression booléenne)
+{
+}
+else
+{
+}
+• Si l'expression booléenne est évaluée à vraie, toutes les lignes de code entre le premier ensemble d'accolades s'exécuteront dans l'ordre de haut en bas.
+• Si l'expression booléenne est évaluée à fausse, toutes les lignes de code entre le deuxième ensemble d'accolades s'exécuteront dans l'ordre de haut en bas.
+
+[4]
+
+Conditionnelles
+if (expression booléenne1)
+{
+// première branche
+}
+else if (expression booléenne2)
+{
+// deuxième branche
+}
+else if (expression booléenne3)
+{
+// troisième branche
+}
+else
+{
+// quatrième branche
+}
+• Dans C, il est possible de créer une chaîne if–else if-else.
+• Dans Scratch, cela nécessitait des blocs imbriqués.
+• Comme on pouvait s'y attendre, chaque branche est mutuellement exclusive.
+
+[5]
+
+Conditionnelles
+if (expression booléenne1)
+{
+// première branche
+}
+if (expression booléenne2)
+{
+// deuxième branche
+}
+if (expression booléenne3)
+{
+// troisième branche
+}
+else
+{
+// quatrième branche
+}
+• Il est également possible de créer une chaîne de branches non mutuellement exclusives.
+• Dans cet exemple, seules les troisième et quatrième branches sont mutuellement exclusives. Le else se lie uniquement au if le plus proche.
+
+[6]
+
+Conditionnelles
+int x = GetInt();
+switch(x)
+{
+case 1:
+printf("Un !\n");
+break;
+case 2:
+printf("Deux !\n");
+break;
+case 3:
+printf("Trois !\n");
+break;
+default:
+printf("Désolé !\n");
+}
+• L'instruction switch() de C est une instruction conditionnelle qui permet d'énumérer des cas discrets, au lieu de s'appuyer sur des expressions booléennes.
+• Il est important d'ajouter break; entre chaque cas, sinon vous "tomberez" dans chaque cas (à moins que ce ne soit le comportement souhaité).
+
+[7]
+
+Conditionnelles
+int x = GetInt();
+switch(x)
+{
+case 5:
+printf("Cinq, ");
+case 4:
+printf("Quatre, ");
+case 3:
+printf("Trois, ");
+case 2:
+printf("Deux, ");
+case 1:
+printf("Un, ");
+default:
+printf("Décollage !\n");
+}
+• L'instruction switch() de C est une instruction conditionnelle qui permet d'énumérer des cas discrets, au lieu de s'appuyer sur des expressions booléennes.
+• Il est important d'ajouter break; entre chaque cas, sinon vous "tomberez" dans chaque cas (à moins que ce ne soit le comportement souhaité).
+
+[8]
+
+Conditionnelles
+int x;
+if (expr)
+{
+x = 5;
+}
+else
+{
+x = 6;
+}
+int x = (expr) ? 5 : 6;
+• Ces deux extraits de code agissent à l'identique.
+• L'opérateur ternaire (?:) est surtout une petite astuce, mais il est utile pour écrire des branches conditionnelles très courtes. Familiarisez-vous avec, mais sachez que vous n'aurez pas besoin de l'écrire si vous ne le souhaitez pas.
+
+[9]
+
+Conditionnelles
+if (et if-else, et if-else if-…-else)
+● Utilisez des expressions booléennes pour prendre des décisions.
+switch
+● Utilisez des cas discrets pour prendre des décisions.
+?:
+● Utilisez pour remplacer un très simple if-else afin de donner un aspect élégant à votre code.

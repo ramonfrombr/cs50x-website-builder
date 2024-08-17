@@ -1,0 +1,131 @@
+[1]
+
+Pointeurs
+• Les pointeurs fournissent une autre façon d'échanger des données entre des fonctions.
+• Souvenez-vous que jusqu'à ce stade, nous avons passé toutes les données par valeur, à une exception près.
+• Lorsque nous passons des données par valeur, nous transmettons uniquement une copie de ces données.
+• Si nous utilisons plutôt des pointeurs, nous avons le pouvoir de transmettre la variable réelle elle-même.
+• Cela signifie qu'un changement effectué dans une fonction peut avoir des conséquences sur ce qui se passe dans une autre fonction.
+• Auparavant, cela n'était pas possible !
+
+[2]
+
+Pointeurs
+• Avant de comprendre ce que sont les pointeurs et comment les utiliser, il est utile de revenir aux fondamentaux et d'observer la mémoire de notre ordinateur.
+
+[3]
+
+Pointeurs
+• Chaque fichier sur votre ordinateur réside sur votre disque dur, qu'il s'agisse d'un disque dur (HDD) ou d'un disque SSD (Solid-State Drive).
+• Les disques durs sont simplement des espaces de stockage ; nous ne pouvons pas y travailler directement. La manipulation et l'utilisation des données ne peuvent avoir lieu que dans la RAM, nous devons donc y déplacer les données.
+• La mémoire est essentiellement un vaste tableau d'octets de 8 bits de largeur.
+• 512 Mo, 1 Go, 2 Go, 4 Go…
+
+[10]
+
+Pointeurs
+• Revenons à cette idée de mémoire en tant que grand tableau de cellules de la taille d'un octet.
+• Souvenez-vous de notre discussion sur les tableaux : ils sont non seulement utiles pour stocker des informations, mais également pour ce que l'on appelle l'accès aléatoire.
+• Nous pouvons accéder à des éléments individuels du tableau en indiquant l'emplacement d'index souhaité.
+• De même, chaque emplacement en mémoire a une adresse.
+
+[23]
+
+Pointeurs
+• Il n'y a qu'une chose essentielle à retenir lorsque nous commençons à travailler avec des pointeurs :
+LES POINTEURS SONT JUSTE DES ADRESSES
+
+[29]
+
+Pointeurs
+• Lorsque nous commençons à travailler avec des pointeurs, gardez simplement cette image à l'esprit :
+5
+k
+pk
+int k ;
+k = 5 ;
+int* pk ;
+pk = &k ;
+
+[30]
+
+Pointeurs
+• Un pointeur, donc, est un élément de données dont
+• la valeur est une adresse mémoire
+• le type décrit les données situées à cette adresse mémoire
+• En tant que tels, les pointeurs permettent de partager des structures de données et/ou des variables entre des fonctions.
+• Les pointeurs rendent un environnement informatique plus proche du monde réel.
+
+[31]
+
+Pointeurs
+• Le pointeur le plus simple dont nous disposons en C est le pointeur NULL.
+• Comme vous pouvez vous y attendre, ce pointeur ne pointe vers rien (un fait qui peut effectivement s'avérer pratique !).
+• Lorsque vous créez un pointeur et que vous ne définissez pas sa valeur immédiatement, vous devez toujours définir la valeur du pointeur sur NULL.
+• Vous pouvez vérifier si un pointeur est NULL en utilisant l'opérateur d'égalité (==).
+
+[32]
+
+Pointeurs
+• Une autre façon simple de créer un pointeur est d'extraire simplement l'adresse d'une variable déjà existante. Nous pouvons le faire grâce à l'opérateur d'extraction d'adresse (&).
+• Si x est une variable de type int, alors &x est un pointeur vers int dont la valeur est l'adresse de x.
+• Si arr est un tableau de doubles, alors &arr[i] est un pointeur vers double dont la valeur est l'adresse du ième élément de arr.
+• Le nom d'un tableau n'est donc en réalité qu'un pointeur vers son premier élément : vous avez toujours travaillé avec des pointeurs !
+
+[33]
+
+Pointeurs
+• L'objectif principal d'un pointeur est de nous permettre de modifier ou d'inspecter l'emplacement vers lequel il pointe.
+• Nous faisons cela en déréférençant le pointeur.
+• Si nous avons un pointeur vers char appelé pc, alors *pc sont les données qui résident à l'adresse mémoire stockée dans la variable pc.
+
+[34]
+
+Pointeurs
+• Utilisé dans ce contexte, * est appelé l'opérateur de déréférencement.
+• Il « va à la référence » et accède aux données à cet emplacement mémoire, vous permettant de les manipuler à volonté.
+• C'est comme rendre visite à votre voisin. Disposer de son adresse ne suffit pas. Vous devez vous rendre à son adresse pour pouvoir interagir avec lui.
+
+
+[37]
+
+Pointeurs
+• Pouvez-vous deviner ce qui pourrait se passer si nous essayons de déréférencer un pointeur dont la valeur est NULL ?
+Erreur de segmentation.
+• Étonnamment, c'est en fait un bon comportement ! Il protège contre la manipulation dangereuse accidentelle de pointeurs inconnus.
+• C'est pourquoi nous vous recommandons de définir immédiatement vos pointeurs sur NULL si vous ne les définissez pas sur une valeur connue et souhaitée.
+
+[38]
+
+Pointeurs
+int* p ;
+• La valeur de p est une adresse.
+• Nous pouvons déréférencer p grâce à l'opérateur *.
+• Si nous faisons cela, ce que nous trouverons à cet emplacement est un int.
+
+[40]
+
+Pointeurs
+• Encore une chose ennuyeuse avec ces *. Ils constituent une partie importante à la fois du nom de type et du nom de la variable.
+• Voici un exemple qui le montre le mieux :
+int* px, py, pz ;
+int* pa, *pb, *pc ;
+
+[44]
+
+Pointeurs
+Type de données
+Taille (en octets)
+int
+4
+char
+1
+float
+4
+double
+8
+long long
+8
+char*, int*, float*, 
+double*, _______*
+4 ou 8

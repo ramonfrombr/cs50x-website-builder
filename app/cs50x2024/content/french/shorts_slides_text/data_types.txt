@@ -1,0 +1,113 @@
+[1]
+
+Types de données et variables
+● Contrairement à certains langages de programmation modernes, C vous demande de spécifier le type de données de chaque variable que vous créez, la première fois que vous utilisez cette variable.
+● Voyons quelques-uns des types de données fournis avec C et les types de données que nous vous fournissons également dans CS50.
+
+[2]
+
+Types de données et variables
+● int
+● Le type de données int est utilisé pour les variables qui stockeront des entiers.
+● Les entiers prennent toujours 4 octets de mémoire (32 bits). Cela signifie que la plage de valeurs qu'ils peuvent stocker est nécessairement limitée à 32 bits d'informations.
+Plage d'entiers
+-231
+0                                                              231-1
+
+[3]
+
+Types de données et variables
+● unsigned int
+● unsigned est un qualificatif qui peut être appliqué à certains types (y compris int), ce qui double effectivement la plage positive des variables de ce type, au prix de l'interdiction de toute valeur négative.
+● Vous aurez occasionnellement besoin de variables non signées dans CS50.
+Plage d'entiers non signés
+0                                                                231
+232-1
+
+[4]
+
+Types de données et variables
+● char
+● Le type de données char est utilisé pour les variables qui stockeront des caractères uniques.
+● Les caractères prennent toujours 1 octet de mémoire (8 bits). Cela signifie que la plage de valeurs qu'ils peuvent stocker est nécessairement limitée à 8 bits d'informations.
+● Grâce à l'ASCII, nous avons développé un mappage de caractères comme A, B, C, etc. à des valeurs numériques dans le côté positif de cette plage.
+Plage de caractères
+-128                                                              0                                                           
+127
+
+[5]
+
+Types de données et variables
+● float
+● Le type de données float est utilisé pour les variables qui stockeront des valeurs à virgule flottante, également appelées nombres réels.
+● Les valeurs à virgule flottante occupent toujours 4 octets de mémoire (32 bits). 
+● Il est un peu compliqué de décrire la plage d'un float, mais il suffit de dire qu'avec 32 bits de précision, dont certains peuvent être utilisés pour une partie entière, nous sommes limités dans la précision que nous pouvons atteindre.
+
+[6]
+
+Types de données et variables
+● double
+● Le type de données double est utilisé pour les variables qui stockeront des valeurs à virgule flottante, également appelées nombres réels.
+● La différence est que les doubles sont à double précision. Ils occupent toujours 8 octets de mémoire (64 bits). 
+● Avec 32 bits de précision supplémentaires par rapport à un float, les doubles nous permettent de spécifier des nombres réels beaucoup plus précis.
+
+[7]
+
+Types de données et variables
+● void
+● Est un type, mais pas un type de données.
+● Les fonctions peuvent avoir un type de retour void, ce qui signifie simplement qu'elles ne renvoient pas de valeur.
+● La liste des paramètres d'une fonction peut également être vide. Cela signifie simplement que la fonction ne prend aucun paramètre.
+● Pour l'instant, considérez void comme un espace réservé pour « rien ». C'est plus complexe que ça, mais cela devrait suffire pour le cours.
+
+[8]
+
+Types de données et variables
+● Ce sont les cinq types principaux que vous rencontrerez en C.
+● Dans CS50, nous vous fournissons également deux types supplémentaires qui vous seront probablement utiles.
+
+[9]
+
+Types de données et variables
+● bool
+● Le type de données bool est utilisé pour les variables qui stockeront une valeur booléenne. Plus précisément, elles ne sont capables de stocker qu'une des deux valeurs : vrai et faux.
+● Assurez-vous de #include <cs50.h> au début de vos programmes si vous souhaitez utiliser le type bool.
+
+[10]
+
+Types de données et variables
+● string
+● Le type de données string est utilisé pour les variables qui stockeront une série de caractères, que les programmeurs appellent généralement une chaîne de caractères.
+● Les chaînes de caractères incluent des éléments tels que des mots, des phrases, des paragraphes, etc.
+● Assurez-vous de #include <cs50.h> au début de vos programmes si vous souhaitez utiliser le type string.
+
+[11]
+
+Types de données et variables
+● Plus tard dans le cours, nous rencontrerons également des structures (structs) et des types définis (typedefs) qui offrent une grande flexibilité dans la création de types de données dont vous avez besoin pour vos programmes.
+● Maintenant, voyons comment créer, manipuler et travailler avec des variables en utilisant ces types de données.
+
+[12]
+
+Types de données et variables
+● Création d'une variable
+● Pour créer une variable, vous devez simplement spécifier le type de données de la variable et lui donner un nom.
+int nombre;
+char lettre;
+● Si vous souhaitez créer plusieurs variables du même type, vous spécifiez le nom du type une fois, puis listez autant de variables de ce type que vous le souhaitez.
+int hauteur, largeur;
+float racine2, racine3, pi;
+● En général, il est recommandé de ne déclarer des variables que lorsque vous en avez besoin.
+
+[13]
+
+Types de données et variables
+● Utilisation d'une variable
+● Une fois qu'une variable a été déclarée, il n'est plus nécessaire de spécifier son type. (En fait, cela a des conséquences involontaires !)
+int nombre;        // déclaration
+nombre = 17;       // affectation
+char lettre;       // déclaration
+lettre = ‘H’;      // affectation
+● Si vous déclarez et définissez simultanément la valeur d'une variable (parfois appelée initialisation), vous pouvez regrouper cela en une seule étape.
+int nombre = 17;   // initialisation
+char lettre = ‘H’; // initialisation

@@ -1,0 +1,55 @@
+Utilisons maintenant ces données pour résoudre un problème de tri. Il s'avère qu'il existe un algorithme appelé tri fusion, qui représente des tris fondamentalement plus performants que le tri à bulles et le tri par sélection. En notation O-grand, nous pouvons faire mieux. N au carré ne doit pas être notre destin.
+
+Après tout, de nombreuses choses dans notre vie sont triées. Vos contacts dans votre téléphone, vos amis sur Facebook ou Instagram, ou toute application utilisant le cloud trie généralement les données d'une manière ou d'une autre. Il serait dommage que le tri soit très lent, comme nous l'avons déjà vu, avec N au carré.
+
+Le tri fusion fonctionne comme suit. Il s'agit d'un pseudocode pour un algorithme appelé merge sort qui, si vous lui transmettez un tableau de nombres, de noms ou toute autre chose, agit comme suit. S'il n'y a qu'un seul élément dans votre tableau, il suffit de le renvoyer. Il n'y a rien à trier. C'est donc notre cas de base. C'est le genre de cas stupide où l'on doit coder en dur.
+
+Et le cas est que si vous me donnez une liste avec une seule chose, elle est évidemment triée, par définition, parce que rien ne peut être dans le désordre. Sinon, les choses deviennent plus intéressantes. Le merge sort dit, tout comme dans l'exemple de Mario, vous savez quoi ? Si vous voulez que je trie toute cette liste, je vais vous demander de trier la moitié gauche, puis la moitié droite, puis de fusionner ces listes ensemble, de telle sorte que vous les imbriquiez d'une manière qui trie également la liste fusionnée.
+
+Le merge sort se déroule donc en trois étapes : trier la moitié gauche, trier la moitié droite, fusionner ces deux moitiés triées. Et c'est le moment où nous avons discuté plus tôt d'une métaphore appropriée. C'est une sorte de promenade en montagnes russes, où il faut s'accrocher. Il faut se concentrer. Ce n'est pas grave si tout ne fonctionne pas bien du premier coup. Mais chaque étape sera importante ici, dans la métaphore du tuyau d'incendie également.
+
+Voici donc une liste de nombres non triés. L'objectif est de les trier plus rapidement que le tri à bulles et le tri par sélection. Alors, le tri fusion me dit quoi ? Trier la moitié gauche, trier la moitié droite, fusionner. C'est tout pour le merge sort. C'est la magie. Tout comme Mario le dit, imprimez une pyramide de hauteur h - 1, imprimez la base, c'est fini. C'est l'essence de cet algorithme récursif, moitié gauche, moitié droite, fusion.
+
+Alors, quelle est la moitié gauche ? Ce sont ces quatre éléments ici. Je vais aller de l'avant maintenant et trier ces quatre éléments. Comment puis-je scier une liste de quatre éléments ? Les trier par fusion, n'est-ce pas ? Trier la moitié gauche, puis la moitié droite, puis les fusionner ensemble. Vous vous contentez donc de renvoyer la balle. J'ai fait aucun travail. Vous me dites simplement d'aller trier quelque chose d'autre. Mais OK, laissez-moi suivre ces instructions.
+
+Laissez-moi trier la moitié gauche, 7, 4. Comment scier une liste de taille 2 ?
+
+AUDIENCE : Échanger.
+
+ORATEUR 1 : Pas encore échanger.
+
+AUDIENCE : [INAUDIBLE]
+
+ORATEUR 1 : Merge sort, la moitié gauche, puis la moitié droite, puis les fusionner ensemble. Donc encore une fois, c'est un peu fou parce que nous n'avons encore fait aucun travail concret. Et je prétends que nous faisons du tri. Mais voyons ce qui se passe.
+
+Voici la moitié gauche. Comment trier une liste de taille 1 ? Terminé. Voilà le retour. C'est le cas de base pour m'assurer que je ne fais pas cela éternellement. Qu'est-ce qui vient ensuite ? Je viens de trier la moitié gauche. Quelle était la deuxième étape ? Trier la moitié droite.
+
+Comment trier cela ? Terminé. Maintenant, cela devient intéressant. Quelle était la troisième étape ?
+
+AUDIENCE : Fusionner.
+
+ORATEUR 1 : Fusionner deux listes de taille 1. J'ai donc maintenant besoin d'espace supplémentaire. Je vais donc me donner une ligne supplémentaire, de la mémoire supplémentaire, si vous voulez, dans l'ordinateur. 4 vient évidemment en premier. 7 vient évidemment après. C'est l'étape de fusion. C'est ce que j'entends par fusion, prendre le plus petit élément de n'importe quelle liste, puis le suivre par le plus petit élément de l'autre liste.
+
+Il s'agit maintenant d'une liste triée de taille 2. Donc, si vous rembobinez dans votre esprit, quelle était la deuxième étape ? C'était trier la moitié gauche. Trier la moitié droite, n'est-ce pas ? Vous devez donc vraiment rembobiner dans l'histoire, il y a environ 30 secondes.
+
+Comment trier la moitié droite ? Eh bien, vous triez la moitié gauche, terminé, la moitié droite, terminé. Voici la magie, fusionner. Comment puis-je fusionner ces deux listes ? 2 vient en premier. 5 vient ensuite. Je viens de trier la moitié droite de cette liste. J'ai donc trié la moitié gauche, trié la moitié droite. Quelle est la troisième étape ?
+
+AUDIENCE : Fusionner.
+
+ORATEUR 1 : Fusionner. Alors, comment je fais ? Eh bien, je regarde les deux listes. Et comment fusionner celles-ci ensemble en les entrelaçant dans le bon ordre ? 2 vient en premier, puis 4, puis 5, puis 7. J'ai donc maintenant trié la moitié gauche de la liste originale. Alors, quelle était la deuxième étape à l'origine ? Trier la moitié droite.
+
+Donc, trier la moitié droite signifie trier la moitié gauche. Puis trier la moitié gauche de celle-ci, terminé, la moitié droite de celle-ci, terminé. Fusionner rend les choses intéressantes, 3 puis 6. J'ai maintenant trié la moitié gauche de quatre nombres.
+
+Qu'est-ce qui vient ensuite ? Trier la moitié droite, donc 8 et 1. Trier la moitié gauche de celle-ci, terminé, la moitié droite de celle-ci, terminé. Maintenant, fusionnez ces deux ensemble, 1 et 8. J'ai maintenant trié la moitié droite des quatre éléments. Quelle est la troisième étape ? Fusionner.
+
+C'est donc la moitié gauche, la moitié droite, fusionner, encore et encore. Donc, la moitié droite, la moitié gauche, fusionnons-les, 1, 3, 6, 8. Et maintenant, si vous rembobinez, comme il y a deux minutes, c'est la moitié droite de toute la liste. Alors, quelle est la troisième étape ? Fusionner. Donnons-nous donc un peu plus de mémoire et fusionnons ces deux-là, 1, 2, 3, 4, 5, 6, 7, 8. Et mon Dieu, c'est fusionné à la fin.
+
+Bon, c'était beaucoup d'étapes. Mais il s'avère que c'était beaucoup moins que le nombre d'étapes auxquelles nous étions habitués jusqu'à présent. En fait, si vous considérez ce qui s'est réellement passé, après toute cette gymnastique verbale, ce que j'ai vraiment fait, c'est que j'ai pris une liste de taille 8 et je l'ai décomposée à un moment donné en huit listes de taille 1. Et c'est à ce moment-là qu'il n'y avait aucun travail intéressant à faire. Nous venons de faire un retour.
+
+Mais je l'ai fait pour pouvoir composer ensuite quatre listes de taille 2 en cours de route. Et je l'ai fait pour pouvoir composer deux listes de taille 4. Et je l'ai fait pour pouvoir tout regrouper et obtenir une liste de taille 8.
+
+Remarquez donc le modèle ici. Si vous passez de bas en haut, même, voici une liste. Je la divise en deux. J'ai divisé ces moitiés en deux. J'ai divisé ces moitiés en deux. Alors, quelle fonction ou mathématique avons-nous utilisée pour décrire un processus jusqu'à présent depuis la semaine 0, où nous faisons quelque chose en deux parties à la fois ?
+
+AUDIENCE : Logarithme.
+
+ORATEUR 1 : Logarithme. Donc, chaque fois que vous voyez dans CS50 et vraiment dans les algorithmes, il s'agit plus généralement d'un processus qui divise et divise et divise encore et encore, il y a un logarithme impliqué là-dedans. Et en effet, le nombre de fois que vous pouvez découper une liste de taille 8 en huit listes de taille 1 est, par définition, le logarithme de base 2 de n ou encore, avec un geste de la main, log n, ce qui revient à dire que la hauteur de cette image, si vous voulez, est log n. Mais encore une fois,

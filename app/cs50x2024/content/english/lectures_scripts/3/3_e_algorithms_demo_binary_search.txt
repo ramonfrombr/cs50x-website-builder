@@ -1,0 +1,65 @@
+And a round of applause, if we could, for finding 50 so well. 
+
+[APPLAUSE] 
+
+[? Nizari, ?] could you come on up? We need you not to look at the numbers, because Brian needs to do a little bit of magic. And he's going to put some of the numbers back into the locker. So literally everyone in the room will know what's going on except you, at the moment. But we're going to give you the added bonus this time of sorting the numbers in advance. 
+
+So Brian is in the process of sorting some numbers for us. The goal at hand, in just a moment, is still going to be the find the number 50. I'm really just stalling right now because he's still doing this. So I don't really have anything interesting to say just yet. 
+
+Brian's back now. Hold on. And would you like to introduce yourself maybe? 
+
+AUDIENCE: I'm [? Nizari. ?] 
+
+SPEAKER 1: [? Nizari, ?] and what year are you? 
+
+AUDIENCE: I'm a high school student, a senior. 
+
+SPEAKER 1: Wonderful. At what school? 
+
+AUDIENCE: Cambridge Rindge and Latin, it's down the street. 
+
+SPEAKER 1: Just down the road. So glad you can join us here today. And perfect timing, if I may. Now we have seven lockers here behind you. And the goal now is to still find the number 50. But I'm going to tell you that the numbers are sorted. So what's going to be your algorithm, if not the same as Eric? 
+
+AUDIENCE: I will start-- 
+
+SPEAKER 1: And here you go. 
+
+AUDIENCE: I'm going to start in the middle. 
+
+SPEAKER 1: All right, go ahead and show us what's in the middle. 
+
+AUDIENCE: Middle number is seven. 
+
+SPEAKER 1: All right. And now what's your next step going to be? 
+
+AUDIENCE: So I want to get to 50. So assuming that they're sorted, I'm going to go this way. 
+
+SPEAKER 1: Go to the right, OK. So we have three lockers remaining on the right-hand side. What's your instinct now? 
+
+AUDIENCE: Mm, I'm going to start with this locker. 
+
+SPEAKER 1: OK, this one being in the middle of those three. And you find? 
+
+AUDIENCE: And we got 81. 
+
+SPEAKER 1: 81. 
+
+AUDIENCE: So I know that's too big. 
+
+SPEAKER 1: Way too far. 
+
+AUDIENCE: Hoo, so I'm going to go with this one. 
+
+SPEAKER 1: Which is now in the middle of the two lockers. 
+
+AUDIENCE: And I got 50. 
+
+SPEAKER 1: And a round of applause, if we could, for [? Nizari. ?] 
+
+[APPLAUSE] 
+
+Congratulations and thank you to you both. So thanks to you both. So here were two algorithms, dubbed linear search and binary search. And that's all we have for you right now. 
+
+[LAUGHTER] 
+
+So linear search and binary search are aptly named for exactly the reasons we saw. Eric literally walked across in a line looking for some element, where [? Nizari, ?] instead, actually used binary search, "bi" meaning two, and being very reminiscent of our discussion of phone books in week 0, when I did this divide-and-conquer approach. That, too, was called, even though I might not have labeled it as such, binary search because I kept dividing the problem in two, hence the "bi" in binary. Binary search was again and again and again, just as we did here when searching for 50 the second time around.

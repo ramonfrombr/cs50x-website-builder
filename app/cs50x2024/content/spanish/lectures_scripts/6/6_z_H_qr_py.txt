@@ -1,0 +1,11 @@
+Hagamos un último ejemplo. A este lo llamaremos qr.py. Y resulta que si conoces los códigos QR, esos códigos de barras bidimensionales que a veces ves en línea y en el mundo real, puedes importar una librería llamada Código QR.
+
+Luego puedo generar una imagen usando la función integrada de Código QR make. Y déjame seguir adelante y hacer un código QR que contenga, por ejemplo, un enlace a uno de los videos de los cursos. Https://youtu.be/OHG5SJYRHA0. Déjame verificar que no haya errores tipográficos. OHG5SJYRHA0.
+
+Así que eso se incrustará en un código de barras bidimensional que es esa URL. Luego voy a hacer image.save qr.ping, que es un formato gráfico, de hecho, un formato ping. Y eso es todo. Dos líneas de código.
+
+Ahora voy a seguir adelante y ejecutar mi último ejemplo casero en Python, dos líneas de código, qr.py. Eso fue super rápido. Y si ahora voy a mi directorio, verás qr.ping. Y si quieres sacar tu iPhone o Android, abre tu cámara, apúntala al código. Es posible que necesites acercarte. Ojalá esto funcione.
+
+[MÚSICA - RICK ASTLEY, "NEVER GONNA GIVE YOU UP"]
+
+Eso es todo por CS50. Nos vemos la próxima vez.

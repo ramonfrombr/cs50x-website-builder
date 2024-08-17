@@ -1,0 +1,21 @@
+And you might have discovered these last week or used them yourself. But on CS50's website is an example of what are called manual pages. And if I go ahead and pull this up on the course's website, we'll see a tool that adds the following. If I go to the course's web page and click on manual pages, you'll see the CS50 programmers manual, which is a simplified version of a very popular tool that's available on most computer systems that support programming. And suppose I want to do something like convert something to uppercase, I can search up there. 
+
+And notice, there's a few functions available in C that relate to uppercase. Is upper, which asks a question, to lower and to upper. I'm going to go ahead and use to upper. I'm going to go ahead and use to upper. And if I click on this, I'll see essentially its documentation for it. And it's a little cryptic at first glance. But what you're seeing in the documentation is it's required header file and it's prototype. What file do I apparently need to include to use to upper? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Yeah, c type dot h. I don't really know what else is in there, but this is my hint that I should use that file. And what kind of input does to upper take? Well technically, it takes an int, for reasons that are explained in the documentation. But even if the documentation is not obvious, it turns out it's actually pretty easy to use. I'm going to go ahead and rip out most of this logic, and I'm just going to do this-- printf, percent c, to upper, s bracket i, semicolon. And up here, I'm going to go ahead and include c type dot h, because in reading the documentation, I realize that oh, I can pass in any character to to upper, and if it's lowercase, it's going to return in uppercase, and if it's not a lowercase letter, it's just going to return it unchanged. 
+
+So if I save this file now, make uppercase, and then rerun this program, this time typing in Emma's name again in lowercase, voila, I've now used another helper function, something someone else wrote. But you can imagine that all the person did who wrote this function for us is what? Like an if else, checking the Ascii mathematics to see if the character is indeed lowercase. Any questions then on this? Again, now the goal is to move away from caring about 32 or the Ascii codes and just using helper functions someone else wrote. Yeah? 
+
+AUDIENCE: Why [INAUDIBLE] 
+
+DAVID MALAN: Why do you not need to-- 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: The type-- Ah, why do you not need to declare the type of int. I am. This only works if it's the same type as i. Good question. So I get away with it because both i and n are meant to be integers. Yeah? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Are there any limitations? No, you may use any functions you want on CS50 problem sets, whether or not we've used them in class. That's certainly fine, unless otherwise specified, which will rarely be the case.

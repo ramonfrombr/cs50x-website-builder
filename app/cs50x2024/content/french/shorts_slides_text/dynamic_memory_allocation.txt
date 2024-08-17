@@ -1,0 +1,77 @@
+[1]
+
+Allocation dynamique de mémoire
+• Nous avons vu une façon de travailler avec des pointeurs, notamment en pointant une variable de pointeur vers une autre variable qui existe déjà dans notre système.
+• Cela nous oblige à savoir exactement de combien de mémoire notre système aura besoin au moment où notre programme est compilé.
+• Que faisons-nous si nous ne savons pas de combien de mémoire nous aurons besoin au moment de la compilation ? Comment obtenons-nous l'accès à une nouvelle mémoire alors que notre programme est en cours d'exécution ?
+
+[2]
+
+Allocation dynamique de mémoire
+• Nous pouvons utiliser des pointeurs pour accéder à un bloc de mémoire allouée dynamiquement au moment de l'exécution.
+• La mémoire allouée dynamiquement provient d'un pool de mémoire connu sous le nom de tas.
+• Jusqu'à présent, toute la mémoire avec laquelle nous travaillions provenait d'un pool de mémoire connu sous le nom de pile.
+
+[3]
+
+Allocation dynamique de mémoire
+texte
+données initialisées
+données non initialisées
+tas
+pile
+variables d'environnement
+
+[5]
+
+Allocation dynamique de mémoire
+• Nous obtenons cette mémoire allouée dynamiquement en effectuant un appel à la fonction de bibliothèque standard C, malloc(), en transmettant en tant que paramètre le nombre d'octets demandés.
+• Après avoir obtenu de la mémoire pour vous (si possible), malloc() renverra un pointeur vers cette mémoire.
+• Que se passe-t-il si malloc() ne peut pas vous donner de mémoire ? Il vous renverra NULL.
+
+[8]
+
+Allocation dynamique de mémoire
+// obtenir statiquement un entier
+int x;
+// obtenir dynamiquement un entier
+int *px = malloc(sizeof(int));
+
+[9]
+
+Allocation dynamique de mémoire
+// obtenir un entier de l'utilisateur
+int x = GetInt();
+// tableau de flottants sur la pile
+float stack_array[x];
+// tableau de flottants sur le tas
+float* heap_array = malloc(x * sizeof(float));
+
+[12]
+
+Allocation dynamique de mémoire
+• Voici le problème : la mémoire allouée dynamiquement n'est pas automatiquement renvoyée au système pour une utilisation ultérieure lorsque la fonction dans laquelle elle a été créée termine son exécution.
+• Le fait de ne pas renvoyer de la mémoire au système lorsque vous avez fini de l'utiliser entraîne une fuite de mémoire qui peut compromettre les performances de votre système.
+• Lorsque vous avez fini de travailler avec de la mémoire allouée dynamiquement, vous devez la libérer().
+
+[14]
+
+Allocation dynamique de mémoire
+char* word = malloc(50 * sizeof(char));
+// faire des choses avec le mot
+
+[15]
+
+Allocation dynamique de mémoire
+char* word = malloc(50 * sizeof(char));
+// faire des choses avec le mot
+// maintenant nous avons fini de travailler avec ce bloc
+free(word);
+
+[16]
+
+Allocation dynamique de mémoire
+• Trois règles d'or :
+1. Chaque bloc de mémoire que vous malloc() doit ensuite être free()d.
+2. Seule la mémoire que vous malloc() doit être free()d.
+3. Ne free() pas un bloc de mémoire plus d'une fois.

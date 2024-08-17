@@ -1,0 +1,56 @@
+[1]
+
+Protocolo de Internet (IP)
+• Como se mencionó anteriormente, "Internet" es realmente una red interconectada compuesta por redes más pequeñas entrelazadas que acuerdan comunicarse entre sí.
+• ¿Cómo saben estas redes cómo comunicarse entre sí? Esta es la responsabilidad del Protocolo de Internet (IP).
+• Aunque hay que admitir que es a una escala extremadamente pequeña, esta imagen es engañosa en lo que respecta a la comunicación de la red.
+
+[7]
+
+Protocolo de Internet (IP)
+• Con solo seis redes, las cosas se están saliendo de control rápidamente. Y la Internet moderna consta de mucho más que seis redes. Simplemente no podemos permitirnos conectarlos entre sí de tal manera que cada uno se conecte directamente con todos los demás.
+• Pero aun así, necesitamos que cada red pueda comunicarse con cada otra red, o terminamos con partes de la red que no pueden comunicarse con otras partes de la red.
+
+[8]
+
+Protocolo de Internet (IP)
+• Aquí es donde los enrutadores vuelven a entrar en juego.
+• ¿Qué pasaría si, en lugar de estar conectada a todas las demás redes, cada red estuviera conectada a un número limitado de enrutadores (cada uno de los cuales estaba conectado a otros enrutadores cercanos), y cada enrutador tuviera instrucciones incorporadas sobre cómo mover la información hacia su destino?
+• Esta información podría almacenarse en una tabla de enrutamiento, dentro del enrutador.
+
+[9]
+
+Protocolo de Internet (IP)
+• Para esta ilustración, supongamos que cada red tiene direcciones IP en el rango de n.x.x.x, donde n es su número de red y cada x está en el rango [0, 255].
+• ¡Una generalización de la forma en que funcionan realmente las cosas!
+
+[14]
+
+Protocolo de Internet (IP)
+• Ahora las redes no están conectadas directamente entre sí en absoluto y dependen de los enrutadores para distribuir las comunicaciones.
+• A pequeña escala, esta configuración puede ser más ineficiente que simplemente tener conexiones directas.
+• A gran escala, esta configuración puede reducir drásticamente los costos de la infraestructura de red.
+
+[30]
+
+Protocolo de Internet (IP)
+• En realidad, si 1.208.12.37 (yo) está enviando un correo electrónico, una transferencia de archivos FTP o una solicitud de navegador web a 5.188.109.14 (usted), los datos no se envían como un bloque enorme.
+• Cualquier ralentización causada por el envío de una cantidad tan grande de datos tendría un efecto dominó que estrangularía la red para todos los demás usuarios. 
+• Como tal, otra parte crucial de IP es dividir los datos en paquetes.
+
+[31]
+
+Protocolo de Internet (IP)
+• IP también se conoce como protocolo sin conexión. No hay necesariamente un camino definido del remitente al receptor y viceversa.
+
+[34]
+
+Protocolo de Internet (IP)
+• IP también se conoce como protocolo sin conexión. No hay necesariamente un camino definido del remitente al receptor y viceversa.
+• Esto significa que, en respuesta al tráfico que podría estar "obstruyendo" un camino particular a través de Internet, algunos paquetes se pueden "reenrutar" alrededor del atasco de tráfico para seguir la ruta más óptima, según el estado actual de la red.
+
+[35]
+
+Protocolo de Internet (IP)
+• La tabla de enrutamiento probablemente consta de más información que simplemente "hacia dónde envío este paquete desde aquí", sino también información "cuál es el costo de usar esa ruta en particular".
+• Otro efecto secundario de no tener conexión es que la entrega no puede garantizarse, ya que no se garantiza que la ruta del remitente al receptor sea consistente.

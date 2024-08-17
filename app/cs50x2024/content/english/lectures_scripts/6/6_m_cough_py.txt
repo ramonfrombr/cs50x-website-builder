@@ -1,0 +1,69 @@
+All right. Let me go ahead and create another file called cough.py just to show how we can also bootstrap ourselves from something very simple and naive to a better designed version in Python. Recall from week 0, we wanted the cat to cough three times. And in week 1, we re-implemented that same idea with a little bit of copy/paste, but in a way that works. 
+
+So notice this is a Python program. And it's going to cough three times. And I'm not going to keep running every program, because let me just stipulate that it will. But in this case here, even though I claim this is a program that will cough three times, let's be super clear. With this in all prior examples, what have I not put in the file, as well? Like, what is missing vis a vis C programs? 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: No what? 
+
+AUDIENCE: Int main void. 
+
+DAVID MALAN: There's no int main void. And there's no main whatsoever. So another feature of Python is that if you want to just write a program, you just start writing the program. You don't need a main function. Now, I'm going to walk that back a little bit, that claim, because there are some situations in which you do want a main function. But unlike in C, it's not necessary. 
+
+Now, back in week 0 and 1, a bunch of people commented that surely, we can implement this better, not using three prints. But let's use a loop instead. So in Python, you could say for i in [0, 1, 2], go ahead and print out "cough," but of course, this is going to get annoying, because if you want to print four times or-- sorry-- four times or five times or six times or seven times zero index, you have to keep enumerating the stupid values. So that's why we use what function? 
+
+AUDIENCE: Range. 
+
+DAVID MALAN: Range-- so that is the same thing now that's going to print cough three times. But what if we wanted to now start to define our own coughing function, right? The goal of weeks 1 and 2 and onward was start to abstract away and build our own reusable puzzle pieces, albeit in a different language. How could I go about doing this in Python? 
+
+Well, suppose that I want to do the following. For i in range 3, I want to just cough. And I want cough to be an abstraction, a custom function or a Scratch puzzle piece, that someone else or maybe I wrote that does this notion of coughing. Well, in Python, what's the keyword we can use to give ourselves a new function? 
+
+AUDIENCE: Def. 
+
+DAVID MALAN: Def for define-- and I can just say the name of the function is cough. And it takes no arguments. So unlike C, I don't specify a return type. And I don't specify the types of the inputs, but in this case, that's moot, because there are no inputs to cough. 
+
+This function is super simple. It just wants to say print("cough"). And so here, I now have a function that's going to quite simply do this. And it's an abstraction in the sense that it can be all the way down here out of sight, out of mind. I don't care anymore how it's implemented. Maybe even a friend implemented it. And I've imported their code. But the problem arises now as follows. 
+
+Let me go ahead and save this without all the whitespace. I seem to be practicing what I'm preaching-- no main function. Just start writing the code, but use def. But let me go ahead and run now Python of cough.py. I think-- yeah, I'm going to see the first of our errors. 
+
+Python errors look a little different. You're going to see this word tracebac a lot, which is like trace back in time of everything that just happened. But you do see some clues. Cough.py is the file. Line 2 is the problem. Name cough is not defined. But wait a minute. It is. Cough is defined literally with the word def right here on line 4. But there's a problem on line 2, which is here. So even if you've never programmed in Python before, what's the intuition for this bug? Why is this broken? Yeah. 
+
+AUDIENCE: You didn't define your function before using it. 
+
+DAVID MALAN: Yeah, I didn't define my function before using it, which was exactly a problem we ran into in C. Unfortunately, in Python, there's no notion of prototypes. So we have one or two solutions. I can just move the function up here. But there's arguments against this. 
+
+Right now, as with main, in general, it's a little bit annoying to put, like, all of your functions on top, because then, the reader or you have to go fishing through bigger files if you've written more lines. Where is the main part of this program? So in general, it's better to put the main code up top and the helper code down below. 
+
+So the way to solve this conventionally is actually going to be to define a main function. Technically, it doesn't have to be called main. It does not have a special significance like in C. But humans adopt this paradigm and just define themselves a function called main. And they put it up top by convention, too. 
+
+But now, I've introduced a new problem. Python of cough.py enter doesn't do anything. Well, why is that? Python is going to take you literally. You've defined a function called main. You've defined a function called cough. What have I not apparently done explicitly? 
+
+AUDIENCE: You haven't called main. 
+
+DAVID MALAN: I haven't called main. Now, in C, you get this feature for free. If you write main, it will be called. Python-- those training wheels are off, too. You have to call main explicitly. So this looks a little stupid. But this is the solution conventionally to this problem, where you literally call main at the bottom of your file, but you define main at the top. And this ensures that by the time line 8 is read by the computer, by the Python program, the interpreter, it's going to realize, oh, that's OK. You've defined main earlier. I know now what it is. So now, if I run it again, I see cough, cough, cough. 
+
+All right. Let's make one final tweak here now so that I can factor out my loop here and instead change my cough function just as we did in week 0 and 1 to cough some number of times. How do I define a Python function that takes an input? It's actually relatively straightforward. 
+
+Recall that you don't have to specify types. But you do have to specify names. And what might be a good name for the input to cough for a number? n, right, barring something else-- you could call it anything you want. But n is kind of a go-to for an integer. 
+
+So if you're going to cough n times, what do I want to do? For i in range of n, I can go ahead and cough n times. So this program is functionally the same. But now, notice my custom function, just like in week 0 and 1, is more powerful. It takes input and produces output. So now, I can abstract away the notion of coughing to just say cough 3. So again, same exact ideas as we encountered a while back, but now, we have the ability to do this now in Python. Any questions, then, on those examples thus far? This is too fast. By all means, push back. And ask now. Yeah. 
+
+AUDIENCE: I [INAUDIBLE] for Python, and I remember it saying like, if [INAUDIBLE] cough times [INAUDIBLE]. 
+
+DAVID MALAN: Yes, OK. Would you like your mind to really be blown here then? Yes, you can also in Python do this. If you want to cough three times, you can just multiply the string by three. So now-- and if you're impressed by this, now you're really geeks, but here we go-- 
+
+[LAUGHTER] 
+
+--cough, cough, cough-- in a good way. This is very Pythonic, right? So all right. So now, we can let you into the club. So there's this expression in the world of Python. And there's a lot of programming communities, where things are considered Pythonic if-- which means this is the way to do it. It's not the only way. And it's arguably not even the best way. But it's the way everyone does it, sort of in double quotes. 
+
+People are very religious when it comes, though, to their languages. And so a Pythonic way of doing this-- and the reason why there's memes making fun of this is that this is the Pythonic way. Like, boom-- no loops whatsoever, just multiply the thing you want. 
+
+Now, to be fair, it's a little buggy. Like, I actually have an extra new line. So I probably have to try a little harder to get that right. But yes, there are hidden tricks in Python, a few of which we'll encounter today that let you do very fancy one-liners to save time, too. 
+
+AUDIENCE: Why in some scenarios you said that we don't need backslashes, but like, for this one, we do? 
+
+DAVID MALAN: Oh, really good question-- why do you sometimes not need backslash in, but sometimes you do? Print is going to give us a new line at the end of what it's printing. So let me go ahead now and rerun this without the explicit backslash n. You might be able to intuitively guess cough, cough, cough. You're not wrong, per se, but not what I intended. So that's why I need to put it back manually. 
+
+AUDIENCE: OK. 
+
+DAVID MALAN: Good question-- other questions on this here? All right.

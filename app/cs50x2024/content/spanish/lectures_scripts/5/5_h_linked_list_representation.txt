@@ -1,0 +1,63 @@
+Muy bien, entonces ¿qué podemos hacer ahora con esta estructura? Pues bien, vamos a seguir adelante y construir algo aquí. Muy bien, así que esto es tan aterrador como se vuelve el código hoy. De aquí en más nos centraremos principalmente en imágenes y conceptos. Pero hagamos un recorrido por una implementación de esta misma idea de una lista vinculada. ¿Cómo podríamos empezar a representar una lista vinculada inicialmente? 
+
+Bien, inicialmente la lista está vacía. Y si quieres representar algo que está vacío, necesitamos mínimamente algo. Así que permíteme dibujarlo como esta caja vacía. Y esto es solo un puntero a un nodo, afirmo. 
+
+Entonces, ¿cómo implemento la noción de una lista vinculada que aún no tiene números? Bien, ¿por qué no usamos esto, que puedo implementar de la siguiente manera? Nodo estrella, y lo llamaré lista, pero luego lo estableceré como igual a NULL. Bien, si no hay números disponibles, no hay 1, no hay 2, no hay 3, al menos debería tener una variable que connote que no hay ninguna lista. Y la manera más fácil de hacerlo es que en ausencia de un valor, almacene 0, que tiene este nuevo apodo desde la semana pasada y se llama nulo. 
+
+Entonces esta variable aquí representa esta imagen aquí. Y note, no hay números, porque la lista está vacía. Pero la inicializamos como NULL para que no pensemos que hay una flecha apuntando a algún fragmento específico de memoria todavía. Porque aún no la hay. 
+
+Ahora, supongamos que quiero seguir adelante e insertar un número en esta lista. Supongamos que quiero insertar el número 2. No puedo simplemente asignar espacio para 2 ahora. Tengo que asignar espacio para 2 y ese puntero, también conocido como nodo, según la diapositiva anterior. 
+
+Entonces, ¿cómo hago para hacerlo? Bueno, en código, puedo tomar prestada la misma técnica que hemos usado un par de veces ahora, aunque es más fea que algunos enfoques anteriores, malloc luego un número entero. ¿Cuántos bytes quieres? No sé qué tan grande es un nodo. Probablemente podría hacer las matemáticas y sumar el número entero y luego el puntero. Pero, ¿sabes qué? El tamaño del nodo solo va a responder esa pregunta por mí. 
+
+Entonces esto devuelve ese fragmento de memoria que es lo suficientemente grande para almacenar un nodo. Y voy a almacenar eso solo temporalmente en una variable llamada n, n para nodo, y esa será solo una variable temporal, si se quiere. Entonces, de nuevo, aunque hay algunas cosas nuevas sucediendo aquí, esto es como antes. 
+
+Anteriormente, quería asignar un número entero. Ahora, quiero más que un número entero. Quiero un nodo real. Y malloc devuelve una dirección, lo que significa que debo asignarla a una variable. Esa es una dirección en el lado izquierdo. 
+
+Muy bien, ¿qué debería hacer siempre? Pequeño spoiler porque hice clic hacia adelante hace un momento, en realidad, vamos a seguir adelante aquí. Esta es la cosa más fea que veremos. ¿Qué está haciendo esta segunda línea de código aquí? ¿Qué pasa aquí, qué piensas? Sí, ¿qué piensas? 
+
+PÚBLICO: Está estableciendo el número de ese nodo en 2. 
+
+DAVID MALAN: Lo es. Está estableciendo el número de ese nodo en 2. ¿Pero por qué esta sintaxis tan loca, que nunca hemos usado antes? Bueno, estrella n, la vimos la semana pasada. Eso solo significa ir allí. Los paréntesis solo son necesarios para el orden de las operaciones para que el compilador sepa, OK, primero ve allí. Y luego una vez que estés allí, ¿a qué quieres obtener acceso? El campo de número. Así que usa la misma notación de punto. 
+
+Entonces es súper feo. Pero sólo está haciendo dos cosas diferentes que hemos visto aisladas. Ve a la dirección en n, que es ese fragmento de memoria. Y luego accede al campo numérico y establécelo igual a 2. 
+
+Afortunadamente, C tiene algo de sintaxis de conveniencia, solo una manera más fácil y bonita de hacer esto. Y resulta que se parece maravillosamente a lo que seguimos dibujando: esta notación de flecha. Entonces, si alguna vez ves y alguna vez escribes esta notación en C, y estoy bastante seguro de que esta es la última sintaxis nueva que veremos: esta flecha, este tipo de época de piratería en la que presionas un guión y luego un signo mayor que, esto significa exactamente lo mismo que esto. Es simplemente molesto escribir. Es feo a la vista. Esto es un poco más bonito. Y, francamente, recuerda las imágenes que hemos estado dibujando con las flechas apuntando hacia la izquierda y hacia la derecha. 
+
+¿Qué es lo siguiente que quiero hacer? Después de asignar este nuevo nodo para el número 2, ¿qué quiero poner también en ese nodo? 
+
+PÚBLICO: Poner la dirección. 
+
+DAVID MALAN: Perdón, un poco más fuerte. 
+
+PÚBLICO: La siguiente dirección. 
+
+DAVID MALAN: La dirección del siguiente nodo. Pero todavía no hay ningún siguiente nodo. Entonces, ¿qué valor podría usar como marcador de posición? 
+
+PÚBLICO: Nulo. 
+
+DAVID MALAN: Nulo. Y de hecho, voy a hacer esta notación de flecha también. No es necesario que hagas nada con el asterisco y luego los puntos y los paréntesis. Todo el mundo simplemente escribe el código así en el mundo real. Entonces, n flecha siguiente obtiene cero. 
+
+Eso ahora me da esa imagen que estábamos dibujando. Pero, de nuevo, comprobación de cordura, si alguna vez usas malloc, siempre debes verificar el valor de retorno. Entonces, para ser súper preciso, permítanme seguir adelante y agregar un par de líneas más de código que solo verifican si n no es nulo, adelante y hagan lo siguiente. Por el contrario, podría verificar si n es nulo y luego simplemente salir o regresar, dependiendo de dónde esté usando este código. Pero no querrás tocar n y usar esta notación de flecha a menos que estés seguro de que n no es nulo. 
+
+Entonces, ¿qué acabo de hacer? Mi imagen ahora se ve así. Pero esto, por supuesto, no es una lista vinculada, porque no hay enlaces. Realmente necesito hacer el equivalente a apuntar una flecha desde este puntero a esta estructura. Necesito implementar una flecha que se vea así. 
+
+Entonces, ¿cómo podemos implementar eso en código? Bueno, déjame proponerte que así es como se ve en última instancia. Solo tenemos que dibujar esa flecha. 
+
+¿Cómo hago eso? Bueno, es tan simple como esto. Si la lista es una variable y se inicializa previamente como nula, es solo un marcador de posición, y n es mi variable temporal que almacena el nodo nuevo, basta con decir, bueno, las listas ya no deberían ser nulas. Literalmente debería ser igual a la dirección de ese fragmento de memoria que acabo de asignar. Y así es como obtenemos esta imagen ahora dentro de la computadora. 
+
+Ahora, déjame hacer un par de operaciones más. Supongamos que quiero agregar a la lista el número 4. ¿Cómo agrego el número 4? Bueno, el número 4 está dentro de su propio nodo. Entonces tengo que volver al código como este. 
+
+Necesito asignar otro nodo que instale el número 4 allí. Pero eso no es todo. No solo quieres crear el nodo, porque de lo contrario está en tierra de nadie, por así decirlo. Ahora necesitamos añadir la flecha. 
+
+Pero ahora se vuelve un poco obvio cómo actualizas las flechas, cierto, porque no quiero actualizar la lista para que apunte a 4, porque eso va a dejar huérfano, por así decirlo, al número 2. Y simplemente flotará conceptualmente. Realmente quiero actualizar el puntero del 2 al 4. Entonces, ¿cómo puedo hacer eso? 
+
+Bueno, ¿sabes lo que puedo hacer? Puedo seguir este tipo de migas de pan. Si declaro un puntero temporal, y lo haré usándolo un poco extravagantemente la semana pasada como esta pequeña notación de puntero, si soy una variable llamada temp, TMP, puedo seguir adelante y señalar lo mismo que la lista está señalando. Y voy a comprobar si este siguiente valor es nulo. Si lo es, encontré el final de la lista. 
+
+Entonces, realmente puedo seguir esa flecha. Ahora, sé que estoy en un puntero nulo. Entonces ahora, solo quiero dibujar este número aquí arriba. Y accidentalmente avancé la pantalla. De hecho, quiero dibujar esta flecha aquí arriba. 
+
+Entonces, ¿cómo podemos hacer eso? Bueno, el código allí podría verse así. Entonces, si todo lo que quiero señalar en un nodo, como acabo de hacer con la gran mano difusa, puedo simplemente inicializar este puntero para que sea igual a lo que la lista misma está apuntando. 
+
+Luego, puedo hacer como un bucle while. Y se ve un poco raro, porque estoy usando parte de mi nueva sintaxis. Pero esto sólo hace la pregunta, mientras que el siguiente campo al que apunto no sea NULL, adelante y síguelo. Entonces, de nuevo, esto es tan complicado como la sintaxis de hoy. Pero esto solo dice que cualquier cosa que esté apuntando, señale específicamente el siguiente campo. Si no es NULL, siga adelante y actualícese para apuntar a lo que sea que esté apuntando. 
+
+Entonces, si avanzo a la siguiente diapositiva aquí, esto es como si inicialmente estuviera apuntando a 2

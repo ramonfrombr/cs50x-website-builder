@@ -1,0 +1,21 @@
+Et vous pourriez avoir découvert ces derniers la semaine dernière ou les avoir utilisés vous-mêmes. Mais sur le site Web de CS50 se trouve un exemple de ce qu'on appelle des pages de manuel. Et si je continue et que je les consulte sur le site Web du cours, nous verrons un outil qui ajoute les éléments suivants. Si j'accède à la page Web du cours et que je clique sur les pages de manuel, vous verrez le manuel du programmeur CS50, qui est une version simplifiée d'un outil très populaire disponible sur la plupart des systèmes informatiques prenant en charge la programmation. Et supposons que je souhaite faire quelque chose comme convertir quelque chose en majuscules, je peux y rechercher.
+
+Et remarquez, il existe quelques fonctions disponibles en C qui se rapportent aux majuscules. Est supérieur, qui pose une question, en minuscule et en majuscule. Je vais continuer et utiliser pour la partie supérieure. Je vais continuer et utiliser pour la partie supérieure. Et si je clique dessus, je verrai essentiellement sa documentation. Et c'est un peu cryptique à première vue. Mais ce que vous voyez dans la documentation, c'est que le fichier d'en-tête requis et son prototype. Quel fichier dois-je apparemment inclure pour utiliser to upper ? 
+
+AUDITOIRE : [INAUDIBLE]
+
+DAVID MALAN : Oui, c type point h. Je ne sais pas vraiment ce qu’il y a d’autre là-dedans, mais c’est mon indice que je devrais utiliser ce fichier. Et quel type d'entrée prend-il ? Eh bien, techniquement, il faut un int, pour des raisons expliquées dans la documentation. Mais même si la documentation n’est pas évidente, il s’avère qu’elle est en fait assez simple à utiliser. Je vais continuer et supprimer la majeure partie de cette logique, et je vais simplement faire ceci : printf, pourcentage c, to upper, s bracket i, point-virgule. Et ici, je vais continuer et inclure c type dot h, car en lisant la documentation, je réalise que oh, je peux transmettre n’importe quel caractère à to upper, et si c’est en minuscule, il va retourner en majuscules, et si ce n’est pas une minuscule, il va simplement le renvoyer inchangé.
+
+Donc si j’enregistre ce fichier maintenant, que je mets en majuscules, puis que je relance ce programme, cette fois en tapant à nouveau le nom d’Emma en minuscules, le tour est joué, j’ai maintenant utilisé une autre fonction d’aide, quelque chose qu’une autre personne a écrite. Mais vous pouvez imaginer que ce qu’a fait la personne qui a écrit cette fonction pour nous, c’est quoi ? Comme un else if, vérifiant les mathématiques Ascii pour voir si le personnage est effectivement en minuscules. Des questions sur ce sujet ? Encore une fois, le but est maintenant de ne plus se soucier des 32 ou des codes Ascii et d’utiliser uniquement les fonctions d’aide écrites par quelqu’un d’autre. Oui ?
+
+AUDITOIRE : Pourquoi [INAUDIBLE]
+
+DAVID MALAN : Pourquoi n’avez-vous pas besoin de ...
+
+AUDITOIRE : [INAUDIBLE]
+
+DAVID MALAN : Le type -- Ah, pourquoi n’avez-vous pas besoin de déclarer le type de int. Je suis. Cela ne fonctionne que s’il s’agit du même type que i. Bonne question. Je m'en sors donc parce que i et n sont tous deux censés être des entiers. Oui ?
+
+AUDITOIRE : [INAUDIBLE]
+
+DAVID MALAN : Y a-t-il des limites ? Non, vous pouvez utiliser toutes les fonctions que vous souhaitez sur les ensembles de problèmes CS50, que nous les ayons ou non utilisées en classe. C’est certainement très bien, sauf indication contraire, ce qui sera rarement le cas.

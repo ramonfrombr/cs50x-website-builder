@@ -1,0 +1,59 @@
+Bueno, durante el descanso, creé un último ejemplo de nuestro programa de listas. Este utiliza todos esos bloques de construcción. Veamos si podemos seguir visual y codificadamente lo que acabamos de construir con todos estos humanos en escena.
+
+Así que aquí está list list3.c. Está disponible en línea. Por lo tanto, puedes seguirlo en casa después si lo deseas. Y solo repasemos las líneas que están escritas para nosotros con anticipación.
+
+Primero, uso E/S estándar para printf. Y estoy usando stdlib para malloc y free, nuestros nuevos amigos que nos brindan memoria dinámica.
+
+Aquí está la definición de un nodo que nuevamente tiene un número dentro de él y un puntero, específicamente un puntero a otra estructura de nodo. Eso es lo que cada uno de nuestros humanos representaba, esta vez en C.
+
+¿Qué va a hacer mi programa principal? Solo por el bien de la demostración, el objetivo en cuestión es simplemente escribir un programa que inicialice una lista vinculada a nada inicialmente, luego agregue un nodo con 1, luego agregue un nodo con 2, luego agregue un nodo con 3. Lo mantendremos simple y no agregaremos 4 o 5 esta vez.
+
+Entonces, ¿cómo voy a hacer esto? Bueno, en la línea 17, propongo que creemos una variable llamada list y que sea la dirección de un nodo. Entonces, si tuviera que dibujar esto ahora gráficamente, sería como nuestra demostración hace un rato, donde tengo un rectángulo aquí llamado list. E inicialmente, no apunta a nada. Así que voy a dejar el cuadro en blanco para representar NULL. Esa es la línea 17 aquí mismo.
+
+Ahora, déjame seguir adelante y hacer lo siguiente. Agrega un número a la lista de la siguiente manera. La línea 20 solo me da suficiente memoria para un nodo. Y almacena la dirección de esa memoria en una variable llamada n.
+
+Las líneas 21 a 24 son solo una verificación de seguridad. ¿Algo salió mal? Si es así, solo devuelve 1 y detiene el programa. Nos quedamos sin memoria por alguna razón.
+
+Pero estas dos líneas ahora deberían parecer un poco más familiares. Esto ahora continuará e instalará 1 y NULL en esa estructura de la siguiente manera.
+
+Así que recapitulemos. Esta línea aquí 20 es lo mismo que asignar realmente un nodo que se ve así en la memoria que tiene dos mitades. Uno de esos campos se llama número, que escribiré allí. El otro campo se llama siguiente.
+
+Y luego, si volvemos al código, estas dos líneas se tratan solo de instalar valores en esa estructura. Entonces, si avanzo al número y pongo el número 1, no me molestaré en dibujar nada para el siguiente, porque lo dejaré implícitamente como NULL. Eso es lo que está pasando ahora.
+
+¿Qué quiero hacer después? Bueno, la última línea de código aquí debajo de este comentario que dice agregar número a la lista, pongo list igual a n donde n nuevamente está apuntando a este nuevo nodo. Eso es lo mismo que decir, bueno, la lista va a seguir adelante y apuntar a ese nuevo nodo. Entonces, después de esas líneas de código, he creado una imagen en la memoria que efectivamente se ve así.
+
+Ahora, sigamos adelante y agreguemos el número 2 a la lista. Es casi lo mismo. Así que aquí está el fragmento de código que va a agregar un segundo nodo a la lista, esta vez conteniendo 2. Hagámoslo paso a paso.
+
+Línea 30, voy a reutilizar n como mi variable temporal. Así que no tengo que volver a declararlo. Es la misma n que antes, pero ahora obtendrá una dirección diferente de memoria gracias a malloc.
+
+Así que eso me da otro cuadro como este que voy a dibujar así con nada inicialmente. Me aseguraré según las líneas 31 a 34 de que no haya nada mal. Pero eso es como antes.
+
+Y ahora en las líneas 35 y 36, voy a poner 2 allí y NULL. Así que déjame ir allí y poner 2 allí. Y voy a dejar NULL en blanco implícitamente. Ese es el final de la lista.
+
+Pero ahora, por supuesto, conceptualmente tengo que vincular el nodo para 1 al nodo para 2. Y aquí es donde la sintaxis C, aunque nueva, finalmente tiene cierto sentido. Note aquí, estoy diciendo que el siguiente list arrow es igual a NULL. Eso encaja perfectamente con la imagen. La lista flecha x es igual a ¿qué? n. Bueno, n es esta cosa de aquí. Así que acabo de dibujar la flecha allí. Entonces, el código finalmente se alinea incluso si es nuevo para hoy. Así que ahora he dibujado la imagen de la siguiente manera con 1 y 2.
+
+Sigamos adelante y agreguemos un tercer y último nodo. Este que contiene el número 3, utilizando estas líneas aquí. Entonces, la línea 40 me da un nuevo nodo con malloc. Eso me dará un nuevo nodo. Lo dibujaré como un rectángulo aquí. Lo dibujo de izquierda a derecha, pero estas cosas podrían estar en todas partes en la memoria. No importa dónde terminen.
+
+Voy a continuar y verificar como antes que no es NULL, solo para estar seguro. Luego continuaré e instalaré el número 3 y NULL allí como antes. Eso significa que sigamos adelante y dibujemos 3. Lo dejaré en blanco porque será NULL.
+
+Y luego la última línea, normalmente no codificarías esto así o lo escribirías explícitamente en un programa. Esto es un poco más detallado de lo necesario. Permítanme proponer que probablemente usaría algún tipo de bucle en su lugar y recorrería la estructura de datos paso a paso como propuse anteriormente.
+
+Pero si realmente queremos hacer esto solo por fines de demostración, observe, comience en la lista, siga una flecha y vaya a la siguiente. Sigue otra flecha y ve a la siguiente. Podemos hacer eso literalmente con nuestra imagen.
+
+Así que aquí vamos. Déjame comenzar en list y seguir una flecha e ir a la siguiente. Sigue una flecha, ve a la siguiente. Y ahora esto es NULL. Entonces, lo que quiero actualizar es exactamente esto, como con la línea 47, que decía seguir dos flechas, mirar dos campos siguientes indistintamente y luego establecerlo igual a n.
+
+Bien, ¿qué queda aquí? Bueno, todo el propósito de este programa en la vida era simplemente imprimir una lista. Aquí hay una forma en que puedes usar un bucle for para iterar sobre una lista vinculada. Es algo funky porque no tenemos i e ints e i++ y así sucesivamente. Pero un bucle for no necesita utilizar enteros o i.
+
+Recuerda que antes del primer punto y coma tienes la inicialización. Entre los puntos y comas, tienes una condición. Y luego tienes una actualización que ocurre aquí. Así que obtendrás más experiencia con esto con el conjunto de problemas 5 en última instancia.
+
+Pero para los propósitos de hoy, de alto nivel, observe que esto me da un puntero temporal, como mi gran mano roja anteriormente. Ese es un puntero de estrella de nodo. Y es por eso que pude señalar con la gran mano borrosa. Y puse eso igual a la lista. Así que sea lo que sea que la lista estuviera apuntando, también lo estaba mi mano borrosa temporal. Voy a seguir el siguiente bucle mientras la temperatura no sea igual a NULL.
+
+Entonces, antes, cuando llevaba la gran mano borrosa, seguí apuntando, apuntando, apuntando. Y me detuve una vez que igualó a NULL. Así que esto está diciendo que sigo haciendo lo siguiente hasta que sea igual a NULL.
+
+¿Qué quiero hacer? Solo quiero imprimir el número entero que está dentro de lo que estoy señalando dentro de su campo numérico. Así que dirígete a lo que estoy señalando, sigue la flecha y ve al campo numérico. Así es como obtenemos los datos internos.
+
+Una vez que lo he impreso, para los bucles digamos que simplemente actualiza una variable. Entonces, ¿qué es esa variable temp es igual a temp flecha siguiente? Entonces, si mi mano borrosa está apuntando a alguien y necesito actualizarla para que apunte a temp arrow next, eso significa ir a lo que estoy apuntando, seguir la flecha. Ahí está el siguiente campo y apunta a lo que sea que el siguiente campo estaba apuntando. Así que sigues actualizando lo que estás señalando.
+
+Eso imprime la lista. Y luego, y finalmente lo diferiremos al conjunto de problemas 5, necesitaremos liberar esta memoria. Y en realidad tienes que ser un poco inteligente acerca de cómo liberas la memoria, pero voy a usar un bucle while allí, que resulta ser un poco más limpio, un poco más fácil, en última instancia, para liberar todo este lío que hice en la memoria de mi computadora. Necesito hacer el equivalente a liberar cosas, pero necesito liberar lo que está detrás de mí, no lo que está frente a mí. Una vez que liberas memoria, no debes tocarla, recorrerla, etc. Pero nuevamente más sobre esa nota final en P Set 5.
+
+Muy bien, ¿alguna pregunta a alto nivel sobre el código? Está bien si parece bastante nuevo. Lo hacemos disponible para que tengas un punto de partida cuando se trate de usar este tipo de código tú mismo. ¿Alguna pregunta?

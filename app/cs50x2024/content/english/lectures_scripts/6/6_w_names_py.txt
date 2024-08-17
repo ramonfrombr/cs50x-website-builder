@@ -1,0 +1,21 @@
+All right. What more building blocks might we like? How about-- oh, this is interesting to me. Here, let's go ahead and open up names.py, or rather-- let's see. Actually, let's go out and do this one from scratch. 
+
+I'm going to go ahead and do a quick linear search style algorithm, this one called names.py. Let me go ahead and import from sys import exit just so I can return 0 or 1 as needed. 
+
+Let me give myself a list of names just like we did a few weeks ago. Emma, and Rodrigo, and Brian, and my own. All in caps just because, just for consistency with a few weeks back. 
+
+Suppose I want to search for just one of us. And suppose this program is only searching for Emma to see if she's in a list, just as we did a few weeks back. Well, in the past, you would do a 4 loop. You would iterate over every darn element in the list, checking if it equals equals Emma or stir comparing against Emma. 
+
+Oh my god, no. We don't need to do that anymore. If you want to know if something is in a list, just say if Emma in names, print, found. And then I'm going to go ahead and exit 0 for success. 
+
+And down here, I'm going to assume if I get this far, Not found. And I'll exit 1. So if I run Python of names.py. Enter. Emma is found. 
+
+Suppose I change her name to Humphrey up here. Now it's not going to be found because Emma is not technically in the list. Emma Humphrey is in the list. So now if I rerun it she's not found. 
+
+But I have distilled into a succinct one liner all of the logic that for weeks we've been using things like for loops, for, and the like. All right. Any questions before now we introduce some new Python-specific capabilities? Yeah. 
+
+AUDIENCE: [INAUDIBLE] 
+
+DAVID MALAN: Really good question. What would be the big O notation for doing this here? This is well-documented. So if you actually read Python's documentation, for each of its data structures, something like a list will give you big O of n. That is well-defined. 
+
+A dictionary, too, has well-defined with high probability, and we'll come to that in a little bit. You would read the documentation to know exactly those things. So having familiarity with that big O notation can actually help you answer those things from docs as well. 

@@ -1,0 +1,127 @@
+All right. So that's just a tool. Let's go ahead and transition now to some actual use cases here. 
+
+Recall from last week that it was pretty useful to be able to swap values. Right? With bubble sort, with selection sort, we needed to be able to exchange values so that we could put things into the right place. Turns out this is pretty straightforward. Right? And we can actually mimic this in the real world. 
+
+We just have opportunity for one volunteer today, one volunteer. Can we get a little-- OK, over here. Yeah. What's your name? 
+
+FARRAH: Farrah. 
+
+DAVID J. MALAN: Sorry. 
+
+FARRAH: Farrah. 
+
+DAVID J. MALAN: Vera. 
+
+FARRAH: Farrah. 
+
+DAVID J. MALAN: Oh, here, come on up. Then I can hear you up here. OK, what's your name? 
+
+FARRAH: Farrah. 
+
+DAVID J. MALAN: Vera. 
+
+FARRAH: With an F. 
+
+DAVID J. MALAN: Fera. 
+
+FARRAH: Farrah. 
+
+DAVID J. MALAN: Farrah. 
+
+FARRAH: Yes. 
+
+DAVID J. MALAN: Farrah. Yes, OK. Good. Come on up. Still come up. [CHUCKLE] Thank you. Thank you. 
+
+[APPLAUSE] 
+
+[CHEERS] 
+
+OK, nice to meet you. 
+
+FARRAH: Hi, nice to meet you. 
+
+DAVID J. MALAN: Farrah. 
+
+FARRAH: Yes. 
+
+DAVID J. MALAN: OK. So let's go ahead here. Let me give you this so that you can be mic'd as well. OK, so the goal at hand is here, I have two glasses of colored water. So we have some purple here. 
+
+[WATER POURING] 
+
+OK. And we've got some green here. 
+
+[WATER POURING] 
+
+And the only goal at hand is to do a very simple operation like we needed to do quite a bit last week, which is to swap two variables just like we swap two numbers. 
+
+So if you could go ahead and get the purple liquid in here and the green liquid in here, go. 
+
+[CHUCKLE] 
+
+FARRAH: Is it OK if they overlap? 
+
+DAVID J. MALAN: Ideally, no. We want to put only purple here, and only green here, and no temporary store. 
+
+[LAUGHTER] 
+
+FARRAH: Oh. 
+
+DAVID J. MALAN: OK, but you're hesitating. Why? 
+
+FARRAH: Because you told me they couldn't touch [CHUCKLE] and-- 
+
+DAVID J. MALAN: Well, you can touch the glasses. But you're hesitating to swap them, why? 
+
+[CLINK] 
+
+OK, that's just cheating. 
+
+[LAUGHTER] 
+
+[APPLAUSE] 
+
+[CHEERS] 
+
+OK, very clever. Supposing you can't just move things around in memory, what if I gave you a temporary variable. 
+
+FARRAH: OK. 
+
+DAVID J. MALAN: Does this help? 
+
+FARRAH: Yes. 
+
+DAVID J. MALAN: So how can we now get purple in there and green in there? 
+
+[CHUCKLE] 
+
+FARRAH: Can I put purple in here first? 
+
+DAVID J. MALAN: Sure. 
+
+FARRAH: I'm going to spill it. 
+
+DAVID J. MALAN: It's OK. 
+
+[WATER POURING] 
+
+OK. So purple goes into the temporary, very nice. 
+
+[APPLAUSE] 
+
+FARRAH: Thank you. 
+
+DAVID J. MALAN: Green goes into what was purple. 
+
+FARRAH: Yes 
+
+DAVID J. MALAN: OK, good. 
+
+And then purple goes in-- from the temporary variable into the original green glass. Now, a proper round of applause if we could. OK. 
+
+[APPLAUSE] 
+
+Thank you. 
+
+FARRAH: Thank you. 
+
+DAVID J. MALAN: OK.

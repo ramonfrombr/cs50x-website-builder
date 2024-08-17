@@ -1,0 +1,59 @@
+Ahora usemos esto para resolver un problema de clasificación. Resulta que existe un algoritmo llamado ordenamiento por fusión. Y es representativo de ordenaciones que en realidad son mejores que el ordenamiento de burbuja y mejores que el ordenamiento por selección fundamentalmente. En cuanto a la gran notación O, podemos hacerlo mejor. n al cuadrado no tiene que ser nuestro destino.
+
+Después de todo, muchas cosas en nuestra vida están ordenadas. Tus contactos en tu teléfono, tal vez tus amigos en Facebook o Instagram, o cualquier aplicación que use la nube normalmente clasifica los datos de alguna manera. Sería una pena si muy lento para ordenar, como ya vimos, con n al cuadrado.
+
+Entonces, la clasificación por fusión funciona de la siguiente manera. Este es un pseudocódigo para un algoritmo llamado ordenamiento por fusión que si le entregas una matriz de números o nombres o cualquier cosa, actúa de la siguiente manera. Si solo hay un elemento que te entregan en tu matriz, bueno, simplemente regresa. No hay nada que ordenar. Así que ese es nuestro caso base. Ese es el tipo de caso estúpido en el que tienes que codificar, es decir, escribir literalmente, si sucede esta situación, haz esto.
+
+Y el caso es que si me entregas una lista con una cosa, obviamente está ordenada, por definición, porque nada puede estar fuera de orden. Las cosas se ponen más interesantes de lo contrario. La clasificación por fusión dice, como ese ejemplo de Mario, ¿sabes qué? Si quieres que ordene toda esta lista, te diré que ordenes la mitad izquierda, luego la mitad derecha y luego fusiones esas listas, de tal manera que las tejas juntas de tal manera que la lista fusionada también esté ordenada.
+
+Entonces, la clasificación por fusión consta de tres pasos: ordenar la mitad izquierda, ordenar la mitad derecha y fusionar esas dos mitades ordenadas. Y esta es la -- estábamos hablando antes sobre una metáfora adecuada aquí. Este es un tipo de paseo en montaña rusa, en el que tienes que aguantar. Tienes que concentrarte. Está bien si no todo sale bien la primera vez. Pero cada paso será importante aquí también en la metáfora de la manguera contra incendios.
+
+Aquí hay una lista de números sin ordenar. El objetivo es ordenarlos más rápido de lo que pueden hacerlo la clasificación por burbuja y la clasificación por selección. Entonces, ¿qué me dice la clasificación por fusión? Ordena la mitad izquierda, ordena la mitad derecha, fusiona. Eso es todo para la clasificación por fusión. Esa es la magia. Así como Mario dice, imprime una pirámide de altura h menos 1, imprime la base, listo. Esa es la esencia de este algoritmo recursivo, mitad izquierda, mitad derecha, fusión.
+
+Entonces, ¿cuál es la mitad izquierda? Son estos cuatro elementos aquí. Déjame seguir adelante ahora y ordenar esos cuatro elementos. ¿Cómo vi una lista de cuatro elementos? Ordénalos por fusión, ¿verdad? Ordena la mitad izquierda, luego ordena la mitad derecha y luego fusiónalas. Entonces, es como si estuvieras pateando la lata. Como si no hubiera hecho ningún trabajo. Solo me estás diciendo que ordene algo [¿más?] Pero está bien, déjame seguir esas instrucciones.
+
+Déjame ordenar la mitad izquierda, 7, 4. ¿Cómo vi una lista de tamaño 2?
+
+AUDIENCIA: Intercambia.
+
+ORADOR 1: Aún no intercambio.
+
+AUDIENCIA: [INAUDIBLE]
+
+ORADOR 1: Ordenamiento por fusión: la mitad izquierda, luego la mitad derecha y luego fusiónalas. Entonces, nuevamente, es una locura porque todavía no hemos hecho ningún trabajo real. Y yo afirmo que estamos ordenando. Pero veamos qué pasa.
+
+Aquí está la mitad izquierda. ¿Cómo ordeno una lista de tamaño 1? Listo. Ese es el regreso. Ese es el caso base para asegurarme de no hacer esto para siempre. ¿Qué vino después? Acabo de ordenar la mitad izquierda. ¿Cuál fue el segundo paso? Ordena la mitad derecha.
+
+¿Cómo ordeno esto? Listo. Ahora se pone interesante. ¿Cuál fue el tercer paso?
+
+AUDIENCIA: Fusión.
+
+ORADOR 1: Fusiona dos listas de tamaño 1. Entonces ahora necesito algo de espacio extra. Así que me voy a dar una fila extra, algo de memoria extra, por así decirlo, en la computadora. Obviamente, el 4 viene primero. Obviamente, el 7 viene después. Ese es el paso de fusión. A eso me refiero con fusión, toma el elemento más pequeño de cualquier lista y luego síguelo con el elemento más pequeño de la otra lista.
+
+Esta es ahora una lista ordenada de tamaño 2. Entonces, si retrocedes en tu mente, ¿cuál fue el segundo paso ahora? Eso era ordenar la mitad izquierda. Ordena la mitad derecha, ¿verdad? Así que realmente tienes que retroceder un poco en la historia, como hace 30 segundos más.
+
+¿Cómo ordenas la mitad derecha? Bueno, ordenas la mitad izquierda, hecho, la mitad derecha, hecho. Aquí está la magia, la fusión. ¿Cómo fusiono estas dos listas? 2 viene primero. 5 viene después. Acabo de ordenar la mitad derecha de esta lista. Entonces, ordené la mitad izquierda, ordené la mitad derecha. ¿Cuál es el tercer paso?
+
+AUDIENCIA: Fusión.
+
+ORADOR 1: Fusión. Entonces, ¿cómo hago eso? Bueno, miro las dos listas. ¿Y cómo fusiono esto junto [¿entrelazando?] Ellos en el orden correcto? 2 viene primero, luego 4, luego 5, luego 7. Entonces ahora he ordenado la mitad izquierda de la lista original. Entonces, ¿cuál fue originalmente el paso dos? Ordena la mitad derecha.
+
+Entonces, ordenar la mitad derecha significa ordenar la mitad izquierda. Y luego ordena la mitad izquierda de eso, listo, la mitad derecha de eso, listo. La fusión lo hace interesante, 3 y luego 6. Ahora he ordenado la mitad izquierda de cuatro números.
+
+¿Qué viene después? Ordenar la mitad derecha, entonces 8 en 1. Ordena la mitad izquierda de eso, listo, la mitad derecha de eso, listo. Ahora fusiona esos dos juntos, 1 y 8. Ahora he ordenado la mitad derecha de los cuatro elementos. ¿Cuál es el tercer paso? Fusión.
+
+Así que es la mitad izquierda, la mitad derecha, la fusión, una y otra vez. Así que la mitad derecha, la mitad izquierda, fusionémoslas, 1, 3, 6, 8. Y ahora si retrocedes, como dos minutos, esta es la mitad derecha de toda la lista. Entonces, ¿cuál es el paso tres? Fusión. Así que démosnos un poco más de memoria y fusionemos estos dos, 1, 2, 3, 4, 5, 6, 7, 8. Y Dios mío, se fusionó al final.
+
+Ahora, esos fueron muchos pasos. Pero resulta que fueron mucho menos que la cantidad de pasos que estábamos acostumbrados a dar hasta ahora. De hecho, si consideras lo que realmente sucedió, después de toda esa gimnasia verbal, lo que realmente hice fue tomar una lista de tamaño 8 y dividirla en algún momento en ocho listas de tamaño 1. Y fue entonces cuando no hubo ningún trabajo interesante por hacer. Simplemente regresamos.
+
+Pero lo hice para poder componer cuatro listas de tamaño 2 en el camino. Y lo hice para poder componer dos listas de tamaño 4. Y lo hice para poder agregar todo junto y obtener una lista de tamaño 8.
+
+Así que observe el patrón aquí. Si vas de abajo hacia arriba, incluso, aquí hay una lista. Lo divido por la mitad. Dividí esas mitades por la mitad. Dividí esas mitades por mitades. Entonces, ¿qué función o matemáticas hemos usado para describir cualquier proceso hasta ahora desde la semana 0, donde estamos haciendo algo por mitades a la vez?
+
+AUDIENCIA: Logaritmo.
+
+ORADOR 1: Logaritmo. Entonces, cada vez que ves en CS50 y realmente en algoritmos es más generalmente un proceso que se divide y divide y divide una y otra vez, hay un logaritmo involucrado allí. Y, de hecho, el número de veces que puedes dividir una lista de tamaño 8 en ocho listas de tamaño 1 es, por definición, log base 2 de n o simplemente, nuevamente, con un gesto de la mano, log n, lo que equivale a decir que la altura de esta imagen, si se quiere, es log n. Pero nuevamente, no tenemos que preocuparnos demasiado por los números.
+
+Pero cada vez que hacíamos esa división en listas más pequeñas, nos fusionábamos, ¿verdad? Ese fue el tercer y más importante paso. Y cada vez que nos fusionamos, combinamos 4 elementos más 4 elementos o 2 más 2 más 2 más 2 elementos o 1 más 1 más 1, 8 elementos individualmente. Entonces tocamos todos los elementos n.
+
+Entonces esta imagen, por así decirlo, tiene 8 números de ancho. Y yo, o n números de ancho, si generalizamos como n. Y tiene log n filas de altura, por así decirlo, porque esa es la cantidad de veces que puedes dividir las cosas una y otra vez. Entonces, ¿cuál es el tiempo de ejecución intuitivamente, quizás, del ordenamiento por fusión? En realidad es n veces log n porque tienes n números que deben fusionarse una y otra y otra vez. Pero ¿cuántas veces dije otra vez? Log n veces

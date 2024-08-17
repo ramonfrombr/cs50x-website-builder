@@ -1,0 +1,17 @@
+Muy bien, entonces solo por ahora, incluso si se trata de mucho código, consideremos ahora conclusiones de alto nivel de esto, solo para que podamos motivar un enfoque alternativo que nos permita unir estructuras de datos algo más sofisticadas en su lugar. Entonces, en general, una estructura de datos es solo una construcción de programación en C, C++, Java, Python (las veremos en diferentes lenguajes durante el resto del semestre) que te permiten almacenar información de manera diferente en la memoria de tu computadora.
+
+En C, todo lo que vamos a hacer hoy es gracias a estas tres características de C. Entonces, aunque esto puede parecer mucha sintaxis, todo lo que hacemos hoy se reduce a tres partes de sintaxis que has visto antes.
+
+Struct, este recuerdo fue una palabra clave en C que te permite crear tu propia estructura. Por ejemplo, hace un par de semanas, creamos una estructura de persona, que tenía un nombre y un número. Y eso nos da nuestro propio tipo de datos que está estructurado para contener dos valores, como nombre y número.
+
+También utilizas estructuras para el conjunto de problemas que implican mapas de bits, el encabezado del mapa de bits, etc. Esas también eran estructuras de datos.
+
+¿Para qué utilizamos la notación de puntos para ser claros? Y definitivamente la utilizas al manipular píxeles rojos, verdes y azules recientemente. Sí.
+
+AUDIENCIA: Para acceder a una propiedad de una estructura.
+
+DAVID MALAN: Exacto. Para acceder a una propiedad de una estructura. Entonces, si quieres obtener el nombre de una persona o el número de una persona, usas el nombre de la variable y luego un operador de punto para entrar en esa estructura de datos. Así que ya lo hemos visto antes.
+
+Luego, la semana pasada y nuevamente hoy, vemos al operador estrella, que puede significar cosas diferentes en diferentes contextos. Pero siempre está relacionado aquí con la memoria desde la semana pasada. Este es el operador de desreferencia que te permite ir a un fragmento de memoria a través de esta cosa llamada puntero.
+
+Entonces, incluso si hoy se siente como una manguera contra incendios, y nuevamente según mi correo electrónico, aquí es donde las cosas ahora comienzan a estabilizarse, date cuenta de que todo se reduce a primeros principios, o si quieres una especie de tres piezas de rompecabezas como rasguños que ahora vamos a ensamblar en soluciones más interesantes a los problemas.

@@ -1,0 +1,15 @@
+Eh bien, il s'avère que c'est juste une convention humaine de décrire les quantités de rouge, de vert et de bleu dans une couleur en termes de chiffres hexadécimaux, où cela signifie ne me donnez pas de rouge, pas de vert, pas de bleu. Et si vous repensez à la semaine 0, cela va en fait nous donner du noir. Si vous n'avez aucune de ces trois couleurs, c'est juste l'absence de ces couleurs et vous obtenez du noir.
+
+Si cependant, vous avez FF - qui est quoi ? - 255 quantité de rouge, c'est beaucoup de rouge, et 0 vert, 0 bleu. Donc si un ordinateur devait représenter un pixel sur votre écran en rouge, il stockerait FF0000. C'est beaucoup de rouge, pas de vert, pas de bleu.
+
+Pendant ce temps, si vous aviez cette représentation, c'est pourquoi c'est du vert. Ce serait du bleu. Et si vous combinez beaucoup les trois couleurs - beaucoup de rouge, beaucoup de vert, beaucoup de bleu - c'est comme ça qu'un ordinateur représenterait le blanc. Et nous y reviendrons plus tard dans le développement de jeux, le développement Web et mobile - si cela vous intéresse - mais notez que ce n'est qu'une convention commune également.
+
+Donc, si nous reconsidérons à quoi ressemble notre mémoire, c'est juste cette grande grille d'octets. Et nous pourrions décrire le premier comme 0 et le dernier dans ce cas comme 1F. Et on peut continuer à compter. Cependant, à première vue, cela pourrait être un peu ambigu. Est-ce que je regarde la décimale ? Est-ce que je regarde l'hexadécimal ? Est-ce que je regarde autre chose ?
+
+Donc, il y a des années, les humains ont décidé que juste pour éviter toute ambiguïté, si vous utilisez l'hexadécimal, la convention humaine est de préfixer chaque chiffre à l'écran par 0x, juste arbitrairement. Le 0x ne signifie rien mathématiquement. Cela signifie simplement que voici une valeur hexadécimale. Vous pouvez donc le distinguer de quelque chose comme la décimale elle-même. Ouf. D'accord.
+
+C'était une bouchée. Et c'est tout pour les systèmes de base. Il n'y a plus de décimales ici à partir de ce terme. Léger mensonge blanc, il y a quelque chose qui s'appelle octal mais nous ne le regarderons probablement pas.
+
+Y a-t-il des questions ? Non, d'accord.
+
+Alors comment pouvons-nous réellement utiliser cette information ? Eh bien, voyons maintenant quelques exemples de ce qui se passe réellement dans la mémoire de votre ordinateur. Et nous verrons où l'hexadécimal est pertinent et comment nous pouvons maintenant commencer à manipuler les choses plus soigneusement dans la mémoire de l'ordinateur.

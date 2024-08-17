@@ -1,0 +1,94 @@
+[1]
+
+HTML
+• HTML (Hypertext Markup Language) é um componente fundamental de todo site.
+• HTML é uma linguagem, mas não é uma linguagem de programação. Carece de conceitos de variáveis, lógica, funções e similares.
+• Em vez disso, é uma linguagem de marcação, usando marcações entre colchetes angulares para definir semanticamente a estrutura de uma página da web, fazendo com que o texto simples dentro dos conjuntos de marcações seja interpretado por navegadores da web de maneiras diferentes.
+
+[8]
+
+HTML
+• Observe como a marcação nos permite transmitir informações extras sobre o texto que escrevemos.
+• Existem mais de 100 tags HTML e muitos recursos excelentes online para encontrá-las. Não cobriremos todas elas aqui.
+• Outra maneira interessante de aprender sobre as tags HTML é visualizar a fonte de um site que você frequenta abrindo as ferramentas de desenvolvedor do navegador de sua escolha.
+
+[9]
+
+HTML
+• Tags HTML comuns
+• <b>, </b>
+• O texto entre essas tags será renderizado em negrito pelo navegador.
+• <i>, </i>
+• O texto entre essas tags será renderizado em itálico pelo navegador.
+• <u>, </u>
+• O texto entre essas tags será renderizado sublinhado pelo navegador.
+
+[10]
+
+HTML
+• Tags HTML comuns
+• <p>, </p>
+• O texto entre essas tags será renderizado como um parágrafo pelo navegador, com espaço acima e abaixo.
+• <hX>, </hX>
+• X = 1, 2, 3, 4, 5 ou 6
+• O texto entre essas tags será renderizado como um cabeçalho de seção de nível X.
+
+[11]
+
+HTML
+• Tags HTML comuns
+• <ul>, </ul>
+• Demarcam o início e o fim de uma lista não ordenada (com marcadores).
+• <ol>, </ol>
+• Demarcam o início e o fim de uma lista ordenada (numerada).
+• <li>, </li>
+• Demarcam itens de lista com uma lista ordenada ou não ordenada.
+
+[12]
+
+HTML
+• Tags HTML comuns
+• <table>, </table>
+• Demarcam o início e o fim de uma definição de tabela.
+• <tr>, </tr>
+• Demarcam o início e o fim de uma linha dentro de uma tabela.
+• <td>, </td>
+• Demarcam o início e o fim de uma coluna dentro de uma linha, dentro de uma tabela.
+
+[14]
+
+HTML
+• Tags HTML comuns
+• <form>, </form>
+• Demarcam o início e o fim de um formulário HTML.
+• <div>, </div>
+• Demarcam o início e o fim de uma divisão arbitrária da página HTML.
+• <input name=X type=Y />
+• Define um campo dentro de um formulário HTML. X é um identificador exclusivo para aquele campo, Y é o tipo de dados que ele aceita.
+
+[15]
+
+HTML
+• Tags HTML comuns
+• <a href=X>, </a>
+• Cria um hiperlink para a página da web X, com o texto entre as tags renderizado e funcional como o texto do link.
+• <img src=X ... />
+• Outra tag de autofechamento para exibir uma imagem localizada em X, com possíveis atributos adicionais (como especificar largura e altura).
+• <!DOCTYPE html>
+• Específico para HTML5, informa ao navegador que esse é o padrão que você está usando.
+
+[16]
+
+HTML
+• Tags HTML comuns
+• <!--, -->
+• Demarcam o início e o fim de um comentário HTML.
+• Além das tags explicadas aqui, cada uma também pode ter vários atributos que modificam ligeiramente a tag.
+• Por exemplo, você geralmente pode adicionar um atributo id=X para identificar exclusivamente uma tag dentro de uma página geral.
+
+[17]
+
+HTML
+• É importante que o HTML que você escreve seja bem formado. Cada tag que você abrir deve ser fechada (a menos que seja uma tag de autofechamento), e as tags devem ser fechadas na ordem inversa de quando foram abertas.
+• Ao contrário do C, seu HTML não falhará necessariamente com erros de sintaxe se não estiver bem formado, então cabe a você estar vigilante.
+• Como pode ser uma tarefa árdua investigar isso, use validadores HTML online para ajudar!

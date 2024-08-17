@@ -1,0 +1,5 @@
+Déjame entrar, y por favor, permíteme abrir Una variante de esto que escribí por adelantado. Esta ahora es exactamente la misma. Pero ahora fíjate en eso hasta que Google me devuelva un montón de palabras, ciertamente puedo usar solo algo de sintaxis de Python y decir, ¿hay un saludo en las palabras del usuario? ¿Cómo estás en las palabras del usuario? Adiós a ti. ¿Hay un adiós en las palabras del usuario? 
+
+Así que déjame ejecutar esta versión. Python voices2, que está disponible... No puedo hablar mientras hago esta demostración. Hola mundo. ¿Cómo estás hoy? Adiós, mundo. De acuerdo.
+
+[RISAS]

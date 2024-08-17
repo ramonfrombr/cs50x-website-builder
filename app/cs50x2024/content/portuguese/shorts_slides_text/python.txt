@@ -1,0 +1,252 @@
+[1]
+
+Sintaxe Python
+• Python é um exemplo de linguagem de programação muito comum usada atualmente.
+• C foi lançado pela primeira vez em 1972, Python em 1991.
+• Python é uma linguagem excelente e versátil para tornar operações complexas de C muito mais simples.
+• Manipulação de string
+• Rede
+• Felizmente, Python é fortemente inspirado por C (seu principal interpretador, Cpython, é na verdade escrito em C) e, portanto, a sintaxe deve ser uma curva de aprendizado superficial.
+
+[2]
+
+Sintaxe Python
+• Para começar a escrever em Python, abra um arquivo com a extensão de arquivo .py.
+• Diferente de um programa em C, que geralmente precisa ser compilado antes de você poder executá-lo, um programa em Python pode ser executado sem explicitamente compilá-lo primeiro.
+• Observação importante: em CS50, ensinamos Python 3. (Não Python 2, que também ainda é bem popular.)
+
+[11]
+
+Sintaxe Python
+• Variáveis
+• As variáveis de Python têm duas grandes diferenças do C.
+• Sem especificador de tipo.
+• Declaradas apenas por inicialização.
+phrase = 'This is CS50'
+
+[17]
+
+Sintaxe Python
+• Condicionais
+• Todos os antigos favoritos do C ainda estão disponíveis para você usar, mas eles estão um pouco diferentes agora.
+if y < 43 or z == 15:
+# código vai aqui
+
+[26]
+
+Sintaxe Python
+• Condicionais
+• Todos os antigos favoritos do C ainda estão disponíveis para você usar.
+if coursenum == 50:
+# bloco de código 1
+elif not coursenum == 51:
+# bloco de código 2
+
+[27]
+
+Sintaxe Python
+• Condicionais
+• Todos os antigos favoritos do C ainda estão disponíveis para você usar.
+char var = get_char();
+bool alphabetic = isalpha(var) ? true : false;
+
+[31]
+
+Sintaxe Python
+• Condicionais
+• Todos os antigos favoritos do C ainda estão disponíveis para você usar.
+letters_only = True if input().isalpha() else False
+
+[40]
+
+Sintaxe Python
+• Laços
+• Duas variedades: while e for
+for (int x = 0; x < 100; x += 2)
+{
+printf("%i\n", x);
+}
+
+[41]
+
+Sintaxe Python
+• Laços
+• Duas variedades: while e for
+for x in range(0, 100, 2):
+print(x)
+
+[43]
+
+Sintaxe Python
+• Arrays de Lista
+• É aqui que as coisas realmente começam a ficar muito melhores que C.
+• Arrays de Python (mais apropriadamente conhecidos como listas) não têm tamanho fixo; eles podem crescer ou encolher conforme necessário, e você sempre pode colocar elementos extras no seu array e inserir e eliminar coisas facilmente.
+
+[47]
+
+Sintaxe Python
+• Listas
+• Declarar uma lista é bem direto.
+nums = list()
+
+[51]
+
+Sintaxe Python
+• Adicionar a uma lista existente pode ser feito de algumas maneiras:
+nums = [1, 2, 3, 4]
+nums[len(nums):] = [5]
+
+[52]
+
+Sintaxe Python
+• Tuplas
+• Python também tem um tipo de dados que não é bem parecido com nada comparável com C, uma tupla.
+• Tuplas são conjuntos de dados ordenados e imutáveis; elas são ótimas para associar coleções de dados, como uma estrutura em C, mas onde é pouco provável que esses valores mudem.
+
+[57]
+
+Sintaxe Python
+• Tuplas
+• Esta lista também é iterável:
+presidents = [
+("George Washington", 1789),
+("John Adams", 1797),
+("Thomas Jefferson", 1801),
+("James Madison", 1809)
+]
+for prez, year in presidents:
+print("Em {1}, {0} assumiu o cargo".format(prez, year))
+
+[58]
+
+Sintaxe Python
+• Tuplas
+• Esta lista também é iterável:
+presidents = [
+("George Washington", 1789),
+("John Adams", 1797),
+("Thomas Jefferson", 1801),
+("James Madison", 1809)
+]
+Em 1789, George Washington assumiu o cargo
+Em 1797, John Adams assumiu o cargo                                                           
+Em 1801, Thomas Jefferson assumiu o cargo                                                     
+Em 1809, James Madison assumiu o cargo
+for prez, year in presidents:
+print("Em {1}, {0} assumiu o cargo".format(prez, year))
+
+[59]
+
+Sintaxe Python
+• Dicionários
+• Python também tem suporte integrado para dicionários, permitindo especificar índices de lista com palavras ou frases (chaves), em vez de inteiros, o que era restrito em C.
+
+[60]
+
+Sintaxe Python
+• Dicionários
+pizzas = {
+"queijo": 9,
+"pepperoni": 10,
+"vegetariana": 11,
+"frango com búfalo": 12    
+}
+
+[66]
+
+Sintaxe Python
+• Dicionários
+pizzas["queijo"] = 8
+if pizza["vegetariana"] < 12: 
+# fazer algo
+pizzas["bacon"] = 14
+
+[67]
+
+Sintaxe Python
+• Python também tem suporte integrado para dicionários, permitindo especificar índices de lista com palavras ou frases (chaves), em vez de inteiros, o que era restrito em C.
+• Mas isso cria um problema um tanto novo... como iterar por um dicionário? Não temos mais índices variando de [0, n-1].
+
+[68]
+
+Sintaxe Python
+• Laços (redux)
+• O laço for em Python é extremamente flexível!
+for pie in pizzas:
+# use pie aqui como um substituto para "i"
+
+[76]
+
+Sintaxe Python
+• Laços (redux)
+pizzas = {
+"queijo": 9,
+"pepperoni": 10,
+"vegetariana": 11,
+"frango com búfalo": 12    
+}
+for pie, price in pizzas.items():      
+print("Uma pizza {} inteira custa ${}".format(pie, price))
+Uma pizza de frango com búfalo inteira custa $ 12
+Uma pizza de queijo inteira custa $ 9
+Uma pizza vegetariana inteira custa $ 11
+Uma pizza de pepperoni inteira custa $ 10
+
+[80]
+
+Sintaxe Python
+• Impressão e interpolação de variável
+• format dá uma forma de interpolar variáveis em nossas declarações impressas de uma maneira muito parecida com printf, mas há outras.
+print("Uma pizza {} inteira custa ${}".format(pie, price))
+print("Uma pizza " + pie + " inteira custa $" + str(price))
+# você pode ver isso, mas evite; desaprovado
+print("Uma pizza %s inteira custa $%2d" % (pie, price))
+
+[81]
+
+Sintaxe Python
+• Funções
+• Python tem suporte para funções também. Como variáveis, não precisamos especificar o tipo de retorno da função (porque não importa), nem os tipos de dados de quaisquer parâmetros (idem).
+• Todas as funções são apresentadas com a palavra-chave def.
+• Além disso, não há necessidade de principal; o interpretador lê de cima para baixo!
+• Se você deseja definir main ainda assim (e você pode querer!), você deve ter no final do seu código:
+•
+if __name__ == "__main__":
+main()
+
+[87]
+
+Sintaxe Python
+• Objetos
+• Python é uma linguagem de programação orientada a objetos.
+• Um objeto é um tipo de analógico a uma estrutura C.
+
+[93]
+
+Sintaxe Python
+• Objetos
+• As estruturas C contêm vários campos, que também podemos chamar de propriedades.
+• Mas as propriedades em si não podem existir por conta própria.
+struct carro
+{
+int ano;
+char *modelo;
+}
+struct carro herbie;
+ano = 1963;
+modelo = "Beetle"; 
+
+[94]
+
+Sintaxe Python
+• Objetos
+• As estruturas C contêm vários campos, que também podemos chamar de propriedades.
+• Mas as propriedades em si não podem existir por conta própria.
+• Enquanto isso, objetos têm propriedades, mas também métodos, ou funções que são inerentes ao objeto e não significam nada fora dele. Você também define os métodos dentro do objeto.
+• Assim, propriedades e métodos nunca existem por conta própria.
+
+[96]
+
+Sintaxe Python
+• Objetos
+function(object);

@@ -1,0 +1,67 @@
+What if we don't just keep making one dimensional data structures, arrays that go left and right, linked lists that kind of go left to right? What if we actually use a vertical notion too and lay things out more interestingly. What can we gain from this? Well, let me propose that anytime we've seen an array, we can actually re-implement an array, but get the best of both worlds, the best of arrays, the best of linked lists as follows. Here is an array, back from Week 1 or even Week 0 when we were searching behind doors. And here, Week 2, when we were searching behind doors, let's go ahead and note that if we were to do binary search on this looking for some value, as before, many times you look in the middle first. 
+
+And then you decide, do you go left or right? And if you go left or right, you'd look in the middle element over here or the middle element over here. And then what do you do? You go left or right, looking at the middle element over here or over here or over here or over here. 
+
+You know what? Let me just kind of explode this picture because all of this is happening in one dimension. We can actually think of this is happening really in two dimensions. Let me draw my same array, 1, 2, 3, 4, 5, 6, 7, but let me represent it on different levels that's indicative of what's happening. 
+
+I start in the middle. And I go left or I go right. I then go ahead and look at this element. And then I go left or I go right. So it's the same thing, but it's a two-dimensional rendition of what we've been doing for a few weeks whenever we've done binary search. 
+
+Well, you know what this kind of looks like? It kind of looks like a linked list, albeit without the arrows. But you know what, I don't think I want to stitch this together from 1 to 2 to 3 to 4 to 5 to 6 to 7, because that's just going to be a linked list. 
+
+But what if I use my new-found familiarity with pointers, use a few more of them? So I spend more space and stitch this data structure together in two dimensions conceptually. Every node represented here is a rectangle. It doesn't have to have just one pointer. There's nothing stopping me from creating a new struct, a new definition of node that has two pointers. 
+
+Maybe it's called left. Maybe it's called right. Previously, we had just one we called it next. But there's nothing stopping us from creating a fancier structure that actually has two. 
+
+And so we might make it look not like this as before for a linked list, but let's get rid of the next pointer. Let's make a little more room. And let's actually give myself two pointers, left and right. And I claim that this structure now in C could be used to implement the tree that I just described, the family-like tree, more properly called a binary search tree, in the following way. 
+
+This is a binary search tree. One, because every node in the tree has at most two children, hence the bi in binary, meaning maximally two. It has zero children, as like these down here. Or it has maximally two children. Hence, the bi in binary search tree. It's a search tree in the sense that I have taken care with this data to sort things properly. 
+
+Notice the following definition. For any node in the tree, every element to the left is smaller than it. And every element to the right is greater than it. 
+
+That's a recursive definition, because watch, look at this node. Everything to the left of it is smaller. Everything to the right of it is larger. 
+
+Let's look at 6. Everything to the left of it is smaller. Everything to the right of it is larger. So it's recursive in the sense that no matter what node you look at, no matter what rectangle you look at, what I just said correctly is true of both the left child or subtree and the right child or subtree. 
+
+So this is to say if you have a list of numbers, for instance, or a list of anything and you actually store them using nodes that look like this, but conceptually what you're really doing is stitching them together two dimensionally like this, guess what feature we just gain back? What have we just improved? I heard some murmuring over here. 
+
+AUDIENCE: Binary search. 
+
+DAVID MALAN: We've gotten back binary search. So we still have dynamism, like a linked list. We're still using pointers. And suppose we want to add the number 0 or the number 8, you could imagine 0 going over here, 8 going over here. So we could still just plug them in without having to move everything around like we would for an array. But because you're stitching things together with additional arrows wherever they are in memory, so long as you keep track of this data structure, called a tree, with one pointer to the so-called root-- the root being upside down in this world of computer science-- this is the root of this binary search tree, guess what you do if you're looking for the number 7? 
+
+Well, you see 4. You know it's greater than 4. So what do you do? You move to the right, thereby ignoring the other half of this tree, just like the other half of the phone book in Week 0. Once you get to 6, you consider, I'm looking for 7. What do I know? It's got to be to the right. And so you go. 
+
+The height of this tree happens to be logarithmic, for those familiar, log base 2 of n, which is to say I have 8 elements or 7 elements in this tree. But it only takes me 1, 2, 3 steps to find the value. It does not take big O of n, or a linear number of steps. 
+
+And if you want your mind really to be blown here, it turns out this is actually the best application for recursion, which might have felt a little forced previously when we built Mario's pyramid with recursion where you did factorial or product or sum or something like that in section recursively. It turns out that now that we have data structures that exist conceptually in two dimensions that are recursively defined-- and by recursively defined, I mean for any given node, left is smaller, right is bigger, and you can make that statement about any node in the tree-- watch what we can do in terms of implementing binary search. 
+
+If I have here a function called search, whose purpose in life is to return true or false if the number 50 is in the tree. How do you search a tree? Well, it takes as input the tree. More specifically, it takes the address of the tree. More specifically, it takes the address of the root of the tree. 
+
+That is when you want to search a tree, you literally just hand it the address of the very first tip top node called the root. And from there, you can get everywhere else. Just like with the list, we just need the beginning of the list. 
+
+So how do I go about searching a tree? Well, let's consider the easy case first. Suppose the address you're handed is null, what should you do if you're looking for 50, but you're handed the empty address, zeros? 
+
+AUDIENCE: Return false. 
+
+DAVID MALAN: Probably return false, right. If I hand you no tree and I say it's 50 in here, it's an easy answer. No, there's no 50, because there's no tree. So that's our base case, if you recall that nomenclature from our discussion of recursion. You hard code. You type in manually one explicit case that just gets you out of the program. 
+
+Next case, if 50 is less than the tree, follow the arrow to the number field, then what do know? 50 is less than the node you're looking at. What direction do you want to go conceptually? 
+
+AUDIENCE: To the left. 
+
+DAVID MALAN: You want to go to the left. So this line here searches the tree's left child, so to speak, in the family tree sense, the left subtree. 
+
+So if we go back to the picture a moment ago, if I'm looking for 50 in that story-- or let's make it more real, if I'm looking for 1 in the current story, I see that 1 is less than the current node. So I go ahead and just search the left subtree. 
+
+And notice, this is a tree. But so is this if you look at it in isolation. And so is this. And therein lies the recursive opportunity. 
+
+So again here, if 50 is less than the tree's number, then go ahead and search the left. Else if 50 is greater than the tree's current number, search the right. Else logically what must be the case if the tree exists and it's not less than and it's not greater than the number you're looking at? It must equal the number you're looking for, 50, in which case we can return true. 
+
+But you recall perhaps from scratch, we don't really need that explicit case. We can just call it else instead. Any questions then on this use of code? We won't actually run this code. But this is how you can implement recursively an algorithm that is reminiscent of Week 0 searching for Mike Smith in the phone book, this time now searching a data structure that itself is recursive. 
+
+All right, so what do we gain back in terms of running time, in terms of searching a binary search tree. To be clear, what's an upper bound on the running time? We're back to log n, which was the goal. 
+
+And what about inserting into a binary search tree? This one we're going to defer to a higher level CS class, because it turns out you don't want to just go ahead and put 0 over there, and 8 over there, because if you keep doing that, putting smaller and smaller numbers or bigger and bigger numbers, you could imagine your tree getting very lanky, like very tall over here or maybe very tall over here and therefore not nearly as balanced as the tree we drew. 
+
+And so it turns out there are algorithms that let you keep a binary search tree balanced. So even as you add elements to it, you kind of shift things around. You don't remove them in memory. You just update the pointer, so that the data structure itself does not get terribly high. But that too is log n, which means we had arrays, which gave us binary search capabilities in logarithmic time. 
+
+We then introduced the linked list, which gave us dynamism, the ability to grow and, if we want, shrink. But we sacrifice binary search. But if we spend a little more space and use not one pointer for every node, but two, we can actually tip the scales again, spend more space and save time by searching the data structure, this time using something logarithmic.

@@ -1,0 +1,29 @@
+Brian, voici un exercice stressant pour chacun de vous. Et merci beaucoup. Voyons donc si nous ne pouvons pas maintenant formaliser -- n'hésitez pas à vous déplacer de chaque côté. Voyons si nous ne pouvons pas formaliser exactement ce que ces bénévoles ont merveilleusement fait sous la direction de Bonnie pour trier cette liste.
+
+Il s'avère que ce que tout le monde a fait ici porte un nom. C'est un algorithme appelé tri à bulles parce que comme vous le remarquez, le 8 a d'abord formé une sorte de bulle de gauche à droite, puis le 7 a formé une sorte de bulle de gauche à droite. Et au fur et à mesure qu'ils se répétaient, même si nous l'avons fait plus rapidement à la [? fin, ?] [? le ?] des nombres plus grands se sont frayés un chemin jusqu'à ce qu'ils soient au bon endroit.
+
+Donc, en pseudo-code, je dirais que ce que nous avons fait est ceci. Bonnie a demandé à notre public, à une vitesse croissante, de répéter ce qui suit n moins 1 fois. Pourquoi n moins 1 ? Eh bien, si vous avez n personnes et qu'elles se comparent les unes aux autres, vous ne pouvez comparer que n moins 1 personnes si vous avez n personnes.
+
+Donc, elle leur a dit de faire cela n moins 1 fois au total pour i de 0 à n moins 2. À quoi cela fait-il référence ? Donc, ce i est notre indice. C'est donc un peu comme si l'on traitait nos humains comme un tableau. Qu'avons-nous fait ? Si la ième personne, en commençant par 0, et la ième personne plus 1 sont dans le désordre, que leur a-t-elle dit de faire ? Échanger de place, en quelque sorte.
+
+Donc ça a l'air assez technique. Mais ce n'est en réalité qu'une façon de pseudo-code de distiller en anglais plus succinct, avec quelques chiffres, ce que Bonnie demandait à chacun de faire. Elle a dit de faire ce qui suit n moins 1 fois. C'est pourquoi cela a duré plusieurs rotations, de plus en plus vite. Elle a ensuite traité la première personne comme le crochet 0, la personne suivante comme le crochet 1, le crochet 2, comme un tableau, bien que d'humains.
+
+Et puis elle les a comparés côte à côte, appelant une personne i et la personne à côté i plus 1. Et s'ils étaient dans le désordre, ils étaient échangés encore et encore jusqu'à ce que cet algorithme s'exécute. Jusqu'à ce que finalement, le tout soit trié, espérons-le. Combien de fois cela a-t-il -- combien d'étapes cela a-t-il pris ? Combien de temps cela a-t-il pris ?
+
+Quel est le temps d'exécution en notation grand O du tri à bulles ? Eh bien, la boucle externe prend n moins 1 étapes. La boucle interne prend également n moins 1 étapes parce qu'elle va de 0 à n moins 2. Et si nous allons de l'avant et multiplions cela, à la manière de la feuille, nous avons n au carré moins 1n moins 1n plus 1. Si nous combinons des termes semblables, nous avons maintenant n au carré moins 2n plus 1.
+
+Mais à ce stade, ce qui compte finalement, c'est que le terme d'ordre le plus élevé, le n au carré, domine en fin de compte. Plus n est grand, plus l'impact de n au carré est important. Et donc un informaticien dirait que le tri à bulles est de l'ordre de n au carré.
+
+Donc, si nous ajoutons à notre liste de l'avant les bornes supérieures de l'algorithme, nous pouvons maintenant placer le tri à bulles tout en haut, malheureusement, ce qui veut dire que trier des nombres avec le tri à bulles est apparemment beaucoup plus coûteux que la recherche linéaire ou la recherche binaire. Et cela invite donc un peu à la question, alors, avec Eric et [? Nizari ?] quand ils sont venus plus tôt. Oui, l'algorithme de [? Nizari ?] était meilleur. Mais c'était mieux dans le sens où il s'exécutait plus rapidement. Mais qu'a-t-il présupposé, pour être clair ?
+
+PUBLIC : [INAUDIBLE]
+
+INTERVENANT 1 : Que les nombres étaient triés. Et il est donc un peu trompeur de dire que la recherche binaire est meilleure que la recherche linéaire. Parce que s'il vous faut beaucoup de temps pour trier ces éléments pour que, alors, [? Nizari ?] puisse aller de l'avant et exécuter la recherche binaire, cela pourrait être un lavage, ou même un résultat négatif net. Cela va donc vraiment dépendre de, eh bien, est-ce que vous recherchez plus souvent, plus d'une fois ? Faites-vous des recherches très nombreuses et très fréquentes, de sorte que cela vaut la peine de les trier une fois et de bénéficier ensuite à long terme d'un code beaucoup plus rapide ?
+
+Et qu'en est-il d'oméga pour le tri à bulles ? Le code du tri à bulles, encore une fois, ressemblait à ceci. Et franchement, il ne tient pas vraiment compte de bonnes entrées, n'est-ce pas ? Comme, la meilleure entrée possible pour n'importe quel algorithme de tri est très probablement qu'il soit déjà trié pour vous, n'est-ce pas ? Parce que s'il est déjà trié, il est probable qu'il n'y ait pas de travail à faire. Quelle chance ce serait !
+
+Mais le tri à bulles, tel qu'il est défini, est un peu stupide, n'est-ce pas ? Il ne dit pas que si c'est déjà trié, quittez. Il fait tout simplement aveuglément les n moins 1 fois suivantes, puis fait quelque chose de l'ordre de n moins 2 fois à l'intérieur. Quelle est donc la borne inférieure du temps d'exécution du tri à bulles, même si vous avez de la chance et que tout est déjà trié pour vous ?
+
+PUBLIC : [? n au carré. ?]
+
+INTERVENANT 1 : C'est toujours au carré parce que cela va toujours prendre autant d'étapes qu'avant. Et donc le tri à bulles a comme borne inférieure, sans doute, un oméga de n au carré.

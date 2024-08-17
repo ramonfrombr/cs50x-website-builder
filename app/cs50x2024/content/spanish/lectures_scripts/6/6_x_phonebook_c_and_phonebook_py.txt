@@ -1,0 +1,47 @@
+Muy bien. Prosigamos y abramos un ejemplo más elegante o escribamos uno, que se llamará phonebook.py, su objetivo es representar la noción de una guía telefónica. De momento, voy a seguir importando exit desde sys para poder finalizar si fallamos. 
+
+Voy a seguir y definiré un grupo de personas. Pero en lugar de poner personas en una lista como antes, ahora quiero utilizar algo como una hash table. Una hash table, recordemos, tiene entradas y salidas como claves y valores. 
+
+O de manera más general, esto es lo que comenzaremos a llamar diccionario. Un diccionario, tal como en el mundo humano, tiene muchas palabras con muchas definiciones. Una guía telefónica es básicamente un diccionario. Tiene muchos nombres y muchos números. Esos son las claves y los valores, respectivamente. 
+
+De modo que un dict en Python toma claves como entrada y produce valores como salida. Y habitualmente, quienes inventaron Python las implementan mediante una hash table. Así que la hash table que todos escribieron es ahora los bloques de construcción para estas estructuras de datos o estructuras de datos abstractas que ahora llamaremos, por ejemplo, un diccionario de manera más general. 
+
+De modo que las llaves solo están de vuelta en el contexto de definir qué es un dict o diccionario. Seguiré y definiré una clave llamada Emma y voy a darle el mismo número telefónico que le dimos anteriormente. Observa los dos puntos. Observa las comillas dobles cerca de cada valor. 
+
+Voy a seguir y añadiré a Rodrigo a la guía telefónica. Y su número será 617-555-0101 como en el ejemplo anterior. Voy a seguir y añadiré a Brian allí también, separado con dos puntos. 555-0102. Y me añadiré con 617-555-0103. 
+
+Esto se ve un poco diferente. Las llaves dicen, oye, Python. Aquí viene un diccionario. Un diccionario tiene claves y valores, al igual que un diccionario en el mundo humano tiene claves que son palabras y valores que son definiciones. 
+
+El teléfono es la misma idea. Los nombres y números son nuestras claves y valores. Estoy separando cada clave y valor con dos puntos y estoy separando esos pares con una coma. 
+
+De acuerdo. Entonces, ¿por qué es esto útil? Esta es ahora la forma más simple de representar una guía telefónica o incluso un diccionario con palabras y definiciones en Python. Ahora puedo hacer una pregunta como si Emma está en people. Bien, voy a seguir y obtener su número. Voy a decir Found, people, bracket, Emma, utilizando algo de sintaxis más reciente. Pero volveré a esto en un momento. 
+
+Y comencemos con esto. Esto no va a funcionar hasta que lo convierta en una cadena f, pero veamos por qué funciona esto. Guía telefónica de Python.py ¿Voy a encontrar a Emma? En efecto. Encontré su número. Si cambio esto por mí mismo, David, y lo guardo y lo vuelvo a ejecutar, oh. Aquí también tienes que cambiar esto. David. Lo siento. Ahora también obtengo mi número. 
+
+Entonces, ¿qué está pasando aquí? Esta es la forma Pythonic de simplemente preguntar, ¿hay un valor en una estructura de datos? No tienes que utilizar bucles for. No tienes que recorrer cadenas o listas vinculadas o algo similar. Puedes simplemente hacer la pregunta como en la línea 10 aquí. 
+
+Esta sintaxis es algo nueva. Pero lo bueno de los diccionarios en Python es que si el diccionario se llama people, y sabes que es un diccionario solo por estas llaves. Si el diccionario se llama people, puedes tratarlo como un array cuyos índices no son los números 0, 1, 2, 3, sino palabras. 
+
+Por lo que otro nombre para un diccionario y programación se llama arreglo asociativo, que es casi un mejor nombre, porque hace que suene como un array. Pero es asociativo en el sentido de que puedes asociar palabras con valores, no solo números con valores. 
+
+Por lo que un diccionario, para aclararlo, son pares clave-valor. Sin embargo, las claves son cadenas. Y los valores son lo que quieras. En este caso, sus números telefónicos. Pero podrían ser definiciones de palabras reales en inglés en un diccionario. 
+
+De acuerdo. Y puedo seguir y ordenar esto también. Puedo cambiar esto de nuevo a Emma. Y si la encuentro, puedo seguir y decir exit 0. Y si no la encuentro, podría simplemente decir Print no encontrado y exit 1. Pero las salidas no son estrictamente necesarias. El programa se seguirá cerrando. Sí. 
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Muy buena pregunta y esa es una sutileza que no mencioné explícitamente. Las comillas simples son necesarias aquí porque Python se confundiría si tuviera comillas externas aquí y comillas externas aquí al principio y al final de la línea 11. Por lo tanto, estoy utilizando comillas simples deliberadamente, lo que está bien en Python. Puedes utilizar comillas dobles o simples. 
+
+A diferencia de en C, donde las dobles eran cadenas y las simples eran caracteres, no hay caracteres en Python. Por lo tanto, puedes utilizar ambas para cualquiera de los propósitos. Sí. 
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Muy buena pregunta. En el pset 5, implementaste una hash table, que es la noción de diccionario de nivel inferior. Lo que quiero decir con eso es que almacenaste palabras en el diccionario. Pero a veces tenías colisiones y, por eso, utilizas las listas vinculadas. 
+
+Está bien. Pero tu función de comprobación, recuerda, en pset 5 solo devuelve verdadero o falso. ¿La palabra está en el diccionario o no? La función de comprobación no reveló ninguna información sobre cuánto tiempo llevó encontrar esa palabra o qué tan abajo en la cadena estaba realmente. 
+
+Un diccionario es igualmente una abstracción similar en espíritu a tu función de comprobación. Sí. Técnicamente, bajo el capó, Emma y Rodrigo, por alguna razón, podrían asignarse al mismo depósito, como los depósitos en el escenario. 
+
+Pero todo lo que te importa es el valor. El propósito de la vida del diccionario es encontrar el valor de Emma o el valor de Rodrigo para ti y devolverlo lo más rápido posible. El hecho de que conduzca a una lista vinculada, tal vez, es un detalle de implementación que no se me da a conocer a mí, el programador que solo quiere almacenar claves y valores. 
+
+Y esa es la diferencia entre un tipo de dato abstracto como un diccionario y una estructura de datos real como una tabla hash. Utilizas lo último para implementar lo primero.

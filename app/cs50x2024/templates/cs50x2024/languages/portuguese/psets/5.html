@@ -1,0 +1,64 @@
+{% extends 'cs50x2024/layout.html' %}
+{% block content %}
+  <h1 id="problema-set-5">Conjunto de problemas 5</h1>
+
+  <div class="alert alert-warning" data-alert="warning" role="alert">
+    <p>A colaboração em conjuntos de problemas não é permitida, exceto na medida em que você pode pedir ajuda a colegas e outros, desde que essa ajuda não reduza a outra pessoa fazendo seu trabalho para você, de acordo com a política do curso sobre
+      <a href="{{ url_for('cs50x2024.honesty') }}">honestidade acadêmica</a>.</p>
+
+    <p>A equipe realiza auditorias aleatórias de envios para o CS50x. Alunos em violação desta política serão removidos do curso. Alunos que já concluíram o CS50x, se forem pegos violando, terão seus certificados do CS50 revogados permanentemente.</p>
+  </div>
+
+  <h2 id="o-que-fazer">O que fazer</h2>
+
+  <ol>
+    <li>Faça login em
+      <a href="https://cs50.dev">cs50.dev</a>
+      usando sua conta do GitHub</li>
+    <li>Execute
+      <code class="language-plaintext highlighter-rouge">update50</code>
+      na janela do terminal do seu codespace para garantir que seu codespace está atualizado e, quando solicitado, clique em
+      <strong>Reconstruir agora</strong>
+    </li>
+    <li>Envie
+      <a href="{{ url_for('cs50x2024.psets.pset5.inheritance') }}">Herança</a>
+    </li>
+    <li>Envie
+      <a href="{{ url_for('cs50x2024.psets.pset5.speller') }}">Verificador ortográfico</a>
+    </li>
+  </ol>
+
+  <h2 id="quando-fazer-isso">Quando fazer isso</h2>
+
+  <p>Até
+    <a data-local="2024-12-31T23:59:00-05:00" href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>.</p>
+
+  <h2 id="conselhos">Conselhos</h2>
+
+  <ul>
+    <li data-marker="*">Experimente qualquer um dos programas de David de
+      <a href="{{ url_for('cs50x2024.weeks.week5') }}">Semana 5</a>.</li>
+    <li data-marker="*">
+      <p>Se você vir algum erro ao compilar seu código com
+        <code class="language-plaintext highlighter-rouge">make</code>, concentre-se primeiro em corrigir o primeiro erro que você vê, rolando para cima conforme necessário. Se não tiver certeza do que significa, tente perguntar
+        <code class="language-plaintext highlighter-rouge">help50</code>
+        para obter ajuda. Por exemplo, se tentar compilar
+        <code class="language-plaintext highlighter-rouge">speller</code>, e</p>
+
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>make speller
+</code></pre>
+        </div>
+      </div>
+      <p>gerar erros, tente executar</p>
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>help50 make speller
+</code></pre>
+        </div>
+      </div>
+      <p>em vez disso!</p>
+    </li>
+  </ul>
+{% endblock %}

@@ -1,0 +1,15 @@
+Ahora, resulta que con algunos algoritmos, y prometo que esta es la última notación griega del curso. Esta es una teta mayúscula en griego. Y resulta que si un algoritmo tiene un límite superior y un límite inferior que son idénticos, puedes describirlo usando, solo para notación abreviada, teta. 
+
+Por lo tanto, hemos visto dos algoritmos que se ajustan a este criterio. La ordenación por selección fue bastante mala. Fue una gran O de n al cuadrado. Y era omega de n al cuadrado porque seguía buscando ciegamente los elementos más pequeños una y otra vez. 
+
+Merge sort está en teta de n log n por la misma razón. Simplemente realiza el mismo algoritmo una y otra vez, sin importar si la entrada ya está ordenada o completamente desordenada. Pero en general, n log n es una característica bastante poderosa y convincente. 
+
+Así que déjame continuar y dirigir nuestra atención, finalmente, a una pequeña visualización que también podría ayudar a que esto se entienda. Lo que estás a punto de ver es un montón de barras verticales, la parte superior de las cuales son 100 barras de izquierda a derecha. Barras pequeñas equivalen a número pequeño. Barra grande equivale a número grande. 
+
+Y el primer algoritmo aquí arriba es la ordenación por selección. El segundo algoritmo aquí abajo es la ordenación por burbuja. Y el algoritmo del medio es merge sort. Entonces, si te parece, terminaremos con esta nota hoy. Mediremos el tiempo de estos algoritmos con estas entradas simples y veremos cuánto mejor, afirmo, es merge sort, es decir, cuán grande es la diferencia entre n al cuadrado y n log n, es decir, cuando diseñas algoritmos, hacer que las cosas sean correctas no es el objetivo final. También es hacer que estén bien diseñados. 
+
+[REPRODUCCIÓN DE MÚSICA] 
+
+Eso es todo para C50 y merge sort. Te veremos la próxima vez. 
+
+[APLAUSOS]

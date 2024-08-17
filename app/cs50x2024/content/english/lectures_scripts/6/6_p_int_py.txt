@@ -1,0 +1,13 @@
+All right. We are back. And let's now look back at where we started this conversation of comparing C against Python. And recall that one of the earliest examples we did today involved strings and using the CS50 library. But the CS50 library-- we're going to very quickly take away, indeed, just after a few problems that you implement in problem set 6. But we'll see now just how easily that can be done. 
+
+It turns out in Python, you don't need to use get_string or the CS50 library itself, because there actually exists a function quite simply called input. And indeed, I can get rid of get_string, replace it with this function called input, and actually store the return value in s. And for the most part, that will behave identically to get_string. 
+
+If I go ahead and run Python on string.py, I can go ahead and type my name in. And it still works as expected. But I need to be mindful now that input, by definition, in Python's documentation, always returns a string, which means that if I'm going to get rid of get_int and maybe get_float, another function you might want to use for problem set 6, and use input instead, it's no longer sufficient to just call input and store the answer in a variable called age. Why? Even though I've not specified the type of age on line 1, what apparently will its type be as I've just defined? 
+
+AUDIENCE: It's going to be a string. 
+
+DAVID MALAN: It's going to be a string. Input, by definition in Python, returns a string. So if you want to convert it to an integer, you need to know how. And the simplest way to do it is quite simply to convert it with a function called int. So this is actually very similar to casting in C. But it's a little backwards. 
+
+In C, you would say parentheses int close parentheses. In Python, you say int open paren, whatever it is you want to convert, and then close parentheses. You call it as an actual function. But this is going to be a little fragile. It turns out that if you just blindly pass the user's input to this int function, if it doesn't look like an int, bad things are going to happen. You're going to see some kind of trace back or error message on the screen. 
+
+That's why, for this first week, we used the CS50 library and get_int and get_string and get_float just because it's a little harder using the library to accidentally mistreat input. But you don't need to use this. And you needn't-- you won't use it after just a week or so more time. 

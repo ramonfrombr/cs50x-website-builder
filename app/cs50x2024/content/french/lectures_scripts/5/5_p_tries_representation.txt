@@ -1,0 +1,37 @@
+Alors, à quoi cela ressemble-t-il ? C'est un peu fort, car nous avons besoin de nous laisser de la place sur le tableau avec beaucoup de mémoire. Un "trie" est un arbre dont chacun des nœuds est essentiellement un tableau.
+
+Remarquez donc le modèle ici. Au fil du temps, les informaticiens ont été plutôt intelligents en prenant cette idée, cette idée, en les fusionnant et en créant une structure de données monstre, mais cela vous permet de gagner du temps ou de l'espace.
+
+Donc, ce tableau tout en haut représente les racines de ce trie, qui est encore une fois un arbre dont les nœuds sont des tableaux. Et notez que le tableau est de taille 26, pour des raisons de discussion, de A à Z, ou de 0 à 25.
+
+Voici comment fonctionne un trie. Si vous voulez stocker un nom dans un trie, ce que vous faites, dans ce cas, est d'examiner chaque lettre du mot en question. Donc, pour "Harry", ce serait H-a-r-r-y. Nous ne regardons pas seulement la première, la deuxième et la troisième. Nous les regardons toutes.
+
+Et ce que nous faisons, c'est ceci. Supposons que la première lettre du nom de la personne ou de son étiquette de nom ou du mot plus généralement soit un H. Vous allez de l'avant et allez à cet index. Et s'il n'y a pas de nœud enfant, s'il n'y a pas encore d'arbre en dessous, une autre branche, si vous voulez, vous allouez un autre nœud. Et un autre nœud signifie simplement un autre tableau. Et donc nous avons dessiné deux tableaux sur le tableau.
+
+Celui-ci a maintenant la lettre A surlignée. Toutes les lettres sont techniquement là, car c'est bien sûr de 0 à 25. Mais nous ne mettons en évidence que les lettres qui nous intéressent pour cet exemple.
+
+Voici H-a-g. On dirait donc que la première étiquette de nom que j'essaie d'installer dans cette structure de données est Hagrid. Notez maintenant que g est à l'intérieur de ce tableau. Je veux maintenant accéder à r pour Hagrid. Cela me donne un autre tableau. Maintenant i, maintenant d. d est la fin de son nom. Je vais donc simplement le colorier en vert, ou je peux utiliser un indicateur booléen dans le code C qui indique simplement que le nom de quelqu'un se termine ici.
+
+Donc, remarquez, j'ai implicitement stocké le nom Hagrid maintenant dans cette structure de données en stockant un nœud, c'est-à-dire un tableau, pour chaque lettre de son nom. Mais il y a cette légère efficacité ici parce qu'il y a d'autres personnes dans cette histoire que Hagrid dont les noms sont des préfixes ou partagent des préfixes communs.
+
+Donc, par exemple, supposons que je veuille installer Harry dans cette structure de données. Il est H-a-r-r-y. Et cela me donne donc quelques nœuds supplémentaires. Et si je continue maintenant et installe Hermione dans celui-ci, remarquez que j'ai maintenant encore plus de nœuds dans l'arbre. Mais certains d'entre eux sont partagés. Si vous commencez tout en haut et regardez le H, remarquez que Hagrid, Harry et Hermione partagent au moins au moins un nœud en commun.
+
+Maintenant, qu'est-ce qui est cool à ce sujet en fin de compte ? Quel est donc le temps d'exécution de la recherche de quelqu'un dans cette structure de données s'il y a déjà n personnes dedans ? Pour le moment, n est égal à 3 car il y a trois personnes dedans, même s'il y a beaucoup de nœuds. Mais quel est le temps d'exécution pour la recherche de cette structure de données pour voir si Harry a déjà pris son étiquette de nom ? Hermione a-t-elle pris la sienne ? Hagrid a-t-il pris le sien ?
+
+Eh bien, combien d'étapes faut-il pour trouver Harry, Hermione ou Hagrid dans cette structure de données ? Pour Harry, c'est H-a-r-r-y. Donc, c'est au maximum cinq étapes. Pour Hagrid, c'est H-a-g-r-i-d. C'est au maximum six étapes. Et H-e-r-m-i-o-n-e, 8 étapes au total.
+
+Et il est probable que si nous lisons les livres, il y aura une limite supérieure à la longueur du nom de quelqu'un. Je ne sais pas ce que c'est. C'est probablement 20 caractères. Peut-être 30 si c'est très long. Mais il y a une valeur fixe. Les noms des gens ne grandissent pas en longueur chaque année. Il y a une limite supérieure difficile.
+
+Et donc techniquement, s'il ne faut que cinq étapes ou six étapes ou huit étapes pour trouver Harry ou Hagrid ou Harry ou Hermione, c'est techniquement un temps constant ou, comme nous l'avons dit, un Big O de 1. Nous pouvons donc effectivement atteindre, vraiment pour rechercher cette structure des données, pour insérer cette structure de données, vraiment ce que nous appelons big O de k où k est une constante.
+
+Mais une constante est la même chose, asymptotiquement, selon notre discussion de la semaine 3, que big O de 1. Ce sont effectivement des temps constants, car pour trouver Harry, vous ne regardez que H-a-r-r-y. Peu importe s'il y a déjà 1 million d'autres caractères dans ce trie. Peu importe s'il y a Hermione, Hagrid et tout le monde des sept livres dans la structure de données, car les seuls nœuds que vous regardez sont ceux représentant H-a-r-r-y.
+
+Et c'est une chose puissante. Tous les autres algorithmes dont nous avons discuté jusqu'à présent, certainement pour la recherche et le tri, ont en quelque sorte été ralentis par le nombre d'autres noms ou nombres dans la structure de données. Ce n'est pas le cas de celui-ci.
+
+Cependant, il y a un prix à payer. Quel semble être le prix que nous payons pour gagner ce temps d'exécution vraiment faible ?
+
+PUBLIC : La mémoire.
+
+DAVID MALAN : La mémoire. Je veux dire, mon Dieu, ça rentre à peine sur la diapositive. Et ce ne sont que trois noms. Vous dépensez 26 montants de mémoire pour stocker un caractère.
+
+Maintenant, il y a quelques optimisations. Au fil du temps, si vous insérez beaucoup de noms, certains de ces nœuds seront partagés. Mais c'est une structure de données très large, très dense, pour ainsi dire, car elle utilise tellement de mémoire pour vous donner ce temps d'exécution super étonnant de temps théoriquement constant. Encore une fois, ce thème de compromis va persister dans les semaines restantes du semestre où pour gagner une ressource, nous allons devoir en dépenser une autre. Il y a donc un trie.

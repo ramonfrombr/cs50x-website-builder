@@ -1,0 +1,33 @@
+[1]
+
+Definición de tipos de datos personalizados
+• La palabra clave de C typedef proporciona una forma de crear un nombre abreviado o reescrito para los tipos de datos.
+• La idea básica es definir primero un tipo de forma normal, luego asignarle otro alias.
+
+[2]
+
+Definición de tipos de datos personalizados
+typedef <nombre antiguo> <nombre nuevo>;
+
+[9]
+
+Definición de tipos de datos personalizados
+struct car
+{
+int year;
+char model[10];
+char plate[7];
+int odometer;
+double engine_size;
+};
+typedef struct car car_t;
+
+[16]
+
+Definición de tipos de datos personalizados
+// declaración de variable
+car_t mycar;
+// acceso al campo
+mycar.year = 2011;
+strcpy(mycar.plate, “CS50”);
+mycar.odometer = 50505;

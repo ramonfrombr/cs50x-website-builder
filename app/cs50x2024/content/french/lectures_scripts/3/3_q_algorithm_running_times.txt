@@ -1,0 +1,33 @@
+Bon sang, on a donc deux mauvaises solutions à un problème. Peut-on faire mieux ? Eh bien, je vous propose de revisiter le tri par bulles. Le tri par bulles, encore une fois, vous fait simplement permuter des éléments adjacents encore et encore et encore jusqu'à ce que tout soit trié. Mais quand voudrez-vous arrêter de faire des allers-retours dans la liste ? Par exemple, quand Bonnie aurait-elle pu dire : oh, ça suffit, j'ai fini ?
+
+Si elle parcourt la liste en regardant chaque personne, i et i plus 1 l'une à côté de l'autre, quand pourrait-elle conclure qu'elle a fini de trier ? Oui ?
+
+AUDIENCE : [INAUDIBLE]
+
+INTERVENANT 1 : Oui, si elle posait une question, ou si elle faisait une passe en parcourant les volontaires et qu'elle n'avait rien à faire. Elle n'a pas besoin de continuer à faire du travail encore et encore simplement parce que l'algorithme a dit de le répéter n moins 1 fois. On veut en quelque sorte avoir une condition ici, ou un moyen de court-circuiter l'algorithme, de sorte qu'on s'arrête une fois qu'on perd vraiment notre temps.
+
+Et le tri par bulles s'y prête parce qu'on peut modifier la formulation de notre pseudo-code comme suit : répéter jusqu'à ce qu'il n'y ait plus d'échanges. Donc encore une fois, il est opportun que ces nombres soient déjà triés. Essayons le tri par bulles dessus. Alors Bonnie aurait probablement dit : comparez 1 et 2. Ils ne sont pas désordonnés. On n'a donc pas besoin de permuter.
+
+2 et 3, 3 et 4, 4 et 5, 5 et 6, 6 et 7, 7 et 8, elle n'a évidemment fait aucun échange. Il serait stupide pour elle de recommencer simplement parce que l'algorithme a dit de faire ça n moins 1 fois, parce qu'elle va encore obtenir non, non, non, non, comme réponse. Ainsi, en disant répéter jusqu'à ce qu'il n'y ait plus d'échanges, elle peut abandonner cet algorithme plus tôt et avoir pris combien d'étapes dans le meilleur des cas ?
+
+AUDIENCE : [INAUDIBLE]
+
+INTERVENANT 1 : Oui, techniquement n moins 1, n'est-ce pas ? Parce que si ce sont n éléments, ou 8, vous pouvez comparer sept paires, 1, 2, 3, 4, 5, 6, 7, donc n moins 1. Elle pourrait donc, dans le meilleur des cas, avoir une borne inférieure pour le temps d'exécution du tri par sélection, du tri par bulles, non plus de n au carré, mais maintenant de n. Il semblerait donc qu'avec un peu plus d'intelligence, on puisse réellement bénéficier en termes de temps d'exécution de ces algorithmes.
+
+Eh bien, voyons si on ne peut pas les voir d'un point de vue légèrement différent maintenant en faisant cette visualisation. Je vais ouvrir une visualisation graphique de chacun de ces algorithmes à tour de rôle. Donc ce que vous avez ici est un tableau de nombres, chacun étant représenté par une barre verticale. Une barre courte est un petit nombre, comme 0, 1, 2. Une barre haute est un grand nombre, comme 99 ou 100 ou n'importe quoi entre les deux.
+
+Il s'agit d'un outil de visualisation en ligne. Et nous allons le lier sur le site Web du cours afin que nous puissions essayer ces algorithmes. Essayons le tri par bulles, par exemple. Je vais le démarrer assez lentement. Mais vous pouvez voir surlignés en rose deux éléments comparés côte à côte, i et i plus 1 étant échangés s'ils ne sont pas dans l'ordre. C'est donc la version graphique des instructions de Bonnie à nos volontaires.
+
+Et maintenant, remarquez que le tri par bulles tire son nom de ce qui arrive à l'élément apparemment le plus grand. Il remonte en quelque sorte jusqu'au bout. Les éléments plus petits progressent. Comme un 15 et un 12 qui viennent de bouger un peu vers la gauche. Mais ils n'ont pas fini. Ils ne sont pas encore à leur place. Mais les gros éléments commencent à remonter jusqu'à la droite.
+
+Maintenant, ça devient un peu fastidieux assez rapidement. Je vais donc accélérer la vitesse de l'animation. Et si on le regarde maintenant, même algorithme, il tourne juste plus vite, on voit vraiment que les éléments les plus gros s'accumulent à droite. C'est donc identique à nos huit volontaires. C'est juste que chaque humain est maintenant représenté par une barre. Et vous pouvez vraiment voir les plus grands nombres remonter jusqu'en haut.
+
+Mais vous pouvez voir peut-être plus visuellement qu'il y a beaucoup de travail ici. Bonnie prononçait beaucoup de phrases. Elle faisait beaucoup d'allers-retours, parce que, comme le suggère cette barre rose, elle va et vient, faisant beaucoup de travail encore et encore et encore. Et voyons voir. Ça va commencer à accélérer maintenant parce qu'on approche de la deuxième moitié.
+
+Mais comme vous pouvez le voir, en fin de compte, c'est un peu ce que donne n au carré, n'est-ce pas ? Je suis à nouveau à court de mots. Et je pourrais en dire encore. Mais c'est vraiment juste du décrochage parce que l'algorithme est un peu lent. n au carré n'est pas une bonne limite supérieure pour le temps d'exécution, surtout lorsque vos [? éléments ?] sont triés au hasard.
+
+Essayons donc un autre. Faisons, dans ce cas, le tri par sélection. Je vais ré-randomiser les nombres comme nous avons commencé et maintenant faire le tri par sélection. Et je commence à la vitesse la plus rapide. Et ça marche un peu différemment. Remarquez que la ligne rose balaie de gauche à droite, à la recherche du plus petit élément. Et quand elle le trouve, elle surligne la petite barre et la déplace complètement à gauche.
+
+Alors que les gros éléments du tri par bulles remontaient vers la droite, le tri par sélection saisit beaucoup plus catégoriquement le plus petit élément et le met à sa place l'un après l'autre. Cela donne donc une sensation différente. Mais là aussi, je vais devoir improviser pas mal parce que ça prend du temps. Et vous pouvez voir que les barres roses vont vraiment et viennent, faisant pas mal de travail, pas mal de travail, pas mal de travail. Et maintenant enfin, c'est fini.
+
+Donc dans un instant, on va jeter un œil à des solutions fondamentalement plus rapides et voir pourquoi n au carré est en fait petit. Mais d'abord, faisons notre pause de cinq minutes avec des mini cupcakes dehors.

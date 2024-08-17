@@ -1,0 +1,15 @@
+Maintenant, il s'avère qu'avec certains algorithmes (et je promets que c'est la dernière notation grecque du cours), il s'agit d'un thêta majuscule en grec. Et il s'avère que si un algorithme a une borne supérieure et une borne inférieure identiques, vous pouvez le décrire en utilisant, juste pour une notation abrégée, thêta.
+
+Nous avons donc vu deux algorithmes qui correspondent à ces critères. Le tri par sélection était assez mauvais. C'était un grand O de n au carré. Et c'était un oméga de n au carré parce qu'il continuait à chercher aveuglément les plus petits éléments encore et encore.
+
+Le tri fusion est dans le thêta de n log n pour la même raison. Il exécute aveuglément le même algorithme encore et encore, peu importe si l'entrée est déjà triée ou complètement non triée. Mais dans l'ensemble, n log n est une fonctionnalité assez puissante et convaincante.
+
+Alors, permettez-moi d'aller de l'avant et de tourner notre attention, enfin, vers une petite visualisation qui pourrait également aider à faire comprendre cela. Ce que vous êtes sur le point de voir est un tas de barres verticales, dont le sommet correspond à 100 barres de gauche à droite. Les petites barres correspondent à un petit nombre. Une grande barre correspond à un grand nombre.
+
+Et le premier algorithme ici est le tri par sélection. Le deuxième algorithme ici est le tri par bulles. Et l'algorithme du milieu est le tri par fusion. Donc, si vous le voulez bien, nous terminerons sur cette note aujourd'hui. Nous chronométrerons ces algorithmes avec ces entrées simples et nous verrons à quel point le tri par fusion est, à mon avis, bien meilleur, c'est-à-dire quelle différence fait n au carré par rapport à n log n, c'est-à-dire que lorsque vous concevez des algorithmes, rendre les choses correctes n'est pas le but ultime. C'est aussi pour les rendre bien conçus.
+
+[MUSIQUE]
+
+C'est tout pour C50 et le tri par fusion. Nous vous reverrons la prochaine fois.
+
+[APPLAUDISSEMENTS]

@@ -1,0 +1,41 @@
+Alors examinons maintenant ce qu'une chaîne de caractères est vraiment et nous finirons par conclure aujourd'hui avec quelques problèmes spécifiques à ce domaine. En effet, avec le deuxième ensemble de problèmes, vous explorerez des problèmes du monde réel, comme évaluer dans quelle mesure un texte est lisible, quel niveau scolaire pourrait avoir un certain livre ou un autre, et deux, mettre en œuvre une notion de cryptographie, l'art de brouiller l'information. Et il suffit de dire que, dans ces deux domaines, la lecture de textes et la cryptographie, les chaînes de caractères vont être l'ingrédient dont nous avons besoin. Examinons donc maintenant quelques exemples impliquant de plus en plus de chaînes de caractères.
+
+Je vais aller de l'avant et créer un programme ici appelé string.c, juste pour pouvoir jouer avec cette notion. Je vais aller de l'avant et inclure CS50.h. Je vais aller de l'avant et inclure standard Io.h. Je vais réparer cela ici--int main void. Et maintenant, permettez-moi d'aller de l'avant et de jouer avec quelques chaînes de caractères pendant un moment. Permettez-moi d'aller de l'avant et d'obtenir une chaîne de caractères de l'utilisateur. Alors obtenez une chaîne de caractères et demandez leur entrée. J'essaie de taper trop vite maintenant.
+
+Alors laissez-moi aller de l'avant et demander à l'utilisateur son entrée via get string, et stocker la réponse dans une variable appelée s. Ensuite, permettez-moi d'annoncer que leur sortie sera la suivante. Et ce que je veux faire, c'est simplement imprimer les caractères individuels dans cette chaîne de caractères. Donc, pour int i get to zero, je ne sais pas encore quelle est ma condition, donc je reviendrai à cela--i plus plus. Je vais aller de l'avant et imprimer le caractère individuel à l'emplacement i-th dans cette chaîne de caractères, et je vais terminer tout ce programme avec une nouvelle ligne.
+
+J'ai donc encore un blanc à remplir, ces points d'interrogation, mais je veux finalement juste prendre une chaîne de caractères en entrée, puis l'imprimer en sortie, mais sans utiliser %s. Je vais utiliser %c, un caractère à la fois. Donc, ma question ici est quelle question pourrais-je poser à chaque itération avant de décider si j'ai imprimé ou non chaque caractère de la chaîne de caractères ? Oui ?
+
+AUDIENCE : Longueur de la chaîne de caractères.
+
+DAVID MALAN : Longueur de la chaîne de caractères. Je pourrais donc dire tant que i est inférieur à la longueur de la chaîne de caractères. Quoi d'autre ?
+
+AUDIENCE : Le caractère nul.
+
+DAVID MALAN : Ou si c'est égal au caractère nul. Essayons les deux. Donc, si je sais comment les chaînes de caractères sont représentées, je peux simplement dire tant que s bracket i n'est pas égal à \0. Maintenant, c'est une syntaxe un peu bizarre, car même s'il s'agit de deux caractères, je dois toujours utiliser des guillemets simples, car ces deux caractères, tout comme \n, représentent une idée, pas deux caractères littéraux. Mais il s'agit d'une traduction littérale de ce dont nous venons de discuter. Initialisez i à zéro, incrémentez à chaque itération, mais à chaque fois que vous faites cela, vérifiez si le i-ème caractère de la chaîne de caractères est égal au caractère nul spécial, et si c'est le cas, c'est tout pour la boucle. Nous voulons seulement itérer dans cette boucle tant que ce n'est pas ce \0 spécial.
+
+Alors, si je vais de l'avant maintenant et enregistre ce fichier, crée string et exécute dot slash string et que mon entrée par exemple est Emma, Entrée, je vais voir littéralement son nom en retour. C'est donc un peu ma façon de réimplémenter l'idée de %s, mais en utilisant uniquement %c. Mais j'ai aimé votre suggestion. Pourquoi n'utilisons-nous pas la chaîne de caractères, la longueur de la chaîne de caractères, plutôt que ce détail d'implémentation de bas niveau ? Ce serait vraiment bien si je pouvais simplement dire tant que i est inférieur à la longueur de s ; alors, comment exprimer cela ? Eh bien, il s'avère qu'il y a un autre fichier appelé string.h à l'intérieur duquel se trouve un tas de fonctions liées aux chaînes de caractères que je pourrais aimer utiliser.
+
+L'un d'eux est une fonction appelée str leng, en abrégé, ce qui signifie la longueur d'une chaîne de caractères. Je peux donc suivre votre suggestion et dire que je ne me soucie pas de la façon dont une chaîne de caractères est implémentée. Je veux dire, mon Dieu, le but ultime de la programmation est trop abstraite sur ces détails d'implémentation de niveau inférieur. Laissez-moi simplement demander à l'ordinateur quelle est votre longueur, afin de ne pas compter au-delà. Permettez-moi d'aller de l'avant maintenant et de faire string, dot slash string. Tapons à nouveau Emma. Et le résultat est le même.
+
+Mais maintenant, c'est peut-être correct, mais je pense que ce n'est pas très bien conçu. Je suis un peu inefficace et je parie que je peux faire mieux. Que voyez-vous ?
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID MALAN : Allez-y.
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID MALAN : Oui, exactement. Souvenez-vous que dans une boucle for, la condition au milieu, entre les points-virgules, est une question, une expression booléenne, que vous demandez encore et encore et encore. Et il s'avère qu'appeler une fonction n'est pas sans frais. Cela peut prendre une fraction de seconde, car les ordinateurs sont super rapides, mais pourquoi posez-vous la même question encore et encore et encore. La réponse ne va jamais changer, car le nom d'Emma ne grandit ni ne rétrécit, c'est juste Emma. Je peux donc résoudre ce problème de plusieurs façons.
+
+Je pourrais faire quelque chose comme ça. Int n get str leng of s, et puis je pourrais simplement brancher n. Mon programme est tout aussi correct, mais il est un peu mieux conçu maintenant parce que je pose la question de la longueur de la chaîne de caractères une fois, je mémorise la réponse, puis j'utilise cette réponse encore et encore. Maintenant, oui, techniquement, je gaspille de l'espace maintenant, parce que j'ai maintenant une autre variable appelée n. Alors quelque chose doit donner. Je vais utiliser plus d'espace ou peut-être plus de temps, mais c'est un thème sur lequel nous reviendrons la semaine prochaine surtout.
+
+Mais il s'avère qu'il y a aussi une syntaxe spéciale pour cela. Si vous savez dans une boucle que vous voulez poser une question une fois et vous souvenir de la réponse, vous pouvez en fait simplement dire ceci et tout faire en une seule ligne. Ce n'est ni mieux ni pire, c'est juste un peu plus succinct, stylistiquement. Cela a le même effet que d'initialiser i à zéro et n à la longueur de la chaîne de caractères, puis de ne plus jamais poser cette question. Je peux donc sauvegarder cela. Je peux faire string. Je peux ensuite faire dot slash string, et je vais voir, je l'espère, Emma, encore Emma. Donc une troisième et dernière version de cette idée, mais un peu mieux conçue. Oui ?
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID MALAN : Dans ce cas, c'est OK. Ce serait une convention courante. Lorsque vous faites quelque chose en particulier pour minimiser le nombre de questions que vous posez, cela est acceptable, à condition que cela reste assez serré. Mais là aussi, des gens raisonnables peuvent ne pas être d'accord. Oui ?
+
+AUDIENCE : Le prototype de la chaîne de caractères dans la bibliothèque est-il [INAUDIBLE] ?
+
+DAVID MALAN : Très bonne question. Le prototype de la chaîne de caractères, sa déclaration, se trouve dans string.h. J'obtiendrais l'un de ces messages d'erreur énigmatiques si j'oubliais d'inclure string.h, car clang ne saurait pas que str leng existe réellement.

@@ -1,0 +1,72 @@
+[1]
+
+Magic Numbers
+● Some of the programs we’ve written in CS50 have some weird numbers thrown in there.
+● The height of Mario’s pyramid is capped at 23, for example.
+● What do those numbers mean? If someone looks at your program, is the meaning of 23 immediately obvious?
+● Directly writing constants into our code is sometimes referred to as using magic numbers.
+
+[2]
+
+Magic Numbers
+● We’ve got a magic number in here. Do you see what it is?
+● More importantly, do you see a potential problem here? Particularly if this function is just one of many in a suite of programs that manipulate decks of cards.
+card deal_cards(deck name)
+{
+for (int i = 0; i < 52; i++)
+{
+// deal the card
+}
+}
+
+[3]
+
+Magic Numbers
+● This fixes one problem, but introduces another.
+● Even if globally declared, what if some other function in our suite inadvertently manipulates deck_size. Could spell trouble.
+card deal_cards(deck name)
+{
+int deck_size = 52;
+for (int i = 0; i < deck_size; i++)
+{
+// deal the card
+}
+}
+
+[4]
+
+Magic Numbers
+● C provides a preprocessor directive (also called a macro) for creating symbolic constants.
+● At the time your program is compiled, #define goes through your code and replaces NAME with REPLACEMENT.
+● If #include is similar to copy/paste, then #define is analogous to find/replace.
+
+#define NAME REPLACEMENT
+
+[5]
+
+Magic Numbers
+● C provides a preprocessor directive (also called a macro) for creating symbolic constants.
+● At the time your program is compiled, #define goes through your code and replaces PI with 3.14159265.
+● If #include is similar to copy/paste, then #define is analogous to find/replace.
+#define PI 3.14159265
+
+[6]
+
+Magic Numbers
+● C provides a preprocessor directive (also called a macro) for creating symbolic constants.
+● At the time your program is compiled, #define goes through your code and replaces COURSE with “CS50”.
+● If #include is similar to copy/paste, then #define is analogous to find/replace.
+#define COURSE “CS50”
+
+[7]
+
+Magic Numbers
+#define DECKSIZE 52
+card deal_cards(deck name)
+{
+for (int i = 0; i < DECKSIZE; i++)
+{
+// deal the card
+}
+}
+

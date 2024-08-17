@@ -1,0 +1,21 @@
+De acuerdo. Alguien preguntó durante el descanso sobre los argumentos de la línea de comandos, las cosas que puedes escribir después de la palabra en el mensaje. Bueno, es algo extraño con Python, porque estás ejecutando un programa llamado Python cuyo argumento de la línea de comandos es el nombre de tu programa. Pero aún puedes proporcionar argumentos de línea de comandos a tu propio programa después del nombre del archivo. Así que está algo desplazado por uno. Pero puedes, sin embargo, hacer esto.
+
+Así que déjame seguir adelante y abrir desde la semana 2, digamos, argv1.c. Y esto es de hace unas semanas. Y el propósito de este programa en C era solo imprimir cada argumento de línea de comandos uno a la vez. En Python, hoy, voy a llamar a esto argv.py. Y esto es un poco diferente. Si quieres acceder a los argumentos de la línea de comandos, no puedes simplemente usar argv y argc porque no hay int main void, o específicamente, int main argc, string argv, como había en c. Eso se fue.
+
+Pero argv y los argumentos de línea de comandos en general están expuestos a ti en otra biblioteca. Pasa a llamarse sys para sistema. Y puedes literalmente importar argv si quieres. Así que es algo diferente, pero la misma idea exacta.
+
+Y si quiero imprimir cada uno de esos, puedo decir for i in range: ahora quiero decir argc. Mi objetivo a mano, de nuevo, según la izquierda, es solo imprimir cada argumento de línea de comandos y terminar con eso.
+
+Pero no tengo argc. Y es posible que quieras hacer esto, pero eso no existe. Pero está bien. ¿Cómo crees que podría obtener el número de argumentos en argv? ¿El número de cadenas en argv?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID MALAN: Sí, sigue tus instintos.
+
+Hoy solo hemos visto unos pocos bloques de construcción. Pero si argv es una lista de todos los argumentos de la línea de comandos, es lógico pensar que la longitud de esa lista sea lo mismo que argc. En c, la longitud de algo y algo se mantenían separados en variables separadas. En Python, solo necesitas la cosa en sí porque puedes preguntarle ¿cuál es tu longitud?
+
+Así que si sigo adelante y hago esto, ahora puedo seguir adelante e imprimir argv del corchete i. Y veamos. Python of argv.py. Entrar. No se imprime nada excepto el nombre del programa.
+
+Pero ¿qué pasa si escribo foo? ¿Qué pasa si escribo bar? ¿Qué pasa si escribo baz? Estas son solo palabras que los científicos informáticos utilizan cuando necesitan un marcador de posición como xyz. De hecho, está imprimiendo todas las palabras después del nombre de mi programa.
+
+Por supuesto, no necesito meterme en problemas. Como antes, si quieres iterar sobre todas las palabras en una lista for i y / o, digamos, for arg in argv, simplemente imprímela. Voila. Pitón. Mucho más rápido para hacer lo mismo. Así que se parece mucho más al inglés aunque es un poco escueto, pero el resultado final será el mismo aquí.

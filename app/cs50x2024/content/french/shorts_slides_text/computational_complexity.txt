@@ -1,0 +1,319 @@
+[0]
+
+Complexité algorithmique
+
+[1]
+
+Complexité algorithmique
+• Pour utiliser de manière optimale nos ressources informatiques, il est important de posséder les compétences nécessaires pour analyser la complexité des algorithmes, afin de savoir de quelles ressources ces algorithmes ont besoin.
+• Être capable d'analyser un algorithme nous permet d'avoir une idée de la façon dont il évolue lorsque nous lui fournissons des ensembles de données de plus en plus volumineux.
+
+[2]
+
+Complexité algorithmique
+• Lorsque nous parlons de la complexité d'un algorithme, nous faisons généralement référence au scénario du pire des cas.
+• Nous appelons cela O.
+• Nous nous intéressons parfois également au scénario du meilleur des cas (également connu sous le nom de Ω)
+• Dans CS50, nous laisserons de côté l'analyse rigoureuse et nous concentrerons davantage sur le raisonnement en termes de complexité avec du bon sens.
+
+[3]
+
+Complexité algorithmique
+• Qu'est-ce qu'un ensemble de données ?
+• Ce qui a le plus de sens dans le contexte.
+• Nous pouvons mesurer un algorithme en fonction de la façon dont il traite ces entrées. Appelons cette mesure f(n).
+• Nous ne nous soucions pas vraiment de ce qu'est précisément f(n). Nous ne nous intéressons qu'à sa tendance, qui est dictée par son terme de plus haut degré.
+
+[4]
+
+Complexité algorithmique
+n
+f(n) = n3
+f(n) = n3 + n2
+f(n) = n3 – 8n2 + 20n
+1
+1
+2
+13
+10
+1 000
+1 100
+400
+1 000
+1 000 000 000
+1 001 000 000
+992 020 000
+1 000 000
+1,0 x 1018
+1,000001 x 1018
+9,99992 x 1017
+
+[5]
+
+Complexité algorithmique
+n
+f(n) = n3
+f(n) = n3 + n2
+f(n) = n3 – 8n2 + 20n
+1
+1
+2
+13
+10
+1 000
+1 100
+400
+1 000
+1 000 000 000
+1 001 000 000
+992 020 000
+1 000 000
+1,0 x 1018
+1,000001 x 1018
+9,99992 x 1017
+
+[6]
+
+Complexité algorithmique
+n
+f(n) = n3
+f(n) = n3 + n2
+f(n) = n3 – 8n2 + 20n
+1
+1
+2
+13
+10
+1 000
+1 100
+400
+1 000
+1 000 000 000
+1 001 000 000
+992 020 000
+1 000 000
+1,0 x 1018
+1,000001 x 1018
+9,99992 x 1017
+
+[7]
+
+Complexité algorithmique
+n
+f(n) = n3
+f(n) = n3 + n2
+f(n) = n3 – 8n2 + 20n
+1
+1
+2
+13
+10
+1 000
+1 100
+400
+1 000
+1 000 000 000
+1 001 000 000
+992 020 000
+1 000 000
+1,0 x 1018
+1,000001 x 1018
+9,99992 x 1017
+
+[8]
+
+Complexité algorithmique
+n
+f(n) = n3
+f(n) = n3 + n2
+f(n) = n3 – 8n2 + 20n
+1
+1
+2
+13
+10
+1 000
+1 100
+400
+1 000
+1 000 000 000
+1 001 000 000
+992 020 000
+1 000 000
+1,0 x 1018
+1,000001 x 1018
+9,99992 x 1017
+
+[9]
+
+Complexité algorithmique
+O(1)
+temps constant
+O(log n)
+temps logarithmique
+O(n)
+temps linéaire
+O(n log n)
+temps log-linéaire
+O(n2)
+temps quadratique
+O(nc)
+temps polynomial
+O(cn)
+temps exponentiel
+O(n!)
+temps factoriel
+O(∞)
+temps infini
+
+[10]
+
+Complexité algorithmique
+• O(1)
+• Prend toujours une seule opération dans le pire des cas.
+int four_for_you(int array[1000])
+{
+return 4;
+}
+int add_two_nums(int a, int b)
+{
+return a + b;
+}
+
+[11]
+
+Complexité algorithmique
+• O(n)
+• Prend toujours n opérations dans le pire des cas.
+2
+5
+4
+1
+3
+
+[12]
+
+Complexité algorithmique
+• O(n)
+• Prend toujours n opérations dans le pire des cas.
+2
+5
+4
+1
+3
+
+[13]
+
+Complexité algorithmique
+• O(n)
+• Prend toujours n opérations dans le pire des cas.
+1
+2
+3
+4
+5
+
+[14]
+
+Complexité algorithmique
+• O(n)
+• Prend toujours n opérations dans le pire des cas.
+1
+2
+3
+4
+5
+
+[15]
+
+Complexité algorithmique
+• O(n)
+• Prend toujours n opérations dans le pire des cas.
+2
+6
+1
+3
+4
+5
+
+[16]
+
+Complexité algorithmique
+• O(n)
+• Prend toujours n opérations dans le pire des cas.
+2
+6
+1
+3
+4
+5
+
+[17]
+
+Complexité algorithmique
+• O(n)
+• Prend toujours n opérations dans le pire des cas.
+3
+1
+6
+7
+4
+2
+5
+
+[18]
+
+Complexité algorithmique
+• O(n)
+• Prend toujours n opérations dans le pire des cas.
+3
+1
+6
+7
+4
+2
+5
+
+[19]
+
+Complexité algorithmique
+• Combien de temps cela prend ?
+for (int j = 0; j < m; j++)
+{
+// corps de la boucle qui s'exécute en O(1)
+}
+
+[20]
+
+Complexité algorithmique
+• Combien de temps cela prend ?
+for (int j = 0; j < m; j++)
+{
+// corps de la boucle qui s'exécute en O(1)
+}
+O(m)
+
+[21]
+
+Complexité algorithmique
+• Combien de temps cela prend ?
+for (int j = 0; j < p; j++)
+{
+for (int k = 0; k < p; k++)
+{
+// corps de la boucle qui s'exécute en O(1)
+}
+}
+
+[22]
+
+Complexité algorithmique
+• Combien de temps cela prend ?
+for (int j = 0; j < p; j++)
+{
+for (int k = 0; k < p; k++)
+{
+// corps de la boucle qui s'exécute en O(1)
+}
+}
+O(p2)

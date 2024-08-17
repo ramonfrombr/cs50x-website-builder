@@ -1,0 +1,41 @@
+[0]
+
+Résumé des algorithmes
+
+[1]
+
+Résumé des algorithmes
+• Il existe de nombreux types d’algorithmes de recherche et de tri, et nous n’effleurerons que la surface en CS50.
+• Voyons si nous pouvons réduire chaque algorithme à ses éléments fondamentaux, afin que vous puissiez vous souvenir des informations les plus importantes pour chaque élément.
+
+[7]
+
+Résumé des algorithmes
+Nom de l’algorithme
+Concept de base
+O
+Ω
+Tri par sélection
+Trouver le plus petit élément non trié dans un tableau et l’échanger avec le premier élément non trié de ce tableau.
+n2
+n2
+Tri par bulles
+Échanger des paires adjacentes d’éléments s’ils ne sont pas dans l’ordre, en « faisant remonter » efficacement les éléments les plus grands vers la droite et les plus petits vers la gauche.
+n2
+n
+Tri par insertion
+Parcourir une fois le tableau de gauche à droite, en décalant les éléments si nécessaire pour insérer chaque élément à son emplacement correct.
+n2
+n
+Tri fusion
+Diviser le tableau complet en sous-tableaux, puis fusionner à nouveau ces sous-tableaux dans le bon ordre.
+n log n
+n log n
+Recherche linéaire
+Itérer sur le tableau de gauche à droite, en essayant de trouver l’élément cible.
+n
+1
+Recherche dichotomique
+Étant donné un tableau trié, diviser pour régner en éliminant systématiquement la moitié des éléments restants dans la recherche de l’élément cible.
+log n
+1

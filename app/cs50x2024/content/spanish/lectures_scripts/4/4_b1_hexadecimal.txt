@@ -1,0 +1,39 @@
+[MÚSICA SONANDO] DAVID J. MALAN: Muy bien, esto es CS50. Y este es el día en que nos quitamos los proverbiales ruedines, es decir, la biblioteca CS50. Recordarás que la semana pasada nos enfocamos en algoritmos, comenzamos a centrarnos en muchas comparaciones y muchos intercambios. Lo hicimos bastante algorítmicamente, bastante conceptualmente la semana pasada. Pero hoy vamos a enfocarnos en hacer eso un poco más mecánicamente, un poco más metodológicamente. Y pensé que sería más fácil quitarse los ruedines, esperemos que no sea una metáfora para hoy. OK.
+
+Así que [RISAS] lo primero que haremos es aprender a contar de una manera ligeramente diferente. Recordarás en la Semana 0 que ya hicimos esto, donde introdujimos no solo el sistema decimal humano, con el que todos están familiarizados, sino también el binario. Resulta que hay otros sistemas de base donde no solo usas potencias de 10 o 2, sino que también usas otros sistemas de base por completo.
+
+Y esto es útil porque hoy nos centraremos realmente en la memoria de la computadora y más tarde, en los archivos, la creación real y la edición de archivos, como las imágenes que podrías tener en tus propios teléfonos o computadoras. Resulta muy útil poder direccionar la memoria dentro de nuestras computadoras o teléfonos, es decir, asignar un número, un identificador único, a cada byte para que podamos simplemente hablar de dónde están las cosas en la memoria.
+
+Ahora podrías pensar que haríamos 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, pero resulta que eso no es realmente una convención humana. No hay nada malo en esto. Es correcto, pero hoy verás una sintaxis ligeramente diferente donde contamos de 0 a 1, a 2, a 3, a 4, a 5, a 6, a 7, a 8, a 9, pero en el mundo no decimal, no binario, sino hexadecimal, hex que significa 16. ¿Puedes contar realmente más allá del nueve?
+
+Está la letra A, B, C, D, E y F. ¿Por qué? Al usar estas letras alfabéticas individuales, ¿puedes contar efectivamente no solo de 0 a 9, usando dígitos individuales, sino también 10, 11, 12, 13, 14, 15, donde F representa 15?
+
+Y así introduzco esto porque veremos este patrón a lo largo de hoy y en las próximas semanas en programas donde la computadora simplemente mostrará números no en decimal, no en binario, sino a veces en hexadecimal. Pero veremos por qué eso es en un momento.
+
+De hecho, en binario teníamos los dígitos 0 y 1, en decimal teníamos de 0 a 9, en hexadecimal, para recapitular, tenemos de 0 a F, donde nuevamente, F es 15. Entonces, ¿cómo funciona esto en realidad?
+
+Solo un rápido recorrido, esta fue nuestra notación en binario. Y tenía ocho bits 0 aquí, bit que significa dígito binario. Y según las columnas allí, teníamos potencias de 2, o si lo multiplicamos, el lugar de los unos aquí, el lugar de los 128 allí. Esto, por supuesto, si haces la matemática, ¿qué número es en decimal?
+
+Así que solo 0, ¿verdad?, si multiplicas las columnas por los números en las que están. ¿Pero qué pasa con esto? Si cambio todos esos 0s a 1s, ¿cuál fue el máximo que podríamos contar en binario si tuviéramos ocho bits?
+
+AUDIENCIA: 255
+
+DAVID J. MALAN: Sí, 255 fue el máximo que pudimos contar. Podrías decir 256, pero de nuevo, si empiezas a contar en 0, gastas uno de esos números como 0. Así que 255 es el máximo que puedes contar con ocho bits. Y podríamos hacer la matemática si nos importara. 128 veces 1 más 64 veces 1, y así sucesivamente. Pero permíteme decirte que eso es en efecto 255.
+
+En decimal, y de hecho en decimal, representaríamos las columnas como potencias de 10 o lugar de los unos, lugar de los dieces, lugar de los cientos, y así sucesivamente. Así que todo esto es de la Semana 0. Resulta, sin embargo, que hay otra forma de representar 255 en decimal usando hexadecimal, excepto que ahora en lugar de potencias de 2 o potencias de 10, simplemente vamos a usar potencias de 16.
+
+Y resulta que esto es conveniente por razones relacionadas con la informática. Así que la columna más a la derecha será nuestra 16 a la 0 o el lugar de los unos. La segunda columna será nuestro lugar de los 16. Y recuerda, F, representa individualmente el 15 en decimal. Así que podemos contar de manera bastante similar.
+
+Entonces, esto en hexadecimal simplemente será 0. 16 veces 0, más 1 vez 0, por supuesto es 0. Esto, por supuesto, fácil uno, ¿qué número es?
+
+AUDIENCIA: 1
+
+DAVID J. MALAN: 1 en decimal. Esto va a ser 2, 3, 4, 5, 6, 7, 8, 9. Y mientras en el rol decimal quisieras decir 10, o 1, 0, aquí realmente podemos contar un poco más alto a A, B, C, D, E, F, y eso representa 15. ¿Por qué? 16 veces 0, más 1 vez F, que de nuevo, F es 15. Entonces 1 veces F, o 15, te da 15.
+
+Ahora, ¿cómo cuentas tan alto como 16? Bueno, probablemente ya lo puedas imaginar, ¿verdad? De alguna manera llevas el 1, al igual que en decimal y binario. Así que en hexadecimal, 1, 0 es el número 16. Y aquí es donde solo tienes que tener cuidado. Ya no deberías decir 10 nunca más. Ese es un número decimal. Esto es 1, 0 en hexadecimal.
+
+Pero podemos contar más alto. Si esto es 16, esto es 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31. Y una vez que necesites 32, eso requerirá otro dígito, por así decirlo. Así que a un nivel muy bajo. Y ninguno de nosotros realmente en el personal piensa en hexadecimal, simplemente verás cosas en hexadecimal. Y todo esto es para decir que se puede convertir de nuevo al decimal más familiar o a cualquier otro sistema también.
+
+Más alto que eso iríamos 2, 0, que por supuesto, es 16 veces 2, que es 32, más 0. Así que resulta que si tienes cuatro 1s y cuatro 1s que se pueden representar como FF, has visto FF y probablemente 00 y otros caracteres alfabéticos antes.
+
+¿Cuántos de ustedes han hecho diseño web usando HTML, CSS? Entonces, al menos un tercio aproximadamente de la clase. Y para aquellos que no están familiarizados, llegaremos a eso si desean seguir esa pista más adelante en el semestre, pero recuerden RGB desde la Semana 0. Rojo, verde, azul se refiere a cómo las computadoras pueden representar los colores de cada píxel usando cierta cantidad de rojo, cierta cantidad de verde, cierta cantidad de azul.

@@ -1,0 +1,76 @@
+**[1]**
+
+CSS
+• CSS (Cascading Style Sheets) é outra linguagem que usamos ao construir sites.
+• Se o HTML é usado para organizar o conteúdo que queremos exibir em nossas páginas, então o CSS é a ferramenta que usamos para personalizar a aparência e a sensação do nosso site.
+• Como o HTML, o CSS não é uma linguagem de programação; ele carece de lógica. Em vez disso, é uma linguagem de estilo, e sua sintaxe descreve como determinados atributos dos elementos HTML devem ser modificados.
+
+**[6]**
+
+CSS
+• Uma folha de estilo é construída identificando um seletor (no último exemplo, corpo) e então uma chave aberta para indicar o início da folha de estilo para aquele seletor.
+• Entre as chaves, você coloca uma lista de pares de valor-chave de propriedades de estilo e valores para aquelas propriedades, com cada declaração terminando com um ponto e vírgula.
+• Em seguida, uma chave de fechamento finaliza a folha de estilo.
+
+**[7]**
+
+CSS
+• Propriedades CSS comuns
+• borda: estilo cor largura
+• Aplica uma borda da cor, largura e estilo especificados (por exemplo, pontilhado, tracejado, sólido, sulco…).
+• cor do fundo: [palavra-chave | #<hex de 6 dígitos>]
+• Define a cor do fundo. Algumas cores são predefinidas no CSS.
+• cor: [palavra-chave | #<hex de 6 dígitos>]
+• Define a cor do primeiro plano (geralmente texto).
+
+**[8]**
+
+CSS
+• Propriedades CSS comuns
+• tamanho da fonte: [tamanho absoluto | tamanho relativo]
+• Pode usar palavras-chave (extrapequeno, médio...), pontos fixos (10pt, 12pt...), porcentagem (80%, 120%) ou base no tamanho da fonte mais recente (menor, maior).
+• família de fonte: [nome da fonte | nome genérico]
+• Certas fontes “seguras para web” são predefinidas no CSS.
+• alinhamento do texto: [esquerda | direita | centro | justificado]
+• Para exibir texto.
+
+**[9]**
+
+CSS
+• Seus seletores não precisam se aplicar apenas a categorias de tag HTML. Também existem seletores de ID e seletores de classe.
+• Um seletor de tag será aplicado a todos os elementos com uma determinada tag HTML.
+h2
+{
+fonte da família: vezes;
+cor: #fefefe;
+}
+
+**[10]**
+
+CSS
+• Seus seletores não precisam se aplicar apenas a categorias de tag HTML. Também existem seletores de ID e seletores de classe.
+• Um seletor de ID será aplicado apenas a uma tag HTML com um identificador único.
+#único
+{
+borda: 4px tracejado azul;
+alinhamento do texto: direita;
+}
+
+**[11]**
+
+CSS
+• Seus seletores não precisam se aplicar apenas a categorias de tag HTML. Também existem seletores de ID e seletores de classe.
+• Um seletor de classe será aplicado apenas àquelas tags HTML que receberam atributos de “classe” idênticos.
+.alunos
+{
+cor de fundo: amarelo;
+opacidade: 0,7;
+}
+
+**[12]**
+
+CSS
+• Folhas de estilo podem ser escritas diretamente no seu HTML.
+• Coloque-as dentro de tags <style> no cabeçalho de sua página.
+• As folhas de estilo também podem ser escritas como arquivos CSS separados e depois vinculadas em seu documento.
+• Use tags <link> no cabeçalho de sua página para fazer isso.

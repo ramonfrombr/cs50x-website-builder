@@ -1,0 +1,27 @@
+Pero usemos nuestros últimos minutos juntos para ver un último recurso visual, uno hecho por algunos de nuestros otros amigos en línea que armaron una animación que cuenta la historia de las diferencias entre las pilas y las colas personificadas de la siguiente manera.
+
+[REPRODUCCIÓN DEL VÍDEO]
+
+NARRADOR: Érase una vez un tipo llamado Jack. Cuando se trataba de hacer amigos, Jack no tenía el don de gentes. Así que Jack fue a hablar con el tipo más popular que conocía. Se acercó a Lou y le preguntó, ¿qué hago?
+
+Lou vio que su amigo estaba realmente angustiado. Bueno, Lou comenzó, sólo mira cómo estás vestido. ¿No tienes ropa con un estilo diferente?
+
+Sí, dijo Jack, claro que sí. Ven a mi casa y te los mostraré.
+
+Así que se fueron a casa de Jack. Y Jack le mostró a Lou la caja donde guardaba todas sus camisas, pantalones y calcetines.
+
+Lou dijo, veo que tienes toda tu ropa en una pila. ¿Por qué no usas otros de vez en cuando?
+
+Jack dijo, bueno, cuando me quito los calcetines, los lavo y los guardo en la caja. Luego llega la mañana siguiente y me levanto. Voy a la caja y saco los que están en la parte superior.
+
+Lou rápidamente se dio cuenta del problema de Jack. Guardaba ropa, CD y libros en una pila. Cuando buscaba algo para leer o para ponerse, elegía el libro o la ropa interior de arriba. Luego, cuando terminaba, lo volvía a poner. Lo volvía a poner encima de la pila.
+
+Sé la solución, dijo Lou triunfalmente. Necesitas aprender a empezar a usar una cola. Lou tomó la ropa de Jack y la colgó en un armario. Y cuando vació la caja, simplemente la tiró.
+
+Luego dijo, ahora Jack, al final del día, pon tu ropa a la izquierda cuando la guardes. Entonces, mañana por la mañana, cuando veas el sol brillar, saca tu ropa de la derecha, del final de la fila. ¿No lo ves, dijo Lou, será tan agradable? Te pondrás todo una vez antes de volver a ponerte algo.
+
+Y con todo en colas en su armario y estantería, Jack empezó a sentirse bastante seguro de sí mismo, todo gracias a Lou y su maravillosa cola.
+
+[FIN DE LA REPRODUCCIÓN]
+
+DAVID MALAN: Muy bien, eso es todo por CS50. Nos vemos la próxima vez.

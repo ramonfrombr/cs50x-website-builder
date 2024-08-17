@@ -1,0 +1,35 @@
+Muy bien. Así que hagamos esto un poco más visual. Así que si esto es de nuevo la memoria de mi computadora, permítanme continuar y sacar la diapositiva de antes. Y el objetivo en cuestión es visualizar realmente estas dos líneas de código. Dame una variable llamada n y almacena en ella 50 -- como en la semana 1 --, entonces también dame una variable llamada p y almacena en ella la dirección de n. Eso es ahora en la semana 4. ¿Cómo se ve esto?
+
+Bien, la memoria de mi computadora. Vayamos y pongamos n de nuevo en la pantalla. Y n podría estar en algún lugar por ahí arbitrariamente en la memoria. Y se llama n, el valor es 50. Técnicamente, ese 50 está en algún lugar. Y digamos arbitrariamente para fines de discusión, digamos que su dirección es 0x 12345678, así que en algún lugar arbitrario.
+
+¿Cómo se ve p en esta imagen? Bien, p es una variable, lo que significa que es un montón de bits que pueden almacenar información. Y propongamos que estén aquí en el medio. Esta variable se llama p. ¿Qué valor está almacenando p? Está almacenando literalmente 0x12345678, que es de nuevo, la dirección del valor n. Así que eso es todo lo que está pasando aquí.
+
+Pero honestamente, esto se está volviendo demasiado básico. E incluso mis ojos se están poniendo vidriosos mientras empezamos a hablar de estos detalles básicos. Resulta que los punteros se prestan a la abstracción. Y de hecho, ya podemos empezar a hacer eso.
+
+Centrémonos ahora en ausencia de memoria, sólo en estos dos valores. Este gran rectángulo aquí representa una variable llamada p, que almacena una dirección. Este rectángulo aquí representa otra variable llamada n que almacena el número 50. Técnicamente hablando, realmente no quiero preocuparme de cuál es la dirección de n. Sólo quiero que sepas que puedo acceder a ella.
+
+Y lo que un científico informático haría típicamente es no hablar nunca de direcciones específicas --ciertamente nunca las escribiría como lo he hecho hasta ahora--, sino que, en su lugar, simplemente dibujaría literalmente una flecha que dice conceptualmente que esta variable p apunta al número 50. Y podemos empezar muy rápidamente a alejarnos de las direcciones reales en cuestión.
+
+Y de hecho, podemos visualizar esto incluso un poco metafóricamente. Así que, por ejemplo, aquí hay, por ejemplo, un buzón. Y supongamos que esta es la dirección 123. ¿Qué hay en la dirección 123? Bueno, es una variable de tipo int, llamada n, que parece estar almacenando el número 50. ¿Verdad? Vimos estas letras -- estos números la semana pasada. Así que aquí está el número 50, que es un entero dentro de esta variable, hoy, representado como un buzón en lugar de una taquilla.
+
+Bien, supongamos que este buzón aquí no es n, sino que supongamos que es p. Y resulta ser una dirección 456. Pero ¿A quién le importa realmente? Si esta variable p es un puntero a un entero, es decir, a ese de ahí, cuando abra esta puerta, ¿qué voy a encontrar? Bueno, espero encontrar el equivalente -- lo recogimos en el Coop antes-- el equivalente de un puntero conceptual que dice que el número n está ahí.
+
+Pero, ¿qué es lo que hay realmente dentro de este buzón, a un nivel más bajo, si esa variable n está en la posición 0x123? ¿Qué hay probablemente dentro de este buzón?
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID J. MALAN: Sí, la dirección, efectivamente, 123. Así que es una especie de mapa del tesoro, por así decirlo. Oh, tengo que ir a 123 para obtener este valor. Oh, el entero en cuestión es en efecto 50. Y esa es la diferencia fundamental. Este es el int que se encuentra dentro de esta variable de tipo int. Esta es la dirección que es un puntero que se encuentra en esta otra variable, p, pero que está conceptualmente, simplemente apuntando de una variable a otra, dando así cualquier tipo de migajas conceptuales.
+
+Y veremos -- francamente, en una semana -- lo increíblemente poderoso que es. Cuando puedes tener un trozo de memoria apuntando a otro, apuntando a otro, apuntando a otro, puedes empezar a construir estructuras de datos muy sofisticadas, como las llaman, cosas como árboles genealógicos, y listas, y otras estructuras de datos de las que quizás hayas oído hablar. O incluso si no lo has hecho, estos serán los fundamentos la próxima semana de todos los algoritmos más elegantes de hoy en día utilizados por, ciertamente los Googles, y los Facebooks, y los Microsofts del mundo para gestionar grandes conjuntos de datos. Ahí es donde vamos la próxima semana, en términos de aplicación.
+
+¿Así que preguntas sobre esa representación? Sí, en medio.
+
+PÚBLICO: ¿Significa eso que tu memoria tiene que ser el doble de grande?
+
+DAVID J. MALAN: Lo siento, ¿podrías decirlo una vez más?
+
+PÚBLICO: ¿Quiere decir que la memoria tiene que ser el doble de grande para almacenar punteros?
+
+DAVID J. MALAN: Ah, muy buena pregunta. ¿Es el caso de que tus punteros necesitan ser el doble de grandes? No necesariamente, sólo que, así es la vida hoy en día. En la mayoría de las Mac y PC modernas, los punteros utilizan 64 bits -- el equivalente de un long, si recuerdas esa breve discusión en la semana 1. Así que dibujé deliberadamente mi puntero en la pantalla aquí como ocupando 8 bytes o 64 bits.
+
+He dibujado deliberadamente mi entero n ocupando 4 bytes o 32 bits. Esa es la convención hoy en día en el hardware moderno. Pero no es necesariamente el caso. Francamente, no pude encontrar un buzón más grande en Home Depot, así que fuimos con dos idénticos de diferente color. Así que la metáfora es imperfecta.

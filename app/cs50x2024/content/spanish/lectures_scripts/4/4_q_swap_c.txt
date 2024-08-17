@@ -1,0 +1,29 @@
+Por lo tanto, en términos gráficos, lo que realmente quiero hacer es esto. Si vuelvo a intentarlo, me adelantaré y reinicializaré main para que x e y sean iguales a 1 y 2. Ahora llamaré a swap. Pero lo que realmente quiero hacer, usando fotos esta vez, es que a apunte a x y b a y. No quiero que sean iguales a x e y porque ahora puedo seguir un poco las migas de pan o la idea de las cañerías y la escalera, cualquier metáfora que te funcione. Puedes ir de a a x, puedes ir de b a y, y hacer el cambio allí.
+
+Por lo tanto, el código que realmente voy a usar ahora parece un poco aterrador pero simplemente se remonta a esos primeros principios desde el principio de hoy. Necesito poner, lamentablemente, algunos asteriscos por todas partes aquí. Pero veamos por qué. Primero, déjenme retroceder un momento y proponer que el código swap que voy a usar ahora no está en no swap dot c sino en un programa llamado swap dot c.
+
+Entonces, en swap dot C, tengo casi el mismo código, excepto esto. En primer lugar, en la línea 13, ya no estoy pasando un x e y, estoy pasando la dirección de x y la dirección de y. Ese fue el detalle clave de hoy temprano cuando presentamos el ampersand por primera vez. Entonces, esto significa, aquí está la dirección de x, la dirección de y. Es como proporcionar un mapa para intercambiar para que pueda ir allí.
+
+Desafortunadamente, la sintaxis para definir una función que acepta direcciones es un poco críptica pero el nombre de la función, como swap, es el tipo de puntero y el tipo de puntero. Entonces, int Star a significa, acepto la dirección de un int y lo llamo a. También acepto la dirección de otro int y lo llamo b. Eso es todo lo que significa la estrella en este contexto. Es un puntero a un int. Es un puntero a un int, tanto b como a.
+
+Aquí abajo se ve un poco aterrador pero es exactamente lo mismo. ¿Qué significa star a? Bueno, estrella significa ir a esa dirección. Entonces, star a significa seguir la flecha a lo que sea que esté apuntando a. ¿Y a qué estaba apuntando a? Estaba apuntando a x. Entonces, esto significa ir a la dirección en a y eso llegará, eso te llevará a x, cuyo valor creo que es 1. Y eso va a almacenar el número 1 en temp.
+
+La segunda línea de código significa ir a b. Entonces, si sigues la dirección en b, ¿a dónde te lleva? Debería llevarte a lo que llamamos y. Y esa y era un 2. Y star a significa ir a la dirección en a y poner lo que sea que hubiera en la dirección en b allí también. Y luego, por último, sigue adelante y toma temp, que es solo el número uno que reclamo, y sigue adelante y ponlo en la dirección en b.
+
+Es difícil ver esto en código. Así que, en cambio, visualicémoslo. En cambio, si regreso aquí a estas tres líneas de código, aquí ahora hay una versión correcta. La primera línea de código aquí dice ir a, lo que sea, ir a la dirección en a y almacenarlo en temp. Entonces, en un momento iré a la dirección en a siguiendo esta flecha hasta x. Y voy a almacenar en temp el número 1.
+
+Segunda línea de código, voy a ir a la dirección en b. así que es como seguir la flecha, que me lleva al 2, luego sigo la dirección y a, que me lleva a x. Y pongo 2 en x.
+
+En la última línea, voy a temp. Eso es fácil. Es solo el número 1. Luego digo, ir a la dirección en b y almacenar temp allí. Así que vayamos a la dirección en b siguiendo la flecha y cambiémosla a temp.
+
+Y ahora he llamado a otra función. Todavía estoy usando variables locales pero estas variables locales son por definición ahora, punteros, direcciones o una especie de mapas del tesoro que me están llevando, como estas flechas, a los valores en la memoria que realmente me importan. Y ahora, cuando la función de intercambio devuelve, no importa que a, b y temp desaparezcan, en realidad he cambiado fundamentalmente, lo que eran los propios x e y.
+
+¿Alguna pregunta sobre ese código? Si.
+
+AUDIENCIA: [INAUDIBLE]
+
+DAVID J. MALAN: Buena pregunta. Entonces, en este caso, no hay nada que liberar porque no usamos malloc. Entonces puedes usar direcciones sin usar malloc. En este caso, estoy usando la dirección del operador, que solo me dice dónde están x e y, o--
+
+AUDIENCIA: No con este [INAUDIBLE], en general, ¿usarías malloc [INAUDIBLE]
+
+DAVID J. MALAN: Muy buena pregunta. Entonces, si estás usando malloc en una función y devuelve algún fragmento de memoria, ¿cómo lidiar con eso? La responsabilidad es suya recordar llamar de alguna manera gratis a ese mismo bloque de memoria. Caso en cuestión, getString hace esto. En pocas palabras, getString asigna memoria usando malloc. Y tú, hasta la fecha, nunca has tenido que llamar gratis a las cadenas, eso es realmente porque una de las características de la biblioteca CS50 es algo llamado recolección de basura, donde notamos si tu programa se cierra sin liberar memoria de getString. Lo hacemos por ti mágicamente. Pero puedes ver en la biblioteca CS50 cómo puedes hacer exactamente lo que estás preguntando. Y, o simplemente pregúntame también después.

@@ -1,0 +1,137 @@
+Donc, ceci ne fait que dire que nous avons clairement la possibilité, alors, dans le code, d'implanter ces idées, comme [? Nizari ?] et Eric l'ont fait plus physiquement, en se servant de quelque chose de semblable à cet ensemble de coffres. Donc, où allons-nous à partir de là ?
+
+Et bien, malheureusement, [? Nizari ?] a bénéficié du fait que les coffres étaient, bien entendu, déjà triés à l'arrière par Brian. Mais un prix a été payé, n'est-ce pas ? En effet, même nous avons dû attendre un petit peu de temps pour que tous ces nombres soient triés dans les coffres avant que nous puissions procéder à l'exécution de cet algorithme. Donc, une question, alors, qu'il est raisonnable de se poser est la suivante : combien coûte le tri des nombres ? Et devriez-vous trier des nombres puis rechercher ? Ou devriez-vous vous lancer immédiatement dans la recherche et ne pas vous préoccuper du tri des nombres, notamment si l'un peut être plus coûteux que l'autre ? En fin de compte, ce seront des compromis.
+
+Réfléchissons-y donc comme suit. Si désormais le problème rencontré est de fournir en entrée de notre problème une liste non triée de nombres, dont le but est d'en ressortir une liste triée de nombres, comment procéder à sa mise en œuvre ? Par exemple, si les nombres sont 7, 2, 1, 6, 3, 4, 50 dans cet ordre, cet ordre non trié, l'objectif est de sortir 1, 2, 3, 4, 6, 7, 50 dans l'ordre trié de gauche à droite, du plus petit au plus grand. Alors, comment procéder à la mise en œuvre de cette idée ?
+
+Et bien, laissez-moi y réfléchir. Il nous reste quelques balles antistress. Et nous pourrions peut-être faire ceci de façon un peu théâtrale peut-être avec huit volontaires, si vous le voulez. OK, c'est un plan. OK, donc 1, environ 2, 3, si on pouvait, OK, 4 au milieu, 5, 6, 7, et voyons voir - et voyons voir, [INAUDIBLE] peut monter ici. Pouvons-nous le faire après ? OK, merci. Et que diriez-vous de - attendez, j'ai vu une main au milieu. Que diriez-vous de huit, un volontaire de vos amis. Montez.
+
+Donc, montez, si vous le voulez. Et Brian, si on pouvait équiper nos volontaires chacun d'un nombre. Nous allons voir si nous n'arrivons pas à résoudre ensemble l'idée de trouver un algorithme pour trier les nombres en question
+
+Donc, dans un instant, chacun d'entre vous recevra un nombre. Dans l'intervalle, présentons-nous rapidement, dites qui vous êtes et peut-être votre établissement.
+
+AUDITOIRE : [? Crus, ?] Dudley House, d'Allemagne.
+
+AUDITOIRE : Curtis, juste ici en visite.
+
+ORATEUR 1 : Merveilleux.
+
+AUDITOIRE : Ali, première année, [INAUDIBLE], de Turquie.
+
+AUDITOIRE : Farah [? Foho, ?] de Detroit.
+
+ORATEUR 1 : Bien.
+
+AUDITOIRE : Allison, Hollis parce que je suis en première année, de Cleveland.
+
+AUDITOIRE : Je suis Claude. Je suis à Mauer. Et je viens de Virginie.
+
+AUDITOIRE : Je suis [? Rohil. ?] Je suis à Wigglesworth. Et je viens d'Atlanta.
+
+AUDITOIRE : Je suis [? Yowell. ?] Je suis aussi de Wigglesworth. Et je viens de New York.
+
+AUDITOIRE : Je suis Bonnie. Je suis à Lowell. Je viens de Pékin et [? Ann ?] [? Arbor. ?]
+
+ORATEUR 1 : Merveilleux. Et je remarque maintenant, comme vous peut-être aussi, que nous avons neuf volontaires sur scène. Nous allons donc aller de l'avant et résoudre ce problème. Ça va. Comment vous appelez-vous à nouveau ?
+
+AUDITOIRE : Bonnie.
+
+ORATEUR 1 : Bonnie, venez ici. Vous allez être peut-être mon assistant, si vous le pouvez, pendant que nous cherchons ces éléments. Nous allons vous passer le micro ici. Chacun d'entre vous s'est vu remettre un nombre qui correspond à ceci, qui est juste une liste non triée de nombres.
+
+Et laissez-moi juste demander à nos huit volontaires ici de se trier eux-mêmes. Allez-y.
+
+[VOIX SE COUPANT]
+
+ORATEUR 1 : Et je vous ferai les diriger après ceci. Excellent. Très bien fait.
+
+[APPLAUDISSEMENTS]
+
+OK. Alors, laissez-moi vous poser une question à l'un d'entre vous, et nous vous transmettrons le micro si nécessaire, quel est l'algorithme que vous avez utilisé pour vous trier ?
+
+AUDITOIRE : Intuition humaine.
+
+ORATEUR 1 : Intuition humaine, OK.
+
+[RIRES]
+
+Bien.
+
+[APPLAUDISSEMENTS]
+
+Bien. D'autres formulations ? Oui ?
+
+AUDITOIRE : Je viens de vérifier si la personne qui se trouve à ma gauche, qui est censée être plus grande que moi, est plus grande que moi. Et si elle était plus grande que moi, alors je restais là. Et si j'étais plus grand que lui, j'échangeais ma place avec lui.
+
+ORATEUR 1 : OK, j'aime ça. C'est une sorte d'approche optimisée localement, où vous regardez juste à gauche et à droite et corrigez toute transposition ou tout mésappariement. Et en fait, essayons d'appliquer cette même idée. Pourriez-vous tous les huit vous réorganiser, comme ça, de manière à vous trouver sous votre nombre afin que nous annulions l'intuition humaine que nous venons d'exécuter.
+
+Et maintenant, disons, d'accord, et bien, Bonnie, si tu veux bien nous aider à nous diriger ici - dirigez-nous ici, nous avons clairement maintenant une liste non triée de nombres. Attaquons ce problème petit à petit. Par exemple, vous deux, vos noms à nouveau ?
+
+AUDITOIRE : Tris.
+
+ORATEUR 1 : Tris.
+
+AUDITOIRE : Curtis.
+
+ORATEUR 1 : Et Curtis. Vous n'êtes donc clairement pas dans le bon ordre. Quelle serait donc la solution optimale locale ici.
+
+AUDITOIRE : Ils devraient échanger leur ordre.
+
+ORATEUR 1 : OK, faites-le, s'il vous plaît. Très bien, considérons maintenant 6 et 8.
+
+AUDITOIRE : Ils vont bien.
+
+ORATEUR 1 : OK, 8 et 5 ?
+
+AUDITOIRE : Échangeons à nouveau.
+
+ORATEUR 1 : Échangez à nouveau, s'il vous plaît. 8 et 2 ?
+
+AUDITOIRE : Échangez.
+
+ORATEUR 1 : OK. 8 et 7 ?
+
+AUDITOIRE : Échangez.
+
+ORATEUR 1 : 8 et 4 ?
+
+AUDITOIRE : Échangez.
+
+ORATEUR 1 : 8 et--
+
+AUDITOIRE : 1.
+
+ORATEUR 1 : --1 ?
+
+AUDITOIRE : Échangez.
+
+ORATEUR 1 : D'accord. Avons-nous résolu le problème ?
+
+AUDITOIRE : Non.
+
+ORATEUR 1 : OK, non, pas évidemment, mais est-ce mieux ? Sommes-nous plus proches de la solution ? Je dirais que nous sommes plus proches parce que, d'accord, comme 8 a réussi à arriver à la bonne destination, même si nous avons toujours un peu de désordre à régler ici. Mais remarquez que la solution s'est améliorée dans cette direction et un peu mieux dans cette direction. Mais nous allons le refaire.
+
+Donc, Bonnie, pouvez-vous nous diriger encore une fois ?
+
+AUDITOIRE : Oui. Donc si vous voulez procéder dans cet ordre, vous deux devriez échanger.
+
+ORATEUR 1 : 5 et 6 ?
+
+AUDITOIRE : Échangeons à nouveau.
+
+ORATEUR 1 : 6 et 2 ?
+
+AUDITOIRE : Restez, et ensuite la personne suivante--
+
+ORATEUR 1 : 7 et 4 ?
+
+AUDITOIRE : 7 et 4 échangent.
+
+ORATEUR 1 : Bien. 7 et 1 ?
+
+AUDITOIRE : 1 et 7 échangent. Et ensuite--
+
+ORATEUR 1 : Alors maintenant avons-nous terminé ?
+
+AUDITOIRE : Non.
+
+ORATEUR 1 : Donc non, mais regardez, le problème s'améliore. Nous sommes plus proches de la solution parce que nous avons maintenant 8 en place et 7 en place. Nous avons donc réduit le problème

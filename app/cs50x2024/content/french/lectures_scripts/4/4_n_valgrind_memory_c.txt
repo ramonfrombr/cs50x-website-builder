@@ -1,0 +1,19 @@
+Voici donc ce qui est bien avec Valgrind. Je vais relancer Valgrind après avoir compilé ce programme -- oups -- dans mon répertoire source. Je vais lancer memory. Très bien.
+
+Il a compilé correctement. Valgrind point slash memory -- et malheureusement, nous allons voir des messages d'erreur bizarres pendant un moment. Mais voyons ce qu'il dit. Remarquez ici, écriture invalide de taille 4 -- cela semble mauvais -- et 40 octets dans un bloc sont -- OK, ils n'ont pas vraiment ajouté de condition if dans Valgrind. -- 40 octets dans 1 bloc -- pluriel -- sont définitivement perdus.
+
+Corrigeons donc le second en premier. Pourquoi est-ce que je perds exactement 40 octets ?
+
+AUDIENCE : [INAUDIBLE]
+
+DAVID J. MALAN : Je ne le libère jamais. Je pense donc pouvoir m'en sortir en faisant juste ça, en libérant simplement la mémoire après avoir fini de l'utiliser -- même si je ne l'utilise pas vraiment à des fins utiles ici.
+
+Alors laissez-moi réessayer. Lancez memory, maintenant laissez-moi faire Valgrind point slash memory. Et -- OK, c'est mieux. Je ne vois plus 40 octets perdus. Donc c'est bien. Mais j'ai toujours ce problème.
+
+Mais voici où il est parfois utile de comprendre les différents types de données et leurs tailles. Écriture invalide de taille 4. Écrire dans un programme signifie simplement changer une valeur. Et il a mentionné la ligne 8 ici. En quel sens s'agit-il d'une écriture invalide de taille 4 ? Eh bien, quelle est la taille d'un int ? Quatre octets.
+
+Vous essayez de le changer arbitrairement à 0. Mais j'aurais pu en faire 50 ou n'importe quel autre nombre. Mais j'essaie de toucher à un int qui ne devrait pas se trouver dans la mémoire que je me suis allouée. J'ai demandé 40 octets, ou 10 int, mais encore une fois, comme les tableaux sont indexés à zéro, c'est comme si on dépassait la limite.
+
+Alors laissez-moi corriger cela et dire arbitrairement, touchons cette partie. Je vais aller ici et lancer make memory. Je vais lancer Valgrind point slash memory. Et maintenant, à part la sortie étrange, remarquez que ce message d'erreur a également disparu.
+
+Ce sera donc utile au cours des deux prochaines semaines alors que nous continuons à utiliser C pour implémenter un certain nombre de programmes qui commencent désormais à manipuler la mémoire. C'est juste un outil qui vous aide à repérer les erreurs que votre TF pourrait autrement faire, ou qui pourraient provoquer le plantage, le gel ou la segmentation de votre programme, si vous l'avez déjà vu vous-même.

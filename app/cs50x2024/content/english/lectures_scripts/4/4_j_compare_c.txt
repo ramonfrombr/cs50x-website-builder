@@ -1,0 +1,47 @@
+All right. So what then do we have when it comes to strings? Well, let's now try to learn from these primitives and actually trip over some mistakes that we might otherwise make. I'm going to go ahead and open up a new file. I'm going to go ahead and call this one, compare. So we'll save this as compare dot c. And this will be reminiscent of something we started doing last week. And you've done this past week, particularly for implementing voting and comparing strings. 
+
+I'm going to go ahead and make a quick program that just compares two integers. I'm going to put the training wheels back on temporarily, just so that we can get some numbers from the user pretty easily, including CS50 dot h and standard I/O dot h. I'm going to do int main void as my program. I'm going to get an integer called i and ask the human for that. I'm going to get another integer called j, ask the human for that. 
+
+And then I'm going to go ahead and say if i equals equals j, then go ahead and print with printf that they're the same. Else, if i does not equal j, I'm going to go ahead quite simply and print out different backslash n. So if i equals equals j, it should say, same. Else, if it's different, it should say different. So let me go ahead and make compare dot slash compare. And I should see, hopefully, if I type in say, 1, 2, they're different. And if I instead do 1, 1, they're the same. 
+
+All right. So it stands to reason that logically this is pretty straightforward when you want to compare things. So instead of using numbers, let me go ahead and change this. Let me go ahead and do, say, string s gets getString, just as before but using getString instead and ask the human for s. Then give me another string, t, just because it's alphabetically next. And I'll ask the human for t. And then I'm going to go ahead and ask this question, if s equals equals t, print same, else, print different. 
+
+So now let me go ahead and make compare again. I'm going to go ahead and type in dot slash compare. We'll type in Emma. We'll then type in Rodrigo. And of course, it's going to say different. But if I instead run it again and type in Emma and all right, I'll type Emma again-- hmm, different. Maybe it's a capitalization thing? No. 
+
+But why as of today, are they indeed different? Last week we kind of waved our hands and said, ah, they're arrays, you have to do some stuff. But why are they different? 
+
+AUDIENCE: They're stored in different locations. 
+
+DAVID J. MALAN: Exactly, they're stored in different locations. So when you get a string with getString and call it s, and then you get another string with t and call it t, you're getting two different chunks of memory. And yes, maybe the human has typed the same thing into the keyboard, but that doesn't necessarily mean that they're going to be stored in the exact same place. 
+
+In fact, what we really have here is a picture not unlike this. If I have a variable called s-- and I'm just going to draw it as a box there --and if I have a variable called t-- I'll draw it as another box here --and I typed in Emma-- E-M-M-A --that's going to give me somewhere in memory, E-M-M-A backslash 0. And I'll try it as an actual array, albeit a little messily. And then here, if I type EMMA again in all caps, it's going to end up-- thanks to getString, at a different location in memory. By nature of how getString works, it's going to store anything you type in it. 
+
+And what's going to get stored in s and t? Well, for the sake of discussion, let's suppose that this chunk of memory with the first input-- sorry --happens to be at 0x123. And the second chunk of memory happens to be at 0x456, just by chance. Well, what am I technically storing in s? 0x123. And what am I storing in t? 0x456. 
+
+So when you say, is s equal equal t. Is it? Well, no. You're literally comparing 123 versus 456. The computer is not going to presumptuously go to that address for you unless you somehow tell it to. Put another way, if I instead draw these boxes, not as actual numbers, what we really have-- sorry --what we really have is what we'll draw as an arrow more generally, just a pointer to that value. Who really cares where the address is? 
+
+So this is why last week we kind of waved our hand and said, eh, you can't just compare two strings because you probably have to compare every character. And that was true. But what you're technically comparing is indeed the addresses of those two variables. 
+
+Any questions then on this here? Yeah. Sure, yes. 
+
+AUDIENCE: So you said earlier that the, I guess, the pointer, and the actual thing it's pointing are like kind of somewhere in the memory not in a specific-- they're just somewhere, right? 
+
+DAVID J. MALAN: OK. 
+
+AUDIENCE: So do you need something that points to the point-- how does the computer know where the pointer is? 
+
+DAVID J. MALAN: Oh, how does the computer know where these pointers are? So that's a really good question. And let's answer it right here. All this time when you've been calling getString to get a string, you've probably been assigning it to a variable like I have here on line six, with string s. But we know as of today that if we get rid of the CS50 library, technically, string is just synonymous with char star. 
+
+And so both here and with t, do you technically have char star, right? It's just a find and replace if we get rid of that training wheel. Char star just means s is storing the address of a character. And char star t means t is storing the address of a character. Ergo, all this time since the Week 1 of CS50, what type of value has getString been returning, even though we never described it as such? What must getString be returning? Yeah. 
+
+AUDIENCE: The index of the first letter. 
+
+DAVID J. MALAN: Not even the index per se, but rather the-- 
+
+AUDIENCE: It houses the memory of that. 
+
+DAVID J. MALAN: The address of the first character. So anytime you called getString, getString code we wrote is finding in your computer's memory some free space, enough bytes to fit whatever the word was that got typed in. getString then, if we looked at its code, is designed to return the address of the first byte of that chunk of memory. So getString, this whole time, has been returning, if you will, what's called a pointer. But again, nuances that we didn't want to get into in the very first week certainly, of C programming. 
+
+All right. Well, let's go ahead and make this a little more concrete. If I pull up this code, I don't have to just check if they're same or different, let me just go ahead and print them out. If I do percent p backslash n, I can literally print out s. And if I go ahead and print out the same thing for t using percent p, I can print out the value of t. 
+
+So let me go ahead and make compare. Seems to compile OK. And I don't know what the addresses are in advance. But let me go ahead and type in, for instance, Emma and Emma. So even though those strings look the same notice, it's a little subtle this time, the first Emma's at 0xED76A0. The second Emma's at 0xED76E0, which is a few numbers away from the first Emma. So that just corroborates the instincts last week that we can't just compare them like that.

@@ -1,0 +1,21 @@
+Muy bien. Unos cuantos ejemplos más, y finalmente llegaremos a algunos de los ejemplos más sólidos que podemos realizar, incluso luego de solo dos horas de programación en Python. Primero, déjenme continuar y abrir overflow.c, el cual podrían recordar de unas semanas atrás fue un problema, porque tan pronto como comenzaba a duplicar y duplicar y duplicar un entero en C e imprimirlo, ¿qué sucedía eventualmente? 
+
+AUDIENCIA: [ININTELIGIBLE] 
+
+DAVID MALAN: Ligero spoiler en el nombre del archivo. 
+
+AUDIENCIA: Se desbordaba. 
+
+DAVID MALAN: Se desbordaba, ¿no es así? Y volvía, por así decirlo, a 0, debido a que todos los bits eventualmente rodaban, se cargaba con demasiados unos. Y listo, te quedabas con puros ceros. Python es en realidad bastante genial. Continuaré y abriré un archivo aquí llamado overflow.py, e implementaré esta misma idea esta vez en Python. 
+
+Continuaré y guardaré esto como overflow.py, el cual ahora podría ser en realidad algo engañoso. Seguiré adelante y lo haré. inicialmente es igual a 1. Mientras sea Verdadero, haz lo siguiente para siempre. Continúa e imprime i. Y después, ¿saben qué? Continuaré y me dormiré por un segundo y después, continuaré y multiplicaré i por 2, lo cual también puedo escribir de manera más sucinta como i estrella es igual a 2, así que casi idéntico a C, excepto que aquí no hay punto y coma. 
+
+Sin embargo, dormir no se obtiene de manera automática. Resulta que dormir se encuentra en una biblioteca denominada time. Así que tendré que importar sleep, por así decirlo, mediante el uso de esta línea en la parte superior. Continuaré y ejecutaré esto como Python of overflow.py. Continuaré y aumentaré el tamaño de esta ventana aquí y lo ejecutaré. 
+
+Ok. Estoy un poco impaciente. Parece un poco lento. En Python, en realidad puedes dormir por fracciones de oración, fragmentaria, bla, bla, fracciones de segundo. Así que lo haré más rápido. 
+
+AUDIENCIA: [ININTELIGIBLE] 
+
+DAVID MALAN: Ok. Ahora, no estoy contando. Pero estoy bastante seguro de que eso es más de 4 mil millones, lo cual recordarán que fue el límite superior la última vez. Y, de hecho, aunque el internet es un poco lento aquí, es por eso que no lo está generando a una velocidad súper rápida, estos son números realmente grandes. Y sorprendentemente, en Python, de hecho, es excelente para la ciencia de datos y el análisis de datos, etc. Los valores int. no tienen límites superiores. 
+
+No puedes desbordar un int. Simplemente crecerá y crecerá y crecerá hasta que, francamente, tome el control de tu computadora. Pero no existe un límite fijo, como lo había en C, lo cual es maravilloso. Aunque, el inconveniente es que si Python flota, aún es impreciso, por lo que existen bibliotecas. No obstante, existe código que otras personas han escrito para mitigar ese problema también en Python.

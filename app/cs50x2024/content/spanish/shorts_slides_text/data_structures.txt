@@ -1,0 +1,50 @@
+[1]
+Resumen de las estructuras de datos
+• En este momento hemos examinado cuatro formas distintas de almacenar conjuntos de datos:
+• Matrices
+• Listas enlazadas
+• Tablas hash
+• Tries
+• Incluso hay algunas variaciones de estas (árboles y montículos, bastante similares a tries, pilas y colas bastante similares a matrices o listas enlazadas, etc.) pero esto generalmente cubrirá la mayor parte de lo que estamos viendo en C.
+
+[2]
+Resumen de las estructuras de datos
+• ¿Cómo se miden todas estas estructuras de datos? ¿Cómo sabes cuál elegir para tu situación? 
+• Por lo general, se trata de sopesar los pros y los contras. Consideremos algunas de las métricas importantes para cada una.
+
+[3]
+Resumen de las estructuras de datos
+• Matrices
+• La inserción es mala: se necesita mucho desplazamiento para que un elemento entre en el medio
+• La eliminación es mala: se necesita mucho desplazamiento después de eliminar un elemento
+• La búsqueda es excelente: acceso aleatorio, tiempo constante
+• Relativamente fácil de ordenar
+• Tamaño relativamente pequeño
+• Atrapado con un tamaño fijo, sin flexibilidad
+
+[4]
+Resumen de las estructuras de datos
+• Listas enlazadas
+• La inserción es fácil: simplemente colócala en el frente
+• La eliminación es fácil: una vez que encuentres el elemento
+• La búsqueda es mala: tienes que depender de la búsqueda lineal
+• Relativamente difícil de ordenar, a menos que estés dispuesto a comprometer la inserción súper rápida y en su lugar ordenar a medida que construyes
+• Tamaño relativamente pequeño (no tan pequeño como las matrices)
+
+[5]
+Resumen de las estructuras de datos
+• Tablas hash
+• La inserción es un proceso de dos pasos: hash y luego agregar
+• La eliminación es fácil: una vez que encuentres el elemento
+• La búsqueda es, en promedio, mejor que con las listas enlazadas porque tienes el beneficio de un factor constante del mundo real
+• No es una estructura de datos ideal si el objetivo es ordenar, solo usa una matriz
+• Puede ejecutar toda la gama de tamaño
+
+[6]
+Resumen de las estructuras de datos
+• Tries
+• La inserción es compleja: mucha asignación de memoria dinámica, pero se vuelve más fácil a medida que avanzas
+• La eliminación es fácil: simplemente libera un nodo
+• La búsqueda es rápida: no tan rápida como una matriz, pero casi
+• Ya ordenado: se ordena a medida que se construye en casi todas las situaciones
+• Rápidamente se vuelve enorme, incluso con muy pocos datos presentes, no es bueno si el espacio es escaso

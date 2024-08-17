@@ -1,0 +1,3 @@
+De acuerdo, entonces desde ahí, apuesto a que podemos intentar otro enfoque aquí. Hay otra estructura de datos que queremos presentar, no en código, sino en imágenes. A esta se le llama trie. Abreviatura de recuperación, aunque se pronuncia de manera diferente.
+
+Un trie es una estructura de datos que en realidad es bastante sorprendente. Y sigue este patrón de gastar un recurso para ahorrar en otro. Un trie usará mucha más memoria, pero nos dará una búsqueda real de tiempo constante para cosas como nombres o palabras que se insertan en la estructura.

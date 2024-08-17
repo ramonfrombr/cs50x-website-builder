@@ -1,0 +1,71 @@
+[1]
+
+Tabelas de Hash
+• As tabelas de hash combinam a habilidade de acesso aleatório de um array com o dinamismo de uma lista encadeada.
+• Isso significa (assumindo que definimos nossa tabela de hash bem):
+• A inserção pode começar a tender para q(1)
+• A exclusão pode começar a tender para q(1)
+• A busca pode começar a tender para q(1)
+• Estamos obtendo as vantagens de ambos os tipos de estrutura de dados, enquanto mitigamos as desvantagens.
+
+[2]
+
+Tabelas de Hash
+• Para obter este upgrade de desempenho, criamos uma nova estrutura pela qual, quando inserimos dados na estrutura, os dados em si nos dão uma pista sobre onde encontraremos os dados, caso precisemos consultá-lo posteriormente.
+• A desvantagem é que as tabelas de hash não são ótimas para ordenar ou classificar dados, mas se não nos importamos com isso, então estamos prontos para continuar!
+
+[3]
+
+Tabelas de Hash
+• Uma tabela de hash equivale a uma combinação de duas coisas com as quais estamos bem familiarizados.
+• Primeiro, uma função de hash, que retorna um valor inteiro não negativo chamado código de hash.
+• Segundo, um array capaz de armazenar dados do tipo que desejamos colocar na estrutura de dados.
+• A ideia é executar nossos dados por meio da função de hash e, em seguida, armazená-los no elemento do array representado pelo código de hash retornado.
+
+[11]
+
+Tabelas de Hash
+• Como definir uma função de hash? Realmente não há limite para o número de funções de hash possíveis.
+• Uma boa função de hash deve:
+• Usar apenas os dados que estão sendo hasheados
+• Usar todos os dados que estão sendo hasheados
+• Ser determinística
+• Distribuir dados uniformemente
+• Gerar códigos de hash muito diferentes para dados muito semelhantes
+
+[19]
+
+Tabelas de Hash
+• Uma colisão ocorre quando dois dados, quando executados por meio da função de hash, produzem o mesmo código de hash.
+• Presumivelmente, queremos armazenar ambos os dados na tabela de hash, portanto, não devemos simplesmente sobrescrever os dados que por acaso foram colocados lá primeiro.
+• Precisamos encontrar uma maneira de colocar ambos os elementos na tabela de hash enquanto tentamos preservar a inserção e a pesquisa rápidas.
+
+[20]
+
+Tabelas de Hash
+• Resolução de colisões: Sondagem linear
+• Neste método, se tivermos uma colisão, tentamos colocar os dados no próximo elemento consecutivo no array (voltando ao início se necessário) até encontrarmos uma vaga.
+• Dessa forma, se não encontrarmos o que estamos procurando no primeiro local, pelo menos esperamos que o elemento esteja em algum lugar próximo.
+
+[41]
+
+Tabelas de Hash
+• Resolução de colisões: Sondagem linear
+• A sondagem linear está sujeita a um problema chamado clustering. Uma vez que ocorre uma falha, duas células adjacentes conterão dados, tornando mais provável que o cluster aumente no futuro.
+• Mesmo que mudemos para outra técnica de sondagem, ainda estamos limitados. Podemos armazenar apenas a quantidade de dados que temos de locais em nosso array.
+
+[42]
+
+Tabelas de Hash
+• Resolução de colisões: Encadeamento
+• Vamos começar a juntar tudo.
+• E se, em vez de cada elemento do array conter apenas um dado, ele contivesse vários dados?
+• Se cada elemento do array for um ponteiro para o início de uma lista encadeada, vários dados podem gerar o mesmo código de hash e poderemos armazenar tudo!
+
+[43]
+
+Tabelas de Hash
+• Resolução de colisões: Encadeamento
+• Eliminamos o clustering.
+• Sabemos por experiência com listas encadeadas que a inserção (e a criação, se necessário) em uma lista encadeada é uma operação O(1).
+• Para pesquisa, precisamos apenas pesquisar uma lista que esperamos que seja pequena, pois estamos distribuindo o que de outra forma seria uma lista enorme entre n listas.

@@ -1,0 +1,43 @@
+Permettez-moi de vous présenter la liste chaînée. Comme nous allons le voir, une liste chaînée va vous permettre de stocker une liste de valeurs. Un tableau permet également de stocker une liste de valeurs. Mais quels sont les inconvénients d'un tableau ?
+
+Eh bien, un tableau est un bloc de mémoire fixe. Et si vous souhaitez redimensionner ce tableau pour y ajouter plus de valeurs, que devez-vous faire ? Vous devez au minimum allouer plus de mémoire. Vous devez copier toutes ces valeurs de l'ancien tableau vers le nouveau. Et puis vous pouvez reprendre vos occupations.
+
+Maintenant, realloc est une fonction qui simplifie légèrement les choses. Mais realloc effectue exactement le même travail que moi entre les casiers : copier la valeur, libérer de la mémoire, etc. Il faut donc le faire. Et c'est pourquoi l'insertion dans un tableau va être de grand O de n, car cela peut vous prendre autant de temps pour copier l'ensemble du tableau dans un nouvel espace.
+
+Vous trouvez que ce n'est pas très optimal, non ? Les tableaux peuvent être lents dans ce sens. Mais quel était l'intérêt d'un tableau ? Quel est l'avantage des tableaux ? Car nous ne voulons pas les abandonner complètement. Oui.
+
+PUBLIC : On peut les indexer très facilement.
+
+DAVID MALAN : Vous pouvez les indexer très facilement, non seulement syntaxiquement avec les crochets, mais vous avez un accès en temps constant ; c'est ce qu'on appelle l'accès aléatoire. Et ce n'est pas aléatoire dans le sens où vous vous retrouvez on ne sait où. Vous pouvez simplement passer au crochet 0, 1 ou 2 instantanément. Cela m'a pris du temps, en tant qu'humain, car j'ai dû marcher physiquement. Mais un ordinateur pourra passer de 0 à 1, 2, 3 instantanément. Et les tableaux vont donc très vite. Et ils se prêtent à des choses comme la recherche binaire, comme nous l'avons vu il y a quelque temps.
+
+Mais que se passe-t-il si nous utilisons la mémoire de notre ordinateur comme un canevas un peu plus intelligemment ? Nous n'avons pas à nous contenter de placer des éléments l'un à côté de l'autre, l'un à côté de l'autre, l'un à côté de l'autre, puis d'espérer au mieux qu'il y ait encore de la mémoire disponible dans le même ordre. Et si nous étions plutôt un peu plus futés à ce sujet ?
+
+Et supposons que nous voulions stocker le chiffre 1. Et que ce soit l'adresse 0x123. C'est arbitraire. Mais souvenez-vous de la semaine dernière que chaque octet de mémoire de votre ordinateur est stocké quelque part. Proposons donc que 1 soit stocké à l'adresse 0x123.
+
+Supposons maintenant que cela représente un tableau de taille 1 et que vous souhaitez ajouter une seconde valeur à ce tableau. Ou commençons par appeler les choses plus généralement une liste. Une liste, comme dans le monde réel, n'est qu'une liste de valeurs. Cette liste est de taille 1.
+
+Il y a peut-être beaucoup d'EMMA dans cette mémoire qui gênent. Mais supposons qu'il y ait un peu d'espace libre un peu plus bas dans la mémoire de votre ordinateur, là. Ce n'est donc pas ici. Ce n'est pas ici. Ce n'est pas disponible ici, ici ou ici. Il y a d'autres trucs là. Mais supposons que l'ordinateur dispose d'une certaine quantité de mémoire disponible ici dans laquelle vous pouvez stocker le chiffre deux, juste parce que. Et cette adresse est 456.
+
+Enfin, vous souhaitez stocker une troisième valeur. Et il s'avère que l'emplacement disponible le plus proche se trouve ici, le chiffre 3. Il se trouve à l'adresse 0x789.
+
+Il ne s'agit donc pas d'un tableau par définition, car 1, 2, 3 ne sont pas contigus. Vous ne pouvez pas utiliser la notation des crochets ici, car la notation des crochets exige, selon la semaine 2, que toutes vos valeurs soient l'une à côté de l'autre, comme les casiers ici.
+
+Cette image, où 1 est ici, 2 est ici, 3 est ici est plus comme, oh, peut-être que c'est 0x123. Peut-être que c'est 0x456. Peut-être que c'est 0x789. Ils sont un peu partout. Et c'est simplement parce que c'est ce qui est disponible dans la mémoire de votre ordinateur.
+
+Mais et si je me montrais un peu extravagant et que je commençais à utiliser, pas seulement un bloc de mémoire pour stocker chaque valeur, comme 1, 2, 3, et si j'allais de l'avant et que je me donnais deux fois plus de mémoire juste pour me donner un peu de flexibilité ? J'utilise donc maintenant conceptuellement ce bloc de mémoire pour représenter 1. Cette ordure pour représenter 2, cette ordure pour représenter 3. Mais vous savez à quoi je vais utiliser la seconde moitié de chacun de ces morceaux ? Une idée ?
+
+PUBLIC : Une adresse vers la suivante.
+
+DAVID MALAN : Une adresse vers le bloc de mémoire suivant. Ainsi, par exemple, si mon objectif est de maintenir cette liste triée, donc je veux conceptuellement avoir une liste qui stocke 1, 2, 3, pourquoi ne pas utiliser cela comme une sorte de carte ou de fil d'Ariane, si vous voulez, qui pointe vers le bloc de mémoire suivant ? Et pourquoi ne pas utiliser ce bloc de mémoire pour pointer vers le suivant ? Et ensuite ce bloc de mémoire, vous savez quoi, j'ai juste besoin d'une valeur spéciale ici. Quelle serait une bonne manière arbitraire de dire, mm, mm, il n'y a rien de plus dans la liste ?
+
+PUBLIC : Null.
+
+DAVID MALAN : C'est quelque chose appelé null. Et c'est techniquement différent de la barre oblique inverse 0, qui est un caractère. C'est quelque chose qui s'appelle ; eh bien, c'est en hexadécimal 0. Maintenant, à partir d'aujourd'hui ; et nous l'avons vu très brièvement la semaine dernière ; c'est n-u-l-l avec deux L ; c'était stupide du côté gauche de ne pas vraiment parler au côté droit ; n-u-l-l est la barre oblique inverse 0, qui est un caractère. n-u-l est un pointeur. Mais ils sont tous deux égaux à 0 en dessous du capot. Vous stockez donc simplement une valeur spéciale qui indique que c'est fini pour la liste.
+
+Maintenant, la semaine dernière, je me suis demandé qui se soucie vraiment de l'endroit où se trouvent les choses en mémoire ? Alors, faisons ça à nouveau. Faisons simplement des pointeurs dessinés comme des flèches dans cette représentation de l'artiste pour dire que cette liste de nombres, 1, 2, 3, est maintenant liée. Une liste chaînée est simplement une structure de données contenant plusieurs blocs de mémoire qui sont liés entre eux d'une manière ou d'une autre. Et si, sous le capot, pour ainsi dire, ils sont simplement liés entre eux par des pointeurs, et le prix que nous payons est qu'au lieu de stocker maintenant dans une liste chaînée uniquement les nombres 1, 2, 3, que nous pourrions avoir dans un tableau, vous devez maintenant stocker deux fois plus d'informations, 1, 2, 3, ainsi que trois pointeurs, dont deux sont utilisés, l'autre étant prêt à être utilisé si je veux ajouter quelque chose à cette liste.
+
+Cela signifie que nous pouvons maintenant créer des structures qui ressemblent à ceci dans la mémoire de l'ordinateur simplement en utilisant cette nouvelle fonctionnalité de pointeurs. À quoi pourraient ressembler ces structures individuellement ? Eh bien, chacun de ces nombres a deux champs, semble-t-il. L'un est un entier. Nous l'appellerons nombre. Et puis il y a un autre champ ici. Appelons-le suivant par convention, mais nous pourrions l'appeler comme nous le souhaitons. C'est juste un autre bloc de mémoire qui pointe vers l'élément suivant de la liste.
+
+Eh bien, il y a quelques semaines, nous avons introduit des personnes. Et une personne avait un nom et un numéro. Ce n'est pas pertinent aujourd'hui, parce que nous ne traitons pas de noms et de nombres. Nous traitons uniquement d'entiers. Permettez-moi donc de proposer que nous fassions marche arrière et que nous utilisions toujours la même syntaxe qu'il y a quelques semaines. Mais au lieu de définir une personne, appelons ce rectangle un nœud. Il s'agit donc d'un terme consacré en informatique nœud ; n-o-d-e ; représente simplement ce concept rectangulaire, un bloc de mémoire que vous utilisez à des fins intéressantes. C'est une sorte de nœud dans un graphe si c'est familier aux mathématiques.
+
+Mais que veux-je que ce savoir stocke ?
