@@ -110,7 +110,7 @@
 
     <ul>
       <li>
-        <a href="">{{config['MENU_CS50X_2024'].manual}}</a>
+        <a href="{{ url_for('core.manual.index') }}">{{config['MENU_CS50X_2024'].manual}}</a>
       </li>
       <li>
         <a href="{{ url_for('cs50x2024.style') }}">{{config['MENU_CS50X_2024'].style}}</a>

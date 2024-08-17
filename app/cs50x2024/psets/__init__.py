@@ -26,5 +26,3 @@ psets_bp.register_blueprint(pset6_bp, url_prefix='/6')
 psets_bp.register_blueprint(pset7_bp, url_prefix='/7')
 psets_bp.register_blueprint(pset8_bp, url_prefix='/8')
 psets_bp.register_blueprint(pset9_bp, url_prefix='/9')
-
-from . import routes

@@ -1,0 +1,29 @@
+{% extends 'core/languages/english/manual/layout.html' %}
+{% block content %}
+
+  <p class="mb-3 mt-4">
+    Páginas de manual para la biblioteca estándar C, la biblioteca C POSIX y la biblioteca CS50 para
+    <a data-bs-content="¡Exactamente como tú!" data-bs-toggle="popover" tabindex="0"></a>
+    aquellos menos cómodos</a>.
+</p>
+
+<form>
+  <div class="mb-3">
+    <input autocomplete="off" class="form-control" id="q" placeholder="Buscar" type="search"/>
+  </div>
+
+  <div class="form-check form-switch mb-4 invisible">
+    <input checked="checked" class="form-check-input" id="filter" type="checkbox"/>
+    <label class="form-check-label" for="filter">utilizado con frecuencia en CS50</label>
+  </div>
+</form>
+
+{% include 'core/languages/spanish/manual/cs50.h.html' %}
+{% include 'core/languages/spanish/manual/ctype.h.html' %}
+{% include 'core/languages/spanish/manual/math.h.html' %}
+{% include 'core/languages/spanish/manual/stdio.h.html' %}
+{% include 'core/languages/spanish/manual/stdlib.h.html' %}
+{% include 'core/languages/spanish/manual/string.h.html' %}
+{% include 'core/languages/spanish/manual/strings.h.html' %}
+{% include 'core/languages/spanish/manual/time.h.html' %}
+{% endblock %}
