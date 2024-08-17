@@ -1,5 +1,7 @@
 # CS50x Website Builder
 
+![Logo](https://github.com/ramonfrombr/cs50x-website-builder/blob/main/images/logo.png)
+
 This project uses ChatGPT to translate the content from Harvard University's CS50 course, and then uses Flask to build the content into a set of static files that can be hosted on Github Pages.
 
 This program has been used to build the websites for the Portuguese, French, and Spanish versions of the course:
@@ -50,7 +52,7 @@ export FLASK_DEBUG=1
 To run tests for all languages (Portuguese, Spanish, French):
 
 ```
-for language in english spanish; do export COURSE_LANGUAGE=$language; pytest tests --capture=no; done
+for language in english spanish french portuguese; do export COURSE_LANGUAGE=$language; pytest tests --capture=no; done
 ```
 
 To run tests for a specific language, execute the command below, where `<LANGUAGE>` is the language you want to test for:
@@ -65,4 +67,12 @@ To check typings in the `app` package, use the `mypy` library as follows:
 
 ```
 mypy app
+```
+
+## Freeze the Project into Static Files
+
+To freeze the project into a set of static files, execute the command below, where `<LANGUAGE>` is the language you want for the course:
+
+```
+export COURSE_LANGUAGE=<LANGUAGE> && python freeze.py && mv app/build_$COURSE_LANGUAGE .
 ```
