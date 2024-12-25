@@ -23,21 +23,3 @@ So what happens here? Think for a second. You may even want to pause the video.
 What happens here if the user types four? So I've asked the user for input. And they provide the value 4. What gets printed when I do that? On the previous slide, there were breaks between all the cases. And so it would just print four and then stop. But in this case, it won't. What will happen is you will fall through each case. 
 
 So in this case I've organized my cases in such a way that if the user types 4, I will print four, three, two, one, blast off. And if they typed 5, I would start at five and do the same thing. If they typed 1, I would just do one, blast off. 
-
-So in this case, I'm using a switch kind of cleverly so that I do intend to fall through all the cases. But generally you're probably gonna want to break between all of them, unless you have a situation like this one where you're kind of leveraging the fact that you'll fall through the cases without a break. So that's the second of the major types of conditional statements. The last of which is ?: So I have two snippets of C code here. One on the left and one on the right. The one on the left should probably be pretty familiar to you. 
-
-I have Int x. And I probably should have asked the user for-- this should probably be Int x equals GetInt, or something like that. And then I'm making a decision. If some Boolean expression is true, assign x the value 5. Otherwise, assign x the value 6. 
-
-That on the left should probably be pretty familiar from our discussion of If Else just a moment ago. Would you be surprised to know that the line on the right does the exact same thing? 
-
-So this is called ?: or sometimes called the ternary operator. And it's pretty cool. It's usually used as a cute trick. 
-
-But what it allows you to do is to simulate an If Else with really small, really trivially short conditional branches. You generally wouldn't use ?: if you had six lines of code between each set of curly braces. But if you're just making a quick decision, if you're going to do one thing or the other and it's very simple, this might be an example of how to do it with ?: the ternary operator. So Int x equals expression ? The thing after the question mark is what x's value will be if expression is true. 
-
-The thing after the colon is what x's value would be if the expression was false. So I'm asking myself, is the expression true? If it is, assign x the value 5. If it's not, assign x the value 6. Again, like I said. This is usually just a cute trick. And sometimes if you become really comfortable with it, you'll do this because it looks kind of cool in your programs. Generally I'm presenting it to you now so you're familiar with it if you see it. But certainly know you don't have to write it in any of your code. But it is something to be familiar with, because you'll definitely encounter snippets of code here and there where this ?: syntax, AKA the ternary operator, is used. 
-
-So quick summary on what conditionals are, and what the options are available to you in C. You have If and if-else, and if else if, et cetera. You can use Boolean expressions for those to make decisions. 
-
-With switch statements you use discrete cases to make decisions. You would specifically say, if it's one, or if it's two, or if it's three, I'll do this thing, or this thing, or this thing. And ?: can to be used to replace very simple if-else branches, or if-else chains to make your code look a little fancy. 
-
-I'm Doug Lloyd. And this is CS50. 
