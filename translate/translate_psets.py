@@ -9,7 +9,7 @@ prompt_template = Template(
     """Translate this text thoroughly from English to ${language}. Do not summarize. This is the text: ${text}""")
 
 english_content_dir = os.listdir(
-    "./app/cs50x2024/templates/cs50x2024/languages/english/psets")
+    "./app/cs50x2025/templates/cs50x2025/languages/english/psets")
 english_content_dir.sort()
 
 language = "spanish"
@@ -18,7 +18,7 @@ language = "spanish"
 def translate_psets(pages):
     for file in pages:
         source_text = open(
-            f"./app/cs50x2024/templates/cs50x2024/languages/english/psets/{file}").read()
+            f"./app/cs50x2025/templates/cs50x2025/languages/english/psets/{file}").read()
 
         prompt = prompt_template.substitute(
             text=source_text, language=language)
@@ -26,7 +26,7 @@ def translate_psets(pages):
         try:
             response = model.generate_content(prompt)
             destination_file = open(
-                f"./app/cs50x2024/templates/cs50x2024/languages/{language}/psets/{file}", "w")
+                f"./app/cs50x2025/templates/cs50x2025/languages/{language}/psets/{file}", "w")
             destination_file.write(response.text)
         except:
             print("Error: ", file)

@@ -1,12 +1,12 @@
 import os
-from .cs50x2024.content.english.language import menu as menu_english
-from .cs50x2024.content.spanish.language import menu as menu_spanish
-from .cs50x2024.content.french.language import menu as menu_french
-from .cs50x2024.content.portuguese.language import menu as menu_portuguese
-from .cs50x2024.content.english.language import pages_url as pages_url_english
-from .cs50x2024.content.spanish.language import pages_url as pages_url_spanish
-from .cs50x2024.content.french.language import pages_url as pages_url_french
-from .cs50x2024.content.portuguese.language import pages_url as pages_url_portuguese
+from .cs50x2025.content.english.language import menu as menu_english
+from .cs50x2025.content.spanish.language import menu as menu_spanish
+from .cs50x2025.content.french.language import menu as menu_french
+from .cs50x2025.content.portuguese.language import menu as menu_portuguese
+from .cs50x2025.content.english.language import pages_url as pages_url_english
+from .cs50x2025.content.spanish.language import pages_url as pages_url_spanish
+from .cs50x2025.content.french.language import pages_url as pages_url_french
+from .cs50x2025.content.portuguese.language import pages_url as pages_url_portuguese
 
 
 class Config(object):

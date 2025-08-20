@@ -9,7 +9,7 @@ model = genai.GenerativeModel('gemini-1.0-pro-latest')
 prompt_template = Template(
     """Translate this text thoroughly from English to ${language}. Do not summarize. This is the text: ${text}""")
 
-english_notes_dir = os.listdir("./app/cs50x2024/content/english/notes")
+english_notes_dir = os.listdir("./app/cs50x2025/content/english/notes")
 english_notes_dir.sort()
 
 language = "spanish"
@@ -18,11 +18,11 @@ language = "spanish"
 def translate_page_by_sections(files, page):
 
     destination_file = open(
-        f"./app/cs50x2024/content/{language}/notes/{page}.md", "w")
+        f"./app/cs50x2025/content/{language}/notes/{page}.md", "w")
 
     for file in files:
         source_text = open(
-            f"./app/cs50x2024/content/english/notes/{file}").read()
+            f"./app/cs50x2025/content/english/notes/{file}").read()
 
         prompt = prompt_template.substitute(
             text=source_text, language=language)
@@ -37,7 +37,7 @@ def translate_page_by_sections(files, page):
                 {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
             ])
             destination_file = open(
-                f"./app/cs50x2024/content/{language}/notes/{page}.md", "a")
+                f"./app/cs50x2025/content/{language}/notes/{page}.md", "a")
             destination_file.write(response.text + "\n\n")
         except Exception as error:
             print("Error file: ", file)

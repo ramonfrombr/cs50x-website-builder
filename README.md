@@ -76,3 +76,9 @@ To freeze the project into a set of static files, execute the command below, whe
 ```
 export COURSE_LANGUAGE=<LANGUAGE> && python freeze.py && mv app/build_$COURSE_LANGUAGE .
 ```
+
+## Translate Lecture Scripts
+
+```
+
+```

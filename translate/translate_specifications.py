@@ -9,7 +9,7 @@ prompt_template = Template(
     """Translate this text thoroughly from English to ${language}. Do not summarize. This is the text: ${text}""")
 
 english_specifications_dir = os.listdir(
-    "./app/cs50x2024/content/english/specifications")
+    "./app/cs50x2025/content/english/specifications")
 english_specifications_dir.sort()
 
 language = "spanish"
@@ -18,7 +18,7 @@ language = "spanish"
 def translate_specifications_pages(pages):
     for file in pages:
         source_text = open(
-            f"./app/cs50x2024/content/english/specifications/{file}").read()
+            f"./app/cs50x2025/content/english/specifications/{file}").read()
 
         prompt = prompt_template.substitute(
             text=source_text, language=language)
@@ -33,7 +33,7 @@ def translate_specifications_pages(pages):
                 {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
             ])
             destination_file = open(
-                f"./app/cs50x2024/content/{language}/specifications/{file}", "w")
+                f"./app/cs50x2025/content/{language}/specifications/{file}", "w")
             destination_file.write(response.text)
         except:
             print("Error: ", file)
@@ -61,11 +61,11 @@ for specification in specifications_sections:
 def translate_specification_by_sections(files, page):
 
     destination_file = open(
-        f"./app/cs50x2024/content/{language}/specifications/{page}", "w")
+        f"./app/cs50x2025/content/{language}/specifications/{page}", "w")
 
     for file in files:
         source_text = open(
-            f"./app/cs50x2024/content/english/specifications/{file}").read()
+            f"./app/cs50x2025/content/english/specifications/{file}").read()
 
         prompt = prompt_template.substitute(
             text=source_text, language=language)
@@ -80,7 +80,7 @@ def translate_specification_by_sections(files, page):
                 {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
             ])
             destination_file = open(
-                f"./app/cs50x2024/content/{language}/specifications/{page}", "a")
+                f"./app/cs50x2025/content/{language}/specifications/{page}", "a")
             destination_file.write(response.text + "\n\n")
         except Exception as error:
             print("Error file: ", file)
