@@ -1,0 +1,57 @@
+Maintenant, parlons de quelque chose de très utile en programmation: les instructions conditionnelles. Les expressions conditionnelles permettent à vos programmes de prendre des décisions et de prendre différentes branches en fonction des valeurs de variables ou de ce que l'utilisateur saisit à partir de la ligne de commande ou d'une invite. En langage C, il existe plusieurs façons d'exprimer des expressions conditionnelles, que nous appelons parfois une branche conditionnelle dans vos programmes. Certains d'entre eux vous seront familiers depuis Scratch, nous allons donc les appeler côte à côte pour que vous puissiez faire une analogie mentale. 
+
+
+
+if - if est une condition assez simple. Si vous vous souvenez de Scratch, vous pouviez remplir ce hexagone avec une expression bleue si une souris est enfoncée ou si x est inférieur à 10. Ensuite, si x était inférieur à 10, ou si la souris était enfoncée, tout le code à l'intérieur de cette pièce de puzzle s'exécutait. Toutes les choses qui correspondent à cette forme de C.
+
+De même, avons-nous ici un if à gauche. Si, c'est ça ce que le mot anglaise "if" signifie, si une expression booléenne, que j'utilise simplement comme substitut pour l'une des expressions booléennes que nous avons précédemment discutées, accolade ouverte, accolade fermée. Si l'expression booléenne de l'instruction if est vraie, alors toutes les lignes de code situées entre les accolades s'exécuteront dans l'ordre de haut en bas. Si l'expression booléenne est fausse, nous passerons sur tout ce qui se trouve entre les accolades, car nous ne voulons aller dans cette branche que si l'expression booléenne est vraie.
+
+
+
+
+
+Nous pouvons aller encore plus loin avec if else. Ce bloc Scratch est assez similaire à celui que nous avons vu il y a quelques instants, sauf qu'il prend deux chemins différents en fonction de ce qui se passe. Donc, si la souris est enfoncée ou si x est inférieur à 10, nous ferons tout ce qui se trouve dans le premier bloc. Sinon, si la souris est en haut ou si x n'est pas inférieur à 10, nous ferons tout ce qui se trouve dans le deuxième bloc.
+
+Et ça c'est analogue à ce que vous voyez ici pour C. Si, if, expression booléenne, faites les choses entre le premier ensemble d'accolades. Sinon, else, faites les choses entre le deuxième ensemble d'accolades. Donc, si l'expression booléenne est vraie, nous ferons tout ce qui se trouve entre le premier ensemble. Si l'expression booléenne est fausse, cela déclencherait le else, et nous ferions tout ce qui se trouve entre le deuxième ensemble d'accolades. Encore une fois, de haut en bas, toutes les lignes entre les accolades.
+
+En C, il est possible de créer une chaîne if-else if-else. En fait, on peut avoir if-else if-else if-else, etc. En Scratch, cela nécessitait l'imbrication des blocs. Vous ajoutez un if-else, et vous deviez en ajouter un autre à l'intérieur du premier, et ainsi de suite, ce qui était assez compliqué.
+
+Mais en C, nous n'avons pas besoin de le faire. Nous pouvons en fait avoir une chaîne de cette manière. Encore une fois, comme vous pouvez vous y attendre, toutes ces branches sont mutuellement exclusives. Vous ne pouvez jamais descendre dans plus d'un branchement. Si ceci est vrai sinon, si cela est vrai sinon si cela est vrai, sinon faites cela. Ainsi, les quatre branches de cet exemple sont mutuellement exclusives. Il s'agit d'une chaîne if-else if-else.
+
+Il est cependant possible, et parfois très utile, de créer une chaîne de branches qui ne sont pas mutuellement exclusives. Dans cet exemple, seules les troisième et quatrième branches sont mutuellement exclusives. Il se peut que vous puissiez satisfaire la première condition, la deuxième et la troisième condition - dans ce cas, vous descendriez dans la première branche, puis dans la deuxième, puis dans la troisième. Ou peut-être que vous satisfaites la première condition et la deuxième condition, mais vous ne satisfaites pas la troisième condition. Dans ce cas, vous descendriez dans la première et la deuxième branche, puis dans la quatrième.
+
+La raison en est que le else ne se rapportera qu'au if le plus proche. Même s'il y a un else ici, cela ne crée pas nécessairement une chaîne mutuellement exclusive de tout. Ce n'est que l'expression appélé expression booléenne 3 - qui est mutuellement exclusive avec le else. Il est donc possible, et parfois très utile, comme je l'ai dit, de créer une chaîne de branches qui ne sont pas mutuellement exclusives. 
+
+Jetons un coup d'œil à un autre type de conditionnel, que vous n'avez pas vu dans Scratch. Il y a quelque chose appelé l'instruction switch. L'instruction switch est assez intéressante car c'est une instruction conditionnelle qui vous permet de spécifier des cas spécifiques au lieu de vous fier aux expressions booléennes pour prendre des décisions. 
+
+Par exemple, supposons que j'ai ce programme et que je demande à l'utilisateur de me fournir une entrée. Donc, je dis int x = get_int(), et si vous n'êtes pas encore familier, get_int est une fonction qui est également incluse dans la bibliothèque CS50, alors si vous incluez CS50.H vous aurez accès à get_int() et à tous ses cousins - get_float, get_string, etc. Basicament, une fonction get pour chaque type de données que nous avons déjà discutées. Donc, int x égale get_int, fondamentalement ce qui se passe, c'est que je suis au terminal. Je demande à l'utilisateur de taper un nombre.
+
+Et ici, je bascule ce que je fais en fonction de ce que l'utilisateur a tapé à l'invite. Donc, s'ils ont tapé un, j'imprime un. Et ensuite, j'éxecute break, ça veut dire "arreter" la structure conditionnel. S'ils ont tapé deux, j'imprime deux. Et ensuite, j'éxecute break. Il est important de mettre un break entre chaque cas sinon vous exécuterez les cas ci-dessous. Donc, si je n'avais pas de breaks là-bas, et que l'utilisateur tapait un, ce qui se passerait, c'est qu'il imprimerait un, deux, trois, désolé. C'est assez étrange, non ? Vous pourriez le penser. Mais il y a en fait des cas où cela pourrait être une chose assez utile. Voici un autre exemple d'une instruction switch où j'omets les breaks. Mais je le fais exprès.
+
+Que se passe-t-il ici? Pensez-y pendant une seconde. Vous voudrez peut-être même mettre en pause la vidéo.
+
+Que se passe-t-il ici si l'utilisateur tape quatre? Je demande à l'utilisateur une entrée. Et il fournit la valeur 4. Qu'est-ce qui est imprimé lorsque je fais cela? Dans la diapositive précédente, il y avait un break entre tous les cas. Et donc cela ne ferait qu'imprimer quatre et arrêter. Mais dans ce cas, cela ne se produira pas. Ce qui se passera, c'est que vous passerez par tous les cas.
+
+Dans ce cas, j'ai organisé mes cas de manière à ce que si l'utilisateur tape 4, j'imprimerai 4, 3, 2, 1, feu. Et s'ils ont tapé 5, je commencerais à cinq et je ferais la même chose. S'ils ont tapé 1, je ferais juste un feu.
+
+Donc dans ce cas, j'utilise un switch de manière plutôt astucieuse, car je prévois de passer à travers toutes les options. Mais en général, vous allez probablement vouloir utiliser un break entre chaque option, sauf si vous avez une situation comme celle-ci où vous exploitez le fait que vous allez passer d'une option à l'autre sans l'instruction break. C'est donc le deuxième des principaux types de structures conditionnelles.
+
+Le dernier est ?: (point d'interrogation, deux points) J'ai ici deux extraits de code C. L'un à gauche et l'autre à droite. Celui de gauche devrait probablement vous être assez familier.
+
+J'ai int x. Et j'aurais probablement dû demander à l'utilisateur -- cela devrait probablement être int x = get_int, ou quelque chose comme ça. Et ensuite, je prends une décision. Si une expression booléenne est vraie, on assigne à x la valeur 5. Sinon, on assigne à x la valeur 6.
+
+Celui de gauche devrait probablement vous être assez familier d'après notre discussion sur If Else il y a un instant. Seriez-vous surpris de savoir que la ligne à droite fait exactement la même chose ?
+
+C'est ce qu'on appelle ?: (point d'interrogation, deux points) ou parfois appelé l'opérateur ternaire. Et c'est assez cool. C'est souvent utilisé comme une façon d'écrire du code plus court.
+
+Mais ce que cela vous permet de faire, c'est de simuler un If Else avec des branches conditionnelles très courtes et triviales. En général, vous n'utiliseriez pas ?: (point d'interrogation, deux points) si vous aviez six lignes de code entre chaque accolade. Mais si vous prenez une décision rapide, si vous devez faire une chose ou l'autre et que c'est très simple, cela pourrait être un exemple de comment le faire avec ?: (point d'interrogation, deux points), l'opérateur ternaire. Donc int x = expression ? La chose après le point d'interrogation est la valeur que prendra x si l'expression est vraie.
+
+La chose après les deux-points est la valeur que prendra x si l'expression est fausse. Donc je me demande, est-ce que l'expression est vraie ? Si c'est le cas, on assigne à x la valeur 5. Si ce n'est pas le cas, on assigne à x la valeur 6. Encore une fois, comme je l'ai dit, c'est généralement juste une façon d'écrire du code plus court. Et parfois, si vous devenez vraiment à l'aise avec cela, vous le ferez parce que ça a l'air cool dans vos programmes. En général, je vous le présente maintenant pour que vous soyez familier avec ça si vous le rencontrez. Mais sachez que vous n'êtes certainement pas obligés de l'utiliser dans vos propres codes. Mais c'est quelque chose à connaître, car vous rencontrerez sûrement des extraits de code ici et là où cette syntaxe ?: (point d'interrogation, deux points), également connu sous le nom opérateur ternaire, est utilisée.
+
+Donc, petit résumé de ce que sont les conditionnels et des options qui sont disponibles en langage C. Vous avez If et If-Else, et If Else If, etc. Vous pouvez utiliser des expressions booléennes pour prendre des décisions.
+
+Avec les instructions switch, vous utilisez des cas spécifiques pour prendre des décisions. Vous spécifiez précisément, si c'est un, ou si c'est deux, ou si c'est trois, je ferai cette chose, ou cette chose, ou cette chose.
+
+Et finalement, nous utilisons ?: (point d'interrogation, deux points) pour remplacer des branches If-Else très simples, ou des chaînes If-Else pour rendre votre code un peu plus élégant.
+
+Je suis Ramon. Ceci est CS50.
